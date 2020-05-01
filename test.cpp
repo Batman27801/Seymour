@@ -1,7 +1,7 @@
 #include<iostream>
 #include"flavours.h"
 using namespace std;
-
+//contains a very primitive, badly managed order class just for reference purposes
 class order{
     private:
         double bill;
