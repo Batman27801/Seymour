@@ -21,12 +21,24 @@
     <ClCompile Include="flavourfunc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="crust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="italian.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="flavours.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crust.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="italian.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
