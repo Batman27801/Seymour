@@ -27,6 +27,27 @@
     <ClCompile Include="italian.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tikka.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fajita.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chilli_delight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bbq_buzz.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="seekh_kebab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="The_cheese.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="veggie_delight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -39,6 +60,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="italian.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tikka.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fajita.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="chilli_delight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bbq_buzz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="seekh_kebab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="The_cheese.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="veggie_delight.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
