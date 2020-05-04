@@ -53,13 +53,16 @@ namespace breeze {
 
 
 
+
+
+
 	protected:
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -261,23 +264,24 @@ namespace breeze {
 
 		}
 #pragma endregion
-	
-	
-private: System::Void Customer_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = PasswordScreen;
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (textBox4->Text == "istinja")
-	{
-		String^ name;
-		name = textBox3->Text;
-		tabControl1->SelectedTab = CustomerIntro;
-		textBox5->AppendText(name);
+
+
+	private: System::Void Customer_Click(System::Object^ sender, System::EventArgs^ e) {
+		tabControl1->SelectedTab = PasswordScreen;
 	}
-	else
-	{
-		MessageBox::Show("Incorrect password, please try again");
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (textBox4->Text == "istinja")
+		{
+			String^ name;
+			name = textBox3->Text;
+			tabControl1->SelectedTab = CustomerIntro;
+			textBox5->AppendText(name);
+		}
+		else
+		{
+			MessageBox::Show("Incorrect password, please try again");
+		}
 	}
-}
+	
 };
 }
