@@ -142,6 +142,23 @@
     <ClInclude Include="crust.h" />
     <ClInclude Include="fajita.h" />
     <ClInclude Include="flavours.h" />
+    <ClCompile Include="crust.cpp" />
+    <ClCompile Include="deepdish.cpp" />
+    <ClCompile Include="flavourfunc.cpp" />
+    <ClCompile Include="focacia.cpp" />
+    <ClCompile Include="italian.cpp" />
+    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="neapolitan.cpp" />
+    <ClCompile Include="newyork.cpp" />
+    <ClCompile Include="sicilian.cpp" />
+    <ClCompile Include="stlouis.cpp" />
+    <ClCompile Include="stuffed.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="crust.h" />
+    <ClInclude Include="deepdish.h" />
+    <ClInclude Include="flavours.h" />
+    <ClInclude Include="focacia.h" />
     <ClInclude Include="italian.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
@@ -150,6 +167,11 @@
     <ClInclude Include="The_cheese.h" />
     <ClInclude Include="tikka.h" />
     <ClInclude Include="veggie_delight.h" />
+    <ClInclude Include="neapolitan.h" />
+    <ClInclude Include="newyork.h" />
+    <ClInclude Include="sicilian.h" />
+    <ClInclude Include="stlouis.h" />
+    <ClInclude Include="stuffed.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
