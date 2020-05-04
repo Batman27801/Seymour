@@ -8,3 +8,5 @@ breeze/x64/Debug/breeze.exe
 *.obj
 *.cache
 *.cache
+breeze/x64/Debug/breeze.exe.metagen
+breeze/breeze/x64/Debug/breeze.vcxproj.FileListAbsolute.txt
