@@ -1,3 +1,0 @@
-D:\ProgramsC++\Project\Seymour\breeze\breeze\x64\Debug\breeze.vcxprojAssemblyReference.cache
-D:\ProgramsC++\Project\Seymour\breeze\breeze\x64\Debug\breeze.MyForm.resources
-D:\ProgramsC++\Project\Seymour\breeze\breeze\x64\Debug\breeze.vcxproj.GenerateResource.cache

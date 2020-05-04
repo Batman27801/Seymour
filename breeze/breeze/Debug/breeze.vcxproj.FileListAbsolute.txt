@@ -1,3 +1,0 @@
-C:\Users\Visitor\Desktop\C programs and questions\dice game\breeze\breeze\Debug\breeze.MyForm.resources
-C:\Users\Visitor\Desktop\C programs and questions\dice game\breeze\breeze\Debug\breeze.vcxproj.GenerateResource.cache
-C:\Users\Visitor\Desktop\C programs and questions\dice game\breeze\breeze\Debug\breeze.vcxprojAssemblyReference.cache
