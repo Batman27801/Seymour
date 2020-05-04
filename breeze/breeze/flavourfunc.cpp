@@ -1,8 +1,8 @@
 #include "flavours.h"
 #include"iostream"
-bool fajita::gluten = true;
-int fajita::count = 0;
-bool tikka::gluten = false;
+/*bool fajita::gluten = true;
+int fajita::count = 0;*/
+/*bool tikka::gluten = false;
 int tikka::count = 0;
 bool::chilli_delight::gluten = false;
 int chilli_delight::count = 0;
@@ -13,9 +13,9 @@ int seekh_kebab::count = 0;
 bool The_cheese::gluten = false;
 int The_cheese::count = 0;
 bool veggie_delight::gluten = false;
-int veggie_delight::count = 0;
+int veggie_delight::count = 0;*/
 
-fajita::fajita()
+/*fajita::fajita()
 {
     price = 1349.99;
     description = new char[230];
@@ -51,8 +51,8 @@ bool fajita::get_gluten()
 fajita::~fajita()
 {
     delete[] description;
-}
-tikka::tikka()
+}*/
+/*tikka::tikka()
 {
     price = 1259.99;
     description = new char[230];
@@ -282,4 +282,4 @@ char* veggie_delight::set_description()
 veggie_delight::~veggie_delight()
 {
     delete[] description;
-}
+}*/

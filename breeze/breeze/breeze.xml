@@ -124,6 +124,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bbq_buzz.cpp" />
+    <ClCompile Include="chilli_delight.cpp" />
+    <ClCompile Include="crust.cpp" />
+    <ClCompile Include="fajita.cpp" />
+    <ClCompile Include="flavourfunc.cpp" />
+    <ClCompile Include="italian.cpp" />
+    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="seekh_kebab.cpp" />
+    <ClCompile Include="The_cheese.cpp" />
+    <ClCompile Include="tikka.cpp" />
+    <ClCompile Include="veggie_delight.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bbq_buzz.h" />
+    <ClInclude Include="chilli_delight.h" />
+    <ClInclude Include="crust.h" />
+    <ClInclude Include="fajita.h" />
+    <ClInclude Include="flavours.h" />
     <ClCompile Include="crust.cpp" />
     <ClCompile Include="deepdish.cpp" />
     <ClCompile Include="flavourfunc.cpp" />
@@ -145,6 +163,10 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="seekh_kebab.h" />
+    <ClInclude Include="The_cheese.h" />
+    <ClInclude Include="tikka.h" />
+    <ClInclude Include="veggie_delight.h" />
     <ClInclude Include="neapolitan.h" />
     <ClInclude Include="newyork.h" />
     <ClInclude Include="sicilian.h" />
