@@ -1,3 +1,10 @@
-
-breeze/.vs/breeze/v16/.suo
-breeze/.vs/breeze/v16/Browse.VC.db
+breeze/.vs
+breeze/breeze/x64/Debug/breeze.vcxprojAssemblyReference.cache
+breeze/breeze/x64/Debug/breeze.vcxprojAssemblyReference.cache
+*.log
+*.tlog
+breeze/x64/Debug/breeze.exe
+*.pdb
+*.obj
+*.cache
+*.cache
