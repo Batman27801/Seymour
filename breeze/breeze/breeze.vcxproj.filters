@@ -27,6 +27,27 @@
     <ClCompile Include="italian.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="neapolitan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="newyork.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deepdish.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="focacia.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sicilian.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stlouis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stuffed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -39,6 +60,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="italian.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="neapolitan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="newyork.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="deepdish.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="focacia.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sicilian.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stlouis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stuffed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
