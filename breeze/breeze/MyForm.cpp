@@ -7,7 +7,8 @@ using namespace System::Windows::Forms;
 void Main(array<String^>^ args) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
-    //WinformCDemo is your project name
     breeze::MyForm form;
     Application::Run(% form);
 }
+
+/*DO NOT TOUCH THIS FILE PLEASE*/

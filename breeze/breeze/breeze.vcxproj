@@ -124,11 +124,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="crust.cpp" />
     <ClCompile Include="flavourfunc.cpp" />
+    <ClCompile Include="italian.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="crust.h" />
     <ClInclude Include="flavours.h" />
+    <ClInclude Include="italian.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
