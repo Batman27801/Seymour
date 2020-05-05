@@ -2,7 +2,6 @@
 #include "crust.h"
 using namespace std;
 
-enum herbs { none = 0, onions = 1, garlic = 2 };
 class newyork : public crust
 {
 private:

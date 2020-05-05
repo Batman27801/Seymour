@@ -2,7 +2,6 @@
 #include "crust.h"
 using namespace std;
 
-enum herbs { none = 0, onions = 1, garlic = 2, cinnamon = 3 };
 enum cookstyle { pan = 1, wood_fired = 2, oven = 3 };
 class italian : public crust
 {
