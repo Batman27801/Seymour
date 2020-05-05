@@ -3,7 +3,6 @@
 #include "crust.h"
 using namespace std;
 
-enum herbs { onions = 1, garlic = 2, scallion = 3, garlicpowder = 4 };
 enum coating { oliveoil = 1, scentedoil = 2, flavoured = 3 };
 class focacia : public crust
 {

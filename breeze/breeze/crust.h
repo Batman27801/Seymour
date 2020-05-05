@@ -2,6 +2,8 @@
 #include <string>
 using namespace std;
 
+enum herbs { none = 0, onions = 1, garlic = 2, scallion = 3, garlicpowder = 4 };
+
 class crust
 {
 protected:

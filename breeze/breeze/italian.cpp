@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "italian.h"
+using namespace std;
 
 italian::italian()
 {
