@@ -4,3 +4,6 @@ C:\Users\Visitor\Desktop\C programs and questions\SEYMOURR\Seymour\breeze\breeze
 C:\Users\Visitor\Desktop\C programs and questions\SEYMOURR\Seymour\breeze\breeze\x64\Debug\breeze.vcxproj.GenerateResource.cache
 D:\ProgramsC++\Project\Seymour\breeze\breeze\x64\Debug\breeze.MyForm.resources
 D:\ProgramsC++\Project\Seymour\breeze\breeze\x64\Debug\breeze.vcxproj.GenerateResource.cache
+D:\Project\Seymour\breeze\breeze\x64\Debug\breeze.vcxprojAssemblyReference.cache
+D:\Project\Seymour\breeze\breeze\x64\Debug\breeze.MyForm.resources
+D:\Project\Seymour\breeze\breeze\x64\Debug\breeze.vcxproj.GenerateResource.cache
