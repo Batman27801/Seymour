@@ -134,6 +134,7 @@
     <ClCompile Include="seekh_kebab.cpp" />
     <ClCompile Include="The_cheese.cpp" />
     <ClCompile Include="tikka.cpp" />
+    <ClCompile Include="Toping.cpp" />
     <ClCompile Include="veggie_delight.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +161,7 @@
     <ClInclude Include="seekh_kebab.h" />
     <ClInclude Include="The_cheese.h" />
     <ClInclude Include="tikka.h" />
+    <ClInclude Include="Toping.h" />
     <ClInclude Include="veggie_delight.h" />
     <ClInclude Include="neapolitan.h" />
     <ClInclude Include="newyork.h" />
