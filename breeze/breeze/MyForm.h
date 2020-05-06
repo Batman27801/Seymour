@@ -100,6 +100,8 @@ namespace breeze {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->MainMenu = (gcnew System::Windows::Forms::TabPage());
+			this->info = (gcnew System::Windows::Forms::Label());
+			this->staff = (gcnew System::Windows::Forms::Label());
 			this->customer = (gcnew System::Windows::Forms::Label());
 			this->splitter1 = (gcnew System::Windows::Forms::Splitter());
 			this->subtitle = (gcnew System::Windows::Forms::Label());
@@ -110,9 +112,7 @@ namespace breeze {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->italian = (gcnew System::Windows::Forms::CheckBox());
-			this->staff = (gcnew System::Windows::Forms::Label());
 			this->UserLogin = (gcnew System::Windows::Forms::TabPage());
-			this->info = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -146,6 +146,29 @@ namespace breeze {
 			this->MainMenu->TabIndex = 0;
 			this->MainMenu->Text = L"MainMenu";
 			this->MainMenu->UseVisualStyleBackColor = true;
+			// 
+			// info
+			// 
+			this->info->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->info->Location = System::Drawing::Point(126, 401);
+			this->info->Name = L"info";
+			this->info->Size = System::Drawing::Size(222, 54);
+			this->info->TabIndex = 9;
+			this->info->Text = L"Project Developed by:\r\nMuhammad Ali\r\nFawad J.Fateh\r\nArunjai Kumar";
+			// 
+			// staff
+			// 
+			this->staff->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->staff->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->staff->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->staff->Location = System::Drawing::Point(612, 288);
+			this->staff->Name = L"staff";
+			this->staff->Size = System::Drawing::Size(264, 132);
+			this->staff->TabIndex = 8;
+			this->staff->Text = L"Click here to Acces the Staff Portal\r\n--For Chefs\r\n--For Delivery boys\r\n--For Man"
+				L"ager";
+			this->staff->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// customer
 			// 
@@ -259,20 +282,6 @@ namespace breeze {
 			this->italian->UseVisualStyleBackColor = true;
 			this->italian->CheckStateChanged += gcnew System::EventHandler(this, &MyForm::italian_CheckStateChanged);
 			// 
-			// staff
-			// 
-			this->staff->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->staff->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->staff->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->staff->Location = System::Drawing::Point(612, 288);
-			this->staff->Name = L"staff";
-			this->staff->Size = System::Drawing::Size(264, 132);
-			this->staff->TabIndex = 8;
-			this->staff->Text = L"Click here to Acces the Staff Portal\r\n--For Chefs\r\n--For Delivery boys\r\n--For Man"
-				L"ager";
-			this->staff->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// UserLogin
 			// 
 			this->UserLogin->Location = System::Drawing::Point(4, 22);
@@ -282,21 +291,15 @@ namespace breeze {
 			this->UserLogin->Text = L"tabPage1";
 			this->UserLogin->UseVisualStyleBackColor = true;
 			// 
-			// info
-			// 
-			this->info->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->info->Location = System::Drawing::Point(126, 401);
-			this->info->Name = L"info";
-			this->info->Size = System::Drawing::Size(222, 54);
-			this->info->TabIndex = 9;
-			this->info->Text = L"Project Developed by:\r\nMuhammad Ali\r\nFawad J.Fateh\r\nArunjai Kumar";
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(831, 464);
 			this->Controls->Add(this->tabControl1);
+			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(847, 503);
+			this->MinimizeBox = false;
 			this->Name = L"MyForm";
 			this->SizeGripStyle = System::Windows::Forms::SizeGripStyle::Show;
 			this->Text = L"SEYMOUR";
