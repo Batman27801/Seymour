@@ -131,6 +131,7 @@
     <ClCompile Include="flavourfunc.cpp" />
     <ClCompile Include="italian.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="order.cpp" />
     <ClCompile Include="seekh_kebab.cpp" />
     <ClCompile Include="The_cheese.cpp" />
     <ClCompile Include="tikka.cpp" />
@@ -153,10 +154,12 @@
   <ItemGroup>
     <ClInclude Include="deepdish.h" />
     <ClInclude Include="focacia.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="italian.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="order.h" />
     <ClInclude Include="seekh_kebab.h" />
     <ClInclude Include="The_cheese.h" />
     <ClInclude Include="tikka.h" />
