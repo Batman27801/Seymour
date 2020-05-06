@@ -36,6 +36,7 @@ namespace breeze {
 	private: System::Windows::Forms::Label^ staff;
 	private: System::Windows::Forms::Label^ info;
 	private: System::Windows::Forms::TabPage^ UserLogin;
+	private: System::Windows::Forms::Label^ UserHeading;
 
 
 
@@ -113,9 +114,11 @@ namespace breeze {
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->italian = (gcnew System::Windows::Forms::CheckBox());
 			this->UserLogin = (gcnew System::Windows::Forms::TabPage());
+			this->UserHeading = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
+			this->UserLogin->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -126,7 +129,7 @@ namespace breeze {
 			this->tabControl1->Location = System::Drawing::Point(-130, -22);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(1106, 496);
+			this->tabControl1->Size = System::Drawing::Size(1084, 496);
 			this->tabControl1->TabIndex = 0;
 			// 
 			// MainMenu
@@ -142,7 +145,7 @@ namespace breeze {
 			this->MainMenu->Location = System::Drawing::Point(4, 22);
 			this->MainMenu->Name = L"MainMenu";
 			this->MainMenu->Padding = System::Windows::Forms::Padding(3);
-			this->MainMenu->Size = System::Drawing::Size(1098, 470);
+			this->MainMenu->Size = System::Drawing::Size(1076, 470);
 			this->MainMenu->TabIndex = 0;
 			this->MainMenu->Text = L"MainMenu";
 			this->MainMenu->UseVisualStyleBackColor = true;
@@ -183,6 +186,8 @@ namespace breeze {
 			this->customer->Text = L"Click here to Acces the Customer Portal\r\n--You can order From Here\r\n--View Menu H"
 				L"ere\r\n--Create Account Here";
 			this->customer->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->customer->Click += gcnew System::EventHandler(this, &MyForm::customer_Click);
+			this->customer->DoubleClick += gcnew System::EventHandler(this, &MyForm::customer_DoubleClick);
 			// 
 			// splitter1
 			// 
@@ -224,7 +229,7 @@ namespace breeze {
 			this->CrustSelect->Controls->Add(this->italian);
 			this->CrustSelect->Location = System::Drawing::Point(4, 22);
 			this->CrustSelect->Name = L"CrustSelect";
-			this->CrustSelect->Size = System::Drawing::Size(1098, 470);
+			this->CrustSelect->Size = System::Drawing::Size(1076, 470);
 			this->CrustSelect->TabIndex = 1;
 			this->CrustSelect->Text = L"Crust select";
 			this->CrustSelect->UseVisualStyleBackColor = true;
@@ -284,12 +289,26 @@ namespace breeze {
 			// 
 			// UserLogin
 			// 
+			this->UserLogin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"UserLogin.BackgroundImage")));
+			this->UserLogin->Controls->Add(this->UserHeading);
 			this->UserLogin->Location = System::Drawing::Point(4, 22);
 			this->UserLogin->Name = L"UserLogin";
-			this->UserLogin->Size = System::Drawing::Size(1098, 470);
+			this->UserLogin->Size = System::Drawing::Size(1076, 470);
 			this->UserLogin->TabIndex = 2;
 			this->UserLogin->Text = L"tabPage1";
 			this->UserLogin->UseVisualStyleBackColor = true;
+			// 
+			// UserHeading
+			// 
+			this->UserHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 30, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->UserHeading->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->UserHeading->Location = System::Drawing::Point(197, 9);
+			this->UserHeading->Name = L"UserHeading";
+			this->UserHeading->Size = System::Drawing::Size(664, 52);
+			this->UserHeading->TabIndex = 0;
+			this->UserHeading->Text = L"CUSTOMER PORTAL\r\n";
+			this->UserHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MyForm
 			// 
@@ -308,6 +327,7 @@ namespace breeze {
 			this->MainMenu->ResumeLayout(false);
 			this->CrustSelect->ResumeLayout(false);
 			this->CrustSelect->PerformLayout();
+			this->UserLogin->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -321,5 +341,11 @@ private: System::Void italian_CheckStateChanged(System::Object^ sender, System::
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 
+private: System::Void customer_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = UserLogin;
+}
+private: System::Void customer_DoubleClick(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = UserLogin;
+}
 };
 }
