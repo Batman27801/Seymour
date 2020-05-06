@@ -125,12 +125,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bbq_buzz.cpp" />
+    <ClCompile Include="Beef.cpp" />
+    <ClCompile Include="Chicken.cpp" />
     <ClCompile Include="chilli_delight.cpp" />
     <ClCompile Include="crust.cpp" />
+    <ClCompile Include="Extra_Cheez.cpp" />
     <ClCompile Include="fajita.cpp" />
     <ClCompile Include="flavourfunc.cpp" />
     <ClCompile Include="italian.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Mashroom.cpp" />
+    <ClCompile Include="Pepperoni.cpp" />
+    <ClCompile Include="Sausage.cpp" />
     <ClCompile Include="seekh_kebab.cpp" />
     <ClCompile Include="The_cheese.cpp" />
     <ClCompile Include="tikka.cpp" />
@@ -139,8 +145,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bbq_buzz.h" />
+    <ClInclude Include="Beef.h" />
+    <ClInclude Include="Chicken.h" />
     <ClInclude Include="chilli_delight.h" />
     <ClInclude Include="crust.h" />
+    <ClInclude Include="Extra_Cheez.h" />
     <ClInclude Include="fajita.h" />
     <ClInclude Include="flavours.h" />
     <ClCompile Include="deepdish.cpp" />
@@ -155,9 +164,12 @@
     <ClInclude Include="deepdish.h" />
     <ClInclude Include="focacia.h" />
     <ClInclude Include="italian.h" />
+    <ClInclude Include="Mashroom.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Pepperoni.h" />
+    <ClInclude Include="Sausage.h" />
     <ClInclude Include="seekh_kebab.h" />
     <ClInclude Include="The_cheese.h" />
     <ClInclude Include="tikka.h" />
