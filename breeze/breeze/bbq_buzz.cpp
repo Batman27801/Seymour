@@ -18,7 +18,7 @@ void bbq_buzz::set_sauce(char* choice)
     {
         if (choice[i] >= 'a' && choice[i] <= 'z')
         {
-            choice[i] - choice[i] - 32;
+            choice[i] = choice[i] - 32;
         }
     }
     if (choice == "BBQ")
