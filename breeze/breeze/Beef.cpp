@@ -16,11 +16,11 @@ float Beef::getprice()
     return price;
 }
 
-void Beef::Information()
+string Beef::getdetails()
 {
-    cout << endl << details;
+    return details;
 }
-void Beef::setInform(string I)
+void Beef::setdetails(string I)
 {
     details = I;
 }

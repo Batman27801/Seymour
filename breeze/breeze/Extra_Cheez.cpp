@@ -13,11 +13,11 @@ float Extra_Cheez::getprice()
 {
     return price;
 }
-void Extra_Cheez::Information()
+string Extra_Cheez::getdetails()
 {
-    cout << endl << details;
+    return details;
 }
-void Extra_Cheez::setInform(string I)
+void Extra_Cheez::setdetails(string I)
 {
     details = I;
 }

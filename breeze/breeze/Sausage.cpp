@@ -14,11 +14,11 @@ float Sausage::getprice()
 {
     return price;
 }
-void Sausage::Information()
+string Sausage::getdetails()
 {
-    cout << endl << details;
+    return details;
 }
-void Sausage::setInform(string I)
+void Sausage::setdetails(string I)
 {
     details = I;
 }

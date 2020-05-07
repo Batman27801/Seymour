@@ -15,11 +15,11 @@ float Pepperoni::getprice()
 {
     return price;
 }
-void Pepperoni::Information()
+string Pepperoni::getdetails()
 {
-    cout << endl << details;
+    return details;
 }
-void Pepperoni::setInform(string I)
+void Pepperoni::setdetails(string I)
 {
     details = I;
 }

@@ -18,8 +18,8 @@ public:
     ~Extra_Cheez();
     void setprice(float);
     float getprice();
-    void Information();
-    void setInform(string);
+    string getdetails();
+    void setdetails(string);
     void setRPF(bool);
     bool getRPF();
     void setExtra(Extras);
