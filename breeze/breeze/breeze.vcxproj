@@ -138,6 +138,7 @@
     <ClCompile Include="italian.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mashroom.cpp" />
+    <ClCompile Include="Order.cpp" />
     <ClCompile Include="Pastry.cpp" />
     <ClCompile Include="Pepperoni.cpp" />
     <ClCompile Include="Person.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Order.h" />
     <ClInclude Include="Pastry.h" />
     <ClInclude Include="Pepperoni.h" />
     <ClInclude Include="Person.h" />
