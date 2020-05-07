@@ -17,7 +17,7 @@ void The_cheese::set_cheese(char* choice)
     {
         if (choice[i] >= 'a' && choice[i] <= 'z')
         {
-            choice[i] - choice[i] - 32;
+            choice[i] = choice[i] - 32;
         }
     }
     if (choice == "MOZARELLA")
@@ -48,7 +48,7 @@ void The_cheese::set_meat(char* choice)
     {
         if (choice[i] >= 'a' && choice[i] <= 'z')
         {
-            choice[i] - choice[i] - 32;
+            choice[i] = choice[i] - 32;
         }
     }
     if (choice == "PEPERRONI")
