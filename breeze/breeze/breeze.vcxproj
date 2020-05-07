@@ -140,6 +140,7 @@
     <ClCompile Include="Mashroom.cpp" />
     <ClCompile Include="Pastry.cpp" />
     <ClCompile Include="Pepperoni.cpp" />
+    <ClCompile Include="Person.cpp" />
     <ClCompile Include="Sausage.cpp" />
     <ClCompile Include="seekh_kebab.cpp" />
     <ClCompile Include="Shakes.cpp" />
@@ -179,6 +180,7 @@
     </ClInclude>
     <ClInclude Include="Pastry.h" />
     <ClInclude Include="Pepperoni.h" />
+    <ClInclude Include="Person.h" />
     <ClInclude Include="Sausage.h" />
     <ClInclude Include="seekh_kebab.h" />
     <ClInclude Include="Shakes.h" />
