@@ -170,6 +170,7 @@
   <ItemGroup>
     <ClInclude Include="deepdish.h" />
     <ClInclude Include="focacia.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Ice_Cream.h" />
     <ClInclude Include="italian.h" />
     <ClInclude Include="Mashroom.h" />
