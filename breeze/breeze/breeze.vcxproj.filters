@@ -105,6 +105,9 @@
     <ClCompile Include="Ice_Cream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Order.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="flavours.h">
@@ -198,6 +201,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Order.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

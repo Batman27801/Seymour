@@ -1,8 +1,8 @@
 #pragma once
 #include "crust.h"
-using namespace std;
+//using namespace std;
 
-enum cookstyle { pan = 1, wood_fired = 2, oven = 3 };
+
 class neapolitan : public crust
 {
 private:

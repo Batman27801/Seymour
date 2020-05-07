@@ -2,7 +2,7 @@
 #include "crust.h"
 using namespace std;
 
-enum cookstyle { pan = 1, wood_fired = 2, oven = 3 };
+
 class italian : public crust
 {
 private:
