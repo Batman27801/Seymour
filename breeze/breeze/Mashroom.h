@@ -17,8 +17,8 @@ public:
     ~Mashroom();
     void setprice(float);
     float getprice();
-    void Information();
-    void setInform(string);
+    string getdetails();
+    void setdetails(string);
     void setCRGS(bool);
     void setCO(bool);
     bool getCRGS();

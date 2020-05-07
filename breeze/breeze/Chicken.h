@@ -17,8 +17,8 @@ public:
     ~Chicken();
     void setprice(float);
     float getprice();
-    void Information();
-    void setInform(string);
+    string getdetails();
+    void setdetails(string);
     void setCheese(int);
     int getCheese();
     void setBS(bool);

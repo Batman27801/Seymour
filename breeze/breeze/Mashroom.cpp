@@ -14,11 +14,11 @@ float Mashroom::getprice()
 {
     return price;
 }
-void Mashroom::Information()
+string Mashroom::getdetails()
 {
-    cout << endl << details;
+    return details;
 }
-void Mashroom::setInform(string I)
+void Mashroom::setdetails(string I)
 {
     details = I;
 }

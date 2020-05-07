@@ -18,8 +18,8 @@ public:
     ~Pepperoni();
     void setprice(float);
     float getprice();
-    void setInform(string);
-    void Information();
+    void setdetails(string);
+    string getdetails();
     void setType(TypeofTopping);
     TypeofTopping getType();
     void setQOFMC(int);

@@ -18,8 +18,8 @@ public:
     ~Beef();
     void setprice(float);
     float getprice();
-    void Information();
-    void setInform(string);
+    string getdetails();
+    void setdetails(string);
     void setCS(bool);
     bool getCS();
     void setpepper(int);

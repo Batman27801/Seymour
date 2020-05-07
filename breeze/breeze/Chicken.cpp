@@ -15,11 +15,11 @@ float Chicken::getprice()
 {
     return price;
 }
-void Chicken::Information()
+string Chicken::getdetails()
 {
-    cout << endl << details;
+    return details;
 }
-void Chicken::setInform(string I)
+void Chicken::setdetails(string I)
 {
     details = I;
 }
