@@ -1,6 +1,4 @@
-Flavour = Veggie Delight PIRCE = 1000 
+Flavour = tikka PIRCE = 1259.99 
 
-Flavour = chilli delight PIRCE = 1100 
-
-Flavour = fajita PIRCE = 1349.99 
+With Addon = Chicken PIRCE = 50 
 
