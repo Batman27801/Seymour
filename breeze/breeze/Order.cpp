@@ -12,6 +12,10 @@ void Order::TakeOrder(flavour *flav, int index)
 	fstream obj;
 	obj.open("Reciept.txt", ios::in | ios::out | ios::app);
 	obj << "Flavour = " << FLAVOURS[index] << " PIRCE = " << flav->get_price() << " \n" << endl;
-	obj << "..............................................TOTAL BILL = " << bill << endl;
+	//obj << "..............................................TOTAL BILL = " << bill << endl;
 
+}
+double Order::ReturnBill()
+{
+	return bill;
 }
