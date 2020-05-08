@@ -17,9 +17,9 @@ public:
     char* set_description(char *desc);
     static bool get_gluten();
     bool get_chicken();
-    void set_chicken(bool B);
+    double set_chicken(bool B);
     bool get_beef();
-    void set_beef(bool B);
+    double set_beef(bool B);
     ~tikka();
 
 };

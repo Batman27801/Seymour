@@ -9,9 +9,11 @@ private:
     double small = 200, medium = 400, large = 600;
     string FLAVOURS[7];
     string CRUSTS[8];
+    string ADDONS[5];
 public:
     Order();
     void TakeOrder(flavour *flav,int index);
+    double MiscCal(double AddOn_Price,int index);
     double ReturnBill();
 };
 

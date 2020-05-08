@@ -44,11 +44,13 @@ bool tikka::get_chicken()
 {
     return chicken;
 }
-void tikka::set_beef(bool B)
+double tikka::set_beef(bool B)
 {
     beef = B;
+    return 50;
 }
-void tikka::set_chicken(bool B)
+double tikka::set_chicken(bool B)
 {
     chicken = B;
+    return 30;
 }

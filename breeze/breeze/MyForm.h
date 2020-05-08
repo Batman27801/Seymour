@@ -64,6 +64,8 @@ namespace breeze {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::TabPage^ SelectCrust;
 	private: System::Windows::Forms::TextBox^ TESTING;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
+	private: System::Windows::Forms::CheckBox^ checkBox3;
 
 
 
@@ -148,6 +150,8 @@ namespace breeze {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->NoOfOrderTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->FlavourSelect = (gcnew System::Windows::Forms::TabPage());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
@@ -162,9 +166,9 @@ namespace breeze {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->TikkaLabel = (gcnew System::Windows::Forms::Label());
-			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SelectCrust = (gcnew System::Windows::Forms::TabPage());
 			this->TESTING = (gcnew System::Windows::Forms::TextBox());
+			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -431,6 +435,8 @@ namespace breeze {
 			// FlavourSelect
 			// 
 			this->FlavourSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FlavourSelect.BackgroundImage")));
+			this->FlavourSelect->Controls->Add(this->checkBox3);
+			this->FlavourSelect->Controls->Add(this->checkBox1);
 			this->FlavourSelect->Controls->Add(this->button3);
 			this->FlavourSelect->Controls->Add(this->label9);
 			this->FlavourSelect->Controls->Add(this->pictureBox7);
@@ -452,6 +458,28 @@ namespace breeze {
 			this->FlavourSelect->TabIndex = 3;
 			this->FlavourSelect->Text = L"FlavourSelect";
 			this->FlavourSelect->UseVisualStyleBackColor = true;
+			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->checkBox1->Location = System::Drawing::Point(144, 192);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(82, 17);
+			this->checkBox1->TabIndex = 15;
+			this->checkBox1->Text = L"Beef Rs=50";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox1_CheckedChanged);
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(1024, 400);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(168, 56);
+			this->button3->TabIndex = 14;
+			this->button3->Text = L"GO TO CRUST SELECT MENU";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// label9
 			// 
@@ -599,16 +627,6 @@ namespace breeze {
 				L"e.\"\r\nPrice = Rs 1259.99";
 			this->TikkaLabel->Click += gcnew System::EventHandler(this, &MyForm::TikkaLabel_Click);
 			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(1024, 400);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(168, 56);
-			this->button3->TabIndex = 14;
-			this->button3->Text = L"GO TO CRUST SELECT MENU";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
-			// 
 			// SelectCrust
 			// 
 			this->SelectCrust->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SelectCrust.BackgroundImage")));
@@ -628,6 +646,18 @@ namespace breeze {
 			this->TESTING->Size = System::Drawing::Size(448, 152);
 			this->TESTING->TabIndex = 0;
 			this->TESTING->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// checkBox3
+			// 
+			this->checkBox3->AutoSize = true;
+			this->checkBox3->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->checkBox3->Location = System::Drawing::Point(240, 192);
+			this->checkBox3->Name = L"checkBox3";
+			this->checkBox3->Size = System::Drawing::Size(99, 17);
+			this->checkBox3->TabIndex = 16;
+			this->checkBox3->Text = L"Chicken Rs=30";
+			this->checkBox3->UseVisualStyleBackColor = true;
+			this->checkBox3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox3_CheckedChanged);
 			// 
 			// MyForm
 			// 
@@ -650,6 +680,7 @@ namespace breeze {
 			this->TotalNumSelect->ResumeLayout(false);
 			this->TotalNumSelect->PerformLayout();
 			this->FlavourSelect->ResumeLayout(false);
+			this->FlavourSelect->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
@@ -725,6 +756,17 @@ private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	TESTING->Text = System::Convert::ToString(obj1->ReturnBill());
 	tabControl1->SelectedTab = SelectCrust;
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	tikka* ptr = new tikka;
+	bool state = true;
+	obj1->MiscCal(ptr->set_beef(state), 0);
+
+}
+private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	tikka* ptr = new tikka;
+	bool state = true;
+	obj1->MiscCal(ptr->set_beef(state), 1);
 }
 };
 }
