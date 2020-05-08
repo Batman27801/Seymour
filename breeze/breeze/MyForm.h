@@ -23,8 +23,8 @@ namespace breeze {
 		newyork* a1 = new newyork;
 		crust* p;
 		int total_no_of_pizzas;
-		Order  *obj1 = new Order;
-		
+		Order* obj1 = new Order;
+
 
 	private: System::Windows::Forms::TabPage^ CrustSelect;
 	public:
@@ -36,8 +36,8 @@ namespace breeze {
 	private: System::Windows::Forms::Label^ subtitle;
 
 	private: System::Windows::Forms::Label^ title;
-	private: System::Windows::Forms::Label^ customer;
-	private: System::Windows::Forms::Label^ staff;
+
+
 	private: System::Windows::Forms::Label^ info;
 	private: System::Windows::Forms::TabPage^ UserLogin;
 	private: System::Windows::Forms::Label^ UserHeading;
@@ -66,6 +66,8 @@ namespace breeze {
 	private: System::Windows::Forms::TextBox^ TESTING;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
 	private: System::Windows::Forms::CheckBox^ checkBox3;
+	private: System::Windows::Forms::Button^ customer;
+	private: System::Windows::Forms::Button^ staff;
 
 
 
@@ -130,9 +132,9 @@ namespace breeze {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->MainMenu = (gcnew System::Windows::Forms::TabPage());
+			this->staff = (gcnew System::Windows::Forms::Button());
+			this->customer = (gcnew System::Windows::Forms::Button());
 			this->info = (gcnew System::Windows::Forms::Label());
-			this->staff = (gcnew System::Windows::Forms::Label());
-			this->customer = (gcnew System::Windows::Forms::Label());
 			this->splitter1 = (gcnew System::Windows::Forms::Splitter());
 			this->subtitle = (gcnew System::Windows::Forms::Label());
 			this->title = (gcnew System::Windows::Forms::Label());
@@ -150,6 +152,7 @@ namespace breeze {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->NoOfOrderTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->FlavourSelect = (gcnew System::Windows::Forms::TabPage());
+			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label9 = (gcnew System::Windows::Forms::Label());
@@ -168,7 +171,6 @@ namespace breeze {
 			this->TikkaLabel = (gcnew System::Windows::Forms::Label());
 			this->SelectCrust = (gcnew System::Windows::Forms::TabPage());
 			this->TESTING = (gcnew System::Windows::Forms::TextBox());
-			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -196,71 +198,74 @@ namespace breeze {
 			this->tabControl1->Location = System::Drawing::Point(-130, -32);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(1218, 506);
+			this->tabControl1->Size = System::Drawing::Size(1218, 602);
 			this->tabControl1->TabIndex = 0;
 			// 
 			// MainMenu
 			// 
+			this->MainMenu->BackColor = System::Drawing::Color::Transparent;
 			this->MainMenu->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"MainMenu.BackgroundImage")));
 			this->MainMenu->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->MainMenu->Controls->Add(this->info);
 			this->MainMenu->Controls->Add(this->staff);
 			this->MainMenu->Controls->Add(this->customer);
+			this->MainMenu->Controls->Add(this->info);
 			this->MainMenu->Controls->Add(this->splitter1);
 			this->MainMenu->Controls->Add(this->subtitle);
 			this->MainMenu->Controls->Add(this->title);
 			this->MainMenu->Location = System::Drawing::Point(4, 22);
 			this->MainMenu->Name = L"MainMenu";
 			this->MainMenu->Padding = System::Windows::Forms::Padding(3);
-			this->MainMenu->Size = System::Drawing::Size(1210, 480);
+			this->MainMenu->Size = System::Drawing::Size(1210, 576);
 			this->MainMenu->TabIndex = 0;
 			this->MainMenu->Text = L"MainMenu";
-			this->MainMenu->UseVisualStyleBackColor = true;
+			// 
+			// staff
+			// 
+			this->staff->BackColor = System::Drawing::Color::Black;
+			this->staff->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"staff.BackgroundImage")));
+			this->staff->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->staff->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->staff->ForeColor = System::Drawing::Color::White;
+			this->staff->Location = System::Drawing::Point(274, 344);
+			this->staff->Name = L"staff";
+			this->staff->Size = System::Drawing::Size(303, 174);
+			this->staff->TabIndex = 11;
+			this->staff->Text = L"Click Here to Access The Staff Portal\r\n--For Manager\r\n--For Chefs\r\n--For Delivery"
+				L" Boys";
+			this->staff->UseVisualStyleBackColor = false;
+			// 
+			// customer
+			// 
+			this->customer->BackColor = System::Drawing::Color::Black;
+			this->customer->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"customer.BackgroundImage")));
+			this->customer->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->customer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->customer->ForeColor = System::Drawing::Color::White;
+			this->customer->Location = System::Drawing::Point(183, 142);
+			this->customer->Name = L"customer";
+			this->customer->Size = System::Drawing::Size(285, 163);
+			this->customer->TabIndex = 10;
+			this->customer->Text = L"Click Here to Access the Customer Portal!\r\n--You Can Order From Here\r\n--View Menu"
+				L" Here\r\n--Create Account Here";
+			this->customer->UseVisualStyleBackColor = false;
+			this->customer->Click += gcnew System::EventHandler(this, &MyForm::customer_Click);
 			// 
 			// info
 			// 
-			this->info->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->info->Location = System::Drawing::Point(126, 401);
+			this->info->ForeColor = System::Drawing::Color::Black;
+			this->info->Location = System::Drawing::Point(666, 519);
 			this->info->Name = L"info";
 			this->info->Size = System::Drawing::Size(222, 54);
 			this->info->TabIndex = 9;
 			this->info->Text = L"Project Developed by:\r\nMuhammad Ali\r\nFawad J.Fateh\r\nArunjai Kumar";
 			// 
-			// staff
-			// 
-			this->staff->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->staff->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->staff->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->staff->Location = System::Drawing::Point(612, 288);
-			this->staff->Name = L"staff";
-			this->staff->Size = System::Drawing::Size(264, 132);
-			this->staff->TabIndex = 8;
-			this->staff->Text = L"Click here to Acces the Staff Portal\r\n--For Chefs\r\n--For Delivery boys\r\n--For Man"
-				L"ager";
-			this->staff->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// customer
-			// 
-			this->customer->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->customer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->customer->ForeColor = System::Drawing::Color::White;
-			this->customer->Location = System::Drawing::Point(508, 118);
-			this->customer->Name = L"customer";
-			this->customer->Size = System::Drawing::Size(261, 141);
-			this->customer->TabIndex = 7;
-			this->customer->Text = L"Click here to Acces the Customer Portal\r\n--You can order From Here\r\n--View Menu H"
-				L"ere\r\n--Create Account Here";
-			this->customer->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->customer->Click += gcnew System::EventHandler(this, &MyForm::customer_Click);
-			this->customer->DoubleClick += gcnew System::EventHandler(this, &MyForm::customer_DoubleClick);
-			// 
 			// splitter1
 			// 
 			this->splitter1->Location = System::Drawing::Point(3, 3);
 			this->splitter1->Name = L"splitter1";
-			this->splitter1->Size = System::Drawing::Size(3, 474);
+			this->splitter1->Size = System::Drawing::Size(3, 570);
 			this->splitter1->TabIndex = 0;
 			this->splitter1->TabStop = false;
 			// 
@@ -268,8 +273,8 @@ namespace breeze {
 			// 
 			this->subtitle->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 14.25F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->subtitle->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->subtitle->Location = System::Drawing::Point(517, 58);
+			this->subtitle->ForeColor = System::Drawing::Color::Transparent;
+			this->subtitle->Location = System::Drawing::Point(179, 81);
 			this->subtitle->Name = L"subtitle";
 			this->subtitle->Size = System::Drawing::Size(359, 23);
 			this->subtitle->TabIndex = 6;
@@ -280,8 +285,8 @@ namespace breeze {
 			// 
 			this->title->Font = (gcnew System::Drawing::Font(L"Algerian", 30, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->title->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->title->Location = System::Drawing::Point(465, 9);
+			this->title->ForeColor = System::Drawing::Color::Transparent;
+			this->title->Location = System::Drawing::Point(138, 32);
 			this->title->Name = L"title";
 			this->title->Size = System::Drawing::Size(480, 49);
 			this->title->TabIndex = 5;
@@ -296,7 +301,7 @@ namespace breeze {
 			this->CrustSelect->Controls->Add(this->italian);
 			this->CrustSelect->Location = System::Drawing::Point(4, 22);
 			this->CrustSelect->Name = L"CrustSelect";
-			this->CrustSelect->Size = System::Drawing::Size(1210, 480);
+			this->CrustSelect->Size = System::Drawing::Size(1210, 576);
 			this->CrustSelect->TabIndex = 1;
 			this->CrustSelect->Text = L"Crust select";
 			this->CrustSelect->UseVisualStyleBackColor = true;
@@ -362,7 +367,7 @@ namespace breeze {
 			this->UserLogin->Controls->Add(this->UserHeading);
 			this->UserLogin->Location = System::Drawing::Point(4, 22);
 			this->UserLogin->Name = L"UserLogin";
-			this->UserLogin->Size = System::Drawing::Size(1210, 480);
+			this->UserLogin->Size = System::Drawing::Size(1210, 576);
 			this->UserLogin->TabIndex = 2;
 			this->UserLogin->Text = L"tabPage1";
 			this->UserLogin->UseVisualStyleBackColor = true;
@@ -382,7 +387,7 @@ namespace breeze {
 			this->UserHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 30, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->UserHeading->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->UserHeading->Location = System::Drawing::Point(197, 9);
+			this->UserHeading->Location = System::Drawing::Point(304, 19);
 			this->UserHeading->Name = L"UserHeading";
 			this->UserHeading->Size = System::Drawing::Size(664, 52);
 			this->UserHeading->TabIndex = 0;
@@ -397,7 +402,7 @@ namespace breeze {
 			this->TotalNumSelect->Controls->Add(this->NoOfOrderTextBox);
 			this->TotalNumSelect->Location = System::Drawing::Point(4, 22);
 			this->TotalNumSelect->Name = L"TotalNumSelect";
-			this->TotalNumSelect->Size = System::Drawing::Size(1210, 480);
+			this->TotalNumSelect->Size = System::Drawing::Size(1210, 576);
 			this->TotalNumSelect->TabIndex = 4;
 			this->TotalNumSelect->Text = L"TotalNumSelect";
 			this->TotalNumSelect->UseVisualStyleBackColor = true;
@@ -454,10 +459,22 @@ namespace breeze {
 			this->FlavourSelect->Controls->Add(this->TikkaLabel);
 			this->FlavourSelect->Location = System::Drawing::Point(4, 22);
 			this->FlavourSelect->Name = L"FlavourSelect";
-			this->FlavourSelect->Size = System::Drawing::Size(1210, 480);
+			this->FlavourSelect->Size = System::Drawing::Size(1210, 576);
 			this->FlavourSelect->TabIndex = 3;
 			this->FlavourSelect->Text = L"FlavourSelect";
 			this->FlavourSelect->UseVisualStyleBackColor = true;
+			// 
+			// checkBox3
+			// 
+			this->checkBox3->AutoSize = true;
+			this->checkBox3->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->checkBox3->Location = System::Drawing::Point(240, 192);
+			this->checkBox3->Name = L"checkBox3";
+			this->checkBox3->Size = System::Drawing::Size(99, 17);
+			this->checkBox3->TabIndex = 16;
+			this->checkBox3->Text = L"Chicken Rs=30";
+			this->checkBox3->UseVisualStyleBackColor = true;
+			this->checkBox3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox3_CheckedChanged);
 			// 
 			// checkBox1
 			// 
@@ -633,7 +650,7 @@ namespace breeze {
 			this->SelectCrust->Controls->Add(this->TESTING);
 			this->SelectCrust->Location = System::Drawing::Point(4, 22);
 			this->SelectCrust->Name = L"SelectCrust";
-			this->SelectCrust->Size = System::Drawing::Size(1210, 480);
+			this->SelectCrust->Size = System::Drawing::Size(1210, 576);
 			this->SelectCrust->TabIndex = 5;
 			this->SelectCrust->Text = L"CrustSelect";
 			this->SelectCrust->UseVisualStyleBackColor = true;
@@ -647,27 +664,17 @@ namespace breeze {
 			this->TESTING->TabIndex = 0;
 			this->TESTING->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// checkBox3
-			// 
-			this->checkBox3->AutoSize = true;
-			this->checkBox3->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->checkBox3->Location = System::Drawing::Point(240, 192);
-			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(99, 17);
-			this->checkBox3->TabIndex = 16;
-			this->checkBox3->Text = L"Chicken Rs=30";
-			this->checkBox3->UseVisualStyleBackColor = true;
-			this->checkBox3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox3_CheckedChanged);
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1084, 470);
+			this->BackColor = System::Drawing::Color::Black;
+			this->ClientSize = System::Drawing::Size(1084, 570);
 			this->Controls->Add(this->tabControl1);
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(1100, 509);
+			this->MaximumSize = System::Drawing::Size(1100, 609);
 			this->MinimizeBox = false;
+			this->MinimumSize = System::Drawing::Size(1100, 609);
 			this->Name = L"MyForm";
 			this->SizeGripStyle = System::Windows::Forms::SizeGripStyle::Show;
 			this->Text = L"SEYMOUR";
@@ -694,79 +701,78 @@ namespace breeze {
 
 		}
 #pragma endregion
-	
-	
-private: System::Void italian_CheckStateChanged(System::Object^ sender, System::EventArgs^ e) {
-	p = a1;
-	pricebox->Text = "Price = " + (p->get_price()).ToString();
-}
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-}
 
-private: System::Void customer_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = UserLogin;
-}
-private: System::Void customer_DoubleClick(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = UserLogin;
-}
-private: System::Void italian_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = TotalNumSelect;
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	total_no_of_pizzas = Convert::ToInt32(NoOfOrderTextBox->Text);
-	tabControl1->SelectedTab = FlavourSelect;
-}
-private: System::Void TikkaLabel_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new tikka;
-	obj1->TakeOrder(ptr, 0);
-}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new fajita;
-	obj1->TakeOrder(ptr, 1);
-}
-private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new bbq_buzz;
-	obj1->TakeOrder(ptr, 3);
-}
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new chilli_delight;
-	obj1->TakeOrder(ptr, 2);
-}
-private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new seekh_kebab;
-	obj1->TakeOrder(ptr, 4);
-}
-private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new The_cheese;
-	obj1->TakeOrder(ptr, 5);
-}
-private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new veggie_delight;
-	obj1->TakeOrder(ptr, 6);
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	TESTING->Text = System::Convert::ToString(obj1->ReturnBill());
-	tabControl1->SelectedTab = SelectCrust;
-}
-private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	tikka* ptr = new tikka;
-	bool state = true;
-	obj1->MiscCal(ptr->set_beef(state), 0);
 
-}
-private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	tikka* ptr = new tikka;
-	bool state = true;
-	obj1->MiscCal(ptr->set_beef(state), 1);
-}
+	private: System::Void italian_CheckStateChanged(System::Object^ sender, System::EventArgs^ e) {
+		p = a1;
+		pricebox->Text = "Price = " + (p->get_price()).ToString();
+	}
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+
+	private: System::Void italian_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		tabControl1->SelectedTab = TotalNumSelect;
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		total_no_of_pizzas = Convert::ToInt32(NoOfOrderTextBox->Text);
+		tabControl1->SelectedTab = FlavourSelect;
+	}
+	private: System::Void TikkaLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+		flavour* ptr;
+		ptr = new tikka;
+		obj1->TakeOrder(ptr, 0);
+	}
+	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+		flavour* ptr;
+		ptr = new fajita;
+		obj1->TakeOrder(ptr, 1);
+	}
+	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+		flavour* ptr;
+		ptr = new bbq_buzz;
+		obj1->TakeOrder(ptr, 3);
+	}
+	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+		flavour* ptr;
+		ptr = new chilli_delight;
+		obj1->TakeOrder(ptr, 2);
+	}
+	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
+		flavour* ptr;
+		ptr = new seekh_kebab;
+		obj1->TakeOrder(ptr, 4);
+	}
+	private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
+		flavour* ptr;
+		ptr = new The_cheese;
+		obj1->TakeOrder(ptr, 5);
+	}
+	private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
+		flavour* ptr;
+		ptr = new veggie_delight;
+		obj1->TakeOrder(ptr, 6);
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		TESTING->Text = System::Convert::ToString(obj1->ReturnBill());
+		tabControl1->SelectedTab = SelectCrust;
+	}
+	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		tikka* ptr = new tikka;
+		bool state = true;
+		obj1->MiscCal(ptr->set_beef(state), 0);
+
+	}
+	private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		tikka* ptr = new tikka;
+		bool state = true;
+		obj1->MiscCal(ptr->set_beef(state), 1);
+	}
+
+	private: System::Void customer_Click(System::Object^ sender, System::EventArgs^ e) {
+		tabControl1->SelectedTab = UserLogin;
+	}
+
 };
 }
