@@ -12,5 +12,6 @@ private:
 public:
     Order();
     void TakeOrder(flavour *flav,int index);
+    double ReturnBill();
 };
 

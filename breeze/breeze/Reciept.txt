@@ -1,9 +1,6 @@
-Flavour = tikka PIRCE = 1259.99 
+Flavour = Veggie Delight PIRCE = 1000 
 
-..............................................TOTAL BILL = 1259.99
-Flavour = tikka PIRCE = 1259.99 
+Flavour = chilli delight PIRCE = 1100 
 
-..............................................TOTAL BILL = 2519.98
-Flavour = tikka PIRCE = 1259.99 
+Flavour = fajita PIRCE = 1349.99 
 
-..............................................TOTAL BILL = 3779.97
