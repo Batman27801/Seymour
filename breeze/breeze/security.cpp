@@ -32,15 +32,71 @@ long int security::getcnic()
 {
 	return decryption(cnic);
 }
-void setaddress(string);
-string getaddress();
-void setpaymentttype(bool);
-bool getpaymenttype();
-void setcardprovider(string);
-string getcardprovider();
-void setcardno(long int);
-long int getcardno();
-void setexpiry(int, int, int);
-int* getexpiry();
-encrypt encryption(encrypt);
-encrypt decryption(encrypt);
+void security::setaddress(string s)
+{
+	address = encryption(s);
+}
+string security::getaddress()
+{
+	return decryption(address);
+}
+void security::setpaymentttype(bool b)
+{
+	cod = b;
+}
+bool security::getpaymenttype()
+{
+	return cod;
+}
+void security::setcardprovider(string s)
+{
+	card = encryption(s);
+}
+string security::getcardprovider()
+{
+	return decryption(card);
+}
+void security::setcardno(long int i)
+{
+	cardno = encryption(i);
+}
+long int security::getcardno()
+{
+	return decryption(cardno);
+}
+void security::setexpiry(int d, int m, int y)
+{
+	dayc = encryption(d);
+	monthc = encryption(m);
+	yearc = encryption(y);
+}
+int* security::getexpiry()
+{
+	static int exp[3];
+	exp[0] = decryption(dayc);
+	exp[1] = decryption(monthc);
+	exp[2] = decryption(yearc);
+	return exp;
+}
+//template <typename encrypt>
+//encrypt security::encryption(encrypt var)
+//{
+//
+//}
+//template <typename encrypt>
+//encrypt security::decryption(encrypt var);
+//
+//string operator ^= (string s, int a)
+//{
+//
+//}
+//
+//long int operator ^= (long int s, int a)
+//{
+//
+//}
+//
+//int operator ^= (int s, int a)
+//{
+//
+//}

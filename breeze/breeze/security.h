@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+using namespace std;
 class security
 {
 protected:
@@ -30,4 +31,5 @@ public:
 	encrypt encryption(encrypt);
 	template <typename encrypt>
 	encrypt decryption(encrypt);
+
 };
