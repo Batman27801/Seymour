@@ -2,3 +2,15 @@ Flavour = tikka PIRCE = 1259.99
 
 With Addon = Chicken PIRCE = 50 
 
+With Addon = Beef PIRCE = 50 
+
+With Addon = Beef PIRCE = 50 
+
+With Addon = Beef PIRCE = 50 
+
+With Addon = Beef PIRCE = 50 
+
+With Addon = Beef PIRCE = 50 
+
+Flavour = tikka PIRCE = 1259.99 
+

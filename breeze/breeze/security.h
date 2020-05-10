@@ -31,5 +31,6 @@ public:
 	encrypt encryption(encrypt);
 	template <typename encrypt>
 	encrypt decryption(encrypt);
-
+	string encryption(string);
+	string decryption(string);
 };

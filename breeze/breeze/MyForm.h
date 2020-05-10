@@ -221,7 +221,7 @@ namespace breeze {
 			// 
 			// staff
 			// 
-			this->staff->BackColor = System::Drawing::Color::Black;
+			this->staff->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->staff->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"staff.BackgroundImage")));
 			this->staff->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->staff->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -242,7 +242,7 @@ namespace breeze {
 			this->customer->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->customer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->customer->ForeColor = System::Drawing::Color::White;
+			this->customer->ForeColor = System::Drawing::Color::FloralWhite;
 			this->customer->Location = System::Drawing::Point(183, 142);
 			this->customer->Name = L"customer";
 			this->customer->Size = System::Drawing::Size(285, 163);
@@ -374,7 +374,7 @@ namespace breeze {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(728, 384);
+			this->button1->Location = System::Drawing::Point(993, 493);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(160, 40);
 			this->button1->TabIndex = 1;

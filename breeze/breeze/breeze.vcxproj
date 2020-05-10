@@ -124,6 +124,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="account.cpp" />
     <ClCompile Include="Add_On.cpp" />
     <ClCompile Include="bbq_buzz.cpp" />
     <ClCompile Include="Beef.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="veggie_delight.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="account.h" />
     <ClInclude Include="Add_On.h" />
     <ClInclude Include="bbq_buzz.h" />
     <ClInclude Include="Beef.h" />
