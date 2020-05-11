@@ -8,6 +8,8 @@ bbq_buzz::bbq_buzz()
     description = new char[230];
     description = "Smoked chicken, capsicum, onions and black olives, sweet and smoky BBQ sauce. Contains gluten in significant amounts";
     chicken = true;
+    name = new char[230];
+    name = "bbq_buzz";
     count++;
 }
 void bbq_buzz::set_sauce(char* choice)
@@ -58,6 +60,7 @@ char* bbq_buzz::set_description(char *desc)
 bbq_buzz::~bbq_buzz()
 {
     delete[] description;
+    delete[] name;
 }
 
 void bbq_buzz::set_bbq(bool B)
@@ -71,4 +74,27 @@ void bbq_buzz::set_chicken(bool B)
 void bbq_buzz::set_ranch(bool B)
 {
     ranch = B;
+}
+bool bbq_buzz::get_chicken()
+{
+    return chicken;
+}
+bool bbq_buzz::get_bbq()
+{
+    return bbq_sauce;
+}
+bool bbq_buzz::get_ranch()
+{
+    return ranch;
+}
+char* bbq_buzz::get_Addon()
+{
+    if (ranch == true)
+    {
+        return "Ranch";
+    }
+    else if (bbq_sauce == true)
+    {
+        return "Bbq Sauce";
+    }
 }

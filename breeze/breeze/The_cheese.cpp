@@ -8,6 +8,8 @@ The_cheese::The_cheese()
     description = new char[230];
     description = "Go back to where it all began with classic mozzarella cheese & tomato base. Gluten free";
     count++;
+    name = new char[230];
+    name = "The_cheese";
 }
 void The_cheese::set_cheese(char* choice)
 {
@@ -40,28 +42,7 @@ void The_cheese::set_cheese(char* choice)
         std::cout << "Please enter the correct choices" << std::endl;
     }
 }
-void The_cheese::set_meat(char* choice)
-{
-    int i;
-    //make sure every character in the user input is uppercase
-    for (i = 0; i <= strlen(choice); i++)
-    {
-        if (choice[i] >= 'a' && choice[i] <= 'z')
-        {
-            choice[i] = choice[i] - 32;
-        }
-    }
-    if (choice == "PEPERRONI")
-    {
-        peperroni = true;
-        price += 120;
-    }
-    else if (choice = "SAUSAGE")
-    {
-        sausage = true;
-        price += 100;
-    }
-}
+
 bool The_cheese::get_gluten()
 {
     return gluten;
@@ -87,6 +68,7 @@ char* The_cheese::set_description(char* desc)
 The_cheese::~The_cheese()
 {
     delete[] description;
+    delete[] name;
 }
 void The_cheese::set_mozarella(bool B)
 {
@@ -100,10 +82,6 @@ void The_cheese::set_gouda(bool B)
 {
     gouda = B;
 }
-void The_cheese::set_pepperoni(bool B)
-{
-    peperroni= B;
-}
 bool The_cheese::get_mozarella()
 {
     return mozarella;
@@ -116,11 +94,18 @@ bool The_cheese::get_gouda()
 {
     return gouda;
 }
-bool The_cheese::get_pepperoni()
+char* The_cheese::get_Addon()
 {
-    return peperroni;
-}
-bool The_cheese::get_sausage()
-{
-    return sausage;
+    if (gouda == true)
+    {
+        return "Gouda";
+    }
+    else if (mozarella == true)
+    {
+        return "Mozarella";
+    }
+    else if (cheddar == true)
+    {
+        return "Cheddar";
+    }
 }

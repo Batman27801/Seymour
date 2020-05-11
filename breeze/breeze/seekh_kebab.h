@@ -19,6 +19,8 @@ public:
     void set_beef(bool B);
     char* set_description(char* desc);
     static bool get_gluten();
+    char* get_Addon();
+    void set_meat(char* choice);
     ~seekh_kebab();
 
 };

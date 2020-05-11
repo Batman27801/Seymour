@@ -721,37 +721,37 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void TikkaLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 	flavour* ptr;
 	ptr = new tikka;
-	obj1->TakeOrder(ptr, 0);
+	obj1->TakeOrder(ptr);
 }
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 	flavour* ptr;
 	ptr = new fajita;
-	obj1->TakeOrder(ptr, 1);
+	obj1->TakeOrder(ptr);
 }
 private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
 	flavour* ptr;
 	ptr = new bbq_buzz;
-	obj1->TakeOrder(ptr, 3);
+	obj1->TakeOrder(ptr);
 }
 private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	flavour* ptr;
 	ptr = new chilli_delight;
-	obj1->TakeOrder(ptr, 2);
+	obj1->TakeOrder(ptr);
 }
 private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
 	flavour* ptr;
 	ptr = new seekh_kebab;
-	obj1->TakeOrder(ptr, 4);
+	obj1->TakeOrder(ptr);
 }
 private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
 	flavour* ptr;
 	ptr = new The_cheese;
-	obj1->TakeOrder(ptr, 5);
+	obj1->TakeOrder(ptr);
 }
 private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
 	flavour* ptr;
 	ptr = new veggie_delight;
-	obj1->TakeOrder(ptr, 6);
+	obj1->TakeOrder(ptr);
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	TESTING->Text = System::Convert::ToString(obj1->ReturnBill());
@@ -760,13 +760,13 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	tikka* ptr = new tikka;
 	bool state = true;
-	obj1->MiscCal(ptr->set_beef(state), 0);
+	obj1->MiscCal(ptr->set_beef(state), ptr);
 
 }
 private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	tikka* ptr = new tikka;
 	bool state = true;
-	obj1->MiscCal(ptr->set_beef(state), 1);
+	obj1->MiscCal(ptr->set_chicken(state), ptr);
 }
 };
 }

@@ -21,6 +21,7 @@ public:
     bool get_chicken();
     bool get_bbq();
     bool get_ranch();
+    char* get_Addon();
     char* set_description(char *desc);
     static bool get_gluten();
     ~bbq_buzz();

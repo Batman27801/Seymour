@@ -20,6 +20,7 @@ public:
     double set_chicken(bool B);
     bool get_beef();
     double set_beef(bool B);
+    char* get_Addon();
     ~tikka();
 
 };
