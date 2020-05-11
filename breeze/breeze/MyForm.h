@@ -702,77 +702,70 @@ namespace breeze {
 		}
 #pragma endregion
 
+private: System::Void customer_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = UserLogin;
+}
+private: System::Void customer_DoubleClick(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = UserLogin;
+}
+private: System::Void italian_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = TotalNumSelect;
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	total_no_of_pizzas = Convert::ToInt32(NoOfOrderTextBox->Text);
+	tabControl1->SelectedTab = FlavourSelect;
+}
+private: System::Void TikkaLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new tikka;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new fajita;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new bbq_buzz;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new chilli_delight;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new seekh_kebab;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new The_cheese;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new veggie_delight;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	TESTING->Text = System::Convert::ToString(obj1->ReturnBill());
+	tabControl1->SelectedTab = SelectCrust;
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	tikka* ptr = new tikka;
+	bool state = true;
+	obj1->MiscCal(ptr->set_beef(state), ptr);
 
-	private: System::Void italian_CheckStateChanged(System::Object^ sender, System::EventArgs^ e) {
-		p = a1;
-		pricebox->Text = "Price = " + (p->get_price()).ToString();
-	}
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	}
-
-	private: System::Void italian_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		tabControl1->SelectedTab = TotalNumSelect;
-	}
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		total_no_of_pizzas = Convert::ToInt32(NoOfOrderTextBox->Text);
-		tabControl1->SelectedTab = FlavourSelect;
-	}
-	private: System::Void TikkaLabel_Click(System::Object^ sender, System::EventArgs^ e) {
-		flavour* ptr;
-		ptr = new tikka;
-		obj1->TakeOrder(ptr, 0);
-	}
-	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-		flavour* ptr;
-		ptr = new fajita;
-		obj1->TakeOrder(ptr, 1);
-	}
-	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-		flavour* ptr;
-		ptr = new bbq_buzz;
-		obj1->TakeOrder(ptr, 3);
-	}
-	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-		flavour* ptr;
-		ptr = new chilli_delight;
-		obj1->TakeOrder(ptr, 2);
-	}
-	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
-		flavour* ptr;
-		ptr = new seekh_kebab;
-		obj1->TakeOrder(ptr, 4);
-	}
-	private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
-		flavour* ptr;
-		ptr = new The_cheese;
-		obj1->TakeOrder(ptr, 5);
-	}
-	private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
-		flavour* ptr;
-		ptr = new veggie_delight;
-		obj1->TakeOrder(ptr, 6);
-	}
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		TESTING->Text = System::Convert::ToString(obj1->ReturnBill());
-		tabControl1->SelectedTab = SelectCrust;
-	}
-	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		tikka* ptr = new tikka;
-		bool state = true;
-		obj1->MiscCal(ptr->set_beef(state), 0);
-
-	}
-	private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		tikka* ptr = new tikka;
-		bool state = true;
-		obj1->MiscCal(ptr->set_beef(state), 1);
-	}
-
-	private: System::Void customer_Click(System::Object^ sender, System::EventArgs^ e) {
-		tabControl1->SelectedTab = UserLogin;
-	}
-
+}
+private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	tikka* ptr = new tikka;
+	bool state = true;
+	obj1->MiscCal(ptr->set_chicken(state), ptr);
+}
 };
 }

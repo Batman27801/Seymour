@@ -12,8 +12,8 @@ private:
     string ADDONS[5];
 public:
     Order();
-    void TakeOrder(flavour *flav,int index);
-    double MiscCal(double AddOn_Price,int index);
+    void TakeOrder(flavour *flav);
+    double MiscCal(double AddOn_Price,flavour *ptr);
     double ReturnBill();
 };
 

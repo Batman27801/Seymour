@@ -9,6 +9,8 @@ tikka::tikka()
     description = "A specially developed recipe  topped with spicy  tikka boti & onions. Gluten Free.";
     chicken = true;
     count++;
+    name = new char[230];
+    name = "tikka";
 }
 bool tikka::get_gluten()
 {
@@ -35,6 +37,7 @@ char* tikka::set_description(char *desc)
 tikka::~tikka()
 {
     delete[] description;
+    delete[] name;
 }
 bool tikka::get_beef()
 {
@@ -46,11 +49,24 @@ bool tikka::get_chicken()
 }
 double tikka::set_beef(bool B)
 {
+    chicken = false;
     beef = B;
     return 50;
 }
 double tikka::set_chicken(bool B)
 {
+    beef = false;
     chicken = B;
     return 30;
+}
+char* tikka::get_Addon()
+{
+    if (chicken==true)
+    {
+        return "Chicken";
+    }
+    else if (beef==true)
+    {
+        return "Beef";
+    }
 }

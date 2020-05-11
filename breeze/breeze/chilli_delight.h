@@ -16,6 +16,7 @@ public:
     char* set_description(char* desc);
     void get_chilli(char *choice);
     static bool get_gluten();
+    char* get_Addon();
     ~chilli_delight();
 };
 

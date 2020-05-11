@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="flavourfunc.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="crust.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -109,6 +106,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Person.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Flavour.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="security.cpp">

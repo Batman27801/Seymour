@@ -7,8 +7,10 @@ fajita::fajita()
     price = 1349.99;
     description = new char[230];
     description = "contains an epic blend of cheese with authentic fresh chicken meat.Contains traces of gluten";
-    chicken = true;
+    chicken = false;
     //gluten=false;
+    name = new char[230];
+    name = "fajita";
     beef = false;
     count++;
 }
@@ -63,6 +65,7 @@ double fajita::set_meat(char *choice)
 fajita::~fajita()
 {
     delete[] description;
+    delete[] name;
 }
 bool fajita::get_beef()
 {
@@ -79,4 +82,15 @@ void fajita::set_beef(bool B)
 void fajita::set_chicken(bool B)
 {
     chicken = B;
+}
+char* fajita::get_Addon()
+{
+    if (chicken == true)
+    {
+        return "Chicken";
+    }
+    else if (beef == true)
+    {
+        return "Beef";
+    }
 }

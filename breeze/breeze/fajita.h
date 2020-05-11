@@ -20,6 +20,7 @@ public:
     char* get_description();
     char* set_description(char *desc);
     static bool get_gluten();
+    char* get_Addon();
     ~fajita();
 };
 

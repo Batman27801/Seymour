@@ -134,7 +134,6 @@
     <ClCompile Include="crust.cpp" />
     <ClCompile Include="Extra_Cheez.cpp" />
     <ClCompile Include="fajita.cpp" />
-    <ClCompile Include="flavourfunc.cpp" />
     <ClCompile Include="Ice_Cream.cpp" />
     <ClCompile Include="italian.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -147,6 +146,7 @@
     <ClCompile Include="security.cpp" />
     <ClCompile Include="seekh_kebab.cpp" />
     <ClCompile Include="Shakes.cpp" />
+    <ClCompile Include="Flavour.cpp" />
     <ClCompile Include="The_cheese.cpp" />
     <ClCompile Include="tikka.cpp" />
     <ClCompile Include="Toping.cpp" />

@@ -9,7 +9,11 @@ chilli_delight::chilli_delight()
     description = new char[230];
     description = "Fire up your taste buds with spicy chicken chunks, onions, olives, jalapenos and hot peri sauce. Gluten free.";
     chicken = true;
+    name = new char[230];
+    name = "chilli_delight";
     count++;
+    red = false;
+    green = false;
 }
 bool chilli_delight::get_gluten()
 {
@@ -63,4 +67,17 @@ void chilli_delight::get_chilli(char* choice)
 chilli_delight::~chilli_delight()
 {
     delete[] description;
+    delete[] name;
+}
+char* chilli_delight::get_Addon()
+{
+    if (green == true)
+    {
+        return "Green Chilli";
+
+    }
+    else if (red == true)
+    {
+        return "Red Chilli";
+    }
 }

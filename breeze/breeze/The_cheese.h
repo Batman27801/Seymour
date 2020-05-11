@@ -7,8 +7,7 @@ private:
     bool mozarella;
     bool cheddar;
     bool gouda;
-    bool peperroni; bool sausage;
-    //bool Veg;
+     //bool Veg;
     static bool gluten;
     static int count;
 public:
@@ -20,17 +19,11 @@ public:
     void set_mozarella(bool B);
     void set_cheddar(bool B);
     void set_gouda(bool B);
-    void set_pepperoni(bool B);
-    void set_sausage(bool B);
     bool get_mozarella();
     bool get_cheddar();
     bool get_gouda();
-    bool get_pepperoni();
-    bool get_sausage();
-
-
-    void set_meat(char* choice);
     char* set_description(char *desc);
+    char* get_Addon();
     static bool get_gluten();
     ~The_cheese();
 };
