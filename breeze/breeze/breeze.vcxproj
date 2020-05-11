@@ -124,6 +124,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="account.cpp" />
     <ClCompile Include="Add_On.cpp" />
     <ClCompile Include="bbq_buzz.cpp" />
     <ClCompile Include="Beef.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="Pepperoni.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Sausage.cpp" />
+    <ClCompile Include="security.cpp" />
     <ClCompile Include="seekh_kebab.cpp" />
     <ClCompile Include="Shakes.cpp" />
     <ClCompile Include="Flavour.cpp" />
@@ -151,6 +153,7 @@
     <ClCompile Include="veggie_delight.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="account.h" />
     <ClInclude Include="Add_On.h" />
     <ClInclude Include="bbq_buzz.h" />
     <ClInclude Include="Beef.h" />
@@ -184,6 +187,7 @@
     <ClInclude Include="Pepperoni.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Sausage.h" />
+    <ClInclude Include="security.h" />
     <ClInclude Include="seekh_kebab.h" />
     <ClInclude Include="Shakes.h" />
     <ClInclude Include="The_cheese.h" />
