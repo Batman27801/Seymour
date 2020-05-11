@@ -1,8 +1,5 @@
 #pragma once
-#include "flavours.h"
-#include "newyork.h"
-#include "focacia.h"
-#include"Order.h"
+#include "Header.h"
 
 #include<string>
 namespace breeze {
@@ -358,7 +355,6 @@ namespace breeze {
 			this->italian->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->italian->UseVisualStyleBackColor = true;
 			this->italian->CheckedChanged += gcnew System::EventHandler(this, &MyForm::italian_CheckedChanged);
-			this->italian->CheckStateChanged += gcnew System::EventHandler(this, &MyForm::italian_CheckStateChanged);
 			// 
 			// UserLogin
 			// 
@@ -678,7 +674,6 @@ namespace breeze {
 			this->Name = L"MyForm";
 			this->SizeGripStyle = System::Windows::Forms::SizeGripStyle::Show;
 			this->Text = L"SEYMOUR";
-			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->tabControl1->ResumeLayout(false);
 			this->MainMenu->ResumeLayout(false);
 			this->CrustSelect->ResumeLayout(false);

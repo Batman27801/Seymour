@@ -2,7 +2,6 @@
 #include "crust.h"
 //using namespace std;
 
-
 class neapolitan : public crust
 {
 private:

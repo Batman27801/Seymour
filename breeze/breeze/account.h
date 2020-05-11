@@ -3,6 +3,7 @@
 #include "security.h"
 #include "Order.h"
 #include <string>
+using namespace std;
 class account : public Person, public security
 {
 	Order previous[5];

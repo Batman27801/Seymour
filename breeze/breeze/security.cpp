@@ -1,3 +1,4 @@
+#pragma once
 #include "security.h"
 #include <iostream>
 #include <string>

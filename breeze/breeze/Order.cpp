@@ -1,5 +1,6 @@
 #include "Order.h"
 #include<fstream>
+using namespace std;
 Order::Order()
 {
 	bill = 0;

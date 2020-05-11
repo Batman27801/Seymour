@@ -1,3 +1,4 @@
+#pragma once
 #include "account.h"
 #include <fstream>
 
