@@ -14,31 +14,6 @@ newyork::newyork()
     thin = 1;
     gluten = 1;
 }
-void newyork::setsize(int s)
-{
-    size = s;
-    price = price + (size - 9) * 40;
-}
-int newyork::getsize()
-{
-    return size;
-}
-double newyork::get_price()
-{
-    return price;
-}
-void newyork::set_price(double p)
-{
-    price = p;
-}
-string newyork::get_description()
-{
-    return description;
-}
-void newyork::set_description(string s)
-{
-    description = s;
-}
 void newyork::setherbs(herbs h)
 {
     herb = h;
@@ -59,20 +34,7 @@ bool newyork::getmineralized()
 {
     return mineralized;
 }
-bool newyork::getthickthin()
+void newyork::Hello()
 {
-    return thick;
-}
-void newyork::setthickthin(bool b)
-{
-    thick = b;
-    thin = !b;
-}
-bool newyork::getgluten()
-{
-    return gluten;
-}
-void newyork::setgluten(bool g)
-{
-    gluten = g;
+    cout << endl << "Hello";
 }

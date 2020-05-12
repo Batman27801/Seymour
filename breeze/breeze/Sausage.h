@@ -6,8 +6,6 @@ using namespace std;
 class Sausage : public Toping
 {
 private:
-    float price;
-    string details;
     bool Basil_Scattering;
     bool Red_Pepper_Flakes;
 
@@ -15,10 +13,7 @@ private:
 public:
     Sausage();
     ~Sausage();
-    void setprice(float);
-    float getprice();
-    string getdetails();
-    void setdetails(string);
+    void initialize();
     void setRPF(bool);
     bool getRPF();
     void setBS(bool);

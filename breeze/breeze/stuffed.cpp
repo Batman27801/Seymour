@@ -15,31 +15,7 @@ stuffed::stuffed()
     thin = 0;
     gluten = 1;
 }
-void stuffed::setsize(int s)
-{
-    size = s;
-    price = price + (size - 6) * 60;
-}
-int stuffed::getsize()
-{
-    return size;
-}
-double stuffed::get_price()
-{
-    return price;
-}
-void stuffed::set_price(double p)
-{
-    price = p;
-}
-string stuffed::get_description()
-{
-    return description;
-}
-void stuffed::set_description(string s)
-{
-    description = s;
-}
+
 void stuffed::setcheese(cheesetype h)
 {
     cheese = h;
@@ -75,20 +51,7 @@ layering stuffed::getlayer()
 {
     return layer;
 }
-bool stuffed::getthickthin()
+void stuffed::Hello()
 {
-    return thick;
-}
-void stuffed::setthickthin(bool b)
-{
-    thick = b;
-    thin = !b;
-}
-bool stuffed::getgluten()
-{
-    return gluten;
-}
-void stuffed::setgluten(bool g)
-{
-    gluten = g;
+    cout << endl << "Hello";
 }

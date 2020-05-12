@@ -15,20 +15,11 @@ private:
 
 public:
     stuffed();
-    void setsize(int);
-    int getsize();
-    double get_price();
-    void set_price(double);
-    string  get_description();
-    void set_description(string);
     void setcheese(cheesetype);
     cheesetype getcheese();
     void setfilling(filling);
     filling getfilling();
     void setlayer(layering);
     layering getlayer();
-    bool getgluten();
-    void setgluten(bool);
-    bool getthickthin();
-    void setthickthin(bool);
+    void Hello();
 };

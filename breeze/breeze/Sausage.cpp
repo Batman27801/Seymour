@@ -1,26 +1,18 @@
 #include "Toping.h"
 #include "Sausage.h"
 
-Sausage::Sausage() : price(175.5), details("Some prefer mild, others spicy, and Southerners Conecuh, but sausage is consistently a favorite pizza topping of Americans. This cast-iron pizza recipe gives you another reason to love that skillet.") {}
+Sausage::Sausage() : Basil_Scattering(true), Red_Pepper_Flakes(true)
+{
+    initialize();
+}
 Sausage::~Sausage()
 {
     cout << endl;
 }
-void Sausage::setprice(float p)
+void Sausage::initialize()
 {
-    price = p;
-}
-float Sausage::getprice()
-{
-    return price;
-}
-string Sausage::getdetails()
-{
-    return details;
-}
-void Sausage::setdetails(string I)
-{
-    details = I;
+    details = "Some prefer mild, others spicy, and Southerners Conecuh, but sausage is consistently a favorite pizza topping of Americans. This cast-iron pizza recipe gives you another reason to love that skillet.";
+    price = 175.5;
 }
 void Sausage::setRPF(bool RPF)
 {

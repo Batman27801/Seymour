@@ -11,21 +11,12 @@ private:
 
 public:
     neapolitan();
-    void setsize(int);
-    int getsize();
-    double get_price();
-    void set_price(double);
-    string  get_description();
-    void set_description(string);
     void setessence(bool);
     bool getessence();
     void sethand(bool);
     bool gethand();
     void setcookstyle(cookstyle);
     cookstyle getcookstyle();
-    bool getgluten();
-    void setgluten(bool);
-    bool getthickthin();
-    void setthickthin(bool);
+    void Hello();
 };
 

@@ -14,31 +14,7 @@ sicilian::sicilian()
     thin = 0;
     gluten = 1;
 }
-void sicilian::setsize(int s)
-{
-    size = s;
-    price = price + (size - 6) * 60;
-}
-int sicilian::getsize()
-{
-    return size;
-}
-double sicilian::get_price()
-{
-    return price;
-}
-void sicilian::set_price(double p)
-{
-    price = p;
-}
-string sicilian::get_description()
-{
-    return description;
-}
-void sicilian::set_description(string s)
-{
-    description = s;
-}
+
 void sicilian::setoil(oilchoice h)
 {
     oil = h;
@@ -64,20 +40,7 @@ panchoice sicilian::getpan()
 {
     return pan;
 }
-bool sicilian::getthickthin()
+void sicilian::Hello()
 {
-    return thick;
-}
-void sicilian::setthickthin(bool b)
-{
-    thick = b;
-    thin = !b;
-}
-bool sicilian::getgluten()
-{
-    return gluten;
-}
-void sicilian::setgluten(bool g)
-{
-    gluten = g;
+    cout << endl << "Hello";
 }

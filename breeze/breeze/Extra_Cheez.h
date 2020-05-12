@@ -7,8 +7,6 @@ enum Extras { Macroni = 1, Cheese = 2 };
 class Extra_Cheez : public Toping
 {
 private:
-    float price;
-    string details;
     bool Red_Pepper_Flakes;
     Extras Extra;
 
@@ -16,10 +14,7 @@ private:
 public:
     Extra_Cheez();
     ~Extra_Cheez();
-    void setprice(float);
-    float getprice();
-    string getdetails();
-    void setdetails(string);
+    void initialize();
     void setRPF(bool);
     bool getRPF();
     void setExtra(Extras);

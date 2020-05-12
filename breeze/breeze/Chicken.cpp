@@ -2,39 +2,24 @@
 #include "Chicken.h"
 #include <iostream>
 using namespace std;
-Chicken::Chicken() : price(170.5), details("The winner winner of weeknight meals goes well on pizzas, too! BBQ chicken, buffalo chicken, and chicken bacon ranch are common pizza orders that contain this protein.") {}
+Chicken::Chicken(): Cheese(Shredded_Cheddar),BBQ_Sause(true) 
+{
+    initialize();
+}
 Chicken::~Chicken()
 {
     cout << endl;
 }
-void Chicken::setprice(float p)
+void Chicken::initialize()
 {
-    price = p;
+    price = 170.5;
+    details = "The winner winner of weeknight meals goes well on pizzas, too! BBQ chicken, buffalo chicken, and chicken bacon ranch are common pizza orders that contain this protein.";
 }
-float Chicken::getprice()
+void Chicken::setCheese(Cheeses C)
 {
-    return price;
+    Cheese = C;
 }
-string Chicken::getdetails()
-{
-    return details;
-}
-void Chicken::setdetails(string I)
-{
-    details = I;
-}
-void Chicken::setCheese(int n)
-{
-    if (n == 1)
-    {
-        Cheese = Shredded_Parmesan;
-    }
-    else if (n == 2)
-    {
-        Cheese = Shredded_Cheddar;
-    }
-}
-int Chicken::getCheese()
+Cheeses Chicken::getCheese()
 {
     return Cheese;
 }
