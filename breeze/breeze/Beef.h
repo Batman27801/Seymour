@@ -8,21 +8,17 @@ enum peppers { Green = 1, Red = 2 };
 class Beef : public Toping
 {
 private:
-    float price;
-    string details;
     bool Cloves_Spice;
     peppers pepper;
 
 public:
     Beef();
     ~Beef();
-    void setprice(float);
-    float getprice();
-    string getdetails();
-    void setdetails(string);
+    void initialize();
     void setCS(bool);
     bool getCS();
-    void setpepper(int);
-    int getpepper();
+    void setpepper(peppers);
+    peppers getpepper();
+
 };
 #endif

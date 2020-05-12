@@ -2,26 +2,18 @@
 #include "Pepperoni.h"
 #include <iostream>
 using namespace std;
-Pepperoni::Pepperoni() : price(150), details("Poll after poll, pepperoni always tops the list of Americas favorite pizza toppings. When it doubt, you cant go wrong with a classic.") {}
+Pepperoni::Pepperoni(): Type(Vegan),QOFMC(Usual)
+{
+    initialize();
+}
 Pepperoni::~Pepperoni()
 {
     cout << endl;
 }
-void Pepperoni::setprice(float p)
+void Pepperoni::initialize()
 {
-    price = p;
-}
-float Pepperoni::getprice()
-{
-    return price;
-}
-string Pepperoni::getdetails()
-{
-    return details;
-}
-void Pepperoni::setdetails(string I)
-{
-    details = I;
+    details = "Poll after poll, pepperoni always tops the list of Americas favorite pizza toppings. When it doubt, you cant go wrong with a classic.";
+    price = 150;
 }
 void Pepperoni::setType(TypeofTopping TOT)
 {
@@ -31,26 +23,11 @@ TypeofTopping Pepperoni::getType()
 {
     return Type;
 }
-void Pepperoni::setQOFMC(int n)
+void Pepperoni::setQOFMC(QuantityOfmozzarellecheese Q)
 {
-    if (n == 1)
-    {
-        QOFMC = Usual;
-    }
-    else if (n == 2)
-    {
-        QOFMC = More;
-    }
-    else if (n == 3)
-    {
-        QOFMC = Little;
-    }
-    else if (n == 4)
-    {
-        QOFMC = Not_Include;
-    }
+    QOFMC = Q;
 }
-int Pepperoni::getQOFMC()
+QuantityOfmozzarellecheese Pepperoni::getQOFMC()
 {
     return QOFMC;
 }

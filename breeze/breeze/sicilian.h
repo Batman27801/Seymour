@@ -13,18 +13,9 @@ private:
 
 public:
     sicilian();
-    void setsize(int);
-    int getsize();
-    double get_price();
-    void set_price(double);
-    string  get_description();
-    void set_description(string);
     void setpan(panchoice);
     panchoice getpan();
     void setoil(oilchoice);
     oilchoice getoil();
-    bool getgluten();
-    void setgluten(bool);
-    bool getthickthin();
-    void setthickthin(bool);
+    void Hello();
 };

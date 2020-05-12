@@ -14,20 +14,11 @@ private:
 
 public:
     deepdish();
-    void setsize(int);
-    int getsize();
-    double get_price();
-    void set_price(double);
-    string  get_description();
-    void set_description(string);
     void setthick(thickness);
     thickness getthick();
     void setsauce(sauces);
     sauces getsauce();
     bool getonions();
     void setonions(bool);
-    bool getgluten();
-    void setgluten(bool);
-    bool getthickthin();
-    void setthickthin(bool);
+    void Hello();
 };

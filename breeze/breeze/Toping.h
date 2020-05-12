@@ -8,16 +8,20 @@ enum quantityoftopings { Normal = 1, Extra = 2, Less = 3 };
 class Toping
 {
 protected:
+    double price;
+    string details;
     enum quantityoftopings quantity; //1 for Normal 2 For Extra 3 For Less
 
 public:
-    Toping(float);
     Toping();
     ~Toping();
     void setquantity(quantityoftopings);
     quantityoftopings getquantity();
-    virtual void setprice(float) = 0;
-    virtual float getprice(void) = 0;
-    virtual void setInform(string) = 0;
+    void setprice(double);
+    double getprice(void);
+    void setdetails(string);
+    string getdetails();
+
+    virtual void initialize() = 0;
 };
 #endif

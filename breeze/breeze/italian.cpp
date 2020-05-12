@@ -15,31 +15,7 @@ italian::italian()
     thin = 1;
     gluten = 0;
 }
-void italian::setsize(int s)
-{
-    size = s;
-    price = price + (size - 6) * 40;
-}
-int italian::getsize()
-{
-    return size;
-}
-double italian::get_price()
-{
-    return price;
-}
-void italian::set_price(double p)
-{
-    price = p;
-}
-string italian::get_description()
-{
-    return description;
-}
-void italian::set_description(string s)
-{
-    description = s;
-}
+
 void italian::setherbs(herbs h)
 {
     herb = h;
@@ -73,20 +49,7 @@ bool italian::getolive()
 {
     return olive_oil;
 }
-bool italian::getthickthin()
+void italian::Hello() 
 {
-    return thick;
-}
-void italian::setthickthin(bool b)
-{
-    thick = b;
-    thin = !b;
-}
-bool italian::getgluten()
-{
-    return gluten;
-}
-void italian::setgluten(bool g)
-{
-    gluten = g;
+    cout << endl << "Hello";
 }

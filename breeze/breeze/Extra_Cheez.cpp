@@ -1,25 +1,17 @@
 #include "Toping.h"
 #include "Extra_Cheez.h"
-Extra_Cheez::Extra_Cheez() : price(140.4), details("Who does not love a little extra cheese for the perfect cheese-pull picture? We sure do. You might want to check with your local pizza joint to see how much cheese actually comes with an extra cheese order, because apparently, it is hotly debated.") {}
+Extra_Cheez::Extra_Cheez() : Red_Pepper_Flakes(true),Extra(Macroni)
+{
+    initialize();
+}
 Extra_Cheez::~Extra_Cheez()
 {
     cout << endl;
 }
-void Extra_Cheez::setprice(float p)
+void Extra_Cheez::initialize()
 {
-    price = p;
-}
-float Extra_Cheez::getprice()
-{
-    return price;
-}
-string Extra_Cheez::getdetails()
-{
-    return details;
-}
-void Extra_Cheez::setdetails(string I)
-{
-    details = I;
+    price = 140.4;
+    details = "Who does not love a little extra cheese for the perfect cheese-pull picture? We sure do. You might want to check with your local pizza joint to see how much cheese actually comes with an extra cheese order, because apparently, it is hotly debated.";
 }
 void Extra_Cheez::setRPF(bool n)
 {

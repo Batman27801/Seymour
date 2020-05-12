@@ -14,31 +14,6 @@ neapolitan::neapolitan()
     thin = 1;
     gluten = 0;
 }
-void neapolitan::setsize(int s)
-{
-    size = s;
-    price = price + (size - 6) * 50;
-}
-int neapolitan::getsize()
-{
-    return size;
-}
-double neapolitan::get_price()
-{
-    return price;
-}
-void neapolitan::set_price(double p)
-{
-    price = p;
-}
-string neapolitan::get_description()
-{
-    return description;
-}
-void neapolitan::set_description(string s)
-{
-    description = s;
-}
 void neapolitan::setcookstyle(cookstyle c)
 {
     cook = c;
@@ -73,20 +48,7 @@ bool neapolitan::gethand()
 {
     return hand;
 }
-bool neapolitan::getthickthin()
+void neapolitan::Hello()
 {
-    return thick;
-}
-void neapolitan::setthickthin(bool b)
-{
-    thick = b;
-    thin = !b;
-}
-bool neapolitan::getgluten()
-{
-    return gluten;
-}
-void neapolitan::setgluten(bool g)
-{
-    gluten = g;
+    cout << endl << "Hello";
 }

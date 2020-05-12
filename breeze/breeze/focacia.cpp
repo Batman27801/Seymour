@@ -13,31 +13,7 @@ focacia::focacia()
     thin = 0;
     gluten = 1;
 }
-void focacia::setsize(int s)
-{
-    size = s;
-    price = price + (size - 6) * 60;
-}
-int focacia::getsize()
-{
-    return size;
-}
-double focacia::get_price()
-{
-    return price;
-}
-void focacia::set_price(double p)
-{
-    price = p;
-}
-string focacia::get_description()
-{
-    return description;
-}
-void focacia::set_description(string s)
-{
-    description = s;
-}
+
 void focacia::setherbs(herbs h)
 {
     herb = h;
@@ -65,20 +41,7 @@ coating focacia::getcoating()
 {
     return coat;
 }
-bool focacia::getthickthin()
+void focacia::Hello()
 {
-    return thick;
-}
-void focacia::setthickthin(bool b)
-{
-    thick = b;
-    thin = !b;
-}
-bool focacia::getgluten()
-{
-    return gluten;
-}
-void focacia::setgluten(bool g)
-{
-    gluten = g;
+    cout << endl << "Hello";
 }

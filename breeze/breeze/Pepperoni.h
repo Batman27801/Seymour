@@ -8,22 +8,17 @@ enum QuantityOfmozzarellecheese { Usual = 1, More = 2, Little = 3, Not_Include =
 class Pepperoni : public Toping
 {
 private:
-    float price;
-    string details;
     enum TypeofTopping Type;
     QuantityOfmozzarellecheese QOFMC;
 
 public:
     Pepperoni();
     ~Pepperoni();
-    void setprice(float);
-    float getprice();
-    void setdetails(string);
-    string getdetails();
+    void initialize();
     void setType(TypeofTopping);
     TypeofTopping getType();
-    void setQOFMC(int);
-    int getQOFMC();
+    void setQOFMC(QuantityOfmozzarellecheese);
+    QuantityOfmozzarellecheese getQOFMC();
 
 };
 #endif
