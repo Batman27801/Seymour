@@ -1,5 +1,6 @@
 #include "tikka.h"
 #include<iostream>
+
 bool tikka::gluten = false;
 int tikka::count = 0;
 tikka::tikka()
@@ -15,24 +16,6 @@ tikka::tikka()
 bool tikka::get_gluten()
 {
     return gluten;
-}
-double tikka::get_price()
-{
-    return price;
-}
-double tikka::set_price(double PRICE)
-{
-    price = PRICE;
-    return  0;
-}
-char* tikka::get_description()
-{
-    return description;
-}
-char* tikka::set_description(char *desc)
-{
-    description = desc;
-    return  0;
 }
 tikka::~tikka()
 {

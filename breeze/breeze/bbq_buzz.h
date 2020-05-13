@@ -11,9 +11,6 @@ private:
     static int count;
 public:
     bbq_buzz();
-    double get_price();
-    double set_price(double PRICE);
-    char* get_description();
     void set_sauce(char* choice);
     void set_bbq(bool B);
     void set_ranch(bool B);
@@ -22,7 +19,6 @@ public:
     bool get_bbq();
     bool get_ranch();
     char* get_Addon();
-    char* set_description(char *desc);
     static bool get_gluten();
     ~bbq_buzz();
 

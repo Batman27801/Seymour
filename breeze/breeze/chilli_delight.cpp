@@ -19,24 +19,6 @@ bool chilli_delight::get_gluten()
 {
     return gluten;
 }
-double chilli_delight::get_price()
-{
-    return price;
-}
-double chilli_delight::set_price(double PRICE)
-{
-    price = PRICE;
-    return  0;
-}
-char* chilli_delight::get_description()
-{
-    return description;
-}
-char* chilli_delight::set_description(char *desc)
-{
-    description = desc;
-    return  0;
-}
 void chilli_delight::get_chilli(char* choice)
 {
     int i;

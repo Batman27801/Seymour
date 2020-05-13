@@ -47,24 +47,7 @@ bool The_cheese::get_gluten()
 {
     return gluten;
 }
-double The_cheese::get_price()
-{
-    return price;
-}
-double The_cheese::set_price(double PRICE)
-{
-    price = PRICE;
-    return  0;
-}
-char* The_cheese::get_description()
-{
-    return description;
-}
-char* The_cheese::set_description(char* desc)
-{
-    description = desc;
-    return 0;
-}
+
 The_cheese::~The_cheese()
 {
     delete[] description;

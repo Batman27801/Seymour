@@ -14,24 +14,7 @@ fajita::fajita()
     beef = false;
     count++;
 }
-double fajita::get_price()
-{
-    return price;
-}
-double fajita::set_price(double PRICE)
-{
-    price = PRICE;
-    return 0;
-}
-char* fajita::get_description()
-{
-    return description;
-}
-char* fajita::set_description(char *desc)
-{
-    description = desc;
-    return 0;
-}
+
 bool fajita::get_gluten()
 {
     return gluten;
