@@ -15,6 +15,7 @@ private:
 
 public:
     stuffed();
+    void setsize(int);
     void setcheese(cheesetype);
     cheesetype getcheese();
     void setfilling(filling);

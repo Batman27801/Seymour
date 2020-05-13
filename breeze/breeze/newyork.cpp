@@ -8,11 +8,16 @@ newyork::newyork()
     price = 310;
     size = 9;
     mineralized = 0;
-    description = "New York-style crust is slightly crispy on the outside, yet soft and pliable enough to fold the big slices in half, making it easier to eat. New York-style pizza crust gets its unique flavor and texture from its high-gluten bread flour";
+    strcpy_s(description, "New York-style crust is slightly crispy on the outside, yet soft and pliable enough to fold the big slices in half, making it easier to eat. New York-style pizza crust gets its unique flavor and texture from its high-gluten bread flour");
     herb = none;
     thick = 0;
     thin = 1;
     gluten = 1;
+}
+void newyork::setsize(int s)
+{
+    size = s;
+    price = price + (size - 9) * 40;
 }
 void newyork::setherbs(herbs h)
 {

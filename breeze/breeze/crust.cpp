@@ -1,9 +1,4 @@
 #include "crust.h"
-void crust::setsize(int s)
-{
-    size = s;
-    price = price + (size - 8) * 70;
-}
 int crust::getsize()
 {
     return size;
@@ -22,7 +17,10 @@ string crust::get_description()
 }
 void crust::set_description(string s)
 {
-    description = s;
+    for (int i = 0; i < 350; i++)
+    {
+        description[i] = s[i];
+    }
 }
 bool crust::getthickthin()
 {

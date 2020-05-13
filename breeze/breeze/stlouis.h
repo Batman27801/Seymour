@@ -11,6 +11,7 @@ private:
 
 public:
     stlouis();
+    void setsize(int);
     void setcheese(bool);
     bool getcheese();
     bool gettavern();

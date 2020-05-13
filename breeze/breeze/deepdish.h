@@ -14,6 +14,7 @@ private:
 
 public:
     deepdish();
+    void setsize(int);
     void setthick(thickness);
     thickness getthick();
     void setsauce(sauces);

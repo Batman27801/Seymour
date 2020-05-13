@@ -12,6 +12,7 @@ private:
 
 public:
     italian();
+    void setsize(int);
     void setherbs(herbs);
     herbs getherbs();
     void setcookstyle(cookstyle);

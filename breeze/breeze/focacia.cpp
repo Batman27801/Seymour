@@ -7,13 +7,17 @@ focacia::focacia()
 {
     price = 300;
     size = 6;
-    description = "focacia crust pizza is pizza with cheese of your favourite type added into the crust! This is the type of piece that’s actually best enjoyed crust side first! a warm juicy cheesey bite awaits your signal!";
+    strcpy_s(description, "Focacia crust pizza is pizza with cheese of your favourite type added into the crust! This is the type of piece that’s actually best enjoyed crust side first! a warm juicy cheesey bite awaits your signal!");
     herb = onions;
     coat = oliveoil;
     thin = 0;
     gluten = 1;
 }
-
+void focacia::setsize(int s)
+{
+    size = s;
+    price = price + (size - 6) * 60;
+}
 void focacia::setherbs(herbs h)
 {
     herb = h;

@@ -12,6 +12,7 @@ private:
 
 public:
     focacia();
+    void setsize(int);
     void setherbs(herbs);
     herbs getherbs();
     void setcoating(coating);

@@ -11,6 +11,7 @@ private:
 
 public:
     neapolitan();
+    void setsize(int);
     void setessence(bool);
     bool getessence();
     void sethand(bool);

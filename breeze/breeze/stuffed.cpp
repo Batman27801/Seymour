@@ -7,7 +7,7 @@ stuffed::stuffed()
 {
     price = 300;
     size = 6;
-    description = "Stuffed crust pizza is pizza with cheese of your favourite type added into the crust! This is the type of piece that’s actually best enjoyed crust side first! a warm juicy cheesey bite awaits your signal!";
+    strcpy_s(description, "Stuffed crust pizza is pizza with cheese of your favourite type added into the crust! This is the type of piece that’s actually best enjoyed crust side first! a warm juicy cheesey bite awaits your signal!");
     layer = single;
     cheese = cheddar;
     fill = edge;
@@ -15,7 +15,11 @@ stuffed::stuffed()
     thin = 0;
     gluten = 1;
 }
-
+void stuffed::setsize(int s)
+{
+    size = s;
+    price = price + (size - 6) * 60;
+}
 void stuffed::setcheese(cheesetype h)
 {
     cheese = h;

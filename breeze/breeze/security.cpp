@@ -2,7 +2,6 @@
 #include "security.h"
 #include <iostream>
 #include <string>
-#include <cmath>
 using namespace std;
 
 security::security()
@@ -85,15 +84,15 @@ encrypt security::encryption(encrypt var)
 {
 	long int temp, temp2 = 0, count;
 	temp = var;
-	for (count = 0; temp != 0; count++)
+	/*for (count = 0; temp != 0; count++)
 	{
 		temp = temp / 10;
 	}
 	temp = var;
-	count--;
+	//count--;*/
 	for (int i = 0; temp != 0; i++)
 	{
-		temp2 = temp2 + (temp % 10 + 2) * pow(10, count - i);
+		temp2 = temp2*10 + (temp % 10 + 2);
 		temp = temp / 10;
 		
 	}
@@ -112,7 +111,7 @@ encrypt security::decryption(encrypt var)
 	count--;
 	for (int i = 0; temp != 0; i++)
 	{
-		temp2 = temp2 + (temp % 10 - 2) * pow(10, count - i);
+		temp2 = temp2*10 + (temp % 10 - 2) ;
 		temp = temp / 10;
 	}
 	return temp2;

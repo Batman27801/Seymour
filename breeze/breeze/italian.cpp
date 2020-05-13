@@ -7,7 +7,7 @@ italian::italian()
 {
     price = 200;
     size = 6;
-    description = "A perfectly thin crispy and delightful crust infused with the herbs of your choice. Crispy and crunchy but not too brittle. That's the perfect Italian Crust for you";
+    strcpy_s(description, "A perfectly thin crispy and delightful crust infused with the herbs of your choice. Crispy and crunchy but not too brittle. That's the perfect Italian Crust for you");
     herb = none;
     cook = oven;
     olive_oil = 0;
@@ -15,7 +15,11 @@ italian::italian()
     thin = 1;
     gluten = 0;
 }
-
+void italian::setsize(int s)
+{
+    size = s;
+    price = price + (size - 6) * 40;
+}
 void italian::setherbs(herbs h)
 {
     herb = h;

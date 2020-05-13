@@ -7,13 +7,18 @@ deepdish::deepdish()
 {
     price = 320;
     size = 8;
-    description = "Deep dish pizza crust contains ketchup, chilli sauce, or our special sauce to give it its distinctly yellow tone and enhance its unique taste and texture. Order one of these if you want a taste of true Chicago DeepDish Pizzas.";
+    strcpy_s(description, "Deep dish pizza crust contains ketchup, chilli sauce, or our special sauce to give it its distinctly yellow tone and enhance its unique taste and texture. Order one of these if you want a taste of true Chicago DeepDish Pizzas.");
     deep = two;
     sauce = ketchup;
     onions = 0;
     thick = 1;
     thin = 0;
     gluten = 1;
+}
+void deepdish::setsize(int s)
+{
+    size = s;
+    price = price + (size - 8) * 70;
 }
 void deepdish::setthick(thickness h)
 {

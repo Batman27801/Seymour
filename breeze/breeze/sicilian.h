@@ -13,6 +13,7 @@ private:
 
 public:
     sicilian();
+    void setsize(int);
     void setpan(panchoice);
     panchoice getpan();
     void setoil(oilchoice);

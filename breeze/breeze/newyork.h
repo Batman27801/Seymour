@@ -10,6 +10,7 @@ private:
 
 public:
     newyork();
+    void setsize(int);
     void setherbs(herbs);
     herbs getherbs();
     void setmineralized(bool);

@@ -8,12 +8,12 @@ class crust
 {
 protected:
     double price;
-    string description;
+    char description[350];
     int size;
     bool thick, thin, gluten;
 
 public:
-    void setsize(int);
+    virtual void setsize(int)=0;
     int getsize();
     double get_price();
     void set_price(double);
@@ -23,6 +23,5 @@ public:
     void setthickthin(bool);
     bool getgluten();
     void setgluten(bool);
-    virtual void Hello() = 0;
 };
 

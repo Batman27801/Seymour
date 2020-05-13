@@ -7,12 +7,17 @@ neapolitan::neapolitan()
 {
     price = 240;
     size = 6;
-    description = "Given that pizza is purported to have originated in Naples, it's no surprise that Neapolitan pizza is believed to be the original Italian pizza. Bundled with a signature light, slightly crispy texture and airy bites, this crust will surely be a delight for your taste buds";
+    strcpy_s(description, "Given that pizza is purported to have originated in Naples, it's no surprise that Neapolitan pizza is believed to be the original Italian pizza. Bundled with a signature light, slightly crispy texture and airy bites, this crust will surely be a delight for your taste buds");
     cook = oven;
     hand = 0;
     thick = 0;
     thin = 1;
     gluten = 0;
+}
+void neapolitan::setsize(int s)
+{
+    size = s;
+    price = price + (size - 6) * 50;
 }
 void neapolitan::setcookstyle(cookstyle c)
 {
