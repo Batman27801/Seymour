@@ -10,7 +10,7 @@ chilli_delight::chilli_delight()
     description = "Fire up your taste buds with spicy chicken chunks, onions, olives, jalapenos and hot peri sauce. Gluten free.";
     chicken = true;
     name = new char[230];
-    name = "chilli_delight";
+    name = "chilli delight";
     count++;
     red = false;
     green = false;

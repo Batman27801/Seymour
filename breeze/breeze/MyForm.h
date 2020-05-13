@@ -44,27 +44,35 @@ namespace breeze {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::TextBox^ NoOfOrderTextBox;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::Label^ TikkaLabel;
+
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
-	private: System::Windows::Forms::Label^ label4;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
-	private: System::Windows::Forms::Label^ label5;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
-	private: System::Windows::Forms::Label^ label6;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox5;
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Label^ label8;
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
-	private: System::Windows::Forms::PictureBox^ pictureBox7;
-	private: System::Windows::Forms::Label^ label9;
+
+
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::TabPage^ SelectCrust;
 	private: System::Windows::Forms::TextBox^ TESTING;
-	private: System::Windows::Forms::CheckBox^ checkBox1;
-	private: System::Windows::Forms::CheckBox^ checkBox3;
+
+
 	private: System::Windows::Forms::Button^ customer;
 	private: System::Windows::Forms::Button^ staff;
+	private: System::Windows::Forms::PictureBox^ pictureBox7;
+	private: System::Windows::Forms::CheckBox^ VeggieDelightCheckBox;
+	private: System::Windows::Forms::CheckBox^ TheCheeseCheckbox;
+	private: System::Windows::Forms::CheckBox^ SeekhKebabCheckbox;
+	private: System::Windows::Forms::CheckBox^ TikkaCheckbox;
+	private: System::Windows::Forms::CheckBox^ FajitaCheckbox;
+	private: System::Windows::Forms::CheckBox^ ChilliDelightCheckbox;
+	private: System::Windows::Forms::CheckBox^ BbqBuzzCheckbox;
 
 
 
@@ -149,23 +157,21 @@ namespace breeze {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->NoOfOrderTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->FlavourSelect = (gcnew System::Windows::Forms::TabPage());
-			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->BbqBuzzCheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->ChilliDelightCheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->FajitaCheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->TikkaCheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->SeekhKebabCheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->TheCheeseCheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
-			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->VeggieDelightCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
-			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
-			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->TikkaLabel = (gcnew System::Windows::Forms::Label());
 			this->SelectCrust = (gcnew System::Windows::Forms::TabPage());
 			this->TESTING = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1->SuspendLayout();
@@ -436,23 +442,21 @@ namespace breeze {
 			// FlavourSelect
 			// 
 			this->FlavourSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FlavourSelect.BackgroundImage")));
-			this->FlavourSelect->Controls->Add(this->checkBox3);
-			this->FlavourSelect->Controls->Add(this->checkBox1);
-			this->FlavourSelect->Controls->Add(this->button3);
-			this->FlavourSelect->Controls->Add(this->label9);
+			this->FlavourSelect->Controls->Add(this->BbqBuzzCheckbox);
+			this->FlavourSelect->Controls->Add(this->ChilliDelightCheckbox);
+			this->FlavourSelect->Controls->Add(this->FajitaCheckbox);
+			this->FlavourSelect->Controls->Add(this->TikkaCheckbox);
+			this->FlavourSelect->Controls->Add(this->SeekhKebabCheckbox);
+			this->FlavourSelect->Controls->Add(this->TheCheeseCheckbox);
 			this->FlavourSelect->Controls->Add(this->pictureBox7);
-			this->FlavourSelect->Controls->Add(this->label8);
+			this->FlavourSelect->Controls->Add(this->VeggieDelightCheckBox);
+			this->FlavourSelect->Controls->Add(this->button3);
 			this->FlavourSelect->Controls->Add(this->pictureBox6);
-			this->FlavourSelect->Controls->Add(this->label7);
 			this->FlavourSelect->Controls->Add(this->pictureBox5);
-			this->FlavourSelect->Controls->Add(this->label6);
 			this->FlavourSelect->Controls->Add(this->pictureBox4);
-			this->FlavourSelect->Controls->Add(this->label5);
 			this->FlavourSelect->Controls->Add(this->pictureBox3);
-			this->FlavourSelect->Controls->Add(this->label4);
 			this->FlavourSelect->Controls->Add(this->pictureBox2);
 			this->FlavourSelect->Controls->Add(this->pictureBox1);
-			this->FlavourSelect->Controls->Add(this->TikkaLabel);
 			this->FlavourSelect->Location = System::Drawing::Point(4, 22);
 			this->FlavourSelect->Name = L"FlavourSelect";
 			this->FlavourSelect->Size = System::Drawing::Size(1210, 576);
@@ -460,33 +464,104 @@ namespace breeze {
 			this->FlavourSelect->Text = L"FlavourSelect";
 			this->FlavourSelect->UseVisualStyleBackColor = true;
 			// 
-			// checkBox3
+			// BbqBuzzCheckbox
 			// 
-			this->checkBox3->AutoSize = true;
-			this->checkBox3->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->checkBox3->Location = System::Drawing::Point(240, 192);
-			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(99, 17);
-			this->checkBox3->TabIndex = 16;
-			this->checkBox3->Text = L"Chicken Rs=30";
-			this->checkBox3->UseVisualStyleBackColor = true;
-			this->checkBox3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox3_CheckedChanged);
+			this->BbqBuzzCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->BbqBuzzCheckbox->Location = System::Drawing::Point(968, 152);
+			this->BbqBuzzCheckbox->Name = L"BbqBuzzCheckbox";
+			this->BbqBuzzCheckbox->Size = System::Drawing::Size(232, 80);
+			this->BbqBuzzCheckbox->TabIndex = 25;
+			this->BbqBuzzCheckbox->Text = L"\"BBQ Buzz\"\r\n\"Smoked chicken, capsicum, onions and black olives, sweet and smoky B"
+				L"BQ sauce. Contains gluten in significant amounts\"\r\nPrice = Rs 1100\r\n";
+			this->BbqBuzzCheckbox->UseVisualStyleBackColor = true;
+			this->BbqBuzzCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::BbqBuzzCheckbox_CheckedChanged);
 			// 
-			// checkBox1
+			// ChilliDelightCheckbox
 			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->checkBox1->Location = System::Drawing::Point(144, 192);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(82, 17);
-			this->checkBox1->TabIndex = 15;
-			this->checkBox1->Text = L"Beef Rs=50";
-			this->checkBox1->UseVisualStyleBackColor = true;
-			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox1_CheckedChanged);
+			this->ChilliDelightCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->ChilliDelightCheckbox->Location = System::Drawing::Point(664, 152);
+			this->ChilliDelightCheckbox->Name = L"ChilliDelightCheckbox";
+			this->ChilliDelightCheckbox->Size = System::Drawing::Size(256, 80);
+			this->ChilliDelightCheckbox->TabIndex = 24;
+			this->ChilliDelightCheckbox->Text = L"\"Chilli Delight\"\r\n\"Fire up your taste buds with spicy chicken chunks, onions, oli"
+				L"ves, jalapenos and hot peri sauce. Gluten free.\"\r\nPrice = Rs 1100\r\n";
+			this->ChilliDelightCheckbox->UseVisualStyleBackColor = true;
+			this->ChilliDelightCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::ChilliDelightCheckbox_CheckedChanged);
+			// 
+			// FajitaCheckbox
+			// 
+			this->FajitaCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->FajitaCheckbox->Location = System::Drawing::Point(408, 152);
+			this->FajitaCheckbox->Name = L"FajitaCheckbox";
+			this->FajitaCheckbox->Size = System::Drawing::Size(240, 72);
+			this->FajitaCheckbox->TabIndex = 23;
+			this->FajitaCheckbox->Text = L"\"Fajita\"\r\n\"Contains an epic blend of cheese with authentic fresh chicken meat.Con"
+				L"tains traces of gluten\"\r\nPrice = Rs 1349.59\r\n";
+			this->FajitaCheckbox->UseVisualStyleBackColor = true;
+			this->FajitaCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::FajitaCheckbox_CheckedChanged);
+			// 
+			// TikkaCheckbox
+			// 
+			this->TikkaCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->TikkaCheckbox->Location = System::Drawing::Point(136, 152);
+			this->TikkaCheckbox->Name = L"TikkaCheckbox";
+			this->TikkaCheckbox->Size = System::Drawing::Size(256, 64);
+			this->TikkaCheckbox->TabIndex = 22;
+			this->TikkaCheckbox->Text = L"\"Tikka\"\r\n\"A specially developed recipe  topped with spicy  tikka boti & onions. G"
+				L"luten Free.\"\r\nPrice = Rs 1259.99\r\n";
+			this->TikkaCheckbox->UseVisualStyleBackColor = true;
+			this->TikkaCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TikkaCheckbox_CheckedChanged);
+			// 
+			// SeekhKebabCheckbox
+			// 
+			this->SeekhKebabCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->SeekhKebabCheckbox->Location = System::Drawing::Point(144, 416);
+			this->SeekhKebabCheckbox->Name = L"SeekhKebabCheckbox";
+			this->SeekhKebabCheckbox->Size = System::Drawing::Size(232, 88);
+			this->SeekhKebabCheckbox->TabIndex = 20;
+			this->SeekhKebabCheckbox->Text = L"\"Seekh Kebab\"\r\n\"Topped with seekh kabab chunks on tantalizing blend of spicy chic"
+				L"ken, onions capsicum, green pepper and cheese. Contains gluten in significant am"
+				L"ounts\"\r\nPrice = Rs 1400\r\n";
+			this->SeekhKebabCheckbox->UseVisualStyleBackColor = true;
+			this->SeekhKebabCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::SeekhKebabCheckbox_CheckedChanged);
+			// 
+			// TheCheeseCheckbox
+			// 
+			this->TheCheeseCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->TheCheeseCheckbox->Location = System::Drawing::Point(456, 416);
+			this->TheCheeseCheckbox->Name = L"TheCheeseCheckbox";
+			this->TheCheeseCheckbox->Size = System::Drawing::Size(272, 56);
+			this->TheCheeseCheckbox->TabIndex = 19;
+			this->TheCheeseCheckbox->Text = L"\"The Cheese\"\r\n\"Go back to where it all began with classic mozzarella cheese & tom"
+				L"ato base. Gluten free\"\r\nPrice=Rs 1400";
+			this->TheCheeseCheckbox->UseVisualStyleBackColor = true;
+			this->TheCheeseCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TheCheeseCheckbox_CheckedChanged);
+			// 
+			// pictureBox7
+			// 
+			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
+			this->pictureBox7->Location = System::Drawing::Point(864, 280);
+			this->pictureBox7->Name = L"pictureBox7";
+			this->pictureBox7->Size = System::Drawing::Size(248, 128);
+			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->pictureBox7->TabIndex = 18;
+			this->pictureBox7->TabStop = false;
+			// 
+			// VeggieDelightCheckBox
+			// 
+			this->VeggieDelightCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->VeggieDelightCheckBox->Location = System::Drawing::Point(856, 416);
+			this->VeggieDelightCheckBox->Name = L"VeggieDelightCheckBox";
+			this->VeggieDelightCheckBox->Size = System::Drawing::Size(264, 56);
+			this->VeggieDelightCheckBox->TabIndex = 17;
+			this->VeggieDelightCheckBox->Text = L"\"The Veggie Delight\"\r\n\"A colorful medley of tomatoes, onions, mushrooms, black ol"
+				L"ives, and green peppers. Gluten free\"\r\nRs=1000";
+			this->VeggieDelightCheckBox->UseVisualStyleBackColor = true;
+			this->VeggieDelightCheckBox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::VeggieDelightCheckBox_CheckedChanged);
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(1024, 400);
+			this->button3->Location = System::Drawing::Point(1024, 504);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(168, 56);
 			this->button3->TabIndex = 14;
@@ -494,80 +569,25 @@ namespace breeze {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
-			// label9
-			// 
-			this->label9->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label9->Location = System::Drawing::Point(728, 392);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(256, 48);
-			this->label9->TabIndex = 13;
-			this->label9->Text = L"\"A colorful medley of tomatoes, onions, mushrooms, black olives, and green pepper"
-				L"s. Gluten free\"\r\nPrice = Rs 1000";
-			this->label9->Click += gcnew System::EventHandler(this, &MyForm::label9_Click);
-			// 
-			// pictureBox7
-			// 
-			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
-			this->pictureBox7->Location = System::Drawing::Point(728, 256);
-			this->pictureBox7->Name = L"pictureBox7";
-			this->pictureBox7->Size = System::Drawing::Size(256, 136);
-			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
-			this->pictureBox7->TabIndex = 12;
-			this->pictureBox7->TabStop = false;
-			// 
-			// label8
-			// 
-			this->label8->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label8->Location = System::Drawing::Point(416, 392);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(264, 40);
-			this->label8->TabIndex = 11;
-			this->label8->Text = L"\"Go back to where it all began with classic mozzarella cheese & tomato base. Glut"
-				L"en free\"\r\nPrice = Rs 1400";
-			this->label8->Click += gcnew System::EventHandler(this, &MyForm::label8_Click);
-			// 
 			// pictureBox6
 			// 
 			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
-			this->pictureBox6->Location = System::Drawing::Point(416, 256);
+			this->pictureBox6->Location = System::Drawing::Point(456, 280);
 			this->pictureBox6->Name = L"pictureBox6";
 			this->pictureBox6->Size = System::Drawing::Size(264, 136);
 			this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox6->TabIndex = 10;
 			this->pictureBox6->TabStop = false;
 			// 
-			// label7
-			// 
-			this->label7->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label7->Location = System::Drawing::Point(152, 392);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(224, 72);
-			this->label7->TabIndex = 9;
-			this->label7->Text = L"\"Topped with seekh kabab chunks on tantalizing blend of spicy chicken, onions cap"
-				L"sicum, green pepper and cheese. Contains gluten in significant amounts\"\r\nPrice ="
-				L" Rs 1400";
-			this->label7->Click += gcnew System::EventHandler(this, &MyForm::label7_Click);
-			// 
 			// pictureBox5
 			// 
 			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(152, 256);
+			this->pictureBox5->Location = System::Drawing::Point(144, 280);
 			this->pictureBox5->Name = L"pictureBox5";
 			this->pictureBox5->Size = System::Drawing::Size(232, 136);
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox5->TabIndex = 8;
 			this->pictureBox5->TabStop = false;
-			// 
-			// label6
-			// 
-			this->label6->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label6->Location = System::Drawing::Point(960, 152);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(256, 56);
-			this->label6->TabIndex = 7;
-			this->label6->Text = L"\"Smoked chicken, capsicum, onions and black olives, sweet and smoky BBQ sauce. Co"
-				L"ntains gluten in significant amounts\"\r\nPrice = Rs 1100";
-			this->label6->Click += gcnew System::EventHandler(this, &MyForm::label6_Click);
 			// 
 			// pictureBox4
 			// 
@@ -579,36 +599,14 @@ namespace breeze {
 			this->pictureBox4->TabIndex = 6;
 			this->pictureBox4->TabStop = false;
 			// 
-			// label5
-			// 
-			this->label5->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label5->Location = System::Drawing::Point(664, 152);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(280, 56);
-			this->label5->TabIndex = 5;
-			this->label5->Text = L"\"Fire up your taste buds with spicy chicken chunks, onions, olives, jalapenos and"
-				L" hot peri sauce. Gluten free.\"\r\nPrice = Rs 1100";
-			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
-			// 
 			// pictureBox3
 			// 
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
 			this->pictureBox3->Location = System::Drawing::Point(664, 40);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(280, 112);
+			this->pictureBox3->Size = System::Drawing::Size(256, 112);
 			this->pictureBox3->TabIndex = 4;
 			this->pictureBox3->TabStop = false;
-			// 
-			// label4
-			// 
-			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(408, 152);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(240, 40);
-			this->label4->TabIndex = 3;
-			this->label4->Text = L"\"Contains an epic blend of cheese with authentic fresh chicken meat.Contains trac"
-				L"es of gluten\"\r\nPrice = Rs 1349.59";
-			this->label4->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
 			// 
 			// pictureBox2
 			// 
@@ -628,17 +626,6 @@ namespace breeze {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
-			// 
-			// TikkaLabel
-			// 
-			this->TikkaLabel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->TikkaLabel->Location = System::Drawing::Point(144, 152);
-			this->TikkaLabel->Name = L"TikkaLabel";
-			this->TikkaLabel->Size = System::Drawing::Size(248, 48);
-			this->TikkaLabel->TabIndex = 0;
-			this->TikkaLabel->Text = L"\"A specially developed recipe  topped with spicy  tikka boti & onions. Gluten Fre"
-				L"e.\"\r\nPrice = Rs 1259.99";
-			this->TikkaLabel->Click += gcnew System::EventHandler(this, &MyForm::TikkaLabel_Click);
 			// 
 			// SelectCrust
 			// 
@@ -682,7 +669,6 @@ namespace breeze {
 			this->TotalNumSelect->ResumeLayout(false);
 			this->TotalNumSelect->PerformLayout();
 			this->FlavourSelect->ResumeLayout(false);
-			this->FlavourSelect->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
@@ -712,55 +698,47 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	total_no_of_pizzas = Convert::ToInt32(NoOfOrderTextBox->Text);
 	tabControl1->SelectedTab = FlavourSelect;
 }
-private: System::Void TikkaLabel_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new tikka;
-	obj1->TakeOrder(ptr);
-}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new fajita;
-	obj1->TakeOrder(ptr);
-}
-private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new bbq_buzz;
-	obj1->TakeOrder(ptr);
-}
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new chilli_delight;
-	obj1->TakeOrder(ptr);
-}
-private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new seekh_kebab;
-	obj1->TakeOrder(ptr);
-}
-private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new The_cheese;
-	obj1->TakeOrder(ptr);
-}
-private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new veggie_delight;
-	obj1->TakeOrder(ptr);
-}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	TESTING->Text = System::Convert::ToString(obj1->ReturnBill());
 	tabControl1->SelectedTab = SelectCrust;
 }
-private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	tikka* ptr = new tikka;
-	bool state = true;
-	obj1->MiscCal(ptr->set_beef(state), ptr);
+
+private: System::Void VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new veggie_delight;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void TheCheeseCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new The_cheese;
+	obj1->TakeOrder(ptr);
 
 }
-private: System::Void checkBox3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	tikka* ptr = new tikka;
-	bool state = true;
-	obj1->MiscCal(ptr->set_chicken(state), ptr);
+private: System::Void SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new seekh_kebab;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void TikkaCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new tikka;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void FajitaCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new fajita;
+	obj1->TakeOrder(ptr);
+}
+private: System::Void ChilliDelightCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new chilli_delight;
+	obj1->TakeOrder(ptr);
+
+}
+private: System::Void BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	flavour* ptr;
+	ptr = new bbq_buzz;
+	obj1->TakeOrder(ptr);
 }
 };
 }
