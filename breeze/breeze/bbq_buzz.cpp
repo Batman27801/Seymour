@@ -1,6 +1,6 @@
 #include "bbq_buzz.h"
 #include<iostream>
-bool bbq_buzz::gluten = true;
+ bool bbq_buzz::gluten = true;
 int bbq_buzz::count = 0;
 bbq_buzz::bbq_buzz()
 {
@@ -9,7 +9,7 @@ bbq_buzz::bbq_buzz()
     description = "Smoked chicken, capsicum, onions and black olives, sweet and smoky BBQ sauce. Contains gluten in significant amounts";
     chicken = true;
     name = new char[230];
-    name = "bbq_buzz";
+    name = "BBQ buzz";
     count++;
 }
 void bbq_buzz::set_sauce(char* choice)

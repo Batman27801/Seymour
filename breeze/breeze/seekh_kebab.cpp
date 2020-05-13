@@ -8,7 +8,7 @@ seekh_kebab::seekh_kebab()
     description = new char[230];
     description = "Topped with seekh kabab chunks on tantalizing blend of spicy chicken, onions capsicum, green pepper and cheese. Contains gluten in significant amounts";
     name = new char[230];
-    name = "seekh_kebab";
+    name = "seekh kebab";
     count++;
 }
 bool seekh_kebab::get_gluten()

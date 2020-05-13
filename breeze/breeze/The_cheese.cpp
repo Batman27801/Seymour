@@ -9,7 +9,7 @@ The_cheese::The_cheese()
     description = "Go back to where it all began with classic mozzarella cheese & tomato base. Gluten free";
     count++;
     name = new char[230];
-    name = "The_cheese";
+    name = "The cheese";
 }
 void The_cheese::set_cheese(char* choice)
 {

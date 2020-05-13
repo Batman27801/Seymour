@@ -1,20 +1,10 @@
 Flavour = tikka PIRCE = 1259.99 
 
-With Addon = Beef PIRCE = 50 
+Flavour = fajita PIRCE = 1349.99 
 
-Flavour = tikka PIRCE = 1259.99 
+Flavour = bbq_buzz PIRCE = 1100 
 
-With Addon = Chicken PIRCE = 30 
+Flavour = The cheese PIRCE = 1400 
 
-With Addon = Beef PIRCE = 50 
-
-With Addon = Beef PIRCE = 50 
-
-With Addon = Beef PIRCE = 50 
-
-With Addon = Beef PIRCE = 50 
-
-With Addon = Beef PIRCE = 50 
-
-Flavour = tikka PIRCE = 1259.99 
+Flavour = Veggie Delight PIRCE = 1000 
 
