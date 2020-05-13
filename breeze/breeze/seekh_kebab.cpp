@@ -15,24 +15,7 @@ bool seekh_kebab::get_gluten()
 {
     return gluten;
 }
-double seekh_kebab::get_price()
-{
-    return price;
-}
-double seekh_kebab::set_price(double PRICE)
-{
-    price=PRICE;
-    return  0;
-}
-char* seekh_kebab::get_description()
-{
-    return description;
-}
-char* seekh_kebab::set_description(char *desc)
-{
-    description = desc;
-    return  0;
-}
+
 seekh_kebab::~seekh_kebab()
 {
     delete[] description;

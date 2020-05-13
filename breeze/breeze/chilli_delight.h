@@ -10,18 +10,10 @@ private:
     static int count;
 public:
     chilli_delight();
-    double get_price();
-    double set_price(double PRICE);
-    char* get_description();
-    char* set_description(char* desc);
-    void get_chilli(char *choice);
+     void get_chilli(char *choice);
     static bool get_gluten();
     char* get_Addon();
     ~chilli_delight();
 };
 
-/*class chilli_delight :
-	public flavour
-{
-};*/
 

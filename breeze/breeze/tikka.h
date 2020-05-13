@@ -11,10 +11,6 @@ private:
     static int count;
 public:
     tikka();
-    double get_price();
-    double set_price(double PRICE);
-    char* get_description();
-    char* set_description(char *desc);
     static bool get_gluten();
     bool get_chicken();
     double set_chicken(bool B);

@@ -6,10 +6,10 @@ protected:
     char* description;
     char* name;
 public:
-    double virtual get_price() = 0;
-     double virtual set_price(double PRICE) = 0;
-     virtual char*  get_description() = 0;
-    virtual char* set_description(char* desc) = 0;
+    double  get_price() ;
+     double  set_price(double PRICE) ;
+      char*  get_description() ;
+     char* set_description(char* desc) ;
     char* get_FlavName();
     virtual char* get_Addon() = 0;
 };

@@ -16,24 +16,7 @@ bool veggie_delight::get_gluten()
 {
     return gluten;
 }
-double veggie_delight::get_price()
-{
-    return price;
-}
-double veggie_delight::set_price(double PRICE)
-{
-    price = PRICE;
-    return 0;
-}
-char* veggie_delight::get_description()
-{
-    return description;
-}
-char* veggie_delight::set_description(char*desc)
-{
-    description = desc;
-    return 0;
-}
+
 veggie_delight::~veggie_delight()
 {
     delete[] description;

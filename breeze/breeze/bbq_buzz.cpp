@@ -39,24 +39,7 @@ bool bbq_buzz::get_gluten()
 {
     return gluten;
 }
-double bbq_buzz::get_price()
-{
-    return price;
-}
-double bbq_buzz::set_price(double PRICE)
-{
-    price = PRICE;
-    return 0;
-}
-char* bbq_buzz::get_description()
-{
-    return description;
-}
-char* bbq_buzz::set_description(char *desc)
-{
-    description = desc;
-    return  0;
-}
+
 bbq_buzz::~bbq_buzz()
 {
     delete[] description;
