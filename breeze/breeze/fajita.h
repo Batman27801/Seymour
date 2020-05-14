@@ -1,4 +1,4 @@
-
+#pragma once
 #include "flavours.h"
 class fajita :
 	public flavour

@@ -7,9 +7,9 @@ using namespace std;
 class account : public Person, public security
 {
 	Order previous[5];
-	string username;
-	string password;
-	string email;
+	char username[15];
+	char password[30];
+	char email[30];
 	int saved;
 
 public:

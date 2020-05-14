@@ -1,5 +1,6 @@
 #pragma once
 #include "Header.h"
+#include <msclr\marshal_cppstd.h>
 
 #include<string>
 namespace breeze {
@@ -38,14 +39,15 @@ namespace breeze {
 	private: System::Windows::Forms::Label^ info;
 	private: System::Windows::Forms::TabPage^ UserLogin;
 	private: System::Windows::Forms::Label^ UserHeading;
-	private: System::Windows::Forms::Button^ button1;
+
+
 	private: System::Windows::Forms::TabPage^ FlavourSelect;
-	private: System::Windows::Forms::TabPage^ TotalNumSelect;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ NoOfOrderTextBox;
+
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
-	private: System::Windows::Forms::Button^ button2;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
@@ -59,8 +61,8 @@ namespace breeze {
 
 
 	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::TabPage^ SelectCrust;
-	private: System::Windows::Forms::TextBox^ TESTING;
+
+
 
 
 	private: System::Windows::Forms::Button^ customer;
@@ -73,6 +75,33 @@ namespace breeze {
 	private: System::Windows::Forms::CheckBox^ FajitaCheckbox;
 	private: System::Windows::Forms::CheckBox^ ChilliDelightCheckbox;
 	private: System::Windows::Forms::CheckBox^ BbqBuzzCheckbox;
+	private: System::Windows::Forms::Label^ usersubheading;
+	private: System::Windows::Forms::Label^ GuestDescp;
+
+	private: System::Windows::Forms::Label^ GuestHeading;
+	private: System::Windows::Forms::Label^ Username;
+	private: System::Windows::Forms::TextBox^ PasswordBox;
+	private: System::Windows::Forms::TextBox^ UsernameBox;
+
+
+
+
+	private: System::Windows::Forms::Label^ UserpartHeading;
+
+	private: System::Windows::Forms::Button^ GuesetOrderButton;
+	private: System::Windows::Forms::Label^ Password;
+
+	private: System::Windows::Forms::Label^ subforcredentials;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Button^ Signup;
+	private: System::Windows::Forms::Label^ NewAcc;
+	private: System::Windows::Forms::Button^ Login;
+	private: System::Windows::Forms::Label^ incorrect;
+
+
+
+
+
 
 
 
@@ -150,12 +179,22 @@ namespace breeze {
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->italian = (gcnew System::Windows::Forms::CheckBox());
 			this->UserLogin = (gcnew System::Windows::Forms::TabPage());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->UserHeading = (gcnew System::Windows::Forms::Label());
-			this->TotalNumSelect = (gcnew System::Windows::Forms::TabPage());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->incorrect = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->NoOfOrderTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->Signup = (gcnew System::Windows::Forms::Button());
+			this->NewAcc = (gcnew System::Windows::Forms::Label());
+			this->Login = (gcnew System::Windows::Forms::Button());
+			this->Password = (gcnew System::Windows::Forms::Label());
+			this->subforcredentials = (gcnew System::Windows::Forms::Label());
+			this->Username = (gcnew System::Windows::Forms::Label());
+			this->PasswordBox = (gcnew System::Windows::Forms::TextBox());
+			this->UsernameBox = (gcnew System::Windows::Forms::TextBox());
+			this->UserpartHeading = (gcnew System::Windows::Forms::Label());
+			this->GuesetOrderButton = (gcnew System::Windows::Forms::Button());
+			this->GuestDescp = (gcnew System::Windows::Forms::Label());
+			this->GuestHeading = (gcnew System::Windows::Forms::Label());
+			this->usersubheading = (gcnew System::Windows::Forms::Label());
+			this->UserHeading = (gcnew System::Windows::Forms::Label());
 			this->FlavourSelect = (gcnew System::Windows::Forms::TabPage());
 			this->BbqBuzzCheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->ChilliDelightCheckbox = (gcnew System::Windows::Forms::CheckBox());
@@ -172,13 +211,10 @@ namespace breeze {
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->SelectCrust = (gcnew System::Windows::Forms::TabPage());
-			this->TESTING = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
 			this->UserLogin->SuspendLayout();
-			this->TotalNumSelect->SuspendLayout();
 			this->FlavourSelect->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
@@ -187,7 +223,6 @@ namespace breeze {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			this->SelectCrust->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -195,9 +230,7 @@ namespace breeze {
 			this->tabControl1->Controls->Add(this->MainMenu);
 			this->tabControl1->Controls->Add(this->CrustSelect);
 			this->tabControl1->Controls->Add(this->UserLogin);
-			this->tabControl1->Controls->Add(this->TotalNumSelect);
 			this->tabControl1->Controls->Add(this->FlavourSelect);
-			this->tabControl1->Controls->Add(this->SelectCrust);
 			this->tabControl1->Location = System::Drawing::Point(-130, -32);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
@@ -230,9 +263,9 @@ namespace breeze {
 			this->staff->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->staff->ForeColor = System::Drawing::Color::White;
-			this->staff->Location = System::Drawing::Point(274, 344);
+			this->staff->Location = System::Drawing::Point(274, 347);
 			this->staff->Name = L"staff";
-			this->staff->Size = System::Drawing::Size(303, 174);
+			this->staff->Size = System::Drawing::Size(301, 171);
 			this->staff->TabIndex = 11;
 			this->staff->Text = L"Click Here to Access The Staff Portal\r\n--For Manager\r\n--For Chefs\r\n--For Delivery"
 				L" Boys";
@@ -365,7 +398,21 @@ namespace breeze {
 			// UserLogin
 			// 
 			this->UserLogin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"UserLogin.BackgroundImage")));
-			this->UserLogin->Controls->Add(this->button1);
+			this->UserLogin->Controls->Add(this->incorrect);
+			this->UserLogin->Controls->Add(this->label3);
+			this->UserLogin->Controls->Add(this->Signup);
+			this->UserLogin->Controls->Add(this->NewAcc);
+			this->UserLogin->Controls->Add(this->Login);
+			this->UserLogin->Controls->Add(this->Password);
+			this->UserLogin->Controls->Add(this->subforcredentials);
+			this->UserLogin->Controls->Add(this->Username);
+			this->UserLogin->Controls->Add(this->PasswordBox);
+			this->UserLogin->Controls->Add(this->UsernameBox);
+			this->UserLogin->Controls->Add(this->UserpartHeading);
+			this->UserLogin->Controls->Add(this->GuesetOrderButton);
+			this->UserLogin->Controls->Add(this->GuestDescp);
+			this->UserLogin->Controls->Add(this->GuestHeading);
+			this->UserLogin->Controls->Add(this->usersubheading);
 			this->UserLogin->Controls->Add(this->UserHeading);
 			this->UserLogin->Location = System::Drawing::Point(4, 22);
 			this->UserLogin->Name = L"UserLogin";
@@ -374,70 +421,194 @@ namespace breeze {
 			this->UserLogin->Text = L"tabPage1";
 			this->UserLogin->UseVisualStyleBackColor = true;
 			// 
-			// button1
+			// incorrect
 			// 
-			this->button1->Location = System::Drawing::Point(993, 493);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(160, 40);
-			this->button1->TabIndex = 1;
-			this->button1->Text = L"PROCEED TO NO OF ORDER";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->incorrect->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->incorrect->ForeColor = System::Drawing::Color::Red;
+			this->incorrect->Location = System::Drawing::Point(808, 350);
+			this->incorrect->Name = L"incorrect";
+			this->incorrect->Size = System::Drawing::Size(311, 23);
+			this->incorrect->TabIndex = 16;
+			this->incorrect->Text = L"Incorrect Username or Password!";
+			this->incorrect->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->incorrect->Visible = false;
+			// 
+			// label3
+			// 
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->label3->Location = System::Drawing::Point(959, 420);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(213, 109);
+			this->label3->TabIndex = 15;
+			this->label3->Text = L"Account Holders get amazing Benefits such as Discounts and Promotions!\r\n ";
+			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Signup
+			// 
+			this->Signup->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Signup->Location = System::Drawing::Point(711, 447);
+			this->Signup->Name = L"Signup";
+			this->Signup->Size = System::Drawing::Size(181, 65);
+			this->Signup->TabIndex = 14;
+			this->Signup->Text = L"Sign Up!";
+			this->Signup->UseVisualStyleBackColor = true;
+			// 
+			// NewAcc
+			// 
+			this->NewAcc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->NewAcc->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->NewAcc->Location = System::Drawing::Point(684, 388);
+			this->NewAcc->Name = L"NewAcc";
+			this->NewAcc->Size = System::Drawing::Size(231, 65);
+			this->NewAcc->TabIndex = 13;
+			this->NewAcc->Text = L"Don\'t Have an Account\? \r\nSign up here!";
+			this->NewAcc->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Login
+			// 
+			this->Login->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Login->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->Login->Location = System::Drawing::Point(893, 305);
+			this->Login->Name = L"Login";
+			this->Login->Size = System::Drawing::Size(153, 42);
+			this->Login->TabIndex = 12;
+			this->Login->Text = L"Login!";
+			this->Login->UseVisualStyleBackColor = true;
+			this->Login->Click += gcnew System::EventHandler(this, &MyForm::Login_Click);
+			// 
+			// Password
+			// 
+			this->Password->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->Password->ForeColor = System::Drawing::Color::White;
+			this->Password->Location = System::Drawing::Point(717, 273);
+			this->Password->Name = L"Password";
+			this->Password->Size = System::Drawing::Size(100, 26);
+			this->Password->TabIndex = 11;
+			this->Password->Text = L"Password:";
+			this->Password->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// subforcredentials
+			// 
+			this->subforcredentials->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->subforcredentials->ForeColor = System::Drawing::Color::White;
+			this->subforcredentials->Location = System::Drawing::Point(778, 188);
+			this->subforcredentials->Name = L"subforcredentials";
+			this->subforcredentials->Size = System::Drawing::Size(355, 36);
+			this->subforcredentials->TabIndex = 10;
+			this->subforcredentials->Text = L"Please Enter you Login Credentials below:";
+			this->subforcredentials->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Username
+			// 
+			this->Username->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->Username->ForeColor = System::Drawing::Color::White;
+			this->Username->Location = System::Drawing::Point(717, 227);
+			this->Username->Name = L"Username";
+			this->Username->Size = System::Drawing::Size(100, 26);
+			this->Username->TabIndex = 9;
+			this->Username->Text = L"Username:";
+			this->Username->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// PasswordBox
+			// 
+			this->PasswordBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->PasswordBox->Location = System::Drawing::Point(844, 273);
+			this->PasswordBox->Name = L"PasswordBox";
+			this->PasswordBox->Size = System::Drawing::Size(253, 26);
+			this->PasswordBox->TabIndex = 8;
+			// 
+			// UsernameBox
+			// 
+			this->UsernameBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->UsernameBox->Location = System::Drawing::Point(844, 227);
+			this->UsernameBox->Name = L"UsernameBox";
+			this->UsernameBox->Size = System::Drawing::Size(253, 26);
+			this->UsernameBox->TabIndex = 7;
+			// 
+			// UserpartHeading
+			// 
+			this->UserpartHeading->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->UserpartHeading->ForeColor = System::Drawing::Color::White;
+			this->UserpartHeading->Location = System::Drawing::Point(806, 139);
+			this->UserpartHeading->Name = L"UserpartHeading";
+			this->UserpartHeading->Size = System::Drawing::Size(291, 60);
+			this->UserpartHeading->TabIndex = 6;
+			this->UserpartHeading->Text = L"USER ACCOUNT";
+			this->UserpartHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// GuesetOrderButton
+			// 
+			this->GuesetOrderButton->BackColor = System::Drawing::Color::Transparent;
+			this->GuesetOrderButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->GuesetOrderButton->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->GuesetOrderButton->Location = System::Drawing::Point(266, 437);
+			this->GuesetOrderButton->Name = L"GuesetOrderButton";
+			this->GuesetOrderButton->Size = System::Drawing::Size(214, 75);
+			this->GuesetOrderButton->TabIndex = 5;
+			this->GuesetOrderButton->Text = L"Take me to the Menu!\r\n";
+			this->GuesetOrderButton->UseVisualStyleBackColor = false;
+			// 
+			// GuestDescp
+			// 
+			this->GuestDescp->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->GuestDescp->ForeColor = System::Drawing::Color::White;
+			this->GuestDescp->Location = System::Drawing::Point(183, 245);
+			this->GuestDescp->Name = L"GuestDescp";
+			this->GuestDescp->Size = System::Drawing::Size(382, 163);
+			this->GuestDescp->TabIndex = 4;
+			this->GuestDescp->Text = resources->GetString(L"GuestDescp.Text");
+			this->GuestDescp->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// GuestHeading
+			// 
+			this->GuestHeading->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->GuestHeading->ForeColor = System::Drawing::Color::White;
+			this->GuestHeading->Location = System::Drawing::Point(206, 157);
+			this->GuestHeading->Name = L"GuestHeading";
+			this->GuestHeading->Size = System::Drawing::Size(330, 67);
+			this->GuestHeading->TabIndex = 3;
+			this->GuestHeading->Text = L"GUEST ORDERING";
+			this->GuestHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// usersubheading
+			// 
+			this->usersubheading->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->usersubheading->ForeColor = System::Drawing::Color::White;
+			this->usersubheading->Location = System::Drawing::Point(364, 71);
+			this->usersubheading->Name = L"usersubheading";
+			this->usersubheading->Size = System::Drawing::Size(604, 68);
+			this->usersubheading->TabIndex = 2;
+			this->usersubheading->Text = L"Login to your User Account to avail Discounts and Exciting Offers!\r\nOR\r\nContinue "
+				L"as a Guest for a Quick Bite.\r\n";
+			this->usersubheading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// UserHeading
 			// 
-			this->UserHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 30, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->UserHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 30, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->UserHeading->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->UserHeading->Location = System::Drawing::Point(304, 19);
+			this->UserHeading->Location = System::Drawing::Point(325, 19);
 			this->UserHeading->Name = L"UserHeading";
 			this->UserHeading->Size = System::Drawing::Size(664, 52);
 			this->UserHeading->TabIndex = 0;
 			this->UserHeading->Text = L"CUSTOMER PORTAL\r\n";
 			this->UserHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// TotalNumSelect
-			// 
-			this->TotalNumSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TotalNumSelect.BackgroundImage")));
-			this->TotalNumSelect->Controls->Add(this->button2);
-			this->TotalNumSelect->Controls->Add(this->label3);
-			this->TotalNumSelect->Controls->Add(this->NoOfOrderTextBox);
-			this->TotalNumSelect->Location = System::Drawing::Point(4, 22);
-			this->TotalNumSelect->Name = L"TotalNumSelect";
-			this->TotalNumSelect->Size = System::Drawing::Size(1210, 576);
-			this->TotalNumSelect->TabIndex = 4;
-			this->TotalNumSelect->Text = L"TotalNumSelect";
-			this->TotalNumSelect->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(680, 344);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(192, 64);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"CLICK HERE TO PROCEED TO FLAVOURS";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
-			// 
-			// label3
-			// 
-			this->label3->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label3->Location = System::Drawing::Point(320, 176);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(200, 48);
-			this->label3->TabIndex = 1;
-			this->label3->Text = L"HOW MANY PIZZAS DO YOU WANT TO ORDER";
-			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// NoOfOrderTextBox
-			// 
-			this->NoOfOrderTextBox->BackColor = System::Drawing::SystemColors::ActiveBorder;
-			this->NoOfOrderTextBox->Location = System::Drawing::Point(528, 176);
-			this->NoOfOrderTextBox->Multiline = true;
-			this->NoOfOrderTextBox->Name = L"NoOfOrderTextBox";
-			this->NoOfOrderTextBox->Size = System::Drawing::Size(208, 48);
-			this->NoOfOrderTextBox->TabIndex = 0;
-			this->NoOfOrderTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// FlavourSelect
 			// 
@@ -627,26 +798,6 @@ namespace breeze {
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
 			// 
-			// SelectCrust
-			// 
-			this->SelectCrust->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SelectCrust.BackgroundImage")));
-			this->SelectCrust->Controls->Add(this->TESTING);
-			this->SelectCrust->Location = System::Drawing::Point(4, 22);
-			this->SelectCrust->Name = L"SelectCrust";
-			this->SelectCrust->Size = System::Drawing::Size(1210, 576);
-			this->SelectCrust->TabIndex = 5;
-			this->SelectCrust->Text = L"CrustSelect";
-			this->SelectCrust->UseVisualStyleBackColor = true;
-			// 
-			// TESTING
-			// 
-			this->TESTING->Location = System::Drawing::Point(536, 136);
-			this->TESTING->Multiline = true;
-			this->TESTING->Name = L"TESTING";
-			this->TESTING->Size = System::Drawing::Size(448, 152);
-			this->TESTING->TabIndex = 0;
-			this->TESTING->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -666,8 +817,7 @@ namespace breeze {
 			this->CrustSelect->ResumeLayout(false);
 			this->CrustSelect->PerformLayout();
 			this->UserLogin->ResumeLayout(false);
-			this->TotalNumSelect->ResumeLayout(false);
-			this->TotalNumSelect->PerformLayout();
+			this->UserLogin->PerformLayout();
 			this->FlavourSelect->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
@@ -676,69 +826,23 @@ namespace breeze {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			this->SelectCrust->ResumeLayout(false);
-			this->SelectCrust->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 
-private: System::Void customer_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = UserLogin;
-}
-private: System::Void customer_DoubleClick(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = UserLogin;
-}
-private: System::Void italian_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = TotalNumSelect;
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	total_no_of_pizzas = Convert::ToInt32(NoOfOrderTextBox->Text);
-	tabControl1->SelectedTab = FlavourSelect;
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	TESTING->Text = System::Convert::ToString(obj1->ReturnBill());
-	tabControl1->SelectedTab = SelectCrust;
-}
-
-private: System::Void VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new veggie_delight;
-	obj1->TakeOrder(ptr);
-}
-private: System::Void TheCheeseCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new The_cheese;
-	obj1->TakeOrder(ptr);
-
-}
-private: System::Void SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new seekh_kebab;
-	obj1->TakeOrder(ptr);
-}
-private: System::Void TikkaCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new tikka;
-	obj1->TakeOrder(ptr);
-}
-private: System::Void FajitaCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new fajita;
-	obj1->TakeOrder(ptr);
-}
-private: System::Void ChilliDelightCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new chilli_delight;
-	obj1->TakeOrder(ptr);
-
-}
-private: System::Void BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	flavour* ptr;
-	ptr = new bbq_buzz;
-	obj1->TakeOrder(ptr);
-}
+private: 
+	System::Void customer_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void customer_DoubleClick(System::Object^ sender, System::EventArgs^ e);
+	System::Void italian_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void button3_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void TheCheeseCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void TikkaCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void FajitaCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void ChilliDelightCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void Login_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

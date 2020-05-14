@@ -6,9 +6,9 @@ using namespace std;
 account::account()
 {
 	saved = 0;
-	username = "";
-	password = "";
-	email = "";
+	strcpy_s(username, "");
+	strcpy_s(password, "");
+	strcpy_s(email, "");
 }
 Order* account::getprevious()
 {
@@ -28,7 +28,7 @@ string account::getusername()
 }
 void account::setusername(string s)
 {
-	username = s;
+	strcpy_s(username, s.c_str());
 }
 string account::getpassword()
 {
@@ -36,7 +36,7 @@ string account::getpassword()
 }
 void account::setpassword(string p)
 {
-	password = p;
+	strcpy_s(username, p.c_str());
 }
 string account::getemail()
 {
@@ -44,7 +44,7 @@ string account::getemail()
 }
 void account::setemail(string e)
 {
-	email = e;
+	strcpy_s(username, e.c_str());
 }
 bool account::import(string user, string pass)
 {

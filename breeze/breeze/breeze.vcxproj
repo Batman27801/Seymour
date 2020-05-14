@@ -138,10 +138,12 @@
     <ClCompile Include="italian.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mashroom.cpp" />
+    <ClCompile Include="MyForms.cpp" />
     <ClCompile Include="Order.cpp" />
     <ClCompile Include="Pastry.cpp" />
     <ClCompile Include="Pepperoni.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="pizza.cpp" />
     <ClCompile Include="Sausage.cpp" />
     <ClCompile Include="security.cpp" />
     <ClCompile Include="seekh_kebab.cpp" />
@@ -186,6 +188,8 @@
     <ClInclude Include="Pastry.h" />
     <ClInclude Include="Pepperoni.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="pizza.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Sausage.h" />
     <ClInclude Include="security.h" />
     <ClInclude Include="seekh_kebab.h" />
