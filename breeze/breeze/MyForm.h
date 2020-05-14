@@ -100,6 +100,33 @@ namespace breeze {
 	private: System::Windows::Forms::Label^ NewAcc;
 	private: System::Windows::Forms::Button^ Login;
 	private: System::Windows::Forms::Label^ incorrect;
+	private: System::Windows::Forms::TabPage^ SignUpPage;
+	private: System::Windows::Forms::TabPage^ UserPage;
+	private: System::Windows::Forms::Label^ SignUPtext;
+	private: System::Windows::Forms::Label^ SignUpHeading;
+	private: System::Windows::Forms::Label^ fnamelabel;
+	private: System::Windows::Forms::TextBox^ FNamebox;
+	private: System::Windows::Forms::TextBox^ Namebox;
+	private: System::Windows::Forms::Label^ namelabel;
+	private: System::Windows::Forms::Label^ agereq;
+
+	private: System::Windows::Forms::TextBox^ agebox;
+	private: System::Windows::Forms::Label^ Agelabel;
+	private: System::Windows::Forms::ComboBox^ genderbox;
+
+	private: System::Windows::Forms::Label^ genderlabel;
+	private: System::Windows::Forms::Label^ contactreq;
+
+	private: System::Windows::Forms::TextBox^ contactbox;
+	private: System::Windows::Forms::Label^ contactlabel;
+private: System::Windows::Forms::Label^ cniclabel;
+private: System::Windows::Forms::Label^ cnicreq;
+private: System::Windows::Forms::TextBox^ cnicbox;
+private: System::Windows::Forms::TextBox^ textBox1;
+private: System::Windows::Forms::Label^ label4;
+
+
+
 
 
 
@@ -198,6 +225,27 @@ namespace breeze {
 			this->GuestHeading = (gcnew System::Windows::Forms::Label());
 			this->usersubheading = (gcnew System::Windows::Forms::Label());
 			this->UserHeading = (gcnew System::Windows::Forms::Label());
+			this->SignUpPage = (gcnew System::Windows::Forms::TabPage());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->cnicreq = (gcnew System::Windows::Forms::Label());
+			this->cnicbox = (gcnew System::Windows::Forms::TextBox());
+			this->cniclabel = (gcnew System::Windows::Forms::Label());
+			this->contactreq = (gcnew System::Windows::Forms::Label());
+			this->contactbox = (gcnew System::Windows::Forms::TextBox());
+			this->contactlabel = (gcnew System::Windows::Forms::Label());
+			this->genderbox = (gcnew System::Windows::Forms::ComboBox());
+			this->genderlabel = (gcnew System::Windows::Forms::Label());
+			this->agereq = (gcnew System::Windows::Forms::Label());
+			this->agebox = (gcnew System::Windows::Forms::TextBox());
+			this->Agelabel = (gcnew System::Windows::Forms::Label());
+			this->fnamelabel = (gcnew System::Windows::Forms::Label());
+			this->FNamebox = (gcnew System::Windows::Forms::TextBox());
+			this->Namebox = (gcnew System::Windows::Forms::TextBox());
+			this->namelabel = (gcnew System::Windows::Forms::Label());
+			this->SignUPtext = (gcnew System::Windows::Forms::Label());
+			this->SignUpHeading = (gcnew System::Windows::Forms::Label());
+			this->UserPage = (gcnew System::Windows::Forms::TabPage());
 			this->FlavourSelect = (gcnew System::Windows::Forms::TabPage());
 			this->BbqBuzzCheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->ChilliDelightCheckbox = (gcnew System::Windows::Forms::CheckBox());
@@ -218,6 +266,7 @@ namespace breeze {
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
 			this->UserLogin->SuspendLayout();
+			this->SignUpPage->SuspendLayout();
 			this->FlavourSelect->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
@@ -233,6 +282,8 @@ namespace breeze {
 			this->tabControl1->Controls->Add(this->MainMenu);
 			this->tabControl1->Controls->Add(this->CrustSelect);
 			this->tabControl1->Controls->Add(this->UserLogin);
+			this->tabControl1->Controls->Add(this->SignUpPage);
+			this->tabControl1->Controls->Add(this->UserPage);
 			this->tabControl1->Controls->Add(this->FlavourSelect);
 			this->tabControl1->Location = System::Drawing::Point(-130, -32);
 			this->tabControl1->Name = L"tabControl1";
@@ -459,6 +510,7 @@ namespace breeze {
 			this->Signup->TabIndex = 14;
 			this->Signup->Text = L"Sign Up!";
 			this->Signup->UseVisualStyleBackColor = true;
+			this->Signup->Click += gcnew System::EventHandler(this, &MyForm::Signup_Click);
 			// 
 			// NewAcc
 			// 
@@ -612,6 +664,261 @@ namespace breeze {
 			this->UserHeading->TabIndex = 0;
 			this->UserHeading->Text = L"CUSTOMER PORTAL\r\n";
 			this->UserHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// SignUpPage
+			// 
+			this->SignUpPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SignUpPage.BackgroundImage")));
+			this->SignUpPage->Controls->Add(this->textBox1);
+			this->SignUpPage->Controls->Add(this->label4);
+			this->SignUpPage->Controls->Add(this->cnicreq);
+			this->SignUpPage->Controls->Add(this->cnicbox);
+			this->SignUpPage->Controls->Add(this->cniclabel);
+			this->SignUpPage->Controls->Add(this->contactreq);
+			this->SignUpPage->Controls->Add(this->contactbox);
+			this->SignUpPage->Controls->Add(this->contactlabel);
+			this->SignUpPage->Controls->Add(this->genderbox);
+			this->SignUpPage->Controls->Add(this->genderlabel);
+			this->SignUpPage->Controls->Add(this->agereq);
+			this->SignUpPage->Controls->Add(this->agebox);
+			this->SignUpPage->Controls->Add(this->Agelabel);
+			this->SignUpPage->Controls->Add(this->fnamelabel);
+			this->SignUpPage->Controls->Add(this->FNamebox);
+			this->SignUpPage->Controls->Add(this->Namebox);
+			this->SignUpPage->Controls->Add(this->namelabel);
+			this->SignUpPage->Controls->Add(this->SignUPtext);
+			this->SignUpPage->Controls->Add(this->SignUpHeading);
+			this->SignUpPage->Location = System::Drawing::Point(4, 22);
+			this->SignUpPage->Name = L"SignUpPage";
+			this->SignUpPage->Size = System::Drawing::Size(1210, 576);
+			this->SignUpPage->TabIndex = 4;
+			this->SignUpPage->Text = L"tabPage1";
+			this->SignUpPage->UseVisualStyleBackColor = true;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->Location = System::Drawing::Point(239, 498);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(258, 61);
+			this->textBox1->TabIndex = 18;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->label4->Location = System::Drawing::Point(149, 499);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(80, 20);
+			this->label4->TabIndex = 17;
+			this->label4->Text = L"Address:";
+			// 
+			// cnicreq
+			// 
+			this->cnicreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cnicreq->ForeColor = System::Drawing::Color::Red;
+			this->cnicreq->Location = System::Drawing::Point(410, 430);
+			this->cnicreq->Name = L"cnicreq";
+			this->cnicreq->Size = System::Drawing::Size(154, 52);
+			this->cnicreq->TabIndex = 16;
+			this->cnicreq->Text = L"Must be valid 13 digit CNIC number!";
+			// 
+			// cnicbox
+			// 
+			this->cnicbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cnicbox->Location = System::Drawing::Point(239, 430);
+			this->cnicbox->Name = L"cnicbox";
+			this->cnicbox->Size = System::Drawing::Size(165, 26);
+			this->cnicbox->TabIndex = 15;
+			// 
+			// cniclabel
+			// 
+			this->cniclabel->AutoSize = true;
+			this->cniclabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->cniclabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->cniclabel->Location = System::Drawing::Point(144, 436);
+			this->cniclabel->Name = L"cniclabel";
+			this->cniclabel->Size = System::Drawing::Size(85, 20);
+			this->cniclabel->TabIndex = 14;
+			this->cniclabel->Text = L"**CNIC #:";
+			// 
+			// contactreq
+			// 
+			this->contactreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->contactreq->ForeColor = System::Drawing::Color::Red;
+			this->contactreq->Location = System::Drawing::Point(394, 364);
+			this->contactreq->Name = L"contactreq";
+			this->contactreq->Size = System::Drawing::Size(154, 52);
+			this->contactreq->TabIndex = 13;
+			this->contactreq->Text = L"Must be valid 11 digit number starting from 0.";
+			// 
+			// contactbox
+			// 
+			this->contactbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->contactbox->Location = System::Drawing::Point(239, 373);
+			this->contactbox->Name = L"contactbox";
+			this->contactbox->Size = System::Drawing::Size(149, 26);
+			this->contactbox->TabIndex = 12;
+			// 
+			// contactlabel
+			// 
+			this->contactlabel->AutoSize = true;
+			this->contactlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->contactlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->contactlabel->Location = System::Drawing::Point(133, 377);
+			this->contactlabel->Name = L"contactlabel";
+			this->contactlabel->Size = System::Drawing::Size(100, 18);
+			this->contactlabel->TabIndex = 11;
+			this->contactlabel->Text = L"**Contact #:";
+			this->contactlabel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// genderbox
+			// 
+			this->genderbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->genderbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->genderbox->FormattingEnabled = true;
+			this->genderbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Male", L"Female", L"Other" });
+			this->genderbox->Location = System::Drawing::Point(239, 318);
+			this->genderbox->Name = L"genderbox";
+			this->genderbox->Size = System::Drawing::Size(121, 28);
+			this->genderbox->TabIndex = 10;
+			// 
+			// genderlabel
+			// 
+			this->genderlabel->AutoSize = true;
+			this->genderlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->genderlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->genderlabel->Location = System::Drawing::Point(145, 321);
+			this->genderlabel->Name = L"genderlabel";
+			this->genderlabel->Size = System::Drawing::Size(74, 20);
+			this->genderlabel->TabIndex = 9;
+			this->genderlabel->Text = L"Gender:";
+			this->genderlabel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// agereq
+			// 
+			this->agereq->AutoSize = true;
+			this->agereq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->agereq->ForeColor = System::Drawing::Color::Red;
+			this->agereq->Location = System::Drawing::Point(348, 262);
+			this->agereq->Name = L"agereq";
+			this->agereq->Size = System::Drawing::Size(149, 16);
+			this->agereq->TabIndex = 8;
+			this->agereq->Text = L"Must be greater than 10!";
+			// 
+			// agebox
+			// 
+			this->agebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->agebox->Location = System::Drawing::Point(239, 256);
+			this->agebox->Name = L"agebox";
+			this->agebox->Size = System::Drawing::Size(100, 26);
+			this->agebox->TabIndex = 7;
+			// 
+			// Agelabel
+			// 
+			this->Agelabel->AutoSize = true;
+			this->Agelabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->Agelabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->Agelabel->Location = System::Drawing::Point(159, 259);
+			this->Agelabel->Name = L"Agelabel";
+			this->Agelabel->Size = System::Drawing::Size(60, 20);
+			this->Agelabel->TabIndex = 6;
+			this->Agelabel->Text = L"**Age:";
+			this->Agelabel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// fnamelabel
+			// 
+			this->fnamelabel->AutoSize = true;
+			this->fnamelabel->Cursor = System::Windows::Forms::Cursors::Default;
+			this->fnamelabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->fnamelabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->fnamelabel->Location = System::Drawing::Point(138, 205);
+			this->fnamelabel->Name = L"fnamelabel";
+			this->fnamelabel->Size = System::Drawing::Size(101, 16);
+			this->fnamelabel->TabIndex = 5;
+			this->fnamelabel->Text = L"Father Name:";
+			// 
+			// FNamebox
+			// 
+			this->FNamebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->FNamebox->Location = System::Drawing::Point(239, 199);
+			this->FNamebox->Name = L"FNamebox";
+			this->FNamebox->Size = System::Drawing::Size(258, 26);
+			this->FNamebox->TabIndex = 4;
+			// 
+			// Namebox
+			// 
+			this->Namebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Namebox->Location = System::Drawing::Point(239, 145);
+			this->Namebox->Name = L"Namebox";
+			this->Namebox->Size = System::Drawing::Size(258, 26);
+			this->Namebox->TabIndex = 3;
+			// 
+			// namelabel
+			// 
+			this->namelabel->AutoSize = true;
+			this->namelabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->namelabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->namelabel->Location = System::Drawing::Point(155, 148);
+			this->namelabel->Name = L"namelabel";
+			this->namelabel->Size = System::Drawing::Size(74, 20);
+			this->namelabel->TabIndex = 2;
+			this->namelabel->Text = L"**Name:";
+			this->namelabel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// SignUPtext
+			// 
+			this->SignUPtext->CausesValidation = false;
+			this->SignUPtext->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->SignUPtext->ForeColor = System::Drawing::Color::White;
+			this->SignUPtext->Location = System::Drawing::Point(138, 87);
+			this->SignUPtext->Name = L"SignUPtext";
+			this->SignUPtext->Size = System::Drawing::Size(664, 35);
+			this->SignUPtext->TabIndex = 1;
+			this->SignUPtext->Text = L"Please Enter the Information required below. Fields marked with ** are cumpolsory"
+				L".";
+			this->SignUPtext->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// SignUpHeading
+			// 
+			this->SignUpHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 21.75F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->SignUpHeading->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->SignUpHeading->Location = System::Drawing::Point(422, 19);
+			this->SignUpHeading->Name = L"SignUpHeading";
+			this->SignUpHeading->Size = System::Drawing::Size(501, 80);
+			this->SignUpHeading->TabIndex = 0;
+			this->SignUpHeading->Text = L"Create a New User Account";
+			this->SignUpHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// UserPage
+			// 
+			this->UserPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"UserPage.BackgroundImage")));
+			this->UserPage->Location = System::Drawing::Point(4, 22);
+			this->UserPage->Name = L"UserPage";
+			this->UserPage->Size = System::Drawing::Size(1210, 576);
+			this->UserPage->TabIndex = 5;
+			this->UserPage->Text = L"tabPage1";
+			this->UserPage->UseVisualStyleBackColor = true;
 			// 
 			// FlavourSelect
 			// 
@@ -821,6 +1128,8 @@ namespace breeze {
 			this->CrustSelect->PerformLayout();
 			this->UserLogin->ResumeLayout(false);
 			this->UserLogin->PerformLayout();
+			this->SignUpPage->ResumeLayout(false);
+			this->SignUpPage->PerformLayout();
 			this->FlavourSelect->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
@@ -836,7 +1145,6 @@ namespace breeze {
 
 private: 
 	System::Void customer_Click(System::Object^ sender, System::EventArgs^ e);
-	System::Void customer_DoubleClick(System::Object^ sender, System::EventArgs^ e);
 	System::Void italian_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void button3_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
@@ -847,5 +1155,7 @@ private:
 	System::Void ChilliDelightCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void Login_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void Signup_Click(System::Object^ sender, System::EventArgs^ e); 
+
 };
 }

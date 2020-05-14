@@ -8,9 +8,9 @@ security::security()
 {
 	contactno = 0;
 	cnic = 0;
-	address = "";
+	strcpy_s(address, "");
 	cod = true;
-	card = "";
+	strcpy_s(card, "");
 	cardno = 0;
 	dayc = 0;
 	monthc = 0;
@@ -35,7 +35,7 @@ long int security::getcnic()
 }
 void security::setaddress(string s)
 {
-	address = encryption(s);
+	strcpy_s(address,(encryption(s)).c_str());
 }
 string security::getaddress()
 {
@@ -51,7 +51,7 @@ bool security::getpaymenttype()
 }
 void security::setcardprovider(string s)
 {
-	card = encryption(s);
+	strcpy_s(card, (encryption(s)).c_str());
 }
 string security::getcardprovider()
 {
@@ -82,7 +82,7 @@ int* security::getexpiry()
 template <typename encrypt>
 encrypt security::encryption(encrypt var)
 {
-	long int temp, temp2 = 0, count;
+	long int temp, temp2 = 0;
 	temp = var;
 	/*for (count = 0; temp != 0; count++)
 	{
@@ -116,10 +116,20 @@ encrypt security::decryption(encrypt var)
 	}
 	return temp2;
 }
+string security::encryption(char* var)
+{
+	string temp = var;
+	return encryption(temp);
+}
+string security::decryption(char* var)
+{
+	string temp = var;
+	return decryption(temp);
+}
 string security::encryption(string var)
 {
 	string temp = var;
-	int i,length = temp.length();
+	int i, length = temp.length();
 	for (i = 0; i < length; i++)
 	{
 		if (i % 2 == 0)
@@ -142,3 +152,4 @@ string security::decryption(string var)
 	}
 	return temp;
 }
+

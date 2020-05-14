@@ -9,9 +9,6 @@ using namespace System::Data;
 using namespace System::Drawing;
 
 void breeze::MyForm::customer_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = FlavourSelect;
-}
-void breeze::MyForm::customer_DoubleClick(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = UserLogin;
 }
 void breeze::MyForm::italian_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -61,3 +58,6 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 		incorrect->Visible = true;
 	}
 }
+ void breeze::MyForm::Signup_Click(System::Object^ sender, System::EventArgs^ e) {
+	 tabControl1->SelectedTab = SignUpPage;
+ }

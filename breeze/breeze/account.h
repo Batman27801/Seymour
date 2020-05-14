@@ -11,6 +11,7 @@ class account : public Person, public security
 	char password[30];
 	char email[30];
 	int saved;
+	bool guest;
 
 public:
 	account();
@@ -23,5 +24,7 @@ public:
 	string getemail();
 	void setemail(string);
 	bool import(string,string);
+	bool getguest();
+	void setguest(bool);
 };
 

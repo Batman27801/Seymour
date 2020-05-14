@@ -6,9 +6,9 @@ class security
 protected:
 	long int contactno;
 	long int cnic;
-	string address;
+	char address[200];
 	bool cod;
-	string card;
+	char card[8];
 	long int cardno;
 	int dayc, monthc, yearc;
 public:
@@ -31,6 +31,8 @@ public:
 	encrypt encryption(encrypt);
 	template <typename encrypt>
 	encrypt decryption(encrypt);
+	string encryption(char*);
+	string decryption(char*);
 	string encryption(string);
 	string decryption(string);
 };

@@ -9,6 +9,7 @@ account::account()
 	strcpy_s(username, "");
 	strcpy_s(password, "");
 	strcpy_s(email, "");
+	guest = false;
 }
 Order* account::getprevious()
 {
@@ -64,4 +65,12 @@ bool account::import(string user, string pass)
 
 	accountsfile.close();
 	return val;
+}
+bool account::getguest()
+{
+	return guest;
+}
+void account::setguest(bool b)
+{
+	guest = b;
 }
