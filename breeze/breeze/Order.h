@@ -1,21 +1,22 @@
 #pragma once
-#include<string>
+#include<string.h>
 #include "crust.h"
 #include "flavours.h"
 #include "Toping.h"
+#include"pizza.h"
 class Order
 {
 private:
     double bill;
     int no_of_orders;
     double small = 200, medium = 400, large = 600;
-    string FLAVOURS[7];
-    string CRUSTS[8];
-    string ADDONS[5];
+    char FLAVOURS[7][230] = { "tikka" ,"fajita","chilli delight", "BBQ buzz", "seekh kebab", "The cheese", "Veggie Delight" };
+        
+    
 public:
     Order();
-    void TakeOrder(flavour *flav);
-    double MiscCal(double AddOn_Price,flavour *ptr);
+    void PlaceOrder(pizza *pizza);
+    //double MiscCal(double AddOn_Price,flavour *ptr);
     double ReturnBill();
 };
 
