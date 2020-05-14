@@ -8,5 +8,7 @@ public:
 	crust* cpoint;
 	flavour* fpoint;
 	Toping* tpoint;
+public:
+	void SaveFlavour(flavour*ptr);
 };
 

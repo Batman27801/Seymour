@@ -21,7 +21,9 @@ namespace breeze {
 		newyork* a1 = new newyork;
 		crust* p;
 		int total_no_of_pizzas;
-		Order* obj1 = new Order;
+		pizza *obj=new pizza;
+		flavour *ptr;
+		Order *order = new Order;
 
 
 	private: System::Windows::Forms::TabPage^ CrustSelect;
@@ -58,9 +60,10 @@ namespace breeze {
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
+	private: System::Windows::Forms::Button^ MoveToCrustSelect;
 
 
-	private: System::Windows::Forms::Button^ button3;
+
 
 
 
@@ -204,7 +207,7 @@ namespace breeze {
 			this->TheCheeseCheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
 			this->VeggieDelightCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->MoveToCrustSelect = (gcnew System::Windows::Forms::Button());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
@@ -621,7 +624,7 @@ namespace breeze {
 			this->FlavourSelect->Controls->Add(this->TheCheeseCheckbox);
 			this->FlavourSelect->Controls->Add(this->pictureBox7);
 			this->FlavourSelect->Controls->Add(this->VeggieDelightCheckBox);
-			this->FlavourSelect->Controls->Add(this->button3);
+			this->FlavourSelect->Controls->Add(this->MoveToCrustSelect);
 			this->FlavourSelect->Controls->Add(this->pictureBox6);
 			this->FlavourSelect->Controls->Add(this->pictureBox5);
 			this->FlavourSelect->Controls->Add(this->pictureBox4);
@@ -730,15 +733,15 @@ namespace breeze {
 			this->VeggieDelightCheckBox->UseVisualStyleBackColor = true;
 			this->VeggieDelightCheckBox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::VeggieDelightCheckBox_CheckedChanged);
 			// 
-			// button3
+			// MoveToCrustSelect
 			// 
-			this->button3->Location = System::Drawing::Point(1024, 504);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(168, 56);
-			this->button3->TabIndex = 14;
-			this->button3->Text = L"GO TO CRUST SELECT MENU";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			this->MoveToCrustSelect->Location = System::Drawing::Point(1024, 504);
+			this->MoveToCrustSelect->Name = L"MoveToCrustSelect";
+			this->MoveToCrustSelect->Size = System::Drawing::Size(168, 56);
+			this->MoveToCrustSelect->TabIndex = 14;
+			this->MoveToCrustSelect->Text = L"GO TO CRUST SELECT MENU";
+			this->MoveToCrustSelect->UseVisualStyleBackColor = true;
+			this->MoveToCrustSelect->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// pictureBox6
 			// 

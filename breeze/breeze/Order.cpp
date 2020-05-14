@@ -1,25 +1,28 @@
 #include "Order.h"
 #include<fstream>
+#include<string.h>
 using namespace std;
 Order::Order()
 {
 	bill = 0;
-	FLAVOURS[0] = "tikka"; FLAVOURS[1] = "fajita"; FLAVOURS[2] = "chilli delight"; FLAVOURS[3] = "BBQ buzz"; FLAVOURS[4] = "seekh kebab"; FLAVOURS[5] = "The cheese"; FLAVOURS[6] = "Veggie Delight";
-	ADDONS[0] = "Beef"; ADDONS[1] = "Chicken";
 }
-void Order::TakeOrder(flavour *flav)
+void Order::PlaceOrder(pizza *pizza)
 {
 	int i;
-	bill = bill+flav->get_price();
+	bill = bill + pizza->fpoint->get_price();
 	fstream obj;
 	obj.open("Reciept.txt", ios::in | ios::out | ios::app);
 	for (i = 0; i < 7; i++)
 	{
-		if (FLAVOURS[i] == flav->get_FlavName())
+		if (strcmp(FLAVOURS[i],pizza->fpoint->get_FlavName())==0)
 		{
-			obj << "Flavour = " << FLAVOURS[i] << " PIRCE = " << flav->get_price() << " \n" << endl;
+			obj << "Flavour = " << FLAVOURS[i] << " PIRCE = " << pizza->fpoint->get_price() << " \n" << endl;
 		}
 	}
+	obj.close();
+	fstream f;
+	f.open("Orders.dat", ios::out | ios::app | ios::binary);
+	f.write(reinterpret_cast<char*>(&*this), sizeof(*this));
 	
 	//obj << "..............................................TOTAL BILL = " << bill << endl;
 
@@ -28,7 +31,7 @@ double Order::ReturnBill()
 {
 	return bill;
 }
-double Order::MiscCal(double AddOn_Price,flavour *ptr)
+/*double Order::MiscCal(double AddOn_Price,flavour *ptr)
 {
 	int i;
 	bill = bill + AddOn_Price;
@@ -43,4 +46,4 @@ double Order::MiscCal(double AddOn_Price,flavour *ptr)
 	}
 	
 	return 0;
-}
+}*/
