@@ -2,3 +2,5 @@ Flavour = BBQ buzz PIRCE = Rs 1100 With Misc = Ranch Sauce PRICE = Rs 60
 Flavour = BBQ buzz PIRCE = Rs 1100 With Misc = BBQ Sauce PRICE = Rs 70
 Flavour = seekh kebab PIRCE = Rs 1400 With Misc = Lamb PRICE = Rs 105
 Flavour = The cheese PIRCE = Rs 1400 With Misc = Mozarella PRICE = Rs 100
+Flavour = BBQ buzz PIRCE = Rs 1100 With Misc = Beef PRICE = Rs 50
+Flavour = BBQ buzz PIRCE = Rs 1100 With Misc = Beef PRICE = Rs 50

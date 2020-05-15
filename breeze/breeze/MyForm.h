@@ -24,6 +24,7 @@ namespace breeze {
 		pizza *Pizza=new pizza;
 		flavour *ptr;
 		Order *order = new Order;
+		account* test = new account;
 
 
 	private: System::Windows::Forms::TabPage^ CrustSelect;
@@ -138,6 +139,37 @@ private: System::Windows::Forms::CheckBox^ SeekhKebabMisc1;
 private: System::Windows::Forms::CheckBox^ TheCheeseMisc3;
 private: System::Windows::Forms::CheckBox^ TheCheeseMisc2;
 private: System::Windows::Forms::CheckBox^ TheCheeseMisc1;
+private: System::Windows::Forms::CheckBox^ codcheckbox;
+private: System::Windows::Forms::CheckBox^ cardcheckbox;
+private: System::Windows::Forms::Label^ paymenttypelabel;
+private: System::Windows::Forms::ComboBox^ cardproviderbox;
+
+private: System::Windows::Forms::Label^ label5;
+private: System::Windows::Forms::TextBox^ cardnobox;
+private: System::Windows::Forms::Label^ cardnolabel;
+private: System::Windows::Forms::Label^ cardnoreq;
+private: System::Windows::Forms::TextBox^ cardexpmonth;
+
+private: System::Windows::Forms::Label^ cardexplabel;
+private: System::Windows::Forms::TextBox^ cardexpyear;
+private: System::Windows::Forms::Label^ yearlabel;
+
+private: System::Windows::Forms::Label^ monthlabel;
+private: System::Windows::Forms::TextBox^ usernamebox2;
+private: System::Windows::Forms::Label^ usernamelabel;
+private: System::Windows::Forms::Label^ Emaillabel;
+private: System::Windows::Forms::Label^ notavailablelabel;
+
+private: System::Windows::Forms::Label^ availablelabel;
+private: System::Windows::Forms::Button^ usernameavailability;
+private: System::Windows::Forms::TextBox^ textBox2;
+private: System::Windows::Forms::Label^ label6;
+private: System::Windows::Forms::Button^ signup2;
+private: System::Windows::Forms::TextBox^ textBox3;
+private: System::Windows::Forms::Label^ passwordlabel;
+
+
+
 
 
 
@@ -240,6 +272,30 @@ private: System::Windows::Forms::CheckBox^ TheCheeseMisc1;
 			this->usersubheading = (gcnew System::Windows::Forms::Label());
 			this->UserHeading = (gcnew System::Windows::Forms::Label());
 			this->SignUpPage = (gcnew System::Windows::Forms::TabPage());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->signup2 = (gcnew System::Windows::Forms::Button());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->passwordlabel = (gcnew System::Windows::Forms::Label());
+			this->notavailablelabel = (gcnew System::Windows::Forms::Label());
+			this->availablelabel = (gcnew System::Windows::Forms::Label());
+			this->usernameavailability = (gcnew System::Windows::Forms::Button());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->Emaillabel = (gcnew System::Windows::Forms::Label());
+			this->usernamebox2 = (gcnew System::Windows::Forms::TextBox());
+			this->usernamelabel = (gcnew System::Windows::Forms::Label());
+			this->yearlabel = (gcnew System::Windows::Forms::Label());
+			this->monthlabel = (gcnew System::Windows::Forms::Label());
+			this->cardexpyear = (gcnew System::Windows::Forms::TextBox());
+			this->cardexpmonth = (gcnew System::Windows::Forms::TextBox());
+			this->cardexplabel = (gcnew System::Windows::Forms::Label());
+			this->cardnoreq = (gcnew System::Windows::Forms::Label());
+			this->cardnobox = (gcnew System::Windows::Forms::TextBox());
+			this->cardnolabel = (gcnew System::Windows::Forms::Label());
+			this->cardproviderbox = (gcnew System::Windows::Forms::ComboBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->codcheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->cardcheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->paymenttypelabel = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->cnicreq = (gcnew System::Windows::Forms::Label());
@@ -351,6 +407,7 @@ private: System::Windows::Forms::CheckBox^ TheCheeseMisc1;
 			this->staff->Text = L"Click Here to Access The Staff Portal\r\n--For Manager\r\n--For Chefs\r\n--For Delivery"
 				L" Boys";
 			this->staff->UseVisualStyleBackColor = false;
+			this->staff->Click += gcnew System::EventHandler(this, &MyForm::staff_Click);
 			// 
 			// customer
 			// 
@@ -474,7 +531,6 @@ private: System::Windows::Forms::CheckBox^ TheCheeseMisc1;
 			this->italian->Text = L"italian";
 			this->italian->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->italian->UseVisualStyleBackColor = true;
-			this->italian->CheckedChanged += gcnew System::EventHandler(this, &MyForm::italian_CheckedChanged);
 			// 
 			// UserLogin
 			// 
@@ -695,6 +751,30 @@ private: System::Windows::Forms::CheckBox^ TheCheeseMisc1;
 			// SignUpPage
 			// 
 			this->SignUpPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SignUpPage.BackgroundImage")));
+			this->SignUpPage->Controls->Add(this->label6);
+			this->SignUpPage->Controls->Add(this->signup2);
+			this->SignUpPage->Controls->Add(this->textBox3);
+			this->SignUpPage->Controls->Add(this->passwordlabel);
+			this->SignUpPage->Controls->Add(this->notavailablelabel);
+			this->SignUpPage->Controls->Add(this->availablelabel);
+			this->SignUpPage->Controls->Add(this->usernameavailability);
+			this->SignUpPage->Controls->Add(this->textBox2);
+			this->SignUpPage->Controls->Add(this->Emaillabel);
+			this->SignUpPage->Controls->Add(this->usernamebox2);
+			this->SignUpPage->Controls->Add(this->usernamelabel);
+			this->SignUpPage->Controls->Add(this->yearlabel);
+			this->SignUpPage->Controls->Add(this->monthlabel);
+			this->SignUpPage->Controls->Add(this->cardexpyear);
+			this->SignUpPage->Controls->Add(this->cardexpmonth);
+			this->SignUpPage->Controls->Add(this->cardexplabel);
+			this->SignUpPage->Controls->Add(this->cardnoreq);
+			this->SignUpPage->Controls->Add(this->cardnobox);
+			this->SignUpPage->Controls->Add(this->cardnolabel);
+			this->SignUpPage->Controls->Add(this->cardproviderbox);
+			this->SignUpPage->Controls->Add(this->label5);
+			this->SignUpPage->Controls->Add(this->codcheckbox);
+			this->SignUpPage->Controls->Add(this->cardcheckbox);
+			this->SignUpPage->Controls->Add(this->paymenttypelabel);
 			this->SignUpPage->Controls->Add(this->textBox1);
 			this->SignUpPage->Controls->Add(this->label4);
 			this->SignUpPage->Controls->Add(this->cnicreq);
@@ -720,6 +800,281 @@ private: System::Windows::Forms::CheckBox^ TheCheeseMisc1;
 			this->SignUpPage->TabIndex = 4;
 			this->SignUpPage->Text = L"tabPage1";
 			this->SignUpPage->UseVisualStyleBackColor = true;
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->label6->Location = System::Drawing::Point(812, 479);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(122, 80);
+			this->label6->TabIndex = 42;
+			this->label6->Text = L"Why Sign Up\?\r\nAmazing Discounts\r\nReward Points\r\nOrder History\r\nEase Of Payment\r\n";
+			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// signup2
+			// 
+			this->signup2->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->signup2->Location = System::Drawing::Point(953, 495);
+			this->signup2->Name = L"signup2";
+			this->signup2->Size = System::Drawing::Size(225, 64);
+			this->signup2->TabIndex = 41;
+			this->signup2->Text = L"Sign Me Up!";
+			this->signup2->UseVisualStyleBackColor = true;
+			this->signup2->Click += gcnew System::EventHandler(this, &MyForm::signup2_Click);
+			// 
+			// textBox3
+			// 
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox3->Location = System::Drawing::Point(867, 430);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(205, 26);
+			this->textBox3->TabIndex = 40;
+			// 
+			// passwordlabel
+			// 
+			this->passwordlabel->AutoSize = true;
+			this->passwordlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
+				| System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->passwordlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->passwordlabel->Location = System::Drawing::Point(729, 430);
+			this->passwordlabel->Name = L"passwordlabel";
+			this->passwordlabel->Size = System::Drawing::Size(122, 24);
+			this->passwordlabel->TabIndex = 39;
+			this->passwordlabel->Text = L"**Password:";
+			// 
+			// notavailablelabel
+			// 
+			this->notavailablelabel->AutoSize = true;
+			this->notavailablelabel->ForeColor = System::Drawing::Color::Red;
+			this->notavailablelabel->Location = System::Drawing::Point(1102, 406);
+			this->notavailablelabel->Name = L"notavailablelabel";
+			this->notavailablelabel->Size = System::Drawing::Size(73, 13);
+			this->notavailablelabel->TabIndex = 38;
+			this->notavailablelabel->Text = L"Not Available!";
+			this->notavailablelabel->Visible = false;
+			// 
+			// availablelabel
+			// 
+			this->availablelabel->AutoSize = true;
+			this->availablelabel->ForeColor = System::Drawing::Color::Lime;
+			this->availablelabel->Location = System::Drawing::Point(1043, 406);
+			this->availablelabel->Name = L"availablelabel";
+			this->availablelabel->Size = System::Drawing::Size(53, 13);
+			this->availablelabel->TabIndex = 37;
+			this->availablelabel->Text = L"Available!";
+			this->availablelabel->Visible = false;
+			// 
+			// usernameavailability
+			// 
+			this->usernameavailability->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->usernameavailability->Location = System::Drawing::Point(1046, 380);
+			this->usernameavailability->Name = L"usernameavailability";
+			this->usernameavailability->Size = System::Drawing::Size(103, 23);
+			this->usernameavailability->TabIndex = 36;
+			this->usernameavailability->Text = L"Check Availibilty";
+			this->usernameavailability->UseVisualStyleBackColor = true;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->Location = System::Drawing::Point(905, 335);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(220, 26);
+			this->textBox2->TabIndex = 35;
+			// 
+			// Emaillabel
+			// 
+			this->Emaillabel->AutoSize = true;
+			this->Emaillabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->Emaillabel->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->Emaillabel->Location = System::Drawing::Point(826, 338);
+			this->Emaillabel->Name = L"Emaillabel";
+			this->Emaillabel->Size = System::Drawing::Size(58, 20);
+			this->Emaillabel->TabIndex = 34;
+			this->Emaillabel->Text = L"Email:";
+			// 
+			// usernamebox2
+			// 
+			this->usernamebox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->usernamebox2->Location = System::Drawing::Point(867, 377);
+			this->usernamebox2->Name = L"usernamebox2";
+			this->usernamebox2->Size = System::Drawing::Size(173, 26);
+			this->usernamebox2->TabIndex = 33;
+			// 
+			// usernamelabel
+			// 
+			this->usernamelabel->AutoSize = true;
+			this->usernamelabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
+				| System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->usernamelabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->usernamelabel->Location = System::Drawing::Point(724, 377);
+			this->usernamelabel->Name = L"usernamelabel";
+			this->usernamelabel->Size = System::Drawing::Size(127, 24);
+			this->usernamelabel->TabIndex = 32;
+			this->usernamelabel->Text = L"**Username:";
+			// 
+			// yearlabel
+			// 
+			this->yearlabel->AutoSize = true;
+			this->yearlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->yearlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->yearlabel->Location = System::Drawing::Point(1025, 295);
+			this->yearlabel->Name = L"yearlabel";
+			this->yearlabel->Size = System::Drawing::Size(35, 15);
+			this->yearlabel->TabIndex = 31;
+			this->yearlabel->Text = L"Year:";
+			// 
+			// monthlabel
+			// 
+			this->monthlabel->AutoSize = true;
+			this->monthlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->monthlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->monthlabel->Location = System::Drawing::Point(902, 295);
+			this->monthlabel->Name = L"monthlabel";
+			this->monthlabel->Size = System::Drawing::Size(45, 15);
+			this->monthlabel->TabIndex = 30;
+			this->monthlabel->Text = L"Month:";
+			// 
+			// cardexpyear
+			// 
+			this->cardexpyear->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cardexpyear->Location = System::Drawing::Point(1066, 289);
+			this->cardexpyear->Name = L"cardexpyear";
+			this->cardexpyear->Size = System::Drawing::Size(100, 26);
+			this->cardexpyear->TabIndex = 29;
+			// 
+			// cardexpmonth
+			// 
+			this->cardexpmonth->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cardexpmonth->Location = System::Drawing::Point(953, 289);
+			this->cardexpmonth->Name = L"cardexpmonth";
+			this->cardexpmonth->Size = System::Drawing::Size(66, 26);
+			this->cardexpmonth->TabIndex = 28;
+			// 
+			// cardexplabel
+			// 
+			this->cardexplabel->AutoSize = true;
+			this->cardexplabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->cardexplabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->cardexplabel->Location = System::Drawing::Point(735, 290);
+			this->cardexplabel->Name = L"cardexplabel";
+			this->cardexplabel->Size = System::Drawing::Size(149, 20);
+			this->cardexplabel->TabIndex = 27;
+			this->cardexplabel->Text = L"Card Expiry Date:";
+			// 
+			// cardnoreq
+			// 
+			this->cardnoreq->AutoSize = true;
+			this->cardnoreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cardnoreq->ForeColor = System::Drawing::Color::Red;
+			this->cardnoreq->Location = System::Drawing::Point(902, 253);
+			this->cardnoreq->Name = L"cardnoreq";
+			this->cardnoreq->Size = System::Drawing::Size(224, 16);
+			this->cardnoreq->TabIndex = 26;
+			this->cardnoreq->Text = L"Must be a valid 16 digit card number!";
+			// 
+			// cardnobox
+			// 
+			this->cardnobox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cardnobox->Location = System::Drawing::Point(905, 224);
+			this->cardnobox->Name = L"cardnobox";
+			this->cardnobox->Size = System::Drawing::Size(220, 26);
+			this->cardnobox->TabIndex = 25;
+			// 
+			// cardnolabel
+			// 
+			this->cardnolabel->AutoSize = true;
+			this->cardnolabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->cardnolabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->cardnolabel->Location = System::Drawing::Point(765, 227);
+			this->cardnolabel->Name = L"cardnolabel";
+			this->cardnolabel->Size = System::Drawing::Size(119, 20);
+			this->cardnolabel->TabIndex = 24;
+			this->cardnolabel->Text = L"Card Number:";
+			// 
+			// cardproviderbox
+			// 
+			this->cardproviderbox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(4) {
+				L"MasterCard", L"Visa",
+					L"UnionPay", L"PayPak"
+			});
+			this->cardproviderbox->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Suggest;
+			this->cardproviderbox->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
+			this->cardproviderbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cardproviderbox->FormattingEnabled = true;
+			this->cardproviderbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"MasterCard", L"Visa", L"UnionPay", L"PayPak" });
+			this->cardproviderbox->Location = System::Drawing::Point(905, 173);
+			this->cardproviderbox->Name = L"cardproviderbox";
+			this->cardproviderbox->Size = System::Drawing::Size(147, 28);
+			this->cardproviderbox->TabIndex = 23;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->label5->Location = System::Drawing::Point(762, 176);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(122, 20);
+			this->label5->TabIndex = 22;
+			this->label5->Text = L"Card Provider:";
+			// 
+			// codcheckbox
+			// 
+			this->codcheckbox->AutoSize = true;
+			this->codcheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->codcheckbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->codcheckbox->Location = System::Drawing::Point(990, 131);
+			this->codcheckbox->Name = L"codcheckbox";
+			this->codcheckbox->Size = System::Drawing::Size(162, 24);
+			this->codcheckbox->TabIndex = 21;
+			this->codcheckbox->Text = L"Cash on Delivery";
+			this->codcheckbox->UseVisualStyleBackColor = true;
+			// 
+			// cardcheckbox
+			// 
+			this->cardcheckbox->AutoSize = true;
+			this->cardcheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cardcheckbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->cardcheckbox->Location = System::Drawing::Point(905, 131);
+			this->cardcheckbox->Name = L"cardcheckbox";
+			this->cardcheckbox->Size = System::Drawing::Size(66, 24);
+			this->cardcheckbox->TabIndex = 20;
+			this->cardcheckbox->Text = L"Card";
+			this->cardcheckbox->UseVisualStyleBackColor = true;
+			// 
+			// paymenttypelabel
+			// 
+			this->paymenttypelabel->AutoSize = true;
+			this->paymenttypelabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->paymenttypelabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->paymenttypelabel->Location = System::Drawing::Point(680, 132);
+			this->paymenttypelabel->Name = L"paymenttypelabel";
+			this->paymenttypelabel->Size = System::Drawing::Size(204, 20);
+			this->paymenttypelabel->TabIndex = 19;
+			this->paymenttypelabel->Text = L"**Default Payment Type:";
 			// 
 			// textBox1
 			// 
@@ -1178,6 +1533,7 @@ private: System::Windows::Forms::CheckBox^ TheCheeseMisc1;
 				L"ves, jalapenos and hot peri sauce. Gluten free.\"\r\nPrice = Rs 1100\r\n";
 			this->ChilliDelightCheckbox->UseVisualStyleBackColor = true;
 			this->ChilliDelightCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::ChilliDelightCheckbox_CheckedChanged);
+			this->ChilliDelightCheckbox->CheckStateChanged += gcnew System::EventHandler(this, &MyForm::ChilliDelightCheckbox_CheckStateChanged);
 			// 
 			// FajitaCheckbox
 			// 
@@ -1356,7 +1712,6 @@ private: System::Windows::Forms::CheckBox^ TheCheeseMisc1;
 
 private: 
 	System::Void customer_Click(System::Object^ sender, System::EventArgs^ e);
-	System::Void italian_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void button3_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void TheCheeseCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
@@ -1367,21 +1722,31 @@ private:
 	System::Void BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void Login_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void Signup_Click(System::Object^ sender, System::EventArgs^ e); 
-
 	System::Void TikkaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-
 	System::Void TikkaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void FajitaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-	
 	System::Void FajitaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-System::Void ChilliDelightMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
- System::Void ChilliDelightMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
- System::Void BBQBuzzMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-	   System::Void BBQBuzzMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
- System::Void SeekhKebabMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e); 
-	   System::Void SeekhKebabMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
- System::Void TheCheeseMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-	   System::Void TheCheeseMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-	   System::Void TheCheeseMisc3_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void ChilliDelightMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void ChilliDelightMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void BBQBuzzMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void BBQBuzzMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void SeekhKebabMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e); 
+	System::Void SeekhKebabMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void TheCheeseMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void TheCheeseMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void TheCheeseMisc3_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	
+private: System::Void ChilliDelightCheckbox_CheckStateChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (ChilliDelightCheckbox->Checked == false)
+	{
+		ChilliDelightMisc1->Visible = false;
+		ChilliDelightMisc2->Visible = false;
+
+	}
+}
+private: System::Void staff_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = FlavourSelect;
+}
+	System::Void signup2_Click(System::Object^ sender, System::EventArgs^ e); 
 };
 }

@@ -12,7 +12,6 @@ security::security()
 	cod = true;
 	strcpy_s(card, "");
 	cardno = 0;
-	dayc = 0;
 	monthc = 0;
 	yearc = 0;
 }
@@ -65,18 +64,16 @@ long int security::getcardno()
 {
 	return decryption(cardno);
 }
-void security::setexpiry(int d, int m, int y)
+void security::setexpiry(int m, int y)
 {
-	dayc = encryption(d);
 	monthc = encryption(m);
 	yearc = encryption(y);
 }
 int* security::getexpiry()
 {
-	static int exp[3];
-	exp[0] = decryption(dayc);
-	exp[1] = decryption(monthc);
-	exp[2] = decryption(yearc);
+	static int exp[2];
+	exp[0] = decryption(monthc);
+	exp[1] = decryption(yearc);
 	return exp;
 }
 template <typename encrypt>

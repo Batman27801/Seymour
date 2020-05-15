@@ -9,10 +9,32 @@ using namespace System::Data;
 using namespace System::Drawing;
 
 void breeze::MyForm::customer_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = FlavourSelect;
+	tabControl1->SelectedTab = UserLogin;
 }
-void breeze::MyForm::italian_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+void breeze::MyForm::Login_Click(System::Object^ sender, System::EventArgs^ e) {
+	string use, pass;
+	use = backtostring(UsernameBox->Text);
+	pass = backtostring(PasswordBox->Text);
+
+	if (!test->import(use, pass))
+	{
+		incorrect->Visible = true;
+	}
 }
+void breeze::MyForm::Signup_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = SignUpPage;
+}
+void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e) {
+	test->setname(backtostring(Namebox->Text));
+	test->setF_Name(backtostring(FNamebox->Text));
+	test->setage(System::Convert::ToInt32(agebox->Text));
+
+}
+
+
+
+
 void breeze::MyForm::button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	order->PlaceOrder(Pizza);
 }
@@ -60,23 +82,9 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 	Pizza->SaveFlavour(ptr);
 	BBQBuzzMisc1->Visible = true;
 	BBQBuzzMisc2->Visible = true;
-
 }
- void breeze::MyForm::Login_Click(System::Object^ sender, System::EventArgs^ e) {
-	account test;
-	string use, pass;
-	use = backtostring(UsernameBox->Text);
-	pass = backtostring(PasswordBox->Text);
 
-	if (!test.import(use, pass))
-	{
-		incorrect->Visible = true;
-	}
-}
- void breeze::MyForm::Signup_Click(System::Object^ sender, System::EventArgs^ e) {
-	 tabControl1->SelectedTab = SignUpPage;
- }
- Void breeze::MyForm:: TikkaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+ Void breeze::MyForm::TikkaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	 tikka *Tikka=new tikka;
 	 Pizza->MiscCal("chicken", Tikka->set_chicken(true));
  }

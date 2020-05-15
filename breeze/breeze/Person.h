@@ -6,17 +6,17 @@ enum Gender { Male = 1, Female = 2 };
 class Person
 {
 protected:
-    string name;
-    string Fath_Name;
+    char name[20];
+    char Fath_Name[20];
     int age;
     Gender gender;
 
 public:
     Person();
     ~Person();
-    void setname(string);
-    void setF_Name(string);
-    void setage(int);
+    bool setname(string);
+    bool setF_Name(string);
+    bool setage(int);
     void setGender(Gender);
     string getname();
     string getF_Name();

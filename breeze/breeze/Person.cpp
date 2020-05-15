@@ -8,70 +8,68 @@ Person::~Person()
     cout << endl;
 }
 
-void Person::setname(string N)
+bool Person::setname(string N)
 {
     string tempN;
     int size, i, n = 0;
     size = N.size();
     for (i = 0; i < size; i++)
     {
-        if (N[i] >= 48 && N[i] <= 57)
+        if ((N[i] >= 65 && N[i] <= 90) || (N[i] >= 97 && N[i] <= 122) || N[i] == 32)
         {
-            n = 1;
+            n = 0;
         }
+        else
+            n++;
     }
     try
     {
         if (n == 0)
         {
-            name = N;
-            return;
+            strcpy_s(name,N.c_str());
+            return true;
         }
         else throw 1;
     }
     catch (...)
     {
-        cout << endl << "Invalid Input";
-        cout << endl << "Re Enter Name: ";
-        fflush(stdin);
-        getline(cin, tempN);
-        setname(tempN);
+        strcpy_s(name, "");
+        return false;
     }
 
 }
 
-void Person::setF_Name(string FN)
+bool Person::setF_Name(string FN)
 {
     string tempFN;
     int size, i, n = 0;
     size = FN.size();
     for (i = 0; i < size; i++)
     {
-        if (FN[i] >= 48 && FN[i] <= 57)
+        if ((FN[i] >= 65 && FN[i] <= 90) || (FN[i] >= 97 && FN[i] <= 122) || FN[i] == 32)
         {
-            n = 1;
+            n = 0;
         }
+        else
+            n++;
     }
     try
     {
         if (n == 0)
         {
-            Fath_Name = FN;
-            return;
+            strcpy_s(Fath_Name, FN.c_str());
+            return true;
         }
         else throw 1;
     }
     catch (...)
     {
-        cout << endl << "Invalid Input";
-        cout << endl << "Re Enter Father Name: ";
-        fflush(stdin);
-        getline(cin, tempFN);
-        setF_Name(tempFN);
+        strcpy_s(Fath_Name, "");
+        return false;
     }
 }
 
-void Person::setage(int a)
+bool Person::setage(int a)
 {
     int tempA;
     int n = a, c = 0;
@@ -85,16 +83,14 @@ void Person::setage(int a)
         if (c == 2)
         {
             age = a;
-            return;
+            return true;
         }
         else throw 1;
     }
     catch (...)
     {
-        cout << endl << "Invalid Age!";
-        cout << endl << "Enter Valid Age: ";
-        cin >> tempA;
-        setage(tempA);
+        age = 10;
+        return false;
     }
 }
 

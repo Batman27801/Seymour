@@ -10,7 +10,7 @@ protected:
 	bool cod;
 	char card[8];
 	long int cardno;
-	int dayc, monthc, yearc;
+	int monthc, yearc;
 public:
 	security();
 	void setcontact(long int);
@@ -25,7 +25,7 @@ public:
 	string getcardprovider();
 	void setcardno(long int);
 	long int getcardno();
-	void setexpiry(int, int, int);
+	void setexpiry(int, int);
 	int* getexpiry();
 	template <typename encrypt>
 	encrypt encryption(encrypt);
