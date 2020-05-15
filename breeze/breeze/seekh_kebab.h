@@ -4,19 +4,19 @@ class seekh_kebab :
 	public flavour
 {
 private:
-    bool chicken;
+    bool lamb;
     bool beef;
     static bool gluten;
     static int count;
 public:
     seekh_kebab();
-    bool get_chicken();
-    void set_chicken(bool B);
+    bool get_lamb();
+    void set_lamb(bool B);
     bool get_beef();
     void set_beef(bool B);
     static bool get_gluten();
     char* get_Addon();
-    void set_meat(char* choice);
+    double set_meat(char choice[30]);
     ~seekh_kebab();
 
 };

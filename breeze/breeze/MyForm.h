@@ -21,7 +21,7 @@ namespace breeze {
 		newyork* a1 = new newyork;
 		crust* p;
 		int total_no_of_pizzas;
-		pizza *obj=new pizza;
+		pizza *Pizza=new pizza;
 		flavour *ptr;
 		Order *order = new Order;
 
@@ -124,6 +124,20 @@ private: System::Windows::Forms::Label^ cnicreq;
 private: System::Windows::Forms::TextBox^ cnicbox;
 private: System::Windows::Forms::TextBox^ textBox1;
 private: System::Windows::Forms::Label^ label4;
+private: System::Windows::Forms::CheckBox^ TikkaMisc2;
+
+private: System::Windows::Forms::CheckBox^ TikkaMisc1;
+private: System::Windows::Forms::CheckBox^ FajitaMisc2;
+private: System::Windows::Forms::CheckBox^ FajitaMisc1;
+private: System::Windows::Forms::CheckBox^ ChilliDelightMisc2;
+private: System::Windows::Forms::CheckBox^ ChilliDelightMisc1;
+private: System::Windows::Forms::CheckBox^ BBQBuzzMisc2;
+private: System::Windows::Forms::CheckBox^ BBQBuzzMisc1;
+private: System::Windows::Forms::CheckBox^ SeekhKebabMisc2;
+private: System::Windows::Forms::CheckBox^ SeekhKebabMisc1;
+private: System::Windows::Forms::CheckBox^ TheCheeseMisc3;
+private: System::Windows::Forms::CheckBox^ TheCheeseMisc2;
+private: System::Windows::Forms::CheckBox^ TheCheeseMisc1;
 
 
 
@@ -247,6 +261,19 @@ private: System::Windows::Forms::Label^ label4;
 			this->SignUpHeading = (gcnew System::Windows::Forms::Label());
 			this->UserPage = (gcnew System::Windows::Forms::TabPage());
 			this->FlavourSelect = (gcnew System::Windows::Forms::TabPage());
+			this->TheCheeseMisc3 = (gcnew System::Windows::Forms::CheckBox());
+			this->TheCheeseMisc2 = (gcnew System::Windows::Forms::CheckBox());
+			this->TheCheeseMisc1 = (gcnew System::Windows::Forms::CheckBox());
+			this->SeekhKebabMisc2 = (gcnew System::Windows::Forms::CheckBox());
+			this->SeekhKebabMisc1 = (gcnew System::Windows::Forms::CheckBox());
+			this->BBQBuzzMisc2 = (gcnew System::Windows::Forms::CheckBox());
+			this->BBQBuzzMisc1 = (gcnew System::Windows::Forms::CheckBox());
+			this->ChilliDelightMisc2 = (gcnew System::Windows::Forms::CheckBox());
+			this->ChilliDelightMisc1 = (gcnew System::Windows::Forms::CheckBox());
+			this->FajitaMisc2 = (gcnew System::Windows::Forms::CheckBox());
+			this->FajitaMisc1 = (gcnew System::Windows::Forms::CheckBox());
+			this->TikkaMisc2 = (gcnew System::Windows::Forms::CheckBox());
+			this->TikkaMisc1 = (gcnew System::Windows::Forms::CheckBox());
 			this->BbqBuzzCheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->ChilliDelightCheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->FajitaCheckbox = (gcnew System::Windows::Forms::CheckBox());
@@ -923,6 +950,19 @@ private: System::Windows::Forms::Label^ label4;
 			// FlavourSelect
 			// 
 			this->FlavourSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FlavourSelect.BackgroundImage")));
+			this->FlavourSelect->Controls->Add(this->TheCheeseMisc3);
+			this->FlavourSelect->Controls->Add(this->TheCheeseMisc2);
+			this->FlavourSelect->Controls->Add(this->TheCheeseMisc1);
+			this->FlavourSelect->Controls->Add(this->SeekhKebabMisc2);
+			this->FlavourSelect->Controls->Add(this->SeekhKebabMisc1);
+			this->FlavourSelect->Controls->Add(this->BBQBuzzMisc2);
+			this->FlavourSelect->Controls->Add(this->BBQBuzzMisc1);
+			this->FlavourSelect->Controls->Add(this->ChilliDelightMisc2);
+			this->FlavourSelect->Controls->Add(this->ChilliDelightMisc1);
+			this->FlavourSelect->Controls->Add(this->FajitaMisc2);
+			this->FlavourSelect->Controls->Add(this->FajitaMisc1);
+			this->FlavourSelect->Controls->Add(this->TikkaMisc2);
+			this->FlavourSelect->Controls->Add(this->TikkaMisc1);
 			this->FlavourSelect->Controls->Add(this->BbqBuzzCheckbox);
 			this->FlavourSelect->Controls->Add(this->ChilliDelightCheckbox);
 			this->FlavourSelect->Controls->Add(this->FajitaCheckbox);
@@ -944,6 +984,176 @@ private: System::Windows::Forms::Label^ label4;
 			this->FlavourSelect->TabIndex = 3;
 			this->FlavourSelect->Text = L"FlavourSelect";
 			this->FlavourSelect->UseVisualStyleBackColor = true;
+			// 
+			// TheCheeseMisc3
+			// 
+			this->TheCheeseMisc3->AutoSize = true;
+			this->TheCheeseMisc3->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->TheCheeseMisc3->Location = System::Drawing::Point(664, 472);
+			this->TheCheeseMisc3->Name = L"TheCheeseMisc3";
+			this->TheCheeseMisc3->Size = System::Drawing::Size(100, 17);
+			this->TheCheeseMisc3->TabIndex = 38;
+			this->TheCheeseMisc3->Text = L"Cheddar Rs=70";
+			this->TheCheeseMisc3->UseVisualStyleBackColor = true;
+			this->TheCheeseMisc3->Visible = false;
+			this->TheCheeseMisc3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TheCheeseMisc3_CheckedChanged);
+			// 
+			// TheCheeseMisc2
+			// 
+			this->TheCheeseMisc2->AutoSize = true;
+			this->TheCheeseMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->TheCheeseMisc2->Location = System::Drawing::Point(560, 472);
+			this->TheCheeseMisc2->Name = L"TheCheeseMisc2";
+			this->TheCheeseMisc2->Size = System::Drawing::Size(98, 17);
+			this->TheCheeseMisc2->TabIndex = 37;
+			this->TheCheeseMisc2->Text = L"Gouda Rs=100";
+			this->TheCheeseMisc2->UseVisualStyleBackColor = true;
+			this->TheCheeseMisc2->Visible = false;
+			this->TheCheeseMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TheCheeseMisc2_CheckedChanged);
+			// 
+			// TheCheeseMisc1
+			// 
+			this->TheCheeseMisc1->AutoSize = true;
+			this->TheCheeseMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->TheCheeseMisc1->Location = System::Drawing::Point(448, 472);
+			this->TheCheeseMisc1->Name = L"TheCheeseMisc1";
+			this->TheCheeseMisc1->Size = System::Drawing::Size(105, 17);
+			this->TheCheeseMisc1->TabIndex = 36;
+			this->TheCheeseMisc1->Text = L"Mozarella Rs=65";
+			this->TheCheeseMisc1->UseVisualStyleBackColor = true;
+			this->TheCheeseMisc1->Visible = false;
+			this->TheCheeseMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TheCheeseMisc1_CheckedChanged);
+			// 
+			// SeekhKebabMisc2
+			// 
+			this->SeekhKebabMisc2->AutoSize = true;
+			this->SeekhKebabMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->SeekhKebabMisc2->Location = System::Drawing::Point(264, 504);
+			this->SeekhKebabMisc2->Name = L"SeekhKebabMisc2";
+			this->SeekhKebabMisc2->Size = System::Drawing::Size(82, 17);
+			this->SeekhKebabMisc2->TabIndex = 35;
+			this->SeekhKebabMisc2->Text = L"Beef Rs=90";
+			this->SeekhKebabMisc2->UseVisualStyleBackColor = true;
+			this->SeekhKebabMisc2->Visible = false;
+			this->SeekhKebabMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::SeekhKebabMisc2_CheckedChanged);
+			// 
+			// SeekhKebabMisc1
+			// 
+			this->SeekhKebabMisc1->AutoSize = true;
+			this->SeekhKebabMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->SeekhKebabMisc1->Location = System::Drawing::Point(160, 504);
+			this->SeekhKebabMisc1->Name = L"SeekhKebabMisc1";
+			this->SeekhKebabMisc1->Size = System::Drawing::Size(92, 17);
+			this->SeekhKebabMisc1->TabIndex = 34;
+			this->SeekhKebabMisc1->Text = L"Lamb Rs=105";
+			this->SeekhKebabMisc1->UseVisualStyleBackColor = true;
+			this->SeekhKebabMisc1->Visible = false;
+			this->SeekhKebabMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::SeekhKebabMisc1_CheckedChanged);
+			// 
+			// BBQBuzzMisc2
+			// 
+			this->BBQBuzzMisc2->AutoSize = true;
+			this->BBQBuzzMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->BBQBuzzMisc2->Location = System::Drawing::Point(1072, 232);
+			this->BBQBuzzMisc2->Name = L"BBQBuzzMisc2";
+			this->BBQBuzzMisc2->Size = System::Drawing::Size(126, 17);
+			this->BBQBuzzMisc2->TabIndex = 33;
+			this->BBQBuzzMisc2->Text = L"Ranch Sauce Rs=60";
+			this->BBQBuzzMisc2->UseVisualStyleBackColor = true;
+			this->BBQBuzzMisc2->Visible = false;
+			this->BBQBuzzMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::BBQBuzzMisc2_CheckedChanged);
+			// 
+			// BBQBuzzMisc1
+			// 
+			this->BBQBuzzMisc1->AutoSize = true;
+			this->BBQBuzzMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->BBQBuzzMisc1->Location = System::Drawing::Point(960, 232);
+			this->BBQBuzzMisc1->Name = L"BBQBuzzMisc1";
+			this->BBQBuzzMisc1->Size = System::Drawing::Size(114, 17);
+			this->BBQBuzzMisc1->TabIndex = 32;
+			this->BBQBuzzMisc1->Text = L"BBQ sauce Rs=70";
+			this->BBQBuzzMisc1->UseVisualStyleBackColor = true;
+			this->BBQBuzzMisc1->Visible = false;
+			this->BBQBuzzMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::BBQBuzzMisc1_CheckedChanged);
+			// 
+			// ChilliDelightMisc2
+			// 
+			this->ChilliDelightMisc2->AutoSize = true;
+			this->ChilliDelightMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->ChilliDelightMisc2->Location = System::Drawing::Point(784, 232);
+			this->ChilliDelightMisc2->Name = L"ChilliDelightMisc2";
+			this->ChilliDelightMisc2->Size = System::Drawing::Size(113, 17);
+			this->ChilliDelightMisc2->TabIndex = 31;
+			this->ChilliDelightMisc2->Text = L"Green Chilli Rs=80";
+			this->ChilliDelightMisc2->UseVisualStyleBackColor = true;
+			this->ChilliDelightMisc2->Visible = false;
+			this->ChilliDelightMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::ChilliDelightMisc2_CheckedChanged);
+			// 
+			// ChilliDelightMisc1
+			// 
+			this->ChilliDelightMisc1->AutoSize = true;
+			this->ChilliDelightMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->ChilliDelightMisc1->Location = System::Drawing::Point(672, 232);
+			this->ChilliDelightMisc1->Name = L"ChilliDelightMisc1";
+			this->ChilliDelightMisc1->Size = System::Drawing::Size(107, 17);
+			this->ChilliDelightMisc1->TabIndex = 30;
+			this->ChilliDelightMisc1->Text = L"Red Chilli  Rs=40";
+			this->ChilliDelightMisc1->UseVisualStyleBackColor = true;
+			this->ChilliDelightMisc1->Visible = false;
+			this->ChilliDelightMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::ChilliDelightMisc1_CheckedChanged);
+			// 
+			// FajitaMisc2
+			// 
+			this->FajitaMisc2->AutoSize = true;
+			this->FajitaMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->FajitaMisc2->Location = System::Drawing::Point(528, 224);
+			this->FajitaMisc2->Name = L"FajitaMisc2";
+			this->FajitaMisc2->Size = System::Drawing::Size(138, 17);
+			this->FajitaMisc2->TabIndex = 29;
+			this->FajitaMisc2->Text = L"Traditional Style = Rs55";
+			this->FajitaMisc2->UseVisualStyleBackColor = true;
+			this->FajitaMisc2->Visible = false;
+			this->FajitaMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::FajitaMisc2_CheckedChanged);
+			// 
+			// FajitaMisc1
+			// 
+			this->FajitaMisc1->AutoSize = true;
+			this->FajitaMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->FajitaMisc1->Location = System::Drawing::Point(400, 224);
+			this->FajitaMisc1->Name = L"FajitaMisc1";
+			this->FajitaMisc1->Size = System::Drawing::Size(126, 17);
+			this->FajitaMisc1->TabIndex = 28;
+			this->FajitaMisc1->Text = L"Mexican Style Rs=75";
+			this->FajitaMisc1->UseVisualStyleBackColor = true;
+			this->FajitaMisc1->Visible = false;
+			this->FajitaMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::FajitaMisc1_CheckedChanged);
+			// 
+			// TikkaMisc2
+			// 
+			this->TikkaMisc2->AutoSize = true;
+			this->TikkaMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->TikkaMisc2->Location = System::Drawing::Point(264, 216);
+			this->TikkaMisc2->Name = L"TikkaMisc2";
+			this->TikkaMisc2->Size = System::Drawing::Size(82, 17);
+			this->TikkaMisc2->TabIndex = 27;
+			this->TikkaMisc2->Text = L"Beef Rs=50";
+			this->TikkaMisc2->UseVisualStyleBackColor = true;
+			this->TikkaMisc2->Visible = false;
+			this->TikkaMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TikkaMisc2_CheckedChanged);
+			// 
+			// TikkaMisc1
+			// 
+			this->TikkaMisc1->AutoSize = true;
+			this->TikkaMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->TikkaMisc1->Location = System::Drawing::Point(160, 216);
+			this->TikkaMisc1->Name = L"TikkaMisc1";
+			this->TikkaMisc1->Size = System::Drawing::Size(99, 17);
+			this->TikkaMisc1->TabIndex = 26;
+			this->TikkaMisc1->Text = L"Chicken Rs=30";
+			this->TikkaMisc1->UseVisualStyleBackColor = true;
+			this->TikkaMisc1->UseWaitCursor = true;
+			this->TikkaMisc1->Visible = false;
+			this->TikkaMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TikkaMisc1_CheckedChanged);
 			// 
 			// BbqBuzzCheckbox
 			// 
@@ -1131,6 +1341,7 @@ private: System::Windows::Forms::Label^ label4;
 			this->SignUpPage->ResumeLayout(false);
 			this->SignUpPage->PerformLayout();
 			this->FlavourSelect->ResumeLayout(false);
+			this->FlavourSelect->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
@@ -1157,5 +1368,20 @@ private:
 	System::Void Login_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void Signup_Click(System::Object^ sender, System::EventArgs^ e); 
 
+	System::Void TikkaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+
+	System::Void TikkaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void FajitaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	
+	System::Void FajitaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+System::Void ChilliDelightMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+ System::Void ChilliDelightMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+ System::Void BBQBuzzMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	   System::Void BBQBuzzMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+ System::Void SeekhKebabMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e); 
+	   System::Void SeekhKebabMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+ System::Void TheCheeseMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	   System::Void TheCheeseMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	   System::Void TheCheeseMisc3_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 };
 }

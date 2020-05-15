@@ -19,28 +19,32 @@ bool chilli_delight::get_gluten()
 {
     return gluten;
 }
-void chilli_delight::get_chilli(char* choice)
+double chilli_delight::set_chilli(char* choice)
 {
+   
+   
+    char CHOICE[30];
+    strcpy_s(CHOICE, choice);
     int i;
     //make sure every character in the user input is uppercase
-    for (i = 0; i <= strlen(choice); i++)
+    for (i = 0; i <= 30; i++)
     {
-        if (choice[i] >= 'a' && choice[i] <= 'z')
+        if (CHOICE[i] >= 'a' && CHOICE[i] <= 'z')
         {
-            choice[i] = choice[i] - 32;
+            CHOICE[i] = CHOICE[i] - 32;
         }
     }
-    if (choice = "RED")
+    if (strcmp(CHOICE,"RED")==0)
     {
         red = true;
         green = false;
-        price = price + 75;
+        return 40;
     }
-    else if (choice = "GREEN")
+    else if (strcmp(CHOICE, "GREEN") == 0)
     {
         green = true;
         red = false;
-        price = price + 65;
+        return 80;
     }
     else {
         std::cout << "please enter the correct info" << std::endl;

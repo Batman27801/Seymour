@@ -24,49 +24,51 @@ bool seekh_kebab::get_beef()
 {
     return beef;
 }
-bool seekh_kebab::get_chicken()
+bool seekh_kebab::get_lamb()
 {
-    return chicken;
+    return lamb;
 }
 void seekh_kebab::set_beef(bool B)
 {
     beef = B;
 }
-void seekh_kebab::set_chicken(bool B)
+void seekh_kebab::set_lamb(bool B)
 {
-    chicken = B;
+    lamb = B;
 }
 char* seekh_kebab::get_Addon()
 {
-    if (chicken == true)
+    if (lamb == true)
     {
-        return "Chicken";
+        return "Lamb";
     }
     else if (beef == true)
     {
         return "Beef";
     }
 }
-void seekh_kebab::set_meat(char* choice)
+double seekh_kebab::set_meat(char choice[30])
 {
+    char CHOICE[30];
+    strcpy_s(CHOICE, choice);
     int i;
     //make sure every character in the user input is uppercase
-    for (i = 0; i <= strlen(choice); i++)
+    for (i = 0; i <= 30; i++)
     {
-        if (choice[i] >= 'a' && choice[i] <= 'z')
+        if (CHOICE[i] >= 'a' && CHOICE[i] <= 'z')
         {
-            choice[i] = choice[i] - 32;
+            CHOICE[i] = CHOICE[i] - 32;
         }
     }
-    if (choice == "CHICKEN")
+    if (strcmp(CHOICE,"LAMB")==0)
     {
-        chicken = true;
-        price += 65;
+        lamb = true;
+        return 105;
     }
-    else if (choice = "BEEF")
+    else if (strcmp(CHOICE, "BEEF") == 0)
     {
         beef = true;
-        price += 88;
+        return 90;
     }
     else
     {

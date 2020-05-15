@@ -10,7 +10,7 @@ private:
     static int count;
 public:
     chilli_delight();
-     void get_chilli(char *choice);
+     double set_chilli(char *choice);
     static bool get_gluten();
     char* get_Addon();
     ~chilli_delight();

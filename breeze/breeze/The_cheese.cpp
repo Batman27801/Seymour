@@ -11,31 +11,33 @@ The_cheese::The_cheese()
     name = new char[230];
     name = "The cheese";
 }
-void The_cheese::set_cheese(char* choice)
+double The_cheese::set_cheese(char choice[30])
 {
+    char CHOICE[30];
+    strcpy_s(CHOICE, choice);
     int i;
     //make sure every character in the user input is uppercase
-    for (i = 0; i <= strlen(choice); i++)
+    for (i = 0; i <= 30; i++)
     {
-        if (choice[i] >= 'a' && choice[i] <= 'z')
+        if (CHOICE[i] >= 'a' && CHOICE[i] <= 'z')
         {
-            choice[i] = choice[i] - 32;
+            CHOICE[i] = CHOICE[i] - 32;
         }
     }
     if (choice == "MOZARELLA")
     {
         mozarella = true;
-        price += 65;
+        return 65;
     }
     else if (choice = "GOUDA")
     {
         gouda = true;
-        price += 88;
+        return 100;
     }
     else if (choice == "CHEDDAR")
     {
         cheddar = true;
-        price += 70;
+        return 70;
     }
     else
     {

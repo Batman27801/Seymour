@@ -9,14 +9,14 @@ Order::Order()
 void Order::PlaceOrder(pizza *pizza)
 {
 	int i;
-	bill = bill + pizza->fpoint->get_price();
+	bill = bill + pizza->fpoint->get_price()+pizza->FlavourMiscPrice;
 	fstream obj;
 	obj.open("Reciept.txt", ios::in | ios::out | ios::app);
 	for (i = 0; i < 7; i++)
 	{
 		if (strcmp(FLAVOURS[i],pizza->fpoint->get_FlavName())==0)
 		{
-			obj << "Flavour = " << FLAVOURS[i] << " PIRCE = " << pizza->fpoint->get_price() << " \n" << endl;
+			obj << "Flavour = " << FLAVOURS[i] << " PIRCE = Rs " << pizza->fpoint->get_price() << " With Misc = " <<pizza->FlavourMisc << " PRICE = Rs "<<pizza->FlavourMiscPrice<<endl;
 		}
 	}
 	obj.close();
