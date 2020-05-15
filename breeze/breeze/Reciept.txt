@@ -4,3 +4,4 @@ Flavour = seekh kebab PIRCE = Rs 1400 With Misc = Lamb PRICE = Rs 105
 Flavour = The cheese PIRCE = Rs 1400 With Misc = Mozarella PRICE = Rs 100
 Flavour = BBQ buzz PIRCE = Rs 1100 With Misc = Beef PRICE = Rs 50
 Flavour = BBQ buzz PIRCE = Rs 1100 With Misc = Beef PRICE = Rs 50
+Flavour = Veggie Delight PIRCE = Rs 1000 With Misc = Lamb PRICE = Rs 105
