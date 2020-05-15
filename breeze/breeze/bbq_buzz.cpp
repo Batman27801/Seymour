@@ -12,24 +12,28 @@ bbq_buzz::bbq_buzz()
     name = "BBQ buzz";
     count++;
 }
-void bbq_buzz::set_sauce(char* choice)
+double bbq_buzz::set_sauce(char* choice)
 {
+
+    char CHOICE[30];
+    strcpy_s(CHOICE, choice);
     int i;
     //make sure every character in the user input is uppercase
-    for (i = 0; i <= strlen(choice); i++)
+    for (i = 0; i <= 30; i++)
     {
-        if (choice[i] >= 'a' && choice[i] <= 'z')
+        if (CHOICE[i] >= 'a' && CHOICE[i] <= 'z')
         {
-            choice[i] = choice[i] - 32;
+            CHOICE[i] = CHOICE[i] - 32;
         }
     }
-    if (choice == "BBQ")
+
+    if (strcmp(CHOICE,"BBQ SAUCE")==0)
     {
-        price += 95;
+        return 70;
     }
-    else if (choice == "RANCH")
+    else if (strcmp(CHOICE, "RANCH SAUCE") == 0)
     {
-        price += 105;
+        return 60;
     }
     else {
         std::cout << "Please Enter the correct choice" << std::endl;

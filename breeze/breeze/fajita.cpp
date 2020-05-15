@@ -19,31 +19,39 @@ bool fajita::get_gluten()
 {
     return gluten;
 }
-double fajita::set_meat(char *choice)
+double fajita::set_meat(char choice[30])
 {
+    char CHOICE[30];
+    strcpy_s(CHOICE, choice);
     int i;
     //make sure every character in the user input is uppercase
-    for (i = 0; i <= strlen(choice); i++)
+    for (i = 0; i <= 30; i++)
     {
-        if (choice[i] >= 'a' && choice[i] <= 'z')
+        if (CHOICE[i] >= 'a' && CHOICE[i] <= 'z')
         {
-            choice[i] = choice[i] - 32;
+            CHOICE[i] = CHOICE[i] - 32;
         }
     }
-    if (choice == "BEEF")
+    if (strcmp(CHOICE,"MEXICAN STYLE")==0)
     {
+        chicken = false;
         beef = true;
-        price = price + 75;
+        avocados = true;
+        salsa_sauce = true;
+        return 75;
     }
-    else if (choice == "CHICKEN")
+    else if (strcmp(CHOICE, "TRADITIONAL STYLE") == 0)
     {
+        beef = false;
+        avocados = false;
+        salsa_sauce = false;
         chicken = true;
-        price = price + 55;
+        return 55;
     }
     else {
         std::cout << "Please enter the correct choices" << std::endl;
     }
-    return 0;
+  
 }
 fajita::~fajita()
 {

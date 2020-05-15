@@ -12,7 +12,7 @@ private:
     static int count;
 public:
     The_cheese();
-    void set_cheese(char* choice);
+    double set_cheese(char choice[30]);
     void set_mozarella(bool B);
     void set_cheddar(bool B);
     void set_gouda(bool B);

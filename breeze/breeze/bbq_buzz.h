@@ -11,7 +11,7 @@ private:
     static int count;
 public:
     bbq_buzz();
-    void set_sauce(char* choice);
+    double set_sauce(char* choice);
     void set_bbq(bool B);
     void set_ranch(bool B);
     void set_chicken(bool B);
