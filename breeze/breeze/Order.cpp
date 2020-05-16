@@ -16,13 +16,12 @@ void Order::PlaceOrder(pizza *pizza)
 	{
 		if (strcmp(FLAVOURS[i],pizza->fpoint->get_FlavName())==0)
 		{
+			strcpy_s(SelectedFlavour, pizza->fpoint->get_FlavName());
+			strcpy_s(SelectedFlavourMisc, pizza->FlavourMisc);
 			obj << "Flavour = " << FLAVOURS[i] << " PIRCE = Rs " << pizza->fpoint->get_price() << " With Misc = " <<pizza->FlavourMisc << " PRICE = Rs "<<pizza->FlavourMiscPrice<<endl;
 		}
 	}
 	obj.close();
-	fstream f;
-	f.open("Orders.dat", ios::out | ios::app | ios::binary);
-	f.write(reinterpret_cast<char*>(&*this), sizeof(*this));
 	
 	//obj << "..............................................TOTAL BILL = " << bill << endl;
 
@@ -30,6 +29,12 @@ void Order::PlaceOrder(pizza *pizza)
 double Order::ReturnBill()
 {
 	return bill;
+}
+void Order::FileOrder()
+{
+	fstream f;
+	f.open("Orders.dat", ios::out | ios::app | ios::binary);
+	f.write(reinterpret_cast<char*>(&*this), sizeof(*this));
 }
 /*double Order::MiscCal(double AddOn_Price,flavour *ptr)
 {
