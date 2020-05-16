@@ -12,6 +12,9 @@ private:
     char FLAVOURS[7][30] = { "tikka" ,"fajita","chilli delight", "BBQ buzz", "seekh kebab", "The cheese", "Veggie Delight" };
     char SelectedFlavour[30];
     char SelectedFlavourMisc[30];
+    char CRUSTS[8][30];
+    char SelectedCrust[30];
+    char SelectedCrustMisc[30];
     
 public:
     Order();

@@ -197,6 +197,7 @@ void breeze::MyForm::VeggieDelightCheckBox_CheckedChanged(System::Object^ sender
 		BBQBuzzMisc2->Visible = false;
 	}
 	
+	
 }
 void breeze::MyForm::TheCheeseCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TheCheeseCheckbox->Checked == true)
@@ -222,6 +223,12 @@ void breeze::MyForm::TheCheeseCheckbox_CheckedChanged(System::Object^ sender, Sy
 		SeekhKebabMisc2->Visible = false;
 		BBQBuzzMisc1->Visible = false;
 		BBQBuzzMisc2->Visible = false;
+	}
+	else if (TheCheeseCheckbox->Checked == false)
+	{
+		TheCheeseMisc1->Visible = false;
+		TheCheeseMisc2->Visible = false;
+		TheCheeseMisc3->Visible = false;
 	}
 }
 void breeze::MyForm::SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -249,6 +256,11 @@ void breeze::MyForm::SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, S
 		BBQBuzzMisc1->Visible = false;
 		BBQBuzzMisc2->Visible = false;
 	}
+	else if (SeekhKebabCheckbox->Checked == false)
+	{
+		SeekhKebabMisc1->Visible=false;
+		SeekhKebabMisc2->Visible = false;
+	}
 }
 void breeze::MyForm::TikkaCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TikkaCheckbox->Checked == true)
@@ -275,6 +287,11 @@ void breeze::MyForm::TikkaCheckbox_CheckedChanged(System::Object^ sender, System
 		BBQBuzzMisc1->Visible = false;
 		BBQBuzzMisc2->Visible = false;
 	}
+	else if (TikkaCheckbox->Checked == false)
+	{
+		TikkaMisc1->Visible = false;
+		TikkaMisc2->Visible = false;
+	}
 }
 void breeze::MyForm::FajitaCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (FajitaCheckbox->Checked == true)
@@ -300,6 +317,11 @@ void breeze::MyForm::FajitaCheckbox_CheckedChanged(System::Object^ sender, Syste
 		SeekhKebabMisc2->Visible = false;
 		BBQBuzzMisc1->Visible = false;
 		BBQBuzzMisc2->Visible = false;
+	}
+	else if (FajitaCheckbox->Checked == false)
+	{
+		FajitaMisc1->Visible = false;
+		FajitaMisc2->Visible = false;
 	}
 }
 void breeze::MyForm::ChilliDelightCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -328,6 +350,11 @@ void breeze::MyForm::ChilliDelightCheckbox_CheckedChanged(System::Object^ sender
 		BBQBuzzMisc2->Visible = false;
 
 	}	
+	else if (ChilliDelightCheckbox->Checked == false)
+	{
+		ChilliDelightMisc1->Visible =false;
+		ChilliDelightMisc2->Visible = false;
+	}
 }
 void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (BbqBuzzCheckbox->Checked == true)
@@ -355,6 +382,11 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 		BBQBuzzMisc2->Visible = true;
 
 	}
+	else if (BbqBuzzCheckbox->Checked == false)
+	{
+		BBQBuzzMisc1->Visible =false;
+		BBQBuzzMisc2->Visible =false;
+	}
 }
 
  Void breeze::MyForm::TikkaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -363,7 +395,20 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 		 tikka* Tikka = new tikka;
 		 Tikka->set_chicken(true);
 		 Pizza->fpoint = Tikka;
-		 Pizza->FlavourMiscCal("chicken");
+		 Pizza->FlavourMiscSet("chicken");
+		 TheCheeseMisc3->Checked = false;
+		 TheCheeseMisc1->Checked = false;
+		 TheCheeseMisc2->Checked = false;
+		 SeekhKebabMisc2->Checked = false;
+		 ChilliDelightMisc2->Checked = false;
+		 FajitaMisc2->Checked = false;
+		 FajitaMisc1->Checked = false;
+		 TikkaMisc2->Checked = false;
+		 BBQBuzzMisc1->Checked = false;
+		 SeekhKebabMisc1->Checked = false;
+		 BBQBuzzMisc2->Checked = false;
+		 ChilliDelightMisc1->Checked = false;
+
 	 }
  }
 Void breeze::MyForm:: TikkaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -372,7 +417,20 @@ Void breeze::MyForm:: TikkaMisc2_CheckedChanged(System::Object^ sender, System::
 		tikka* Tikka = new tikka;
 		Tikka->set_beef(true);
 		Pizza->fpoint = Tikka;
-		Pizza->FlavourMiscCal("beef");
+		Pizza->FlavourMiscSet("beef");
+		TheCheeseMisc3->Checked = false;
+		TheCheeseMisc1->Checked = false;
+		TheCheeseMisc2->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		ChilliDelightMisc2->Checked = false;
+		FajitaMisc2->Checked = false;
+		FajitaMisc1->Checked = false;
+		TikkaMisc1->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		SeekhKebabMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		ChilliDelightMisc1->Checked = false;
+
 
 	}
 }
@@ -382,7 +440,20 @@ Void breeze::MyForm::FajitaMisc1_CheckedChanged(System::Object^ sender, System::
 		fajita* Fajita = new fajita;
 		Fajita->set_meat("mexican style");
 		Pizza->fpoint = Fajita;
-		Pizza->FlavourMiscCal("Mexican Style");
+		Pizza->FlavourMiscSet("Mexican Style");
+		TheCheeseMisc3->Checked = false;
+		TheCheeseMisc1->Checked = false;
+		TheCheeseMisc2->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		ChilliDelightMisc2->Checked = false;
+		FajitaMisc2->Checked = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		SeekhKebabMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		ChilliDelightMisc1->Checked = false;
+
 	}
 }
 Void breeze::MyForm::FajitaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -391,7 +462,20 @@ Void breeze::MyForm::FajitaMisc2_CheckedChanged(System::Object^ sender, System::
 		fajita* Fajita = new fajita;
 		Fajita->set_meat("traditional style");
 		Pizza->fpoint = Fajita;
-		Pizza->FlavourMiscCal("Traditional Style");
+		Pizza->FlavourMiscSet("Traditional Style");
+		TheCheeseMisc3->Checked = false;
+		TheCheeseMisc1->Checked = false;
+		TheCheeseMisc2->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		ChilliDelightMisc2->Checked = false;
+		FajitaMisc1->Checked = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		SeekhKebabMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		ChilliDelightMisc1->Checked = false;
+
 	}
 }
 Void breeze::MyForm::ChilliDelightMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -400,7 +484,20 @@ Void breeze::MyForm::ChilliDelightMisc1_CheckedChanged(System::Object^ sender, S
 		chilli_delight* ChilliDelight = new chilli_delight;
 		ChilliDelight->set_chilli("red");
 		Pizza->fpoint = ChilliDelight;
-		Pizza->FlavourMiscCal("Red Chilli");
+		Pizza->FlavourMiscSet("Red Chilli");
+		TheCheeseMisc3->Checked = false;
+		TheCheeseMisc1->Checked = false;
+		TheCheeseMisc2->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		FajitaMisc1->Checked = false;
+		FajitaMisc2->Checked = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		SeekhKebabMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		ChilliDelightMisc2->Checked = false;
+
 	}
 }
 Void breeze::MyForm::ChilliDelightMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -409,7 +506,20 @@ Void breeze::MyForm::ChilliDelightMisc2_CheckedChanged(System::Object^ sender, S
 		chilli_delight* ChilliDelight = new chilli_delight;
 		ChilliDelight->set_chilli("green");
 		Pizza->fpoint = ChilliDelight;
-		Pizza->FlavourMiscCal("Green Chilli");
+		Pizza->FlavourMiscSet("Green Chilli");
+		TheCheeseMisc3->Checked = false;
+		TheCheeseMisc1->Checked = false;
+		TheCheeseMisc2->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		FajitaMisc1->Checked = false;
+		FajitaMisc2->Checked = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		SeekhKebabMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		ChilliDelightMisc1->Checked = false;
+
 	}
 }
 Void breeze::MyForm::BBQBuzzMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -417,7 +527,20 @@ Void breeze::MyForm::BBQBuzzMisc1_CheckedChanged(System::Object^ sender, System:
 	{bbq_buzz* BBQ_BUZZ = new bbq_buzz;
 	BBQ_BUZZ->set_sauce("bbq sauce");
 	Pizza->fpoint = BBQ_BUZZ;
-	Pizza->FlavourMiscCal("BBQ Sauce");
+	Pizza->FlavourMiscSet("BBQ Sauce");
+	TheCheeseMisc3->Checked = false;
+	TheCheeseMisc1->Checked = false;
+	TheCheeseMisc2->Checked = false;
+	SeekhKebabMisc2->Checked = false;
+	FajitaMisc1->Checked = false;
+	FajitaMisc2->Checked = false;
+	TikkaMisc1->Checked = false;
+	TikkaMisc2->Checked = false;
+	BBQBuzzMisc2->Checked = false;
+	SeekhKebabMisc1->Checked = false;
+	ChilliDelightMisc1->Checked = false;
+	ChilliDelightMisc2->Checked = false;
+
 	}
 }
 Void breeze::MyForm::BBQBuzzMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -426,7 +549,19 @@ Void breeze::MyForm::BBQBuzzMisc2_CheckedChanged(System::Object^ sender, System:
 		bbq_buzz* BBQ_BUZZ = new bbq_buzz;
 		BBQ_BUZZ->set_sauce("ranch sauce");
 		Pizza->fpoint = BBQ_BUZZ;
-		Pizza->FlavourMiscCal("Ranch Sauce");
+		Pizza->FlavourMiscSet("Ranch Sauce");
+		TheCheeseMisc3->Checked = false;
+		TheCheeseMisc1->Checked = false;
+		TheCheeseMisc2->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		FajitaMisc1->Checked = false;
+		FajitaMisc2->Checked = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		SeekhKebabMisc1->Checked = false;
+		ChilliDelightMisc1->Checked = false;
+		ChilliDelightMisc2->Checked = false;
 	}
 }
 Void breeze::MyForm::SeekhKebabMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -435,7 +570,19 @@ Void breeze::MyForm::SeekhKebabMisc1_CheckedChanged(System::Object^ sender, Syst
 		seekh_kebab* SeekhKebab = new seekh_kebab;
 		SeekhKebab->set_meat("lamb");
 		Pizza->fpoint = SeekhKebab;
-		Pizza->FlavourMiscCal("Lamb");
+		Pizza->FlavourMiscSet("Lamb");
+		TheCheeseMisc3->Checked = false;
+		TheCheeseMisc1->Checked = false;
+		TheCheeseMisc2->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		FajitaMisc1->Checked = false;
+		FajitaMisc2->Checked = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		ChilliDelightMisc1->Checked = false;
+		ChilliDelightMisc2->Checked = false;
 	}
 }
 Void breeze::MyForm::SeekhKebabMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -444,7 +591,19 @@ Void breeze::MyForm::SeekhKebabMisc2_CheckedChanged(System::Object^ sender, Syst
 		seekh_kebab* SeekhKebab = new seekh_kebab;
 		SeekhKebab->set_meat("beef");
 		Pizza->fpoint = SeekhKebab;
-		Pizza->FlavourMiscCal("Beef");
+		Pizza->FlavourMiscSet("Beef");
+		TheCheeseMisc2->Checked = false;
+		TheCheeseMisc1->Checked = false;
+		TheCheeseMisc3->Checked = false;
+		SeekhKebabMisc1->Checked = false;
+		FajitaMisc1->Checked = false;
+		FajitaMisc2->Checked = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		ChilliDelightMisc1->Checked = false;
+		ChilliDelightMisc2->Checked = false;
 	}
 }
 Void breeze::MyForm::TheCheeseMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -453,7 +612,19 @@ Void breeze::MyForm::TheCheeseMisc1_CheckedChanged(System::Object^ sender, Syste
 		The_cheese* TheCheese = new The_cheese;
 		TheCheese->set_cheese("mozarella");
 		Pizza->fpoint = TheCheese;
-		Pizza->FlavourMiscCal("Mozarella");
+		Pizza->FlavourMiscSet("Mozarella");
+		TheCheeseMisc2->Checked = false;
+		TheCheeseMisc3->Checked = false;
+		SeekhKebabMisc1->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		FajitaMisc1->Checked = false;
+		FajitaMisc2->Checked = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		ChilliDelightMisc1->Checked = false;
+		ChilliDelightMisc2->Checked = false;
 	}
 }
 Void breeze::MyForm::TheCheeseMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -462,16 +633,42 @@ Void breeze::MyForm::TheCheeseMisc2_CheckedChanged(System::Object^ sender, Syste
 		The_cheese* TheCheese = new The_cheese;
 		TheCheese->set_cheese("gouda");
 		Pizza->fpoint = TheCheese;
-		Pizza->FlavourMiscCal("Gouda");
+		Pizza->FlavourMiscSet("Gouda");
+		TheCheeseMisc3->Checked = false;
+		TheCheeseMisc1->Checked = false;
+		SeekhKebabMisc1->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		FajitaMisc1->Checked = false;
+		FajitaMisc2->Checked = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		ChilliDelightMisc1->Checked = false;
+		ChilliDelightMisc2->Checked = false;
+
 	}
 
 }
 Void breeze::MyForm::TheCheeseMisc3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (TheCheeseMisc1->Checked == true)
+	if (TheCheeseMisc3->Checked == true)
 	{
 		The_cheese* TheCheese = new The_cheese;
 		TheCheese->set_cheese("cheddar");
 		Pizza->fpoint = TheCheese;
-		Pizza->FlavourMiscCal("Cheddar");
+		Pizza->FlavourMiscSet("Cheddar");
+		TheCheeseMisc2->Checked = false;
+		TheCheeseMisc1->Checked = false;
+		SeekhKebabMisc1->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		FajitaMisc1->Checked = false;
+		FajitaMisc2->Checked = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		BBQBuzzMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		ChilliDelightMisc1->Checked = false;
+		ChilliDelightMisc2->Checked = false;
+
 	}
 }

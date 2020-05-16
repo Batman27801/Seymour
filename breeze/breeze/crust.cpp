@@ -39,3 +39,7 @@ void crust::setgluten(bool g)
 {
     gluten = g;
 }
+char* crust::get_CrustName()
+{
+    return name;
+}

@@ -11,7 +11,7 @@ protected:
     char description[350];
     int size;
     bool thick, thin, gluten;
-
+    char name[30];
 public:
     virtual void setsize(int)=0;
     int getsize();
@@ -23,5 +23,6 @@ public:
     void setthickthin(bool);
     bool getgluten();
     void setgluten(bool);
+    char* get_CrustName();
 };
 
