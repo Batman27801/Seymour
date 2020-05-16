@@ -38,13 +38,15 @@ double chilli_delight::set_chilli(char* choice)
     {
         red = true;
         green = false;
-        return 40;
+        price += 40;
+        return 0;
     }
     else if (strcmp(CHOICE, "GREEN") == 0)
     {
         green = true;
         red = false;
-        return 80;
+        price += 80;
+        return 0;
     }
     else {
         std::cout << "please enter the correct info" << std::endl;

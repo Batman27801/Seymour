@@ -38,7 +38,8 @@ double fajita::set_meat(char choice[30])
         beef = true;
         avocados = true;
         salsa_sauce = true;
-        return 75;
+        price += 75;
+        return 0;
     }
     else if (strcmp(CHOICE, "TRADITIONAL STYLE") == 0)
     {
@@ -46,7 +47,8 @@ double fajita::set_meat(char choice[30])
         avocados = false;
         salsa_sauce = false;
         chicken = true;
-        return 55;
+        price += 55;
+        return 0;
     }
     else {
         std::cout << "Please enter the correct choices" << std::endl;

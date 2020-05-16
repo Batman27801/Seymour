@@ -361,83 +361,108 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 	 if (TikkaMisc1->Checked == true)
 	 {
 		 tikka* Tikka = new tikka;
-		 Pizza->MiscCal("chicken", Tikka->set_chicken(true));
+		 Tikka->set_chicken(true);
+		 Pizza->fpoint = Tikka;
+		 Pizza->FlavourMiscCal("chicken");
 	 }
  }
 Void breeze::MyForm:: TikkaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TikkaMisc2->Checked == true)
 	{
 		tikka* Tikka = new tikka;
-		Pizza->MiscCal("Beef", Tikka->set_beef(true));
+		Tikka->set_beef(true);
+		Pizza->fpoint = Tikka;
+		Pizza->FlavourMiscCal("beef");
+
 	}
 }
 Void breeze::MyForm::FajitaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (FajitaMisc1->Checked == true)
 	{
 		fajita* Fajita = new fajita;
-		Pizza->MiscCal("Mexican Style", Fajita->set_meat("mexican style"));
+		Fajita->set_meat("mexican style");
+		Pizza->fpoint = Fajita;
+		Pizza->FlavourMiscCal("Mexican Style");
 	}
 }
 Void breeze::MyForm::FajitaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (FajitaMisc2->Checked == true)
 	{
 		fajita* Fajita = new fajita;
-		Pizza->MiscCal("Traditional Style", Fajita->set_meat("traditional style"));
+		Fajita->set_meat("traditional style");
+		Pizza->fpoint = Fajita;
+		Pizza->FlavourMiscCal("Traditional Style");
 	}
 }
 Void breeze::MyForm::ChilliDelightMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (ChilliDelightMisc1->Checked == true)
 	{
 		chilli_delight* ChilliDelight = new chilli_delight;
-		Pizza->MiscCal("Red Chilli", ChilliDelight->set_chilli("red"));
+		ChilliDelight->set_chilli("red");
+		Pizza->fpoint = ChilliDelight;
+		Pizza->FlavourMiscCal("Red Chilli");
 	}
 }
 Void breeze::MyForm::ChilliDelightMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (ChilliDelightMisc2->Checked == true)
 	{
 		chilli_delight* ChilliDelight = new chilli_delight;
-		Pizza->MiscCal("Red Chilli", ChilliDelight->set_chilli("red"));
+		ChilliDelight->set_chilli("green");
+		Pizza->fpoint = ChilliDelight;
+		Pizza->FlavourMiscCal("Green Chilli");
 	}
 }
 Void breeze::MyForm::BBQBuzzMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if(BBQBuzzMisc1->Checked == true)
 	{bbq_buzz* BBQ_BUZZ = new bbq_buzz;
-	Pizza->MiscCal("BBQ Sauce", BBQ_BUZZ->set_sauce("bbq sauce"));
+	BBQ_BUZZ->set_sauce("bbq sauce");
+	Pizza->fpoint = BBQ_BUZZ;
+	Pizza->FlavourMiscCal("BBQ Sauce");
 	}
 }
 Void breeze::MyForm::BBQBuzzMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (BBQBuzzMisc2->Checked == true)
 	{
 		bbq_buzz* BBQ_BUZZ = new bbq_buzz;
-		Pizza->MiscCal("Ranch Sauce", BBQ_BUZZ->set_sauce("ranch sauce"));
+		BBQ_BUZZ->set_sauce("ranch sauce");
+		Pizza->fpoint = BBQ_BUZZ;
+		Pizza->FlavourMiscCal("Ranch Sauce");
 	}
 }
 Void breeze::MyForm::SeekhKebabMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (SeekhKebabMisc1->Checked == true)
 	{
 		seekh_kebab* SeekhKebab = new seekh_kebab;
-		Pizza->MiscCal("Lamb", SeekhKebab->set_meat("lamb"));
+		SeekhKebab->set_meat("lamb");
+		Pizza->fpoint = SeekhKebab;
+		Pizza->FlavourMiscCal("Lamb");
 	}
 }
 Void breeze::MyForm::SeekhKebabMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (SeekhKebabMisc2->Checked == true)
 	{
 		seekh_kebab* SeekhKebab = new seekh_kebab;
-		Pizza->MiscCal("Beef", SeekhKebab->set_meat("beef"));
+		SeekhKebab->set_meat("beef");
+		Pizza->fpoint = SeekhKebab;
+		Pizza->FlavourMiscCal("Beef");
 	}
 }
 Void breeze::MyForm::TheCheeseMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TheCheeseMisc1->Checked == true)
 	{
 		The_cheese* TheCheese = new The_cheese;
-		Pizza->MiscCal("Mozarella", TheCheese->set_cheese("mozarella"));
+		TheCheese->set_cheese("mozarella");
+		Pizza->fpoint = TheCheese;
+		Pizza->FlavourMiscCal("Mozarella");
 	}
 }
 Void breeze::MyForm::TheCheeseMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TheCheeseMisc2->Checked == true)
 	{
 		The_cheese* TheCheese = new The_cheese;
-		Pizza->MiscCal("Gouda", TheCheese->set_cheese("gouda"));
+		TheCheese->set_cheese("gouda");
+		Pizza->fpoint = TheCheese;
+		Pizza->FlavourMiscCal("Gouda");
 	}
 
 }
@@ -445,6 +470,8 @@ Void breeze::MyForm::TheCheeseMisc3_CheckedChanged(System::Object^ sender, Syste
 	if (TheCheeseMisc1->Checked == true)
 	{
 		The_cheese* TheCheese = new The_cheese;
-		Pizza->MiscCal("Cheddar", TheCheese->set_cheese("cheddar"));
+		TheCheese->set_cheese("cheddar");
+		Pizza->fpoint = TheCheese;
+		Pizza->FlavourMiscCal("Cheddar");
 	}
 }

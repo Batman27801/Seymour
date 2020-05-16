@@ -29,12 +29,18 @@ double bbq_buzz::set_sauce(char* choice)
 
     if (strcmp(CHOICE,"BBQ SAUCE")==0)
     {
-        return 70;
+        bbq_sauce = true;
+        ranch = false;
+        price += 70;
+        return 0;
     }
     else if (strcmp(CHOICE, "RANCH SAUCE") == 0)
     {
-        return 60;
-    }
+        ranch = true;
+        bbq_sauce = false;
+        price += 60;
+        return 0;
+   }
     else {
         std::cout << "Please Enter the correct choice" << std::endl;
     }

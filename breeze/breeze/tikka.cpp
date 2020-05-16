@@ -34,13 +34,15 @@ double tikka::set_beef(bool B)
 {
     chicken = false;
     beef = B;
-    return 50;
+    price += 50;
+    return 0;
 }
 double tikka::set_chicken(bool B)
 {
     beef = false;
     chicken = B;
-    return 30;
+    price += 30;
+    return 0;
 }
 char* tikka::get_Addon()
 {
