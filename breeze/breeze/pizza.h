@@ -9,9 +9,11 @@ public:
 	flavour* fpoint;
 	Toping* tpoint;
 	char FlavourMisc[30];
-	double FlavourMiscPrice = 0;
+	char CrustMisc[30];
 public:
 	void SaveFlavour(flavour*ptr);
-	void FlavourMiscCal(char choice[30]);
+	void FlavourMiscSet(char choice[30]);
+	void SaveCrust(crust* ptr);
+	void CrustMiscSet(char choice[30]);
 };
 

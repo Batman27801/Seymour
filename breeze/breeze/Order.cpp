@@ -8,8 +8,8 @@ Order::Order()
 }
 void Order::PlaceOrder(pizza *pizza)
 {
-	int i;
-	bill = bill + pizza->fpoint->get_price();
+	int i,j;
+	bill = bill + pizza->fpoint->get_price()+pizza->cpoint->get_price();
 	fstream obj;
 	obj.open("Reciept.txt", ios::in | ios::out | ios::app);
 	for (i = 0; i < 7; i++)
@@ -21,6 +21,16 @@ void Order::PlaceOrder(pizza *pizza)
 			obj << "Flavour = " << FLAVOURS[i] << " PIRCE = Rs " << pizza->fpoint->get_price() << " With Misc = " <<pizza->FlavourMisc <<endl;
 		}
 	}
+	for (j = 0; j < 8; j++)
+	{
+		if(strcmp(CRUSTS[j],pizza->cpoint->get_CrustName()))
+		{
+			strcpy_s(SelectedCrust, pizza->cpoint->get_CrustName());
+			strcpy_s(SelectedCrustMisc,pizza->CrustMisc);
+			obj << "Crust = " << CRUSTS[i] << " PIRCE = Rs " << pizza->cpoint->get_price() << " With Misc = " <<pizza->CrustMisc <<endl;
+		}
+	}
+
 	obj.close();
 	
 	//obj << "..............................................TOTAL BILL = " << bill << endl;
