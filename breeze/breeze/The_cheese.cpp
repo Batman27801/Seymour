@@ -27,17 +27,21 @@ double The_cheese::set_cheese(char choice[30])
     if (choice == "MOZARELLA")
     {
         mozarella = true;
-        return 65;
+        price += 65;
+        return 0;
+
     }
     else if (choice = "GOUDA")
     {
         gouda = true;
-        return 100;
+        price += 100;
+        return 0;
     }
     else if (choice == "CHEDDAR")
     {
         cheddar = true;
-        return 70;
+        price += 70;
+        return 0;
     }
     else
     {

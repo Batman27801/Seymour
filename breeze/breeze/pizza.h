@@ -12,6 +12,6 @@ public:
 	double FlavourMiscPrice = 0;
 public:
 	void SaveFlavour(flavour*ptr);
-	void MiscCal(char choice[30] , double price);
+	void FlavourMiscCal(char choice[30]);
 };
 

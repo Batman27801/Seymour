@@ -63,12 +63,14 @@ double seekh_kebab::set_meat(char choice[30])
     if (strcmp(CHOICE,"LAMB")==0)
     {
         lamb = true;
-        return 105;
+        price += 105;
+        return 0;
     }
     else if (strcmp(CHOICE, "BEEF") == 0)
     {
         beef = true;
-        return 90;
+        price += 90;
+        return 0;
     }
     else
     {

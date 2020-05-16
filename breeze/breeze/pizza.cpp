@@ -3,8 +3,8 @@ void pizza::SaveFlavour(flavour* ptr)
 {
 	fpoint = ptr;
 }
-void pizza::MiscCal(char desc[30], double price)
+void pizza::FlavourMiscCal(char desc[30])
 {
 	strcpy_s(FlavourMisc, desc);
-	FlavourMiscPrice = price;
+	
 }
