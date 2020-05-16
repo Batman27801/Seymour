@@ -181,6 +181,8 @@ private: System::Windows::Forms::Label^ passreq;
 private: System::Windows::Forms::Label^ errorlabel;
 private: System::Windows::Forms::Label^ codlabel;
 private: System::Windows::Forms::Button^ backtologinbutton;
+private: System::Windows::Forms::Label^ FlavorHeading;
+private: System::Windows::Forms::TextBox^ pricebox2;
 
 
 
@@ -370,6 +372,8 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->FlavorHeading = (gcnew System::Windows::Forms::Label());
+			this->pricebox2 = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -1468,6 +1472,8 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// FlavourSelect
 			// 
 			this->FlavourSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FlavourSelect.BackgroundImage")));
+			this->FlavourSelect->Controls->Add(this->pricebox2);
+			this->FlavourSelect->Controls->Add(this->FlavorHeading);
 			this->FlavourSelect->Controls->Add(this->TheCheeseMisc3);
 			this->FlavourSelect->Controls->Add(this->TheCheeseMisc2);
 			this->FlavourSelect->Controls->Add(this->TheCheeseMisc1);
@@ -1506,12 +1512,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// TheCheeseMisc3
 			// 
 			this->TheCheeseMisc3->AutoSize = true;
+			this->TheCheeseMisc3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->TheCheeseMisc3->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->TheCheeseMisc3->Location = System::Drawing::Point(664, 472);
+			this->TheCheeseMisc3->Location = System::Drawing::Point(475, 538);
 			this->TheCheeseMisc3->Name = L"TheCheeseMisc3";
-			this->TheCheeseMisc3->Size = System::Drawing::Size(100, 17);
+			this->TheCheeseMisc3->Size = System::Drawing::Size(73, 17);
 			this->TheCheeseMisc3->TabIndex = 38;
-			this->TheCheeseMisc3->Text = L"Cheddar Rs=70";
+			this->TheCheeseMisc3->Text = L"Cheddar";
 			this->TheCheeseMisc3->UseVisualStyleBackColor = true;
 			this->TheCheeseMisc3->Visible = false;
 			this->TheCheeseMisc3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TheCheeseMisc3_CheckedChanged);
@@ -1519,12 +1527,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// TheCheeseMisc2
 			// 
 			this->TheCheeseMisc2->AutoSize = true;
+			this->TheCheeseMisc2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->TheCheeseMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->TheCheeseMisc2->Location = System::Drawing::Point(560, 472);
+			this->TheCheeseMisc2->Location = System::Drawing::Point(528, 515);
 			this->TheCheeseMisc2->Name = L"TheCheeseMisc2";
-			this->TheCheeseMisc2->Size = System::Drawing::Size(98, 17);
+			this->TheCheeseMisc2->Size = System::Drawing::Size(63, 17);
 			this->TheCheeseMisc2->TabIndex = 37;
-			this->TheCheeseMisc2->Text = L"Gouda Rs=100";
+			this->TheCheeseMisc2->Text = L"Gouda";
 			this->TheCheeseMisc2->UseVisualStyleBackColor = true;
 			this->TheCheeseMisc2->Visible = false;
 			this->TheCheeseMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TheCheeseMisc2_CheckedChanged);
@@ -1532,12 +1542,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// TheCheeseMisc1
 			// 
 			this->TheCheeseMisc1->AutoSize = true;
+			this->TheCheeseMisc1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->TheCheeseMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->TheCheeseMisc1->Location = System::Drawing::Point(448, 472);
+			this->TheCheeseMisc1->Location = System::Drawing::Point(420, 515);
 			this->TheCheeseMisc1->Name = L"TheCheeseMisc1";
-			this->TheCheeseMisc1->Size = System::Drawing::Size(105, 17);
+			this->TheCheeseMisc1->Size = System::Drawing::Size(80, 17);
 			this->TheCheeseMisc1->TabIndex = 36;
-			this->TheCheeseMisc1->Text = L"Mozarella Rs=65";
+			this->TheCheeseMisc1->Text = L"Mozarella";
 			this->TheCheeseMisc1->UseVisualStyleBackColor = true;
 			this->TheCheeseMisc1->Visible = false;
 			this->TheCheeseMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TheCheeseMisc1_CheckedChanged);
@@ -1545,12 +1557,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// SeekhKebabMisc2
 			// 
 			this->SeekhKebabMisc2->AutoSize = true;
+			this->SeekhKebabMisc2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->SeekhKebabMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->SeekhKebabMisc2->Location = System::Drawing::Point(264, 504);
+			this->SeekhKebabMisc2->Location = System::Drawing::Point(246, 543);
 			this->SeekhKebabMisc2->Name = L"SeekhKebabMisc2";
-			this->SeekhKebabMisc2->Size = System::Drawing::Size(82, 17);
+			this->SeekhKebabMisc2->Size = System::Drawing::Size(52, 17);
 			this->SeekhKebabMisc2->TabIndex = 35;
-			this->SeekhKebabMisc2->Text = L"Beef Rs=90";
+			this->SeekhKebabMisc2->Text = L"Beef";
 			this->SeekhKebabMisc2->UseVisualStyleBackColor = true;
 			this->SeekhKebabMisc2->Visible = false;
 			this->SeekhKebabMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::SeekhKebabMisc2_CheckedChanged);
@@ -1558,12 +1572,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// SeekhKebabMisc1
 			// 
 			this->SeekhKebabMisc1->AutoSize = true;
+			this->SeekhKebabMisc1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->SeekhKebabMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->SeekhKebabMisc1->Location = System::Drawing::Point(160, 504);
+			this->SeekhKebabMisc1->Location = System::Drawing::Point(153, 543);
 			this->SeekhKebabMisc1->Name = L"SeekhKebabMisc1";
-			this->SeekhKebabMisc1->Size = System::Drawing::Size(92, 17);
+			this->SeekhKebabMisc1->Size = System::Drawing::Size(56, 17);
 			this->SeekhKebabMisc1->TabIndex = 34;
-			this->SeekhKebabMisc1->Text = L"Lamb Rs=105";
+			this->SeekhKebabMisc1->Text = L"Lamb";
 			this->SeekhKebabMisc1->UseVisualStyleBackColor = true;
 			this->SeekhKebabMisc1->Visible = false;
 			this->SeekhKebabMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::SeekhKebabMisc1_CheckedChanged);
@@ -1571,12 +1587,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// BBQBuzzMisc2
 			// 
 			this->BBQBuzzMisc2->AutoSize = true;
+			this->BBQBuzzMisc2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->BBQBuzzMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->BBQBuzzMisc2->Location = System::Drawing::Point(1072, 232);
+			this->BBQBuzzMisc2->Location = System::Drawing::Point(780, 515);
 			this->BBQBuzzMisc2->Name = L"BBQBuzzMisc2";
-			this->BBQBuzzMisc2->Size = System::Drawing::Size(126, 17);
+			this->BBQBuzzMisc2->Size = System::Drawing::Size(103, 17);
 			this->BBQBuzzMisc2->TabIndex = 33;
-			this->BBQBuzzMisc2->Text = L"Ranch Sauce Rs=60";
+			this->BBQBuzzMisc2->Text = L"Ranch Sauce";
 			this->BBQBuzzMisc2->UseVisualStyleBackColor = true;
 			this->BBQBuzzMisc2->Visible = false;
 			this->BBQBuzzMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::BBQBuzzMisc2_CheckedChanged);
@@ -1584,12 +1602,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// BBQBuzzMisc1
 			// 
 			this->BBQBuzzMisc1->AutoSize = true;
+			this->BBQBuzzMisc1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->BBQBuzzMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->BBQBuzzMisc1->Location = System::Drawing::Point(960, 232);
+			this->BBQBuzzMisc1->Location = System::Drawing::Point(672, 515);
 			this->BBQBuzzMisc1->Name = L"BBQBuzzMisc1";
-			this->BBQBuzzMisc1->Size = System::Drawing::Size(114, 17);
+			this->BBQBuzzMisc1->Size = System::Drawing::Size(89, 17);
 			this->BBQBuzzMisc1->TabIndex = 32;
-			this->BBQBuzzMisc1->Text = L"BBQ sauce Rs=70";
+			this->BBQBuzzMisc1->Text = L"BBQ sauce";
 			this->BBQBuzzMisc1->UseVisualStyleBackColor = true;
 			this->BBQBuzzMisc1->Visible = false;
 			this->BBQBuzzMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::BBQBuzzMisc1_CheckedChanged);
@@ -1597,12 +1617,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// ChilliDelightMisc2
 			// 
 			this->ChilliDelightMisc2->AutoSize = true;
+			this->ChilliDelightMisc2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->ChilliDelightMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->ChilliDelightMisc2->Location = System::Drawing::Point(784, 232);
+			this->ChilliDelightMisc2->Location = System::Drawing::Point(780, 255);
 			this->ChilliDelightMisc2->Name = L"ChilliDelightMisc2";
-			this->ChilliDelightMisc2->Size = System::Drawing::Size(113, 17);
+			this->ChilliDelightMisc2->Size = System::Drawing::Size(91, 17);
 			this->ChilliDelightMisc2->TabIndex = 31;
-			this->ChilliDelightMisc2->Text = L"Green Chilli Rs=80";
+			this->ChilliDelightMisc2->Text = L"Green Chilli";
 			this->ChilliDelightMisc2->UseVisualStyleBackColor = true;
 			this->ChilliDelightMisc2->Visible = false;
 			this->ChilliDelightMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::ChilliDelightMisc2_CheckedChanged);
@@ -1610,12 +1632,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// ChilliDelightMisc1
 			// 
 			this->ChilliDelightMisc1->AutoSize = true;
+			this->ChilliDelightMisc1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->ChilliDelightMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->ChilliDelightMisc1->Location = System::Drawing::Point(672, 232);
+			this->ChilliDelightMisc1->Location = System::Drawing::Point(672, 255);
 			this->ChilliDelightMisc1->Name = L"ChilliDelightMisc1";
-			this->ChilliDelightMisc1->Size = System::Drawing::Size(107, 17);
+			this->ChilliDelightMisc1->Size = System::Drawing::Size(84, 17);
 			this->ChilliDelightMisc1->TabIndex = 30;
-			this->ChilliDelightMisc1->Text = L"Red Chilli  Rs=40";
+			this->ChilliDelightMisc1->Text = L"Red Chilli ";
 			this->ChilliDelightMisc1->UseVisualStyleBackColor = true;
 			this->ChilliDelightMisc1->Visible = false;
 			this->ChilliDelightMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::ChilliDelightMisc1_CheckedChanged);
@@ -1623,12 +1647,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// FajitaMisc2
 			// 
 			this->FajitaMisc2->AutoSize = true;
+			this->FajitaMisc2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->FajitaMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->FajitaMisc2->Location = System::Drawing::Point(528, 224);
+			this->FajitaMisc2->Location = System::Drawing::Point(506, 255);
 			this->FajitaMisc2->Name = L"FajitaMisc2";
-			this->FajitaMisc2->Size = System::Drawing::Size(138, 17);
+			this->FajitaMisc2->Size = System::Drawing::Size(118, 17);
 			this->FajitaMisc2->TabIndex = 29;
-			this->FajitaMisc2->Text = L"Traditional Style = Rs55";
+			this->FajitaMisc2->Text = L"Traditional Style";
 			this->FajitaMisc2->UseVisualStyleBackColor = true;
 			this->FajitaMisc2->Visible = false;
 			this->FajitaMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::FajitaMisc2_CheckedChanged);
@@ -1636,12 +1662,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// FajitaMisc1
 			// 
 			this->FajitaMisc1->AutoSize = true;
+			this->FajitaMisc1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->FajitaMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->FajitaMisc1->Location = System::Drawing::Point(400, 224);
+			this->FajitaMisc1->Location = System::Drawing::Point(395, 255);
 			this->FajitaMisc1->Name = L"FajitaMisc1";
-			this->FajitaMisc1->Size = System::Drawing::Size(126, 17);
+			this->FajitaMisc1->Size = System::Drawing::Size(105, 17);
 			this->FajitaMisc1->TabIndex = 28;
-			this->FajitaMisc1->Text = L"Mexican Style Rs=75";
+			this->FajitaMisc1->Text = L"Mexican Style";
 			this->FajitaMisc1->UseVisualStyleBackColor = true;
 			this->FajitaMisc1->Visible = false;
 			this->FajitaMisc1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::FajitaMisc1_CheckedChanged);
@@ -1649,12 +1677,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// TikkaMisc2
 			// 
 			this->TikkaMisc2->AutoSize = true;
+			this->TikkaMisc2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->TikkaMisc2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->TikkaMisc2->Location = System::Drawing::Point(264, 216);
+			this->TikkaMisc2->Location = System::Drawing::Point(246, 244);
 			this->TikkaMisc2->Name = L"TikkaMisc2";
-			this->TikkaMisc2->Size = System::Drawing::Size(82, 17);
+			this->TikkaMisc2->Size = System::Drawing::Size(52, 17);
 			this->TikkaMisc2->TabIndex = 27;
-			this->TikkaMisc2->Text = L"Beef Rs=50";
+			this->TikkaMisc2->Text = L"Beef";
 			this->TikkaMisc2->UseVisualStyleBackColor = true;
 			this->TikkaMisc2->Visible = false;
 			this->TikkaMisc2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TikkaMisc2_CheckedChanged);
@@ -1662,12 +1692,14 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// TikkaMisc1
 			// 
 			this->TikkaMisc1->AutoSize = true;
+			this->TikkaMisc1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->TikkaMisc1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->TikkaMisc1->Location = System::Drawing::Point(160, 216);
+			this->TikkaMisc1->Location = System::Drawing::Point(153, 244);
 			this->TikkaMisc1->Name = L"TikkaMisc1";
-			this->TikkaMisc1->Size = System::Drawing::Size(99, 17);
+			this->TikkaMisc1->Size = System::Drawing::Size(72, 17);
 			this->TikkaMisc1->TabIndex = 26;
-			this->TikkaMisc1->Text = L"Chicken Rs=30";
+			this->TikkaMisc1->Text = L"Chicken";
 			this->TikkaMisc1->UseVisualStyleBackColor = true;
 			this->TikkaMisc1->UseWaitCursor = true;
 			this->TikkaMisc1->Visible = false;
@@ -1675,116 +1707,129 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// 
 			// BbqBuzzCheckbox
 			// 
+			this->BbqBuzzCheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->BbqBuzzCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->BbqBuzzCheckbox->Location = System::Drawing::Point(968, 152);
+			this->BbqBuzzCheckbox->Location = System::Drawing::Point(664, 426);
 			this->BbqBuzzCheckbox->Name = L"BbqBuzzCheckbox";
-			this->BbqBuzzCheckbox->Size = System::Drawing::Size(232, 80);
+			this->BbqBuzzCheckbox->Size = System::Drawing::Size(224, 91);
 			this->BbqBuzzCheckbox->TabIndex = 25;
 			this->BbqBuzzCheckbox->Text = L"\"BBQ Buzz\"\r\n\"Smoked chicken, capsicum, onions and black olives, sweet and smoky B"
-				L"BQ sauce. Contains gluten in significant amounts\"\r\nPrice = Rs 1100\r\n";
+				L"BQ sauce. Contains gluten in significant amounts\"\r\n";
 			this->BbqBuzzCheckbox->UseVisualStyleBackColor = true;
 			this->BbqBuzzCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::BbqBuzzCheckbox_CheckedChanged);
 			// 
 			// ChilliDelightCheckbox
 			// 
+			this->ChilliDelightCheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ChilliDelightCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->ChilliDelightCheckbox->Location = System::Drawing::Point(664, 152);
+			this->ChilliDelightCheckbox->Location = System::Drawing::Point(664, 166);
 			this->ChilliDelightCheckbox->Name = L"ChilliDelightCheckbox";
-			this->ChilliDelightCheckbox->Size = System::Drawing::Size(256, 80);
+			this->ChilliDelightCheckbox->Size = System::Drawing::Size(224, 91);
 			this->ChilliDelightCheckbox->TabIndex = 24;
 			this->ChilliDelightCheckbox->Text = L"\"Chilli Delight\"\r\n\"Fire up your taste buds with spicy chicken chunks, onions, oli"
-				L"ves, jalapenos and hot peri sauce. Gluten free.\"\r\nPrice = Rs 1100\r\n";
+				L"ves, jalapenos and hot peri sauce. Gluten free.\"\r\n";
 			this->ChilliDelightCheckbox->UseVisualStyleBackColor = true;
 			this->ChilliDelightCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::ChilliDelightCheckbox_CheckedChanged);
 			this->ChilliDelightCheckbox->CheckStateChanged += gcnew System::EventHandler(this, &MyForm::ChilliDelightCheckbox_CheckStateChanged);
 			// 
 			// FajitaCheckbox
 			// 
+			this->FajitaCheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->FajitaCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->FajitaCheckbox->Location = System::Drawing::Point(408, 152);
+			this->FajitaCheckbox->Location = System::Drawing::Point(395, 166);
 			this->FajitaCheckbox->Name = L"FajitaCheckbox";
-			this->FajitaCheckbox->Size = System::Drawing::Size(240, 72);
+			this->FajitaCheckbox->Size = System::Drawing::Size(212, 84);
 			this->FajitaCheckbox->TabIndex = 23;
-			this->FajitaCheckbox->Text = L"\"Fajita\"\r\n\"Contains an epic blend of cheese with authentic fresh chicken meat.Con"
-				L"tains traces of gluten\"\r\nPrice = Rs 1349.59\r\n";
+			this->FajitaCheckbox->Text = L"\"Fajita\"\r\n\"Contains an epic blend of cheese with authentic fresh chicken meat. Co"
+				L"ntains traces of gluten\"\r\n";
 			this->FajitaCheckbox->UseVisualStyleBackColor = true;
 			this->FajitaCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::FajitaCheckbox_CheckedChanged);
 			// 
 			// TikkaCheckbox
 			// 
+			this->TikkaCheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->TikkaCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->TikkaCheckbox->Location = System::Drawing::Point(136, 152);
+			this->TikkaCheckbox->Location = System::Drawing::Point(138, 166);
 			this->TikkaCheckbox->Name = L"TikkaCheckbox";
-			this->TikkaCheckbox->Size = System::Drawing::Size(256, 64);
+			this->TikkaCheckbox->Size = System::Drawing::Size(220, 73);
 			this->TikkaCheckbox->TabIndex = 22;
 			this->TikkaCheckbox->Text = L"\"Tikka\"\r\n\"A specially developed recipe  topped with spicy  tikka boti & onions. G"
-				L"luten Free.\"\r\nPrice = Rs 1259.99\r\n";
+				L"luten Free.\"\r\n";
 			this->TikkaCheckbox->UseVisualStyleBackColor = true;
 			this->TikkaCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TikkaCheckbox_CheckedChanged);
 			// 
 			// SeekhKebabCheckbox
 			// 
+			this->SeekhKebabCheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->SeekhKebabCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->SeekhKebabCheckbox->Location = System::Drawing::Point(144, 416);
+			this->SeekhKebabCheckbox->Location = System::Drawing::Point(136, 431);
 			this->SeekhKebabCheckbox->Name = L"SeekhKebabCheckbox";
-			this->SeekhKebabCheckbox->Size = System::Drawing::Size(232, 88);
+			this->SeekhKebabCheckbox->Size = System::Drawing::Size(220, 111);
 			this->SeekhKebabCheckbox->TabIndex = 20;
 			this->SeekhKebabCheckbox->Text = L"\"Seekh Kebab\"\r\n\"Topped with seekh kabab chunks on tantalizing blend of spicy chic"
-				L"ken, onions capsicum, green pepper and cheese. Contains gluten in significant am"
-				L"ounts\"\r\nPrice = Rs 1400\r\n";
+				L"ken, capsicum, green pepper and cheese. Contains large amounts of gluten\"\r\n";
 			this->SeekhKebabCheckbox->UseVisualStyleBackColor = true;
 			this->SeekhKebabCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::SeekhKebabCheckbox_CheckedChanged);
 			// 
 			// TheCheeseCheckbox
 			// 
+			this->TheCheeseCheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->TheCheeseCheckbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->TheCheeseCheckbox->Location = System::Drawing::Point(456, 416);
+			this->TheCheeseCheckbox->Location = System::Drawing::Point(395, 431);
 			this->TheCheeseCheckbox->Name = L"TheCheeseCheckbox";
-			this->TheCheeseCheckbox->Size = System::Drawing::Size(272, 56);
+			this->TheCheeseCheckbox->Size = System::Drawing::Size(225, 78);
 			this->TheCheeseCheckbox->TabIndex = 19;
 			this->TheCheeseCheckbox->Text = L"\"The Cheese\"\r\n\"Go back to where it all began with classic mozzarella cheese & tom"
-				L"ato base. Gluten free\"\r\nPrice=Rs 1400";
+				L"ato base. Gluten free\"\r\n";
 			this->TheCheeseCheckbox->UseVisualStyleBackColor = true;
 			this->TheCheeseCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TheCheeseCheckbox_CheckedChanged);
 			// 
 			// pictureBox7
 			// 
 			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
-			this->pictureBox7->Location = System::Drawing::Point(864, 280);
+			this->pictureBox7->Location = System::Drawing::Point(937, 156);
 			this->pictureBox7->Name = L"pictureBox7";
-			this->pictureBox7->Size = System::Drawing::Size(248, 128);
+			this->pictureBox7->Size = System::Drawing::Size(216, 142);
 			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox7->TabIndex = 18;
 			this->pictureBox7->TabStop = false;
 			// 
 			// VeggieDelightCheckBox
 			// 
+			this->VeggieDelightCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->VeggieDelightCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->VeggieDelightCheckBox->Location = System::Drawing::Point(856, 416);
+			this->VeggieDelightCheckBox->Location = System::Drawing::Point(937, 304);
 			this->VeggieDelightCheckBox->Name = L"VeggieDelightCheckBox";
-			this->VeggieDelightCheckBox->Size = System::Drawing::Size(264, 56);
+			this->VeggieDelightCheckBox->Size = System::Drawing::Size(216, 93);
 			this->VeggieDelightCheckBox->TabIndex = 17;
 			this->VeggieDelightCheckBox->Text = L"\"The Veggie Delight\"\r\n\"A colorful medley of tomatoes, onions, mushrooms, black ol"
-				L"ives, and green peppers. Gluten free\"\r\nRs=1000";
+				L"ives, and green peppers. Gluten free\"\r\n";
 			this->VeggieDelightCheckBox->UseVisualStyleBackColor = true;
 			this->VeggieDelightCheckBox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::VeggieDelightCheckBox_CheckedChanged);
 			// 
 			// MoveToCrustSelect
 			// 
-			this->MoveToCrustSelect->Location = System::Drawing::Point(1024, 504);
+			this->MoveToCrustSelect->Location = System::Drawing::Point(968, 515);
 			this->MoveToCrustSelect->Name = L"MoveToCrustSelect";
 			this->MoveToCrustSelect->Size = System::Drawing::Size(168, 56);
 			this->MoveToCrustSelect->TabIndex = 14;
-			this->MoveToCrustSelect->Text = L"GO TO CRUST SELECT MENU";
+			this->MoveToCrustSelect->Text = L"GO TO TOPPING MENU";
 			this->MoveToCrustSelect->UseVisualStyleBackColor = true;
 			this->MoveToCrustSelect->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// pictureBox6
 			// 
 			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
-			this->pictureBox6->Location = System::Drawing::Point(456, 280);
+			this->pictureBox6->Location = System::Drawing::Point(408, 280);
 			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(264, 136);
+			this->pictureBox6->Size = System::Drawing::Size(212, 145);
 			this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox6->TabIndex = 10;
 			this->pictureBox6->TabStop = false;
@@ -1794,7 +1839,7 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
 			this->pictureBox5->Location = System::Drawing::Point(144, 280);
 			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(232, 136);
+			this->pictureBox5->Size = System::Drawing::Size(212, 145);
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox5->TabIndex = 8;
 			this->pictureBox5->TabStop = false;
@@ -1802,9 +1847,9 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// pictureBox4
 			// 
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-			this->pictureBox4->Location = System::Drawing::Point(968, 40);
+			this->pictureBox4->Location = System::Drawing::Point(672, 288);
 			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(224, 112);
+			this->pictureBox4->Size = System::Drawing::Size(216, 137);
 			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox4->TabIndex = 6;
 			this->pictureBox4->TabStop = false;
@@ -1812,30 +1857,55 @@ private: System::Windows::Forms::Button^ backtologinbutton;
 			// pictureBox3
 			// 
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(664, 40);
+			this->pictureBox3->Location = System::Drawing::Point(672, 22);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(256, 112);
+			this->pictureBox3->Size = System::Drawing::Size(216, 145);
 			this->pictureBox3->TabIndex = 4;
 			this->pictureBox3->TabStop = false;
 			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(408, 40);
+			this->pictureBox2->Location = System::Drawing::Point(408, 22);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(240, 112);
+			this->pictureBox2->Size = System::Drawing::Size(212, 145);
 			this->pictureBox2->TabIndex = 2;
 			this->pictureBox2->TabStop = false;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(144, 40);
+			this->pictureBox1->Location = System::Drawing::Point(144, 25);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(248, 112);
+			this->pictureBox1->Size = System::Drawing::Size(212, 145);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
+			// 
+			// FlavorHeading
+			// 
+			this->FlavorHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->FlavorHeading->ForeColor = System::Drawing::Color::White;
+			this->FlavorHeading->Location = System::Drawing::Point(961, 47);
+			this->FlavorHeading->Name = L"FlavorHeading";
+			this->FlavorHeading->Size = System::Drawing::Size(192, 93);
+			this->FlavorHeading->TabIndex = 39;
+			this->FlavorHeading->Text = L"Flavour Menu";
+			this->FlavorHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// pricebox2
+			// 
+			this->pricebox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->pricebox2->Location = System::Drawing::Point(984, 426);
+			this->pricebox2->Multiline = true;
+			this->pricebox2->Name = L"pricebox2";
+			this->pricebox2->ReadOnly = true;
+			this->pricebox2->Size = System::Drawing::Size(137, 53);
+			this->pricebox2->TabIndex = 40;
+			this->pricebox2->Text = L"Current Total = RS 1200\r\n";
+			this->pricebox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// MyForm
 			// 
@@ -1916,5 +1986,6 @@ private: System::Void staff_Click(System::Object^ sender, System::EventArgs^ e) 
 	System::Void usernameavailability_Click(System::Object^ sender, System::EventArgs^ e);
 
 	System::Void backtologinbutton_Click(System::Object^ sender, System::EventArgs^ e);
+
 };
 }

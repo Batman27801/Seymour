@@ -121,11 +121,23 @@ bool account::checkavailable(string a)
 {
 	account temp;
 	fstream accountsfile("accountdata.dat", ios::in | ios::binary);
-	for (; accountsfile.read((char*)&temp, sizeof(temp));)
+	for (;1;)
 	{
-		if (temp.getusername() == a || a.length() < 6 ||a.length() > 15)
+		if (accountsfile.read((char*)&temp, sizeof(temp)))
 		{
-			return false;
+			if (temp.getusername() == a || (a.length() < 6 || a.length() > 15))
+			{
+				return false;
+			}
+		}
+		else
+		{
+			if ((a.length() < 6 || a.length() > 15))
+			{
+				return false;
+			}
+			else
+				break;
 		}
 	}
 	accountsfile.close();
