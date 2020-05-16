@@ -1,11 +1,9 @@
 #include "Toping.h"
 #include <iostream>
+#include <string.h>
 using namespace std;
 Toping::Toping(): quantity(Normal){}
-Toping::~Toping()
-{
-    cout << endl;
-}
+
 void Toping::setquantity(quantityoftopings Q)
 {
     quantity = Q;
@@ -32,6 +30,10 @@ string Toping::getdetails()
 
 void Toping::setdetails(string I)
 {
-    details = I;
+    strcpy_s(details,I.c_str());
+}
+string Toping::getToppingName()
+{
+    return name;
 }
 
