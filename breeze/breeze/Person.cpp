@@ -11,9 +11,8 @@ Person::~Person()
 bool Person::setname(string N)
 {
     string tempN;
-    int size, i, n = 0;
-    size = N.size();
-    for (i = 0; i < size; i++)
+    int i, n = 0;
+    for (i = 0; i < N.length(); i++)
     {
         if ((N[i] >= 65 && N[i] <= 90) || (N[i] >= 97 && N[i] <= 122) || N[i] == 32)
         {
@@ -71,7 +70,6 @@ bool Person::setF_Name(string FN)
 
 bool Person::setage(int a)
 {
-    int tempA;
     int n = a, c = 0;
     while (n > 0)
     {
@@ -89,7 +87,7 @@ bool Person::setage(int a)
     }
     catch (...)
     {
-        age = 10;
+        age = 0;
         return false;
     }
 }

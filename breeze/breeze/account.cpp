@@ -27,25 +27,68 @@ string account::getusername()
 {
 	return username;
 }
-void account::setusername(string s)
+bool account::setusername(string s)
 {
-	strcpy_s(username, s.c_str());
+	try {
+		if (s.length()>=6 && s.length() < 15 && checkavailable(s))
+		{
+			strcpy_s(username, s.c_str());
+			return true;
+		}
+		else
+			throw 1;
+
+	}
+	catch (int)
+	{
+		strcpy_s(username, "");
+		return false;
+	}
 }
 string account::getpassword()
 {
 	return password;
 }
-void account::setpassword(string p)
+bool account::setpassword(string p)
 {
-	strcpy_s(username, p.c_str());
+	try {
+		if (p.length() >= 8 && p.length() < 30)
+		{
+			strcpy_s(password, p.c_str());
+			return true;
+		}
+		else
+			throw 1;
+	}
+	catch (int)
+	{
+		strcpy_s(password, "");
+		return false;
+	}
 }
 string account::getemail()
 {
 	return email;
 }
-void account::setemail(string e)
+bool account::setemail(string s)
 {
-	strcpy_s(username, e.c_str());
+	s == "" ? (s = "               ") : ("");
+	try {
+		int n = s.length();
+		if (s[n-1] == 'm' && s[n - 2] == 'o' && s[n - 3] == 'c' && s[n - 4] == '.' && (s[n - 10] == '@' || s[n - 12] == '@') && n < 30)
+		{
+			strcpy_s(email, s.c_str());
+			return true;
+		}
+		else
+			throw 1;
+
+	}
+	catch (int)
+	{
+		strcpy_s(email, "radomemail@gmail.com");
+		return false;
+	}
 }
 bool account::import(string user, string pass)
 {
@@ -73,4 +116,24 @@ bool account::getguest()
 void account::setguest(bool b)
 {
 	guest = b;
+}
+bool account::checkavailable(string a)
+{
+	account temp;
+	fstream accountsfile("accountdata.dat", ios::in | ios::binary);
+	for (; accountsfile.read((char*)&temp, sizeof(temp));)
+	{
+		if (temp.getusername() == a || a.length() < 6 ||a.length() > 15)
+		{
+			return false;
+		}
+	}
+	accountsfile.close();
+	return true;
+}
+void account::writetofile()
+{
+	fstream accountsfile("accountdata.dat", ios::out |ios::app | ios::binary);
+	accountsfile.write((char*)&*this, sizeof(*this));
+	accountsfile.close();
 }

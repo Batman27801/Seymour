@@ -12,6 +12,11 @@ void breeze::MyForm::customer_Click(System::Object^ sender, System::EventArgs^ e
 	tabControl1->SelectedTab = UserLogin;
 }
 
+void breeze::MyForm::backtologinbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = UserLogin;
+}
+
+
 void breeze::MyForm::Login_Click(System::Object^ sender, System::EventArgs^ e) {
 	string use, pass;
 	use = backtostring(UsernameBox->Text);
@@ -26,15 +31,142 @@ void breeze::MyForm::Signup_Click(System::Object^ sender, System::EventArgs^ e) 
 	tabControl1->SelectedTab = SignUpPage;
 }
 void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e) {
-	test->setname(backtostring(Namebox->Text));
-	test->setF_Name(backtostring(FNamebox->Text));
-	test->setage(System::Convert::ToInt32(agebox->Text));
+	using namespace System;
+	int i = 0;
+	if (!test->setname(backtostring(Namebox->Text)))
+	{
+		namereq->Visible = true;
+		Namebox->Text = Convert::ToString("0");
+		i++;
+	}
+
+	if (!test->setF_Name(backtostring(FNamebox->Text)))
+	{
+		fnamereq->Visible = true;
+		FNamebox->Text = Convert::ToString("0");
+		i++;
+	}
+
+	if (!test->setage(Convert::ToInt32(agebox->Text)))
+	{
+		agebox->Text = Convert::ToString("0");
+		i++;
+	}
+
+	string gen = backtostring(genderbox->Text);
+	if (gen == "Male")
+		test->setGender(Male);
+	else if (gen == "Female")
+		test->setGender(Female);
+	else if (gen == "Other")
+		test->setGender(Other);
+
+	if (!test->setcontact(Convert::ToInt64(contactbox->Text)))
+	{
+		contactbox->Text = Convert::ToString("0");
+	}
+
+	if (!test->setcnic(Convert::ToInt64(cnicbox->Text)))
+	{
+		cnicbox->Text = Convert::ToString("0");
+	}
+
+	test->setaddress(backtostring(addressbox->Text));
+
+	test->setpaymentttype(codcheckbox->Checked);
+
+	if (codcheckbox->Checked == false && cardcheckbox->Checked == false)
+	{
+		codlabel->Visible = true;
+		i++;
+	}
+
+	test->setcardprovider(backtostring(cardproviderbox->Text));
+
+	if (!test->setcardno(Convert::ToInt64(cardnobox->Text)))
+	{
+		cardnobox->Text = Convert::ToString("0");
+		i++;
+	}
+
+	if (!test->setexpiry(Convert::ToInt32(cardexpmonth->Text), Convert::ToInt32(cardexpyear->Text)))
+	{
+		expreq->Visible = true;
+		cardexpmonth->Text = Convert::ToString("0");
+		cardexpyear->Text = Convert::ToString("0");
+		i++;
+	}
+
+	if (!test->setemail(backtostring(emailbox->Text)))
+	{
+		emailreq->Visible = true;
+		emailbox->Text = Convert::ToString("0");
+		i++;
+	}
+
+	if (!test->setusername(backtostring(usernamebox2->Text)))
+	{
+		usernamereq2->Visible = true;
+		usernamebox2->Text = Convert::ToString("0");
+		i++;
+	}
+
+	if (!test->setpassword(backtostring(passwordbox2->Text)))
+	{
+		passwordbox2->Text = Convert::ToString("0");
+		i++;
+	}
+
+	if (i == 0)
+	{
+		test->writetofile();
+	}
+
+	else if (i > 0)
+	{
+		errorlabel->Visible = true;
+	}
+}
+void breeze::MyForm::codcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+{
+	if (codcheckbox->Checked == true)
+	{
+		cardcheckbox->Checked = false;
+		cardproviderbox->Enabled = false;
+		cardnobox->Enabled = false;
+		cardnobox->Text = "0";
+		cardexpmonth->Enabled = false;
+		cardexpmonth->Text = "0";
+		cardexpyear->Enabled = false;
+		cardexpyear->Text = "0";
+
+	}
+}
+void breeze::MyForm::cardcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+{
+	if (cardcheckbox->Checked == true)
+	{
+		codcheckbox->Checked = false;
+		cardproviderbox->Enabled = true;
+		cardnobox->Enabled = true;
+		cardexpmonth->Enabled = true;
+		cardexpyear->Enabled = true;
+	}
+}
+void breeze::MyForm::usernameavailability_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	if (test->checkavailable(backtostring(usernamebox2->Text)))
+	{
+		availablelabel->Visible = true;
+		notavailablelabel->Visible = false;
+	}
+	else
+	{
+		notavailablelabel->Visible = true;
+		availablelabel->Visible = false;
+	}
 
 }
-
-
-
-
 void breeze::MyForm::button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	order->PlaceOrder(Pizza);
 }

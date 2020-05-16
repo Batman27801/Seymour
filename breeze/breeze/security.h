@@ -8,14 +8,14 @@ protected:
 	long int cnic;
 	char address[200];
 	bool cod;
-	char card[8];
+	char card[15];
 	long int cardno;
 	int monthc, yearc;
 public:
 	security();
-	void setcontact(long int);
+	bool setcontact(long int);
 	long int getcontact();
-	void setcnic(long int);
+	bool setcnic(long int);
 	long int getcnic();
 	void setaddress(string);
 	string getaddress();
@@ -23,9 +23,9 @@ public:
 	bool getpaymenttype();
 	void setcardprovider(string);
 	string getcardprovider();
-	void setcardno(long int);
+	bool setcardno(long int i = 0);
 	long int getcardno();
-	void setexpiry(int, int);
+	bool setexpiry(int, int);
 	int* getexpiry();
 	template <typename encrypt>
 	encrypt encryption(encrypt);

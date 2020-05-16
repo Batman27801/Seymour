@@ -4,6 +4,17 @@
 #include <string>
 using namespace std;
 
+int digitcounter(long int v)
+{
+	int count = 0;
+	for (; v != 0;)
+	{
+		v = v / 10;
+		count++;
+	}
+	return count;
+}
+
 security::security()
 {
 	contactno = 0;
@@ -16,17 +27,44 @@ security::security()
 	yearc = 0;
 }
 
-void security::setcontact(long int c)
+bool security::setcontact(long int c)
 {
-	contactno = encryption(c);
+	try {
+		int i;
+		if (digitcounter(c)==10)
+		{
+			contactno = encryption(c);
+			return true;
+		}
+		else 
+			throw i++;
+	}
+	catch (int i) {
+		i > 0 ? (contactno = 0) : (1);
+		return false;
+	}
 }
 long int security::getcontact()
 {
 	return decryption(contactno);
 }
-void security::setcnic(long int c)
-{
-	cnic = encryption(c);
+bool security::setcnic(long int c)
+{	
+	int i;
+	try {
+		
+		if (digitcounter(c)==10)
+		{
+			cnic = encryption(c);
+			return true;
+		}
+		else
+			throw i++;
+	}
+	catch (int i) {
+		i > 0 ? (cnic = 0) : (1);
+		return false;
+	}
 }
 long int security::getcnic()
 {
@@ -56,18 +94,44 @@ string security::getcardprovider()
 {
 	return decryption(card);
 }
-void security::setcardno(long int i)
+bool security::setcardno(long int i)
 {
-	cardno = encryption(i);
+	int o;
+	try {
+		if (digitcounter(i) == 9 || i == 0 )
+		{
+			cardno = encryption(i);
+			return true;
+		}
+		else
+			throw o++;
+	}
+	catch (int o) {
+		o > 0 ? (cardno = 0) : (1);
+		return false;
+	}
 }
 long int security::getcardno()
 {
 	return decryption(cardno);
 }
-void security::setexpiry(int m, int y)
+bool security::setexpiry(int m, int y)
 {
-	monthc = encryption(m);
-	yearc = encryption(y);
+	try {
+		int i;
+		if ((m>5 && m<13 && y > 2019) || (m==0 && y==0))
+		{
+			monthc = encryption(m);
+			yearc = encryption(y);
+			return true;
+		}
+		else
+			throw i++;
+	}
+	catch (int i) {
+		i > 0 ? (monthc = 5, yearc = 2020) : (1);
+		return false;
+	}
 }
 int* security::getexpiry()
 {
@@ -149,4 +213,5 @@ string security::decryption(string var)
 	}
 	return temp;
 }
+
 

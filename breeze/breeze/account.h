@@ -18,13 +18,15 @@ public:
 	Order* getprevious();
 	void setprevious(Order&);
 	string getusername();
-	void setusername(string);
+	bool setusername(string);
 	string getpassword();
-	void setpassword(string);
+	bool setpassword(string);
 	string getemail();
-	void setemail(string);
+	bool setemail(string);
 	bool import(string,string);
 	bool getguest();
 	void setguest(bool);
+	bool checkavailable(string);
+	void writetofile();
 };
 

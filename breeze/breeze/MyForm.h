@@ -123,7 +123,8 @@ namespace breeze {
 private: System::Windows::Forms::Label^ cniclabel;
 private: System::Windows::Forms::Label^ cnicreq;
 private: System::Windows::Forms::TextBox^ cnicbox;
-private: System::Windows::Forms::TextBox^ textBox1;
+private: System::Windows::Forms::TextBox^ addressbox;
+
 private: System::Windows::Forms::Label^ label4;
 private: System::Windows::Forms::CheckBox^ TikkaMisc2;
 
@@ -162,11 +163,25 @@ private: System::Windows::Forms::Label^ notavailablelabel;
 
 private: System::Windows::Forms::Label^ availablelabel;
 private: System::Windows::Forms::Button^ usernameavailability;
-private: System::Windows::Forms::TextBox^ textBox2;
+private: System::Windows::Forms::TextBox^ emailbox;
+
 private: System::Windows::Forms::Label^ label6;
 private: System::Windows::Forms::Button^ signup2;
-private: System::Windows::Forms::TextBox^ textBox3;
+private: System::Windows::Forms::TextBox^ passwordbox2;
+
 private: System::Windows::Forms::Label^ passwordlabel;
+private: System::Windows::Forms::Label^ emailreq;
+
+private: System::Windows::Forms::Label^ fnamereq;
+private: System::Windows::Forms::Label^ namereq;
+private: System::Windows::Forms::Label^ expreq;
+private: System::Windows::Forms::Label^ expreq2;
+private: System::Windows::Forms::Label^ usernamereq2;
+private: System::Windows::Forms::Label^ passreq;
+private: System::Windows::Forms::Label^ errorlabel;
+private: System::Windows::Forms::Label^ codlabel;
+private: System::Windows::Forms::Button^ backtologinbutton;
+
 
 
 
@@ -272,14 +287,24 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->usersubheading = (gcnew System::Windows::Forms::Label());
 			this->UserHeading = (gcnew System::Windows::Forms::Label());
 			this->SignUpPage = (gcnew System::Windows::Forms::TabPage());
+			this->backtologinbutton = (gcnew System::Windows::Forms::Button());
+			this->codlabel = (gcnew System::Windows::Forms::Label());
+			this->errorlabel = (gcnew System::Windows::Forms::Label());
+			this->passreq = (gcnew System::Windows::Forms::Label());
+			this->usernamereq2 = (gcnew System::Windows::Forms::Label());
+			this->expreq = (gcnew System::Windows::Forms::Label());
+			this->expreq2 = (gcnew System::Windows::Forms::Label());
+			this->emailreq = (gcnew System::Windows::Forms::Label());
+			this->fnamereq = (gcnew System::Windows::Forms::Label());
+			this->namereq = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->signup2 = (gcnew System::Windows::Forms::Button());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->passwordbox2 = (gcnew System::Windows::Forms::TextBox());
 			this->passwordlabel = (gcnew System::Windows::Forms::Label());
 			this->notavailablelabel = (gcnew System::Windows::Forms::Label());
 			this->availablelabel = (gcnew System::Windows::Forms::Label());
 			this->usernameavailability = (gcnew System::Windows::Forms::Button());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->emailbox = (gcnew System::Windows::Forms::TextBox());
 			this->Emaillabel = (gcnew System::Windows::Forms::Label());
 			this->usernamebox2 = (gcnew System::Windows::Forms::TextBox());
 			this->usernamelabel = (gcnew System::Windows::Forms::Label());
@@ -296,7 +321,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->codcheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->cardcheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->paymenttypelabel = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->addressbox = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->cnicreq = (gcnew System::Windows::Forms::Label());
 			this->cnicbox = (gcnew System::Windows::Forms::TextBox());
@@ -751,14 +776,24 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			// SignUpPage
 			// 
 			this->SignUpPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SignUpPage.BackgroundImage")));
+			this->SignUpPage->Controls->Add(this->backtologinbutton);
+			this->SignUpPage->Controls->Add(this->codlabel);
+			this->SignUpPage->Controls->Add(this->errorlabel);
+			this->SignUpPage->Controls->Add(this->passreq);
+			this->SignUpPage->Controls->Add(this->usernamereq2);
+			this->SignUpPage->Controls->Add(this->expreq);
+			this->SignUpPage->Controls->Add(this->expreq2);
+			this->SignUpPage->Controls->Add(this->emailreq);
+			this->SignUpPage->Controls->Add(this->fnamereq);
+			this->SignUpPage->Controls->Add(this->namereq);
 			this->SignUpPage->Controls->Add(this->label6);
 			this->SignUpPage->Controls->Add(this->signup2);
-			this->SignUpPage->Controls->Add(this->textBox3);
+			this->SignUpPage->Controls->Add(this->passwordbox2);
 			this->SignUpPage->Controls->Add(this->passwordlabel);
 			this->SignUpPage->Controls->Add(this->notavailablelabel);
 			this->SignUpPage->Controls->Add(this->availablelabel);
 			this->SignUpPage->Controls->Add(this->usernameavailability);
-			this->SignUpPage->Controls->Add(this->textBox2);
+			this->SignUpPage->Controls->Add(this->emailbox);
 			this->SignUpPage->Controls->Add(this->Emaillabel);
 			this->SignUpPage->Controls->Add(this->usernamebox2);
 			this->SignUpPage->Controls->Add(this->usernamelabel);
@@ -775,7 +810,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->SignUpPage->Controls->Add(this->codcheckbox);
 			this->SignUpPage->Controls->Add(this->cardcheckbox);
 			this->SignUpPage->Controls->Add(this->paymenttypelabel);
-			this->SignUpPage->Controls->Add(this->textBox1);
+			this->SignUpPage->Controls->Add(this->addressbox);
 			this->SignUpPage->Controls->Add(this->label4);
 			this->SignUpPage->Controls->Add(this->cnicreq);
 			this->SignUpPage->Controls->Add(this->cnicbox);
@@ -801,13 +836,132 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->SignUpPage->Text = L"tabPage1";
 			this->SignUpPage->UseVisualStyleBackColor = true;
 			// 
+			// backtologinbutton
+			// 
+			this->backtologinbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->backtologinbutton->Location = System::Drawing::Point(148, 23);
+			this->backtologinbutton->Name = L"backtologinbutton";
+			this->backtologinbutton->Size = System::Drawing::Size(108, 47);
+			this->backtologinbutton->TabIndex = 52;
+			this->backtologinbutton->Text = L"<--- BACK";
+			this->backtologinbutton->UseVisualStyleBackColor = true;
+			this->backtologinbutton->Click += gcnew System::EventHandler(this, &MyForm::backtologinbutton_Click);
+			// 
+			// codlabel
+			// 
+			this->codlabel->AutoSize = true;
+			this->codlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->codlabel->ForeColor = System::Drawing::Color::Red;
+			this->codlabel->Location = System::Drawing::Point(902, 148);
+			this->codlabel->Name = L"codlabel";
+			this->codlabel->Size = System::Drawing::Size(123, 16);
+			this->codlabel->TabIndex = 51;
+			this->codlabel->Text = L"Please Select One!";
+			this->codlabel->Visible = false;
+			// 
+			// errorlabel
+			// 
+			this->errorlabel->AutoSize = true;
+			this->errorlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->errorlabel->ForeColor = System::Drawing::Color::Red;
+			this->errorlabel->Location = System::Drawing::Point(808, 94);
+			this->errorlabel->Name = L"errorlabel";
+			this->errorlabel->Size = System::Drawing::Size(353, 20);
+			this->errorlabel->TabIndex = 50;
+			this->errorlabel->Text = L"Account Creation Failed! Please Fix Errors!";
+			this->errorlabel->Visible = false;
+			// 
+			// passreq
+			// 
+			this->passreq->AutoSize = true;
+			this->passreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->passreq->ForeColor = System::Drawing::Color::Red;
+			this->passreq->Location = System::Drawing::Point(800, 476);
+			this->passreq->Name = L"passreq";
+			this->passreq->Size = System::Drawing::Size(183, 16);
+			this->passreq->TabIndex = 49;
+			this->passreq->Text = L"Must be 8 or more charecters!";
+			// 
+			// usernamereq2
+			// 
+			this->usernamereq2->AutoSize = true;
+			this->usernamereq2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->usernamereq2->ForeColor = System::Drawing::Color::Red;
+			this->usernamereq2->Location = System::Drawing::Point(800, 427);
+			this->usernamereq2->Name = L"usernamereq2";
+			this->usernamereq2->Size = System::Drawing::Size(158, 16);
+			this->usernamereq2->TabIndex = 48;
+			this->usernamereq2->Text = L"Username Not Available!";
+			this->usernamereq2->Visible = false;
+			// 
+			// expreq
+			// 
+			this->expreq->AutoSize = true;
+			this->expreq->ForeColor = System::Drawing::Color::Red;
+			this->expreq->Location = System::Drawing::Point(928, 310);
+			this->expreq->Name = L"expreq";
+			this->expreq->Size = System::Drawing::Size(256, 13);
+			this->expreq->TabIndex = 47;
+			this->expreq->Text = L"Expiry Date can not be in the past. Card has Expired!";
+			this->expreq->Visible = false;
+			// 
+			// expreq2
+			// 
+			this->expreq2->AutoSize = true;
+			this->expreq2->ForeColor = System::Drawing::Color::Red;
+			this->expreq2->Location = System::Drawing::Point(766, 310);
+			this->expreq2->Name = L"expreq2";
+			this->expreq2->Size = System::Drawing::Size(108, 13);
+			this->expreq2->TabIndex = 46;
+			this->expreq2->Text = L"Numeric Values Only!";
+			// 
+			// emailreq
+			// 
+			this->emailreq->AutoSize = true;
+			this->emailreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->emailreq->ForeColor = System::Drawing::Color::Red;
+			this->emailreq->Location = System::Drawing::Point(913, 364);
+			this->emailreq->Name = L"emailreq";
+			this->emailreq->Size = System::Drawing::Size(180, 15);
+			this->emailreq->TabIndex = 45;
+			this->emailreq->Text = L"Please use Proper email format";
+			this->emailreq->Visible = false;
+			// 
+			// fnamereq
+			// 
+			this->fnamereq->AutoSize = true;
+			this->fnamereq->ForeColor = System::Drawing::Color::Red;
+			this->fnamereq->Location = System::Drawing::Point(239, 228);
+			this->fnamereq->Name = L"fnamereq";
+			this->fnamereq->Size = System::Drawing::Size(211, 13);
+			this->fnamereq->TabIndex = 44;
+			this->fnamereq->Text = L"Name can only contain alphabets or Space";
+			this->fnamereq->Visible = false;
+			// 
+			// namereq
+			// 
+			this->namereq->AutoSize = true;
+			this->namereq->ForeColor = System::Drawing::Color::Red;
+			this->namereq->Location = System::Drawing::Point(239, 173);
+			this->namereq->Name = L"namereq";
+			this->namereq->Size = System::Drawing::Size(211, 13);
+			this->namereq->TabIndex = 43;
+			this->namereq->Text = L"Name can only contain alphabets or Space";
+			this->namereq->Visible = false;
+			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->label6->Location = System::Drawing::Point(812, 479);
+			this->label6->Location = System::Drawing::Point(1044, 482);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(122, 80);
 			this->label6->TabIndex = 42;
@@ -818,7 +972,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			// 
 			this->signup2->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->signup2->Location = System::Drawing::Point(953, 495);
+			this->signup2->Location = System::Drawing::Point(778, 495);
 			this->signup2->Name = L"signup2";
 			this->signup2->Size = System::Drawing::Size(225, 64);
 			this->signup2->TabIndex = 41;
@@ -826,14 +980,14 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->signup2->UseVisualStyleBackColor = true;
 			this->signup2->Click += gcnew System::EventHandler(this, &MyForm::signup2_Click);
 			// 
-			// textBox3
+			// passwordbox2
 			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->passwordbox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(867, 430);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(205, 26);
-			this->textBox3->TabIndex = 40;
+			this->passwordbox2->Location = System::Drawing::Point(798, 447);
+			this->passwordbox2->Name = L"passwordbox2";
+			this->passwordbox2->Size = System::Drawing::Size(205, 26);
+			this->passwordbox2->TabIndex = 40;
 			// 
 			// passwordlabel
 			// 
@@ -841,7 +995,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->passwordlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
 				| System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->passwordlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->passwordlabel->Location = System::Drawing::Point(729, 430);
+			this->passwordlabel->Location = System::Drawing::Point(636, 447);
 			this->passwordlabel->Name = L"passwordlabel";
 			this->passwordlabel->Size = System::Drawing::Size(122, 24);
 			this->passwordlabel->TabIndex = 39;
@@ -851,7 +1005,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			// 
 			this->notavailablelabel->AutoSize = true;
 			this->notavailablelabel->ForeColor = System::Drawing::Color::Red;
-			this->notavailablelabel->Location = System::Drawing::Point(1102, 406);
+			this->notavailablelabel->Location = System::Drawing::Point(1099, 409);
 			this->notavailablelabel->Name = L"notavailablelabel";
 			this->notavailablelabel->Size = System::Drawing::Size(73, 13);
 			this->notavailablelabel->TabIndex = 38;
@@ -862,7 +1016,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			// 
 			this->availablelabel->AutoSize = true;
 			this->availablelabel->ForeColor = System::Drawing::Color::Lime;
-			this->availablelabel->Location = System::Drawing::Point(1043, 406);
+			this->availablelabel->Location = System::Drawing::Point(1099, 398);
 			this->availablelabel->Name = L"availablelabel";
 			this->availablelabel->Size = System::Drawing::Size(53, 13);
 			this->availablelabel->TabIndex = 37;
@@ -873,21 +1027,22 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			// 
 			this->usernameavailability->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->usernameavailability->Location = System::Drawing::Point(1046, 380);
+			this->usernameavailability->Location = System::Drawing::Point(990, 399);
 			this->usernameavailability->Name = L"usernameavailability";
 			this->usernameavailability->Size = System::Drawing::Size(103, 23);
 			this->usernameavailability->TabIndex = 36;
 			this->usernameavailability->Text = L"Check Availibilty";
 			this->usernameavailability->UseVisualStyleBackColor = true;
+			this->usernameavailability->Click += gcnew System::EventHandler(this, &MyForm::usernameavailability_Click);
 			// 
-			// textBox2
+			// emailbox
 			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->emailbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(905, 335);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(220, 26);
-			this->textBox2->TabIndex = 35;
+			this->emailbox->Location = System::Drawing::Point(905, 335);
+			this->emailbox->Name = L"emailbox";
+			this->emailbox->Size = System::Drawing::Size(220, 26);
+			this->emailbox->TabIndex = 35;
 			// 
 			// Emaillabel
 			// 
@@ -905,7 +1060,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			// 
 			this->usernamebox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->usernamebox2->Location = System::Drawing::Point(867, 377);
+			this->usernamebox2->Location = System::Drawing::Point(798, 398);
 			this->usernamebox2->Name = L"usernamebox2";
 			this->usernamebox2->Size = System::Drawing::Size(173, 26);
 			this->usernamebox2->TabIndex = 33;
@@ -916,7 +1071,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->usernamelabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
 				| System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->usernamelabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->usernamelabel->Location = System::Drawing::Point(724, 377);
+			this->usernamelabel->Location = System::Drawing::Point(636, 398);
 			this->usernamelabel->Name = L"usernamelabel";
 			this->usernamelabel->Size = System::Drawing::Size(127, 24);
 			this->usernamelabel->TabIndex = 32;
@@ -954,6 +1109,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->cardexpyear->Name = L"cardexpyear";
 			this->cardexpyear->Size = System::Drawing::Size(100, 26);
 			this->cardexpyear->TabIndex = 29;
+			this->cardexpyear->Text = L"0";
 			// 
 			// cardexpmonth
 			// 
@@ -963,6 +1119,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->cardexpmonth->Name = L"cardexpmonth";
 			this->cardexpmonth->Size = System::Drawing::Size(66, 26);
 			this->cardexpmonth->TabIndex = 28;
+			this->cardexpmonth->Text = L"0";
 			// 
 			// cardexplabel
 			// 
@@ -984,9 +1141,9 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->cardnoreq->ForeColor = System::Drawing::Color::Red;
 			this->cardnoreq->Location = System::Drawing::Point(902, 253);
 			this->cardnoreq->Name = L"cardnoreq";
-			this->cardnoreq->Size = System::Drawing::Size(224, 16);
+			this->cardnoreq->Size = System::Drawing::Size(217, 16);
 			this->cardnoreq->TabIndex = 26;
-			this->cardnoreq->Text = L"Must be a valid 16 digit card number!";
+			this->cardnoreq->Text = L"Must be a valid 9 digit card number!";
 			// 
 			// cardnobox
 			// 
@@ -996,6 +1153,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->cardnobox->Name = L"cardnobox";
 			this->cardnobox->Size = System::Drawing::Size(220, 26);
 			this->cardnobox->TabIndex = 25;
+			this->cardnobox->Text = L"0";
 			// 
 			// cardnolabel
 			// 
@@ -1015,8 +1173,8 @@ private: System::Windows::Forms::Label^ passwordlabel;
 				L"MasterCard", L"Visa",
 					L"UnionPay", L"PayPak"
 			});
-			this->cardproviderbox->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Suggest;
 			this->cardproviderbox->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
+			this->cardproviderbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cardproviderbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->cardproviderbox->FormattingEnabled = true;
@@ -1050,6 +1208,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->codcheckbox->TabIndex = 21;
 			this->codcheckbox->Text = L"Cash on Delivery";
 			this->codcheckbox->UseVisualStyleBackColor = true;
+			this->codcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::codcheckbox_CheckedChanged);
 			// 
 			// cardcheckbox
 			// 
@@ -1063,6 +1222,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->cardcheckbox->TabIndex = 20;
 			this->cardcheckbox->Text = L"Card";
 			this->cardcheckbox->UseVisualStyleBackColor = true;
+			this->cardcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cardcheckbox_CheckedChanged);
 			// 
 			// paymenttypelabel
 			// 
@@ -1076,15 +1236,15 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->paymenttypelabel->TabIndex = 19;
 			this->paymenttypelabel->Text = L"**Default Payment Type:";
 			// 
-			// textBox1
+			// addressbox
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->addressbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(239, 498);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(258, 61);
-			this->textBox1->TabIndex = 18;
+			this->addressbox->Location = System::Drawing::Point(239, 498);
+			this->addressbox->Multiline = true;
+			this->addressbox->Name = L"addressbox";
+			this->addressbox->Size = System::Drawing::Size(258, 61);
+			this->addressbox->TabIndex = 18;
 			// 
 			// label4
 			// 
@@ -1107,7 +1267,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->cnicreq->Name = L"cnicreq";
 			this->cnicreq->Size = System::Drawing::Size(154, 52);
 			this->cnicreq->TabIndex = 16;
-			this->cnicreq->Text = L"Must be valid 13 digit CNIC number!";
+			this->cnicreq->Text = L"Must be valid 10 digit CNIC number!";
 			// 
 			// cnicbox
 			// 
@@ -1117,6 +1277,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->cnicbox->Name = L"cnicbox";
 			this->cnicbox->Size = System::Drawing::Size(165, 26);
 			this->cnicbox->TabIndex = 15;
+			this->cnicbox->Text = L"0";
 			// 
 			// cniclabel
 			// 
@@ -1149,6 +1310,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->contactbox->Name = L"contactbox";
 			this->contactbox->Size = System::Drawing::Size(149, 26);
 			this->contactbox->TabIndex = 12;
+			this->contactbox->Text = L"0";
 			// 
 			// contactlabel
 			// 
@@ -1183,9 +1345,9 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->genderlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->genderlabel->Location = System::Drawing::Point(145, 321);
 			this->genderlabel->Name = L"genderlabel";
-			this->genderlabel->Size = System::Drawing::Size(74, 20);
+			this->genderlabel->Size = System::Drawing::Size(88, 20);
 			this->genderlabel->TabIndex = 9;
-			this->genderlabel->Text = L"Gender:";
+			this->genderlabel->Text = L"**Gender:";
 			this->genderlabel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// agereq
@@ -1208,6 +1370,7 @@ private: System::Windows::Forms::Label^ passwordlabel;
 			this->agebox->Name = L"agebox";
 			this->agebox->Size = System::Drawing::Size(100, 26);
 			this->agebox->TabIndex = 7;
+			this->agebox->Text = L"0";
 			// 
 			// Agelabel
 			// 
@@ -1748,5 +1911,10 @@ private: System::Void staff_Click(System::Object^ sender, System::EventArgs^ e) 
 	tabControl1->SelectedTab = FlavourSelect;
 }
 	System::Void signup2_Click(System::Object^ sender, System::EventArgs^ e); 
+	System::Void codcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void cardcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void usernameavailability_Click(System::Object^ sender, System::EventArgs^ e);
+
+	System::Void backtologinbutton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

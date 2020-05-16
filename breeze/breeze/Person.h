@@ -2,7 +2,7 @@
 #define PERSON
 #include <iostream>
 using namespace std;
-enum Gender { Male = 1, Female = 2 };
+enum Gender { Male = 1, Female = 2, Other = 3 };
 class Person
 {
 protected:
