@@ -9,12 +9,14 @@ class Order
 private:
     double bill;
     int no_of_orders;
-    char FLAVOURS[7][230] = { "tikka" ,"fajita","chilli delight", "BBQ buzz", "seekh kebab", "The cheese", "Veggie Delight" };
-        
+    char FLAVOURS[7][30] = { "tikka" ,"fajita","chilli delight", "BBQ buzz", "seekh kebab", "The cheese", "Veggie Delight" };
+    char SelectedFlavour[30];
+    char SelectedFlavourMisc[30];
     
 public:
     Order();
     void PlaceOrder(pizza *pizza);
+    void FileOrder();
     //double MiscCal(double AddOn_Price,flavour *ptr);
     double ReturnBill();
 };
