@@ -13,7 +13,6 @@ private:
 
 public:
     Pepperoni();
-    ~Pepperoni();
     void initialize();
     void setType(TypeofTopping);
     TypeofTopping getType();

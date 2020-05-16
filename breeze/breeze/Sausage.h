@@ -12,7 +12,6 @@ private:
 
 public:
     Sausage();
-    ~Sausage();
     void initialize();
     void setRPF(bool);
     bool getRPF();

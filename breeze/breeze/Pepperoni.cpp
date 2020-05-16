@@ -1,18 +1,17 @@
 #include "Toping.h"
 #include "Pepperoni.h"
 #include <iostream>
+#include <string.h>
 using namespace std;
 Pepperoni::Pepperoni(): Type(Vegan),QOFMC(Usual)
 {
+    strcpy_s(name, "Pepperoni");
     initialize();
 }
-Pepperoni::~Pepperoni()
-{
-    cout << endl;
-}
+
 void Pepperoni::initialize()
 {
-    details = "Poll after poll, pepperoni always tops the list of Americas favorite pizza toppings. When it doubt, you cant go wrong with a classic.";
+    strcpy_s(details, "Poll after poll, pepperoni always tops the list of Americas favorite pizza toppings. When it doubt, you cant go wrong with a classic.");
     price = 150;
 }
 void Pepperoni::setType(TypeofTopping TOT)

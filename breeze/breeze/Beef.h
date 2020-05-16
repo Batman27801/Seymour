@@ -13,7 +13,6 @@ private:
 
 public:
     Beef();
-    ~Beef();
     void initialize();
     void setCS(bool);
     bool getCS();
