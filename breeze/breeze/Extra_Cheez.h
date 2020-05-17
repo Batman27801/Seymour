@@ -3,7 +3,7 @@
 #include "Toping.h"
 #include <iostream>
 using namespace std;
-enum Extras { Macroni = 1, Cheese = 2 };
+enum Extras { Macroni = 1, Cheese = 2};
 class Extra_Cheez : public Toping
 {
 private:
