@@ -672,3 +672,18 @@ Void breeze::MyForm::TheCheeseMisc3_CheckedChanged(System::Object^ sender, Syste
 
 	}
 }
+void breeze::MyForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	tabControl1->SelectedTab = CrustSelect;
+}
+void breeze::MyForm::staff_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = FlavourSelect;
+}
+void breeze::MyForm::ChilliDelightCheckbox_CheckStateChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (ChilliDelightCheckbox->Checked == false)
+	{
+		ChilliDelightMisc1->Visible = false;
+		ChilliDelightMisc2->Visible = false;
+
+	}
+}

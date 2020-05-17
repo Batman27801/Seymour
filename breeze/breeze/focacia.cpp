@@ -11,6 +11,7 @@ focacia::focacia()
     herb = onions;
     coat = oliveoil;
     thin = 0;
+    thick = 1;
     gluten = 1;
 }
 void focacia::setsize(int s)

@@ -29,10 +29,10 @@ namespace breeze {
 
 	private: System::Windows::Forms::TabPage^ CrustSelect;
 	public:
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::CheckBox^ checkBox2;
-	private: System::Windows::Forms::TextBox^ pricebox;
+
+
+
+
 	private: System::Windows::Forms::Splitter^ splitter1;
 	private: System::Windows::Forms::Label^ subtitle;
 
@@ -183,6 +183,9 @@ private: System::Windows::Forms::Label^ codlabel;
 private: System::Windows::Forms::Button^ backtologinbutton;
 private: System::Windows::Forms::Label^ FlavorHeading;
 private: System::Windows::Forms::TextBox^ pricebox2;
+private: System::Windows::Forms::PictureBox^ pictureBox8;
+private: System::Windows::Forms::Label^ Crustheading;
+private: System::Windows::Forms::Button^ backtocrustbutton;
 
 
 
@@ -203,7 +206,8 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 
 
 
-	private: System::Windows::Forms::CheckBox^ italian;
+
+
 	public:
 
 		MyForm(void)
@@ -266,11 +270,6 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			this->subtitle = (gcnew System::Windows::Forms::Label());
 			this->title = (gcnew System::Windows::Forms::Label());
 			this->CrustSelect = (gcnew System::Windows::Forms::TabPage());
-			this->pricebox = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
-			this->italian = (gcnew System::Windows::Forms::CheckBox());
 			this->UserLogin = (gcnew System::Windows::Forms::TabPage());
 			this->incorrect = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -344,6 +343,9 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			this->SignUpHeading = (gcnew System::Windows::Forms::Label());
 			this->UserPage = (gcnew System::Windows::Forms::TabPage());
 			this->FlavourSelect = (gcnew System::Windows::Forms::TabPage());
+			this->backtocrustbutton = (gcnew System::Windows::Forms::Button());
+			this->pricebox2 = (gcnew System::Windows::Forms::TextBox());
+			this->FlavorHeading = (gcnew System::Windows::Forms::Label());
 			this->TheCheeseMisc3 = (gcnew System::Windows::Forms::CheckBox());
 			this->TheCheeseMisc2 = (gcnew System::Windows::Forms::CheckBox());
 			this->TheCheeseMisc1 = (gcnew System::Windows::Forms::CheckBox());
@@ -372,8 +374,8 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->FlavorHeading = (gcnew System::Windows::Forms::Label());
-			this->pricebox2 = (gcnew System::Windows::Forms::TextBox());
+			this->Crustheading = (gcnew System::Windows::Forms::Label());
+			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -387,6 +389,7 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -497,69 +500,15 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			// 
 			// CrustSelect
 			// 
-			this->CrustSelect->Controls->Add(this->pricebox);
-			this->CrustSelect->Controls->Add(this->label2);
-			this->CrustSelect->Controls->Add(this->label1);
-			this->CrustSelect->Controls->Add(this->checkBox2);
-			this->CrustSelect->Controls->Add(this->italian);
+			this->CrustSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CrustSelect.BackgroundImage")));
+			this->CrustSelect->Controls->Add(this->pictureBox8);
+			this->CrustSelect->Controls->Add(this->Crustheading);
 			this->CrustSelect->Location = System::Drawing::Point(4, 22);
 			this->CrustSelect->Name = L"CrustSelect";
 			this->CrustSelect->Size = System::Drawing::Size(1210, 576);
 			this->CrustSelect->TabIndex = 1;
 			this->CrustSelect->Text = L"Crust select";
 			this->CrustSelect->UseVisualStyleBackColor = true;
-			// 
-			// pricebox
-			// 
-			this->pricebox->Location = System::Drawing::Point(801, 310);
-			this->pricebox->Name = L"pricebox";
-			this->pricebox->ReadOnly = true;
-			this->pricebox->Size = System::Drawing::Size(150, 20);
-			this->pricebox->TabIndex = 3;
-			this->pricebox->Text = L"Price =";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(778, 174);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(42, 13);
-			this->label2->TabIndex = 2;
-			this->label2->Text = L"focacia";
-			// 
-			// label1
-			// 
-			this->label1->Location = System::Drawing::Point(364, 174);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(35, 13);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"italian";
-			// 
-			// checkBox2
-			// 
-			this->checkBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"checkBox2.BackgroundImage")));
-			this->checkBox2->CheckAlign = System::Drawing::ContentAlignment::BottomLeft;
-			this->checkBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"checkBox2.Image")));
-			this->checkBox2->Location = System::Drawing::Point(750, 71);
-			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->checkBox2->Size = System::Drawing::Size(100, 100);
-			this->checkBox2->TabIndex = 1;
-			this->checkBox2->Text = L"checkBox2";
-			this->checkBox2->UseVisualStyleBackColor = true;
-			// 
-			// italian
-			// 
-			this->italian->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->italian->CheckAlign = System::Drawing::ContentAlignment::BottomLeft;
-			this->italian->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"italian.Image")));
-			this->italian->Location = System::Drawing::Point(329, 71);
-			this->italian->Name = L"italian";
-			this->italian->Size = System::Drawing::Size(100, 100);
-			this->italian->TabIndex = 0;
-			this->italian->Text = L"italian";
-			this->italian->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->italian->UseVisualStyleBackColor = true;
 			// 
 			// UserLogin
 			// 
@@ -1472,6 +1421,7 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			// FlavourSelect
 			// 
 			this->FlavourSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FlavourSelect.BackgroundImage")));
+			this->FlavourSelect->Controls->Add(this->backtocrustbutton);
 			this->FlavourSelect->Controls->Add(this->pricebox2);
 			this->FlavourSelect->Controls->Add(this->FlavorHeading);
 			this->FlavourSelect->Controls->Add(this->TheCheeseMisc3);
@@ -1508,6 +1458,43 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			this->FlavourSelect->TabIndex = 3;
 			this->FlavourSelect->Text = L"FlavourSelect";
 			this->FlavourSelect->UseVisualStyleBackColor = true;
+			// 
+			// backtocrustbutton
+			// 
+			this->backtocrustbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->backtocrustbutton->Location = System::Drawing::Point(1106, 3);
+			this->backtocrustbutton->Name = L"backtocrustbutton";
+			this->backtocrustbutton->Size = System::Drawing::Size(104, 55);
+			this->backtocrustbutton->TabIndex = 41;
+			this->backtocrustbutton->Text = L"<---- Back";
+			this->backtocrustbutton->UseVisualStyleBackColor = true;
+			this->backtocrustbutton->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// pricebox2
+			// 
+			this->pricebox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->pricebox2->Location = System::Drawing::Point(984, 441);
+			this->pricebox2->Multiline = true;
+			this->pricebox2->Name = L"pricebox2";
+			this->pricebox2->ReadOnly = true;
+			this->pricebox2->Size = System::Drawing::Size(137, 53);
+			this->pricebox2->TabIndex = 40;
+			this->pricebox2->Text = L"Current Total = RS 1200\r\n";
+			this->pricebox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// FlavorHeading
+			// 
+			this->FlavorHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->FlavorHeading->ForeColor = System::Drawing::Color::White;
+			this->FlavorHeading->Location = System::Drawing::Point(961, 61);
+			this->FlavorHeading->Name = L"FlavorHeading";
+			this->FlavorHeading->Size = System::Drawing::Size(192, 93);
+			this->FlavorHeading->TabIndex = 39;
+			this->FlavorHeading->Text = L"Flavour Menu";
+			this->FlavorHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// TheCheeseMisc3
 			// 
@@ -1793,7 +1780,7 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			// pictureBox7
 			// 
 			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
-			this->pictureBox7->Location = System::Drawing::Point(937, 156);
+			this->pictureBox7->Location = System::Drawing::Point(937, 166);
 			this->pictureBox7->Name = L"pictureBox7";
 			this->pictureBox7->Size = System::Drawing::Size(216, 142);
 			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
@@ -1805,7 +1792,7 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			this->VeggieDelightCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->VeggieDelightCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->VeggieDelightCheckBox->Location = System::Drawing::Point(937, 304);
+			this->VeggieDelightCheckBox->Location = System::Drawing::Point(937, 317);
 			this->VeggieDelightCheckBox->Name = L"VeggieDelightCheckBox";
 			this->VeggieDelightCheckBox->Size = System::Drawing::Size(216, 93);
 			this->VeggieDelightCheckBox->TabIndex = 17;
@@ -1882,30 +1869,25 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
 			// 
-			// FlavorHeading
+			// Crustheading
 			// 
-			this->FlavorHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+			this->Crustheading->AutoSize = true;
+			this->Crustheading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->FlavorHeading->ForeColor = System::Drawing::Color::White;
-			this->FlavorHeading->Location = System::Drawing::Point(961, 47);
-			this->FlavorHeading->Name = L"FlavorHeading";
-			this->FlavorHeading->Size = System::Drawing::Size(192, 93);
-			this->FlavorHeading->TabIndex = 39;
-			this->FlavorHeading->Text = L"Flavour Menu";
-			this->FlavorHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Crustheading->ForeColor = System::Drawing::Color::White;
+			this->Crustheading->Location = System::Drawing::Point(542, 31);
+			this->Crustheading->Name = L"Crustheading";
+			this->Crustheading->Size = System::Drawing::Size(241, 41);
+			this->Crustheading->TabIndex = 0;
+			this->Crustheading->Text = L"CRUST MENU";
 			// 
-			// pricebox2
+			// pictureBox8
 			// 
-			this->pricebox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->pricebox2->Location = System::Drawing::Point(984, 426);
-			this->pricebox2->Multiline = true;
-			this->pricebox2->Name = L"pricebox2";
-			this->pricebox2->ReadOnly = true;
-			this->pricebox2->Size = System::Drawing::Size(137, 53);
-			this->pricebox2->TabIndex = 40;
-			this->pricebox2->Text = L"Current Total = RS 1200\r\n";
-			this->pricebox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->pictureBox8->Location = System::Drawing::Point(165, 120);
+			this->pictureBox8->Name = L"pictureBox8";
+			this->pictureBox8->Size = System::Drawing::Size(100, 50);
+			this->pictureBox8->TabIndex = 1;
+			this->pictureBox8->TabStop = false;
 			// 
 			// MyForm
 			// 
@@ -1938,6 +1920,7 @@ private: System::Windows::Forms::TextBox^ pricebox2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1968,24 +1951,13 @@ private:
 	System::Void TheCheeseMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void TheCheeseMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void TheCheeseMisc3_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-	
-private: System::Void ChilliDelightCheckbox_CheckStateChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (ChilliDelightCheckbox->Checked == false)
-	{
-		ChilliDelightMisc1->Visible = false;
-		ChilliDelightMisc2->Visible = false;
-
-	}
-}
-private: System::Void staff_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = FlavourSelect;
-}
+	System::Void ChilliDelightCheckbox_CheckStateChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void staff_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void signup2_Click(System::Object^ sender, System::EventArgs^ e); 
 	System::Void codcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void cardcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void usernameavailability_Click(System::Object^ sender, System::EventArgs^ e);
-
 	System::Void backtologinbutton_Click(System::Object^ sender, System::EventArgs^ e);
-
+	System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
