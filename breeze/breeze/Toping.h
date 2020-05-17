@@ -18,10 +18,10 @@ public:
     void setquantity(quantityoftopings);
     quantityoftopings getquantity();
     void setprice(double);
-    double getprice(void);
-    void setdetails(string);
-    string getdetails();
+    virtual double getprice(void)=0;
+    void setdetails(char[]);
+    char* getdetails();
     string getToppingName();
-    virtual void initialize() = 0;
+
 };
 #endif

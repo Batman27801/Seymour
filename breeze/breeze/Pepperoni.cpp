@@ -30,3 +30,10 @@ QuantityOfmozzarellecheese Pepperoni::getQOFMC()
 {
     return QOFMC;
 }
+double Pepperoni::getprice()
+{
+    if (QOFMC == More) price=price+50;
+    else if (QOFMC == Less) return price=price-30;
+    else if (QOFMC == Not_Include) price=price - 50;
+    return price;
+}

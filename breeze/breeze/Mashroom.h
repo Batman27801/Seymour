@@ -17,5 +17,6 @@ public:
     void setCO(bool);
     bool getCRGS();
     bool getCO();
+    double getprice();
 };
 #endif

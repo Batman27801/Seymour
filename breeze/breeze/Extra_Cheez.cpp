@@ -1,7 +1,7 @@
 #include "Toping.h"
 #include "Extra_Cheez.h"
 #include <string.h>
-Extra_Cheez::Extra_Cheez() : Red_Pepper_Flakes(true),Extra(Macroni)
+Extra_Cheez::Extra_Cheez() : Red_Pepper_Flakes(false),Extra(Macroni)
 {
     strcpy_s(name, "Extra_Cheez");
     initialize();
@@ -27,4 +27,16 @@ void Extra_Cheez::setExtra(Extras E)
 Extras Extra_Cheez::getExtra()
 {
     return Extra;
+}
+double Extra_Cheez::getprice()
+{
+    if (Red_Pepper_Flakes == true)
+    {
+        price = (price + 50);
+    }
+    if (Extra == Cheese)
+    {
+        price = (price + 150);
+    }
+    return price;
 }

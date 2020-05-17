@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-Chicken::Chicken(): Cheese(Shredded_Cheddar),BBQ_Sause(true) 
+Chicken::Chicken(): Cheese(Shredded_Cheddar),BBQ_Sause(false) 
 {
     strcpy_s(name, "Chicken");
     initialize();
@@ -28,4 +28,12 @@ void Chicken::setBS(bool n)
 bool Chicken::getBS()
 {
     return BBQ_Sause;
+}
+double Chicken::getprice()
+{
+    if (BBQ_Sause == true)
+    {
+        return (price + 50);
+    }
+    else return price;
 }

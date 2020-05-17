@@ -18,6 +18,7 @@ public:
     TypeofTopping getType();
     void setQOFMC(QuantityOfmozzarellecheese);
     QuantityOfmozzarellecheese getQOFMC();
+    double getprice();
 
 };
 #endif

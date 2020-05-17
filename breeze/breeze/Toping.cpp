@@ -18,19 +18,15 @@ void Toping::setprice(double p)
 {
     price = p;
 }
-double Toping::getprice()
-{
-    return price;
-}
 
-string Toping::getdetails()
+char* Toping::getdetails()
 {
     return details;
 }
 
-void Toping::setdetails(string I)
+void Toping::setdetails(char I[])
 {
-    strcpy_s(details,I.c_str());
+    strcpy_s(details,I);
 }
 string Toping::getToppingName()
 {
