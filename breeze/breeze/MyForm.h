@@ -185,6 +185,7 @@ private: System::Windows::Forms::Label^ FlavorHeading;
 private: System::Windows::Forms::TextBox^ pricebox2;
 private: System::Windows::Forms::PictureBox^ pictureBox8;
 private: System::Windows::Forms::Label^ Crustheading;
+private: System::Windows::Forms::TabPage^ ToppingSelect;
 private: System::Windows::Forms::Button^ backtocrustbutton;
 
 
@@ -376,6 +377,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->ToppingSelect = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -400,6 +402,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->tabControl1->Controls->Add(this->SignUpPage);
 			this->tabControl1->Controls->Add(this->UserPage);
 			this->tabControl1->Controls->Add(this->FlavourSelect);
+			this->tabControl1->Controls->Add(this->ToppingSelect);
 			this->tabControl1->Location = System::Drawing::Point(-130, -32);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
@@ -1888,6 +1891,15 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
+			// 
+			// ToppingSelect
+			// 
+			this->ToppingSelect->Location = System::Drawing::Point(4, 22);
+			this->ToppingSelect->Name = L"ToppingSelect";
+			this->ToppingSelect->Size = System::Drawing::Size(1210, 576);
+			this->ToppingSelect->TabIndex = 6;
+			this->ToppingSelect->Text = L"tabPage1";
+			this->ToppingSelect->UseVisualStyleBackColor = true;
 			// 
 			// MyForm
 			// 
