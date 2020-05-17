@@ -23,7 +23,7 @@ void account::setprevious(Order& newest)
 	}
 	previous[0] = newest;
 }
-string account::getusername()
+char* account::getusername()
 {
 	return username;
 }
@@ -45,7 +45,7 @@ bool account::setusername(string s)
 		return false;
 	}
 }
-string account::getpassword()
+char* account::getpassword()
 {
 	return password;
 }
@@ -66,7 +66,7 @@ bool account::setpassword(string p)
 		return false;
 	}
 }
-string account::getemail()
+char* account::getemail()
 {
 	return email;
 }

@@ -97,12 +97,12 @@ void Person::setGender(Gender g)
     gender = g;
 }
 
-string Person::getname()
+char* Person::getname()
 {
     return name;
 }
 
-string Person::getF_Name()
+char* Person::getF_Name()
 {
     return Fath_Name;
 }

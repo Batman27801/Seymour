@@ -17,11 +17,11 @@ public:
 	account();
 	Order* getprevious();
 	void setprevious(Order&);
-	string getusername();
+	char* getusername();
 	bool setusername(string);
-	string getpassword();
+	char* getpassword();
 	bool setpassword(string);
-	string getemail();
+	char* getemail();
 	bool setemail(string);
 	bool import(string,string);
 	bool getguest();

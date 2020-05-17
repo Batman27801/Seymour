@@ -189,7 +189,6 @@
     <ClInclude Include="Pepperoni.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="pizza.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Sausage.h" />
     <ClInclude Include="security.h" />
     <ClInclude Include="seekh_kebab.h" />

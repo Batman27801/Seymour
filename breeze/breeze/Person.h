@@ -18,8 +18,8 @@ public:
     bool setF_Name(string);
     bool setage(int);
     void setGender(Gender);
-    string getname();
-    string getF_Name();
+    char* getname();
+    char* getF_Name();
     int getage();
     Gender getGender();
 };

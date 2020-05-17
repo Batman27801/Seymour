@@ -30,7 +30,7 @@ security::security()
 bool security::setcontact(long int c)
 {
 	try {
-		int i;
+		int i=0;
 		if (digitcounter(c)==10)
 		{
 			contactno = encryption(c);
@@ -50,7 +50,7 @@ long int security::getcontact()
 }
 bool security::setcnic(long int c)
 {	
-	int i;
+	int i=0;
 	try {
 		
 		if (digitcounter(c)==10)
@@ -74,9 +74,11 @@ void security::setaddress(string s)
 {
 	strcpy_s(address,(encryption(s)).c_str());
 }
-string security::getaddress()
+char* security::getaddress()
 {
-	return decryption(address);
+	char temp[200];
+	strcpy_s(temp, (decryption(address)).c_str());
+	return temp;
 }
 void security::setpaymentttype(bool b)
 {
@@ -90,13 +92,15 @@ void security::setcardprovider(string s)
 {
 	strcpy_s(card, (encryption(s)).c_str());
 }
-string security::getcardprovider()
+char* security::getcardprovider()
 {
-	return decryption(card);
+	char temp[15];
+	strcpy_s(temp, decryption(card).c_str());
+	return temp;
 }
 bool security::setcardno(long int i)
 {
-	int o;
+	int o=0;
 	try {
 		if (digitcounter(i) == 9 || i == 0 )
 		{
@@ -118,7 +122,7 @@ long int security::getcardno()
 bool security::setexpiry(int m, int y)
 {
 	try {
-		int i;
+		int i=0;
 		if ((m>5 && m<13 && y > 2019) || (m==0 && y==0))
 		{
 			monthc = encryption(m);

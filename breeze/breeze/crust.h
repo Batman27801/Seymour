@@ -17,7 +17,7 @@ public:
     int getsize();
     double get_price();
     void set_price(double);
-    string  get_description();
+    char*  get_description();
     void set_description(string);
     bool getthickthin();
     void setthickthin(bool);

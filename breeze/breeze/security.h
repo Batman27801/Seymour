@@ -18,11 +18,11 @@ public:
 	bool setcnic(long int);
 	long int getcnic();
 	void setaddress(string);
-	string getaddress();
+	char* getaddress();
 	void setpaymentttype(bool);
 	bool getpaymenttype();
 	void setcardprovider(string);
-	string getcardprovider();
+	char* getcardprovider();
 	bool setcardno(long int i = 0);
 	long int getcardno();
 	bool setexpiry(int, int);

@@ -11,7 +11,7 @@ void crust::set_price(double p)
 {
     price = p;
 }
-string crust::get_description()
+char* crust::get_description()
 {
     return description;
 }
