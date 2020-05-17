@@ -17,6 +17,7 @@ public:
     void setCS(bool);
     bool getCS();
     void setpepper(peppers);
+    double getprice();
     peppers getpepper();
 
 };

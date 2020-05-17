@@ -17,6 +17,6 @@ public:
     bool getRPF();
     void setBS(bool);
     bool getBS();
-
+    double getprice();
 };
 #endif

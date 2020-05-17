@@ -1,7 +1,7 @@
 #include "Toping.h"
 #include "Mashroom.h"
 #include <string.h>
-Mashroom::Mashroom(): Creamlized_Onion(true),Creamy_Rosted_Garlic_Sause(true)
+Mashroom::Mashroom(): Creamlized_Onion(false),Creamy_Rosted_Garlic_Sause(true)
 {
     strcpy_s(name, "Mashroom");
     initialize();
@@ -27,4 +27,13 @@ bool Mashroom::getCRGS()
 void Mashroom::setCRGS(bool n)
 {
     Creamy_Rosted_Garlic_Sause = n;
+}
+
+double Mashroom::getprice()
+{
+    if (Creamlized_Onion == true)
+    {
+        return (price + 40);
+    }
+    else return price;
 }

@@ -18,5 +18,6 @@ public:
     bool getRPF();
     void setExtra(Extras);
     Extras getExtra();
+    double getprice();
 };
 #endif

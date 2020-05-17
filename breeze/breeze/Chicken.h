@@ -17,5 +17,6 @@ public:
     Cheeses getCheese();
     void setBS(bool);
     bool getBS();
+    double getprice();
 };
 #endif

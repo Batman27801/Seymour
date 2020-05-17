@@ -1,7 +1,7 @@
 #include "Toping.h"
 #include "Beef.h"
 #include <string.h>
-Beef::Beef() :Cloves_Spice(true), pepper(Red)
+Beef::Beef() :Cloves_Spice(false), pepper(Red)
 {
     strcpy_s(name, "Beef");
     initialize();
@@ -27,4 +27,12 @@ void Beef::setpepper(peppers p)
 peppers Beef::getpepper()
 {
     return pepper;
+}
+double Beef::getprice()
+{
+    if (Cloves_Spice == true)
+    {
+        return (price + 40);
+    }
+    else return price;
 }

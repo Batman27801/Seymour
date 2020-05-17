@@ -270,6 +270,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->subtitle = (gcnew System::Windows::Forms::Label());
 			this->title = (gcnew System::Windows::Forms::Label());
 			this->CrustSelect = (gcnew System::Windows::Forms::TabPage());
+			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
+			this->Crustheading = (gcnew System::Windows::Forms::Label());
 			this->UserLogin = (gcnew System::Windows::Forms::TabPage());
 			this->incorrect = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -374,11 +376,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->Crustheading = (gcnew System::Windows::Forms::Label());
-			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
 			this->UserLogin->SuspendLayout();
 			this->SignUpPage->SuspendLayout();
 			this->FlavourSelect->SuspendLayout();
@@ -389,7 +390,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -465,7 +465,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->info->Name = L"info";
 			this->info->Size = System::Drawing::Size(222, 54);
 			this->info->TabIndex = 9;
-			this->info->Text = L"Project Developed by:\r\nMuhammad Ali\r\nFawad J.Fateh\r\nArunjai Kumar";
+			this->info->Text = L"Project Developed by:\r\nMuhammad Ali\r\nFawad J.Fateh\r\nArun Jai";
 			// 
 			// splitter1
 			// 
@@ -477,7 +477,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			// subtitle
 			// 
-			this->subtitle->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 14.25F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
+			this->subtitle->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->subtitle->ForeColor = System::Drawing::Color::Transparent;
 			this->subtitle->Location = System::Drawing::Point(179, 81);
@@ -509,6 +509,26 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CrustSelect->TabIndex = 1;
 			this->CrustSelect->Text = L"Crust select";
 			this->CrustSelect->UseVisualStyleBackColor = true;
+			// 
+			// pictureBox8
+			// 
+			this->pictureBox8->Location = System::Drawing::Point(165, 120);
+			this->pictureBox8->Name = L"pictureBox8";
+			this->pictureBox8->Size = System::Drawing::Size(100, 50);
+			this->pictureBox8->TabIndex = 1;
+			this->pictureBox8->TabStop = false;
+			// 
+			// Crustheading
+			// 
+			this->Crustheading->AutoSize = true;
+			this->Crustheading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->Crustheading->ForeColor = System::Drawing::Color::White;
+			this->Crustheading->Location = System::Drawing::Point(542, 31);
+			this->Crustheading->Name = L"Crustheading";
+			this->Crustheading->Size = System::Drawing::Size(241, 41);
+			this->Crustheading->TabIndex = 0;
+			this->Crustheading->Text = L"CRUST MENU";
 			// 
 			// UserLogin
 			// 
@@ -1869,26 +1889,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
 			// 
-			// Crustheading
-			// 
-			this->Crustheading->AutoSize = true;
-			this->Crustheading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->Crustheading->ForeColor = System::Drawing::Color::White;
-			this->Crustheading->Location = System::Drawing::Point(542, 31);
-			this->Crustheading->Name = L"Crustheading";
-			this->Crustheading->Size = System::Drawing::Size(241, 41);
-			this->Crustheading->TabIndex = 0;
-			this->Crustheading->Text = L"CRUST MENU";
-			// 
-			// pictureBox8
-			// 
-			this->pictureBox8->Location = System::Drawing::Point(165, 120);
-			this->pictureBox8->Name = L"pictureBox8";
-			this->pictureBox8->Size = System::Drawing::Size(100, 50);
-			this->pictureBox8->TabIndex = 1;
-			this->pictureBox8->TabStop = false;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1907,6 +1907,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->MainMenu->ResumeLayout(false);
 			this->CrustSelect->ResumeLayout(false);
 			this->CrustSelect->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
 			this->UserLogin->ResumeLayout(false);
 			this->UserLogin->PerformLayout();
 			this->SignUpPage->ResumeLayout(false);
@@ -1920,7 +1921,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
 			this->ResumeLayout(false);
 
 		}

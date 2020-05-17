@@ -28,3 +28,7 @@ bool Sausage::getBS()
 {
     return Basil_Scattering;
 }
+double Sausage::getprice()
+{
+    if (Red_Pepper_Flakes == true) return (price + 50);
+}
