@@ -76,9 +76,8 @@ void security::setaddress(string s)
 }
 char* security::getaddress()
 {
-	char temp[200];
-	strcpy_s(temp, (decryption(address)).c_str());
-	return temp;
+	return decryption(address);
+	
 }
 void security::setpaymentttype(bool b)
 {
@@ -94,9 +93,7 @@ void security::setcardprovider(string s)
 }
 char* security::getcardprovider()
 {
-	char temp[15];
-	strcpy_s(temp, decryption(card).c_str());
-	return temp;
+	return decryption(card);
 }
 bool security::setcardno(long int i)
 {
@@ -186,7 +183,7 @@ string security::encryption(char* var)
 	string temp = var;
 	return encryption(temp);
 }
-string security::decryption(char* var)
+char* security::decryption(char* var)
 {
 	string temp = var;
 	return decryption(temp);
@@ -198,22 +195,24 @@ string security::encryption(string var)
 	for (i = 0; i < length; i++)
 	{
 		if (i % 2 == 0)
-			temp[i] = temp[i] + 2;
+			temp[i] = (temp[i] + 2);
 		else if (i % 2 == 1)
-			temp[i] = temp[i] - 2;
+			temp[i] = (temp[i] - 2);
 	}
 	return temp;
 }
-string security::decryption(string var)
+char* security::decryption(string var)
 {
-	string temp = var;
-	int i, length = temp.length();
+	int n = var.length();
+	char* temp = new char[n];
+
+	int i, length = strlen(temp);
 	for (i = 0; i < length; i++)
 	{
 		if (i % 2 == 0)
-			temp[i] = temp[i] - 2;
+			temp[i] = (temp[i] - 2);
 		else if (i % 2 == 1)
-			temp[i] = temp[i] + 2;
+			temp[i] = (temp[i] + 2);
 	}
 	return temp;
 }

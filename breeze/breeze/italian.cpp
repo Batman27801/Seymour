@@ -7,7 +7,7 @@ italian::italian()
 {
     price = 200;
     size = 6;
-    strcpy_s(description, "A perfectly thin crispy and delightful crust infused with the herbs of your choice. Crispy and crunchy but not too brittle. That's the perfect Italian Crust for you");
+    strcpy_s(description, "A perfectly thin crispy and delightful crust infused with the herbs of your choice. Crispy and crunchy but not too brittle.");
     herb = none;
     cook = oven;
     olive_oil = 0;

@@ -32,7 +32,7 @@ public:
 	template <typename encrypt>
 	encrypt decryption(encrypt);
 	string encryption(char*);
-	string decryption(char*);
+	char* decryption(char*);
 	string encryption(string);
-	string decryption(string);
+	char* decryption(string);
 };
