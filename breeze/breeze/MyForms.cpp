@@ -853,3 +853,45 @@ void breeze::MyForm::ChilliDelightCheckbox_CheckStateChanged(System::Object^ sen
 
 	}
 }
+void breeze::MyForm::ChickenCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (ChickenCheck->Checked == true)
+	{
+		ToppingPriceBox->Text = "CURRENT PRICE = RS";
+		tptr = new Chicken;
+		Pizza->SaveToping(tptr);
+		ToppingPriceBox->AppendText = (Convert::ToString(ptr->get_price()));
+		PepperoniCheck->Checked = false;
+		BeefCheck->Checked = false;
+		MashroomCheck->Checked = false;
+		Extra_CheezCheck->Checked = false;
+		SausageCheck->Checked = false;
+		CheckBBQ_Sause->Visible = true;
+		ChooseCheeseBox->Visible = true;
+		ChooseTypeBox->Visible = false;
+		ChooseQuantityOfCheezBox->Visible = false;
+		CheckClovesSpice->Visible = false;
+		ChoosePeppersBox->Visible = false;
+		CheckCreamlized_Onion->Visible = false;
+		CheckCreamyGarlicSause->Visible = false;
+		CheckRedPepperFlakes->Visible = false;
+		ChooseExtraBox->Visible = false;
+		CheckRedPepperFlakes1->Visible = false;
+		CheckBasilScattering->Visible = false;
+	}
+	else if (ChickenCheck->Checked == false)
+	{
+		CheckBBQ_Sause->Checked = false;
+		CheckBBQ_Sause->Visible = false;
+		ChooseCheeseBox->SelectedIndex = Shredded_Cheddar;
+		ChooseCheeseBox->Visible = false;
+	}
+}
+void breeze::MyForm::CheckBBQ_Sause_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (CheckBBQ_Sause->Checked == true)
+	{
+		ToppingPriceBox->Text = "CURRENT PRICE= RS";
+		Chicken* C = new Chicken;
+		C->setBS(true);
+
+	}
+}
