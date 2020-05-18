@@ -858,8 +858,8 @@ void breeze::MyForm::ChickenCheck_CheckedChanged(System::Object^ sender, System:
 	{
 		ToppingPriceBox->Text = "CURRENT PRICE = RS";
 		tptr = new Chicken;
-		Pizza->SaveToping(tptr);
-		ToppingPriceBox->AppendText = (Convert::ToString(ptr->get_price()));
+		pizz->SaveToping(tptr);
+		ToppingPriceBox->Text = "Current Price = Rs " + (Convert::ToString(ptr->get_price()));
 		PepperoniCheck->Checked = false;
 		BeefCheck->Checked = false;
 		MashroomCheck->Checked = false;
