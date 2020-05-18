@@ -182,7 +182,8 @@ private: System::Windows::Forms::Label^ errorlabel;
 private: System::Windows::Forms::Label^ codlabel;
 private: System::Windows::Forms::Button^ backtologinbutton;
 private: System::Windows::Forms::Label^ FlavorHeading;
-private: System::Windows::Forms::TextBox^ pricebox2;
+
+
 
 
 private: System::Windows::Forms::Label^ Crustheading;
@@ -250,6 +251,7 @@ private: System::Windows::Forms::Label^ label9;
 private: System::Windows::Forms::Label^ label8;
 private: System::Windows::Forms::Label^ label7;
 private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::TextBox^ FlavourPriceBox;
 
 
 
@@ -354,6 +356,17 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->subtitle = (gcnew System::Windows::Forms::Label());
 			this->title = (gcnew System::Windows::Forms::Label());
 			this->CrustSelect = (gcnew System::Windows::Forms::TabPage());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->italiancookstylebox = (gcnew System::Windows::Forms::ComboBox());
+			this->italiancooklabel = (gcnew System::Windows::Forms::Label());
+			this->italianherblabel = (gcnew System::Windows::Forms::Label());
 			this->italianherbbox = (gcnew System::Windows::Forms::ComboBox());
 			this->italianpic = (gcnew System::Windows::Forms::Label());
 			this->italiancheckbox = (gcnew System::Windows::Forms::CheckBox());
@@ -432,7 +445,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->UserPage = (gcnew System::Windows::Forms::TabPage());
 			this->FlavourSelect = (gcnew System::Windows::Forms::TabPage());
 			this->backtocrustbutton = (gcnew System::Windows::Forms::Button());
-			this->pricebox2 = (gcnew System::Windows::Forms::TextBox());
 			this->FlavorHeading = (gcnew System::Windows::Forms::Label());
 			this->TheCheeseMisc3 = (gcnew System::Windows::Forms::CheckBox());
 			this->TheCheeseMisc2 = (gcnew System::Windows::Forms::CheckBox());
@@ -499,17 +511,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingChicken = (gcnew System::Windows::Forms::PictureBox());
 			this->ToppingHeading = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->italianherblabel = (gcnew System::Windows::Forms::Label());
-			this->italiancooklabel = (gcnew System::Windows::Forms::Label());
-			this->italiancookstylebox = (gcnew System::Windows::Forms::ComboBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->FlavourPriceBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -665,6 +667,138 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CrustSelect->Text = L"Crust select";
 			this->CrustSelect->UseVisualStyleBackColor = true;
 			this->CrustSelect->Enter += gcnew System::EventHandler(this, &MyForm::CrustSelect_Enter);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(1058, 490);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(120, 64);
+			this->button2->TabIndex = 16;
+			this->button2->Text = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// label12
+			// 
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label12->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label12.Image")));
+			this->label12->Location = System::Drawing::Point(189, 335);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(141, 130);
+			this->label12->TabIndex = 15;
+			this->label12->Text = L"ITALIAN";
+			this->label12->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// label11
+			// 
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label11->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label11.Image")));
+			this->label11->Location = System::Drawing::Point(875, 335);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(141, 130);
+			this->label11->TabIndex = 14;
+			this->label11->Text = L"ITALIAN";
+			this->label11->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// label10
+			// 
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label10->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label10.Image")));
+			this->label10->Location = System::Drawing::Point(633, 335);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(141, 130);
+			this->label10->TabIndex = 13;
+			this->label10->Text = L"ITALIAN";
+			this->label10->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// label9
+			// 
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label9.Image")));
+			this->label9->Location = System::Drawing::Point(407, 335);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(141, 130);
+			this->label9->TabIndex = 12;
+			this->label9->Text = L"ITALIAN";
+			this->label9->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// label8
+			// 
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label8->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label8.Image")));
+			this->label8->Location = System::Drawing::Point(875, 60);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(141, 130);
+			this->label8->TabIndex = 11;
+			this->label8->Text = L"ITALIAN";
+			this->label8->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// label7
+			// 
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label7->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label7.Image")));
+			this->label7->Location = System::Drawing::Point(633, 60);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(141, 130);
+			this->label7->TabIndex = 10;
+			this->label7->Text = L"ITALIAN";
+			this->label7->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// label2
+			// 
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label2.Image")));
+			this->label2->Location = System::Drawing::Point(407, 60);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(141, 130);
+			this->label2->TabIndex = 9;
+			this->label2->Text = L"ITALIAN";
+			this->label2->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// italiancookstylebox
+			// 
+			this->italiancookstylebox->FormattingEnabled = true;
+			this->italiancookstylebox->Location = System::Drawing::Point(265, 307);
+			this->italiancookstylebox->Name = L"italiancookstylebox";
+			this->italiancookstylebox->Size = System::Drawing::Size(84, 21);
+			this->italiancookstylebox->TabIndex = 8;
+			// 
+			// italiancooklabel
+			// 
+			this->italiancooklabel->AutoSize = true;
+			this->italiancooklabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->italiancooklabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->italiancooklabel->Location = System::Drawing::Point(277, 291);
+			this->italiancooklabel->Name = L"italiancooklabel";
+			this->italiancooklabel->Size = System::Drawing::Size(62, 13);
+			this->italiancooklabel->TabIndex = 7;
+			this->italiancooklabel->Text = L"Cookstyle";
+			// 
+			// italianherblabel
+			// 
+			this->italianherblabel->AutoSize = true;
+			this->italianherblabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->italianherblabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->italianherblabel->Location = System::Drawing::Point(189, 291);
+			this->italianherblabel->Name = L"italianherblabel";
+			this->italianherblabel->Size = System::Drawing::Size(44, 13);
+			this->italianherblabel->TabIndex = 6;
+			this->italianherblabel->Text = L"Herbs:";
 			// 
 			// italianherbbox
 			// 
@@ -1625,8 +1759,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// FlavourSelect
 			// 
 			this->FlavourSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FlavourSelect.BackgroundImage")));
+			this->FlavourSelect->Controls->Add(this->FlavourPriceBox);
 			this->FlavourSelect->Controls->Add(this->backtocrustbutton);
-			this->FlavourSelect->Controls->Add(this->pricebox2);
 			this->FlavourSelect->Controls->Add(this->FlavorHeading);
 			this->FlavourSelect->Controls->Add(this->TheCheeseMisc3);
 			this->FlavourSelect->Controls->Add(this->TheCheeseMisc2);
@@ -1674,19 +1808,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->backtocrustbutton->Text = L"<---- Back";
 			this->backtocrustbutton->UseVisualStyleBackColor = true;
 			this->backtocrustbutton->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
-			// 
-			// pricebox2
-			// 
-			this->pricebox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->pricebox2->Location = System::Drawing::Point(984, 441);
-			this->pricebox2->Multiline = true;
-			this->pricebox2->Name = L"pricebox2";
-			this->pricebox2->ReadOnly = true;
-			this->pricebox2->Size = System::Drawing::Size(137, 53);
-			this->pricebox2->TabIndex = 40;
-			this->pricebox2->Text = L"Current Total = RS 1200\r\n";
-			this->pricebox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// FlavorHeading
 			// 
@@ -2509,137 +2630,15 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"label1";
 			// 
-			// italianherblabel
+			// FlavourPriceBox
 			// 
-			this->italianherblabel->AutoSize = true;
-			this->italianherblabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->italianherblabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->italianherblabel->Location = System::Drawing::Point(189, 291);
-			this->italianherblabel->Name = L"italianherblabel";
-			this->italianherblabel->Size = System::Drawing::Size(44, 13);
-			this->italianherblabel->TabIndex = 6;
-			this->italianherblabel->Text = L"Herbs:";
-			// 
-			// italiancooklabel
-			// 
-			this->italiancooklabel->AutoSize = true;
-			this->italiancooklabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->italiancooklabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->italiancooklabel->Location = System::Drawing::Point(277, 291);
-			this->italiancooklabel->Name = L"italiancooklabel";
-			this->italiancooklabel->Size = System::Drawing::Size(62, 13);
-			this->italiancooklabel->TabIndex = 7;
-			this->italiancooklabel->Text = L"Cookstyle";
-			// 
-			// italiancookstylebox
-			// 
-			this->italiancookstylebox->FormattingEnabled = true;
-			this->italiancookstylebox->Location = System::Drawing::Point(265, 307);
-			this->italiancookstylebox->Name = L"italiancookstylebox";
-			this->italiancookstylebox->Size = System::Drawing::Size(84, 21);
-			this->italiancookstylebox->TabIndex = 8;
-			// 
-			// label2
-			// 
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label2.Image")));
-			this->label2->Location = System::Drawing::Point(407, 60);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(141, 130);
-			this->label2->TabIndex = 9;
-			this->label2->Text = L"ITALIAN";
-			this->label2->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// label7
-			// 
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label7->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label7.Image")));
-			this->label7->Location = System::Drawing::Point(633, 60);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(141, 130);
-			this->label7->TabIndex = 10;
-			this->label7->Text = L"ITALIAN";
-			this->label7->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// label8
-			// 
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label8->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label8.Image")));
-			this->label8->Location = System::Drawing::Point(875, 60);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(141, 130);
-			this->label8->TabIndex = 11;
-			this->label8->Text = L"ITALIAN";
-			this->label8->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// label9
-			// 
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label9->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label9.Image")));
-			this->label9->Location = System::Drawing::Point(407, 335);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(141, 130);
-			this->label9->TabIndex = 12;
-			this->label9->Text = L"ITALIAN";
-			this->label9->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// label10
-			// 
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label10->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label10.Image")));
-			this->label10->Location = System::Drawing::Point(633, 335);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(141, 130);
-			this->label10->TabIndex = 13;
-			this->label10->Text = L"ITALIAN";
-			this->label10->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// label11
-			// 
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label11->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label11.Image")));
-			this->label11->Location = System::Drawing::Point(875, 335);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(141, 130);
-			this->label11->TabIndex = 14;
-			this->label11->Text = L"ITALIAN";
-			this->label11->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// label12
-			// 
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label12->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label12.Image")));
-			this->label12->Location = System::Drawing::Point(189, 335);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(141, 130);
-			this->label12->TabIndex = 15;
-			this->label12->Text = L"ITALIAN";
-			this->label12->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(1058, 490);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(120, 64);
-			this->button2->TabIndex = 16;
-			this->button2->Text = L"button2";
-			this->button2->UseVisualStyleBackColor = true;
+			this->FlavourPriceBox->Location = System::Drawing::Point(976, 432);
+			this->FlavourPriceBox->Multiline = true;
+			this->FlavourPriceBox->Name = L"FlavourPriceBox";
+			this->FlavourPriceBox->ReadOnly = true;
+			this->FlavourPriceBox->Size = System::Drawing::Size(184, 24);
+			this->FlavourPriceBox->TabIndex = 42;
+			this->FlavourPriceBox->Text = L"CURRENT PRICE= Rs ";
 			// 
 			// MyForm
 			// 
@@ -2769,5 +2768,6 @@ private: System::Void CrustSelect_Enter(System::Object^ sender, System::EventArg
 	sCertificate = gcnew String(Pizza->cpoint->get_description());
 	italiancheckbox->Text = Convert::ToString(sCertificate);
 }
+//private: System::Void Flavopricebox2_TextChanged(System::Object^ sender, System::EventArgs^ e);
 };
 }

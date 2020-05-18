@@ -15,5 +15,6 @@ public:
 	void FlavourMiscSet(char choice[30]);
 	void SaveCrust(crust* ptr);
 	void CrustMiscSet(char choice[30]);
+	void SaveToping(Toping* ptr);
 };
 

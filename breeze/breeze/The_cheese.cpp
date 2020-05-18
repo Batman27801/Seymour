@@ -24,20 +24,20 @@ double The_cheese::set_cheese(char choice[30])
             CHOICE[i] = CHOICE[i] - 32;
         }
     }
-    if (choice == "MOZARELLA")
+    if (strcmp(CHOICE,"MOZARELLA")==0)
     {
         mozarella = true;
         price += 65;
         return 0;
 
     }
-    else if (choice = "GOUDA")
+    else if (strcmp(CHOICE, "GOUDA")==0)
     {
         gouda = true;
         price += 100;
         return 0;
     }
-    else if (choice == "CHEDDAR")
+    else if (strcmp(CHOICE, "CHEDDAR")==0)
     {
         cheddar = true;
         price += 70;

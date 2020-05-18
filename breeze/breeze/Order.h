@@ -15,6 +15,8 @@ private:
     char CRUSTS[8][30];
     char SelectedCrust[30];
     char SelectedCrustMisc[30];
+    char TOPPINGS[5][30];
+    char SelectedTopping[30];
     
 public:
     Order();

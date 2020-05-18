@@ -16,3 +16,7 @@ void pizza::CrustMiscSet(char desc[30])
 {
 	strcpy_s(CrustMisc, desc);
 }
+void pizza::SaveToping(Toping* ptr)
+{
+	tpoint = ptr;
+}

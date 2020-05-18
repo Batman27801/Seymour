@@ -28,7 +28,7 @@ void Toping::setdetails(char I[])
 {
     strcpy_s(details,I);
 }
-string Toping::getToppingName()
+char* Toping::getToppingName()
 {
     return name;
 }

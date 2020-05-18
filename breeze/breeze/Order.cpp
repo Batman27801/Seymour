@@ -8,7 +8,7 @@ Order::Order()
 }
 void Order::PlaceOrder(pizza *pizza)
 {
-	int i,j;
+	int i,j,k;
 	bill = bill + pizza->fpoint->get_price()+pizza->cpoint->get_price();
 	fstream obj;
 	obj.open("Reciept.txt", ios::in | ios::out | ios::app);
@@ -18,7 +18,7 @@ void Order::PlaceOrder(pizza *pizza)
 		{
 			strcpy_s(SelectedFlavour, pizza->fpoint->get_FlavName());
 			strcpy_s(SelectedFlavourMisc, pizza->FlavourMisc);
-			obj << "Flavour = " << FLAVOURS[i] << " PIRCE = Rs " << pizza->fpoint->get_price() << " With Misc = " <<pizza->FlavourMisc <<endl;
+			obj << "Flavour = " << FLAVOURS[i] << " PRICE = Rs " << pizza->fpoint->get_price() << " With Misc = " <<pizza->FlavourMisc <<endl;
 		}
 	}
 	for (j = 0; j < 8; j++)
@@ -27,13 +27,19 @@ void Order::PlaceOrder(pizza *pizza)
 		{
 			strcpy_s(SelectedCrust, pizza->cpoint->get_CrustName());
 			strcpy_s(SelectedCrustMisc,pizza->CrustMisc);
-			obj << "Crust = " << CRUSTS[i] << " PIRCE = Rs " << pizza->cpoint->get_price() << " With Misc = " <<pizza->CrustMisc <<endl;
+			obj << "Crust = " << CRUSTS[j] << " PRICE = Rs " << pizza->cpoint->get_price() << " With Misc = " <<pizza->CrustMisc <<endl;
 		}
 	}
-
+	for (k = 0; k < 5; k++)
+	{
+		if (strcmp(TOPPINGS[j], pizza->tpoint->getToppingName()))
+		{
+			strcpy_s(SelectedTopping, pizza->tpoint->getToppingName());
+			obj << "Topping = " << TOPPINGS[k] << pizza->tpoint->getprice() << endl;
+		}
+	}
+	obj << "..............................................TOTAL BILL = " << bill << endl;
 	obj.close();
-	
-	//obj << "..............................................TOTAL BILL = " << bill << endl;
 
 }
 double Order::ReturnBill()
