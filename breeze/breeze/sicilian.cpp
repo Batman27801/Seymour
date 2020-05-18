@@ -7,7 +7,7 @@ sicilian::sicilian()
 {
     price = 300;
     size = 6;
-    strcpy_s(description, "Much different from the thin, crispy crust in Naples, Sicilian pizza is known for its thick, rectangle-shaped crust that is often over an inch thick. Baked in a well-oiled pan to a chewy medium-well-done state that gives the bottom and edges of the crust an almost fried texture");
+    strcpy_s(description, "Sicilian pizza is known for its thick, rectangle-shaped crust . Baked to a state giving it an almost fried texture");
     oil = olive;
     pan = standard;
     thick = 1;

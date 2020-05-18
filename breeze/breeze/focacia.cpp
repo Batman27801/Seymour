@@ -7,7 +7,7 @@ focacia::focacia()
 {
     price = 300;
     size = 6;
-    strcpy_s(description, "Focacia crust pizza is pizza with cheese of your favourite type added into the crust! This is the type of piece that’s actually best enjoyed crust side first! a warm juicy cheesey bite awaits your signal!");
+    strcpy_s(description, "This olive-oil soaked Italian bread is deliciously topped with sun-dried tomatoes or olives or other herbs of your choice");
     herb = onions;
     coat = oliveoil;
     thin = 0;

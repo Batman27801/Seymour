@@ -7,7 +7,7 @@ neapolitan::neapolitan()
 {
     price = 240;
     size = 6;
-    strcpy_s(description, "Given that pizza is purported to have originated in Naples, it's no surprise that Neapolitan pizza is believed to be the original Italian pizza. Bundled with a signature light, slightly crispy texture and airy bites, this crust will surely be a delight for your taste buds");
+    strcpy_s(description, "Neapolitan pizza is believed to be the original Italian pizza. Bundled with a signature light, slightly crispy texture and airy bites");
     cook = oven;
     hand = 0;
     thick = 0;

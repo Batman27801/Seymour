@@ -7,7 +7,7 @@ stuffed::stuffed()
 {
     price = 300;
     size = 6;
-    strcpy_s(description, "Stuffed crust pizza is pizza with cheese of your favourite type added into the crust! This is the type of piece that’s actually best enjoyed crust side first! a warm juicy cheesey bite awaits your signal!");
+    strcpy_s(description, "Stuffed crust has cheese of your favourite type added into the crust! The piece that’s actually best enjoyed crust side first! ");
     layer = single;
     cheese = cheddar;
     fill = edge;

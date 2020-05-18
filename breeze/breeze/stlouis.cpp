@@ -7,7 +7,7 @@ stlouis::stlouis()
 {
     price = 230;
     size = 6;
-    strcpy_s(description, "There are many interesting things going for the St. Louis style pizza. A cheese lining on the crust and a very crunchy and not pliable crust, some even refer to the texture as cracker-like");
+    strcpy_s(description, "The St. Louis crust. A cheese lining on the crust and a very non palliable crunchy texture referred to as cracker like");
     tavern = 1;
     cheese = 0;
     thick = 0;
