@@ -21,7 +21,7 @@ public:
     virtual double getprice(void)=0;
     void setdetails(char[]);
     char* getdetails();
-    string getToppingName();
+    char* getToppingName();
 
 };
 #endif

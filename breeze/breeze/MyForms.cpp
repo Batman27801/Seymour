@@ -174,8 +174,10 @@ void breeze::MyForm::button3_Click(System::Object^ sender, System::EventArgs^ e)
 void breeze::MyForm::VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (VeggieDelightCheckBox->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new veggie_delight;
 		Pizza->SaveFlavour(ptr);
+		FlavourPriceBox->AppendText(Convert::ToString(ptr->get_price()));
 		TheCheeseCheckbox->Checked = false;
 		FajitaCheckbox->Checked = false;
 		TikkaCheckbox->Checked = false;
@@ -196,14 +198,20 @@ void breeze::MyForm::VeggieDelightCheckBox_CheckedChanged(System::Object^ sender
 		BBQBuzzMisc1->Visible = false;
 		BBQBuzzMisc2->Visible = false;
 	}
+	else if (VeggieDelightCheckBox->Checked == false)
+	{	
+		//FlavourPriceBox->Text = "CURRENT PRICE = Rs";
+	}
 	
 	
 }
 void breeze::MyForm::TheCheeseCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TheCheeseCheckbox->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new The_cheese;
 		Pizza->SaveFlavour(ptr);
+		FlavourPriceBox->AppendText(Convert::ToString(ptr->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		FajitaCheckbox->Checked = false;
 		TikkaCheckbox->Checked = false;
@@ -229,13 +237,19 @@ void breeze::MyForm::TheCheeseCheckbox_CheckedChanged(System::Object^ sender, Sy
 		TheCheeseMisc1->Visible = false;
 		TheCheeseMisc2->Visible = false;
 		TheCheeseMisc3->Visible = false;
+		TheCheeseMisc1->Checked = false;
+		TheCheeseMisc2->Checked = false;
+		TheCheeseMisc3->Checked = false;
+		//FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 	}
 }
 void breeze::MyForm::SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (SeekhKebabCheckbox->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new seekh_kebab;
 		Pizza->SaveFlavour(ptr);
+		FlavourPriceBox->AppendText(Convert::ToString(ptr->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		FajitaCheckbox->Checked = false;
 		TikkaCheckbox->Checked = false;
@@ -260,13 +274,18 @@ void breeze::MyForm::SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, S
 	{
 		SeekhKebabMisc1->Visible=false;
 		SeekhKebabMisc2->Visible = false;
+		SeekhKebabMisc1->Checked = false;
+		SeekhKebabMisc2->Checked = false;
+		//FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 	}
 }
 void breeze::MyForm::TikkaCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TikkaCheckbox->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new tikka;
 		Pizza->SaveFlavour(ptr);
+		FlavourPriceBox->AppendText(Convert::ToString(ptr->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		FajitaCheckbox->Checked = false;
 		SeekhKebabCheckbox->Checked = false;
@@ -291,13 +310,18 @@ void breeze::MyForm::TikkaCheckbox_CheckedChanged(System::Object^ sender, System
 	{
 		TikkaMisc1->Visible = false;
 		TikkaMisc2->Visible = false;
+		TikkaMisc1->Checked = false;
+		TikkaMisc2->Checked = false;
+		//FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 	}
 }
 void breeze::MyForm::FajitaCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (FajitaCheckbox->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new fajita;
 		Pizza->SaveFlavour(ptr);
+		FlavourPriceBox->AppendText(Convert::ToString(ptr->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		TikkaCheckbox->Checked = false;
 		SeekhKebabCheckbox->Checked = false;
@@ -322,13 +346,18 @@ void breeze::MyForm::FajitaCheckbox_CheckedChanged(System::Object^ sender, Syste
 	{
 		FajitaMisc1->Visible = false;
 		FajitaMisc2->Visible = false;
+		FajitaMisc1->Checked = false;
+		FajitaMisc2->Checked = false;
+		//FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 	}
 }
 void breeze::MyForm::ChilliDelightCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (ChilliDelightCheckbox->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new chilli_delight;
 		Pizza->SaveFlavour(ptr);
+		FlavourPriceBox->AppendText(Convert::ToString(ptr->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		TikkaCheckbox->Checked = false;
 		SeekhKebabCheckbox->Checked = false;
@@ -354,13 +383,18 @@ void breeze::MyForm::ChilliDelightCheckbox_CheckedChanged(System::Object^ sender
 	{
 		ChilliDelightMisc1->Visible =false;
 		ChilliDelightMisc2->Visible = false;
+		ChilliDelightMisc1->Checked = false;
+		ChilliDelightMisc2->Checked = false;
+		//FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 	}
 }
 void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (BbqBuzzCheckbox->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new bbq_buzz;
 		Pizza->SaveFlavour(ptr);
+		FlavourPriceBox->AppendText(Convert::ToString(ptr->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		TikkaCheckbox->Checked = false;
 		SeekhKebabCheckbox->Checked = false;
@@ -386,16 +420,21 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 	{
 		BBQBuzzMisc1->Visible =false;
 		BBQBuzzMisc2->Visible =false;
+		BBQBuzzMisc1->Checked = false;
+		BBQBuzzMisc2->Checked = false;
+		//FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 	}
 }
 
  Void breeze::MyForm::TikkaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	 if (TikkaMisc1->Checked == true)
 	 {
+		 FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		 tikka* Tikka = new tikka;
 		 Tikka->set_chicken(true);
 		 Pizza->fpoint = Tikka;
 		 Pizza->FlavourMiscSet("chicken");
+		 FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		 TheCheeseMisc3->Checked = false;
 		 TheCheeseMisc1->Checked = false;
 		 TheCheeseMisc2->Checked = false;
@@ -410,14 +449,21 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 		 ChilliDelightMisc1->Checked = false;
 
 	 }
+	 else if(TikkaMisc1->Checked==false)
+	 {
+		 //FlavourPriceBox->Text = "CURRENT PRICE = RS ";
+	 }
  }
 Void breeze::MyForm:: TikkaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TikkaMisc2->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		tikka* Tikka = new tikka;
 		Tikka->set_beef(true);
 		Pizza->fpoint = Tikka;
 		Pizza->FlavourMiscSet("beef");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
+
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -432,15 +478,21 @@ Void breeze::MyForm:: TikkaMisc2_CheckedChanged(System::Object^ sender, System::
 		ChilliDelightMisc1->Checked = false;
 
 
+	}
+	else if(TikkaMisc2->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
 	}
 }
 Void breeze::MyForm::FajitaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (FajitaMisc1->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		fajita* Fajita = new fajita;
 		Fajita->set_meat("mexican style");
 		Pizza->fpoint = Fajita;
 		Pizza->FlavourMiscSet("Mexican Style");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -454,15 +506,21 @@ Void breeze::MyForm::FajitaMisc1_CheckedChanged(System::Object^ sender, System::
 		BBQBuzzMisc2->Checked = false;
 		ChilliDelightMisc1->Checked = false;
 
+	}
+	else if(FajitaMisc1->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
 	}
 }
 Void breeze::MyForm::FajitaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (FajitaMisc2->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		fajita* Fajita = new fajita;
 		Fajita->set_meat("traditional style");
 		Pizza->fpoint = Fajita;
 		Pizza->FlavourMiscSet("Traditional Style");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -476,15 +534,21 @@ Void breeze::MyForm::FajitaMisc2_CheckedChanged(System::Object^ sender, System::
 		BBQBuzzMisc2->Checked = false;
 		ChilliDelightMisc1->Checked = false;
 
+	}
+	else if(FajitaMisc2->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
 	}
 }
 Void breeze::MyForm::ChilliDelightMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (ChilliDelightMisc1->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		chilli_delight* ChilliDelight = new chilli_delight;
 		ChilliDelight->set_chilli("red");
 		Pizza->fpoint = ChilliDelight;
 		Pizza->FlavourMiscSet("Red Chilli");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -499,14 +563,20 @@ Void breeze::MyForm::ChilliDelightMisc1_CheckedChanged(System::Object^ sender, S
 		ChilliDelightMisc2->Checked = false;
 
 	}
+	else if(ChilliDelightMisc1->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
+	}
 }
 Void breeze::MyForm::ChilliDelightMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (ChilliDelightMisc2->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		chilli_delight* ChilliDelight = new chilli_delight;
 		ChilliDelight->set_chilli("green");
 		Pizza->fpoint = ChilliDelight;
 		Pizza->FlavourMiscSet("Green Chilli");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -521,13 +591,20 @@ Void breeze::MyForm::ChilliDelightMisc2_CheckedChanged(System::Object^ sender, S
 		ChilliDelightMisc1->Checked = false;
 
 	}
+	else if(ChilliDelightMisc2->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
+	}
 }
 Void breeze::MyForm::BBQBuzzMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if(BBQBuzzMisc1->Checked == true)
-	{bbq_buzz* BBQ_BUZZ = new bbq_buzz;
+	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
+		bbq_buzz* BBQ_BUZZ = new bbq_buzz;
 	BBQ_BUZZ->set_sauce("bbq sauce");
 	Pizza->fpoint = BBQ_BUZZ;
 	Pizza->FlavourMiscSet("BBQ Sauce");
+	FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 	TheCheeseMisc3->Checked = false;
 	TheCheeseMisc1->Checked = false;
 	TheCheeseMisc2->Checked = false;
@@ -542,14 +619,20 @@ Void breeze::MyForm::BBQBuzzMisc1_CheckedChanged(System::Object^ sender, System:
 	ChilliDelightMisc2->Checked = false;
 
 	}
+	else if(BBQBuzzMisc1->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
+	}
 }
 Void breeze::MyForm::BBQBuzzMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (BBQBuzzMisc2->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		bbq_buzz* BBQ_BUZZ = new bbq_buzz;
 		BBQ_BUZZ->set_sauce("ranch sauce");
 		Pizza->fpoint = BBQ_BUZZ;
 		Pizza->FlavourMiscSet("Ranch Sauce");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -562,15 +645,21 @@ Void breeze::MyForm::BBQBuzzMisc2_CheckedChanged(System::Object^ sender, System:
 		SeekhKebabMisc1->Checked = false;
 		ChilliDelightMisc1->Checked = false;
 		ChilliDelightMisc2->Checked = false;
+	}
+	else if(BBQBuzzMisc2->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
 	}
 }
 Void breeze::MyForm::SeekhKebabMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (SeekhKebabMisc1->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		seekh_kebab* SeekhKebab = new seekh_kebab;
 		SeekhKebab->set_meat("lamb");
 		Pizza->fpoint = SeekhKebab;
 		Pizza->FlavourMiscSet("Lamb");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -583,15 +672,21 @@ Void breeze::MyForm::SeekhKebabMisc1_CheckedChanged(System::Object^ sender, Syst
 		BBQBuzzMisc2->Checked = false;
 		ChilliDelightMisc1->Checked = false;
 		ChilliDelightMisc2->Checked = false;
+	}
+	else if(SeekhKebabMisc1->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
 	}
 }
 Void breeze::MyForm::SeekhKebabMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (SeekhKebabMisc2->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		seekh_kebab* SeekhKebab = new seekh_kebab;
 		SeekhKebab->set_meat("beef");
 		Pizza->fpoint = SeekhKebab;
 		Pizza->FlavourMiscSet("Beef");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		TheCheeseMisc2->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc3->Checked = false;
@@ -605,14 +700,20 @@ Void breeze::MyForm::SeekhKebabMisc2_CheckedChanged(System::Object^ sender, Syst
 		ChilliDelightMisc1->Checked = false;
 		ChilliDelightMisc2->Checked = false;
 	}
+	else if(SeekhKebabMisc2->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
+	}
 }
 Void breeze::MyForm::TheCheeseMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TheCheeseMisc1->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		The_cheese* TheCheese = new The_cheese;
-		TheCheese->set_cheese("mozarella");
+		TheCheese->set_cheese("MOZARELLA");
 		Pizza->fpoint = TheCheese;
 		Pizza->FlavourMiscSet("Mozarella");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		TheCheeseMisc2->Checked = false;
 		TheCheeseMisc3->Checked = false;
 		SeekhKebabMisc1->Checked = false;
@@ -626,14 +727,20 @@ Void breeze::MyForm::TheCheeseMisc1_CheckedChanged(System::Object^ sender, Syste
 		ChilliDelightMisc1->Checked = false;
 		ChilliDelightMisc2->Checked = false;
 	}
+	else if(TheCheeseMisc1->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
+	}
 }
 Void breeze::MyForm::TheCheeseMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TheCheeseMisc2->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		The_cheese* TheCheese = new The_cheese;
 		TheCheese->set_cheese("gouda");
 		Pizza->fpoint = TheCheese;
 		Pizza->FlavourMiscSet("Gouda");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		SeekhKebabMisc1->Checked = false;
@@ -647,16 +754,22 @@ Void breeze::MyForm::TheCheeseMisc2_CheckedChanged(System::Object^ sender, Syste
 		ChilliDelightMisc1->Checked = false;
 		ChilliDelightMisc2->Checked = false;
 
+	}
+	else if(TheCheeseMisc2->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
 	}
 
 }
 Void breeze::MyForm::TheCheeseMisc3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TheCheeseMisc3->Checked == true)
 	{
+		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		The_cheese* TheCheese = new The_cheese;
 		TheCheese->set_cheese("cheddar");
 		Pizza->fpoint = TheCheese;
 		Pizza->FlavourMiscSet("Cheddar");
+		FlavourPriceBox->AppendText(Convert::ToString(Pizza->fpoint->get_price()));
 		TheCheeseMisc2->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		SeekhKebabMisc1->Checked = false;
@@ -669,7 +782,10 @@ Void breeze::MyForm::TheCheeseMisc3_CheckedChanged(System::Object^ sender, Syste
 		BBQBuzzMisc2->Checked = false;
 		ChilliDelightMisc1->Checked = false;
 		ChilliDelightMisc2->Checked = false;
-
+	}
+	else if(TheCheeseMisc3->Checked==false)
+	{
+		//FlavourPriceBox->Text = "CURRENT PRICE = RS ";
 	}
 }
 void breeze::MyForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
