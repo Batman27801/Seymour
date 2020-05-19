@@ -174,9 +174,6 @@ void breeze::MyForm::usernameavailability_Click(System::Object^ sender, System::
 
 }
 
-void breeze::MyForm::toflavormenu_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = FlavourSelect;
-}
 //******************************SIGNUP RELATED FUNCTIONS*****************************
 
 
@@ -207,6 +204,390 @@ void breeze::MyForm::CrustSelect_Enter(System::Object^ sender, System::EventArgs
 	stuffedcheckbox->Text = gotoString(pizz->cpoint->get_description());
 	delete pizz->cpoint;
 }
+
+void breeze::MyForm::toflavormenu_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	if (italiancheckbox->Checked == true)
+	{
+		italian *a = new italian;
+		if (backtostring(italianherbbox->Text) == "None")
+			a->setherbs(none);
+		else if (backtostring(italianherbbox->Text) == "Onions")
+			a->setherbs(onions);
+		else if (backtostring(italianherbbox->Text) == "Garlic")
+			a->setherbs(garlic);
+		if (backtostring(italiancookstylebox->Text) == "Pan")
+			a->setcookstyle(pan);
+		else if (backtostring(italiancookstylebox->Text) == "Wood Fire")
+			a->setcookstyle(wood_fired);
+		else if (backtostring(italiancookstylebox->Text) == "Oven")
+			a->setcookstyle(oven);
+		pizz->cpoint = a;
+		tabControl1->SelectedTab = FlavourSelect;
+	}
+	else if (neapolitancheckbox->Checked == true)
+	{
+		neapolitan* a = new neapolitan;
+		if (neapolitanhand->Checked == true)
+			a->sethand(true);
+		if (backtostring(italiancookstylebox->Text) == "Pan")
+			a->setcookstyle(pan);
+		else if (backtostring(italiancookstylebox->Text) == "Wood Fire")
+			a->setcookstyle(wood_fired);
+		else if (backtostring(italiancookstylebox->Text) == "Oven")
+			a->setcookstyle(oven);
+		pizz->cpoint = a;
+		tabControl1->SelectedTab = FlavourSelect;
+	}
+	else if (newyorkcheckbox->Checked == true)
+	{
+		newyork* a = new newyork;
+		if (newyorkmineral->Checked == true)
+			a->setmineralized(true);
+		if (backtostring(newyorkherbbox->Text) == "None")
+			a->setherbs(none);
+		else if (backtostring(newyorkherbbox->Text) == "Onions")
+			a->setherbs(onions);
+		else if (backtostring(newyorkherbbox->Text) == "Garlic")
+			a->setherbs(garlic);
+		pizz->cpoint = a;
+		tabControl1->SelectedTab = FlavourSelect;
+	}
+	else if (stlouischeckbox->Checked == true)
+	{
+		stlouis* a = new stlouis;
+		if (stlouiscutbox->Checked == false)
+			a->settavern(false);
+		if (stlouischeesebox->Checked == true)
+			a->setcheese(true);
+		pizz->cpoint = a;
+		tabControl1->SelectedTab = FlavourSelect;
+	}
+	else if (deepdishcheckbox->Checked == true)
+	{
+		deepdish* a = new deepdish;
+		if (backtostring(deepdishthicknessbox->Text) == "Two ``")
+			a->setthick(two);
+		else if (backtostring(deepdishthicknessbox->Text) == "Two and a half ``")
+			a->setthick(twohalf);
+		else if (backtostring(deepdishthicknessbox->Text) == "Three ``")
+			a->setthick(three);
+		if (backtostring(deepdishsaucebox->Text) == "Ketchup")
+			a->setsauce(ketchup);
+		else if (backtostring(deepdishsaucebox->Text) == "Chilli")
+			a->setsauce(chilli);
+		else if (backtostring(deepdishsaucebox->Text) == "Special Sauce")
+			a->setsauce(special);
+		pizz->cpoint = a;
+		tabControl1->SelectedTab = FlavourSelect;
+	}
+	else if (focaciacheckbox->Checked == true)
+	{
+		focacia* a = new focacia;
+		if (backtostring(focaciaherbbox->Text) == "Onions")
+			a->setherbs(onions);
+		else if (backtostring(focaciaherbbox->Text) == "Garlic")
+			a->setherbs(garlic);
+		else if (backtostring(focaciaherbbox->Text) == "Scallion")
+			a->setherbs(scallion);
+		else if (backtostring(focaciaherbbox->Text) == "Garlic Powder")
+			a->setherbs(garlicpowder);
+		if (backtostring(focaciaoilbox->Text) == "Olive Oil")
+			a->setcoating(oliveoil);
+		else if (backtostring(focaciaoilbox->Text) == "Scented Oil")
+			a->setcoating(scentedoil);
+		else if (backtostring(focaciaoilbox->Text) == "Flavored Oil")
+			a->setcoating(flavoured);
+		pizz->cpoint = a;
+		tabControl1->SelectedTab = FlavourSelect;
+	}
+	else if (siciliancheckbox->Checked == true)
+	{
+		sicilian* a = new sicilian;
+		if (backtostring(sicilianpanbox->Text) == "Standard")
+			a->setpan(standard);
+		else if (backtostring(sicilianpanbox->Text) == "Deep")
+			a->setpan(deep);
+		else if (backtostring(sicilianpanbox->Text) == "High Temp")
+			a->setpan(hightemp);
+		if (backtostring(sicilianoilbox->Text) == "Olive")
+			a->setoil(olive);
+		else if (backtostring(sicilianoilbox->Text) == "Canola")
+			a->setoil(canola);
+		else if (backtostring(sicilianoilbox->Text) == "Flavored")
+			a->setoil(flavored);
+		else if (backtostring(sicilianoilbox->Text) == "Cooking")
+			a->setoil(cooking);
+		pizz->cpoint = a;
+		tabControl1->SelectedTab = FlavourSelect;
+	}
+	else if (stuffedcheckbox->Checked == true)
+	{
+		stuffed* a = new stuffed;
+		if (backtostring(stuffedcheezebox->Text) == "Cheddar")
+			a->setcheese(cheddar);
+		else if (backtostring(stuffedcheezebox->Text) == "American")
+			a->setcheese(american);
+		else if (backtostring(stuffedcheezebox->Text) == "Mozerralla")
+			a->setcheese(mozeralla);
+		if (backtostring(stuffedfillingbox->Text) == "Edge")
+			a->setfilling(edge);
+		else if (backtostring(stuffedfillingbox->Text) == "Base")
+			a->setfilling(base);
+		else if (backtostring(stuffedfillingbox->Text) == "Whole")
+			a->setfilling(whole);
+		if (backtostring(stuffedlayeringbox->Text) == "Single")
+			a->setlayer(single);
+		else if (backtostring(stuffedcheezebox->Text) == "Thincut")
+			a->setlayer(thincut);
+		else if (backtostring(stuffedcheezebox->Text) == "Double")
+			a->setlayer(doubled);
+		pizz->cpoint = a;
+		tabControl1->SelectedTab = FlavourSelect;
+	}
+	else
+	{
+	crustreq->Visible = true;
+	}
+}
+
+void breeze::MyForm::italiancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (italiancheckbox->Checked == true)
+	{
+		italiancooklabel->Visible = true;
+		italiancookstylebox->Visible = true;
+		italianherbbox->Visible = true;
+		italianherblabel->Visible = true;
+
+		stuffedcheckbox->Checked = false;
+		neapolitancheckbox->Checked = false;
+		siciliancheckbox->Checked = false;
+		newyorkcheckbox->Checked = false;
+		deepdishcheckbox->Checked = false;
+		stlouischeckbox->Checked = false;
+		focaciacheckbox->Checked = false;
+
+		italian* a = new italian;
+		crustpricebox->Text = "CURRENT PRICE \n= Rs " + Convert::ToString(a->get_price());
+		delete a;
+	}
+	if (italiancheckbox->Checked == false)
+	{
+		italiancooklabel->Visible = false;
+		italiancookstylebox->Visible = false;
+		italianherbbox->Visible = false;
+		italianherblabel->Visible = false;
+	}
+}
+
+void breeze::MyForm::neapolitancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (neapolitancheckbox->Checked == true)
+	{
+		neapolitanhand->Visible = true;
+		neapolitancooklabel->Visible = true;
+		neapolitancookstylebox->Visible = false;
+
+		italiancheckbox->Checked = false;
+		stuffedcheckbox->Checked = false;
+		siciliancheckbox->Checked = false;
+		newyorkcheckbox->Checked = false;
+		deepdishcheckbox->Checked = false;
+		stlouischeckbox->Checked = false;
+		focaciacheckbox->Checked = false;
+
+		neapolitan* a = new neapolitan;
+		crustpricebox->Text = "CURRENT PRICE \n= Rs " + Convert::ToString(a->get_price());
+		delete a;
+	}
+	if (neapolitancheckbox->Checked == false)
+	{
+		neapolitanhand->Visible = false;
+		neapolitancooklabel->Visible = false;
+		neapolitancookstylebox->Visible = false;
+	}
+}
+
+void breeze::MyForm::newyorkcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (newyorkcheckbox->Checked == true)
+	{
+		newyorkherblabel->Visible = true;
+		newyorkherbbox->Visible = true;
+		newyorkmineral->Visible = true;
+
+		italiancheckbox->Checked = false;
+		neapolitancheckbox->Checked = false;
+		siciliancheckbox->Checked = false;
+		stuffedcheckbox->Checked = false;
+		deepdishcheckbox->Checked = false;
+		stlouischeckbox->Checked = false;
+		focaciacheckbox->Checked = false;
+
+		newyork* a = new newyork;
+		crustpricebox->Text = "CURRENT PRICE \n= Rs " + Convert::ToString(a->get_price());
+		delete a;
+	}
+	if (newyorkcheckbox->Checked == false)
+	{
+		newyorkherblabel->Visible = false;
+		newyorkherbbox->Visible = false;
+		newyorkmineral->Visible = false;
+	}
+}
+
+void breeze::MyForm::stlouischeckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+{
+	if (stlouischeckbox->Checked == true)
+	{
+		stlouischeesebox->Visible = true;
+		stlouiscutbox->Visible = true;
+
+		italiancheckbox->Checked = false;
+		neapolitancheckbox->Checked = false;
+		siciliancheckbox->Checked = false;
+		newyorkcheckbox->Checked = false;
+		deepdishcheckbox->Checked = false;
+		stuffedcheckbox->Checked = false;
+		focaciacheckbox->Checked = false;
+
+		stlouis* a = new stlouis;
+		crustpricebox->Text = "CURRENT PRICE \n= Rs " + Convert::ToString(a->get_price());
+		delete a;
+	}
+	if (stlouischeckbox->Checked == false)
+	{
+		stlouischeesebox->Visible = false;
+		stlouiscutbox->Visible = false;
+	}
+}
+
+void breeze::MyForm::deepdishcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (deepdishcheckbox->Checked == true)
+	{
+		deepdishsaucelabel->Visible = true;
+		deepdishsaucebox->Visible = true;
+		deepdishthicknessbox->Visible = true;
+		deepdishthicknesslabel->Visible = true;
+
+		italiancheckbox->Checked = false;
+		neapolitancheckbox->Checked = false;
+		siciliancheckbox->Checked = false;
+		newyorkcheckbox->Checked = false;
+		stuffedcheckbox->Checked = false;
+		stlouischeckbox->Checked = false;
+		focaciacheckbox->Checked = false;
+
+		deepdish* a = new deepdish;
+		crustpricebox->Text = "CURRENT PRICE \n= Rs " + Convert::ToString(a->get_price());
+		delete a;
+	}
+	if (deepdishcheckbox->Checked == false)
+	{
+		deepdishsaucelabel->Visible = false;
+		deepdishsaucebox->Visible = false;
+		deepdishthicknessbox->Visible = false;
+		deepdishthicknesslabel->Visible = false;
+	}
+}
+
+void breeze::MyForm::focaciacheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (focaciacheckbox->Checked == true)
+	{
+		focaciaherbbox->Visible = true;
+		focaciaherblabel->Visible = true;
+		focaciaoilbox->Visible = true;
+		focaciaoillabel->Visible = true;
+
+		italiancheckbox->Checked = false;
+		neapolitancheckbox->Checked = false;
+		siciliancheckbox->Checked = false;
+		newyorkcheckbox->Checked = false;
+		deepdishcheckbox->Checked = false;
+		stlouischeckbox->Checked = false;
+		stuffedcheckbox->Checked = false;
+
+		focacia* a = new focacia;
+		crustpricebox->Text = "CURRENT PRICE \n= Rs " + Convert::ToString(a->get_price());
+		delete a;
+	}
+	if (focaciacheckbox->Checked == false)
+	{
+		focaciaherbbox->Visible = false;
+		focaciaherblabel->Visible = false;
+		focaciaoilbox->Visible = false;
+		focaciaoillabel->Visible = false;
+	}
+}
+
+void breeze::MyForm::siciliancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (siciliancheckbox->Checked == true)
+	{
+		sicilianoilbox->Visible = true;
+		sicilianoillabel->Visible = true;
+		sicilianpanbox->Visible = true;
+		sicilianpanlabel->Visible = true;
+
+		italiancheckbox->Checked = false;
+		neapolitancheckbox->Checked = false;
+		stuffedcheckbox->Checked = false;
+		newyorkcheckbox->Checked = false;
+		deepdishcheckbox->Checked = false;
+		stlouischeckbox->Checked = false;
+		focaciacheckbox->Checked = false;
+
+		sicilian* a = new sicilian;
+		crustpricebox->Text = "CURRENT PRICE \n= Rs " + Convert::ToString(a->get_price());
+		delete a;
+	}
+	if (siciliancheckbox->Checked == false)
+	{
+		sicilianoilbox->Visible = false;
+		sicilianoillabel->Visible = false;
+		sicilianpanbox->Visible = false;
+		sicilianpanlabel->Visible = false;
+	}
+}
+
+void breeze::MyForm::stuffedcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (stuffedcheckbox->Checked == true)
+	{
+		stuffedcheezebox->Visible = true;
+		stuffedcheeselbel->Visible = true;
+		stuffedfillingbox->Visible = true;
+		stuffedfillinglabel->Visible = true;
+		stuffedlayeringbox->Visible = true;
+		stuffedlayerlabel->Visible = true;
+
+		italiancheckbox->Checked = false;
+		neapolitancheckbox->Checked = false;
+		siciliancheckbox->Checked = false;
+		newyorkcheckbox->Checked = false;
+		deepdishcheckbox->Checked = false;
+		stlouischeckbox->Checked = false;
+		focaciacheckbox->Checked = false;
+
+		stuffed* a = new stuffed;
+		crustpricebox->Text = "CURRENT PRICE \n= Rs " + Convert::ToString(a->get_price());
+		delete a;
+
+	}
+	if (stuffedcheckbox->Checked == false)
+	{
+		stuffedcheezebox->Visible = false;
+		stuffedcheeselbel->Visible = false;
+		stuffedfillingbox->Visible = false;
+		stuffedfillinglabel->Visible = false;
+		stuffedlayeringbox->Visible = false;
+		stuffedlayerlabel->Visible = false;
+	}
+}
+
+
 //******************************CRUST SELECTION FUNCTIONS*****************************
 
 
@@ -214,9 +595,8 @@ void breeze::MyForm::customer_Click(System::Object^ sender, System::EventArgs^ e
 	tabControl1->SelectedTab = UserLogin;
 }
 
-
-void breeze::MyForm::button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	order->PlaceOrder(pizz);
+void breeze::MyForm::MovetoToping_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = ToppingSelect;
 }
 
 void breeze::MyForm::VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -476,7 +856,7 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 	}
 }
 
- void breeze::MyForm::TikkaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+void breeze::MyForm::TikkaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	 if (TikkaMisc1->Checked == true)
 	 {
 		 FlavourPriceBox->Text = "CURRENT PRICE = Rs";
@@ -504,7 +884,7 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 		 //FlavourPriceBox->Text = "CURRENT PRICE = RS ";
 	 }
  }
-void breeze::MyForm:: TikkaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+void breeze::MyForm::TikkaMisc2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TikkaMisc2->Checked == true)
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";

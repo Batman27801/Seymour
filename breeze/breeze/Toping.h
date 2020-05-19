@@ -22,6 +22,7 @@ public:
     void setdetails(char[]);
     char* getdetails();
     char* getToppingName();
+    void increaseprice(int size);
 
 };
 #endif

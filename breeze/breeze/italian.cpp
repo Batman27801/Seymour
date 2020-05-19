@@ -10,10 +10,10 @@ italian::italian()
     strcpy_s(description, "A perfectly thin crispy and delightful crust infused with the herbs of your choice. Crispy and crunchy but not too brittle.");
     herb = none;
     cook = oven;
-    olive_oil = 0;
     thick = 0;
     thin = 1;
     gluten = 0;
+    strcpy_s(name, "Italian");
 }
 void italian::setsize(int s)
 {
@@ -42,18 +42,4 @@ void italian::setcookstyle(cookstyle c)
 cookstyle italian::getcookstyle()
 {
     return cook;
-}
-void italian::setolive(bool b)
-{
-    olive_oil = b;
-    if (olive_oil == true)
-        price += 30;
-}
-bool italian::getolive()
-{
-    return olive_oil;
-}
-void italian::Hello() 
-{
-    cout << endl << "Hello";
 }

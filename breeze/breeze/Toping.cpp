@@ -32,4 +32,8 @@ char* Toping::getToppingName()
 {
     return name;
 }
+void Toping::increaseprice(int size)
+{
+    price = price + ((size-6) * 20);
+}
 

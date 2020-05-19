@@ -9,10 +9,12 @@ neapolitan::neapolitan()
     size = 6;
     strcpy_s(description, "Neapolitan pizza is believed to be the original Italian pizza. Bundled with a signature light, slightly crispy texture and airy bites");
     cook = oven;
-    hand = 0;
+    hand = false;
     thick = 0;
     thin = 1;
     gluten = 0;
+    strcpy_s(name, "Neapolitan");
+
 }
 void neapolitan::setsize(int s)
 {
@@ -52,8 +54,4 @@ void neapolitan::sethand(bool b)
 bool neapolitan::gethand()
 {
     return hand;
-}
-void neapolitan::Hello()
-{
-    cout << endl << "Hello";
 }

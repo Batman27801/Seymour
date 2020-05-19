@@ -5,19 +5,21 @@ using namespace std;
 
 newyork::newyork()
 {
-    price = 310;
-    size = 9;
+    price = 240;
+    size = 6;
     mineralized = 0;
     strcpy_s(description, "New York-style crust is crispy on the outside, yet soft and pliable enough to fold the slices in half. High Gluten content");
     herb = none;
     thick = 0;
     thin = 1;
     gluten = 1;
+    strcpy_s(name, "Newyork");
+
 }
 void newyork::setsize(int s)
 {
     size = s;
-    price = price + (size - 9) * 40;
+    price = price + (size - 6) * 40;
 }
 void newyork::setherbs(herbs h)
 {
@@ -38,8 +40,4 @@ void newyork::setmineralized(bool b)
 bool newyork::getmineralized()
 {
     return mineralized;
-}
-void newyork::Hello()
-{
-    cout << endl << "Hello";
 }
