@@ -16,6 +16,8 @@ public:
 	void SaveCrust(crust* ptr);
 	void CrustMiscSet(char choice[30]);
 	void SaveToping(Toping* ptr);
+	crust* getCrustPointer();
+	flavour* getFlavourPointer();
 	void setpricing(int size,flavour* ptr);
 	void setpricing(int size, crust* ptr);
 	void setpricing(int size, Toping* ptr);

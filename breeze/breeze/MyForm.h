@@ -243,9 +243,10 @@ private: System::Windows::Forms::CheckBox^ CheckRedPepperFlakes1;
 private: System::Windows::Forms::PictureBox^ ToppingSausage;
 private: System::Windows::Forms::CheckBox^ SausageCheck;
 private: System::Windows::Forms::CheckBox^ CheckBasilScattering;
+private: System::Windows::Forms::Button^ ProceedToCheckOutButton;
 
 
-private: System::Windows::Forms::Button^ button1;
+
 private: System::Windows::Forms::Button^ BacktoFlavors;
 private: System::Windows::Forms::CheckBox^ italiancheckbox;
 
@@ -473,6 +474,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->subtitle = (gcnew System::Windows::Forms::Label());
 			this->title = (gcnew System::Windows::Forms::Label());
 			this->CrustSelect = (gcnew System::Windows::Forms::TabPage());
+			this->crustreq = (gcnew System::Windows::Forms::Label());
 			this->crustpricebox = (gcnew System::Windows::Forms::TextBox());
 			this->stuffedlayeringbox = (gcnew System::Windows::Forms::ComboBox());
 			this->stuffedlayerlabel = (gcnew System::Windows::Forms::Label());
@@ -629,7 +631,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingSelect = (gcnew System::Windows::Forms::TabPage());
 			this->ToppingPriceBox = (gcnew System::Windows::Forms::TextBox());
 			this->BacktoFlavors = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->ProceedToCheckOutButton = (gcnew System::Windows::Forms::Button());
 			this->CheckBasilScattering = (gcnew System::Windows::Forms::CheckBox());
 			this->SausageCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->CheckRedPepperFlakes1 = (gcnew System::Windows::Forms::CheckBox());
@@ -665,31 +667,30 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingHeading = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->CheckoutPage = (gcnew System::Windows::Forms::TabPage());
-			this->NameLabelCheckout = (gcnew System::Windows::Forms::Label());
-			this->NameCheckOutText = (gcnew System::Windows::Forms::TextBox());
-			this->PhoneCheckoutLabel = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->AddressCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->AddressCheckOutLabel = (gcnew System::Windows::Forms::Label());
-			this->PaymentModeCheckOutLabel = (gcnew System::Windows::Forms::Label());
-			this->CreditCardCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->CashCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->CardProviderCheckOutLabel = (gcnew System::Windows::Forms::Label());
-			this->CardCheckOutComboBox = (gcnew System::Windows::Forms::ComboBox());
-			this->CardNumberCheckOutLabel = (gcnew System::Windows::Forms::Label());
-			this->CardNumberCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->OrderHeadingCheckOutLabel = (gcnew System::Windows::Forms::Label());
-			this->FlavourCheckOutLabel = (gcnew System::Windows::Forms::Label());
-			this->CrustCheckOutLabel = (gcnew System::Windows::Forms::Label());
-			this->ToppingsCheckOutLabel = (gcnew System::Windows::Forms::Label());
-			this->AddonsCheckOutLabel = (gcnew System::Windows::Forms::Label());
-			this->TotalPriceCheckOutLabel = (gcnew System::Windows::Forms::Label());
-			this->FlavourCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->CrustCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->AddOnCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->TotalPriceCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->crustreq = (gcnew System::Windows::Forms::Label());
+			this->AddOnCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->CrustCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->FlavourCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->TotalPriceCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->AddonsCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->ToppingsCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->CrustCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->FlavourCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->OrderHeadingCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->CardNumberCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->CardNumberCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->CardCheckOutComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->CardProviderCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->CashCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->CreditCardCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->PaymentModeCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->AddressCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->AddressCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->PhoneCheckoutLabel = (gcnew System::Windows::Forms::Label());
+			this->NameCheckOutText = (gcnew System::Windows::Forms::TextBox());
+			this->NameLabelCheckout = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -883,6 +884,19 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CrustSelect->Text = L"Crust select";
 			this->CrustSelect->UseVisualStyleBackColor = true;
 			this->CrustSelect->Enter += gcnew System::EventHandler(this, &MyForm::CrustSelect_Enter);
+			// 
+			// crustreq
+			// 
+			this->crustreq->AutoSize = true;
+			this->crustreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->crustreq->ForeColor = System::Drawing::Color::Red;
+			this->crustreq->Location = System::Drawing::Point(1048, 458);
+			this->crustreq->Name = L"crustreq";
+			this->crustreq->Size = System::Drawing::Size(163, 18);
+			this->crustreq->TabIndex = 51;
+			this->crustreq->Text = L"Please Choose One!";
+			this->crustreq->Visible = false;
 			// 
 			// crustpricebox
 			// 
@@ -2784,16 +2798,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->VeggieDelightCheckBox->UseVisualStyleBackColor = true;
 			this->VeggieDelightCheckBox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::VeggieDelightCheckBox_CheckedChanged);
 			// 
-			// MovetoToping
-			// 
-			this->MovetoToping->Location = System::Drawing::Point(968, 515);
-			this->MovetoToping->Name = L"MovetoToping";
-			this->MovetoToping->Size = System::Drawing::Size(168, 56);
-			this->MovetoToping->TabIndex = 14;
-			this->MovetoToping->Text = L"GO TO TOPPING MENU";
-			this->MovetoToping->UseVisualStyleBackColor = true;
-			this->MovetoToping->Click += gcnew System::EventHandler(this, &MyForm::MovetoToping_Click);
-			// 
 			// TheCheesePictureBox
 			// 
 			this->TheCheesePictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TheCheesePictureBox.Image")));
@@ -2852,13 +2856,23 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->TikkaPictureBox1->TabIndex = 1;
 			this->TikkaPictureBox1->TabStop = false;
 			// 
+			// MovetoToping
+			// 
+			this->MovetoToping->Location = System::Drawing::Point(968, 515);
+			this->MovetoToping->Name = L"MovetoToping";
+			this->MovetoToping->Size = System::Drawing::Size(168, 56);
+			this->MovetoToping->TabIndex = 14;
+			this->MovetoToping->Text = L"GO TO TOPPING MENU";
+			this->MovetoToping->UseVisualStyleBackColor = true;
+			this->MovetoToping->Click += gcnew System::EventHandler(this, &MyForm::MovetoToping_Click);
+			// 
 			// ToppingSelect
 			// 
 			this->ToppingSelect->BackColor = System::Drawing::Color::Transparent;
 			this->ToppingSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ToppingSelect.BackgroundImage")));
 			this->ToppingSelect->Controls->Add(this->ToppingPriceBox);
 			this->ToppingSelect->Controls->Add(this->BacktoFlavors);
-			this->ToppingSelect->Controls->Add(this->button1);
+			this->ToppingSelect->Controls->Add(this->ProceedToCheckOutButton);
 			this->ToppingSelect->Controls->Add(this->CheckBasilScattering);
 			this->ToppingSelect->Controls->Add(this->SausageCheck);
 			this->ToppingSelect->Controls->Add(this->CheckRedPepperFlakes1);
@@ -2918,17 +2932,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->BacktoFlavors->Text = L"Back";
 			this->BacktoFlavors->UseVisualStyleBackColor = true;
 			// 
-			// button1
+			// ProceedToCheckOutButton
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->button1->Location = System::Drawing::Point(1017, 485);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(143, 64);
-			this->button1->TabIndex = 34;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
+			this->ProceedToCheckOutButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->ProceedToCheckOutButton->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->ProceedToCheckOutButton->Location = System::Drawing::Point(1017, 485);
+			this->ProceedToCheckOutButton->Name = L"ProceedToCheckOutButton";
+			this->ProceedToCheckOutButton->Size = System::Drawing::Size(143, 64);
+			this->ProceedToCheckOutButton->TabIndex = 34;
+			this->ProceedToCheckOutButton->Text = L"PROCEED TO CHECKOUT";
+			this->ProceedToCheckOutButton->UseVisualStyleBackColor = true;
+			this->ProceedToCheckOutButton->Click += gcnew System::EventHandler(this, &MyForm::ProceedToCheckOutButton_Click);
 			// 
 			// CheckBasilScattering
 			// 
@@ -3333,96 +3348,121 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CheckoutPage->Text = L"CheckoutPage";
 			this->CheckoutPage->UseVisualStyleBackColor = true;
 			// 
-			// NameLabelCheckout
+			// TotalPriceCheckOutTextBox
 			// 
-			this->NameLabelCheckout->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->NameLabelCheckout->Location = System::Drawing::Point(136, 24);
-			this->NameLabelCheckout->Name = L"NameLabelCheckout";
-			this->NameLabelCheckout->Size = System::Drawing::Size(56, 23);
-			this->NameLabelCheckout->TabIndex = 0;
-			this->NameLabelCheckout->Text = L"NAME:";
+			this->TotalPriceCheckOutTextBox->Location = System::Drawing::Point(728, 352);
+			this->TotalPriceCheckOutTextBox->Name = L"TotalPriceCheckOutTextBox";
+			this->TotalPriceCheckOutTextBox->Size = System::Drawing::Size(200, 20);
+			this->TotalPriceCheckOutTextBox->TabIndex = 24;
 			// 
-			// NameCheckOutText
+			// AddOnCheckOutTextBox
 			// 
-			this->NameCheckOutText->Location = System::Drawing::Point(192, 24);
-			this->NameCheckOutText->Name = L"NameCheckOutText";
-			this->NameCheckOutText->Size = System::Drawing::Size(200, 20);
-			this->NameCheckOutText->TabIndex = 1;
+			this->AddOnCheckOutTextBox->Location = System::Drawing::Point(728, 264);
+			this->AddOnCheckOutTextBox->Multiline = true;
+			this->AddOnCheckOutTextBox->Name = L"AddOnCheckOutTextBox";
+			this->AddOnCheckOutTextBox->Size = System::Drawing::Size(304, 56);
+			this->AddOnCheckOutTextBox->TabIndex = 23;
 			// 
-			// PhoneCheckoutLabel
+			// textBox5
 			// 
-			this->PhoneCheckoutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->PhoneCheckoutLabel->Location = System::Drawing::Point(128, 64);
-			this->PhoneCheckoutLabel->Name = L"PhoneCheckoutLabel";
-			this->PhoneCheckoutLabel->Size = System::Drawing::Size(80, 23);
-			this->PhoneCheckoutLabel->TabIndex = 2;
-			this->PhoneCheckoutLabel->Text = L"PHONE NO:";
+			this->textBox5->Location = System::Drawing::Point(728, 192);
+			this->textBox5->Multiline = true;
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(304, 56);
+			this->textBox5->TabIndex = 22;
 			// 
-			// textBox2
+			// CrustCheckOutTextBox
 			// 
-			this->textBox2->Location = System::Drawing::Point(200, 64);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(200, 20);
-			this->textBox2->TabIndex = 3;
+			this->CrustCheckOutTextBox->Location = System::Drawing::Point(728, 120);
+			this->CrustCheckOutTextBox->Multiline = true;
+			this->CrustCheckOutTextBox->Name = L"CrustCheckOutTextBox";
+			this->CrustCheckOutTextBox->Size = System::Drawing::Size(304, 56);
+			this->CrustCheckOutTextBox->TabIndex = 21;
 			// 
-			// AddressCheckOutTextBox
+			// FlavourCheckOutTextBox
 			// 
-			this->AddressCheckOutTextBox->Location = System::Drawing::Point(200, 104);
-			this->AddressCheckOutTextBox->Multiline = true;
-			this->AddressCheckOutTextBox->Name = L"AddressCheckOutTextBox";
-			this->AddressCheckOutTextBox->Size = System::Drawing::Size(200, 96);
-			this->AddressCheckOutTextBox->TabIndex = 4;
+			this->FlavourCheckOutTextBox->Location = System::Drawing::Point(728, 56);
+			this->FlavourCheckOutTextBox->Multiline = true;
+			this->FlavourCheckOutTextBox->Name = L"FlavourCheckOutTextBox";
+			this->FlavourCheckOutTextBox->Size = System::Drawing::Size(304, 48);
+			this->FlavourCheckOutTextBox->TabIndex = 20;
 			// 
-			// AddressCheckOutLabel
+			// TotalPriceCheckOutLabel
 			// 
-			this->AddressCheckOutLabel->AutoSize = true;
-			this->AddressCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->AddressCheckOutLabel->Location = System::Drawing::Point(128, 104);
-			this->AddressCheckOutLabel->Name = L"AddressCheckOutLabel";
-			this->AddressCheckOutLabel->Size = System::Drawing::Size(62, 13);
-			this->AddressCheckOutLabel->TabIndex = 5;
-			this->AddressCheckOutLabel->Text = L"ADDRESS:";
+			this->TotalPriceCheckOutLabel->AutoSize = true;
+			this->TotalPriceCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->TotalPriceCheckOutLabel->Location = System::Drawing::Point(640, 352);
+			this->TotalPriceCheckOutLabel->Name = L"TotalPriceCheckOutLabel";
+			this->TotalPriceCheckOutLabel->Size = System::Drawing::Size(83, 13);
+			this->TotalPriceCheckOutLabel->TabIndex = 19;
+			this->TotalPriceCheckOutLabel->Text = L"TOTAL PRICE :";
 			// 
-			// PaymentModeCheckOutLabel
+			// AddonsCheckOutLabel
 			// 
-			this->PaymentModeCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->PaymentModeCheckOutLabel->Location = System::Drawing::Point(200, 216);
-			this->PaymentModeCheckOutLabel->Name = L"PaymentModeCheckOutLabel";
-			this->PaymentModeCheckOutLabel->Size = System::Drawing::Size(176, 23);
-			this->PaymentModeCheckOutLabel->TabIndex = 7;
-			this->PaymentModeCheckOutLabel->Text = L"CHOOSE A MODE OF PAYMENT";
+			this->AddonsCheckOutLabel->AutoSize = true;
+			this->AddonsCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->AddonsCheckOutLabel->Location = System::Drawing::Point(656, 280);
+			this->AddonsCheckOutLabel->Name = L"AddonsCheckOutLabel";
+			this->AddonsCheckOutLabel->Size = System::Drawing::Size(62, 13);
+			this->AddonsCheckOutLabel->TabIndex = 18;
+			this->AddonsCheckOutLabel->Text = L"ADDON(S):";
 			// 
-			// CreditCardCheckBox
+			// ToppingsCheckOutLabel
 			// 
-			this->CreditCardCheckBox->AutoSize = true;
-			this->CreditCardCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->CreditCardCheckBox->Location = System::Drawing::Point(152, 240);
-			this->CreditCardCheckBox->Name = L"CreditCardCheckBox";
-			this->CreditCardCheckBox->Size = System::Drawing::Size(99, 17);
-			this->CreditCardCheckBox->TabIndex = 8;
-			this->CreditCardCheckBox->Text = L"CREDIT CARD";
-			this->CreditCardCheckBox->UseVisualStyleBackColor = true;
+			this->ToppingsCheckOutLabel->AutoSize = true;
+			this->ToppingsCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->ToppingsCheckOutLabel->Location = System::Drawing::Point(648, 208);
+			this->ToppingsCheckOutLabel->Name = L"ToppingsCheckOutLabel";
+			this->ToppingsCheckOutLabel->Size = System::Drawing::Size(71, 13);
+			this->ToppingsCheckOutLabel->TabIndex = 17;
+			this->ToppingsCheckOutLabel->Text = L"TOPPING(S):";
 			// 
-			// CashCheckBox
+			// CrustCheckOutLabel
 			// 
-			this->CashCheckBox->AutoSize = true;
-			this->CashCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->CashCheckBox->Location = System::Drawing::Point(304, 240);
-			this->CashCheckBox->Name = L"CashCheckBox";
-			this->CashCheckBox->Size = System::Drawing::Size(55, 17);
-			this->CashCheckBox->TabIndex = 9;
-			this->CashCheckBox->Text = L"CASH";
-			this->CashCheckBox->UseVisualStyleBackColor = true;
+			this->CrustCheckOutLabel->AutoSize = true;
+			this->CrustCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CrustCheckOutLabel->Location = System::Drawing::Point(656, 136);
+			this->CrustCheckOutLabel->Name = L"CrustCheckOutLabel";
+			this->CrustCheckOutLabel->Size = System::Drawing::Size(60, 13);
+			this->CrustCheckOutLabel->TabIndex = 16;
+			this->CrustCheckOutLabel->Text = L"CRUST(S):";
 			// 
-			// CardProviderCheckOutLabel
+			// FlavourCheckOutLabel
 			// 
-			this->CardProviderCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F));
-			this->CardProviderCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->CardProviderCheckOutLabel->Location = System::Drawing::Point(136, 312);
-			this->CardProviderCheckOutLabel->Name = L"CardProviderCheckOutLabel";
-			this->CardProviderCheckOutLabel->Size = System::Drawing::Size(144, 48);
-			this->CardProviderCheckOutLabel->TabIndex = 10;
-			this->CardProviderCheckOutLabel->Text = L"CARD PROVIDER:";
+			this->FlavourCheckOutLabel->AutoSize = true;
+			this->FlavourCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->FlavourCheckOutLabel->Location = System::Drawing::Point(648, 72);
+			this->FlavourCheckOutLabel->Name = L"FlavourCheckOutLabel";
+			this->FlavourCheckOutLabel->Size = System::Drawing::Size(76, 13);
+			this->FlavourCheckOutLabel->TabIndex = 15;
+			this->FlavourCheckOutLabel->Text = L"FLAVOUR(S) :";
+			// 
+			// OrderHeadingCheckOutLabel
+			// 
+			this->OrderHeadingCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			this->OrderHeadingCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->OrderHeadingCheckOutLabel->Location = System::Drawing::Point(736, 16);
+			this->OrderHeadingCheckOutLabel->Name = L"OrderHeadingCheckOutLabel";
+			this->OrderHeadingCheckOutLabel->Size = System::Drawing::Size(184, 40);
+			this->OrderHeadingCheckOutLabel->TabIndex = 14;
+			this->OrderHeadingCheckOutLabel->Text = L"YOUR ORDER";
+			// 
+			// CardNumberCheckOutTextBox
+			// 
+			this->CardNumberCheckOutTextBox->Location = System::Drawing::Point(248, 360);
+			this->CardNumberCheckOutTextBox->Name = L"CardNumberCheckOutTextBox";
+			this->CardNumberCheckOutTextBox->Size = System::Drawing::Size(184, 20);
+			this->CardNumberCheckOutTextBox->TabIndex = 13;
+			// 
+			// CardNumberCheckOutLabel
+			// 
+			this->CardNumberCheckOutLabel->AutoSize = true;
+			this->CardNumberCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CardNumberCheckOutLabel->Location = System::Drawing::Point(136, 360);
+			this->CardNumberCheckOutLabel->Name = L"CardNumberCheckOutLabel";
+			this->CardNumberCheckOutLabel->Size = System::Drawing::Size(102, 26);
+			this->CardNumberCheckOutLabel->TabIndex = 12;
+			this->CardNumberCheckOutLabel->Text = L"CARD NUMBER:\r\n(MUST BE 9-DIGIT)";
 			// 
 			// CardCheckOutComboBox
 			// 
@@ -3436,133 +3476,96 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CardCheckOutComboBox->Size = System::Drawing::Size(121, 21);
 			this->CardCheckOutComboBox->TabIndex = 11;
 			// 
-			// CardNumberCheckOutLabel
+			// CardProviderCheckOutLabel
 			// 
-			this->CardNumberCheckOutLabel->AutoSize = true;
-			this->CardNumberCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->CardNumberCheckOutLabel->Location = System::Drawing::Point(136, 360);
-			this->CardNumberCheckOutLabel->Name = L"CardNumberCheckOutLabel";
-			this->CardNumberCheckOutLabel->Size = System::Drawing::Size(102, 26);
-			this->CardNumberCheckOutLabel->TabIndex = 12;
-			this->CardNumberCheckOutLabel->Text = L"CARD NUMBER:\r\n(MUST BE 9-DIGIT)";
+			this->CardProviderCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F));
+			this->CardProviderCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CardProviderCheckOutLabel->Location = System::Drawing::Point(136, 312);
+			this->CardProviderCheckOutLabel->Name = L"CardProviderCheckOutLabel";
+			this->CardProviderCheckOutLabel->Size = System::Drawing::Size(144, 48);
+			this->CardProviderCheckOutLabel->TabIndex = 10;
+			this->CardProviderCheckOutLabel->Text = L"CARD PROVIDER:";
 			// 
-			// CardNumberCheckOutTextBox
+			// CashCheckBox
 			// 
-			this->CardNumberCheckOutTextBox->Location = System::Drawing::Point(248, 360);
-			this->CardNumberCheckOutTextBox->Name = L"CardNumberCheckOutTextBox";
-			this->CardNumberCheckOutTextBox->Size = System::Drawing::Size(184, 20);
-			this->CardNumberCheckOutTextBox->TabIndex = 13;
+			this->CashCheckBox->AutoSize = true;
+			this->CashCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CashCheckBox->Location = System::Drawing::Point(304, 240);
+			this->CashCheckBox->Name = L"CashCheckBox";
+			this->CashCheckBox->Size = System::Drawing::Size(55, 17);
+			this->CashCheckBox->TabIndex = 9;
+			this->CashCheckBox->Text = L"CASH";
+			this->CashCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// OrderHeadingCheckOutLabel
+			// CreditCardCheckBox
 			// 
-			this->OrderHeadingCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
-			this->OrderHeadingCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->OrderHeadingCheckOutLabel->Location = System::Drawing::Point(736, 16);
-			this->OrderHeadingCheckOutLabel->Name = L"OrderHeadingCheckOutLabel";
-			this->OrderHeadingCheckOutLabel->Size = System::Drawing::Size(184, 40);
-			this->OrderHeadingCheckOutLabel->TabIndex = 14;
-			this->OrderHeadingCheckOutLabel->Text = L"YOUR ORDER";
+			this->CreditCardCheckBox->AutoSize = true;
+			this->CreditCardCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CreditCardCheckBox->Location = System::Drawing::Point(152, 240);
+			this->CreditCardCheckBox->Name = L"CreditCardCheckBox";
+			this->CreditCardCheckBox->Size = System::Drawing::Size(99, 17);
+			this->CreditCardCheckBox->TabIndex = 8;
+			this->CreditCardCheckBox->Text = L"CREDIT CARD";
+			this->CreditCardCheckBox->UseVisualStyleBackColor = true;
 			// 
-			// FlavourCheckOutLabel
+			// PaymentModeCheckOutLabel
 			// 
-			this->FlavourCheckOutLabel->AutoSize = true;
-			this->FlavourCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->FlavourCheckOutLabel->Location = System::Drawing::Point(648, 72);
-			this->FlavourCheckOutLabel->Name = L"FlavourCheckOutLabel";
-			this->FlavourCheckOutLabel->Size = System::Drawing::Size(76, 13);
-			this->FlavourCheckOutLabel->TabIndex = 15;
-			this->FlavourCheckOutLabel->Text = L"FLAVOUR(S) :";
+			this->PaymentModeCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->PaymentModeCheckOutLabel->Location = System::Drawing::Point(200, 216);
+			this->PaymentModeCheckOutLabel->Name = L"PaymentModeCheckOutLabel";
+			this->PaymentModeCheckOutLabel->Size = System::Drawing::Size(176, 23);
+			this->PaymentModeCheckOutLabel->TabIndex = 7;
+			this->PaymentModeCheckOutLabel->Text = L"CHOOSE A MODE OF PAYMENT";
 			// 
-			// CrustCheckOutLabel
+			// AddressCheckOutLabel
 			// 
-			this->CrustCheckOutLabel->AutoSize = true;
-			this->CrustCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->CrustCheckOutLabel->Location = System::Drawing::Point(656, 136);
-			this->CrustCheckOutLabel->Name = L"CrustCheckOutLabel";
-			this->CrustCheckOutLabel->Size = System::Drawing::Size(60, 13);
-			this->CrustCheckOutLabel->TabIndex = 16;
-			this->CrustCheckOutLabel->Text = L"CRUST(S):";
+			this->AddressCheckOutLabel->AutoSize = true;
+			this->AddressCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->AddressCheckOutLabel->Location = System::Drawing::Point(128, 104);
+			this->AddressCheckOutLabel->Name = L"AddressCheckOutLabel";
+			this->AddressCheckOutLabel->Size = System::Drawing::Size(62, 13);
+			this->AddressCheckOutLabel->TabIndex = 5;
+			this->AddressCheckOutLabel->Text = L"ADDRESS:";
 			// 
-			// ToppingsCheckOutLabel
+			// AddressCheckOutTextBox
 			// 
-			this->ToppingsCheckOutLabel->AutoSize = true;
-			this->ToppingsCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->ToppingsCheckOutLabel->Location = System::Drawing::Point(648, 208);
-			this->ToppingsCheckOutLabel->Name = L"ToppingsCheckOutLabel";
-			this->ToppingsCheckOutLabel->Size = System::Drawing::Size(71, 13);
-			this->ToppingsCheckOutLabel->TabIndex = 17;
-			this->ToppingsCheckOutLabel->Text = L"TOPPING(S):";
+			this->AddressCheckOutTextBox->Location = System::Drawing::Point(200, 104);
+			this->AddressCheckOutTextBox->Multiline = true;
+			this->AddressCheckOutTextBox->Name = L"AddressCheckOutTextBox";
+			this->AddressCheckOutTextBox->Size = System::Drawing::Size(200, 96);
+			this->AddressCheckOutTextBox->TabIndex = 4;
 			// 
-			// AddonsCheckOutLabel
+			// textBox2
 			// 
-			this->AddonsCheckOutLabel->AutoSize = true;
-			this->AddonsCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->AddonsCheckOutLabel->Location = System::Drawing::Point(656, 280);
-			this->AddonsCheckOutLabel->Name = L"AddonsCheckOutLabel";
-			this->AddonsCheckOutLabel->Size = System::Drawing::Size(62, 13);
-			this->AddonsCheckOutLabel->TabIndex = 18;
-			this->AddonsCheckOutLabel->Text = L"ADDON(S):";
+			this->textBox2->Location = System::Drawing::Point(200, 64);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(200, 20);
+			this->textBox2->TabIndex = 3;
 			// 
-			// TotalPriceCheckOutLabel
+			// PhoneCheckoutLabel
 			// 
-			this->TotalPriceCheckOutLabel->AutoSize = true;
-			this->TotalPriceCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->TotalPriceCheckOutLabel->Location = System::Drawing::Point(640, 352);
-			this->TotalPriceCheckOutLabel->Name = L"TotalPriceCheckOutLabel";
-			this->TotalPriceCheckOutLabel->Size = System::Drawing::Size(83, 13);
-			this->TotalPriceCheckOutLabel->TabIndex = 19;
-			this->TotalPriceCheckOutLabel->Text = L"TOTAL PRICE :";
+			this->PhoneCheckoutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->PhoneCheckoutLabel->Location = System::Drawing::Point(128, 64);
+			this->PhoneCheckoutLabel->Name = L"PhoneCheckoutLabel";
+			this->PhoneCheckoutLabel->Size = System::Drawing::Size(80, 23);
+			this->PhoneCheckoutLabel->TabIndex = 2;
+			this->PhoneCheckoutLabel->Text = L"PHONE NO:";
 			// 
-			// FlavourCheckOutTextBox
+			// NameCheckOutText
 			// 
-			this->FlavourCheckOutTextBox->Location = System::Drawing::Point(728, 56);
-			this->FlavourCheckOutTextBox->Multiline = true;
-			this->FlavourCheckOutTextBox->Name = L"FlavourCheckOutTextBox";
-			this->FlavourCheckOutTextBox->Size = System::Drawing::Size(304, 48);
-			this->FlavourCheckOutTextBox->TabIndex = 20;
+			this->NameCheckOutText->Location = System::Drawing::Point(192, 24);
+			this->NameCheckOutText->Name = L"NameCheckOutText";
+			this->NameCheckOutText->Size = System::Drawing::Size(200, 20);
+			this->NameCheckOutText->TabIndex = 1;
 			// 
-			// CrustCheckOutTextBox
+			// NameLabelCheckout
 			// 
-			this->CrustCheckOutTextBox->Location = System::Drawing::Point(728, 120);
-			this->CrustCheckOutTextBox->Multiline = true;
-			this->CrustCheckOutTextBox->Name = L"CrustCheckOutTextBox";
-			this->CrustCheckOutTextBox->Size = System::Drawing::Size(304, 56);
-			this->CrustCheckOutTextBox->TabIndex = 21;
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(728, 192);
-			this->textBox5->Multiline = true;
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(304, 56);
-			this->textBox5->TabIndex = 22;
-			// 
-			// AddOnCheckOutTextBox
-			// 
-			this->AddOnCheckOutTextBox->Location = System::Drawing::Point(728, 264);
-			this->AddOnCheckOutTextBox->Multiline = true;
-			this->AddOnCheckOutTextBox->Name = L"AddOnCheckOutTextBox";
-			this->AddOnCheckOutTextBox->Size = System::Drawing::Size(304, 56);
-			this->AddOnCheckOutTextBox->TabIndex = 23;
-			// 
-			// TotalPriceCheckOutTextBox
-			// 
-			this->TotalPriceCheckOutTextBox->Location = System::Drawing::Point(728, 352);
-			this->TotalPriceCheckOutTextBox->Name = L"TotalPriceCheckOutTextBox";
-			this->TotalPriceCheckOutTextBox->Size = System::Drawing::Size(200, 20);
-			this->TotalPriceCheckOutTextBox->TabIndex = 24;
-			// crustreq
-			// 
-			this->crustreq->AutoSize = true;
-			this->crustreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->crustreq->ForeColor = System::Drawing::Color::Red;
-			this->crustreq->Location = System::Drawing::Point(1048, 458);
-			this->crustreq->Name = L"crustreq";
-			this->crustreq->Size = System::Drawing::Size(163, 18);
-			this->crustreq->TabIndex = 51;
-			this->crustreq->Text = L"Please Choose One!";
-			this->crustreq->Visible = false;
+			this->NameLabelCheckout->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->NameLabelCheckout->Location = System::Drawing::Point(136, 24);
+			this->NameLabelCheckout->Name = L"NameLabelCheckout";
+			this->NameLabelCheckout->Size = System::Drawing::Size(56, 23);
+			this->NameLabelCheckout->TabIndex = 0;
+			this->NameLabelCheckout->Text = L"NAME:";
 			// 
 			// MyForm
 			// 
@@ -3700,5 +3703,6 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	System::Void siciliancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void stuffedcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void MovetoToping_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
