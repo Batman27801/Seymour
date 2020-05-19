@@ -198,19 +198,23 @@ private: System::Windows::Forms::CheckBox^ CheckBBQ_Sause;
 
 private: System::Windows::Forms::CheckBox^ checkBox1;
 private: System::Windows::Forms::ComboBox^ ChooseCheeseBox;
-private: System::Windows::Forms::Label^ Cheese;
+private: System::Windows::Forms::Label^ CheeseLabel;
+
 private: System::Windows::Forms::CheckBox^ PepperoniCheck;
 private: System::Windows::Forms::PictureBox^ ToppingPepperoni;
-private: System::Windows::Forms::Label^ QuantityOfCheese;
+private: System::Windows::Forms::Label^ QuantityOfCheeseLabel;
+
 
 private: System::Windows::Forms::ComboBox^ ChooseQuantityOfCheezBox;
+private: System::Windows::Forms::Label^ TypeLabel;
 
-private: System::Windows::Forms::Label^ Type;
+
 private: System::Windows::Forms::ComboBox^ ChooseTypeBox;
 private: System::Windows::Forms::CheckBox^ BeefCheck;
 private: System::Windows::Forms::PictureBox^ ToppingBeef;
 private: System::Windows::Forms::CheckBox^ CheckClovesSpice;
-private: System::Windows::Forms::Label^ Peppers;
+private: System::Windows::Forms::Label^ PeppersLabel;
+
 private: System::Windows::Forms::ComboBox^ ChoosePeppersBox;
 private: System::Windows::Forms::CheckBox^ CheckCreamlized_Onion;
 
@@ -225,8 +229,9 @@ private: System::Windows::Forms::CheckBox^ MashroomCheck;
 private: System::Windows::Forms::CheckBox^ Extra_CheezCheck;
 private: System::Windows::Forms::PictureBox^ ToppingExtra_Cheez;
 private: System::Windows::Forms::CheckBox^ CheckRedPepperFlakes;
+private: System::Windows::Forms::Label^ ExtraLabel;
 
-private: System::Windows::Forms::Label^ Extra;
+
 private: System::Windows::Forms::ComboBox^ ChooseExtraBox;
 private: System::Windows::Forms::CheckBox^ CheckRedPepperFlakes1;
 
@@ -234,9 +239,10 @@ private: System::Windows::Forms::CheckBox^ CheckRedPepperFlakes1;
 private: System::Windows::Forms::PictureBox^ ToppingSausage;
 private: System::Windows::Forms::CheckBox^ SausageCheck;
 private: System::Windows::Forms::CheckBox^ CheckBasilScattering;
+private: System::Windows::Forms::Button^ MoveToCheckout;
 
 
-private: System::Windows::Forms::Button^ button1;
+
 private: System::Windows::Forms::Button^ BacktoFlavors;
 private: System::Windows::Forms::CheckBox^ italiancheckbox;
 
@@ -334,6 +340,10 @@ private: System::Windows::Forms::TextBox^ crustpricebox;
 
 private: System::Windows::Forms::TextBox^ ToppingPriceBox;
 private: System::Windows::Forms::Label^ crustreq;
+private: System::Windows::Forms::ComboBox^ ChooseQuantityBox;
+private: System::Windows::Forms::Label^ QuantityLabel;
+private: System::Windows::Forms::Label^ ToppingNotice;
+	   //private: System::Windows::Forms::CheckBox^ SausageCheck;
 
 
 
@@ -439,6 +449,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->subtitle = (gcnew System::Windows::Forms::Label());
 			this->title = (gcnew System::Windows::Forms::Label());
 			this->CrustSelect = (gcnew System::Windows::Forms::TabPage());
+			this->crustreq = (gcnew System::Windows::Forms::Label());
 			this->crustpricebox = (gcnew System::Windows::Forms::TextBox());
 			this->stuffedlayeringbox = (gcnew System::Windows::Forms::ComboBox());
 			this->stuffedlayerlabel = (gcnew System::Windows::Forms::Label());
@@ -593,14 +604,17 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->ToppingSelect = (gcnew System::Windows::Forms::TabPage());
+			this->ToppingNotice = (gcnew System::Windows::Forms::Label());
+			this->ChooseQuantityBox = (gcnew System::Windows::Forms::ComboBox());
+			this->QuantityLabel = (gcnew System::Windows::Forms::Label());
 			this->ToppingPriceBox = (gcnew System::Windows::Forms::TextBox());
 			this->BacktoFlavors = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->MoveToCheckout = (gcnew System::Windows::Forms::Button());
 			this->CheckBasilScattering = (gcnew System::Windows::Forms::CheckBox());
 			this->SausageCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->CheckRedPepperFlakes1 = (gcnew System::Windows::Forms::CheckBox());
 			this->ToppingSausage = (gcnew System::Windows::Forms::PictureBox());
-			this->Extra = (gcnew System::Windows::Forms::Label());
+			this->ExtraLabel = (gcnew System::Windows::Forms::Label());
 			this->ChooseExtraBox = (gcnew System::Windows::Forms::ComboBox());
 			this->CheckRedPepperFlakes = (gcnew System::Windows::Forms::CheckBox());
 			this->Extra_CheezCheck = (gcnew System::Windows::Forms::CheckBox());
@@ -611,18 +625,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CheckCreamlized_Onion = (gcnew System::Windows::Forms::CheckBox());
 			this->ToppingMashrooms = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
-			this->Peppers = (gcnew System::Windows::Forms::Label());
+			this->PeppersLabel = (gcnew System::Windows::Forms::Label());
 			this->ChoosePeppersBox = (gcnew System::Windows::Forms::ComboBox());
 			this->CheckClovesSpice = (gcnew System::Windows::Forms::CheckBox());
 			this->BeefCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->ToppingBeef = (gcnew System::Windows::Forms::PictureBox());
-			this->QuantityOfCheese = (gcnew System::Windows::Forms::Label());
+			this->QuantityOfCheeseLabel = (gcnew System::Windows::Forms::Label());
 			this->ChooseQuantityOfCheezBox = (gcnew System::Windows::Forms::ComboBox());
-			this->Type = (gcnew System::Windows::Forms::Label());
+			this->TypeLabel = (gcnew System::Windows::Forms::Label());
 			this->ChooseTypeBox = (gcnew System::Windows::Forms::ComboBox());
 			this->PepperoniCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->ToppingPepperoni = (gcnew System::Windows::Forms::PictureBox());
-			this->Cheese = (gcnew System::Windows::Forms::Label());
+			this->CheeseLabel = (gcnew System::Windows::Forms::Label());
 			this->ChooseCheeseBox = (gcnew System::Windows::Forms::ComboBox());
 			this->CheckBBQ_Sause = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
@@ -630,7 +644,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingChicken = (gcnew System::Windows::Forms::PictureBox());
 			this->ToppingHeading = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->crustreq = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -822,6 +835,19 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CrustSelect->Text = L"Crust select";
 			this->CrustSelect->UseVisualStyleBackColor = true;
 			this->CrustSelect->Enter += gcnew System::EventHandler(this, &MyForm::CrustSelect_Enter);
+			// 
+			// crustreq
+			// 
+			this->crustreq->AutoSize = true;
+			this->crustreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->crustreq->ForeColor = System::Drawing::Color::Red;
+			this->crustreq->Location = System::Drawing::Point(1048, 458);
+			this->crustreq->Name = L"crustreq";
+			this->crustreq->Size = System::Drawing::Size(163, 18);
+			this->crustreq->TabIndex = 51;
+			this->crustreq->Text = L"Please Choose One!";
+			this->crustreq->Visible = false;
 			// 
 			// crustpricebox
 			// 
@@ -2795,14 +2821,17 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->ToppingSelect->BackColor = System::Drawing::Color::Transparent;
 			this->ToppingSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ToppingSelect.BackgroundImage")));
+			this->ToppingSelect->Controls->Add(this->ToppingNotice);
+			this->ToppingSelect->Controls->Add(this->ChooseQuantityBox);
+			this->ToppingSelect->Controls->Add(this->QuantityLabel);
 			this->ToppingSelect->Controls->Add(this->ToppingPriceBox);
 			this->ToppingSelect->Controls->Add(this->BacktoFlavors);
-			this->ToppingSelect->Controls->Add(this->button1);
+			this->ToppingSelect->Controls->Add(this->MoveToCheckout);
 			this->ToppingSelect->Controls->Add(this->CheckBasilScattering);
 			this->ToppingSelect->Controls->Add(this->SausageCheck);
 			this->ToppingSelect->Controls->Add(this->CheckRedPepperFlakes1);
 			this->ToppingSelect->Controls->Add(this->ToppingSausage);
-			this->ToppingSelect->Controls->Add(this->Extra);
+			this->ToppingSelect->Controls->Add(this->ExtraLabel);
 			this->ToppingSelect->Controls->Add(this->ChooseExtraBox);
 			this->ToppingSelect->Controls->Add(this->CheckRedPepperFlakes);
 			this->ToppingSelect->Controls->Add(this->Extra_CheezCheck);
@@ -2813,18 +2842,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingSelect->Controls->Add(this->CheckCreamlized_Onion);
 			this->ToppingSelect->Controls->Add(this->ToppingMashrooms);
 			this->ToppingSelect->Controls->Add(this->pictureBox9);
-			this->ToppingSelect->Controls->Add(this->Peppers);
+			this->ToppingSelect->Controls->Add(this->PeppersLabel);
 			this->ToppingSelect->Controls->Add(this->ChoosePeppersBox);
 			this->ToppingSelect->Controls->Add(this->CheckClovesSpice);
 			this->ToppingSelect->Controls->Add(this->BeefCheck);
 			this->ToppingSelect->Controls->Add(this->ToppingBeef);
-			this->ToppingSelect->Controls->Add(this->QuantityOfCheese);
+			this->ToppingSelect->Controls->Add(this->QuantityOfCheeseLabel);
 			this->ToppingSelect->Controls->Add(this->ChooseQuantityOfCheezBox);
-			this->ToppingSelect->Controls->Add(this->Type);
+			this->ToppingSelect->Controls->Add(this->TypeLabel);
 			this->ToppingSelect->Controls->Add(this->ChooseTypeBox);
 			this->ToppingSelect->Controls->Add(this->PepperoniCheck);
 			this->ToppingSelect->Controls->Add(this->ToppingPepperoni);
-			this->ToppingSelect->Controls->Add(this->Cheese);
+			this->ToppingSelect->Controls->Add(this->CheeseLabel);
 			this->ToppingSelect->Controls->Add(this->ChooseCheeseBox);
 			this->ToppingSelect->Controls->Add(this->CheckBBQ_Sause);
 			this->ToppingSelect->Controls->Add(this->checkBox1);
@@ -2839,9 +2868,43 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingSelect->Text = L"ToppingSelect";
 			this->ToppingSelect->Click += gcnew System::EventHandler(this, &MyForm::ToppingSelect_Click);
 			// 
+			// ToppingNotice
+			// 
+			this->ToppingNotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ToppingNotice->ForeColor = System::Drawing::Color::Red;
+			this->ToppingNotice->Location = System::Drawing::Point(1001, 455);
+			this->ToppingNotice->Name = L"ToppingNotice";
+			this->ToppingNotice->Size = System::Drawing::Size(178, 27);
+			this->ToppingNotice->TabIndex = 39;
+			this->ToppingNotice->Text = L"Kindly Select Any One Topping";
+			this->ToppingNotice->Visible = false;
+			// 
+			// ChooseQuantityBox
+			// 
+			this->ChooseQuantityBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->ChooseQuantityBox->FormattingEnabled = true;
+			this->ChooseQuantityBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Normal", L"Extra", L"Less" });
+			this->ChooseQuantityBox->Location = System::Drawing::Point(1017, 259);
+			this->ChooseQuantityBox->Name = L"ChooseQuantityBox";
+			this->ChooseQuantityBox->Size = System::Drawing::Size(125, 24);
+			this->ChooseQuantityBox->TabIndex = 38;
+			// 
+			// QuantityLabel
+			// 
+			this->QuantityLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->QuantityLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->QuantityLabel->Location = System::Drawing::Point(999, 232);
+			this->QuantityLabel->Name = L"QuantityLabel";
+			this->QuantityLabel->Size = System::Drawing::Size(181, 20);
+			this->QuantityLabel->TabIndex = 37;
+			this->QuantityLabel->Text = L"Choose Quantity Of Topping";
+			// 
 			// ToppingPriceBox
 			// 
-			this->ToppingPriceBox->Location = System::Drawing::Point(995, 339);
+			this->ToppingPriceBox->Location = System::Drawing::Point(1012, 339);
 			this->ToppingPriceBox->Multiline = true;
 			this->ToppingPriceBox->Name = L"ToppingPriceBox";
 			this->ToppingPriceBox->Size = System::Drawing::Size(145, 80);
@@ -2850,108 +2913,127 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			// BacktoFlavors
 			// 
-			this->BacktoFlavors->Location = System::Drawing::Point(1077, 21);
-			this->BacktoFlavors->Name = L"BacktoFlavors";
-			this->BacktoFlavors->Size = System::Drawing::Size(109, 58);
-			this->BacktoFlavors->TabIndex = 35;
-			this->BacktoFlavors->Text = L"Back";
-			this->BacktoFlavors->UseVisualStyleBackColor = true;
-			// 
-			// button1
-			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->BacktoFlavors->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->button1->Location = System::Drawing::Point(1017, 485);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(143, 64);
-			this->button1->TabIndex = 34;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
+			this->BacktoFlavors->Location = System::Drawing::Point(1017, 21);
+			this->BacktoFlavors->Name = L"BacktoFlavors";
+			this->BacktoFlavors->Size = System::Drawing::Size(169, 58);
+			this->BacktoFlavors->TabIndex = 35;
+			this->BacktoFlavors->Text = L"Back To Flavour Select";
+			this->BacktoFlavors->UseVisualStyleBackColor = true;
+			this->BacktoFlavors->Click += gcnew System::EventHandler(this, &MyForm::BacktoFlavors_Click);
+			// 
+			// MoveToCheckout
+			// 
+			this->MoveToCheckout->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->MoveToCheckout->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->MoveToCheckout->Location = System::Drawing::Point(1017, 485);
+			this->MoveToCheckout->Name = L"MoveToCheckout";
+			this->MoveToCheckout->Size = System::Drawing::Size(143, 64);
+			this->MoveToCheckout->TabIndex = 34;
+			this->MoveToCheckout->Text = L"Procced To Checkout";
+			this->MoveToCheckout->UseVisualStyleBackColor = true;
+			this->MoveToCheckout->Click += gcnew System::EventHandler(this, &MyForm::MoveToCheckout_Click);
 			// 
 			// CheckBasilScattering
 			// 
-			this->CheckBasilScattering->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->CheckBasilScattering->Location = System::Drawing::Point(836, 534);
+			this->CheckBasilScattering->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->CheckBasilScattering->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CheckBasilScattering->Location = System::Drawing::Point(875, 533);
 			this->CheckBasilScattering->Name = L"CheckBasilScattering";
-			this->CheckBasilScattering->Size = System::Drawing::Size(121, 26);
+			this->CheckBasilScattering->Size = System::Drawing::Size(107, 35);
 			this->CheckBasilScattering->TabIndex = 33;
 			this->CheckBasilScattering->Text = L"Add Basil Scattering";
 			this->CheckBasilScattering->UseVisualStyleBackColor = true;
+			this->CheckBasilScattering->Visible = false;
 			this->CheckBasilScattering->CheckedChanged += gcnew System::EventHandler(this, &MyForm::BasilScattering_CheckedChanged);
 			// 
 			// SausageCheck
 			// 
+			this->SausageCheck->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->SausageCheck->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->SausageCheck->Location = System::Drawing::Point(723, 458);
+			this->SausageCheck->Location = System::Drawing::Point(718, 433);
 			this->SausageCheck->Name = L"SausageCheck";
-			this->SausageCheck->Size = System::Drawing::Size(234, 70);
+			this->SausageCheck->Size = System::Drawing::Size(270, 103);
 			this->SausageCheck->TabIndex = 32;
-			this->SausageCheck->Text = L"Some prefer mild, others spicy, and Southerners Conecuh, but sausage is consisten"
-				L"tly a favorite pizza topping of Americans. This cast-iron pizza recipe gives you"
-				L" another reason to love that skillet.";
+			this->SausageCheck->Text = resources->GetString(L"SausageCheck.Text");
 			this->SausageCheck->UseVisualStyleBackColor = true;
-			this->SausageCheck->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CheckExtra_Cheez_CheckedChanged);
+			this->SausageCheck->CheckedChanged += gcnew System::EventHandler(this, &MyForm::SausageCheck_CheckedChanged);
 			// 
 			// CheckRedPepperFlakes1
 			// 
-			this->CheckRedPepperFlakes1->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->CheckRedPepperFlakes1->Location = System::Drawing::Point(725, 533);
+			this->CheckRedPepperFlakes1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->CheckRedPepperFlakes1->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CheckRedPepperFlakes1->Location = System::Drawing::Point(716, 531);
 			this->CheckRedPepperFlakes1->Name = L"CheckRedPepperFlakes1";
-			this->CheckRedPepperFlakes1->Size = System::Drawing::Size(126, 32);
+			this->CheckRedPepperFlakes1->Size = System::Drawing::Size(169, 36);
 			this->CheckRedPepperFlakes1->TabIndex = 31;
 			this->CheckRedPepperFlakes1->Text = L"Add Red_Pepper Flakes(Extra Charges)";
 			this->CheckRedPepperFlakes1->UseVisualStyleBackColor = true;
 			this->CheckRedPepperFlakes1->UseWaitCursor = true;
+			this->CheckRedPepperFlakes1->Visible = false;
 			this->CheckRedPepperFlakes1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::RedPepperFlakes1_CheckedChanged);
 			// 
 			// ToppingSausage
 			// 
 			this->ToppingSausage->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ToppingSausage.Image")));
-			this->ToppingSausage->Location = System::Drawing::Point(739, 306);
+			this->ToppingSausage->Location = System::Drawing::Point(739, 305);
 			this->ToppingSausage->Name = L"ToppingSausage";
 			this->ToppingSausage->Size = System::Drawing::Size(169, 148);
 			this->ToppingSausage->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->ToppingSausage->TabIndex = 30;
 			this->ToppingSausage->TabStop = false;
 			// 
-			// Extra
+			// ExtraLabel
 			// 
-			this->Extra->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->Extra->Location = System::Drawing::Point(583, 526);
-			this->Extra->Name = L"Extra";
-			this->Extra->Size = System::Drawing::Size(100, 23);
-			this->Extra->TabIndex = 29;
-			this->Extra->Text = L"Choose Extra";
+			this->ExtraLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ExtraLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->ExtraLabel->Location = System::Drawing::Point(589, 526);
+			this->ExtraLabel->Name = L"ExtraLabel";
+			this->ExtraLabel->Size = System::Drawing::Size(100, 23);
+			this->ExtraLabel->TabIndex = 29;
+			this->ExtraLabel->Text = L"Choose Extra";
+			this->ExtraLabel->Visible = false;
 			// 
 			// ChooseExtraBox
 			// 
 			this->ChooseExtraBox->FormattingEnabled = true;
-			this->ChooseExtraBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Macroni", L"Cheese(Extra Charges)" });
-			this->ChooseExtraBox->Location = System::Drawing::Point(571, 548);
+			this->ChooseExtraBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Macroni", L"Cheese (Extra Charges)" });
+			this->ChooseExtraBox->Location = System::Drawing::Point(574, 548);
 			this->ChooseExtraBox->Name = L"ChooseExtraBox";
 			this->ChooseExtraBox->Size = System::Drawing::Size(121, 21);
 			this->ChooseExtraBox->TabIndex = 28;
+			this->ChooseExtraBox->Visible = false;
 			this->ChooseExtraBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::ChooseExtraBox_SelectedIndexChanged);
 			// 
 			// CheckRedPepperFlakes
 			// 
-			this->CheckRedPepperFlakes->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->CheckRedPepperFlakes->Location = System::Drawing::Point(433, 529);
+			this->CheckRedPepperFlakes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->CheckRedPepperFlakes->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CheckRedPepperFlakes->Location = System::Drawing::Point(424, 535);
 			this->CheckRedPepperFlakes->Name = L"CheckRedPepperFlakes";
 			this->CheckRedPepperFlakes->Size = System::Drawing::Size(153, 32);
 			this->CheckRedPepperFlakes->TabIndex = 27;
 			this->CheckRedPepperFlakes->Text = L"Add Red_Pepper Flakes(Extra Charges)";
 			this->CheckRedPepperFlakes->UseVisualStyleBackColor = true;
 			this->CheckRedPepperFlakes->UseWaitCursor = true;
+			this->CheckRedPepperFlakes->Visible = false;
 			this->CheckRedPepperFlakes->CheckedChanged += gcnew System::EventHandler(this, &MyForm::RedPepperFlakes_CheckedChanged);
 			// 
 			// Extra_CheezCheck
 			// 
+			this->Extra_CheezCheck->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->Extra_CheezCheck->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->Extra_CheezCheck->Location = System::Drawing::Point(428, 452);
+			this->Extra_CheezCheck->Location = System::Drawing::Point(423, 419);
 			this->Extra_CheezCheck->Name = L"Extra_CheezCheck";
-			this->Extra_CheezCheck->Size = System::Drawing::Size(273, 75);
+			this->Extra_CheezCheck->Size = System::Drawing::Size(295, 113);
 			this->Extra_CheezCheck->TabIndex = 26;
 			this->Extra_CheezCheck->Text = resources->GetString(L"Extra_CheezCheck.Text");
 			this->Extra_CheezCheck->UseVisualStyleBackColor = true;
@@ -2960,9 +3042,9 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// ToppingExtra_Cheez
 			// 
 			this->ToppingExtra_Cheez->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ToppingExtra_Cheez.Image")));
-			this->ToppingExtra_Cheez->Location = System::Drawing::Point(448, 297);
+			this->ToppingExtra_Cheez->Location = System::Drawing::Point(448, 305);
 			this->ToppingExtra_Cheez->Name = L"ToppingExtra_Cheez";
-			this->ToppingExtra_Cheez->Size = System::Drawing::Size(179, 157);
+			this->ToppingExtra_Cheez->Size = System::Drawing::Size(179, 152);
 			this->ToppingExtra_Cheez->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->ToppingExtra_Cheez->TabIndex = 25;
 			this->ToppingExtra_Cheez->TabStop = false;
@@ -2970,10 +3052,12 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			// MashroomCheck
 			// 
+			this->MashroomCheck->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->MashroomCheck->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->MashroomCheck->Location = System::Drawing::Point(137, 458);
+			this->MashroomCheck->Location = System::Drawing::Point(138, 427);
 			this->MashroomCheck->Name = L"MashroomCheck";
-			this->MashroomCheck->Size = System::Drawing::Size(279, 62);
+			this->MashroomCheck->Size = System::Drawing::Size(294, 83);
 			this->MashroomCheck->TabIndex = 24;
 			this->MashroomCheck->Text = resources->GetString(L"MashroomCheck.Text");
 			this->MashroomCheck->UseVisualStyleBackColor = true;
@@ -2981,13 +3065,16 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			// CheckCreamyGarlicSause
 			// 
-			this->CheckCreamyGarlicSause->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->CheckCreamyGarlicSause->Location = System::Drawing::Point(281, 527);
+			this->CheckCreamyGarlicSause->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->CheckCreamyGarlicSause->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CheckCreamyGarlicSause->Location = System::Drawing::Point(287, 527);
 			this->CheckCreamyGarlicSause->Name = L"CheckCreamyGarlicSause";
 			this->CheckCreamyGarlicSause->Size = System::Drawing::Size(123, 37);
 			this->CheckCreamyGarlicSause->TabIndex = 23;
 			this->CheckCreamyGarlicSause->Text = L"Add Creamy Garlic Sause";
 			this->CheckCreamyGarlicSause->UseVisualStyleBackColor = true;
+			this->CheckCreamyGarlicSause->Visible = false;
 			this->CheckCreamyGarlicSause->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CheckCreamyGarlicSause_CheckedChanged);
 			// 
 			// checkBox2
@@ -3002,13 +3089,16 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			// CheckCreamlized_Onion
 			// 
-			this->CheckCreamlized_Onion->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->CheckCreamlized_Onion->Location = System::Drawing::Point(139, 528);
+			this->CheckCreamlized_Onion->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->CheckCreamlized_Onion->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CheckCreamlized_Onion->Location = System::Drawing::Point(137, 526);
 			this->CheckCreamlized_Onion->Name = L"CheckCreamlized_Onion";
-			this->CheckCreamlized_Onion->Size = System::Drawing::Size(133, 30);
+			this->CheckCreamlized_Onion->Size = System::Drawing::Size(147, 33);
 			this->CheckCreamlized_Onion->TabIndex = 21;
 			this->CheckCreamlized_Onion->Text = L"Add Creamlized Onion(Extra Charges)";
 			this->CheckCreamlized_Onion->UseVisualStyleBackColor = true;
+			this->CheckCreamlized_Onion->Visible = false;
 			this->CheckCreamlized_Onion->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CheckCreamlized_Onion_CheckedChanged);
 			// 
 			// ToppingMashrooms
@@ -3016,7 +3106,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingMashrooms->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ToppingMashrooms.Image")));
 			this->ToppingMashrooms->Location = System::Drawing::Point(177, 301);
 			this->ToppingMashrooms->Name = L"ToppingMashrooms";
-			this->ToppingMashrooms->Size = System::Drawing::Size(179, 158);
+			this->ToppingMashrooms->Size = System::Drawing::Size(169, 126);
 			this->ToppingMashrooms->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->ToppingMashrooms->TabIndex = 20;
 			this->ToppingMashrooms->TabStop = false;
@@ -3030,43 +3120,52 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->pictureBox9->TabIndex = 19;
 			this->pictureBox9->TabStop = false;
 			// 
-			// Peppers
+			// PeppersLabel
 			// 
-			this->Peppers->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->Peppers->Location = System::Drawing::Point(848, 257);
-			this->Peppers->Name = L"Peppers";
-			this->Peppers->Size = System::Drawing::Size(100, 23);
-			this->Peppers->TabIndex = 18;
-			this->Peppers->Text = L"Choose Peppers";
+			this->PeppersLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->PeppersLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->PeppersLabel->Location = System::Drawing::Point(848, 257);
+			this->PeppersLabel->Name = L"PeppersLabel";
+			this->PeppersLabel->Size = System::Drawing::Size(100, 23);
+			this->PeppersLabel->TabIndex = 18;
+			this->PeppersLabel->Text = L"Choose Peppers";
+			this->PeppersLabel->Visible = false;
 			// 
 			// ChoosePeppersBox
 			// 
 			this->ChoosePeppersBox->FormattingEnabled = true;
 			this->ChoosePeppersBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Green", L"Red" });
-			this->ChoosePeppersBox->Location = System::Drawing::Point(836, 280);
+			this->ChoosePeppersBox->Location = System::Drawing::Point(849, 278);
 			this->ChoosePeppersBox->Name = L"ChoosePeppersBox";
-			this->ChoosePeppersBox->Size = System::Drawing::Size(121, 21);
+			this->ChoosePeppersBox->Size = System::Drawing::Size(104, 21);
 			this->ChoosePeppersBox->TabIndex = 17;
+			this->ChoosePeppersBox->Visible = false;
 			this->ChoosePeppersBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::ChoosePeppersBox_SelectedIndexChanged);
 			// 
 			// CheckClovesSpice
 			// 
-			this->CheckClovesSpice->ForeColor = System::Drawing::SystemColors::AppWorkspace;
+			this->CheckClovesSpice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CheckClovesSpice->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->CheckClovesSpice->Location = System::Drawing::Point(703, 263);
 			this->CheckClovesSpice->Name = L"CheckClovesSpice";
-			this->CheckClovesSpice->Size = System::Drawing::Size(129, 40);
+			this->CheckClovesSpice->Size = System::Drawing::Size(148, 35);
 			this->CheckClovesSpice->TabIndex = 16;
 			this->CheckClovesSpice->Text = L"Add Cloves Spice(Extra Charges)";
 			this->CheckClovesSpice->UseVisualStyleBackColor = true;
+			this->CheckClovesSpice->Visible = false;
 			this->CheckClovesSpice->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CheckClovesSpice_CheckedChanged);
 			// 
 			// BeefCheck
 			// 
 			this->BeefCheck->BackColor = System::Drawing::Color::Transparent;
+			this->BeefCheck->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->BeefCheck->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->BeefCheck->Location = System::Drawing::Point(702, 182);
+			this->BeefCheck->Location = System::Drawing::Point(695, 146);
 			this->BeefCheck->Name = L"BeefCheck";
-			this->BeefCheck->Size = System::Drawing::Size(265, 83);
+			this->BeefCheck->Size = System::Drawing::Size(296, 111);
 			this->BeefCheck->TabIndex = 15;
 			this->BeefCheck->Text = resources->GetString(L"BeefCheck.Text");
 			this->BeefCheck->UseVisualStyleBackColor = false;
@@ -3075,22 +3174,25 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// ToppingBeef
 			// 
 			this->ToppingBeef->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ToppingBeef.Image")));
-			this->ToppingBeef->Location = System::Drawing::Point(735, 34);
+			this->ToppingBeef->Location = System::Drawing::Point(734, 19);
 			this->ToppingBeef->Name = L"ToppingBeef";
-			this->ToppingBeef->Size = System::Drawing::Size(173, 147);
+			this->ToppingBeef->Size = System::Drawing::Size(161, 131);
 			this->ToppingBeef->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->ToppingBeef->TabIndex = 14;
 			this->ToppingBeef->TabStop = false;
 			// 
-			// QuantityOfCheese
+			// QuantityOfCheeseLabel
 			// 
-			this->QuantityOfCheese->BackColor = System::Drawing::Color::Transparent;
-			this->QuantityOfCheese->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->QuantityOfCheese->Location = System::Drawing::Point(544, 243);
-			this->QuantityOfCheese->Name = L"QuantityOfCheese";
-			this->QuantityOfCheese->Size = System::Drawing::Size(121, 29);
-			this->QuantityOfCheese->TabIndex = 13;
-			this->QuantityOfCheese->Text = L"Choose Quantity Of Mozarelle Cheese";
+			this->QuantityOfCheeseLabel->BackColor = System::Drawing::Color::Transparent;
+			this->QuantityOfCheeseLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->QuantityOfCheeseLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->QuantityOfCheeseLabel->Location = System::Drawing::Point(544, 243);
+			this->QuantityOfCheeseLabel->Name = L"QuantityOfCheeseLabel";
+			this->QuantityOfCheeseLabel->Size = System::Drawing::Size(139, 27);
+			this->QuantityOfCheeseLabel->TabIndex = 13;
+			this->QuantityOfCheeseLabel->Text = L"Choose Quantity Of Mozarelle Cheese";
+			this->QuantityOfCheeseLabel->Visible = false;
 			// 
 			// ChooseQuantityOfCheezBox
 			// 
@@ -3101,19 +3203,23 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			});
 			this->ChooseQuantityOfCheezBox->Location = System::Drawing::Point(545, 273);
 			this->ChooseQuantityOfCheezBox->Name = L"ChooseQuantityOfCheezBox";
-			this->ChooseQuantityOfCheezBox->Size = System::Drawing::Size(96, 21);
+			this->ChooseQuantityOfCheezBox->Size = System::Drawing::Size(128, 21);
 			this->ChooseQuantityOfCheezBox->TabIndex = 12;
+			this->ChooseQuantityOfCheezBox->Visible = false;
 			this->ChooseQuantityOfCheezBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::ChooseQuantityOfCheezBox_SelectedIndexChanged);
 			// 
-			// Type
+			// TypeLabel
 			// 
-			this->Type->BackColor = System::Drawing::Color::Transparent;
-			this->Type->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->Type->Location = System::Drawing::Point(454, 246);
-			this->Type->Name = L"Type";
-			this->Type->Size = System::Drawing::Size(85, 15);
-			this->Type->TabIndex = 11;
-			this->Type->Text = L"Choose Type";
+			this->TypeLabel->BackColor = System::Drawing::Color::Transparent;
+			this->TypeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->TypeLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->TypeLabel->Location = System::Drawing::Point(454, 246);
+			this->TypeLabel->Name = L"TypeLabel";
+			this->TypeLabel->Size = System::Drawing::Size(85, 15);
+			this->TypeLabel->TabIndex = 11;
+			this->TypeLabel->Text = L"Choose Type";
+			this->TypeLabel->Visible = false;
 			// 
 			// ChooseTypeBox
 			// 
@@ -3123,62 +3229,72 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ChooseTypeBox->Name = L"ChooseTypeBox";
 			this->ChooseTypeBox->Size = System::Drawing::Size(90, 21);
 			this->ChooseTypeBox->TabIndex = 10;
+			this->ChooseTypeBox->Visible = false;
 			this->ChooseTypeBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::ChooseTypeBox_SelectedIndexChanged);
 			// 
 			// PepperoniCheck
 			// 
 			this->PepperoniCheck->BackColor = System::Drawing::Color::Transparent;
+			this->PepperoniCheck->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->PepperoniCheck->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->PepperoniCheck->Location = System::Drawing::Point(448, 185);
+			this->PepperoniCheck->Location = System::Drawing::Point(428, 157);
 			this->PepperoniCheck->Name = L"PepperoniCheck";
-			this->PepperoniCheck->Size = System::Drawing::Size(195, 56);
+			this->PepperoniCheck->Size = System::Drawing::Size(263, 69);
 			this->PepperoniCheck->TabIndex = 9;
-			this->PepperoniCheck->Text = L"Poll after poll, pepperoni always tops the list of America�s favorite pizza toppi"
-				L"ngs. When it doubt, you can�t go wrong with a classic.";
+			this->PepperoniCheck->Text = L"\"Pepperoni\".\r\nPoll after poll, pepperoni always tops the list of America s favori"
+				L"te pizza toppings. When it doubt, you can t go wrong with a classic.";
 			this->PepperoniCheck->UseVisualStyleBackColor = false;
 			this->PepperoniCheck->CheckedChanged += gcnew System::EventHandler(this, &MyForm::PepperoniCheck_CheckedChanged);
 			// 
 			// ToppingPepperoni
 			// 
 			this->ToppingPepperoni->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ToppingPepperoni.Image")));
-			this->ToppingPepperoni->Location = System::Drawing::Point(448, 35);
+			this->ToppingPepperoni->Location = System::Drawing::Point(448, 22);
 			this->ToppingPepperoni->Name = L"ToppingPepperoni";
-			this->ToppingPepperoni->Size = System::Drawing::Size(184, 147);
+			this->ToppingPepperoni->Size = System::Drawing::Size(179, 135);
 			this->ToppingPepperoni->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->ToppingPepperoni->TabIndex = 8;
 			this->ToppingPepperoni->TabStop = false;
 			// 
-			// Cheese
+			// CheeseLabel
 			// 
-			this->Cheese->BackColor = System::Drawing::Color::Transparent;
-			this->Cheese->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->Cheese->Location = System::Drawing::Point(310, 256);
-			this->Cheese->Name = L"Cheese";
-			this->Cheese->Size = System::Drawing::Size(86, 23);
-			this->Cheese->TabIndex = 7;
-			this->Cheese->Text = L"Choose Cheese";
+			this->CheeseLabel->BackColor = System::Drawing::Color::Transparent;
+			this->CheeseLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CheeseLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CheeseLabel->Location = System::Drawing::Point(321, 256);
+			this->CheeseLabel->Name = L"CheeseLabel";
+			this->CheeseLabel->Size = System::Drawing::Size(107, 23);
+			this->CheeseLabel->TabIndex = 7;
+			this->CheeseLabel->Text = L"Choose Cheese";
+			this->CheeseLabel->Visible = false;
 			// 
 			// ChooseCheeseBox
 			// 
 			this->ChooseCheeseBox->FormattingEnabled = true;
 			this->ChooseCheeseBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Shredded_Parmesan", L"Shredded_Cheddar" });
-			this->ChooseCheeseBox->Location = System::Drawing::Point(308, 277);
+			this->ChooseCheeseBox->Location = System::Drawing::Point(320, 277);
 			this->ChooseCheeseBox->Name = L"ChooseCheeseBox";
 			this->ChooseCheeseBox->Size = System::Drawing::Size(84, 21);
 			this->ChooseCheeseBox->TabIndex = 6;
+			this->ChooseCheeseBox->Visible = false;
 			this->ChooseCheeseBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::ChooseCheeseBox_SelectedIndexChanged);
 			// 
 			// CheckBBQ_Sause
 			// 
 			this->CheckBBQ_Sause->BackColor = System::Drawing::Color::Transparent;
 			this->CheckBBQ_Sause->Cursor = System::Windows::Forms::Cursors::SizeNS;
-			this->CheckBBQ_Sause->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->CheckBBQ_Sause->Location = System::Drawing::Point(138, 264);
+			this->CheckBBQ_Sause->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CheckBBQ_Sause->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CheckBBQ_Sause->Location = System::Drawing::Point(138, 246);
 			this->CheckBBQ_Sause->Name = L"CheckBBQ_Sause";
-			this->CheckBBQ_Sause->Size = System::Drawing::Size(165, 31);
+			this->CheckBBQ_Sause->Size = System::Drawing::Size(176, 49);
 			this->CheckBBQ_Sause->TabIndex = 5;
 			this->CheckBBQ_Sause->Text = L"Add BBQ_SAUCE(Additional Charges)";
 			this->CheckBBQ_Sause->UseVisualStyleBackColor = false;
+			this->CheckBBQ_Sause->Visible = false;
 			this->CheckBBQ_Sause->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CheckBBQ_Sause_CheckedChanged);
 			// 
 			// checkBox1
@@ -3194,23 +3310,25 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// ChickenCheck
 			// 
 			this->ChickenCheck->BackColor = System::Drawing::Color::Transparent;
+			this->ChickenCheck->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->ChickenCheck->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ChickenCheck->Location = System::Drawing::Point(138, 180);
+			this->ChickenCheck->Location = System::Drawing::Point(138, 160);
 			this->ChickenCheck->Name = L"ChickenCheck";
-			this->ChickenCheck->Size = System::Drawing::Size(233, 77);
+			this->ChickenCheck->Size = System::Drawing::Size(254, 81);
 			this->ChickenCheck->TabIndex = 3;
-			this->ChickenCheck->Text = L"The winner winner of weeknight meals goes well on pizzas, too! BBQ chicken, buffa"
-				L"lo chicken, and chicken bacon ranch are common pizza orders that contain this pr"
-				L"otein.";
+			this->ChickenCheck->Text = L"\"Chicken\".\r\nThe winner of weeknight meals goes well on pizzas, too! BBQ chicken, "
+				L"buffalo chicken, and chicken bacon ranch are common orders that contain this pro"
+				L"tein.";
 			this->ChickenCheck->UseVisualStyleBackColor = false;
 			this->ChickenCheck->CheckedChanged += gcnew System::EventHandler(this, &MyForm::ChickenCheck_CheckedChanged);
 			// 
 			// ToppingChicken
 			// 
 			this->ToppingChicken->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ToppingChicken.Image")));
-			this->ToppingChicken->Location = System::Drawing::Point(177, 32);
+			this->ToppingChicken->Location = System::Drawing::Point(177, 20);
 			this->ToppingChicken->Name = L"ToppingChicken";
-			this->ToppingChicken->Size = System::Drawing::Size(179, 147);
+			this->ToppingChicken->Size = System::Drawing::Size(169, 138);
 			this->ToppingChicken->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->ToppingChicken->TabIndex = 2;
 			this->ToppingChicken->TabStop = false;
@@ -3237,19 +3355,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->label1->Size = System::Drawing::Size(35, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"label1";
-			// 
-			// crustreq
-			// 
-			this->crustreq->AutoSize = true;
-			this->crustreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->crustreq->ForeColor = System::Drawing::Color::Red;
-			this->crustreq->Location = System::Drawing::Point(1048, 458);
-			this->crustreq->Name = L"crustreq";
-			this->crustreq->Size = System::Drawing::Size(163, 18);
-			this->crustreq->TabIndex = 51;
-			this->crustreq->Text = L"Please Choose One!";
-			this->crustreq->Visible = false;
 			// 
 			// MyForm
 			// 
@@ -3328,7 +3433,7 @@ private:
 	System::Void usernameavailability_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void backtologinbutton_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
-	System::Void CheckBBQ_Sause_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void CheckBBQ_Sause_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {};
 private: System::Void RedPepperFlakes_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void ToppingHeading_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -3342,40 +3447,38 @@ private: System::Void RedPepperFlakes_CheckedChanged(System::Object^ sender, Sys
 	System::Void ChickenCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-	System::Void PepperoniCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	System::Void PepperoniCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void ChooseTypeBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void ChooseQuantityOfCheezBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-	System::Void BeefCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	System::Void BeefCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void CheckClovesSpice_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void ChoosePeppersBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-	System::Void MashroomCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	System::Void MashroomCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void CheckCreamlized_Onion_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void CheckCreamyGarlicSause_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void ChooseExtraBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-	System::Void Extra_CheezCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-	System::Void CheckExtra_Cheez_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	System::Void Extra_CheezCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void SausageCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+//	System::Void CheckExtra_Cheez_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void RedPepperFlakes1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
+	System::Void MoveToCheckout_Click(System::Object^ sender, System::EventArgs^ e);
+
 	System::Void BasilScattering_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void CrustSelect_Enter(System::Object^ sender, System::EventArgs^ e);
 //	System::Void Flavopricebox2_TextChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void toflavormenu_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void GuesetOrderButton_Click(System::Object^ sender, System::EventArgs^ e);
-	System::Void ToppingPriceBox_TextChanged(System::Object^ sender, System::EventArgs^ e){
-	}
+	System::Void ToppingPriceBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {};
+	System::Void BacktoFlavors_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void italiancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void neapolitancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void newyorkcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
@@ -3385,5 +3488,8 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	System::Void siciliancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void stuffedcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void MovetoToping_Click(System::Object^ sender, System::EventArgs^ e);
+	
+	
+	
 };
 }

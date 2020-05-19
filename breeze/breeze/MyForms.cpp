@@ -1233,45 +1233,288 @@ void breeze::MyForm::ChilliDelightCheckbox_CheckStateChanged(System::Object^ sen
 
 	}
 }
+
+///////////////////////////////Topping Selection Functions//////////////////////////////////////
 void breeze::MyForm::ChickenCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (ChickenCheck->Checked == true)
 	{
-		ToppingPriceBox->Text = "CURRENT PRICE = RS";
-		tptr = new Chicken;
-		pizz->SaveToping(tptr);
-		ToppingPriceBox->Text = "Current Price = Rs " + (Convert::ToString(ptr->get_price()));
+		CheckBBQ_Sause->Visible = true;
+		CheeseLabel->Visible = true;
+		ChooseCheeseBox->Visible = true;
+
 		PepperoniCheck->Checked = false;
 		BeefCheck->Checked = false;
 		MashroomCheck->Checked = false;
 		Extra_CheezCheck->Checked = false;
 		SausageCheck->Checked = false;
-		CheckBBQ_Sause->Visible = true;
-		ChooseCheeseBox->Visible = true;
-		ChooseTypeBox->Visible = false;
-		ChooseQuantityOfCheezBox->Visible = false;
-		CheckClovesSpice->Visible = false;
-		ChoosePeppersBox->Visible = false;
-		CheckCreamlized_Onion->Visible = false;
-		CheckCreamyGarlicSause->Visible = false;
-		CheckRedPepperFlakes->Visible = false;
-		ChooseExtraBox->Visible = false;
-		CheckRedPepperFlakes1->Visible = false;
-		CheckBasilScattering->Visible = false;
+
+		Chicken* C = new Chicken;
+		ToppingPriceBox->Text = "CURRENT PRICE\n=Rs" + Convert::ToString(C->getprice());
+		delete C;
 	}
 	else if (ChickenCheck->Checked == false)
 	{
-		CheckBBQ_Sause->Checked = false;
 		CheckBBQ_Sause->Visible = false;
-		ChooseCheeseBox->SelectedIndex = Shredded_Cheddar;
 		ChooseCheeseBox->Visible = false;
+		CheeseLabel->Visible = false;
 	}
 }
-void breeze::MyForm::CheckBBQ_Sause_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (CheckBBQ_Sause->Checked == true)
+void breeze::MyForm::PepperoniCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (PepperoniCheck->Checked == true)
 	{
-		ToppingPriceBox->Text = "CURRENT PRICE= RS";
+		TypeLabel->Visible = true;
+		ChooseTypeBox->Visible = true;
+		QuantityOfCheeseLabel->Visible = true;
+		ChooseQuantityOfCheezBox->Visible = true;
+
+		ChickenCheck->Checked = false;
+		BeefCheck->Checked = false;
+		MashroomCheck->Checked = false;
+		Extra_CheezCheck->Checked = false;
+		SausageCheck->Checked = false;
+
+		Pepperoni* P = new Pepperoni;
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(P->getprice());
+		delete P;
+	}
+	else if (PepperoniCheck->Checked == false)
+	{
+		TypeLabel->Visible = false;
+		ChooseTypeBox->Visible = false;
+		QuantityOfCheeseLabel->Visible = false;
+		ChooseQuantityOfCheezBox->Visible = false;
+	}
+}
+void breeze::MyForm::BeefCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (BeefCheck->Checked == true)
+	{
+		CheckClovesSpice->Visible = true;
+		PeppersLabel->Visible = true;
+		ChoosePeppersBox->Visible = true;
+
+		ChickenCheck->Checked = false;
+		PepperoniCheck->Checked = false;
+		MashroomCheck->Checked = false;
+		Extra_CheezCheck->Checked = false;
+		SausageCheck->Checked = false;
+
+		Beef* B = new Beef;
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(B->getprice());
+		delete B;
+	}
+	else if (BeefCheck->Checked == false)
+	{
+		CheckClovesSpice->Visible = false;
+		PeppersLabel->Visible = false;
+		ChoosePeppersBox->Visible = false;
+	}
+}
+void breeze::MyForm::MashroomCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (MashroomCheck->Checked == true)
+	{
+		CheckCreamlized_Onion->Visible = true;
+		CheckCreamyGarlicSause->Visible = true;
+
+		ChickenCheck->Checked = false;
+		PepperoniCheck->Checked = false;
+		BeefCheck->Checked = false;
+		Extra_CheezCheck->Checked = false;
+		SausageCheck->Checked = false;
+
+		Mashroom* M = new Mashroom;
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(M->getprice());
+		delete M;
+	}
+	else if (MashroomCheck->Checked == false)
+	{
+		CheckCreamlized_Onion->Visible = false;
+		CheckCreamyGarlicSause->Visible = false;
+	}
+}
+void breeze::MyForm::Extra_CheezCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (Extra_CheezCheck->Checked == true)
+	{
+		CheckRedPepperFlakes->Visible = true;
+		ExtraLabel->Visible = true;
+		ChooseExtraBox->Visible = true;
+
+		ChickenCheck->Checked = false;
+		PepperoniCheck->Checked = false;
+		BeefCheck->Checked = false;
+		MashroomCheck->Checked = false;
+		SausageCheck->Checked = false;
+
+		Extra_Cheez* E = new Extra_Cheez;
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS"+Convert::ToString(E->getprice());
+		delete E;
+	}
+	else if (Extra_CheezCheck->Checked == false)
+	{
+		CheckRedPepperFlakes->Visible = false;
+		ExtraLabel->Visible = false;
+		ChooseExtraBox->Visible = false;
+	}
+}
+void breeze::MyForm::SausageCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (SausageCheck->Checked == true)
+	{
+		CheckRedPepperFlakes1->Visible = true;
+		CheckBasilScattering->Visible = true;
+
+		ChickenCheck->Checked = false;
+		PepperoniCheck->Checked = false;
+		BeefCheck->Checked = false;
+		MashroomCheck->Checked = false;
+		Extra_CheezCheck->Checked = false;
+
+		Sausage* S = new Sausage;
+		ToppingPriceBox->Text = "CURRENT PRICE\n" + Convert::ToString(S->getprice());
+		delete S;
+	}
+}  
+void breeze::MyForm::MoveToCheckout_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (ChickenCheck->Checked == true)
+	{
 		Chicken* C = new Chicken;
-		C->setBS(true);
+		if (CheckBBQ_Sause->Checked == true)
+			C->setBS(true);
+		else if (CheckBBQ_Sause->Checked == false)
+			C->setBS(false);
+
+		if (backtostring(ChooseCheeseBox->Text) == "Shredded_Parmesan")
+			C->setCheese(Shredded_Parmesan);
+		else if (backtostring(ChooseCheeseBox->Text) == "Shredded_Cheddar")
+			C->setCheese(Shredded_Cheddar);
+
+		if (backtostring(ChooseQuantityBox->Text) == "Normal")
+			C->setquantity(Normal);
+		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
+			C->setquantity(Extra);
+		else if (backtostring(ChooseQuantityBox->Text) == "Less")
+			C->setquantity(Less);
+
+		pizz->tpoint = C;
+	}
+	else if (PepperoniCheck->Checked == true)
+	{
+		Pepperoni* P = new Pepperoni;
+		if (backtostring(ChooseTypeBox->Text) == "Vegan")
+			P->setType(Vegan);
+		else if (backtostring(ChooseTypeBox->Text) == "Non_Vegan")
+			P->setType(Non_Vegan);
+		
+		if (backtostring(ChooseQuantityOfCheezBox->Text) == "Usual")
+			P->setQOFMC(Usual);
+		else if (backtostring(ChooseQuantityOfCheezBox->Text) == "More (Extra Charges)")
+			P->setQOFMC(More);
+		else if (backtostring(ChooseQuantityOfCheezBox->Text) == "Less (Less Charges)")
+			P->setQOFMC(Little);
+		else if (backtostring(ChooseQuantityOfCheezBox->Text) == "Don't Include (Less Charges)")
+			P->setQOFMC(Not_Include);
+
+		if (backtostring(ChooseQuantityBox->Text) == "Normal")
+			P->setquantity(Normal);
+		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
+			P->setquantity(Extra);
+		else if (backtostring(ChooseQuantityBox->Text) == "Less")
+			P->setquantity(Less);
+
+		pizz->tpoint = P;
 
 	}
+	else if (BeefCheck->Checked == true)
+	{
+		Beef* B = new Beef;
+		if (CheckClovesSpice->Checked == true)
+			B->setCS(true);
+		else if (CheckClovesSpice->Checked == false)
+			B->setCS(false);
+
+		if (backtostring(ChoosePeppersBox->Text) == "Green")
+			B->setpepper(Green);
+		else if (backtostring(ChoosePeppersBox->Text) == "Red")
+			B->setpepper(Red);
+
+		if (backtostring(ChooseQuantityBox->Text) == "Normal")
+			B->setquantity(Normal);
+		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
+			B->setquantity(Extra);
+		else if (backtostring(ChooseQuantityBox->Text) == "Less")
+			B->setquantity(Less);
+
+		pizz->tpoint = B;
+	}
+	else if (MashroomCheck->Checked == true)
+	{
+		Mashroom* M = new Mashroom;
+		if (CheckCreamlized_Onion->Checked == true)
+			M->setCO(true);
+		else if (CheckCreamlized_Onion->Checked == false)
+			M->setCO(false);
+
+		if (CheckCreamyGarlicSause->Checked == true)
+			M->setCRGS(true);
+		else if (CheckCreamyGarlicSause->Checked == false)
+			M->setCRGS(false);
+
+		if (backtostring(ChooseQuantityBox->Text) == "Normal")
+			M->setquantity(Normal);
+		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
+			M->setquantity(Extra);
+		else if (backtostring(ChooseQuantityBox->Text) == "Less")
+			M->setquantity(Less);
+
+		pizz->tpoint = M;
+	}
+	else if (Extra_CheezCheck->Checked == true)
+	{
+		Extra_Cheez* EC = new Extra_Cheez;
+		if (CheckRedPepperFlakes->Checked == true)
+			EC->setRPF(true);
+		else if (CheckRedPepperFlakes->Checked == false)
+			EC->setRPF(false);
+
+		if (backtostring(ChooseExtraBox->Text) == "Macroni")
+			EC->setExtra(Macroni);
+		else if (backtostring(ChooseExtraBox->Text) == "Cheese (Extra Charges)")
+			EC->setExtra(Cheese);
+
+		if (backtostring(ChooseQuantityBox->Text) == "Normal")
+			EC->setquantity(Normal);
+		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
+			EC->setquantity(Extra);
+		else if (backtostring(ChooseQuantityBox->Text) == "Less")
+			EC->setquantity(Less);
+
+		pizz->tpoint = EC;
+	}
+	else if (SausageCheck->Checked == true)
+	{
+		Sausage* S = new Sausage;
+		if (CheckRedPepperFlakes->Checked == true)
+			S->setRPF(true);
+		else if (CheckRedPepperFlakes->Checked == false)
+			S->setRPF(false);
+
+		if (CheckBasilScattering->Checked == true)
+			S->setBS(true);
+		else if (CheckBasilScattering->Checked== false)
+			S->setBS(true);
+
+		if (backtostring(ChooseQuantityBox->Text) == "Normal")
+			S->setquantity(Normal);
+		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
+			S->setquantity(Extra);
+		else if (backtostring(ChooseQuantityBox->Text) == "Less")
+			S->setquantity(Less);
+
+		pizz->tpoint = S;
+	}
+	else
+	{
+		ToppingNotice->Visible = true;
+	}
+}
+void breeze::MyForm::BacktoFlavors_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = FlavourSelect;
 }
