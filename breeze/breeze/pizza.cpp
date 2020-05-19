@@ -32,3 +32,11 @@ void pizza::setpricing(int size, Toping* ptr)
 {
 	ptr->increaseprice(size);
 }
+crust* pizza::getCrustPointer()
+{
+	return cpoint;
+}
+flavour* pizza::getFlavourPointer()
+{
+	return fpoint;
+}
