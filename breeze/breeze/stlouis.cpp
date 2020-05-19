@@ -13,6 +13,7 @@ stlouis::stlouis()
     thick = 0;
     thin = 1;
     gluten = 0;
+    strcpy_s(name, "Stlouis");
 }
 void stlouis::setsize(int s)
 {
@@ -34,8 +35,4 @@ void stlouis::setcheese(bool b)
 bool stlouis::getcheese()
 {
     return cheese;
-}
-void stlouis::Hello()
-{
-    cout << endl << "Hello";
 }

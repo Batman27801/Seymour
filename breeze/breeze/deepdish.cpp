@@ -5,8 +5,8 @@ using namespace std;
 
 deepdish::deepdish()
 {
-    price = 320;
-    size = 8;
+    price = 250;
+    size = 6;
     strcpy_s(description, "Deep dish crust contains chilli sauce, or our special sauce to give it its yellow tone, unique taste and texture. Gives a taste of true Chicago DeepDish Pizzas.");
     deep = two;
     sauce = ketchup;
@@ -14,11 +14,12 @@ deepdish::deepdish()
     thick = 1;
     thin = 0;
     gluten = 1;
+    strcpy_s(name, "DeeepDish");
 }
 void deepdish::setsize(int s)
 {
     size = s;
-    price = price + (size - 8) * 70;
+    price = price + (size - 6) * 70;
 }
 void deepdish::setthick(thickness h)
 {
@@ -54,8 +55,4 @@ void deepdish::setonions(bool g)
     onions = g;
     if (onions == true)
         price += 10;
-}
-void deepdish::Hello()
-{
-    cout <<endl<< "Hello";
 }

@@ -5,7 +5,7 @@ using namespace std;
 
 sicilian::sicilian()
 {
-    price = 300;
+    price = 250;
     size = 6;
     strcpy_s(description, "Sicilian pizza is known for its thick, rectangle-shaped crust . Baked to a state giving it an almost fried texture");
     oil = olive;
@@ -13,6 +13,8 @@ sicilian::sicilian()
     thick = 1;
     thin = 0;
     gluten = 1;
+    strcpy_s(name, "Sicilian");
+
 }
 void sicilian::setsize(int s)
 {
@@ -43,8 +45,4 @@ void sicilian::setpan(panchoice c)
 panchoice sicilian::getpan()
 {
     return pan;
-}
-void sicilian::Hello()
-{
-    cout << endl << "Hello";
 }

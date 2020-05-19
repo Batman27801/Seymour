@@ -5,7 +5,7 @@ using namespace std;
 
 focacia::focacia()
 {
-    price = 300;
+    price = 230;
     size = 6;
     strcpy_s(description, "This olive-oil soaked Italian bread is deliciously topped with sun-dried tomatoes or olives or other herbs of your choice");
     herb = onions;
@@ -13,6 +13,8 @@ focacia::focacia()
     thin = 0;
     thick = 1;
     gluten = 1;
+    strcpy_s(name, "Focacia");
+
 }
 void focacia::setsize(int s)
 {
@@ -45,8 +47,4 @@ void focacia::setcoating(coating c)
 coating focacia::getcoating()
 {
     return coat;
-}
-void focacia::Hello()
-{
-    cout << endl << "Hello";
 }

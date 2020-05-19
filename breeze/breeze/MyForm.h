@@ -69,6 +69,9 @@ namespace breeze {
 
 
 	private: System::Windows::Forms::Button^ MoveToCrustSelect;
+	private: System::Windows::Forms::PictureBox^ pictureBox6;
+	private: System::Windows::Forms::Button^ MovetoToping;
+
 
 
 
@@ -294,8 +297,9 @@ private: System::Windows::Forms::CheckBox^ newyorkmineral;
 private: System::Windows::Forms::Label^ newyorkherblabel;
 private: System::Windows::Forms::ComboBox^ newyorkherbbox;
 private: System::Windows::Forms::CheckBox^ stlouiscutbox;
+private: System::Windows::Forms::CheckBox^ stlouischeesebox;
 
-private: System::Windows::Forms::CheckBox^ stluoischeesebox;
+
 private: System::Windows::Forms::ComboBox^ deepdishsaucebox;
 
 
@@ -325,7 +329,8 @@ private: System::Windows::Forms::ComboBox^ stuffedcheezebox;
 private: System::Windows::Forms::ComboBox^ stuffedlayeringbox;
 
 private: System::Windows::Forms::Label^ stuffedlayerlabel;
-private: System::Windows::Forms::TextBox^ textBox1;
+private: System::Windows::Forms::TextBox^ crustpricebox;
+
 
 
 
@@ -362,6 +367,8 @@ private: System::Windows::Forms::Label^ FlavourCheckOutLabel;
 private: System::Windows::Forms::Label^ OrderHeadingCheckOutLabel;
 private: System::Windows::Forms::TextBox^ CardNumberCheckOutTextBox;
 private: System::Windows::Forms::Label^ CardNumberCheckOutLabel;
+private: System::Windows::Forms::Label^ crustreq;
+
 
 
 
@@ -466,7 +473,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->subtitle = (gcnew System::Windows::Forms::Label());
 			this->title = (gcnew System::Windows::Forms::Label());
 			this->CrustSelect = (gcnew System::Windows::Forms::TabPage());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->crustpricebox = (gcnew System::Windows::Forms::TextBox());
 			this->stuffedlayeringbox = (gcnew System::Windows::Forms::ComboBox());
 			this->stuffedlayerlabel = (gcnew System::Windows::Forms::Label());
 			this->stuffedfillingbox = (gcnew System::Windows::Forms::ComboBox());
@@ -486,7 +493,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->deepdishthicknesslabel = (gcnew System::Windows::Forms::Label());
 			this->deepdishthicknessbox = (gcnew System::Windows::Forms::ComboBox());
 			this->stlouiscutbox = (gcnew System::Windows::Forms::CheckBox());
-			this->stluoischeesebox = (gcnew System::Windows::Forms::CheckBox());
+			this->stlouischeesebox = (gcnew System::Windows::Forms::CheckBox());
 			this->newyorkmineral = (gcnew System::Windows::Forms::CheckBox());
 			this->newyorkherblabel = (gcnew System::Windows::Forms::Label());
 			this->newyorkherbbox = (gcnew System::Windows::Forms::ComboBox());
@@ -612,13 +619,13 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->TheCheeseCheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->VeggieDelightPictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->VeggieDelightCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->MoveToCrustSelect = (gcnew System::Windows::Forms::Button());
 			this->TheCheesePictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->SeekhKebabPictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->BBQBuzzPictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->ChilliDelightPictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->FajitaPictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->TikkaPictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->MovetoToping = (gcnew System::Windows::Forms::Button());
 			this->ToppingSelect = (gcnew System::Windows::Forms::TabPage());
 			this->ToppingPriceBox = (gcnew System::Windows::Forms::TextBox());
 			this->BacktoFlavors = (gcnew System::Windows::Forms::Button());
@@ -682,6 +689,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->AddOnCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->TotalPriceCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->crustreq = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -818,7 +826,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->CrustSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CrustSelect.BackgroundImage")));
 			this->CrustSelect->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->CrustSelect->Controls->Add(this->textBox1);
+			this->CrustSelect->Controls->Add(this->crustreq);
+			this->CrustSelect->Controls->Add(this->crustpricebox);
 			this->CrustSelect->Controls->Add(this->stuffedlayeringbox);
 			this->CrustSelect->Controls->Add(this->stuffedlayerlabel);
 			this->CrustSelect->Controls->Add(this->stuffedfillingbox);
@@ -838,7 +847,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CrustSelect->Controls->Add(this->deepdishthicknesslabel);
 			this->CrustSelect->Controls->Add(this->deepdishthicknessbox);
 			this->CrustSelect->Controls->Add(this->stlouiscutbox);
-			this->CrustSelect->Controls->Add(this->stluoischeesebox);
+			this->CrustSelect->Controls->Add(this->stlouischeesebox);
 			this->CrustSelect->Controls->Add(this->newyorkmineral);
 			this->CrustSelect->Controls->Add(this->newyorkherblabel);
 			this->CrustSelect->Controls->Add(this->newyorkherbbox);
@@ -875,23 +884,23 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CrustSelect->UseVisualStyleBackColor = true;
 			this->CrustSelect->Enter += gcnew System::EventHandler(this, &MyForm::CrustSelect_Enter);
 			// 
-			// textBox1
+			// crustpricebox
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->crustpricebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(1047, 358);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->ReadOnly = true;
-			this->textBox1->Size = System::Drawing::Size(151, 41);
-			this->textBox1->TabIndex = 50;
-			this->textBox1->Text = L"CURRENT PRICE\r\n= Rs ";
-			this->textBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->crustpricebox->Location = System::Drawing::Point(1047, 358);
+			this->crustpricebox->Multiline = true;
+			this->crustpricebox->Name = L"crustpricebox";
+			this->crustpricebox->ReadOnly = true;
+			this->crustpricebox->Size = System::Drawing::Size(151, 41);
+			this->crustpricebox->TabIndex = 50;
+			this->crustpricebox->Text = L"CURRENT PRICE\r\n= Rs ";
+			this->crustpricebox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// stuffedlayeringbox
 			// 
 			this->stuffedlayeringbox->FormattingEnabled = true;
-			this->stuffedlayeringbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Single", L"Thicut", L"Double" });
+			this->stuffedlayeringbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Single", L"Thincut", L"Double" });
 			this->stuffedlayeringbox->Location = System::Drawing::Point(974, 547);
 			this->stuffedlayeringbox->Name = L"stuffedlayeringbox";
 			this->stuffedlayeringbox->Size = System::Drawing::Size(66, 21);
@@ -1008,7 +1017,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// focaciaoilbox
 			// 
 			this->focaciaoilbox->FormattingEnabled = true;
-			this->focaciaoilbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Olive oil", L"Scented Oil", L"Flavored Oil" });
+			this->focaciaoilbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Olive Oil", L"Scented Oil", L"Flavored Oil" });
 			this->focaciaoilbox->Location = System::Drawing::Point(468, 547);
 			this->focaciaoilbox->Name = L"focaciaoilbox";
 			this->focaciaoilbox->Size = System::Drawing::Size(84, 21);
@@ -1115,19 +1124,19 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->stlouiscutbox->UseVisualStyleBackColor = true;
 			this->stlouiscutbox->Visible = false;
 			// 
-			// stluoischeesebox
+			// stlouischeesebox
 			// 
-			this->stluoischeesebox->AutoSize = true;
-			this->stluoischeesebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->stlouischeesebox->AutoSize = true;
+			this->stlouischeesebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->stluoischeesebox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->stluoischeesebox->Location = System::Drawing::Point(852, 253);
-			this->stluoischeesebox->Name = L"stluoischeesebox";
-			this->stluoischeesebox->Size = System::Drawing::Size(68, 30);
-			this->stluoischeesebox->TabIndex = 30;
-			this->stluoischeesebox->Text = L"Cheese\r\nLining";
-			this->stluoischeesebox->UseVisualStyleBackColor = true;
-			this->stluoischeesebox->Visible = false;
+			this->stlouischeesebox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->stlouischeesebox->Location = System::Drawing::Point(852, 253);
+			this->stlouischeesebox->Name = L"stlouischeesebox";
+			this->stlouischeesebox->Size = System::Drawing::Size(68, 30);
+			this->stlouischeesebox->TabIndex = 30;
+			this->stlouischeesebox->Text = L"Cheese\r\nLining";
+			this->stlouischeesebox->UseVisualStyleBackColor = true;
+			this->stlouischeesebox->Visible = false;
 			// 
 			// newyorkmineral
 			// 
@@ -1216,6 +1225,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->stuffedcheckbox->TabIndex = 23;
 			this->stuffedcheckbox->Text = L"stuffed text here";
 			this->stuffedcheckbox->UseVisualStyleBackColor = true;
+			this->stuffedcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::stuffedcheckbox_CheckedChanged);
 			// 
 			// siciliancheckbox
 			// 
@@ -1228,6 +1238,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->siciliancheckbox->TabIndex = 22;
 			this->siciliancheckbox->Text = L"Sicilian text here";
 			this->siciliancheckbox->UseVisualStyleBackColor = true;
+			this->siciliancheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::siciliancheckbox_CheckedChanged);
 			// 
 			// focaciacheckbox
 			// 
@@ -1240,6 +1251,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->focaciacheckbox->TabIndex = 21;
 			this->focaciacheckbox->Text = L"Focacia text here";
 			this->focaciacheckbox->UseVisualStyleBackColor = true;
+			this->focaciacheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::focaciacheckbox_CheckedChanged);
 			// 
 			// deepdishcheckbox
 			// 
@@ -1252,6 +1264,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->deepdishcheckbox->TabIndex = 20;
 			this->deepdishcheckbox->Text = L"Deep dish text here";
 			this->deepdishcheckbox->UseVisualStyleBackColor = true;
+			this->deepdishcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::deepdishcheckbox_CheckedChanged);
 			// 
 			// stlouischeckbox
 			// 
@@ -1264,6 +1277,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->stlouischeckbox->TabIndex = 19;
 			this->stlouischeckbox->Text = L"St louis text";
 			this->stlouischeckbox->UseVisualStyleBackColor = true;
+			this->stlouischeckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::stlouischeckbox_CheckedChanged);
 			// 
 			// newyorkcheckbox
 			// 
@@ -1276,6 +1290,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->newyorkcheckbox->TabIndex = 18;
 			this->newyorkcheckbox->Text = L"NewYork text here";
 			this->newyorkcheckbox->UseVisualStyleBackColor = true;
+			this->newyorkcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::newyorkcheckbox_CheckedChanged);
 			// 
 			// neapolitancheckbox
 			// 
@@ -1288,6 +1303,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->neapolitancheckbox->TabIndex = 17;
 			this->neapolitancheckbox->Text = L"Neapolitan text here";
 			this->neapolitancheckbox->UseVisualStyleBackColor = true;
+			this->neapolitancheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::neapolitancheckbox_CheckedChanged);
 			// 
 			// toflavormenu
 			// 
@@ -1462,13 +1478,14 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->italiancheckbox->TabIndex = 2;
 			this->italiancheckbox->Text = L"Italian text here";
 			this->italiancheckbox->UseVisualStyleBackColor = true;
+			this->italiancheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::italiancheckbox_CheckedChanged);
 			// 
 			// Crustheading
 			// 
 			this->Crustheading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Crustheading->ForeColor = System::Drawing::Color::White;
-			this->Crustheading->Location = System::Drawing::Point(1044, 139);
+			this->Crustheading->Location = System::Drawing::Point(1040, 148);
 			this->Crustheading->Name = L"Crustheading";
 			this->Crustheading->Size = System::Drawing::Size(154, 97);
 			this->Crustheading->TabIndex = 0;
@@ -2411,13 +2428,13 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->FlavourSelect->Controls->Add(this->TheCheeseCheckbox);
 			this->FlavourSelect->Controls->Add(this->VeggieDelightPictureBox);
 			this->FlavourSelect->Controls->Add(this->VeggieDelightCheckBox);
-			this->FlavourSelect->Controls->Add(this->MoveToCrustSelect);
 			this->FlavourSelect->Controls->Add(this->TheCheesePictureBox);
 			this->FlavourSelect->Controls->Add(this->SeekhKebabPictureBox);
 			this->FlavourSelect->Controls->Add(this->BBQBuzzPictureBox);
 			this->FlavourSelect->Controls->Add(this->ChilliDelightPictureBox);
 			this->FlavourSelect->Controls->Add(this->FajitaPictureBox);
 			this->FlavourSelect->Controls->Add(this->TikkaPictureBox1);
+			this->FlavourSelect->Controls->Add(this->MovetoToping);
 			this->FlavourSelect->Location = System::Drawing::Point(4, 22);
 			this->FlavourSelect->Name = L"FlavourSelect";
 			this->FlavourSelect->Size = System::Drawing::Size(1210, 576);
@@ -2767,15 +2784,15 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->VeggieDelightCheckBox->UseVisualStyleBackColor = true;
 			this->VeggieDelightCheckBox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::VeggieDelightCheckBox_CheckedChanged);
 			// 
-			// MoveToCrustSelect
+			// MovetoToping
 			// 
-			this->MoveToCrustSelect->Location = System::Drawing::Point(968, 515);
-			this->MoveToCrustSelect->Name = L"MoveToCrustSelect";
-			this->MoveToCrustSelect->Size = System::Drawing::Size(168, 56);
-			this->MoveToCrustSelect->TabIndex = 14;
-			this->MoveToCrustSelect->Text = L"GO TO TOPPING MENU";
-			this->MoveToCrustSelect->UseVisualStyleBackColor = true;
-			this->MoveToCrustSelect->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			this->MovetoToping->Location = System::Drawing::Point(968, 515);
+			this->MovetoToping->Name = L"MovetoToping";
+			this->MovetoToping->Size = System::Drawing::Size(168, 56);
+			this->MovetoToping->TabIndex = 14;
+			this->MovetoToping->Text = L"GO TO TOPPING MENU";
+			this->MovetoToping->UseVisualStyleBackColor = true;
+			this->MovetoToping->Click += gcnew System::EventHandler(this, &MyForm::MovetoToping_Click);
 			// 
 			// TheCheesePictureBox
 			// 
@@ -3534,6 +3551,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->TotalPriceCheckOutTextBox->Name = L"TotalPriceCheckOutTextBox";
 			this->TotalPriceCheckOutTextBox->Size = System::Drawing::Size(200, 20);
 			this->TotalPriceCheckOutTextBox->TabIndex = 24;
+			// crustreq
+			// 
+			this->crustreq->AutoSize = true;
+			this->crustreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->crustreq->ForeColor = System::Drawing::Color::Red;
+			this->crustreq->Location = System::Drawing::Point(1048, 458);
+			this->crustreq->Name = L"crustreq";
+			this->crustreq->Size = System::Drawing::Size(163, 18);
+			this->crustreq->TabIndex = 51;
+			this->crustreq->Text = L"Please Choose One!";
+			this->crustreq->Visible = false;
 			// 
 			// MyForm
 			// 
@@ -3584,7 +3613,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 
 private: 
 	System::Void customer_Click(System::Object^ sender, System::EventArgs^ e);
-	System::Void button3_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void TheCheeseCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
@@ -3658,10 +3686,19 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	System::Void BasilScattering_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void CrustSelect_Enter(System::Object^ sender, System::EventArgs^ e);
-//private: System::Void Flavopricebox2_TextChanged(System::Object^ sender, System::EventArgs^ e);
+//	System::Void Flavopricebox2_TextChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void toflavormenu_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void GuesetOrderButton_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void ToppingPriceBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	System::Void ToppingPriceBox_TextChanged(System::Object^ sender, System::EventArgs^ e){
+	}
+	System::Void italiancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void neapolitancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void newyorkcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void stlouischeckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void deepdishcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void focaciacheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void siciliancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void stuffedcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void MovetoToping_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

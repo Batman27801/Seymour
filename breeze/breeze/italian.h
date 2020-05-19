@@ -8,7 +8,6 @@ class italian : public crust
 private:
     enum herbs herb;
     enum cookstyle cook;
-    bool olive_oil;
 
 public:
     italian();
@@ -17,7 +16,4 @@ public:
     herbs getherbs();
     void setcookstyle(cookstyle);
     cookstyle getcookstyle();
-    void setolive(bool);
-    bool getolive();
-    void Hello();
 };

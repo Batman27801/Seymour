@@ -21,3 +21,7 @@ char* flavour::set_description(char* desc)
 	description = desc;
 	return 0;
 }
+void flavour::increaseprice(int size)
+{
+	price = price + ((size-6) * 30);
+}

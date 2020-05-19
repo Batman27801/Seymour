@@ -21,5 +21,4 @@ public:
     sauces getsauce();
     bool getonions();
     void setonions(bool);
-    void Hello();
 };

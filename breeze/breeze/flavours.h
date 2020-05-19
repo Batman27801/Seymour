@@ -6,6 +6,7 @@ protected:
     char* description;
     char* name;
 public:
+    void increaseprice(int size);
     double  get_price() ;
      double  set_price(double PRICE) ;
       char*  get_description() ;

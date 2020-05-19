@@ -5,7 +5,7 @@ using namespace std;
 
 stuffed::stuffed()
 {
-    price = 300;
+    price = 270;
     size = 6;
     strcpy_s(description, "Stuffed crust has cheese of your favourite type added into the crust! The piece that’s actually best enjoyed crust side first! ");
     layer = single;
@@ -14,6 +14,8 @@ stuffed::stuffed()
     thick = 1;
     thin = 0;
     gluten = 1;
+    strcpy_s(name, "Stuffed");
+
 }
 void stuffed::setsize(int s)
 {
@@ -54,8 +56,4 @@ void stuffed::setlayer(layering b)
 layering stuffed::getlayer()
 {
     return layer;
-}
-void stuffed::Hello()
-{
-    cout << endl << "Hello";
 }
