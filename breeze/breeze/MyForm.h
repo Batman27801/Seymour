@@ -46,21 +46,29 @@ namespace breeze {
 
 
 	private: System::Windows::Forms::TabPage^ FlavourSelect;
+	private: System::Windows::Forms::PictureBox^ TikkaPictureBox1;
+	private: System::Windows::Forms::PictureBox^ FajitaPictureBox;
+	private: System::Windows::Forms::PictureBox^ ChilliDelightPictureBox;
+	private: System::Windows::Forms::PictureBox^ BBQBuzzPictureBox;
 
 
 
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
-	private: System::Windows::Forms::PictureBox^ pictureBox2;
-
-	private: System::Windows::Forms::PictureBox^ pictureBox3;
-
-	private: System::Windows::Forms::PictureBox^ pictureBox4;
-
-	private: System::Windows::Forms::PictureBox^ pictureBox5;
 
 
+
+
+
+
+	private: System::Windows::Forms::PictureBox^ SeekhKebabPictureBox;
+	private: System::Windows::Forms::PictureBox^ TheCheesePictureBox;
+
+
+
+
+
+	private: System::Windows::Forms::Button^ MoveToCrustSelect;
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
 	private: System::Windows::Forms::Button^ MovetoToping;
 
@@ -73,7 +81,8 @@ namespace breeze {
 
 	private: System::Windows::Forms::Button^ customer;
 	private: System::Windows::Forms::Button^ staff;
-	private: System::Windows::Forms::PictureBox^ pictureBox7;
+	private: System::Windows::Forms::PictureBox^ VeggieDelightPictureBox;
+
 	private: System::Windows::Forms::CheckBox^ VeggieDelightCheckBox;
 	private: System::Windows::Forms::CheckBox^ TheCheeseCheckbox;
 	private: System::Windows::Forms::CheckBox^ SeekhKebabCheckbox;
@@ -333,6 +342,31 @@ private: System::Windows::Forms::TextBox^ crustpricebox;
 
 
 private: System::Windows::Forms::TextBox^ ToppingPriceBox;
+private: System::Windows::Forms::TabPage^ CheckoutPage;
+private: System::Windows::Forms::ComboBox^ CardCheckOutComboBox;
+private: System::Windows::Forms::Label^ CardProviderCheckOutLabel;
+private: System::Windows::Forms::CheckBox^ CashCheckBox;
+private: System::Windows::Forms::CheckBox^ CreditCardCheckBox;
+private: System::Windows::Forms::Label^ PaymentModeCheckOutLabel;
+private: System::Windows::Forms::Label^ AddressCheckOutLabel;
+private: System::Windows::Forms::TextBox^ AddressCheckOutTextBox;
+private: System::Windows::Forms::TextBox^ textBox2;
+private: System::Windows::Forms::Label^ PhoneCheckoutLabel;
+private: System::Windows::Forms::TextBox^ NameCheckOutText;
+private: System::Windows::Forms::Label^ NameLabelCheckout;
+private: System::Windows::Forms::TextBox^ TotalPriceCheckOutTextBox;
+private: System::Windows::Forms::TextBox^ AddOnCheckOutTextBox;
+private: System::Windows::Forms::TextBox^ textBox5;
+private: System::Windows::Forms::TextBox^ CrustCheckOutTextBox;
+private: System::Windows::Forms::TextBox^ FlavourCheckOutTextBox;
+private: System::Windows::Forms::Label^ TotalPriceCheckOutLabel;
+private: System::Windows::Forms::Label^ AddonsCheckOutLabel;
+private: System::Windows::Forms::Label^ ToppingsCheckOutLabel;
+private: System::Windows::Forms::Label^ CrustCheckOutLabel;
+private: System::Windows::Forms::Label^ FlavourCheckOutLabel;
+private: System::Windows::Forms::Label^ OrderHeadingCheckOutLabel;
+private: System::Windows::Forms::TextBox^ CardNumberCheckOutTextBox;
+private: System::Windows::Forms::Label^ CardNumberCheckOutLabel;
 private: System::Windows::Forms::Label^ crustreq;
 
 
@@ -583,15 +617,15 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->TikkaCheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->SeekhKebabCheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->TheCheeseCheckbox = (gcnew System::Windows::Forms::CheckBox());
-			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
+			this->VeggieDelightPictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->VeggieDelightCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->TheCheesePictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->SeekhKebabPictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->BBQBuzzPictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->ChilliDelightPictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->FajitaPictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->TikkaPictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->MovetoToping = (gcnew System::Windows::Forms::Button());
-			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->ToppingSelect = (gcnew System::Windows::Forms::TabPage());
 			this->ToppingPriceBox = (gcnew System::Windows::Forms::TextBox());
 			this->BacktoFlavors = (gcnew System::Windows::Forms::Button());
@@ -630,6 +664,31 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingChicken = (gcnew System::Windows::Forms::PictureBox());
 			this->ToppingHeading = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->CheckoutPage = (gcnew System::Windows::Forms::TabPage());
+			this->NameLabelCheckout = (gcnew System::Windows::Forms::Label());
+			this->NameCheckOutText = (gcnew System::Windows::Forms::TextBox());
+			this->PhoneCheckoutLabel = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->AddressCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->AddressCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->PaymentModeCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->CreditCardCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->CashCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->CardProviderCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->CardCheckOutComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->CardNumberCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->CardNumberCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->OrderHeadingCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->FlavourCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->CrustCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->ToppingsCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->AddonsCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->TotalPriceCheckOutLabel = (gcnew System::Windows::Forms::Label());
+			this->FlavourCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->CrustCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->AddOnCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->TotalPriceCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->crustreq = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
@@ -637,13 +696,13 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->UserLogin->SuspendLayout();
 			this->SignUpPage->SuspendLayout();
 			this->FlavourSelect->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->VeggieDelightPictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TheCheesePictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SeekhKebabPictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BBQBuzzPictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ChilliDelightPictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->FajitaPictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TikkaPictureBox1))->BeginInit();
 			this->ToppingSelect->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToppingSausage))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToppingExtra_Cheez))->BeginInit();
@@ -652,6 +711,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToppingBeef))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToppingPepperoni))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToppingChicken))->BeginInit();
+			this->CheckoutPage->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -663,6 +723,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->tabControl1->Controls->Add(this->UserPage);
 			this->tabControl1->Controls->Add(this->FlavourSelect);
 			this->tabControl1->Controls->Add(this->ToppingSelect);
+			this->tabControl1->Controls->Add(this->CheckoutPage);
 			this->tabControl1->Location = System::Drawing::Point(-130, -32);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
@@ -2365,15 +2426,15 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->FlavourSelect->Controls->Add(this->TikkaCheckbox);
 			this->FlavourSelect->Controls->Add(this->SeekhKebabCheckbox);
 			this->FlavourSelect->Controls->Add(this->TheCheeseCheckbox);
-			this->FlavourSelect->Controls->Add(this->pictureBox7);
+			this->FlavourSelect->Controls->Add(this->VeggieDelightPictureBox);
 			this->FlavourSelect->Controls->Add(this->VeggieDelightCheckBox);
+			this->FlavourSelect->Controls->Add(this->TheCheesePictureBox);
+			this->FlavourSelect->Controls->Add(this->SeekhKebabPictureBox);
+			this->FlavourSelect->Controls->Add(this->BBQBuzzPictureBox);
+			this->FlavourSelect->Controls->Add(this->ChilliDelightPictureBox);
+			this->FlavourSelect->Controls->Add(this->FajitaPictureBox);
+			this->FlavourSelect->Controls->Add(this->TikkaPictureBox1);
 			this->FlavourSelect->Controls->Add(this->MovetoToping);
-			this->FlavourSelect->Controls->Add(this->pictureBox6);
-			this->FlavourSelect->Controls->Add(this->pictureBox5);
-			this->FlavourSelect->Controls->Add(this->pictureBox4);
-			this->FlavourSelect->Controls->Add(this->pictureBox3);
-			this->FlavourSelect->Controls->Add(this->pictureBox2);
-			this->FlavourSelect->Controls->Add(this->pictureBox1);
 			this->FlavourSelect->Location = System::Drawing::Point(4, 22);
 			this->FlavourSelect->Name = L"FlavourSelect";
 			this->FlavourSelect->Size = System::Drawing::Size(1210, 576);
@@ -2699,15 +2760,15 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->TheCheeseCheckbox->UseVisualStyleBackColor = true;
 			this->TheCheeseCheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::TheCheeseCheckbox_CheckedChanged);
 			// 
-			// pictureBox7
+			// VeggieDelightPictureBox
 			// 
-			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
-			this->pictureBox7->Location = System::Drawing::Point(937, 166);
-			this->pictureBox7->Name = L"pictureBox7";
-			this->pictureBox7->Size = System::Drawing::Size(216, 142);
-			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
-			this->pictureBox7->TabIndex = 18;
-			this->pictureBox7->TabStop = false;
+			this->VeggieDelightPictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"VeggieDelightPictureBox.Image")));
+			this->VeggieDelightPictureBox->Location = System::Drawing::Point(937, 166);
+			this->VeggieDelightPictureBox->Name = L"VeggieDelightPictureBox";
+			this->VeggieDelightPictureBox->Size = System::Drawing::Size(216, 142);
+			this->VeggieDelightPictureBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->VeggieDelightPictureBox->TabIndex = 18;
+			this->VeggieDelightPictureBox->TabStop = false;
 			// 
 			// VeggieDelightCheckBox
 			// 
@@ -2733,63 +2794,63 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->MovetoToping->UseVisualStyleBackColor = true;
 			this->MovetoToping->Click += gcnew System::EventHandler(this, &MyForm::MovetoToping_Click);
 			// 
-			// pictureBox6
+			// TheCheesePictureBox
 			// 
-			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
-			this->pictureBox6->Location = System::Drawing::Point(408, 280);
-			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(212, 145);
-			this->pictureBox6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
-			this->pictureBox6->TabIndex = 10;
-			this->pictureBox6->TabStop = false;
+			this->TheCheesePictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TheCheesePictureBox.Image")));
+			this->TheCheesePictureBox->Location = System::Drawing::Point(408, 280);
+			this->TheCheesePictureBox->Name = L"TheCheesePictureBox";
+			this->TheCheesePictureBox->Size = System::Drawing::Size(212, 145);
+			this->TheCheesePictureBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->TheCheesePictureBox->TabIndex = 10;
+			this->TheCheesePictureBox->TabStop = false;
 			// 
-			// pictureBox5
+			// SeekhKebabPictureBox
 			// 
-			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(144, 280);
-			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(212, 145);
-			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
-			this->pictureBox5->TabIndex = 8;
-			this->pictureBox5->TabStop = false;
+			this->SeekhKebabPictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SeekhKebabPictureBox.Image")));
+			this->SeekhKebabPictureBox->Location = System::Drawing::Point(144, 280);
+			this->SeekhKebabPictureBox->Name = L"SeekhKebabPictureBox";
+			this->SeekhKebabPictureBox->Size = System::Drawing::Size(212, 145);
+			this->SeekhKebabPictureBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->SeekhKebabPictureBox->TabIndex = 8;
+			this->SeekhKebabPictureBox->TabStop = false;
 			// 
-			// pictureBox4
+			// BBQBuzzPictureBox
 			// 
-			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-			this->pictureBox4->Location = System::Drawing::Point(672, 288);
-			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(216, 137);
-			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
-			this->pictureBox4->TabIndex = 6;
-			this->pictureBox4->TabStop = false;
+			this->BBQBuzzPictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BBQBuzzPictureBox.Image")));
+			this->BBQBuzzPictureBox->Location = System::Drawing::Point(672, 288);
+			this->BBQBuzzPictureBox->Name = L"BBQBuzzPictureBox";
+			this->BBQBuzzPictureBox->Size = System::Drawing::Size(216, 137);
+			this->BBQBuzzPictureBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->BBQBuzzPictureBox->TabIndex = 6;
+			this->BBQBuzzPictureBox->TabStop = false;
 			// 
-			// pictureBox3
+			// ChilliDelightPictureBox
 			// 
-			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(672, 22);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(216, 145);
-			this->pictureBox3->TabIndex = 4;
-			this->pictureBox3->TabStop = false;
+			this->ChilliDelightPictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ChilliDelightPictureBox.Image")));
+			this->ChilliDelightPictureBox->Location = System::Drawing::Point(672, 22);
+			this->ChilliDelightPictureBox->Name = L"ChilliDelightPictureBox";
+			this->ChilliDelightPictureBox->Size = System::Drawing::Size(216, 145);
+			this->ChilliDelightPictureBox->TabIndex = 4;
+			this->ChilliDelightPictureBox->TabStop = false;
 			// 
-			// pictureBox2
+			// FajitaPictureBox
 			// 
-			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(408, 22);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(212, 145);
-			this->pictureBox2->TabIndex = 2;
-			this->pictureBox2->TabStop = false;
+			this->FajitaPictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"FajitaPictureBox.Image")));
+			this->FajitaPictureBox->Location = System::Drawing::Point(408, 22);
+			this->FajitaPictureBox->Name = L"FajitaPictureBox";
+			this->FajitaPictureBox->Size = System::Drawing::Size(212, 145);
+			this->FajitaPictureBox->TabIndex = 2;
+			this->FajitaPictureBox->TabStop = false;
 			// 
-			// pictureBox1
+			// TikkaPictureBox1
 			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(144, 25);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(212, 145);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
-			this->pictureBox1->TabIndex = 1;
-			this->pictureBox1->TabStop = false;
+			this->TikkaPictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TikkaPictureBox1.Image")));
+			this->TikkaPictureBox1->Location = System::Drawing::Point(144, 25);
+			this->TikkaPictureBox1->Name = L"TikkaPictureBox1";
+			this->TikkaPictureBox1->Size = System::Drawing::Size(212, 145);
+			this->TikkaPictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->TikkaPictureBox1->TabIndex = 1;
+			this->TikkaPictureBox1->TabStop = false;
 			// 
 			// ToppingSelect
 			// 
@@ -3238,6 +3299,258 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"label1";
 			// 
+			// CheckoutPage
+			// 
+			this->CheckoutPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CheckoutPage.BackgroundImage")));
+			this->CheckoutPage->Controls->Add(this->TotalPriceCheckOutTextBox);
+			this->CheckoutPage->Controls->Add(this->AddOnCheckOutTextBox);
+			this->CheckoutPage->Controls->Add(this->textBox5);
+			this->CheckoutPage->Controls->Add(this->CrustCheckOutTextBox);
+			this->CheckoutPage->Controls->Add(this->FlavourCheckOutTextBox);
+			this->CheckoutPage->Controls->Add(this->TotalPriceCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->AddonsCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->ToppingsCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->CrustCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->FlavourCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->OrderHeadingCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->CardNumberCheckOutTextBox);
+			this->CheckoutPage->Controls->Add(this->CardNumberCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->CardCheckOutComboBox);
+			this->CheckoutPage->Controls->Add(this->CardProviderCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->CashCheckBox);
+			this->CheckoutPage->Controls->Add(this->CreditCardCheckBox);
+			this->CheckoutPage->Controls->Add(this->PaymentModeCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->AddressCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->AddressCheckOutTextBox);
+			this->CheckoutPage->Controls->Add(this->textBox2);
+			this->CheckoutPage->Controls->Add(this->PhoneCheckoutLabel);
+			this->CheckoutPage->Controls->Add(this->NameCheckOutText);
+			this->CheckoutPage->Controls->Add(this->NameLabelCheckout);
+			this->CheckoutPage->Location = System::Drawing::Point(4, 22);
+			this->CheckoutPage->Name = L"CheckoutPage";
+			this->CheckoutPage->Size = System::Drawing::Size(1210, 576);
+			this->CheckoutPage->TabIndex = 7;
+			this->CheckoutPage->Text = L"CheckoutPage";
+			this->CheckoutPage->UseVisualStyleBackColor = true;
+			// 
+			// NameLabelCheckout
+			// 
+			this->NameLabelCheckout->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->NameLabelCheckout->Location = System::Drawing::Point(136, 24);
+			this->NameLabelCheckout->Name = L"NameLabelCheckout";
+			this->NameLabelCheckout->Size = System::Drawing::Size(56, 23);
+			this->NameLabelCheckout->TabIndex = 0;
+			this->NameLabelCheckout->Text = L"NAME:";
+			// 
+			// NameCheckOutText
+			// 
+			this->NameCheckOutText->Location = System::Drawing::Point(192, 24);
+			this->NameCheckOutText->Name = L"NameCheckOutText";
+			this->NameCheckOutText->Size = System::Drawing::Size(200, 20);
+			this->NameCheckOutText->TabIndex = 1;
+			// 
+			// PhoneCheckoutLabel
+			// 
+			this->PhoneCheckoutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->PhoneCheckoutLabel->Location = System::Drawing::Point(128, 64);
+			this->PhoneCheckoutLabel->Name = L"PhoneCheckoutLabel";
+			this->PhoneCheckoutLabel->Size = System::Drawing::Size(80, 23);
+			this->PhoneCheckoutLabel->TabIndex = 2;
+			this->PhoneCheckoutLabel->Text = L"PHONE NO:";
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(200, 64);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(200, 20);
+			this->textBox2->TabIndex = 3;
+			// 
+			// AddressCheckOutTextBox
+			// 
+			this->AddressCheckOutTextBox->Location = System::Drawing::Point(200, 104);
+			this->AddressCheckOutTextBox->Multiline = true;
+			this->AddressCheckOutTextBox->Name = L"AddressCheckOutTextBox";
+			this->AddressCheckOutTextBox->Size = System::Drawing::Size(200, 96);
+			this->AddressCheckOutTextBox->TabIndex = 4;
+			// 
+			// AddressCheckOutLabel
+			// 
+			this->AddressCheckOutLabel->AutoSize = true;
+			this->AddressCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->AddressCheckOutLabel->Location = System::Drawing::Point(128, 104);
+			this->AddressCheckOutLabel->Name = L"AddressCheckOutLabel";
+			this->AddressCheckOutLabel->Size = System::Drawing::Size(62, 13);
+			this->AddressCheckOutLabel->TabIndex = 5;
+			this->AddressCheckOutLabel->Text = L"ADDRESS:";
+			// 
+			// PaymentModeCheckOutLabel
+			// 
+			this->PaymentModeCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->PaymentModeCheckOutLabel->Location = System::Drawing::Point(200, 216);
+			this->PaymentModeCheckOutLabel->Name = L"PaymentModeCheckOutLabel";
+			this->PaymentModeCheckOutLabel->Size = System::Drawing::Size(176, 23);
+			this->PaymentModeCheckOutLabel->TabIndex = 7;
+			this->PaymentModeCheckOutLabel->Text = L"CHOOSE A MODE OF PAYMENT";
+			// 
+			// CreditCardCheckBox
+			// 
+			this->CreditCardCheckBox->AutoSize = true;
+			this->CreditCardCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CreditCardCheckBox->Location = System::Drawing::Point(152, 240);
+			this->CreditCardCheckBox->Name = L"CreditCardCheckBox";
+			this->CreditCardCheckBox->Size = System::Drawing::Size(99, 17);
+			this->CreditCardCheckBox->TabIndex = 8;
+			this->CreditCardCheckBox->Text = L"CREDIT CARD";
+			this->CreditCardCheckBox->UseVisualStyleBackColor = true;
+			// 
+			// CashCheckBox
+			// 
+			this->CashCheckBox->AutoSize = true;
+			this->CashCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CashCheckBox->Location = System::Drawing::Point(304, 240);
+			this->CashCheckBox->Name = L"CashCheckBox";
+			this->CashCheckBox->Size = System::Drawing::Size(55, 17);
+			this->CashCheckBox->TabIndex = 9;
+			this->CashCheckBox->Text = L"CASH";
+			this->CashCheckBox->UseVisualStyleBackColor = true;
+			// 
+			// CardProviderCheckOutLabel
+			// 
+			this->CardProviderCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F));
+			this->CardProviderCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CardProviderCheckOutLabel->Location = System::Drawing::Point(136, 312);
+			this->CardProviderCheckOutLabel->Name = L"CardProviderCheckOutLabel";
+			this->CardProviderCheckOutLabel->Size = System::Drawing::Size(144, 48);
+			this->CardProviderCheckOutLabel->TabIndex = 10;
+			this->CardProviderCheckOutLabel->Text = L"CARD PROVIDER:";
+			// 
+			// CardCheckOutComboBox
+			// 
+			this->CardCheckOutComboBox->FormattingEnabled = true;
+			this->CardCheckOutComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
+				L"MasterCard", L"Visa", L"UnionPay",
+					L"PayPak"
+			});
+			this->CardCheckOutComboBox->Location = System::Drawing::Point(264, 312);
+			this->CardCheckOutComboBox->Name = L"CardCheckOutComboBox";
+			this->CardCheckOutComboBox->Size = System::Drawing::Size(121, 21);
+			this->CardCheckOutComboBox->TabIndex = 11;
+			// 
+			// CardNumberCheckOutLabel
+			// 
+			this->CardNumberCheckOutLabel->AutoSize = true;
+			this->CardNumberCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CardNumberCheckOutLabel->Location = System::Drawing::Point(136, 360);
+			this->CardNumberCheckOutLabel->Name = L"CardNumberCheckOutLabel";
+			this->CardNumberCheckOutLabel->Size = System::Drawing::Size(102, 26);
+			this->CardNumberCheckOutLabel->TabIndex = 12;
+			this->CardNumberCheckOutLabel->Text = L"CARD NUMBER:\r\n(MUST BE 9-DIGIT)";
+			// 
+			// CardNumberCheckOutTextBox
+			// 
+			this->CardNumberCheckOutTextBox->Location = System::Drawing::Point(248, 360);
+			this->CardNumberCheckOutTextBox->Name = L"CardNumberCheckOutTextBox";
+			this->CardNumberCheckOutTextBox->Size = System::Drawing::Size(184, 20);
+			this->CardNumberCheckOutTextBox->TabIndex = 13;
+			// 
+			// OrderHeadingCheckOutLabel
+			// 
+			this->OrderHeadingCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			this->OrderHeadingCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->OrderHeadingCheckOutLabel->Location = System::Drawing::Point(736, 16);
+			this->OrderHeadingCheckOutLabel->Name = L"OrderHeadingCheckOutLabel";
+			this->OrderHeadingCheckOutLabel->Size = System::Drawing::Size(184, 40);
+			this->OrderHeadingCheckOutLabel->TabIndex = 14;
+			this->OrderHeadingCheckOutLabel->Text = L"YOUR ORDER";
+			// 
+			// FlavourCheckOutLabel
+			// 
+			this->FlavourCheckOutLabel->AutoSize = true;
+			this->FlavourCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->FlavourCheckOutLabel->Location = System::Drawing::Point(648, 72);
+			this->FlavourCheckOutLabel->Name = L"FlavourCheckOutLabel";
+			this->FlavourCheckOutLabel->Size = System::Drawing::Size(76, 13);
+			this->FlavourCheckOutLabel->TabIndex = 15;
+			this->FlavourCheckOutLabel->Text = L"FLAVOUR(S) :";
+			// 
+			// CrustCheckOutLabel
+			// 
+			this->CrustCheckOutLabel->AutoSize = true;
+			this->CrustCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->CrustCheckOutLabel->Location = System::Drawing::Point(656, 136);
+			this->CrustCheckOutLabel->Name = L"CrustCheckOutLabel";
+			this->CrustCheckOutLabel->Size = System::Drawing::Size(60, 13);
+			this->CrustCheckOutLabel->TabIndex = 16;
+			this->CrustCheckOutLabel->Text = L"CRUST(S):";
+			// 
+			// ToppingsCheckOutLabel
+			// 
+			this->ToppingsCheckOutLabel->AutoSize = true;
+			this->ToppingsCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->ToppingsCheckOutLabel->Location = System::Drawing::Point(648, 208);
+			this->ToppingsCheckOutLabel->Name = L"ToppingsCheckOutLabel";
+			this->ToppingsCheckOutLabel->Size = System::Drawing::Size(71, 13);
+			this->ToppingsCheckOutLabel->TabIndex = 17;
+			this->ToppingsCheckOutLabel->Text = L"TOPPING(S):";
+			// 
+			// AddonsCheckOutLabel
+			// 
+			this->AddonsCheckOutLabel->AutoSize = true;
+			this->AddonsCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->AddonsCheckOutLabel->Location = System::Drawing::Point(656, 280);
+			this->AddonsCheckOutLabel->Name = L"AddonsCheckOutLabel";
+			this->AddonsCheckOutLabel->Size = System::Drawing::Size(62, 13);
+			this->AddonsCheckOutLabel->TabIndex = 18;
+			this->AddonsCheckOutLabel->Text = L"ADDON(S):";
+			// 
+			// TotalPriceCheckOutLabel
+			// 
+			this->TotalPriceCheckOutLabel->AutoSize = true;
+			this->TotalPriceCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->TotalPriceCheckOutLabel->Location = System::Drawing::Point(640, 352);
+			this->TotalPriceCheckOutLabel->Name = L"TotalPriceCheckOutLabel";
+			this->TotalPriceCheckOutLabel->Size = System::Drawing::Size(83, 13);
+			this->TotalPriceCheckOutLabel->TabIndex = 19;
+			this->TotalPriceCheckOutLabel->Text = L"TOTAL PRICE :";
+			// 
+			// FlavourCheckOutTextBox
+			// 
+			this->FlavourCheckOutTextBox->Location = System::Drawing::Point(728, 56);
+			this->FlavourCheckOutTextBox->Multiline = true;
+			this->FlavourCheckOutTextBox->Name = L"FlavourCheckOutTextBox";
+			this->FlavourCheckOutTextBox->Size = System::Drawing::Size(304, 48);
+			this->FlavourCheckOutTextBox->TabIndex = 20;
+			// 
+			// CrustCheckOutTextBox
+			// 
+			this->CrustCheckOutTextBox->Location = System::Drawing::Point(728, 120);
+			this->CrustCheckOutTextBox->Multiline = true;
+			this->CrustCheckOutTextBox->Name = L"CrustCheckOutTextBox";
+			this->CrustCheckOutTextBox->Size = System::Drawing::Size(304, 56);
+			this->CrustCheckOutTextBox->TabIndex = 21;
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(728, 192);
+			this->textBox5->Multiline = true;
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(304, 56);
+			this->textBox5->TabIndex = 22;
+			// 
+			// AddOnCheckOutTextBox
+			// 
+			this->AddOnCheckOutTextBox->Location = System::Drawing::Point(728, 264);
+			this->AddOnCheckOutTextBox->Multiline = true;
+			this->AddOnCheckOutTextBox->Name = L"AddOnCheckOutTextBox";
+			this->AddOnCheckOutTextBox->Size = System::Drawing::Size(304, 56);
+			this->AddOnCheckOutTextBox->TabIndex = 23;
+			// 
+			// TotalPriceCheckOutTextBox
+			// 
+			this->TotalPriceCheckOutTextBox->Location = System::Drawing::Point(728, 352);
+			this->TotalPriceCheckOutTextBox->Name = L"TotalPriceCheckOutTextBox";
+			this->TotalPriceCheckOutTextBox->Size = System::Drawing::Size(200, 20);
+			this->TotalPriceCheckOutTextBox->TabIndex = 24;
 			// crustreq
 			// 
 			this->crustreq->AutoSize = true;
@@ -3275,13 +3588,13 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->SignUpPage->PerformLayout();
 			this->FlavourSelect->ResumeLayout(false);
 			this->FlavourSelect->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->VeggieDelightPictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TheCheesePictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SeekhKebabPictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BBQBuzzPictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ChilliDelightPictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->FajitaPictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TikkaPictureBox1))->EndInit();
 			this->ToppingSelect->ResumeLayout(false);
 			this->ToppingSelect->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToppingSausage))->EndInit();
@@ -3291,6 +3604,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToppingBeef))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToppingPepperoni))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToppingChicken))->EndInit();
+			this->CheckoutPage->ResumeLayout(false);
+			this->CheckoutPage->PerformLayout();
 			this->ResumeLayout(false);
 
 		}

@@ -11,7 +11,7 @@ class account : public Person, public security
 	char password[30];
 	char email[30];
 	int saved;
-	bool guest;
+	bool guest;             
 
 public:
 	account();
