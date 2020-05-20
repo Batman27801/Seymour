@@ -30,14 +30,14 @@ void Order::PlaceOrder(pizza *pizza)
 			obj << "Crust = " << CRUSTS[j] << " PRICE = Rs " << pizza->cpoint->get_price() << " With Misc = " <<pizza->CrustMisc <<endl;
 		}
 	}
-	for (k = 0; k < 5; k++)
+	/*for (k = 0; k < 5; k++)
 	{
 		if (strcmp(TOPPINGS[j], pizza->tpoint->getToppingName()))
 		{
 			strcpy_s(SelectedTopping, pizza->tpoint->getToppingName());
 			obj << "Topping = " << TOPPINGS[k] << pizza->tpoint->getprice() << endl;
 		}
-	}
+	}*/
 	obj << "..............................................TOTAL BILL = " << bill << endl;
 	obj.close();
 

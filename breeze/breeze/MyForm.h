@@ -3927,7 +3927,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->CardProviderCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F));
 			this->CardProviderCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->CardProviderCheckOutLabel->Location = System::Drawing::Point(120, 416);
+			this->CardProviderCheckOutLabel->Location = System::Drawing::Point(128, 416);
 			this->CardProviderCheckOutLabel->Name = L"CardProviderCheckOutLabel";
 			this->CardProviderCheckOutLabel->Size = System::Drawing::Size(144, 48);
 			this->CardProviderCheckOutLabel->TabIndex = 10;
