@@ -3730,6 +3730,9 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	System::Void stuffedcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void MovetoToping_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e);
-	System::Void BacktoFlavors_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void BacktoFlavors_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		tabControl1->SelectedTab = FlavourSelect;
+	}
 };
 }

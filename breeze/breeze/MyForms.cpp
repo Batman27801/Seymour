@@ -1236,14 +1236,7 @@ void breeze::MyForm::ChilliDelightCheckbox_CheckStateChanged(System::Object^ sen
 	}
 }
 
-void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (test->getguest() == false)
-	{
-		char GuestName[80];
-		char  Address[80];
-		long int PhoneNo;
-	}
-}
+
 void breeze::MyForm::ChickenCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (ChickenCheck->Checked == true)
 	{
@@ -1377,7 +1370,8 @@ void breeze::MyForm::SausageCheck_CheckedChanged(System::Object^ sender, System:
 		Extra_CheezCheck->Checked = false;
 
 		Sausage* S = new Sausage;
-		ToppingPriceBox->Text = "CURRENT PRICE\n" + Convert::ToString(S->getprice());
+		//ToppingPriceBox.AppendText(Convert::ToString(S->getprice())) ;
+		ToppingPriceBox->AppendText(Convert::ToString(S->getprice()));
 		delete S;
 	}
 }
