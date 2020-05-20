@@ -12,7 +12,6 @@ private:
 
 public:
     Mashroom();
-    void initialize();
     void setCRGS(bool);
     void setCO(bool);
     bool getCRGS();

@@ -13,7 +13,6 @@ private:
 
 public:
     Extra_Cheez();
-    void initialize();
     void setRPF(bool);
     bool getRPF();
     void setExtra(Extras);

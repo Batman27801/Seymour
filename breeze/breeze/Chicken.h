@@ -12,7 +12,6 @@ private:
 
 public:
     Chicken();
-    void initialize();
     void setCheese(Cheeses);
     Cheeses getCheese();
     void setBS(bool);

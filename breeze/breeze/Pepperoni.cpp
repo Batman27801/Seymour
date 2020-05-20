@@ -6,12 +6,7 @@ using namespace std;
 Pepperoni::Pepperoni(): Type(Vegan),QOFMC(Usual)
 {
     strcpy_s(name, "Pepperoni");
-    initialize();
-}
-
-void Pepperoni::initialize()
-{
-    strcpy_s(details, "Poll after poll, pepperoni always tops the list of Americas favorite pizza toppings. When it doubt, you cant go wrong with a classic.");
+    strcpy_s(details, "Poll after poll, pepperoni always tops the list of Americas favorite pizza toppings. ");
     price = 150;
 }
 void Pepperoni::setType(TypeofTopping TOT)

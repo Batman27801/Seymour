@@ -1236,7 +1236,33 @@ void breeze::MyForm::ChilliDelightCheckbox_CheckStateChanged(System::Object^ sen
 	}
 }
 
+//*******************************************Topping Selection Functions****************************************//
+void breeze::MyForm::ToppingSelect_Enter(System::Object^ sender, System::EventArgs^ e) {
+	pizz->tpoint = new Chicken;
+	ChickenCheck->Text = "'CHICKEN'\n"+gotoString(pizz->tpoint->getdetails());
+	delete pizz->tpoint;
 
+	pizz->tpoint = new Pepperoni;
+	PepperoniCheck->Text = "'PEPPERONI'\n"+gotoString(pizz->tpoint->getdetails());
+	delete pizz->tpoint;
+
+	pizz->tpoint = new Beef;
+	BeefCheck->Text = "'BEEF'\n"+ gotoString(pizz->tpoint->getdetails());
+	delete pizz->tpoint;
+
+	pizz->tpoint = new Mashroom;
+	MashroomCheck->Text = "'MASHROOMS'\n" +gotoString(pizz->tpoint->getdetails());
+	delete pizz->tpoint;
+
+	pizz->tpoint = new Extra_Cheez;
+	Extra_CheezCheck->Text = "'EXTRA_CHEESE'\n" + gotoString(pizz->tpoint->getdetails());
+	delete pizz->tpoint;
+
+	pizz->tpoint = new Sausage;
+	SausageCheck->Text = "'SAUSAGE'\n" + gotoString(pizz->tpoint->getdetails());
+	delete pizz->tpoint;
+
+}
 void breeze::MyForm::ChickenCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (ChickenCheck->Checked == true)
 	{
@@ -1251,7 +1277,7 @@ void breeze::MyForm::ChickenCheck_CheckedChanged(System::Object^ sender, System:
 		SausageCheck->Checked = false;
 
 		Chicken* C = new Chicken;
-		ToppingPriceBox->Text = "CURRENT PRICE\n=Rs" + Convert::ToString(C->getprice());
+		ToppingPriceBox->Text = "CURRENT PRICE\n=Rs" + Convert::ToString(C->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete C;
 	}
 	else if (ChickenCheck->Checked == false)
@@ -1276,7 +1302,7 @@ void breeze::MyForm::PepperoniCheck_CheckedChanged(System::Object^ sender, Syste
 		SausageCheck->Checked = false;
 
 		Pepperoni* P = new Pepperoni;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(P->getprice());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(P->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete P;
 	}
 	else if (PepperoniCheck->Checked == false)
@@ -1301,7 +1327,7 @@ void breeze::MyForm::BeefCheck_CheckedChanged(System::Object^ sender, System::Ev
 		SausageCheck->Checked = false;
 
 		Beef* B = new Beef;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(B->getprice());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(B->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete B;
 	}
 	else if (BeefCheck->Checked == false)
@@ -1324,7 +1350,7 @@ void breeze::MyForm::MashroomCheck_CheckedChanged(System::Object^ sender, System
 		SausageCheck->Checked = false;
 
 		Mashroom* M = new Mashroom;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(M->getprice());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(M->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete M;
 	}
 	else if (MashroomCheck->Checked == false)
@@ -1347,7 +1373,7 @@ void breeze::MyForm::Extra_CheezCheck_CheckedChanged(System::Object^ sender, Sys
 		SausageCheck->Checked = false;
 
 		Extra_Cheez* E = new Extra_Cheez;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(E->getprice());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(E->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete E;
 	}
 	else if (Extra_CheezCheck->Checked == false)
@@ -1371,11 +1397,17 @@ void breeze::MyForm::SausageCheck_CheckedChanged(System::Object^ sender, System:
 
 		Sausage* S = new Sausage;
 		//ToppingPriceBox.AppendText(Convert::ToString(S->getprice())) ;
-		ToppingPriceBox->AppendText(Convert::ToString(S->getprice()));
+		ToppingPriceBox->Text="CURRENT PRICE\n"+Convert::ToString(S->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete S;
 	}
+	else
+	{
+		CheckRedPepperFlakes1->Visible = false;
+		CheckBasilScattering->Visible = false;
+	}
 }
-void breeze::MyForm::MoveToCheckout_Click(System::Object^ sender, System::EventArgs^ e) {
+void breeze::MyForm::ConfirmToppingButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
 	if (ChickenCheck->Checked == true)
 	{
 		Chicken* C = new Chicken;
@@ -1389,14 +1421,9 @@ void breeze::MyForm::MoveToCheckout_Click(System::Object^ sender, System::EventA
 		else if (backtostring(ChooseCheeseBox->Text) == "Shredded_Cheddar")
 			C->setCheese(Shredded_Cheddar);
 
-		/*if (backtostring(ChooseQuantityBox->Text) == "Normal")
-			C->setquantity(Normal);
-		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
-			C->setquantity(Extra);
-		else if (backtostring(ChooseQuantityBox->Text) == "Less")
-			C->setquantity(Less);*/
 
 		pizz->tpoint = C;
+		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else if (PepperoniCheck->Checked == true)
 	{
@@ -1415,15 +1442,10 @@ void breeze::MyForm::MoveToCheckout_Click(System::Object^ sender, System::EventA
 		else if (backtostring(ChooseQuantityOfCheezBox->Text) == "Don't Include (Less Charges)")
 			P->setQOFMC(Not_Include);
 
-		/*if (backtostring(ChooseQuantityBox->Text) == "Normal")
-			P->setquantity(Normal);
-		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
-			P->setquantity(Extra);
-		else if (backtostring(ChooseQuantityBox->Text) == "Less")
-			P->setquantity(Less);*/
+
 
 		pizz->tpoint = P;
-
+		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else if (BeefCheck->Checked == true)
 	{
@@ -1438,14 +1460,10 @@ void breeze::MyForm::MoveToCheckout_Click(System::Object^ sender, System::EventA
 		else if (backtostring(ChoosePeppersBox->Text) == "Red")
 			B->setpepper(Red);
 
-		/*if (backtostring(ChooseQuantityBox->Text) == "Normal")
-			B->setquantity(Normal);
-		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
-			B->setquantity(Extra);
-		else if (backtostring(ChooseQuantityBox->Text) == "Less")
-			B->setquantity(Less);*/
+
 
 		pizz->tpoint = B;
+		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else if (MashroomCheck->Checked == true)
 	{
@@ -1460,14 +1478,10 @@ void breeze::MyForm::MoveToCheckout_Click(System::Object^ sender, System::EventA
 		else if (CheckCreamyGarlicSause->Checked == false)
 			M->setCRGS(false);
 
-		/*if (backtostring(ChooseQuantityBox->Text) == "Normal")
-			M->setquantity(Normal);
-		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
-			M->setquantity(Extra);
-		else if (backtostring(ChooseQuantityBox->Text) == "Less")
-			M->setquantity(Less);*/
+
 
 		pizz->tpoint = M;
+		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else if (Extra_CheezCheck->Checked == true)
 	{
@@ -1482,14 +1496,10 @@ void breeze::MyForm::MoveToCheckout_Click(System::Object^ sender, System::EventA
 		else if (backtostring(ChooseExtraBox->Text) == "Cheese (Extra Charges)")
 			EC->setExtra(Cheese);
 
-		/*if (backtostring(ChooseQuantityBox->Text) == "Normal")
-			EC->setquantity(Normal);
-		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
-			EC->setquantity(Extra);
-		else if (backtostring(ChooseQuantityBox->Text) == "Less")
-			EC->setquantity(Less);*/
+
 
 		pizz->tpoint = EC;
+		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else if (SausageCheck->Checked == true)
 	{
@@ -1504,16 +1514,17 @@ void breeze::MyForm::MoveToCheckout_Click(System::Object^ sender, System::EventA
 		else if (CheckBasilScattering->Checked == false)
 			S->setBS(true);
 
-		/*if (backtostring(ChooseQuantityBox->Text) == "Normal")
-			S->setquantity(Normal);
-		else if (backtostring(ChooseQuantityBox->Text) == "Extra")
-			S->setquantity(Extra);
-		else if (backtostring(ChooseQuantityBox->Text) == "Less")
-			S->setquantity(Less);*/
 
 		pizz->tpoint = S;
+		ToppingChooseNotice->Text = "Topping Confimed";
 	}
+	else
+	{
+	ToppingChooseNotice->Text = "Please Choose One";
+	}
+	ToppingChooseNotice->Visible = true;
 }
+
 void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = CheckoutPage;
 	if (test->getguest() == true)
@@ -1531,6 +1542,6 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 		long int OrderCode;
 		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
+
 	}
-	
 }
