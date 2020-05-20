@@ -9,14 +9,14 @@ class Order
 private:
     double bill;
     int no_of_orders;
-    char FLAVOURS[7][30] = { "tikka" ,"fajita","chilli delight", "BBQ buzz", "seekh kebab", "The cheese", "Veggie Delight" };
-    char SelectedFlavour[30];
-    char SelectedFlavourMisc[30];
-    char CRUSTS[8][30];
-    char SelectedCrust[30];
-    char SelectedCrustMisc[30];
-    char TOPPINGS[5][30];
-    char SelectedTopping[30];
+    char FLAVOURS[7][300] = { "tikka" ,"fajita","chilli delight", "BBQ buzz", "seekh kebab", "The cheese", "Veggie Delight" };
+    char SelectedFlavour[300];
+    char SelectedFlavourMisc[300];
+    char CRUSTS[8][300];
+    char SelectedCrust[300];
+    char SelectedCrustMisc[300];
+    char TOPPINGS[5][300];
+    char SelectedTopping[300];
     
 public:
     Order();

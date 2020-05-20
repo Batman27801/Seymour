@@ -30,6 +30,11 @@ void breeze::MyForm::Login_Click(System::Object^ sender, System::EventArgs^ e) {
 	{
 		incorrect->Visible = true;
 	}
+	else
+	{
+		test->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text));
+		tabControl1->SelectedTab = CrustSelect;
+	}
 
 	//function incomplete
 }
@@ -601,6 +606,7 @@ void breeze::MyForm::stuffedcheckbox_CheckedChanged(System::Object^ sender, Syst
 //*****************************FLAVOUR SELECTION OPTIONS****************************//
 void breeze::MyForm::MovetoToping_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = ToppingSelect;
+	
 }
 void breeze::MyForm::VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (VeggieDelightCheckBox->Checked == true)
@@ -1518,16 +1524,30 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 	tabControl1->SelectedTab = CheckoutPage;
 	if (test->getguest() == true)
 	{
-		NameCheckOutText->Text = Convert::ToString(test->getname());
-		AddressCheckOutTextBox->Text = Convert::ToString(test->getaddress());
-		PhoneNoTextBox->Text = Convert::ToString(test->getcontact());
-		srand(time(0));
 		long int OrderCode;
-		OrderCode = (rand() % 10000) + 1;
+		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
+
 	}
 	else if (test->getguest() == false)
 	{
+		/****/
+		Order* o1 = new Order;
+		o1->PlaceOrder(pizz);
+		o1->FileOrder();
+		NameCheckOutText->Text = gotoString(test->getname());
+		AddressCheckOutTextBox->Text = gotoString(test->getaddress());
+		PhoneNoTextBox->Text = Convert::ToString(test->getcontact());
+		PaymentModeCheckOutLabel->Visible = false;
+		CardProviderCheckOutLabel->Visible = false;
+		CardCheckOutComboBox->Visible = false;
+		CardNumberCheckOutLabel->Visible = false;
+		CardNumberCheckOutTextBox->Visible = false;
+		FlavourCheckOutTextBox->AppendText(gotoString(pizz->fpoint->get_FlavName()));
+		CrustCheckOutTextBox->AppendText(gotoString(pizz->cpoint->get_CrustName()));
+		TotalPriceCheckOutTextBox->Text = "Rs = ";
+		TotalPriceCheckOutTextBox->AppendText(Convert::ToString(o1->ReturnBill()));
+		srand(time(0));
 		long int OrderCode;
 		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
