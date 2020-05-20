@@ -2931,6 +2931,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->BacktoFlavors->TabIndex = 35;
 			this->BacktoFlavors->Text = L"Back";
 			this->BacktoFlavors->UseVisualStyleBackColor = true;
+			this->BacktoFlavors->Click += gcnew System::EventHandler(this, &MyForm::BacktoFlavors_Click);
 			// 
 			// ProceedToCheckOutButton
 			// 
@@ -2967,7 +2968,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 				L"tly a favorite pizza topping of Americans. This cast-iron pizza recipe gives you"
 				L" another reason to love that skillet.";
 			this->SausageCheck->UseVisualStyleBackColor = true;
-			this->SausageCheck->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CheckExtra_Cheez_CheckedChanged);
 			// 
 			// CheckRedPepperFlakes1
 			// 
@@ -3682,8 +3682,6 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 }
 	System::Void Extra_CheezCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-	System::Void CheckExtra_Cheez_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
 	System::Void RedPepperFlakes1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void BasilScattering_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -3694,6 +3692,8 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	System::Void GuesetOrderButton_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void ToppingPriceBox_TextChanged(System::Object^ sender, System::EventArgs^ e){
 	}
+	System::Void MoveToCheckout_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void SausageCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void italiancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void neapolitancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void newyorkcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
@@ -3704,5 +3704,7 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	System::Void stuffedcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void MovetoToping_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void BacktoFlavors_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
