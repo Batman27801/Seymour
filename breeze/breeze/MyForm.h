@@ -207,19 +207,23 @@ private: System::Windows::Forms::CheckBox^ CheckBBQ_Sause;
 
 private: System::Windows::Forms::CheckBox^ checkBox1;
 private: System::Windows::Forms::ComboBox^ ChooseCheeseBox;
-private: System::Windows::Forms::Label^ Cheese;
+private: System::Windows::Forms::Label^ CheeseLabel;
+
 private: System::Windows::Forms::CheckBox^ PepperoniCheck;
 private: System::Windows::Forms::PictureBox^ ToppingPepperoni;
-private: System::Windows::Forms::Label^ QuantityOfCheese;
+private: System::Windows::Forms::Label^ QuantityOfCheeseLabel;
+
 
 private: System::Windows::Forms::ComboBox^ ChooseQuantityOfCheezBox;
+private: System::Windows::Forms::Label^ TypeLabel;
 
-private: System::Windows::Forms::Label^ Type;
+
 private: System::Windows::Forms::ComboBox^ ChooseTypeBox;
 private: System::Windows::Forms::CheckBox^ BeefCheck;
 private: System::Windows::Forms::PictureBox^ ToppingBeef;
 private: System::Windows::Forms::CheckBox^ CheckClovesSpice;
-private: System::Windows::Forms::Label^ Peppers;
+private: System::Windows::Forms::Label^ PeppersLabel;
+
 private: System::Windows::Forms::ComboBox^ ChoosePeppersBox;
 private: System::Windows::Forms::CheckBox^ CheckCreamlized_Onion;
 
@@ -234,8 +238,9 @@ private: System::Windows::Forms::CheckBox^ MashroomCheck;
 private: System::Windows::Forms::CheckBox^ Extra_CheezCheck;
 private: System::Windows::Forms::PictureBox^ ToppingExtra_Cheez;
 private: System::Windows::Forms::CheckBox^ CheckRedPepperFlakes;
+private: System::Windows::Forms::Label^ ExtraLabel;
 
-private: System::Windows::Forms::Label^ Extra;
+
 private: System::Windows::Forms::ComboBox^ ChooseExtraBox;
 private: System::Windows::Forms::CheckBox^ CheckRedPepperFlakes1;
 
@@ -636,7 +641,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->SausageCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->CheckRedPepperFlakes1 = (gcnew System::Windows::Forms::CheckBox());
 			this->ToppingSausage = (gcnew System::Windows::Forms::PictureBox());
-			this->Extra = (gcnew System::Windows::Forms::Label());
+			this->ExtraLabel = (gcnew System::Windows::Forms::Label());
 			this->ChooseExtraBox = (gcnew System::Windows::Forms::ComboBox());
 			this->CheckRedPepperFlakes = (gcnew System::Windows::Forms::CheckBox());
 			this->Extra_CheezCheck = (gcnew System::Windows::Forms::CheckBox());
@@ -647,18 +652,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CheckCreamlized_Onion = (gcnew System::Windows::Forms::CheckBox());
 			this->ToppingMashrooms = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
-			this->Peppers = (gcnew System::Windows::Forms::Label());
+			this->PeppersLabel = (gcnew System::Windows::Forms::Label());
 			this->ChoosePeppersBox = (gcnew System::Windows::Forms::ComboBox());
 			this->CheckClovesSpice = (gcnew System::Windows::Forms::CheckBox());
 			this->BeefCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->ToppingBeef = (gcnew System::Windows::Forms::PictureBox());
-			this->QuantityOfCheese = (gcnew System::Windows::Forms::Label());
+			this->QuantityOfCheeseLabel = (gcnew System::Windows::Forms::Label());
 			this->ChooseQuantityOfCheezBox = (gcnew System::Windows::Forms::ComboBox());
-			this->Type = (gcnew System::Windows::Forms::Label());
+			this->TypeLabel = (gcnew System::Windows::Forms::Label());
 			this->ChooseTypeBox = (gcnew System::Windows::Forms::ComboBox());
 			this->PepperoniCheck = (gcnew System::Windows::Forms::CheckBox());
 			this->ToppingPepperoni = (gcnew System::Windows::Forms::PictureBox());
-			this->Cheese = (gcnew System::Windows::Forms::Label());
+			this->CheeseLabel = (gcnew System::Windows::Forms::Label());
 			this->ChooseCheeseBox = (gcnew System::Windows::Forms::ComboBox());
 			this->CheckBBQ_Sause = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
@@ -2877,7 +2882,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingSelect->Controls->Add(this->SausageCheck);
 			this->ToppingSelect->Controls->Add(this->CheckRedPepperFlakes1);
 			this->ToppingSelect->Controls->Add(this->ToppingSausage);
-			this->ToppingSelect->Controls->Add(this->Extra);
+			this->ToppingSelect->Controls->Add(this->ExtraLabel);
 			this->ToppingSelect->Controls->Add(this->ChooseExtraBox);
 			this->ToppingSelect->Controls->Add(this->CheckRedPepperFlakes);
 			this->ToppingSelect->Controls->Add(this->Extra_CheezCheck);
@@ -2888,18 +2893,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingSelect->Controls->Add(this->CheckCreamlized_Onion);
 			this->ToppingSelect->Controls->Add(this->ToppingMashrooms);
 			this->ToppingSelect->Controls->Add(this->pictureBox9);
-			this->ToppingSelect->Controls->Add(this->Peppers);
+			this->ToppingSelect->Controls->Add(this->PeppersLabel);
 			this->ToppingSelect->Controls->Add(this->ChoosePeppersBox);
 			this->ToppingSelect->Controls->Add(this->CheckClovesSpice);
 			this->ToppingSelect->Controls->Add(this->BeefCheck);
 			this->ToppingSelect->Controls->Add(this->ToppingBeef);
-			this->ToppingSelect->Controls->Add(this->QuantityOfCheese);
+			this->ToppingSelect->Controls->Add(this->QuantityOfCheeseLabel);
 			this->ToppingSelect->Controls->Add(this->ChooseQuantityOfCheezBox);
-			this->ToppingSelect->Controls->Add(this->Type);
+			this->ToppingSelect->Controls->Add(this->TypeLabel);
 			this->ToppingSelect->Controls->Add(this->ChooseTypeBox);
 			this->ToppingSelect->Controls->Add(this->PepperoniCheck);
 			this->ToppingSelect->Controls->Add(this->ToppingPepperoni);
-			this->ToppingSelect->Controls->Add(this->Cheese);
+			this->ToppingSelect->Controls->Add(this->CheeseLabel);
 			this->ToppingSelect->Controls->Add(this->ChooseCheeseBox);
 			this->ToppingSelect->Controls->Add(this->CheckBBQ_Sause);
 			this->ToppingSelect->Controls->Add(this->checkBox1);
@@ -2991,14 +2996,14 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingSausage->TabIndex = 30;
 			this->ToppingSausage->TabStop = false;
 			// 
-			// Extra
+			// ExtraLabel
 			// 
-			this->Extra->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->Extra->Location = System::Drawing::Point(583, 526);
-			this->Extra->Name = L"Extra";
-			this->Extra->Size = System::Drawing::Size(100, 23);
-			this->Extra->TabIndex = 29;
-			this->Extra->Text = L"Choose Extra";
+			this->ExtraLabel->ForeColor = System::Drawing::SystemColors::AppWorkspace;
+			this->ExtraLabel->Location = System::Drawing::Point(583, 526);
+			this->ExtraLabel->Name = L"ExtraLabel";
+			this->ExtraLabel->Size = System::Drawing::Size(100, 23);
+			this->ExtraLabel->TabIndex = 29;
+			this->ExtraLabel->Text = L"Choose Extra";
 			// 
 			// ChooseExtraBox
 			// 
@@ -3106,14 +3111,14 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->pictureBox9->TabIndex = 19;
 			this->pictureBox9->TabStop = false;
 			// 
-			// Peppers
+			// PeppersLabel
 			// 
-			this->Peppers->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->Peppers->Location = System::Drawing::Point(848, 257);
-			this->Peppers->Name = L"Peppers";
-			this->Peppers->Size = System::Drawing::Size(100, 23);
-			this->Peppers->TabIndex = 18;
-			this->Peppers->Text = L"Choose Peppers";
+			this->PeppersLabel->ForeColor = System::Drawing::SystemColors::AppWorkspace;
+			this->PeppersLabel->Location = System::Drawing::Point(848, 257);
+			this->PeppersLabel->Name = L"PeppersLabel";
+			this->PeppersLabel->Size = System::Drawing::Size(100, 23);
+			this->PeppersLabel->TabIndex = 18;
+			this->PeppersLabel->Text = L"Choose Peppers";
 			// 
 			// ChoosePeppersBox
 			// 
@@ -3158,15 +3163,15 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingBeef->TabIndex = 14;
 			this->ToppingBeef->TabStop = false;
 			// 
-			// QuantityOfCheese
+			// QuantityOfCheeseLabel
 			// 
-			this->QuantityOfCheese->BackColor = System::Drawing::Color::Transparent;
-			this->QuantityOfCheese->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->QuantityOfCheese->Location = System::Drawing::Point(544, 243);
-			this->QuantityOfCheese->Name = L"QuantityOfCheese";
-			this->QuantityOfCheese->Size = System::Drawing::Size(121, 29);
-			this->QuantityOfCheese->TabIndex = 13;
-			this->QuantityOfCheese->Text = L"Choose Quantity Of Mozarelle Cheese";
+			this->QuantityOfCheeseLabel->BackColor = System::Drawing::Color::Transparent;
+			this->QuantityOfCheeseLabel->ForeColor = System::Drawing::SystemColors::AppWorkspace;
+			this->QuantityOfCheeseLabel->Location = System::Drawing::Point(544, 243);
+			this->QuantityOfCheeseLabel->Name = L"QuantityOfCheeseLabel";
+			this->QuantityOfCheeseLabel->Size = System::Drawing::Size(121, 29);
+			this->QuantityOfCheeseLabel->TabIndex = 13;
+			this->QuantityOfCheeseLabel->Text = L"Choose Quantity Of Mozarelle Cheese";
 			// 
 			// ChooseQuantityOfCheezBox
 			// 
@@ -3181,15 +3186,15 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ChooseQuantityOfCheezBox->TabIndex = 12;
 			this->ChooseQuantityOfCheezBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::ChooseQuantityOfCheezBox_SelectedIndexChanged);
 			// 
-			// Type
+			// TypeLabel
 			// 
-			this->Type->BackColor = System::Drawing::Color::Transparent;
-			this->Type->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->Type->Location = System::Drawing::Point(454, 246);
-			this->Type->Name = L"Type";
-			this->Type->Size = System::Drawing::Size(85, 15);
-			this->Type->TabIndex = 11;
-			this->Type->Text = L"Choose Type";
+			this->TypeLabel->BackColor = System::Drawing::Color::Transparent;
+			this->TypeLabel->ForeColor = System::Drawing::SystemColors::AppWorkspace;
+			this->TypeLabel->Location = System::Drawing::Point(454, 246);
+			this->TypeLabel->Name = L"TypeLabel";
+			this->TypeLabel->Size = System::Drawing::Size(85, 15);
+			this->TypeLabel->TabIndex = 11;
+			this->TypeLabel->Text = L"Choose Type";
 			// 
 			// ChooseTypeBox
 			// 
@@ -3224,15 +3229,15 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingPepperoni->TabIndex = 8;
 			this->ToppingPepperoni->TabStop = false;
 			// 
-			// Cheese
+			// CheeseLabel
 			// 
-			this->Cheese->BackColor = System::Drawing::Color::Transparent;
-			this->Cheese->ForeColor = System::Drawing::SystemColors::AppWorkspace;
-			this->Cheese->Location = System::Drawing::Point(310, 256);
-			this->Cheese->Name = L"Cheese";
-			this->Cheese->Size = System::Drawing::Size(86, 23);
-			this->Cheese->TabIndex = 7;
-			this->Cheese->Text = L"Choose Cheese";
+			this->CheeseLabel->BackColor = System::Drawing::Color::Transparent;
+			this->CheeseLabel->ForeColor = System::Drawing::SystemColors::AppWorkspace;
+			this->CheeseLabel->Location = System::Drawing::Point(310, 256);
+			this->CheeseLabel->Name = L"CheeseLabel";
+			this->CheeseLabel->Size = System::Drawing::Size(86, 23);
+			this->CheeseLabel->TabIndex = 7;
+			this->CheeseLabel->Text = L"Choose Cheese";
 			// 
 			// ChooseCheeseBox
 			// 
@@ -3646,7 +3651,7 @@ private:
 	System::Void usernameavailability_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void backtologinbutton_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
-	System::Void CheckBBQ_Sause_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void CheckBBQ_Sause_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {};
 private: System::Void RedPepperFlakes_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void ToppingHeading_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -3660,28 +3665,24 @@ private: System::Void RedPepperFlakes_CheckedChanged(System::Object^ sender, Sys
 	System::Void ChickenCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-	System::Void PepperoniCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	   System::Void PepperoniCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void ChooseTypeBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void ChooseQuantityOfCheezBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-	System::Void BeefCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	System::Void BeefCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void CheckClovesSpice_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void ChoosePeppersBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-	System::Void MashroomCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	System::Void MashroomCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void CheckCreamlized_Onion_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void CheckCreamyGarlicSause_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void ChooseExtraBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-	System::Void Extra_CheezCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	System::Void Extra_CheezCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void RedPepperFlakes1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void BasilScattering_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -3704,7 +3705,6 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	System::Void stuffedcheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void MovetoToping_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void BacktoFlavors_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	System::Void BacktoFlavors_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
