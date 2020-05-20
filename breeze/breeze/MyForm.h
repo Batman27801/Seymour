@@ -426,6 +426,8 @@ private: System::Windows::Forms::Button^ startmenubox;
 private: System::Windows::Forms::ComboBox^ sizeofpizzabox5;
 
 private: System::Windows::Forms::Label^ sizeofpizzalabel5;
+private: System::Windows::Forms::Button^ ConfirmToppingButton;
+private: System::Windows::Forms::Label^ ToppingChooseNotice;
 
 
 
@@ -713,6 +715,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->TikkaPictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->MovetoToping = (gcnew System::Windows::Forms::Button());
 			this->ToppingSelect = (gcnew System::Windows::Forms::TabPage());
+			this->ToppingChooseNotice = (gcnew System::Windows::Forms::Label());
+			this->ConfirmToppingButton = (gcnew System::Windows::Forms::Button());
 			this->ToppingPriceBox = (gcnew System::Windows::Forms::TextBox());
 			this->BacktoFlavors = (gcnew System::Windows::Forms::Button());
 			this->ProceedToCheckOutButton = (gcnew System::Windows::Forms::Button());
@@ -3303,6 +3307,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->ToppingSelect->BackColor = System::Drawing::Color::Transparent;
 			this->ToppingSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ToppingSelect.BackgroundImage")));
+			this->ToppingSelect->Controls->Add(this->ToppingChooseNotice);
+			this->ToppingSelect->Controls->Add(this->ConfirmToppingButton);
 			this->ToppingSelect->Controls->Add(this->ToppingPriceBox);
 			this->ToppingSelect->Controls->Add(this->BacktoFlavors);
 			this->ToppingSelect->Controls->Add(this->ProceedToCheckOutButton);
@@ -3346,10 +3352,35 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingSelect->TabIndex = 6;
 			this->ToppingSelect->Text = L"ToppingSelect";
 			this->ToppingSelect->Click += gcnew System::EventHandler(this, &MyForm::ToppingSelect_Click);
+			this->ToppingSelect->Enter += gcnew System::EventHandler(this, &MyForm::ToppingSelect_Enter);
+			// 
+			// ToppingChooseNotice
+			// 
+			this->ToppingChooseNotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->ToppingChooseNotice->ForeColor = System::Drawing::Color::Yellow;
+			this->ToppingChooseNotice->Location = System::Drawing::Point(1017, 372);
+			this->ToppingChooseNotice->Name = L"ToppingChooseNotice";
+			this->ToppingChooseNotice->Size = System::Drawing::Size(152, 23);
+			this->ToppingChooseNotice->TabIndex = 38;
+			this->ToppingChooseNotice->Text = L"label2";
+			this->ToppingChooseNotice->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// ConfirmToppingButton
+			// 
+			this->ConfirmToppingButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->ConfirmToppingButton->Location = System::Drawing::Point(1028, 403);
+			this->ConfirmToppingButton->Name = L"ConfirmToppingButton";
+			this->ConfirmToppingButton->Size = System::Drawing::Size(125, 56);
+			this->ConfirmToppingButton->TabIndex = 37;
+			this->ConfirmToppingButton->Text = L"Confirm Topping";
+			this->ConfirmToppingButton->UseVisualStyleBackColor = true;
+			this->ConfirmToppingButton->Click += gcnew System::EventHandler(this, &MyForm::ConfirmToppingButton_Click);
 			// 
 			// ToppingPriceBox
 			// 
-			this->ToppingPriceBox->Location = System::Drawing::Point(995, 339);
+			this->ToppingPriceBox->Location = System::Drawing::Point(1017, 253);
 			this->ToppingPriceBox->Multiline = true;
 			this->ToppingPriceBox->Name = L"ToppingPriceBox";
 			this->ToppingPriceBox->Size = System::Drawing::Size(145, 80);
@@ -3688,6 +3719,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CheckBBQ_Sause->TabIndex = 5;
 			this->CheckBBQ_Sause->Text = L"Add BBQ_SAUCE(Additional Charges)";
 			this->CheckBBQ_Sause->UseVisualStyleBackColor = false;
+			this->CheckBBQ_Sause->Visible = false;
 			this->CheckBBQ_Sause->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CheckBBQ_Sause_CheckedChanged);
 			// 
 			// checkBox1
@@ -4143,7 +4175,7 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	System::Void GuesetOrderButton_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void ToppingPriceBox_TextChanged(System::Object^ sender, System::EventArgs^ e){
 	}
-	System::Void MoveToCheckout_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void MoveToCheckout_Click(System::Object^ sender, System::EventArgs^ e) {};
 	System::Void SausageCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void italiancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void neapolitancheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
@@ -4165,5 +4197,7 @@ private: System::Void comboBox4_SelectedIndexChanged(System::Object^ sender, Sys
 }
 private: System::Void label15_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+	System::Void ConfirmToppingButton_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void ToppingSelect_Enter(System::Object^ sender, System::EventArgs^ e);
 };
 }
