@@ -21,6 +21,7 @@ namespace breeze {
 		//newyork* a1 = new newyork;
 		//crust* p;
 		int total_no_of_pizzas;
+		int* size = new int[total_no_of_pizzas];
 		pizza *pizz=new pizza;
 		flavour *ptr;
 		Order *order = new Order;
@@ -377,6 +378,53 @@ private: System::Windows::Forms::Label^ CardNumberCheckOutLabel;
 private: System::Windows::Forms::Label^ crustreq;
 private: System::Windows::Forms::TextBox^ OrderNoCheckOutTextBox;
 private: System::Windows::Forms::Label^ OrderNoCheckoutLabel;
+private: System::Windows::Forms::TabPage^ PreMade;
+private: System::Windows::Forms::Label^ pizzaamountlabel;
+
+
+private: System::Windows::Forms::Label^ chefchoicesubheading2;
+
+private: System::Windows::Forms::CheckBox^ allcheesebox;
+
+private: System::Windows::Forms::Label^ allcheesepic;
+
+private: System::Windows::Forms::CheckBox^ wickedblendbox;
+
+private: System::Windows::Forms::Label^ wickedblendpic;
+
+private: System::Windows::Forms::CheckBox^ chickensupremebox;
+
+private: System::Windows::Forms::Label^ chickensupremepic;
+
+private: System::Windows::Forms::CheckBox^ fajitablastbox;
+private: System::Windows::Forms::Label^ fajitablastpic;
+private: System::Windows::Forms::Label^ chefchoicesubheading;
+private: System::Windows::Forms::Label^ ChefChoiceHeading;
+private: System::Windows::Forms::ComboBox^ sizeofpizzabox4;
+
+private: System::Windows::Forms::Label^ sizeofpizzalabel4;
+
+private: System::Windows::Forms::ComboBox^ sizeofpizzabox3;
+
+private: System::Windows::Forms::Label^ sizeofpizzalabel3;
+
+private: System::Windows::Forms::ComboBox^ sizeofpizzabox2;
+
+private: System::Windows::Forms::Label^ sizeofpizzalaebl2;
+
+private: System::Windows::Forms::ComboBox^ sizeofpizzabox;
+
+private: System::Windows::Forms::Label^ label12;
+private: System::Windows::Forms::Label^ sizeofpizzalabel;
+
+private: System::Windows::Forms::ComboBox^ pizzaamountbox;
+private: System::Windows::Forms::Button^ startmenubox;
+
+
+private: System::Windows::Forms::ComboBox^ sizeofpizzabox5;
+
+private: System::Windows::Forms::Label^ sizeofpizzalabel5;
+
 
 
 
@@ -481,57 +529,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->splitter1 = (gcnew System::Windows::Forms::Splitter());
 			this->subtitle = (gcnew System::Windows::Forms::Label());
 			this->title = (gcnew System::Windows::Forms::Label());
-			this->CrustSelect = (gcnew System::Windows::Forms::TabPage());
-			this->crustreq = (gcnew System::Windows::Forms::Label());
-			this->crustpricebox = (gcnew System::Windows::Forms::TextBox());
-			this->stuffedlayeringbox = (gcnew System::Windows::Forms::ComboBox());
-			this->stuffedlayerlabel = (gcnew System::Windows::Forms::Label());
-			this->stuffedfillingbox = (gcnew System::Windows::Forms::ComboBox());
-			this->stuffedfillinglabel = (gcnew System::Windows::Forms::Label());
-			this->stuffedcheeselbel = (gcnew System::Windows::Forms::Label());
-			this->stuffedcheezebox = (gcnew System::Windows::Forms::ComboBox());
-			this->sicilianoilbox = (gcnew System::Windows::Forms::ComboBox());
-			this->sicilianoillabel = (gcnew System::Windows::Forms::Label());
-			this->sicilianpanlabel = (gcnew System::Windows::Forms::Label());
-			this->sicilianpanbox = (gcnew System::Windows::Forms::ComboBox());
-			this->focaciaoilbox = (gcnew System::Windows::Forms::ComboBox());
-			this->focaciaoillabel = (gcnew System::Windows::Forms::Label());
-			this->focaciaherblabel = (gcnew System::Windows::Forms::Label());
-			this->focaciaherbbox = (gcnew System::Windows::Forms::ComboBox());
-			this->deepdishsaucebox = (gcnew System::Windows::Forms::ComboBox());
-			this->deepdishsaucelabel = (gcnew System::Windows::Forms::Label());
-			this->deepdishthicknesslabel = (gcnew System::Windows::Forms::Label());
-			this->deepdishthicknessbox = (gcnew System::Windows::Forms::ComboBox());
-			this->stlouiscutbox = (gcnew System::Windows::Forms::CheckBox());
-			this->stlouischeesebox = (gcnew System::Windows::Forms::CheckBox());
-			this->newyorkmineral = (gcnew System::Windows::Forms::CheckBox());
-			this->newyorkherblabel = (gcnew System::Windows::Forms::Label());
-			this->newyorkherbbox = (gcnew System::Windows::Forms::ComboBox());
-			this->neapolitanhand = (gcnew System::Windows::Forms::CheckBox());
-			this->neapolitancookstylebox = (gcnew System::Windows::Forms::ComboBox());
-			this->neapolitancooklabel = (gcnew System::Windows::Forms::Label());
-			this->stuffedcheckbox = (gcnew System::Windows::Forms::CheckBox());
-			this->siciliancheckbox = (gcnew System::Windows::Forms::CheckBox());
-			this->focaciacheckbox = (gcnew System::Windows::Forms::CheckBox());
-			this->deepdishcheckbox = (gcnew System::Windows::Forms::CheckBox());
-			this->stlouischeckbox = (gcnew System::Windows::Forms::CheckBox());
-			this->newyorkcheckbox = (gcnew System::Windows::Forms::CheckBox());
-			this->neapolitancheckbox = (gcnew System::Windows::Forms::CheckBox());
-			this->toflavormenu = (gcnew System::Windows::Forms::Button());
-			this->deepdishpic = (gcnew System::Windows::Forms::Label());
-			this->stuffedpic = (gcnew System::Windows::Forms::Label());
-			this->sicilianpic = (gcnew System::Windows::Forms::Label());
-			this->focaciapic = (gcnew System::Windows::Forms::Label());
-			this->stlouispic = (gcnew System::Windows::Forms::Label());
-			this->newyorkpic = (gcnew System::Windows::Forms::Label());
-			this->neapolitanpic = (gcnew System::Windows::Forms::Label());
-			this->italiancookstylebox = (gcnew System::Windows::Forms::ComboBox());
-			this->italiancooklabel = (gcnew System::Windows::Forms::Label());
-			this->italianherblabel = (gcnew System::Windows::Forms::Label());
-			this->italianherbbox = (gcnew System::Windows::Forms::ComboBox());
-			this->italianpic = (gcnew System::Windows::Forms::Label());
-			this->italiancheckbox = (gcnew System::Windows::Forms::CheckBox());
-			this->Crustheading = (gcnew System::Windows::Forms::Label());
 			this->UserLogin = (gcnew System::Windows::Forms::TabPage());
 			this->incorrect = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -604,6 +601,83 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->SignUPtext = (gcnew System::Windows::Forms::Label());
 			this->SignUpHeading = (gcnew System::Windows::Forms::Label());
 			this->UserPage = (gcnew System::Windows::Forms::TabPage());
+			this->PreMade = (gcnew System::Windows::Forms::TabPage());
+			this->pizzaamountbox = (gcnew System::Windows::Forms::ComboBox());
+			this->startmenubox = (gcnew System::Windows::Forms::Button());
+			this->sizeofpizzabox5 = (gcnew System::Windows::Forms::ComboBox());
+			this->sizeofpizzalabel5 = (gcnew System::Windows::Forms::Label());
+			this->sizeofpizzabox4 = (gcnew System::Windows::Forms::ComboBox());
+			this->sizeofpizzalabel4 = (gcnew System::Windows::Forms::Label());
+			this->sizeofpizzabox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->sizeofpizzalabel3 = (gcnew System::Windows::Forms::Label());
+			this->sizeofpizzabox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->sizeofpizzalaebl2 = (gcnew System::Windows::Forms::Label());
+			this->sizeofpizzabox = (gcnew System::Windows::Forms::ComboBox());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->sizeofpizzalabel = (gcnew System::Windows::Forms::Label());
+			this->pizzaamountlabel = (gcnew System::Windows::Forms::Label());
+			this->chefchoicesubheading2 = (gcnew System::Windows::Forms::Label());
+			this->allcheesebox = (gcnew System::Windows::Forms::CheckBox());
+			this->allcheesepic = (gcnew System::Windows::Forms::Label());
+			this->wickedblendbox = (gcnew System::Windows::Forms::CheckBox());
+			this->wickedblendpic = (gcnew System::Windows::Forms::Label());
+			this->chickensupremebox = (gcnew System::Windows::Forms::CheckBox());
+			this->chickensupremepic = (gcnew System::Windows::Forms::Label());
+			this->fajitablastbox = (gcnew System::Windows::Forms::CheckBox());
+			this->fajitablastpic = (gcnew System::Windows::Forms::Label());
+			this->chefchoicesubheading = (gcnew System::Windows::Forms::Label());
+			this->ChefChoiceHeading = (gcnew System::Windows::Forms::Label());
+			this->CrustSelect = (gcnew System::Windows::Forms::TabPage());
+			this->crustreq = (gcnew System::Windows::Forms::Label());
+			this->crustpricebox = (gcnew System::Windows::Forms::TextBox());
+			this->stuffedlayeringbox = (gcnew System::Windows::Forms::ComboBox());
+			this->stuffedlayerlabel = (gcnew System::Windows::Forms::Label());
+			this->stuffedfillingbox = (gcnew System::Windows::Forms::ComboBox());
+			this->stuffedfillinglabel = (gcnew System::Windows::Forms::Label());
+			this->stuffedcheeselbel = (gcnew System::Windows::Forms::Label());
+			this->stuffedcheezebox = (gcnew System::Windows::Forms::ComboBox());
+			this->sicilianoilbox = (gcnew System::Windows::Forms::ComboBox());
+			this->sicilianoillabel = (gcnew System::Windows::Forms::Label());
+			this->sicilianpanlabel = (gcnew System::Windows::Forms::Label());
+			this->sicilianpanbox = (gcnew System::Windows::Forms::ComboBox());
+			this->focaciaoilbox = (gcnew System::Windows::Forms::ComboBox());
+			this->focaciaoillabel = (gcnew System::Windows::Forms::Label());
+			this->focaciaherblabel = (gcnew System::Windows::Forms::Label());
+			this->focaciaherbbox = (gcnew System::Windows::Forms::ComboBox());
+			this->deepdishsaucebox = (gcnew System::Windows::Forms::ComboBox());
+			this->deepdishsaucelabel = (gcnew System::Windows::Forms::Label());
+			this->deepdishthicknesslabel = (gcnew System::Windows::Forms::Label());
+			this->deepdishthicknessbox = (gcnew System::Windows::Forms::ComboBox());
+			this->stlouiscutbox = (gcnew System::Windows::Forms::CheckBox());
+			this->stlouischeesebox = (gcnew System::Windows::Forms::CheckBox());
+			this->newyorkmineral = (gcnew System::Windows::Forms::CheckBox());
+			this->newyorkherblabel = (gcnew System::Windows::Forms::Label());
+			this->newyorkherbbox = (gcnew System::Windows::Forms::ComboBox());
+			this->neapolitanhand = (gcnew System::Windows::Forms::CheckBox());
+			this->neapolitancookstylebox = (gcnew System::Windows::Forms::ComboBox());
+			this->neapolitancooklabel = (gcnew System::Windows::Forms::Label());
+			this->stuffedcheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->siciliancheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->focaciacheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->deepdishcheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->stlouischeckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->newyorkcheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->neapolitancheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->toflavormenu = (gcnew System::Windows::Forms::Button());
+			this->deepdishpic = (gcnew System::Windows::Forms::Label());
+			this->stuffedpic = (gcnew System::Windows::Forms::Label());
+			this->sicilianpic = (gcnew System::Windows::Forms::Label());
+			this->focaciapic = (gcnew System::Windows::Forms::Label());
+			this->stlouispic = (gcnew System::Windows::Forms::Label());
+			this->newyorkpic = (gcnew System::Windows::Forms::Label());
+			this->neapolitanpic = (gcnew System::Windows::Forms::Label());
+			this->italiancookstylebox = (gcnew System::Windows::Forms::ComboBox());
+			this->italiancooklabel = (gcnew System::Windows::Forms::Label());
+			this->italianherblabel = (gcnew System::Windows::Forms::Label());
+			this->italianherbbox = (gcnew System::Windows::Forms::ComboBox());
+			this->italianpic = (gcnew System::Windows::Forms::Label());
+			this->italiancheckbox = (gcnew System::Windows::Forms::CheckBox());
+			this->Crustheading = (gcnew System::Windows::Forms::Label());
 			this->FlavourSelect = (gcnew System::Windows::Forms::TabPage());
 			this->FlavourPriceBox = (gcnew System::Windows::Forms::TextBox());
 			this->backtocrustbutton = (gcnew System::Windows::Forms::Button());
@@ -675,6 +749,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingHeading = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->CheckoutPage = (gcnew System::Windows::Forms::TabPage());
+			this->OrderNoCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->OrderNoCheckoutLabel = (gcnew System::Windows::Forms::Label());
 			this->TotalPriceCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->AddOnCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
@@ -699,13 +775,12 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->PhoneCheckoutLabel = (gcnew System::Windows::Forms::Label());
 			this->NameCheckOutText = (gcnew System::Windows::Forms::TextBox());
 			this->NameLabelCheckout = (gcnew System::Windows::Forms::Label());
-			this->OrderNoCheckoutLabel = (gcnew System::Windows::Forms::Label());
-			this->OrderNoCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
-			this->CrustSelect->SuspendLayout();
 			this->UserLogin->SuspendLayout();
 			this->SignUpPage->SuspendLayout();
+			this->PreMade->SuspendLayout();
+			this->CrustSelect->SuspendLayout();
 			this->FlavourSelect->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->VeggieDelightPictureBox))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TheCheesePictureBox))->BeginInit();
@@ -728,10 +803,11 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// tabControl1
 			// 
 			this->tabControl1->Controls->Add(this->MainMenu);
-			this->tabControl1->Controls->Add(this->CrustSelect);
 			this->tabControl1->Controls->Add(this->UserLogin);
 			this->tabControl1->Controls->Add(this->SignUpPage);
 			this->tabControl1->Controls->Add(this->UserPage);
+			this->tabControl1->Controls->Add(this->PreMade);
+			this->tabControl1->Controls->Add(this->CrustSelect);
 			this->tabControl1->Controls->Add(this->FlavourSelect);
 			this->tabControl1->Controls->Add(this->ToppingSelect);
 			this->tabControl1->Controls->Add(this->CheckoutPage);
@@ -832,689 +908,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->title->Size = System::Drawing::Size(480, 49);
 			this->title->TabIndex = 5;
 			this->title->Text = L"Welcome To SEYMOUR\r\n\r\n";
-			// 
-			// CrustSelect
-			// 
-			this->CrustSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CrustSelect.BackgroundImage")));
-			this->CrustSelect->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->CrustSelect->Controls->Add(this->crustreq);
-			this->CrustSelect->Controls->Add(this->crustpricebox);
-			this->CrustSelect->Controls->Add(this->stuffedlayeringbox);
-			this->CrustSelect->Controls->Add(this->stuffedlayerlabel);
-			this->CrustSelect->Controls->Add(this->stuffedfillingbox);
-			this->CrustSelect->Controls->Add(this->stuffedfillinglabel);
-			this->CrustSelect->Controls->Add(this->stuffedcheeselbel);
-			this->CrustSelect->Controls->Add(this->stuffedcheezebox);
-			this->CrustSelect->Controls->Add(this->sicilianoilbox);
-			this->CrustSelect->Controls->Add(this->sicilianoillabel);
-			this->CrustSelect->Controls->Add(this->sicilianpanlabel);
-			this->CrustSelect->Controls->Add(this->sicilianpanbox);
-			this->CrustSelect->Controls->Add(this->focaciaoilbox);
-			this->CrustSelect->Controls->Add(this->focaciaoillabel);
-			this->CrustSelect->Controls->Add(this->focaciaherblabel);
-			this->CrustSelect->Controls->Add(this->focaciaherbbox);
-			this->CrustSelect->Controls->Add(this->deepdishsaucebox);
-			this->CrustSelect->Controls->Add(this->deepdishsaucelabel);
-			this->CrustSelect->Controls->Add(this->deepdishthicknesslabel);
-			this->CrustSelect->Controls->Add(this->deepdishthicknessbox);
-			this->CrustSelect->Controls->Add(this->stlouiscutbox);
-			this->CrustSelect->Controls->Add(this->stlouischeesebox);
-			this->CrustSelect->Controls->Add(this->newyorkmineral);
-			this->CrustSelect->Controls->Add(this->newyorkherblabel);
-			this->CrustSelect->Controls->Add(this->newyorkherbbox);
-			this->CrustSelect->Controls->Add(this->neapolitanhand);
-			this->CrustSelect->Controls->Add(this->neapolitancookstylebox);
-			this->CrustSelect->Controls->Add(this->neapolitancooklabel);
-			this->CrustSelect->Controls->Add(this->stuffedcheckbox);
-			this->CrustSelect->Controls->Add(this->siciliancheckbox);
-			this->CrustSelect->Controls->Add(this->focaciacheckbox);
-			this->CrustSelect->Controls->Add(this->deepdishcheckbox);
-			this->CrustSelect->Controls->Add(this->stlouischeckbox);
-			this->CrustSelect->Controls->Add(this->newyorkcheckbox);
-			this->CrustSelect->Controls->Add(this->neapolitancheckbox);
-			this->CrustSelect->Controls->Add(this->toflavormenu);
-			this->CrustSelect->Controls->Add(this->deepdishpic);
-			this->CrustSelect->Controls->Add(this->stuffedpic);
-			this->CrustSelect->Controls->Add(this->sicilianpic);
-			this->CrustSelect->Controls->Add(this->focaciapic);
-			this->CrustSelect->Controls->Add(this->stlouispic);
-			this->CrustSelect->Controls->Add(this->newyorkpic);
-			this->CrustSelect->Controls->Add(this->neapolitanpic);
-			this->CrustSelect->Controls->Add(this->italiancookstylebox);
-			this->CrustSelect->Controls->Add(this->italiancooklabel);
-			this->CrustSelect->Controls->Add(this->italianherblabel);
-			this->CrustSelect->Controls->Add(this->italianherbbox);
-			this->CrustSelect->Controls->Add(this->italianpic);
-			this->CrustSelect->Controls->Add(this->italiancheckbox);
-			this->CrustSelect->Controls->Add(this->Crustheading);
-			this->CrustSelect->Location = System::Drawing::Point(4, 22);
-			this->CrustSelect->Name = L"CrustSelect";
-			this->CrustSelect->Size = System::Drawing::Size(1210, 576);
-			this->CrustSelect->TabIndex = 1;
-			this->CrustSelect->Text = L"Crust select";
-			this->CrustSelect->UseVisualStyleBackColor = true;
-			this->CrustSelect->Enter += gcnew System::EventHandler(this, &MyForm::CrustSelect_Enter);
-			// 
-			// crustreq
-			// 
-			this->crustreq->AutoSize = true;
-			this->crustreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->crustreq->ForeColor = System::Drawing::Color::Red;
-			this->crustreq->Location = System::Drawing::Point(1048, 458);
-			this->crustreq->Name = L"crustreq";
-			this->crustreq->Size = System::Drawing::Size(163, 18);
-			this->crustreq->TabIndex = 51;
-			this->crustreq->Text = L"Please Choose One!";
-			this->crustreq->Visible = false;
-			// 
-			// crustpricebox
-			// 
-			this->crustpricebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->crustpricebox->Location = System::Drawing::Point(1047, 358);
-			this->crustpricebox->Multiline = true;
-			this->crustpricebox->Name = L"crustpricebox";
-			this->crustpricebox->ReadOnly = true;
-			this->crustpricebox->Size = System::Drawing::Size(151, 41);
-			this->crustpricebox->TabIndex = 50;
-			this->crustpricebox->Text = L"CURRENT PRICE\r\n= Rs ";
-			this->crustpricebox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
-			// stuffedlayeringbox
-			// 
-			this->stuffedlayeringbox->FormattingEnabled = true;
-			this->stuffedlayeringbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Single", L"Thincut", L"Double" });
-			this->stuffedlayeringbox->Location = System::Drawing::Point(974, 547);
-			this->stuffedlayeringbox->Name = L"stuffedlayeringbox";
-			this->stuffedlayeringbox->Size = System::Drawing::Size(66, 21);
-			this->stuffedlayeringbox->TabIndex = 49;
-			this->stuffedlayeringbox->Visible = false;
-			// 
-			// stuffedlayerlabel
-			// 
-			this->stuffedlayerlabel->AutoSize = true;
-			this->stuffedlayerlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->stuffedlayerlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->stuffedlayerlabel->Location = System::Drawing::Point(980, 531);
-			this->stuffedlayerlabel->Name = L"stuffedlayerlabel";
-			this->stuffedlayerlabel->Size = System::Drawing::Size(55, 13);
-			this->stuffedlayerlabel->TabIndex = 48;
-			this->stuffedlayerlabel->Text = L"Layering";
-			this->stuffedlayerlabel->Visible = false;
-			// 
-			// stuffedfillingbox
-			// 
-			this->stuffedfillingbox->FormattingEnabled = true;
-			this->stuffedfillingbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Edge", L"Base", L"Whole" });
-			this->stuffedfillingbox->Location = System::Drawing::Point(901, 547);
-			this->stuffedfillingbox->Name = L"stuffedfillingbox";
-			this->stuffedfillingbox->Size = System::Drawing::Size(66, 21);
-			this->stuffedfillingbox->TabIndex = 47;
-			this->stuffedfillingbox->Visible = false;
-			// 
-			// stuffedfillinglabel
-			// 
-			this->stuffedfillinglabel->AutoSize = true;
-			this->stuffedfillinglabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->stuffedfillinglabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->stuffedfillinglabel->Location = System::Drawing::Point(907, 531);
-			this->stuffedfillinglabel->Name = L"stuffedfillinglabel";
-			this->stuffedfillinglabel->Size = System::Drawing::Size(40, 13);
-			this->stuffedfillinglabel->TabIndex = 46;
-			this->stuffedfillinglabel->Text = L"Filling";
-			this->stuffedfillinglabel->Visible = false;
-			// 
-			// stuffedcheeselbel
-			// 
-			this->stuffedcheeselbel->AutoSize = true;
-			this->stuffedcheeselbel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->stuffedcheeselbel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->stuffedcheeselbel->Location = System::Drawing::Point(837, 531);
-			this->stuffedcheeselbel->Name = L"stuffedcheeselbel";
-			this->stuffedcheeselbel->Size = System::Drawing::Size(49, 13);
-			this->stuffedcheeselbel->TabIndex = 45;
-			this->stuffedcheeselbel->Text = L"Cheese";
-			this->stuffedcheeselbel->Visible = false;
-			// 
-			// stuffedcheezebox
-			// 
-			this->stuffedcheezebox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->stuffedcheezebox->FormattingEnabled = true;
-			this->stuffedcheezebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cheddar", L"American", L"Mozerralla" });
-			this->stuffedcheezebox->Location = System::Drawing::Point(828, 547);
-			this->stuffedcheezebox->Name = L"stuffedcheezebox";
-			this->stuffedcheezebox->Size = System::Drawing::Size(67, 21);
-			this->stuffedcheezebox->TabIndex = 44;
-			this->stuffedcheezebox->Visible = false;
-			// 
-			// sicilianoilbox
-			// 
-			this->sicilianoilbox->FormattingEnabled = true;
-			this->sicilianoilbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Olive ", L"Canola", L"Flavored", L"Cooking" });
-			this->sicilianoilbox->Location = System::Drawing::Point(709, 547);
-			this->sicilianoilbox->Name = L"sicilianoilbox";
-			this->sicilianoilbox->Size = System::Drawing::Size(84, 21);
-			this->sicilianoilbox->TabIndex = 43;
-			this->sicilianoilbox->Visible = false;
-			// 
-			// sicilianoillabel
-			// 
-			this->sicilianoillabel->AutoSize = true;
-			this->sicilianoillabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->sicilianoillabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->sicilianoillabel->Location = System::Drawing::Point(710, 531);
-			this->sicilianoillabel->Name = L"sicilianoillabel";
-			this->sicilianoillabel->Size = System::Drawing::Size(65, 13);
-			this->sicilianoillabel->TabIndex = 42;
-			this->sicilianoillabel->Text = L"Oil Choice";
-			this->sicilianoillabel->Visible = false;
-			// 
-			// sicilianpanlabel
-			// 
-			this->sicilianpanlabel->AutoSize = true;
-			this->sicilianpanlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->sicilianpanlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->sicilianpanlabel->Location = System::Drawing::Point(610, 531);
-			this->sicilianpanlabel->Name = L"sicilianpanlabel";
-			this->sicilianpanlabel->Size = System::Drawing::Size(72, 13);
-			this->sicilianpanlabel->TabIndex = 41;
-			this->sicilianpanlabel->Text = L"Pan Choice";
-			this->sicilianpanlabel->Visible = false;
-			// 
-			// sicilianpanbox
-			// 
-			this->sicilianpanbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->sicilianpanbox->FormattingEnabled = true;
-			this->sicilianpanbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Standard", L"Deep", L"High Temp" });
-			this->sicilianpanbox->Location = System::Drawing::Point(613, 547);
-			this->sicilianpanbox->Name = L"sicilianpanbox";
-			this->sicilianpanbox->Size = System::Drawing::Size(90, 21);
-			this->sicilianpanbox->TabIndex = 40;
-			this->sicilianpanbox->Visible = false;
-			// 
-			// focaciaoilbox
-			// 
-			this->focaciaoilbox->FormattingEnabled = true;
-			this->focaciaoilbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Olive Oil", L"Scented Oil", L"Flavored Oil" });
-			this->focaciaoilbox->Location = System::Drawing::Point(468, 547);
-			this->focaciaoilbox->Name = L"focaciaoilbox";
-			this->focaciaoilbox->Size = System::Drawing::Size(84, 21);
-			this->focaciaoilbox->TabIndex = 39;
-			this->focaciaoilbox->Visible = false;
-			// 
-			// focaciaoillabel
-			// 
-			this->focaciaoillabel->AutoSize = true;
-			this->focaciaoillabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->focaciaoillabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->focaciaoillabel->Location = System::Drawing::Point(469, 531);
-			this->focaciaoillabel->Name = L"focaciaoillabel";
-			this->focaciaoillabel->Size = System::Drawing::Size(69, 13);
-			this->focaciaoillabel->TabIndex = 38;
-			this->focaciaoillabel->Text = L"Oil Coating";
-			this->focaciaoillabel->Visible = false;
-			// 
-			// focaciaherblabel
-			// 
-			this->focaciaherblabel->AutoSize = true;
-			this->focaciaherblabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->focaciaherblabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->focaciaherblabel->Location = System::Drawing::Point(369, 531);
-			this->focaciaherblabel->Name = L"focaciaherblabel";
-			this->focaciaherblabel->Size = System::Drawing::Size(40, 13);
-			this->focaciaherblabel->TabIndex = 37;
-			this->focaciaherblabel->Text = L"Herbs";
-			this->focaciaherblabel->Visible = false;
-			// 
-			// focaciaherbbox
-			// 
-			this->focaciaherbbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->focaciaherbbox->FormattingEnabled = true;
-			this->focaciaherbbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Onions", L"Garlic", L"Scallion", L"Garlic Powder" });
-			this->focaciaherbbox->Location = System::Drawing::Point(372, 547);
-			this->focaciaherbbox->Name = L"focaciaherbbox";
-			this->focaciaherbbox->Size = System::Drawing::Size(90, 21);
-			this->focaciaherbbox->TabIndex = 36;
-			this->focaciaherbbox->Visible = false;
-			// 
-			// deepdishsaucebox
-			// 
-			this->deepdishsaucebox->FormattingEnabled = true;
-			this->deepdishsaucebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Ketchup", L"Chilli", L"Special Sauce" });
-			this->deepdishsaucebox->Location = System::Drawing::Point(234, 547);
-			this->deepdishsaucebox->Name = L"deepdishsaucebox";
-			this->deepdishsaucebox->Size = System::Drawing::Size(84, 21);
-			this->deepdishsaucebox->TabIndex = 35;
-			this->deepdishsaucebox->Visible = false;
-			// 
-			// deepdishsaucelabel
-			// 
-			this->deepdishsaucelabel->AutoSize = true;
-			this->deepdishsaucelabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->deepdishsaucelabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->deepdishsaucelabel->Location = System::Drawing::Point(235, 531);
-			this->deepdishsaucelabel->Name = L"deepdishsaucelabel";
-			this->deepdishsaucelabel->Size = System::Drawing::Size(49, 13);
-			this->deepdishsaucelabel->TabIndex = 34;
-			this->deepdishsaucelabel->Text = L"Sauces";
-			this->deepdishsaucelabel->Visible = false;
-			// 
-			// deepdishthicknesslabel
-			// 
-			this->deepdishthicknesslabel->AutoSize = true;
-			this->deepdishthicknesslabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->deepdishthicknesslabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->deepdishthicknesslabel->Location = System::Drawing::Point(135, 531);
-			this->deepdishthicknesslabel->Name = L"deepdishthicknesslabel";
-			this->deepdishthicknesslabel->Size = System::Drawing::Size(65, 13);
-			this->deepdishthicknesslabel->TabIndex = 33;
-			this->deepdishthicknesslabel->Text = L"Thickness";
-			this->deepdishthicknesslabel->Visible = false;
-			// 
-			// deepdishthicknessbox
-			// 
-			this->deepdishthicknessbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->deepdishthicknessbox->FormattingEnabled = true;
-			this->deepdishthicknessbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Two ``", L"Two and a half ``", L"Three ``" });
-			this->deepdishthicknessbox->Location = System::Drawing::Point(138, 547);
-			this->deepdishthicknessbox->Name = L"deepdishthicknessbox";
-			this->deepdishthicknessbox->Size = System::Drawing::Size(90, 21);
-			this->deepdishthicknessbox->TabIndex = 32;
-			this->deepdishthicknessbox->Visible = false;
-			// 
-			// stlouiscutbox
-			// 
-			this->stlouiscutbox->AutoSize = true;
-			this->stlouiscutbox->Checked = true;
-			this->stlouiscutbox->CheckState = System::Windows::Forms::CheckState::Checked;
-			this->stlouiscutbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->stlouiscutbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->stlouiscutbox->Location = System::Drawing::Point(926, 253);
-			this->stlouiscutbox->Name = L"stlouiscutbox";
-			this->stlouiscutbox->Size = System::Drawing::Size(94, 30);
-			this->stlouiscutbox->TabIndex = 31;
-			this->stlouiscutbox->Text = L"Tavern Cut\r\n(square cut)";
-			this->stlouiscutbox->UseVisualStyleBackColor = true;
-			this->stlouiscutbox->Visible = false;
-			// 
-			// stlouischeesebox
-			// 
-			this->stlouischeesebox->AutoSize = true;
-			this->stlouischeesebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->stlouischeesebox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->stlouischeesebox->Location = System::Drawing::Point(852, 253);
-			this->stlouischeesebox->Name = L"stlouischeesebox";
-			this->stlouischeesebox->Size = System::Drawing::Size(68, 30);
-			this->stlouischeesebox->TabIndex = 30;
-			this->stlouischeesebox->Text = L"Cheese\r\nLining";
-			this->stlouischeesebox->UseVisualStyleBackColor = true;
-			this->stlouischeesebox->Visible = false;
-			// 
-			// newyorkmineral
-			// 
-			this->newyorkmineral->AutoSize = true;
-			this->newyorkmineral->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->newyorkmineral->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->newyorkmineral->Location = System::Drawing::Point(619, 253);
-			this->newyorkmineral->Name = L"newyorkmineral";
-			this->newyorkmineral->Size = System::Drawing::Size(90, 17);
-			this->newyorkmineral->TabIndex = 29;
-			this->newyorkmineral->Text = L"Mineralized";
-			this->newyorkmineral->UseVisualStyleBackColor = true;
-			this->newyorkmineral->Visible = false;
-			// 
-			// newyorkherblabel
-			// 
-			this->newyorkherblabel->AutoSize = true;
-			this->newyorkherblabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->newyorkherblabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->newyorkherblabel->Location = System::Drawing::Point(712, 250);
-			this->newyorkherblabel->Name = L"newyorkherblabel";
-			this->newyorkherblabel->Size = System::Drawing::Size(44, 13);
-			this->newyorkherblabel->TabIndex = 28;
-			this->newyorkherblabel->Text = L"Herbs:";
-			this->newyorkherblabel->Visible = false;
-			// 
-			// newyorkherbbox
-			// 
-			this->newyorkherbbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->newyorkherbbox->FormattingEnabled = true;
-			this->newyorkherbbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"None", L"Onions", L"Garlic" });
-			this->newyorkherbbox->Location = System::Drawing::Point(715, 266);
-			this->newyorkherbbox->Name = L"newyorkherbbox";
-			this->newyorkherbbox->Size = System::Drawing::Size(59, 21);
-			this->newyorkherbbox->TabIndex = 27;
-			this->newyorkherbbox->Visible = false;
-			// 
-			// neapolitanhand
-			// 
-			this->neapolitanhand->AutoSize = true;
-			this->neapolitanhand->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->neapolitanhand->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->neapolitanhand->Location = System::Drawing::Point(372, 249);
-			this->neapolitanhand->Name = L"neapolitanhand";
-			this->neapolitanhand->Size = System::Drawing::Size(101, 17);
-			this->neapolitanhand->TabIndex = 26;
-			this->neapolitanhand->Text = L"Hand Tossed";
-			this->neapolitanhand->UseVisualStyleBackColor = true;
-			this->neapolitanhand->Visible = false;
-			// 
-			// neapolitancookstylebox
-			// 
-			this->neapolitancookstylebox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->neapolitancookstylebox->FormattingEnabled = true;
-			this->neapolitancookstylebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Pan", L"Wood Fire", L"Oven" });
-			this->neapolitancookstylebox->Location = System::Drawing::Point(479, 266);
-			this->neapolitancookstylebox->Name = L"neapolitancookstylebox";
-			this->neapolitancookstylebox->Size = System::Drawing::Size(84, 21);
-			this->neapolitancookstylebox->TabIndex = 25;
-			this->neapolitancookstylebox->Visible = false;
-			// 
-			// neapolitancooklabel
-			// 
-			this->neapolitancooklabel->AutoSize = true;
-			this->neapolitancooklabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->neapolitancooklabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->neapolitancooklabel->Location = System::Drawing::Point(479, 250);
-			this->neapolitancooklabel->Name = L"neapolitancooklabel";
-			this->neapolitancooklabel->Size = System::Drawing::Size(62, 13);
-			this->neapolitancooklabel->TabIndex = 24;
-			this->neapolitancooklabel->Text = L"Cookstyle";
-			this->neapolitancooklabel->Visible = false;
-			// 
-			// stuffedcheckbox
-			// 
-			this->stuffedcheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->stuffedcheckbox->ForeColor = System::Drawing::Color::White;
-			this->stuffedcheckbox->Location = System::Drawing::Point(840, 433);
-			this->stuffedcheckbox->Name = L"stuffedcheckbox";
-			this->stuffedcheckbox->Size = System::Drawing::Size(176, 84);
-			this->stuffedcheckbox->TabIndex = 23;
-			this->stuffedcheckbox->Text = L"stuffed text here";
-			this->stuffedcheckbox->UseVisualStyleBackColor = true;
-			this->stuffedcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::stuffedcheckbox_CheckedChanged);
-			// 
-			// siciliancheckbox
-			// 
-			this->siciliancheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->siciliancheckbox->ForeColor = System::Drawing::Color::White;
-			this->siciliancheckbox->Location = System::Drawing::Point(617, 433);
-			this->siciliancheckbox->Name = L"siciliancheckbox";
-			this->siciliancheckbox->Size = System::Drawing::Size(176, 84);
-			this->siciliancheckbox->TabIndex = 22;
-			this->siciliancheckbox->Text = L"Sicilian text here";
-			this->siciliancheckbox->UseVisualStyleBackColor = true;
-			this->siciliancheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::siciliancheckbox_CheckedChanged);
-			// 
-			// focaciacheckbox
-			// 
-			this->focaciacheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->focaciacheckbox->ForeColor = System::Drawing::Color::White;
-			this->focaciacheckbox->Location = System::Drawing::Point(372, 433);
-			this->focaciacheckbox->Name = L"focaciacheckbox";
-			this->focaciacheckbox->Size = System::Drawing::Size(176, 84);
-			this->focaciacheckbox->TabIndex = 21;
-			this->focaciacheckbox->Text = L"Focacia text here";
-			this->focaciacheckbox->UseVisualStyleBackColor = true;
-			this->focaciacheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::focaciacheckbox_CheckedChanged);
-			// 
-			// deepdishcheckbox
-			// 
-			this->deepdishcheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->deepdishcheckbox->ForeColor = System::Drawing::Color::White;
-			this->deepdishcheckbox->Location = System::Drawing::Point(138, 433);
-			this->deepdishcheckbox->Name = L"deepdishcheckbox";
-			this->deepdishcheckbox->Size = System::Drawing::Size(176, 97);
-			this->deepdishcheckbox->TabIndex = 20;
-			this->deepdishcheckbox->Text = L"Deep dish text here";
-			this->deepdishcheckbox->UseVisualStyleBackColor = true;
-			this->deepdishcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::deepdishcheckbox_CheckedChanged);
-			// 
-			// stlouischeckbox
-			// 
-			this->stlouischeckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->stlouischeckbox->ForeColor = System::Drawing::Color::White;
-			this->stlouischeckbox->Location = System::Drawing::Point(840, 163);
-			this->stlouischeckbox->Name = L"stlouischeckbox";
-			this->stlouischeckbox->Size = System::Drawing::Size(176, 84);
-			this->stlouischeckbox->TabIndex = 19;
-			this->stlouischeckbox->Text = L"St louis text";
-			this->stlouischeckbox->UseVisualStyleBackColor = true;
-			this->stlouischeckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::stlouischeckbox_CheckedChanged);
-			// 
-			// newyorkcheckbox
-			// 
-			this->newyorkcheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->newyorkcheckbox->ForeColor = System::Drawing::Color::White;
-			this->newyorkcheckbox->Location = System::Drawing::Point(617, 163);
-			this->newyorkcheckbox->Name = L"newyorkcheckbox";
-			this->newyorkcheckbox->Size = System::Drawing::Size(176, 84);
-			this->newyorkcheckbox->TabIndex = 18;
-			this->newyorkcheckbox->Text = L"NewYork text here";
-			this->newyorkcheckbox->UseVisualStyleBackColor = true;
-			this->newyorkcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::newyorkcheckbox_CheckedChanged);
-			// 
-			// neapolitancheckbox
-			// 
-			this->neapolitancheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->neapolitancheckbox->ForeColor = System::Drawing::Color::White;
-			this->neapolitancheckbox->Location = System::Drawing::Point(372, 163);
-			this->neapolitancheckbox->Name = L"neapolitancheckbox";
-			this->neapolitancheckbox->Size = System::Drawing::Size(176, 84);
-			this->neapolitancheckbox->TabIndex = 17;
-			this->neapolitancheckbox->Text = L"Neapolitan text here";
-			this->neapolitancheckbox->UseVisualStyleBackColor = true;
-			this->neapolitancheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::neapolitancheckbox_CheckedChanged);
-			// 
-			// toflavormenu
-			// 
-			this->toflavormenu->Location = System::Drawing::Point(1063, 477);
-			this->toflavormenu->Name = L"toflavormenu";
-			this->toflavormenu->Size = System::Drawing::Size(135, 67);
-			this->toflavormenu->TabIndex = 16;
-			this->toflavormenu->Text = L"Go to Flavours Select";
-			this->toflavormenu->UseVisualStyleBackColor = true;
-			this->toflavormenu->Click += gcnew System::EventHandler(this, &MyForm::toflavormenu_Click);
-			// 
-			// deepdishpic
-			// 
-			this->deepdishpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->deepdishpic->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->deepdishpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"deepdishpic.Image")));
-			this->deepdishpic->Location = System::Drawing::Point(152, 300);
-			this->deepdishpic->Name = L"deepdishpic";
-			this->deepdishpic->Size = System::Drawing::Size(141, 130);
-			this->deepdishpic->TabIndex = 15;
-			this->deepdishpic->Text = L"DEEPDISH";
-			this->deepdishpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// stuffedpic
-			// 
-			this->stuffedpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->stuffedpic->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->stuffedpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"stuffedpic.Image")));
-			this->stuffedpic->Location = System::Drawing::Point(861, 300);
-			this->stuffedpic->Name = L"stuffedpic";
-			this->stuffedpic->Size = System::Drawing::Size(141, 130);
-			this->stuffedpic->TabIndex = 14;
-			this->stuffedpic->Text = L"STUFFED";
-			this->stuffedpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// sicilianpic
-			// 
-			this->sicilianpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->sicilianpic->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->sicilianpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"sicilianpic.Image")));
-			this->sicilianpic->Location = System::Drawing::Point(633, 300);
-			this->sicilianpic->Name = L"sicilianpic";
-			this->sicilianpic->Size = System::Drawing::Size(141, 130);
-			this->sicilianpic->TabIndex = 13;
-			this->sicilianpic->Text = L"SICILIAN";
-			this->sicilianpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// focaciapic
-			// 
-			this->focaciapic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->focaciapic->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->focaciapic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"focaciapic.Image")));
-			this->focaciapic->Location = System::Drawing::Point(387, 300);
-			this->focaciapic->Name = L"focaciapic";
-			this->focaciapic->Size = System::Drawing::Size(141, 130);
-			this->focaciapic->TabIndex = 12;
-			this->focaciapic->Text = L"FOCACIA";
-			this->focaciapic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// stlouispic
-			// 
-			this->stlouispic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->stlouispic->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->stlouispic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"stlouispic.Image")));
-			this->stlouispic->Location = System::Drawing::Point(861, 30);
-			this->stlouispic->Name = L"stlouispic";
-			this->stlouispic->Size = System::Drawing::Size(141, 130);
-			this->stlouispic->TabIndex = 11;
-			this->stlouispic->Text = L"ST. LOUIS";
-			this->stlouispic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// newyorkpic
-			// 
-			this->newyorkpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->newyorkpic->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->newyorkpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"newyorkpic.Image")));
-			this->newyorkpic->Location = System::Drawing::Point(633, 30);
-			this->newyorkpic->Name = L"newyorkpic";
-			this->newyorkpic->Size = System::Drawing::Size(141, 130);
-			this->newyorkpic->TabIndex = 10;
-			this->newyorkpic->Text = L"NEWYORK";
-			this->newyorkpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// neapolitanpic
-			// 
-			this->neapolitanpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->neapolitanpic->ForeColor = System::Drawing::SystemColors::Control;
-			this->neapolitanpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"neapolitanpic.Image")));
-			this->neapolitanpic->Location = System::Drawing::Point(387, 30);
-			this->neapolitanpic->Name = L"neapolitanpic";
-			this->neapolitanpic->Size = System::Drawing::Size(141, 130);
-			this->neapolitanpic->TabIndex = 9;
-			this->neapolitanpic->Text = L"NEAPOLITAN";
-			this->neapolitanpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// italiancookstylebox
-			// 
-			this->italiancookstylebox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->italiancookstylebox->FormattingEnabled = true;
-			this->italiancookstylebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Pan", L"Wood Fire", L"Oven" });
-			this->italiancookstylebox->Location = System::Drawing::Point(230, 266);
-			this->italiancookstylebox->Name = L"italiancookstylebox";
-			this->italiancookstylebox->Size = System::Drawing::Size(84, 21);
-			this->italiancookstylebox->TabIndex = 8;
-			this->italiancookstylebox->Visible = false;
-			// 
-			// italiancooklabel
-			// 
-			this->italiancooklabel->AutoSize = true;
-			this->italiancooklabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->italiancooklabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->italiancooklabel->Location = System::Drawing::Point(231, 250);
-			this->italiancooklabel->Name = L"italiancooklabel";
-			this->italiancooklabel->Size = System::Drawing::Size(62, 13);
-			this->italiancooklabel->TabIndex = 7;
-			this->italiancooklabel->Text = L"Cookstyle";
-			this->italiancooklabel->Visible = false;
-			// 
-			// italianherblabel
-			// 
-			this->italianherblabel->AutoSize = true;
-			this->italianherblabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->italianherblabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->italianherblabel->Location = System::Drawing::Point(152, 250);
-			this->italianherblabel->Name = L"italianherblabel";
-			this->italianherblabel->Size = System::Drawing::Size(44, 13);
-			this->italianherblabel->TabIndex = 6;
-			this->italianherblabel->Text = L"Herbs:";
-			this->italianherblabel->Visible = false;
-			// 
-			// italianherbbox
-			// 
-			this->italianherbbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->italianherbbox->FormattingEnabled = true;
-			this->italianherbbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"None", L"Onions", L"Garlic" });
-			this->italianherbbox->Location = System::Drawing::Point(155, 266);
-			this->italianherbbox->Name = L"italianherbbox";
-			this->italianherbbox->Size = System::Drawing::Size(59, 21);
-			this->italianherbbox->TabIndex = 5;
-			this->italianherbbox->Visible = false;
-			// 
-			// italianpic
-			// 
-			this->italianpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->italianpic->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->italianpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"italianpic.Image")));
-			this->italianpic->Location = System::Drawing::Point(152, 30);
-			this->italianpic->Name = L"italianpic";
-			this->italianpic->Size = System::Drawing::Size(141, 130);
-			this->italianpic->TabIndex = 4;
-			this->italianpic->Text = L"ITALIAN";
-			this->italianpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			// 
-			// italiancheckbox
-			// 
-			this->italiancheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->italiancheckbox->ForeColor = System::Drawing::Color::White;
-			this->italiancheckbox->Location = System::Drawing::Point(138, 163);
-			this->italiancheckbox->Name = L"italiancheckbox";
-			this->italiancheckbox->Size = System::Drawing::Size(176, 84);
-			this->italiancheckbox->TabIndex = 2;
-			this->italiancheckbox->Text = L"Italian text here";
-			this->italiancheckbox->UseVisualStyleBackColor = true;
-			this->italiancheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::italiancheckbox_CheckedChanged);
-			// 
-			// Crustheading
-			// 
-			this->Crustheading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->Crustheading->ForeColor = System::Drawing::Color::White;
-			this->Crustheading->Location = System::Drawing::Point(1040, 148);
-			this->Crustheading->Name = L"Crustheading";
-			this->Crustheading->Size = System::Drawing::Size(154, 97);
-			this->Crustheading->TabIndex = 0;
-			this->Crustheading->Text = L"CRUST MENU";
-			this->Crustheading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// UserLogin
 			// 
@@ -2424,6 +1817,1030 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->UserPage->TabIndex = 5;
 			this->UserPage->Text = L"tabPage1";
 			this->UserPage->UseVisualStyleBackColor = true;
+			// 
+			// PreMade
+			// 
+			this->PreMade->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"PreMade.BackgroundImage")));
+			this->PreMade->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->PreMade->Controls->Add(this->pizzaamountbox);
+			this->PreMade->Controls->Add(this->startmenubox);
+			this->PreMade->Controls->Add(this->sizeofpizzabox5);
+			this->PreMade->Controls->Add(this->sizeofpizzalabel5);
+			this->PreMade->Controls->Add(this->sizeofpizzabox4);
+			this->PreMade->Controls->Add(this->sizeofpizzalabel4);
+			this->PreMade->Controls->Add(this->sizeofpizzabox3);
+			this->PreMade->Controls->Add(this->sizeofpizzalabel3);
+			this->PreMade->Controls->Add(this->sizeofpizzabox2);
+			this->PreMade->Controls->Add(this->sizeofpizzalaebl2);
+			this->PreMade->Controls->Add(this->sizeofpizzabox);
+			this->PreMade->Controls->Add(this->label12);
+			this->PreMade->Controls->Add(this->sizeofpizzalabel);
+			this->PreMade->Controls->Add(this->pizzaamountlabel);
+			this->PreMade->Controls->Add(this->chefchoicesubheading2);
+			this->PreMade->Controls->Add(this->allcheesebox);
+			this->PreMade->Controls->Add(this->allcheesepic);
+			this->PreMade->Controls->Add(this->wickedblendbox);
+			this->PreMade->Controls->Add(this->wickedblendpic);
+			this->PreMade->Controls->Add(this->chickensupremebox);
+			this->PreMade->Controls->Add(this->chickensupremepic);
+			this->PreMade->Controls->Add(this->fajitablastbox);
+			this->PreMade->Controls->Add(this->fajitablastpic);
+			this->PreMade->Controls->Add(this->chefchoicesubheading);
+			this->PreMade->Controls->Add(this->ChefChoiceHeading);
+			this->PreMade->Location = System::Drawing::Point(4, 22);
+			this->PreMade->Name = L"PreMade";
+			this->PreMade->Size = System::Drawing::Size(1210, 576);
+			this->PreMade->TabIndex = 8;
+			this->PreMade->Text = L"tabPage1";
+			this->PreMade->UseVisualStyleBackColor = true;
+			// 
+			// pizzaamountbox
+			// 
+			this->pizzaamountbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->pizzaamountbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->pizzaamountbox->FormattingEnabled = true;
+			this->pizzaamountbox->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"1", L"2", L"3", L"4", L"5" });
+			this->pizzaamountbox->Location = System::Drawing::Point(481, 390);
+			this->pizzaamountbox->Name = L"pizzaamountbox";
+			this->pizzaamountbox->Size = System::Drawing::Size(93, 28);
+			this->pizzaamountbox->TabIndex = 25;
+			// 
+			// startmenubox
+			// 
+			this->startmenubox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->startmenubox->Location = System::Drawing::Point(1040, 486);
+			this->startmenubox->Name = L"startmenubox";
+			this->startmenubox->Size = System::Drawing::Size(138, 65);
+			this->startmenubox->TabIndex = 24;
+			this->startmenubox->Text = L"Let\'s Get Cookin\'";
+			this->startmenubox->UseVisualStyleBackColor = true;
+			// 
+			// sizeofpizzabox5
+			// 
+			this->sizeofpizzabox5->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->sizeofpizzabox5->FormattingEnabled = true;
+			this->sizeofpizzabox5->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"6", L"7", L"8", L"9", L"10", L"11", L"12",
+					L"15", L"17", L"18", L"20"
+			});
+			this->sizeofpizzabox5->Location = System::Drawing::Point(846, 504);
+			this->sizeofpizzabox5->Name = L"sizeofpizzabox5";
+			this->sizeofpizzabox5->Size = System::Drawing::Size(93, 21);
+			this->sizeofpizzabox5->TabIndex = 23;
+			// 
+			// sizeofpizzalabel5
+			// 
+			this->sizeofpizzalabel5->AutoSize = true;
+			this->sizeofpizzalabel5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->sizeofpizzalabel5->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->sizeofpizzalabel5->Location = System::Drawing::Point(653, 505);
+			this->sizeofpizzalabel5->Name = L"sizeofpizzalabel5";
+			this->sizeofpizzalabel5->Size = System::Drawing::Size(164, 20);
+			this->sizeofpizzalabel5->TabIndex = 22;
+			this->sizeofpizzalabel5->Text = L"Size of the Pizza 5:";
+			// 
+			// sizeofpizzabox4
+			// 
+			this->sizeofpizzabox4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->sizeofpizzabox4->FormattingEnabled = true;
+			this->sizeofpizzabox4->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"6", L"7", L"8", L"9", L"10", L"11", L"12",
+					L"15", L"17", L"18", L"20"
+			});
+			this->sizeofpizzabox4->Location = System::Drawing::Point(846, 457);
+			this->sizeofpizzabox4->Name = L"sizeofpizzabox4";
+			this->sizeofpizzabox4->Size = System::Drawing::Size(93, 21);
+			this->sizeofpizzabox4->TabIndex = 21;
+			// 
+			// sizeofpizzalabel4
+			// 
+			this->sizeofpizzalabel4->AutoSize = true;
+			this->sizeofpizzalabel4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->sizeofpizzalabel4->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->sizeofpizzalabel4->Location = System::Drawing::Point(653, 458);
+			this->sizeofpizzalabel4->Name = L"sizeofpizzalabel4";
+			this->sizeofpizzalabel4->Size = System::Drawing::Size(164, 20);
+			this->sizeofpizzalabel4->TabIndex = 20;
+			this->sizeofpizzalabel4->Text = L"Size of the Pizza 4:";
+			this->sizeofpizzalabel4->Click += gcnew System::EventHandler(this, &MyForm::label14_Click);
+			// 
+			// sizeofpizzabox3
+			// 
+			this->sizeofpizzabox3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->sizeofpizzabox3->FormattingEnabled = true;
+			this->sizeofpizzabox3->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"6", L"7", L"8", L"9", L"10", L"11", L"12",
+					L"15", L"17", L"18", L"20"
+			});
+			this->sizeofpizzabox3->Location = System::Drawing::Point(846, 409);
+			this->sizeofpizzabox3->Name = L"sizeofpizzabox3";
+			this->sizeofpizzabox3->Size = System::Drawing::Size(93, 21);
+			this->sizeofpizzabox3->TabIndex = 19;
+			this->sizeofpizzabox3->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::comboBox4_SelectedIndexChanged);
+			// 
+			// sizeofpizzalabel3
+			// 
+			this->sizeofpizzalabel3->AutoSize = true;
+			this->sizeofpizzalabel3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->sizeofpizzalabel3->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->sizeofpizzalabel3->Location = System::Drawing::Point(653, 410);
+			this->sizeofpizzalabel3->Name = L"sizeofpizzalabel3";
+			this->sizeofpizzalabel3->Size = System::Drawing::Size(164, 20);
+			this->sizeofpizzalabel3->TabIndex = 18;
+			this->sizeofpizzalabel3->Text = L"Size of the Pizza 3:";
+			this->sizeofpizzalabel3->Click += gcnew System::EventHandler(this, &MyForm::label15_Click);
+			// 
+			// sizeofpizzabox2
+			// 
+			this->sizeofpizzabox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->sizeofpizzabox2->FormattingEnabled = true;
+			this->sizeofpizzabox2->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"6", L"7", L"8", L"9", L"10", L"11", L"12",
+					L"15", L"17", L"18", L"20"
+			});
+			this->sizeofpizzabox2->Location = System::Drawing::Point(367, 505);
+			this->sizeofpizzabox2->Name = L"sizeofpizzabox2";
+			this->sizeofpizzabox2->Size = System::Drawing::Size(93, 21);
+			this->sizeofpizzabox2->TabIndex = 17;
+			// 
+			// sizeofpizzalaebl2
+			// 
+			this->sizeofpizzalaebl2->AutoSize = true;
+			this->sizeofpizzalaebl2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->sizeofpizzalaebl2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->sizeofpizzalaebl2->Location = System::Drawing::Point(174, 506);
+			this->sizeofpizzalaebl2->Name = L"sizeofpizzalaebl2";
+			this->sizeofpizzalaebl2->Size = System::Drawing::Size(164, 20);
+			this->sizeofpizzalaebl2->TabIndex = 16;
+			this->sizeofpizzalaebl2->Text = L"Size of the Pizza 2:";
+			// 
+			// sizeofpizzabox
+			// 
+			this->sizeofpizzabox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->sizeofpizzabox->FormattingEnabled = true;
+			this->sizeofpizzabox->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
+				L"10", L"11", L"12", L"15", L"17", L"18",
+					L"20", L"6", L"7", L"8", L"9"
+			});
+			this->sizeofpizzabox->Location = System::Drawing::Point(367, 457);
+			this->sizeofpizzabox->Name = L"sizeofpizzabox";
+			this->sizeofpizzabox->Size = System::Drawing::Size(93, 21);
+			this->sizeofpizzabox->Sorted = true;
+			this->sizeofpizzabox->TabIndex = 15;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label12->ForeColor = System::Drawing::Color::Red;
+			this->label12->Location = System::Drawing::Point(175, 412);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(285, 16);
+			this->label12->TabIndex = 14;
+			this->label12->Text = L"There can be a maximum of 5 Pizzas per Order";
+			// 
+			// sizeofpizzalabel
+			// 
+			this->sizeofpizzalabel->AutoSize = true;
+			this->sizeofpizzalabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->sizeofpizzalabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->sizeofpizzalabel->Location = System::Drawing::Point(174, 458);
+			this->sizeofpizzalabel->Name = L"sizeofpizzalabel";
+			this->sizeofpizzalabel->Size = System::Drawing::Size(164, 20);
+			this->sizeofpizzalabel->TabIndex = 13;
+			this->sizeofpizzalabel->Text = L"Size of the Pizza 1:";
+			// 
+			// pizzaamountlabel
+			// 
+			this->pizzaamountlabel->AutoSize = true;
+			this->pizzaamountlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->pizzaamountlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->pizzaamountlabel->Location = System::Drawing::Point(175, 394);
+			this->pizzaamountlabel->Name = L"pizzaamountlabel";
+			this->pizzaamountlabel->Size = System::Drawing::Size(257, 18);
+			this->pizzaamountlabel->TabIndex = 11;
+			this->pizzaamountlabel->Text = L"How Many Pizzas Do You Want\?";
+			// 
+			// chefchoicesubheading2
+			// 
+			this->chefchoicesubheading2->AutoSize = true;
+			this->chefchoicesubheading2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
+				| System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->chefchoicesubheading2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->chefchoicesubheading2->Location = System::Drawing::Point(310, 356);
+			this->chefchoicesubheading2->Name = L"chefchoicesubheading2";
+			this->chefchoicesubheading2->Size = System::Drawing::Size(718, 20);
+			this->chefchoicesubheading2->TabIndex = 10;
+			this->chefchoicesubheading2->Text = L"OR Fill the Following details to start creating a customized Pizza according to y"
+				L"our taste!";
+			// 
+			// allcheesebox
+			// 
+			this->allcheesebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->allcheesebox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->allcheesebox->Location = System::Drawing::Point(943, 245);
+			this->allcheesebox->Name = L"allcheesebox";
+			this->allcheesebox->Size = System::Drawing::Size(210, 95);
+			this->allcheesebox->TabIndex = 9;
+			this->allcheesebox->Text = L"Experience the taste of Chicken Fajita topped with olives, bellpeppers and anchov"
+				L"ies. A crispy italian crust crust and an extra chicken topping leaves you asking"
+				L" for more!";
+			this->allcheesebox->UseVisualStyleBackColor = true;
+			// 
+			// allcheesepic
+			// 
+			this->allcheesepic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"allcheesepic.Image")));
+			this->allcheesepic->Location = System::Drawing::Point(960, 97);
+			this->allcheesepic->Name = L"allcheesepic";
+			this->allcheesepic->Size = System::Drawing::Size(177, 145);
+			this->allcheesepic->TabIndex = 8;
+			this->allcheesepic->Text = L"label2";
+			// 
+			// wickedblendbox
+			// 
+			this->wickedblendbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->wickedblendbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->wickedblendbox->Location = System::Drawing::Point(673, 245);
+			this->wickedblendbox->Name = L"wickedblendbox";
+			this->wickedblendbox->Size = System::Drawing::Size(210, 95);
+			this->wickedblendbox->TabIndex = 7;
+			this->wickedblendbox->Text = L"Experience the taste of Chicken Fajita topped with olives, bellpeppers and anchov"
+				L"ies. A crispy italian crust crust and an extra chicken topping leaves you asking"
+				L" for more!";
+			this->wickedblendbox->UseVisualStyleBackColor = true;
+			// 
+			// wickedblendpic
+			// 
+			this->wickedblendpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"wickedblendpic.Image")));
+			this->wickedblendpic->Location = System::Drawing::Point(690, 97);
+			this->wickedblendpic->Name = L"wickedblendpic";
+			this->wickedblendpic->Size = System::Drawing::Size(177, 145);
+			this->wickedblendpic->TabIndex = 6;
+			this->wickedblendpic->Text = L"label2";
+			// 
+			// chickensupremebox
+			// 
+			this->chickensupremebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->chickensupremebox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->chickensupremebox->Location = System::Drawing::Point(409, 245);
+			this->chickensupremebox->Name = L"chickensupremebox";
+			this->chickensupremebox->Size = System::Drawing::Size(210, 95);
+			this->chickensupremebox->TabIndex = 5;
+			this->chickensupremebox->Text = L"Experience the taste of Chicken Fajita topped with olives, bellpeppers and anchov"
+				L"ies. A crispy italian crust crust and an extra chicken topping leaves you asking"
+				L" for more!";
+			this->chickensupremebox->UseVisualStyleBackColor = true;
+			// 
+			// chickensupremepic
+			// 
+			this->chickensupremepic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chickensupremepic.Image")));
+			this->chickensupremepic->Location = System::Drawing::Point(426, 97);
+			this->chickensupremepic->Name = L"chickensupremepic";
+			this->chickensupremepic->Size = System::Drawing::Size(177, 145);
+			this->chickensupremepic->TabIndex = 4;
+			this->chickensupremepic->Text = L"label2";
+			// 
+			// fajitablastbox
+			// 
+			this->fajitablastbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->fajitablastbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->fajitablastbox->Location = System::Drawing::Point(155, 245);
+			this->fajitablastbox->Name = L"fajitablastbox";
+			this->fajitablastbox->Size = System::Drawing::Size(210, 95);
+			this->fajitablastbox->TabIndex = 3;
+			this->fajitablastbox->Text = L"Experience the taste of Chicken Fajita topped with olives, bellpeppers and anchov"
+				L"ies. A crispy italian crust crust and an extra chicken topping leaves you asking"
+				L" for more!";
+			this->fajitablastbox->UseVisualStyleBackColor = true;
+			// 
+			// fajitablastpic
+			// 
+			this->fajitablastpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fajitablastpic.Image")));
+			this->fajitablastpic->Location = System::Drawing::Point(172, 97);
+			this->fajitablastpic->Name = L"fajitablastpic";
+			this->fajitablastpic->Size = System::Drawing::Size(177, 145);
+			this->fajitablastpic->TabIndex = 2;
+			this->fajitablastpic->Text = L"label2";
+			// 
+			// chefchoicesubheading
+			// 
+			this->chefchoicesubheading->AutoSize = true;
+			this->chefchoicesubheading->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
+				| System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->chefchoicesubheading->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->chefchoicesubheading->Location = System::Drawing::Point(461, 68);
+			this->chefchoicesubheading->Name = L"chefchoicesubheading";
+			this->chefchoicesubheading->Size = System::Drawing::Size(406, 20);
+			this->chefchoicesubheading->TabIndex = 1;
+			this->chefchoicesubheading->Text = L"Choose one of our best selling pizzas from below:";
+			// 
+			// ChefChoiceHeading
+			// 
+			this->ChefChoiceHeading->BackColor = System::Drawing::Color::Transparent;
+			this->ChefChoiceHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->ChefChoiceHeading->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->ChefChoiceHeading->Location = System::Drawing::Point(443, 19);
+			this->ChefChoiceHeading->Name = L"ChefChoiceHeading";
+			this->ChefChoiceHeading->Size = System::Drawing::Size(464, 49);
+			this->ChefChoiceHeading->TabIndex = 0;
+			this->ChefChoiceHeading->Text = L"Chef\'s Chosen Pizzas";
+			// 
+			// CrustSelect
+			// 
+			this->CrustSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CrustSelect.BackgroundImage")));
+			this->CrustSelect->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->CrustSelect->Controls->Add(this->crustreq);
+			this->CrustSelect->Controls->Add(this->crustpricebox);
+			this->CrustSelect->Controls->Add(this->stuffedlayeringbox);
+			this->CrustSelect->Controls->Add(this->stuffedlayerlabel);
+			this->CrustSelect->Controls->Add(this->stuffedfillingbox);
+			this->CrustSelect->Controls->Add(this->stuffedfillinglabel);
+			this->CrustSelect->Controls->Add(this->stuffedcheeselbel);
+			this->CrustSelect->Controls->Add(this->stuffedcheezebox);
+			this->CrustSelect->Controls->Add(this->sicilianoilbox);
+			this->CrustSelect->Controls->Add(this->sicilianoillabel);
+			this->CrustSelect->Controls->Add(this->sicilianpanlabel);
+			this->CrustSelect->Controls->Add(this->sicilianpanbox);
+			this->CrustSelect->Controls->Add(this->focaciaoilbox);
+			this->CrustSelect->Controls->Add(this->focaciaoillabel);
+			this->CrustSelect->Controls->Add(this->focaciaherblabel);
+			this->CrustSelect->Controls->Add(this->focaciaherbbox);
+			this->CrustSelect->Controls->Add(this->deepdishsaucebox);
+			this->CrustSelect->Controls->Add(this->deepdishsaucelabel);
+			this->CrustSelect->Controls->Add(this->deepdishthicknesslabel);
+			this->CrustSelect->Controls->Add(this->deepdishthicknessbox);
+			this->CrustSelect->Controls->Add(this->stlouiscutbox);
+			this->CrustSelect->Controls->Add(this->stlouischeesebox);
+			this->CrustSelect->Controls->Add(this->newyorkmineral);
+			this->CrustSelect->Controls->Add(this->newyorkherblabel);
+			this->CrustSelect->Controls->Add(this->newyorkherbbox);
+			this->CrustSelect->Controls->Add(this->neapolitanhand);
+			this->CrustSelect->Controls->Add(this->neapolitancookstylebox);
+			this->CrustSelect->Controls->Add(this->neapolitancooklabel);
+			this->CrustSelect->Controls->Add(this->stuffedcheckbox);
+			this->CrustSelect->Controls->Add(this->siciliancheckbox);
+			this->CrustSelect->Controls->Add(this->focaciacheckbox);
+			this->CrustSelect->Controls->Add(this->deepdishcheckbox);
+			this->CrustSelect->Controls->Add(this->stlouischeckbox);
+			this->CrustSelect->Controls->Add(this->newyorkcheckbox);
+			this->CrustSelect->Controls->Add(this->neapolitancheckbox);
+			this->CrustSelect->Controls->Add(this->toflavormenu);
+			this->CrustSelect->Controls->Add(this->deepdishpic);
+			this->CrustSelect->Controls->Add(this->stuffedpic);
+			this->CrustSelect->Controls->Add(this->sicilianpic);
+			this->CrustSelect->Controls->Add(this->focaciapic);
+			this->CrustSelect->Controls->Add(this->stlouispic);
+			this->CrustSelect->Controls->Add(this->newyorkpic);
+			this->CrustSelect->Controls->Add(this->neapolitanpic);
+			this->CrustSelect->Controls->Add(this->italiancookstylebox);
+			this->CrustSelect->Controls->Add(this->italiancooklabel);
+			this->CrustSelect->Controls->Add(this->italianherblabel);
+			this->CrustSelect->Controls->Add(this->italianherbbox);
+			this->CrustSelect->Controls->Add(this->italianpic);
+			this->CrustSelect->Controls->Add(this->italiancheckbox);
+			this->CrustSelect->Controls->Add(this->Crustheading);
+			this->CrustSelect->Location = System::Drawing::Point(4, 22);
+			this->CrustSelect->Name = L"CrustSelect";
+			this->CrustSelect->Size = System::Drawing::Size(1210, 576);
+			this->CrustSelect->TabIndex = 1;
+			this->CrustSelect->Text = L"Crust select";
+			this->CrustSelect->UseVisualStyleBackColor = true;
+			this->CrustSelect->Enter += gcnew System::EventHandler(this, &MyForm::CrustSelect_Enter);
+			// 
+			// crustreq
+			// 
+			this->crustreq->AutoSize = true;
+			this->crustreq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->crustreq->ForeColor = System::Drawing::Color::Red;
+			this->crustreq->Location = System::Drawing::Point(1048, 458);
+			this->crustreq->Name = L"crustreq";
+			this->crustreq->Size = System::Drawing::Size(163, 18);
+			this->crustreq->TabIndex = 51;
+			this->crustreq->Text = L"Please Choose One!";
+			this->crustreq->Visible = false;
+			// 
+			// crustpricebox
+			// 
+			this->crustpricebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->crustpricebox->Location = System::Drawing::Point(1047, 358);
+			this->crustpricebox->Multiline = true;
+			this->crustpricebox->Name = L"crustpricebox";
+			this->crustpricebox->ReadOnly = true;
+			this->crustpricebox->Size = System::Drawing::Size(151, 41);
+			this->crustpricebox->TabIndex = 50;
+			this->crustpricebox->Text = L"CURRENT PRICE\r\n= Rs ";
+			this->crustpricebox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// stuffedlayeringbox
+			// 
+			this->stuffedlayeringbox->FormattingEnabled = true;
+			this->stuffedlayeringbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Single", L"Thincut", L"Double" });
+			this->stuffedlayeringbox->Location = System::Drawing::Point(974, 547);
+			this->stuffedlayeringbox->Name = L"stuffedlayeringbox";
+			this->stuffedlayeringbox->Size = System::Drawing::Size(66, 21);
+			this->stuffedlayeringbox->TabIndex = 49;
+			this->stuffedlayeringbox->Visible = false;
+			// 
+			// stuffedlayerlabel
+			// 
+			this->stuffedlayerlabel->AutoSize = true;
+			this->stuffedlayerlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->stuffedlayerlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->stuffedlayerlabel->Location = System::Drawing::Point(980, 531);
+			this->stuffedlayerlabel->Name = L"stuffedlayerlabel";
+			this->stuffedlayerlabel->Size = System::Drawing::Size(55, 13);
+			this->stuffedlayerlabel->TabIndex = 48;
+			this->stuffedlayerlabel->Text = L"Layering";
+			this->stuffedlayerlabel->Visible = false;
+			// 
+			// stuffedfillingbox
+			// 
+			this->stuffedfillingbox->FormattingEnabled = true;
+			this->stuffedfillingbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Edge", L"Base", L"Whole" });
+			this->stuffedfillingbox->Location = System::Drawing::Point(901, 547);
+			this->stuffedfillingbox->Name = L"stuffedfillingbox";
+			this->stuffedfillingbox->Size = System::Drawing::Size(66, 21);
+			this->stuffedfillingbox->TabIndex = 47;
+			this->stuffedfillingbox->Visible = false;
+			// 
+			// stuffedfillinglabel
+			// 
+			this->stuffedfillinglabel->AutoSize = true;
+			this->stuffedfillinglabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->stuffedfillinglabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->stuffedfillinglabel->Location = System::Drawing::Point(907, 531);
+			this->stuffedfillinglabel->Name = L"stuffedfillinglabel";
+			this->stuffedfillinglabel->Size = System::Drawing::Size(40, 13);
+			this->stuffedfillinglabel->TabIndex = 46;
+			this->stuffedfillinglabel->Text = L"Filling";
+			this->stuffedfillinglabel->Visible = false;
+			// 
+			// stuffedcheeselbel
+			// 
+			this->stuffedcheeselbel->AutoSize = true;
+			this->stuffedcheeselbel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->stuffedcheeselbel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->stuffedcheeselbel->Location = System::Drawing::Point(837, 531);
+			this->stuffedcheeselbel->Name = L"stuffedcheeselbel";
+			this->stuffedcheeselbel->Size = System::Drawing::Size(49, 13);
+			this->stuffedcheeselbel->TabIndex = 45;
+			this->stuffedcheeselbel->Text = L"Cheese";
+			this->stuffedcheeselbel->Visible = false;
+			// 
+			// stuffedcheezebox
+			// 
+			this->stuffedcheezebox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->stuffedcheezebox->FormattingEnabled = true;
+			this->stuffedcheezebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Cheddar", L"American", L"Mozerralla" });
+			this->stuffedcheezebox->Location = System::Drawing::Point(828, 547);
+			this->stuffedcheezebox->Name = L"stuffedcheezebox";
+			this->stuffedcheezebox->Size = System::Drawing::Size(67, 21);
+			this->stuffedcheezebox->TabIndex = 44;
+			this->stuffedcheezebox->Visible = false;
+			// 
+			// sicilianoilbox
+			// 
+			this->sicilianoilbox->FormattingEnabled = true;
+			this->sicilianoilbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Olive ", L"Canola", L"Flavored", L"Cooking" });
+			this->sicilianoilbox->Location = System::Drawing::Point(709, 547);
+			this->sicilianoilbox->Name = L"sicilianoilbox";
+			this->sicilianoilbox->Size = System::Drawing::Size(84, 21);
+			this->sicilianoilbox->TabIndex = 43;
+			this->sicilianoilbox->Visible = false;
+			// 
+			// sicilianoillabel
+			// 
+			this->sicilianoillabel->AutoSize = true;
+			this->sicilianoillabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->sicilianoillabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->sicilianoillabel->Location = System::Drawing::Point(710, 531);
+			this->sicilianoillabel->Name = L"sicilianoillabel";
+			this->sicilianoillabel->Size = System::Drawing::Size(65, 13);
+			this->sicilianoillabel->TabIndex = 42;
+			this->sicilianoillabel->Text = L"Oil Choice";
+			this->sicilianoillabel->Visible = false;
+			// 
+			// sicilianpanlabel
+			// 
+			this->sicilianpanlabel->AutoSize = true;
+			this->sicilianpanlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->sicilianpanlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->sicilianpanlabel->Location = System::Drawing::Point(610, 531);
+			this->sicilianpanlabel->Name = L"sicilianpanlabel";
+			this->sicilianpanlabel->Size = System::Drawing::Size(72, 13);
+			this->sicilianpanlabel->TabIndex = 41;
+			this->sicilianpanlabel->Text = L"Pan Choice";
+			this->sicilianpanlabel->Visible = false;
+			// 
+			// sicilianpanbox
+			// 
+			this->sicilianpanbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->sicilianpanbox->FormattingEnabled = true;
+			this->sicilianpanbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Standard", L"Deep", L"High Temp" });
+			this->sicilianpanbox->Location = System::Drawing::Point(613, 547);
+			this->sicilianpanbox->Name = L"sicilianpanbox";
+			this->sicilianpanbox->Size = System::Drawing::Size(90, 21);
+			this->sicilianpanbox->TabIndex = 40;
+			this->sicilianpanbox->Visible = false;
+			// 
+			// focaciaoilbox
+			// 
+			this->focaciaoilbox->FormattingEnabled = true;
+			this->focaciaoilbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Olive Oil", L"Scented Oil", L"Flavored Oil" });
+			this->focaciaoilbox->Location = System::Drawing::Point(468, 547);
+			this->focaciaoilbox->Name = L"focaciaoilbox";
+			this->focaciaoilbox->Size = System::Drawing::Size(84, 21);
+			this->focaciaoilbox->TabIndex = 39;
+			this->focaciaoilbox->Visible = false;
+			// 
+			// focaciaoillabel
+			// 
+			this->focaciaoillabel->AutoSize = true;
+			this->focaciaoillabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->focaciaoillabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->focaciaoillabel->Location = System::Drawing::Point(469, 531);
+			this->focaciaoillabel->Name = L"focaciaoillabel";
+			this->focaciaoillabel->Size = System::Drawing::Size(69, 13);
+			this->focaciaoillabel->TabIndex = 38;
+			this->focaciaoillabel->Text = L"Oil Coating";
+			this->focaciaoillabel->Visible = false;
+			// 
+			// focaciaherblabel
+			// 
+			this->focaciaherblabel->AutoSize = true;
+			this->focaciaherblabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->focaciaherblabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->focaciaherblabel->Location = System::Drawing::Point(369, 531);
+			this->focaciaherblabel->Name = L"focaciaherblabel";
+			this->focaciaherblabel->Size = System::Drawing::Size(40, 13);
+			this->focaciaherblabel->TabIndex = 37;
+			this->focaciaherblabel->Text = L"Herbs";
+			this->focaciaherblabel->Visible = false;
+			// 
+			// focaciaherbbox
+			// 
+			this->focaciaherbbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->focaciaherbbox->FormattingEnabled = true;
+			this->focaciaherbbox->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Onions", L"Garlic", L"Scallion", L"Garlic Powder" });
+			this->focaciaherbbox->Location = System::Drawing::Point(372, 547);
+			this->focaciaherbbox->Name = L"focaciaherbbox";
+			this->focaciaherbbox->Size = System::Drawing::Size(90, 21);
+			this->focaciaherbbox->TabIndex = 36;
+			this->focaciaherbbox->Visible = false;
+			// 
+			// deepdishsaucebox
+			// 
+			this->deepdishsaucebox->FormattingEnabled = true;
+			this->deepdishsaucebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Ketchup", L"Chilli", L"Special Sauce" });
+			this->deepdishsaucebox->Location = System::Drawing::Point(234, 547);
+			this->deepdishsaucebox->Name = L"deepdishsaucebox";
+			this->deepdishsaucebox->Size = System::Drawing::Size(84, 21);
+			this->deepdishsaucebox->TabIndex = 35;
+			this->deepdishsaucebox->Visible = false;
+			// 
+			// deepdishsaucelabel
+			// 
+			this->deepdishsaucelabel->AutoSize = true;
+			this->deepdishsaucelabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->deepdishsaucelabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->deepdishsaucelabel->Location = System::Drawing::Point(235, 531);
+			this->deepdishsaucelabel->Name = L"deepdishsaucelabel";
+			this->deepdishsaucelabel->Size = System::Drawing::Size(49, 13);
+			this->deepdishsaucelabel->TabIndex = 34;
+			this->deepdishsaucelabel->Text = L"Sauces";
+			this->deepdishsaucelabel->Visible = false;
+			// 
+			// deepdishthicknesslabel
+			// 
+			this->deepdishthicknesslabel->AutoSize = true;
+			this->deepdishthicknesslabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->deepdishthicknesslabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->deepdishthicknesslabel->Location = System::Drawing::Point(135, 531);
+			this->deepdishthicknesslabel->Name = L"deepdishthicknesslabel";
+			this->deepdishthicknesslabel->Size = System::Drawing::Size(65, 13);
+			this->deepdishthicknesslabel->TabIndex = 33;
+			this->deepdishthicknesslabel->Text = L"Thickness";
+			this->deepdishthicknesslabel->Visible = false;
+			// 
+			// deepdishthicknessbox
+			// 
+			this->deepdishthicknessbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->deepdishthicknessbox->FormattingEnabled = true;
+			this->deepdishthicknessbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Two ``", L"Two and a half ``", L"Three ``" });
+			this->deepdishthicknessbox->Location = System::Drawing::Point(138, 547);
+			this->deepdishthicknessbox->Name = L"deepdishthicknessbox";
+			this->deepdishthicknessbox->Size = System::Drawing::Size(90, 21);
+			this->deepdishthicknessbox->TabIndex = 32;
+			this->deepdishthicknessbox->Visible = false;
+			// 
+			// stlouiscutbox
+			// 
+			this->stlouiscutbox->AutoSize = true;
+			this->stlouiscutbox->Checked = true;
+			this->stlouiscutbox->CheckState = System::Windows::Forms::CheckState::Checked;
+			this->stlouiscutbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->stlouiscutbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->stlouiscutbox->Location = System::Drawing::Point(926, 253);
+			this->stlouiscutbox->Name = L"stlouiscutbox";
+			this->stlouiscutbox->Size = System::Drawing::Size(94, 30);
+			this->stlouiscutbox->TabIndex = 31;
+			this->stlouiscutbox->Text = L"Tavern Cut\r\n(square cut)";
+			this->stlouiscutbox->UseVisualStyleBackColor = true;
+			this->stlouiscutbox->Visible = false;
+			// 
+			// stlouischeesebox
+			// 
+			this->stlouischeesebox->AutoSize = true;
+			this->stlouischeesebox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->stlouischeesebox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->stlouischeesebox->Location = System::Drawing::Point(852, 253);
+			this->stlouischeesebox->Name = L"stlouischeesebox";
+			this->stlouischeesebox->Size = System::Drawing::Size(68, 30);
+			this->stlouischeesebox->TabIndex = 30;
+			this->stlouischeesebox->Text = L"Cheese\r\nLining";
+			this->stlouischeesebox->UseVisualStyleBackColor = true;
+			this->stlouischeesebox->Visible = false;
+			// 
+			// newyorkmineral
+			// 
+			this->newyorkmineral->AutoSize = true;
+			this->newyorkmineral->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->newyorkmineral->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->newyorkmineral->Location = System::Drawing::Point(619, 253);
+			this->newyorkmineral->Name = L"newyorkmineral";
+			this->newyorkmineral->Size = System::Drawing::Size(90, 17);
+			this->newyorkmineral->TabIndex = 29;
+			this->newyorkmineral->Text = L"Mineralized";
+			this->newyorkmineral->UseVisualStyleBackColor = true;
+			this->newyorkmineral->Visible = false;
+			// 
+			// newyorkherblabel
+			// 
+			this->newyorkherblabel->AutoSize = true;
+			this->newyorkherblabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->newyorkherblabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->newyorkherblabel->Location = System::Drawing::Point(712, 250);
+			this->newyorkherblabel->Name = L"newyorkherblabel";
+			this->newyorkherblabel->Size = System::Drawing::Size(44, 13);
+			this->newyorkherblabel->TabIndex = 28;
+			this->newyorkherblabel->Text = L"Herbs:";
+			this->newyorkherblabel->Visible = false;
+			// 
+			// newyorkherbbox
+			// 
+			this->newyorkherbbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->newyorkherbbox->FormattingEnabled = true;
+			this->newyorkherbbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"None", L"Onions", L"Garlic" });
+			this->newyorkherbbox->Location = System::Drawing::Point(715, 266);
+			this->newyorkherbbox->Name = L"newyorkherbbox";
+			this->newyorkherbbox->Size = System::Drawing::Size(59, 21);
+			this->newyorkherbbox->TabIndex = 27;
+			this->newyorkherbbox->Visible = false;
+			// 
+			// neapolitanhand
+			// 
+			this->neapolitanhand->AutoSize = true;
+			this->neapolitanhand->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->neapolitanhand->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->neapolitanhand->Location = System::Drawing::Point(372, 249);
+			this->neapolitanhand->Name = L"neapolitanhand";
+			this->neapolitanhand->Size = System::Drawing::Size(101, 17);
+			this->neapolitanhand->TabIndex = 26;
+			this->neapolitanhand->Text = L"Hand Tossed";
+			this->neapolitanhand->UseVisualStyleBackColor = true;
+			this->neapolitanhand->Visible = false;
+			// 
+			// neapolitancookstylebox
+			// 
+			this->neapolitancookstylebox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->neapolitancookstylebox->FormattingEnabled = true;
+			this->neapolitancookstylebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Pan", L"Wood Fire", L"Oven" });
+			this->neapolitancookstylebox->Location = System::Drawing::Point(479, 266);
+			this->neapolitancookstylebox->Name = L"neapolitancookstylebox";
+			this->neapolitancookstylebox->Size = System::Drawing::Size(84, 21);
+			this->neapolitancookstylebox->TabIndex = 25;
+			this->neapolitancookstylebox->Visible = false;
+			// 
+			// neapolitancooklabel
+			// 
+			this->neapolitancooklabel->AutoSize = true;
+			this->neapolitancooklabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->neapolitancooklabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->neapolitancooklabel->Location = System::Drawing::Point(479, 250);
+			this->neapolitancooklabel->Name = L"neapolitancooklabel";
+			this->neapolitancooklabel->Size = System::Drawing::Size(62, 13);
+			this->neapolitancooklabel->TabIndex = 24;
+			this->neapolitancooklabel->Text = L"Cookstyle";
+			this->neapolitancooklabel->Visible = false;
+			// 
+			// stuffedcheckbox
+			// 
+			this->stuffedcheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->stuffedcheckbox->ForeColor = System::Drawing::Color::White;
+			this->stuffedcheckbox->Location = System::Drawing::Point(840, 433);
+			this->stuffedcheckbox->Name = L"stuffedcheckbox";
+			this->stuffedcheckbox->Size = System::Drawing::Size(176, 84);
+			this->stuffedcheckbox->TabIndex = 23;
+			this->stuffedcheckbox->Text = L"stuffed text here";
+			this->stuffedcheckbox->UseVisualStyleBackColor = true;
+			this->stuffedcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::stuffedcheckbox_CheckedChanged);
+			// 
+			// siciliancheckbox
+			// 
+			this->siciliancheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->siciliancheckbox->ForeColor = System::Drawing::Color::White;
+			this->siciliancheckbox->Location = System::Drawing::Point(617, 433);
+			this->siciliancheckbox->Name = L"siciliancheckbox";
+			this->siciliancheckbox->Size = System::Drawing::Size(176, 84);
+			this->siciliancheckbox->TabIndex = 22;
+			this->siciliancheckbox->Text = L"Sicilian text here";
+			this->siciliancheckbox->UseVisualStyleBackColor = true;
+			this->siciliancheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::siciliancheckbox_CheckedChanged);
+			// 
+			// focaciacheckbox
+			// 
+			this->focaciacheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->focaciacheckbox->ForeColor = System::Drawing::Color::White;
+			this->focaciacheckbox->Location = System::Drawing::Point(372, 433);
+			this->focaciacheckbox->Name = L"focaciacheckbox";
+			this->focaciacheckbox->Size = System::Drawing::Size(176, 84);
+			this->focaciacheckbox->TabIndex = 21;
+			this->focaciacheckbox->Text = L"Focacia text here";
+			this->focaciacheckbox->UseVisualStyleBackColor = true;
+			this->focaciacheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::focaciacheckbox_CheckedChanged);
+			// 
+			// deepdishcheckbox
+			// 
+			this->deepdishcheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->deepdishcheckbox->ForeColor = System::Drawing::Color::White;
+			this->deepdishcheckbox->Location = System::Drawing::Point(138, 433);
+			this->deepdishcheckbox->Name = L"deepdishcheckbox";
+			this->deepdishcheckbox->Size = System::Drawing::Size(176, 97);
+			this->deepdishcheckbox->TabIndex = 20;
+			this->deepdishcheckbox->Text = L"Deep dish text here";
+			this->deepdishcheckbox->UseVisualStyleBackColor = true;
+			this->deepdishcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::deepdishcheckbox_CheckedChanged);
+			// 
+			// stlouischeckbox
+			// 
+			this->stlouischeckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->stlouischeckbox->ForeColor = System::Drawing::Color::White;
+			this->stlouischeckbox->Location = System::Drawing::Point(840, 163);
+			this->stlouischeckbox->Name = L"stlouischeckbox";
+			this->stlouischeckbox->Size = System::Drawing::Size(176, 84);
+			this->stlouischeckbox->TabIndex = 19;
+			this->stlouischeckbox->Text = L"St louis text";
+			this->stlouischeckbox->UseVisualStyleBackColor = true;
+			this->stlouischeckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::stlouischeckbox_CheckedChanged);
+			// 
+			// newyorkcheckbox
+			// 
+			this->newyorkcheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->newyorkcheckbox->ForeColor = System::Drawing::Color::White;
+			this->newyorkcheckbox->Location = System::Drawing::Point(617, 163);
+			this->newyorkcheckbox->Name = L"newyorkcheckbox";
+			this->newyorkcheckbox->Size = System::Drawing::Size(176, 84);
+			this->newyorkcheckbox->TabIndex = 18;
+			this->newyorkcheckbox->Text = L"NewYork text here";
+			this->newyorkcheckbox->UseVisualStyleBackColor = true;
+			this->newyorkcheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::newyorkcheckbox_CheckedChanged);
+			// 
+			// neapolitancheckbox
+			// 
+			this->neapolitancheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->neapolitancheckbox->ForeColor = System::Drawing::Color::White;
+			this->neapolitancheckbox->Location = System::Drawing::Point(372, 163);
+			this->neapolitancheckbox->Name = L"neapolitancheckbox";
+			this->neapolitancheckbox->Size = System::Drawing::Size(176, 84);
+			this->neapolitancheckbox->TabIndex = 17;
+			this->neapolitancheckbox->Text = L"Neapolitan text here";
+			this->neapolitancheckbox->UseVisualStyleBackColor = true;
+			this->neapolitancheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::neapolitancheckbox_CheckedChanged);
+			// 
+			// toflavormenu
+			// 
+			this->toflavormenu->Location = System::Drawing::Point(1063, 477);
+			this->toflavormenu->Name = L"toflavormenu";
+			this->toflavormenu->Size = System::Drawing::Size(135, 67);
+			this->toflavormenu->TabIndex = 16;
+			this->toflavormenu->Text = L"Go to Flavours Select";
+			this->toflavormenu->UseVisualStyleBackColor = true;
+			this->toflavormenu->Click += gcnew System::EventHandler(this, &MyForm::toflavormenu_Click);
+			// 
+			// deepdishpic
+			// 
+			this->deepdishpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->deepdishpic->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->deepdishpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"deepdishpic.Image")));
+			this->deepdishpic->Location = System::Drawing::Point(152, 300);
+			this->deepdishpic->Name = L"deepdishpic";
+			this->deepdishpic->Size = System::Drawing::Size(141, 130);
+			this->deepdishpic->TabIndex = 15;
+			this->deepdishpic->Text = L"DEEPDISH";
+			this->deepdishpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// stuffedpic
+			// 
+			this->stuffedpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->stuffedpic->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->stuffedpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"stuffedpic.Image")));
+			this->stuffedpic->Location = System::Drawing::Point(861, 300);
+			this->stuffedpic->Name = L"stuffedpic";
+			this->stuffedpic->Size = System::Drawing::Size(141, 130);
+			this->stuffedpic->TabIndex = 14;
+			this->stuffedpic->Text = L"STUFFED";
+			this->stuffedpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// sicilianpic
+			// 
+			this->sicilianpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->sicilianpic->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->sicilianpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"sicilianpic.Image")));
+			this->sicilianpic->Location = System::Drawing::Point(633, 300);
+			this->sicilianpic->Name = L"sicilianpic";
+			this->sicilianpic->Size = System::Drawing::Size(141, 130);
+			this->sicilianpic->TabIndex = 13;
+			this->sicilianpic->Text = L"SICILIAN";
+			this->sicilianpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// focaciapic
+			// 
+			this->focaciapic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->focaciapic->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->focaciapic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"focaciapic.Image")));
+			this->focaciapic->Location = System::Drawing::Point(387, 300);
+			this->focaciapic->Name = L"focaciapic";
+			this->focaciapic->Size = System::Drawing::Size(141, 130);
+			this->focaciapic->TabIndex = 12;
+			this->focaciapic->Text = L"FOCACIA";
+			this->focaciapic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// stlouispic
+			// 
+			this->stlouispic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->stlouispic->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->stlouispic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"stlouispic.Image")));
+			this->stlouispic->Location = System::Drawing::Point(861, 30);
+			this->stlouispic->Name = L"stlouispic";
+			this->stlouispic->Size = System::Drawing::Size(141, 130);
+			this->stlouispic->TabIndex = 11;
+			this->stlouispic->Text = L"ST. LOUIS";
+			this->stlouispic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// newyorkpic
+			// 
+			this->newyorkpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->newyorkpic->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->newyorkpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"newyorkpic.Image")));
+			this->newyorkpic->Location = System::Drawing::Point(633, 30);
+			this->newyorkpic->Name = L"newyorkpic";
+			this->newyorkpic->Size = System::Drawing::Size(141, 130);
+			this->newyorkpic->TabIndex = 10;
+			this->newyorkpic->Text = L"NEWYORK";
+			this->newyorkpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// neapolitanpic
+			// 
+			this->neapolitanpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->neapolitanpic->ForeColor = System::Drawing::SystemColors::Control;
+			this->neapolitanpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"neapolitanpic.Image")));
+			this->neapolitanpic->Location = System::Drawing::Point(387, 30);
+			this->neapolitanpic->Name = L"neapolitanpic";
+			this->neapolitanpic->Size = System::Drawing::Size(141, 130);
+			this->neapolitanpic->TabIndex = 9;
+			this->neapolitanpic->Text = L"NEAPOLITAN";
+			this->neapolitanpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// italiancookstylebox
+			// 
+			this->italiancookstylebox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->italiancookstylebox->FormattingEnabled = true;
+			this->italiancookstylebox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Pan", L"Wood Fire", L"Oven" });
+			this->italiancookstylebox->Location = System::Drawing::Point(230, 266);
+			this->italiancookstylebox->Name = L"italiancookstylebox";
+			this->italiancookstylebox->Size = System::Drawing::Size(84, 21);
+			this->italiancookstylebox->TabIndex = 8;
+			this->italiancookstylebox->Visible = false;
+			// 
+			// italiancooklabel
+			// 
+			this->italiancooklabel->AutoSize = true;
+			this->italiancooklabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->italiancooklabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->italiancooklabel->Location = System::Drawing::Point(231, 250);
+			this->italiancooklabel->Name = L"italiancooklabel";
+			this->italiancooklabel->Size = System::Drawing::Size(62, 13);
+			this->italiancooklabel->TabIndex = 7;
+			this->italiancooklabel->Text = L"Cookstyle";
+			this->italiancooklabel->Visible = false;
+			// 
+			// italianherblabel
+			// 
+			this->italianherblabel->AutoSize = true;
+			this->italianherblabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->italianherblabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->italianherblabel->Location = System::Drawing::Point(152, 250);
+			this->italianherblabel->Name = L"italianherblabel";
+			this->italianherblabel->Size = System::Drawing::Size(44, 13);
+			this->italianherblabel->TabIndex = 6;
+			this->italianherblabel->Text = L"Herbs:";
+			this->italianherblabel->Visible = false;
+			// 
+			// italianherbbox
+			// 
+			this->italianherbbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->italianherbbox->FormattingEnabled = true;
+			this->italianherbbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"None", L"Onions", L"Garlic" });
+			this->italianherbbox->Location = System::Drawing::Point(155, 266);
+			this->italianherbbox->Name = L"italianherbbox";
+			this->italianherbbox->Size = System::Drawing::Size(59, 21);
+			this->italianherbbox->TabIndex = 5;
+			this->italianherbbox->Visible = false;
+			// 
+			// italianpic
+			// 
+			this->italianpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->italianpic->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->italianpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"italianpic.Image")));
+			this->italianpic->Location = System::Drawing::Point(152, 30);
+			this->italianpic->Name = L"italianpic";
+			this->italianpic->Size = System::Drawing::Size(141, 130);
+			this->italianpic->TabIndex = 4;
+			this->italianpic->Text = L"ITALIAN";
+			this->italianpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			// 
+			// italiancheckbox
+			// 
+			this->italiancheckbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->italiancheckbox->ForeColor = System::Drawing::Color::White;
+			this->italiancheckbox->Location = System::Drawing::Point(138, 163);
+			this->italiancheckbox->Name = L"italiancheckbox";
+			this->italiancheckbox->Size = System::Drawing::Size(176, 84);
+			this->italiancheckbox->TabIndex = 2;
+			this->italiancheckbox->Text = L"Italian text here";
+			this->italiancheckbox->UseVisualStyleBackColor = true;
+			this->italiancheckbox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::italiancheckbox_CheckedChanged);
+			// 
+			// Crustheading
+			// 
+			this->Crustheading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->Crustheading->ForeColor = System::Drawing::Color::White;
+			this->Crustheading->Location = System::Drawing::Point(1040, 148);
+			this->Crustheading->Name = L"Crustheading";
+			this->Crustheading->Size = System::Drawing::Size(154, 97);
+			this->Crustheading->TabIndex = 0;
+			this->Crustheading->Text = L"CRUST MENU";
+			this->Crustheading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// FlavourSelect
 			// 
@@ -3360,6 +3777,24 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CheckoutPage->Text = L"CheckoutPage";
 			this->CheckoutPage->UseVisualStyleBackColor = true;
 			// 
+			// OrderNoCheckOutTextBox
+			// 
+			this->OrderNoCheckOutTextBox->Location = System::Drawing::Point(280, 40);
+			this->OrderNoCheckOutTextBox->Name = L"OrderNoCheckOutTextBox";
+			this->OrderNoCheckOutTextBox->Size = System::Drawing::Size(200, 20);
+			this->OrderNoCheckOutTextBox->TabIndex = 26;
+			// 
+			// OrderNoCheckoutLabel
+			// 
+			this->OrderNoCheckoutLabel->AutoSize = true;
+			this->OrderNoCheckoutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			this->OrderNoCheckoutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->OrderNoCheckoutLabel->Location = System::Drawing::Point(128, 32);
+			this->OrderNoCheckoutLabel->Name = L"OrderNoCheckoutLabel";
+			this->OrderNoCheckoutLabel->Size = System::Drawing::Size(154, 29);
+			this->OrderNoCheckoutLabel->TabIndex = 25;
+			this->OrderNoCheckoutLabel->Text = L"ORDER NO:";
+			// 
 			// TotalPriceCheckOutTextBox
 			// 
 			this->TotalPriceCheckOutTextBox->Location = System::Drawing::Point(728, 352);
@@ -3579,24 +4014,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->NameLabelCheckout->TabIndex = 0;
 			this->NameLabelCheckout->Text = L"NAME:";
 			// 
-			// OrderNoCheckoutLabel
-			// 
-			this->OrderNoCheckoutLabel->AutoSize = true;
-			this->OrderNoCheckoutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
-			this->OrderNoCheckoutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->OrderNoCheckoutLabel->Location = System::Drawing::Point(128, 32);
-			this->OrderNoCheckoutLabel->Name = L"OrderNoCheckoutLabel";
-			this->OrderNoCheckoutLabel->Size = System::Drawing::Size(154, 29);
-			this->OrderNoCheckoutLabel->TabIndex = 25;
-			this->OrderNoCheckoutLabel->Text = L"ORDER NO:";
-			// 
-			// OrderNoCheckOutTextBox
-			// 
-			this->OrderNoCheckOutTextBox->Location = System::Drawing::Point(280, 40);
-			this->OrderNoCheckOutTextBox->Name = L"OrderNoCheckOutTextBox";
-			this->OrderNoCheckOutTextBox->Size = System::Drawing::Size(200, 20);
-			this->OrderNoCheckOutTextBox->TabIndex = 26;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -3613,12 +4030,14 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->Text = L"SEYMOUR";
 			this->tabControl1->ResumeLayout(false);
 			this->MainMenu->ResumeLayout(false);
-			this->CrustSelect->ResumeLayout(false);
-			this->CrustSelect->PerformLayout();
 			this->UserLogin->ResumeLayout(false);
 			this->UserLogin->PerformLayout();
 			this->SignUpPage->ResumeLayout(false);
 			this->SignUpPage->PerformLayout();
+			this->PreMade->ResumeLayout(false);
+			this->PreMade->PerformLayout();
+			this->CrustSelect->ResumeLayout(false);
+			this->CrustSelect->PerformLayout();
 			this->FlavourSelect->ResumeLayout(false);
 			this->FlavourSelect->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->VeggieDelightPictureBox))->EndInit();
@@ -3734,5 +4153,11 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	{
 		tabControl1->SelectedTab = FlavourSelect;
 	}
+private: System::Void label14_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void comboBox4_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label15_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

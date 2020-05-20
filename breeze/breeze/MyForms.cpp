@@ -11,6 +11,9 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
+void breeze::MyForm::customer_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = UserLogin;
+}
 
 //******************************SIGNUP RELATED FUNCTIONS*****************************
 void breeze::MyForm::backtologinbutton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -593,14 +596,12 @@ void breeze::MyForm::stuffedcheckbox_CheckedChanged(System::Object^ sender, Syst
 //******************************CRUST SELECTION FUNCTIONS*****************************
 
 
-void breeze::MyForm::customer_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = UserLogin;
-}
 
+
+//*****************************FLAVOUR SELECTION OPTIONS****************************//
 void breeze::MyForm::MovetoToping_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = ToppingSelect;
 }
-//*****************************FLAVOUR SELECTION OPTIONS****************************//
 void breeze::MyForm::VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (VeggieDelightCheckBox->Checked == true)
 	{
@@ -635,8 +636,6 @@ void breeze::MyForm::VeggieDelightCheckBox_CheckedChanged(System::Object^ sender
 	
 	
 }
-
-
 void breeze::MyForm::TheCheeseCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (TheCheeseCheckbox->Checked == true)
 	{
@@ -857,7 +856,6 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 		//FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 	}
 }
-
 void breeze::MyForm::TikkaMisc1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	 if (TikkaMisc1->Checked == true)
 	 {
@@ -1235,6 +1233,8 @@ void breeze::MyForm::ChilliDelightCheckbox_CheckStateChanged(System::Object^ sen
 
 	}
 }
+//*****************************FLAVOUR SELECTION OPTIONS****************************//
+
 
 
 void breeze::MyForm::ChickenCheck_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -1249,10 +1249,10 @@ void breeze::MyForm::ChickenCheck_CheckedChanged(System::Object^ sender, System:
 		MashroomCheck->Checked = false;
 		Extra_CheezCheck->Checked = false;
 		SausageCheck->Checked = false;
-
-		Chicken* C = new Chicken;
-		ToppingPriceBox->Text = "CURRENT PRICE\n=Rs" + Convert::ToString(C->getprice());
-		delete C;
+	
+		/*Chicken* C = new Chicken;
+		ToppingPriceBox->Text = "CURRENT PRICE =Rs" + Convert::ToString(C->getprice());
+		delete C;*/
 	}
 	else if (ChickenCheck->Checked == false)
 	{
