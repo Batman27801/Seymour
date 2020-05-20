@@ -74,12 +74,12 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 	else if (gen == "Other")
 		test->setGender(Other);
 
-	if (!test->setcontact(Convert::ToInt64(contactbox->Text)))
+	if (!test->setcontact(long long int(Convert::ToInt64(contactbox->Text))))
 	{
 		contactbox->Text = Convert::ToString("0");
 	}
 
-	if (!test->setcnic(Convert::ToInt64(cnicbox->Text)))
+	if (!test->setcnic(long long int(Convert::ToInt64(cnicbox->Text))))
 	{
 		cnicbox->Text = Convert::ToString("0");
 	}
@@ -96,7 +96,7 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 
 	test->setcardprovider(backtostring(cardproviderbox->Text));
 
-	if (!test->setcardno(Convert::ToInt64(cardnobox->Text)))
+	if (!test->setcardno(long long int(Convert::ToInt64(cardnobox->Text))))
 	{
 		cardnobox->Text = Convert::ToString("0");
 		i++;
@@ -1547,7 +1547,7 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 		CrustCheckOutTextBox->AppendText(gotoString(pizz->cpoint->get_CrustName()));
 		TotalPriceCheckOutTextBox->Text = "Rs = ";
 		TotalPriceCheckOutTextBox->AppendText(Convert::ToString(o1->ReturnBill()));
-		srand(time(0));
+		srand(int(time(0)));
 		long int OrderCode;
 		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);

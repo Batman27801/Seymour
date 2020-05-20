@@ -74,7 +74,7 @@ bool account::setemail(string s)
 {
 	s == "" ? (s = "               ") : ("");
 	try {
-		int n = s.length();
+		int n = int(s.length());
 		if (s[n-1] == 'm' && s[n - 2] == 'o' && s[n - 3] == 'c' && s[n - 4] == '.' && (s[n - 10] == '@' || s[n - 12] == '@') && n < 30)
 		{
 			strcpy_s(email, s.c_str());

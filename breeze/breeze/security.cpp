@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-int digitcounter(long int v)
+int digitcounter(long long int v)
 {
 	int count = 0;
 	for (; v != 0;)
@@ -27,7 +27,7 @@ security::security()
 	yearc = 0;
 }
 
-bool security::setcontact(long int c)
+bool security::setcontact(long long int c)
 {
 	try {
 		int i=0;
@@ -44,11 +44,11 @@ bool security::setcontact(long int c)
 		return false;
 	}
 }
-long int security::getcontact()
+long long int security::getcontact()
 {
 	return decryption(contactno);
 }
-bool security::setcnic(long int c)
+bool security::setcnic(long long int c)
 {	
 	int i=0;
 	try {
@@ -66,7 +66,7 @@ bool security::setcnic(long int c)
 		return false;
 	}
 }
-long int security::getcnic()
+long long int security::getcnic()
 {
 	return decryption(cnic);
 }
@@ -95,7 +95,7 @@ char* security::getcardprovider()
 {
 	return decryption(card);
 }
-bool security::setcardno(long int i)
+bool security::setcardno(long long int i)
 {
 	int o=0;
 	try {
@@ -112,7 +112,7 @@ bool security::setcardno(long int i)
 		return false;
 	}
 }
-long int security::getcardno()
+long long int security::getcardno()
 {
 	return decryption(cardno);
 }
@@ -144,36 +144,25 @@ int* security::getexpiry()
 template <typename encrypt>
 encrypt security::encryption(encrypt var)
 {
-	long int temp, temp2 = 0;
+	encrypt temp, temp2 = 0;
 	temp = var;
-	/*for (count = 0; temp != 0; count++)
-	{
-		temp = temp / 10;
-	}
-	temp = var;
-	//count--;*/
+
 	for (int i = 0; temp != 0; i++)
 	{
-		temp2 = temp2*10 + (temp % 10 + 2);
+		temp2 = temp2 * 10 + (temp % 10);
 		temp = temp / 10;
-		
+
 	}
 	return temp2;
 }
 template <typename encrypt>
 encrypt security::decryption(encrypt var)
 {
-	long int temp, temp2 = 0, count;
+	encrypt temp, temp2 = 0;
 	temp = var;
-	for (count = 0; temp != 0; count++)
-	{
-		temp = temp / 10;
-	}
-	temp = var;
-	count--;
 	for (int i = 0; temp != 0; i++)
 	{
-		temp2 = temp2*10 + (temp % 10 - 2) ;
+		temp2 = temp2 * 10 + (temp % 10);
 		temp = temp / 10;
 	}
 	return temp2;
@@ -195,9 +184,9 @@ string security::encryption(string var)
 	for (i = 0; i < length; i++)
 	{
 		if (i % 2 == 0)
-			temp[i] = (temp[i] + 2);
+			temp[i] = temp[i] + 2;
 		else if (i % 2 == 1)
-			temp[i] = (temp[i] - 2);
+			temp[i] = temp[i] - 2;
 	}
 	return temp;
 }
@@ -205,12 +194,12 @@ char* security::decryption(string var)
 {
 	int n = static_cast<int>(var.length());
 	char* temp = new char[n];
-
+	var.copy(temp, n);
 	int i, length = static_cast<int>(strlen(temp));
 	for (i = 0; i < length; i++)
 	{
 		if (i % 2 == 0)
-			*(temp+i) = *(temp+i) - 2;
+			*(temp + i) = *(temp + i) - 2;
 		else if (i % 2 == 1)
 			temp[i] = (temp[i] + 2);
 	}

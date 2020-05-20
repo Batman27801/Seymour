@@ -387,10 +387,12 @@ private: System::Windows::Forms::Label^ chefchoicesubheading2;
 private: System::Windows::Forms::CheckBox^ allcheesebox;
 
 private: System::Windows::Forms::Label^ allcheesepic;
+private: System::Windows::Forms::CheckBox^ westsidegarlicbox;
 
-private: System::Windows::Forms::CheckBox^ wickedblendbox;
 
-private: System::Windows::Forms::Label^ wickedblendpic;
+private: System::Windows::Forms::Label^ westsidegarlicpic;
+
+
 
 private: System::Windows::Forms::CheckBox^ chickensupremebox;
 
@@ -619,8 +621,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->chefchoicesubheading2 = (gcnew System::Windows::Forms::Label());
 			this->allcheesebox = (gcnew System::Windows::Forms::CheckBox());
 			this->allcheesepic = (gcnew System::Windows::Forms::Label());
-			this->wickedblendbox = (gcnew System::Windows::Forms::CheckBox());
-			this->wickedblendpic = (gcnew System::Windows::Forms::Label());
+			this->westsidegarlicbox = (gcnew System::Windows::Forms::CheckBox());
+			this->westsidegarlicpic = (gcnew System::Windows::Forms::Label());
 			this->chickensupremebox = (gcnew System::Windows::Forms::CheckBox());
 			this->chickensupremepic = (gcnew System::Windows::Forms::Label());
 			this->fajitablastbox = (gcnew System::Windows::Forms::CheckBox());
@@ -1839,8 +1841,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->PreMade->Controls->Add(this->chefchoicesubheading2);
 			this->PreMade->Controls->Add(this->allcheesebox);
 			this->PreMade->Controls->Add(this->allcheesepic);
-			this->PreMade->Controls->Add(this->wickedblendbox);
-			this->PreMade->Controls->Add(this->wickedblendpic);
+			this->PreMade->Controls->Add(this->westsidegarlicbox);
+			this->PreMade->Controls->Add(this->westsidegarlicpic);
 			this->PreMade->Controls->Add(this->chickensupremebox);
 			this->PreMade->Controls->Add(this->chickensupremepic);
 			this->PreMade->Controls->Add(this->fajitablastbox);
@@ -2066,28 +2068,28 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->allcheesepic->TabIndex = 8;
 			this->allcheesepic->Text = L"label2";
 			// 
-			// wickedblendbox
+			// westsidegarlicbox
 			// 
-			this->wickedblendbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->westsidegarlicbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->wickedblendbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->wickedblendbox->Location = System::Drawing::Point(673, 245);
-			this->wickedblendbox->Name = L"wickedblendbox";
-			this->wickedblendbox->Size = System::Drawing::Size(210, 95);
-			this->wickedblendbox->TabIndex = 7;
-			this->wickedblendbox->Text = L"Experience the taste of Chicken Fajita topped with olives, bellpeppers and anchov"
+			this->westsidegarlicbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->westsidegarlicbox->Location = System::Drawing::Point(673, 245);
+			this->westsidegarlicbox->Name = L"westsidegarlicbox";
+			this->westsidegarlicbox->Size = System::Drawing::Size(210, 95);
+			this->westsidegarlicbox->TabIndex = 7;
+			this->westsidegarlicbox->Text = L"Experience the taste of Chicken Fajita topped with olives, bellpeppers and anchov"
 				L"ies. A crispy italian crust crust and an extra chicken topping leaves you asking"
 				L" for more!";
-			this->wickedblendbox->UseVisualStyleBackColor = true;
+			this->westsidegarlicbox->UseVisualStyleBackColor = true;
 			// 
-			// wickedblendpic
+			// westsidegarlicpic
 			// 
-			this->wickedblendpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"wickedblendpic.Image")));
-			this->wickedblendpic->Location = System::Drawing::Point(690, 97);
-			this->wickedblendpic->Name = L"wickedblendpic";
-			this->wickedblendpic->Size = System::Drawing::Size(177, 145);
-			this->wickedblendpic->TabIndex = 6;
-			this->wickedblendpic->Text = L"label2";
+			this->westsidegarlicpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"westsidegarlicpic.Image")));
+			this->westsidegarlicpic->Location = System::Drawing::Point(690, 97);
+			this->westsidegarlicpic->Name = L"westsidegarlicpic";
+			this->westsidegarlicpic->Size = System::Drawing::Size(177, 145);
+			this->westsidegarlicpic->TabIndex = 6;
+			this->westsidegarlicpic->Text = L"label2";
 			// 
 			// chickensupremebox
 			// 
@@ -2128,12 +2130,16 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			// fajitablastpic
 			// 
+			this->fajitablastpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->fajitablastpic->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->fajitablastpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fajitablastpic.Image")));
 			this->fajitablastpic->Location = System::Drawing::Point(172, 97);
 			this->fajitablastpic->Name = L"fajitablastpic";
 			this->fajitablastpic->Size = System::Drawing::Size(177, 145);
 			this->fajitablastpic->TabIndex = 2;
-			this->fajitablastpic->Text = L"label2";
+			this->fajitablastpic->Text = L"Chicken Fajita";
+			this->fajitablastpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			// 
 			// chefchoicesubheading
 			// 
