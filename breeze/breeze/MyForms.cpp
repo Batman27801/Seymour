@@ -1,4 +1,6 @@
 #include "MyForm.h"
+#include<ctime>
+#include<cstdlib>
 #define backtostring msclr::interop::marshal_as<std::string>
 #define gotoString msclr::interop::marshal_as<String^>
 using namespace std;
@@ -1276,10 +1278,22 @@ void breeze::MyForm::CheckBBQ_Sause_CheckedChanged(System::Object^ sender, Syste
 	}
 }
 void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (test->getguest() == false)
+	tabControl1->SelectedTab = CheckoutPage;
+	if (test->getguest() == true)
 	{
-		char GuestName[80];
-		char  Address[80];
-		long int PhoneNo;
+		NameCheckOutText->Text = Convert::ToString(test->getname());
+		AddressCheckOutTextBox->Text = Convert::ToString(test->getaddress());
+		PhoneNoTextBox->Text = Convert::ToString(test->getcontact());
+		srand(time(0));
+		long int OrderCode;
+		OrderCode = (rand() % 10000) + 1;
+		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
 	}
+	else if (test->getguest() == false)
+	{
+		long int OrderCode;
+		OrderCode = (rand() % 10000) + 1000;
+		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
+	}
+	
 }

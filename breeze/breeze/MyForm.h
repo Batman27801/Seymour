@@ -351,7 +351,8 @@ private: System::Windows::Forms::CheckBox^ CreditCardCheckBox;
 private: System::Windows::Forms::Label^ PaymentModeCheckOutLabel;
 private: System::Windows::Forms::Label^ AddressCheckOutLabel;
 private: System::Windows::Forms::TextBox^ AddressCheckOutTextBox;
-private: System::Windows::Forms::TextBox^ textBox2;
+private: System::Windows::Forms::TextBox^ PhoneNoTextBox;
+
 private: System::Windows::Forms::Label^ PhoneCheckoutLabel;
 private: System::Windows::Forms::TextBox^ NameCheckOutText;
 private: System::Windows::Forms::Label^ NameLabelCheckout;
@@ -369,6 +370,8 @@ private: System::Windows::Forms::Label^ OrderHeadingCheckOutLabel;
 private: System::Windows::Forms::TextBox^ CardNumberCheckOutTextBox;
 private: System::Windows::Forms::Label^ CardNumberCheckOutLabel;
 private: System::Windows::Forms::Label^ crustreq;
+private: System::Windows::Forms::TextBox^ OrderNoCheckOutTextBox;
+private: System::Windows::Forms::Label^ OrderNoCheckoutLabel;
 
 
 
@@ -687,10 +690,12 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->PaymentModeCheckOutLabel = (gcnew System::Windows::Forms::Label());
 			this->AddressCheckOutLabel = (gcnew System::Windows::Forms::Label());
 			this->AddressCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->PhoneNoTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->PhoneCheckoutLabel = (gcnew System::Windows::Forms::Label());
 			this->NameCheckOutText = (gcnew System::Windows::Forms::TextBox());
 			this->NameLabelCheckout = (gcnew System::Windows::Forms::Label());
+			this->OrderNoCheckoutLabel = (gcnew System::Windows::Forms::Label());
+			this->OrderNoCheckOutTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->CrustSelect->SuspendLayout();
@@ -3317,6 +3322,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// CheckoutPage
 			// 
 			this->CheckoutPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CheckoutPage.BackgroundImage")));
+			this->CheckoutPage->Controls->Add(this->OrderNoCheckOutTextBox);
+			this->CheckoutPage->Controls->Add(this->OrderNoCheckoutLabel);
 			this->CheckoutPage->Controls->Add(this->TotalPriceCheckOutTextBox);
 			this->CheckoutPage->Controls->Add(this->AddOnCheckOutTextBox);
 			this->CheckoutPage->Controls->Add(this->textBox5);
@@ -3337,7 +3344,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CheckoutPage->Controls->Add(this->PaymentModeCheckOutLabel);
 			this->CheckoutPage->Controls->Add(this->AddressCheckOutLabel);
 			this->CheckoutPage->Controls->Add(this->AddressCheckOutTextBox);
-			this->CheckoutPage->Controls->Add(this->textBox2);
+			this->CheckoutPage->Controls->Add(this->PhoneNoTextBox);
 			this->CheckoutPage->Controls->Add(this->PhoneCheckoutLabel);
 			this->CheckoutPage->Controls->Add(this->NameCheckOutText);
 			this->CheckoutPage->Controls->Add(this->NameLabelCheckout);
@@ -3449,7 +3456,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			// CardNumberCheckOutTextBox
 			// 
-			this->CardNumberCheckOutTextBox->Location = System::Drawing::Point(248, 360);
+			this->CardNumberCheckOutTextBox->Location = System::Drawing::Point(232, 472);
 			this->CardNumberCheckOutTextBox->Name = L"CardNumberCheckOutTextBox";
 			this->CardNumberCheckOutTextBox->Size = System::Drawing::Size(184, 20);
 			this->CardNumberCheckOutTextBox->TabIndex = 13;
@@ -3458,7 +3465,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->CardNumberCheckOutLabel->AutoSize = true;
 			this->CardNumberCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->CardNumberCheckOutLabel->Location = System::Drawing::Point(136, 360);
+			this->CardNumberCheckOutLabel->Location = System::Drawing::Point(128, 464);
 			this->CardNumberCheckOutLabel->Name = L"CardNumberCheckOutLabel";
 			this->CardNumberCheckOutLabel->Size = System::Drawing::Size(102, 26);
 			this->CardNumberCheckOutLabel->TabIndex = 12;
@@ -3471,7 +3478,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 				L"MasterCard", L"Visa", L"UnionPay",
 					L"PayPak"
 			});
-			this->CardCheckOutComboBox->Location = System::Drawing::Point(264, 312);
+			this->CardCheckOutComboBox->Location = System::Drawing::Point(256, 416);
 			this->CardCheckOutComboBox->Name = L"CardCheckOutComboBox";
 			this->CardCheckOutComboBox->Size = System::Drawing::Size(121, 21);
 			this->CardCheckOutComboBox->TabIndex = 11;
@@ -3480,7 +3487,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->CardProviderCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F));
 			this->CardProviderCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->CardProviderCheckOutLabel->Location = System::Drawing::Point(136, 312);
+			this->CardProviderCheckOutLabel->Location = System::Drawing::Point(120, 416);
 			this->CardProviderCheckOutLabel->Name = L"CardProviderCheckOutLabel";
 			this->CardProviderCheckOutLabel->Size = System::Drawing::Size(144, 48);
 			this->CardProviderCheckOutLabel->TabIndex = 10;
@@ -3490,7 +3497,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->CashCheckBox->AutoSize = true;
 			this->CashCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->CashCheckBox->Location = System::Drawing::Point(304, 240);
+			this->CashCheckBox->Location = System::Drawing::Point(272, 376);
 			this->CashCheckBox->Name = L"CashCheckBox";
 			this->CashCheckBox->Size = System::Drawing::Size(55, 17);
 			this->CashCheckBox->TabIndex = 9;
@@ -3501,7 +3508,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->CreditCardCheckBox->AutoSize = true;
 			this->CreditCardCheckBox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->CreditCardCheckBox->Location = System::Drawing::Point(152, 240);
+			this->CreditCardCheckBox->Location = System::Drawing::Point(144, 376);
 			this->CreditCardCheckBox->Name = L"CreditCardCheckBox";
 			this->CreditCardCheckBox->Size = System::Drawing::Size(99, 17);
 			this->CreditCardCheckBox->TabIndex = 8;
@@ -3511,7 +3518,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// PaymentModeCheckOutLabel
 			// 
 			this->PaymentModeCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->PaymentModeCheckOutLabel->Location = System::Drawing::Point(200, 216);
+			this->PaymentModeCheckOutLabel->Location = System::Drawing::Point(152, 336);
 			this->PaymentModeCheckOutLabel->Name = L"PaymentModeCheckOutLabel";
 			this->PaymentModeCheckOutLabel->Size = System::Drawing::Size(176, 23);
 			this->PaymentModeCheckOutLabel->TabIndex = 7;
@@ -3521,7 +3528,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->AddressCheckOutLabel->AutoSize = true;
 			this->AddressCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->AddressCheckOutLabel->Location = System::Drawing::Point(128, 104);
+			this->AddressCheckOutLabel->Location = System::Drawing::Point(128, 224);
 			this->AddressCheckOutLabel->Name = L"AddressCheckOutLabel";
 			this->AddressCheckOutLabel->Size = System::Drawing::Size(62, 13);
 			this->AddressCheckOutLabel->TabIndex = 5;
@@ -3529,23 +3536,23 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			// AddressCheckOutTextBox
 			// 
-			this->AddressCheckOutTextBox->Location = System::Drawing::Point(200, 104);
+			this->AddressCheckOutTextBox->Location = System::Drawing::Point(208, 216);
 			this->AddressCheckOutTextBox->Multiline = true;
 			this->AddressCheckOutTextBox->Name = L"AddressCheckOutTextBox";
 			this->AddressCheckOutTextBox->Size = System::Drawing::Size(200, 96);
 			this->AddressCheckOutTextBox->TabIndex = 4;
 			// 
-			// textBox2
+			// PhoneNoTextBox
 			// 
-			this->textBox2->Location = System::Drawing::Point(200, 64);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(200, 20);
-			this->textBox2->TabIndex = 3;
+			this->PhoneNoTextBox->Location = System::Drawing::Point(208, 168);
+			this->PhoneNoTextBox->Name = L"PhoneNoTextBox";
+			this->PhoneNoTextBox->Size = System::Drawing::Size(200, 20);
+			this->PhoneNoTextBox->TabIndex = 3;
 			// 
 			// PhoneCheckoutLabel
 			// 
 			this->PhoneCheckoutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->PhoneCheckoutLabel->Location = System::Drawing::Point(128, 64);
+			this->PhoneCheckoutLabel->Location = System::Drawing::Point(128, 168);
 			this->PhoneCheckoutLabel->Name = L"PhoneCheckoutLabel";
 			this->PhoneCheckoutLabel->Size = System::Drawing::Size(80, 23);
 			this->PhoneCheckoutLabel->TabIndex = 2;
@@ -3553,7 +3560,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			// NameCheckOutText
 			// 
-			this->NameCheckOutText->Location = System::Drawing::Point(192, 24);
+			this->NameCheckOutText->Location = System::Drawing::Point(208, 112);
 			this->NameCheckOutText->Name = L"NameCheckOutText";
 			this->NameCheckOutText->Size = System::Drawing::Size(200, 20);
 			this->NameCheckOutText->TabIndex = 1;
@@ -3561,11 +3568,29 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// NameLabelCheckout
 			// 
 			this->NameLabelCheckout->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->NameLabelCheckout->Location = System::Drawing::Point(136, 24);
+			this->NameLabelCheckout->Location = System::Drawing::Point(144, 112);
 			this->NameLabelCheckout->Name = L"NameLabelCheckout";
 			this->NameLabelCheckout->Size = System::Drawing::Size(56, 23);
 			this->NameLabelCheckout->TabIndex = 0;
 			this->NameLabelCheckout->Text = L"NAME:";
+			// 
+			// OrderNoCheckoutLabel
+			// 
+			this->OrderNoCheckoutLabel->AutoSize = true;
+			this->OrderNoCheckoutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			this->OrderNoCheckoutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->OrderNoCheckoutLabel->Location = System::Drawing::Point(128, 32);
+			this->OrderNoCheckoutLabel->Name = L"OrderNoCheckoutLabel";
+			this->OrderNoCheckoutLabel->Size = System::Drawing::Size(154, 29);
+			this->OrderNoCheckoutLabel->TabIndex = 25;
+			this->OrderNoCheckoutLabel->Text = L"ORDER NO:";
+			// 
+			// OrderNoCheckOutTextBox
+			// 
+			this->OrderNoCheckOutTextBox->Location = System::Drawing::Point(280, 40);
+			this->OrderNoCheckOutTextBox->Name = L"OrderNoCheckOutTextBox";
+			this->OrderNoCheckOutTextBox->Size = System::Drawing::Size(200, 20);
+			this->OrderNoCheckOutTextBox->TabIndex = 26;
 			// 
 			// MyForm
 			// 
