@@ -11,7 +11,8 @@ class account : public Person, public security
 	char password[30];
 	char email[30];
 	int saved;
-	bool guest;             
+	bool guest;
+	int Current_Pos;
 
 public:
 	account();
@@ -21,6 +22,8 @@ public:
 	bool setusername(string);
 	char* getpassword();
 	bool setpassword(string);
+	int getCurrentPos();
+	void SaveChanges(const Order *ptr);
 	char* getemail();
 	bool setemail(string);
 	bool import(string,string);
