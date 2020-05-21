@@ -18,7 +18,7 @@ public:
     void setquantity(quantityoftopings);
     quantityoftopings getquantity();
     void setprice(double);
-    virtual double getprice(void)=0;
+    double getprice(void);
     void setdetails(char[]);
     char* getdetails();
     char* getToppingName();

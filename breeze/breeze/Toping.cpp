@@ -36,4 +36,7 @@ void Toping::increaseprice(int size)
 {
     price = price + ((size-6) * 20);
 }
-
+double Toping::getprice()
+{
+    return price;
+}

@@ -4,17 +4,14 @@
 Sausage::Sausage() : Basil_Scattering(true), Red_Pepper_Flakes(true)
 {
     strcpy_s(name, "Sausage");
-    initialize();
-}
-
-void Sausage::initialize()
-{
-    strcpy_s(details, "Some prefer mild, others spicy, and Southerners Conecuh, but sausage is consistently a favorite pizza topping of Americans. This cast-iron pizza recipe gives you another reason to love that skillet.");
+    strcpy_s(details, "Some prefer mild, others spicy, and Southerners Conecuh, but sausage is consistently a favorite pizza topping of Americans. ");
     price = 175.5;
 }
+
 void Sausage::setRPF(bool RPF)
 {
     Red_Pepper_Flakes = RPF;
+    if (Red_Pepper_Flakes == true) price = price + 50;
 }
 bool Sausage::getRPF()
 {
@@ -27,8 +24,4 @@ void Sausage::setBS(bool BS)
 bool Sausage::getBS()
 {
     return Basil_Scattering;
-}
-double Sausage::getprice()
-{
-    if (Red_Pepper_Flakes == true) return (price + 50);
 }

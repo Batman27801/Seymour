@@ -6,13 +6,11 @@ using namespace std;
 Chicken::Chicken(): Cheese(Shredded_Cheddar),BBQ_Sause(false) 
 {
     strcpy_s(name, "Chicken");
-    initialize();
-}
-void Chicken::initialize()
-{
     price = 170.5;
-    strcpy_s(details, "The winner winner of weeknight meals goes well on pizzas, too! BBQ chicken, buffalo chicken, and chicken bacon ranch are common pizza orders that contain this protein.");
+    strcpy_s(details, "The winner winner of weeknight meals goes well on pizzas, any kind of chicken pizza orders that contain this protein. ");
+
 }
+
 void Chicken::setCheese(Cheeses C)
 {
     Cheese = C;
@@ -24,6 +22,7 @@ Cheeses Chicken::getCheese()
 void Chicken::setBS(bool n)
 {
     BBQ_Sause = n;
+    if (BBQ_Sause == true) price = price + 50;
 }
 bool Chicken::getBS()
 {
@@ -31,9 +30,5 @@ bool Chicken::getBS()
 }
 double Chicken::getprice()
 {
-    if (BBQ_Sause == true)
-    {
-        return (price + 50);
-    }
-    else return price;
+     return price;
 }

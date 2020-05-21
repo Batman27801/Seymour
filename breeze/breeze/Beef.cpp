@@ -4,17 +4,14 @@
 Beef::Beef() :Cloves_Spice(false), pepper(Red)
 {
     strcpy_s(name, "Beef");
-    initialize();
-}
-
-void Beef::initialize()
-{
     price = 380;
-    strcpy_s(details, "In case you have not noticed the trend, meat is always popular on top of pizzas. Whether you are going for a dressier steak pizza, a kid-friendly cheeseburger pizza, or a pizza topped with meatballs (actually a thing), beef always has a place on pizza.");
+    strcpy_s(details, "In case you have not noticed the trend, meat is always popular on top of pizzas. No matter what the pizza is beef always has a place on pizza. ");
+
 }
 void Beef::setCS(bool n)
 {
     Cloves_Spice = n;
+    if (Cloves_Spice == true) price = price + 40;
 }
 bool Beef::getCS()
 {
@@ -27,12 +24,4 @@ void Beef::setpepper(peppers p)
 peppers Beef::getpepper()
 {
     return pepper;
-}
-double Beef::getprice()
-{
-    if (Cloves_Spice == true)
-    {
-        return (price + 40);
-    }
-    else return price;
 }

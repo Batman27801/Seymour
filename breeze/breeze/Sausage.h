@@ -12,11 +12,10 @@ private:
 
 public:
     Sausage();
-    void initialize();
     void setRPF(bool);
     bool getRPF();
     void setBS(bool);
     bool getBS();
-    double getprice();
+    
 };
 #endif
