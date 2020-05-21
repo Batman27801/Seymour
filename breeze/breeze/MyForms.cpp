@@ -1683,31 +1683,34 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
 		FlavourCheckOutTextBox->AppendText(gotoString(pizz->fpoint->get_FlavName()));
 		CrustCheckOutTextBox->AppendText(gotoString(pizz->cpoint->get_CrustName()));
+		ToppingsCheckOutTextBox->AppendText(gotoString(pizz->tpoint->getToppingName()));
 
 	}
 	else if (test->getguest() == false)
 	{
 		/****/
-		Order* o1 = new Order;
-		o1->PlaceOrder(pizz);
-		o1->FileOrder();
-		NameCheckOutText->Text = gotoString(test->getname());
-		AddressCheckOutTextBox->Text = gotoString(test->getaddress());
-		PhoneNoTextBox->Text = Convert::ToString(test->getcontact());
-		PaymentModeCheckOutLabel->Visible = false;
-		CardProviderCheckOutLabel->Visible = false;
-		CardCheckOutComboBox->Visible = false;
-		CardNumberCheckOutLabel->Visible = false;
-		CardNumberCheckOutTextBox->Visible = false;
-		FlavourCheckOutTextBox->AppendText(Convert::ToString(test->getCurrentPos()));
-		//FlavourCheckOutTextBox->AppendText(gotoString(pizz->fpoint->get_FlavName()));
-		CrustCheckOutTextBox->AppendText(gotoString(pizz->cpoint->get_CrustName()));
-		TotalPriceCheckOutTextBox->Text = "Rs = ";
-		TotalPriceCheckOutTextBox->AppendText(Convert::ToString(o1->ReturnBill()));
 		srand(int(time(0)));
 		long int OrderCode;
 		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
+		Order* o1 = new Order;
+		o1->PlaceOrder(pizz);
+		o1->setOrderCode(OrderCode);
+		o1->FileOrder();
+		NameCheckOutText->Text = gotoString(test->getname());
+		AddressCheckOutTextBox->Text = gotoString(test->getaddress());
+		PhoneNoTextBox->Text = Convert::ToString(test->getcontact());
+		PaymentModeCheckOutLabel->Visible = true;
+		CardProviderCheckOutLabel->Visible = false;
+		CardCheckOutComboBox->Visible = false;
+		CardNumberCheckOutLabel->Visible = false;
+		CardNumberCheckOutTextBox->Visible = false;
+		FlavourCheckOutTextBox->AppendText(gotoString(pizz->fpoint->get_FlavName()));
+		ToppingsCheckOutTextBox->AppendText(gotoString(pizz->tpoint->getToppingName()));
+		CrustCheckOutTextBox->AppendText(gotoString(pizz->cpoint->get_CrustName()));
+		TotalPriceCheckOutTextBox->Text = "Rs = ";
+		TotalPriceCheckOutTextBox->AppendText(Convert::ToString(o1->ReturnBill()));
+		
 	}
 }
 
