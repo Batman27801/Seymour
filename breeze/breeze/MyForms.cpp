@@ -1426,7 +1426,7 @@ void breeze::MyForm::ChickenCheck_CheckedChanged(System::Object^ sender, System:
 		SausageCheck->Checked = false;
 	
 		Chicken* C = new Chicken;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRs" + Convert::ToString(C->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRs: " + Convert::ToString(C->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete C;
 	}
 	else if (ChickenCheck->Checked == false)
@@ -1451,7 +1451,7 @@ void breeze::MyForm::PepperoniCheck_CheckedChanged(System::Object^ sender, Syste
 		SausageCheck->Checked = false;
 
 		Pepperoni* P = new Pepperoni;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(P->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(P->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete P;
 	}
 	else if (PepperoniCheck->Checked == false)
@@ -1476,7 +1476,7 @@ void breeze::MyForm::BeefCheck_CheckedChanged(System::Object^ sender, System::Ev
 		SausageCheck->Checked = false;
 
 		Beef* B = new Beef;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(B->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(B->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete B;
 	}
 	else if (BeefCheck->Checked == false)
@@ -1499,7 +1499,7 @@ void breeze::MyForm::MashroomCheck_CheckedChanged(System::Object^ sender, System
 		SausageCheck->Checked = false;
 
 		Mashroom* M = new Mashroom;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(M->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(M->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete M;
 	}
 	else if (MashroomCheck->Checked == false)
@@ -1522,7 +1522,7 @@ void breeze::MyForm::Extra_CheezCheck_CheckedChanged(System::Object^ sender, Sys
 		SausageCheck->Checked = false;
 
 		Extra_Cheez* E = new Extra_Cheez;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(E->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(E->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
 		delete E;
 	}
 	else if (Extra_CheezCheck->Checked == false)
@@ -1545,9 +1545,13 @@ void breeze::MyForm::SausageCheck_CheckedChanged(System::Object^ sender, System:
 		Extra_CheezCheck->Checked = false;
 
 		Sausage* S = new Sausage;
-		//ToppingPriceBox.AppendText(Convert::ToString(S->getprice())) ;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS" + Convert::ToString(S->getprice() + pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(S->getprice() + pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price());
 		delete S;
+	}
+	else
+	{
+		CheckRedPepperFlakes1->Visible = false;
+		CheckBasilScattering->Visible = false;
 	}
 }
 void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1567,6 +1571,7 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 
 
 		pizz->tpoint = C;
+		tabControl1->SelectedTab = CheckoutPage;
 	}
 	else if (PepperoniCheck->Checked == true)
 	{
@@ -1588,6 +1593,7 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 
 
 		pizz->tpoint = P;
+		tabControl1->SelectedTab = CheckoutPage;
 	}
 	else if (BeefCheck->Checked == true)
 	{
@@ -1605,6 +1611,7 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 
 
 		pizz->tpoint = B;
+		tabControl1->SelectedTab = CheckoutPage;
 	}
 	else if (MashroomCheck->Checked == true)
 	{
@@ -1622,6 +1629,7 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 
 
 		pizz->tpoint = M;
+		tabControl1->SelectedTab = CheckoutPage;
 	}
 	else if (Extra_CheezCheck->Checked == true)
 	{
@@ -1639,6 +1647,7 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 
 
 		pizz->tpoint = EC;
+		tabControl1->SelectedTab = CheckoutPage;
 	}
 	else if (SausageCheck->Checked == true)
 	{
@@ -1655,13 +1664,14 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 
 
 		pizz->tpoint = S;
+		tabControl1->SelectedTab = CheckoutPage;
 	}
 	else
 	{
 		ToppingChooseNotice->Text = "Please Choose One";
 		ToppingChooseNotice->Visible = true;
 	}
-	tabControl1->SelectedTab = CheckoutPage;
+	
 	
 }
 void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArgs^ e)

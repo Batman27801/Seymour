@@ -4,17 +4,16 @@
 Mashroom::Mashroom(): Creamlized_Onion(false),Creamy_Rosted_Garlic_Sause(true)
 {
     strcpy_s(name, "Mashroom");
-    initialize();
-}
-
-void Mashroom::initialize()
-{
-    strcpy_s(details, "This earthy topping can be divisive in the kitchen, but many agree that it fits right in on a pizza, and this breakfast recipe is a perfect excuse to try eggs on a pizza. Spoiler: You are going to love it.");
+    strcpy_s(details, "This earthy topping can be divisive in the kitchen, but many agree that it fits right in on a pizza. Spoiler: You are going to love it. ");
     price = 200.5;
 }
 void Mashroom::setCO(bool n)
 {
     Creamlized_Onion = n;
+    if (Creamlized_Onion == true)
+    {
+        price= price + 40;
+    }
 }
 bool Mashroom::getCO()
 {
@@ -27,13 +26,4 @@ bool Mashroom::getCRGS()
 void Mashroom::setCRGS(bool n)
 {
     Creamy_Rosted_Garlic_Sause = n;
-}
-
-double Mashroom::getprice()
-{
-    if (Creamlized_Onion == true)
-    {
-        return (price + 40);
-    }
-    else return price;
 }

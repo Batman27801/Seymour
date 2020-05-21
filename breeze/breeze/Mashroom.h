@@ -12,11 +12,10 @@ private:
 
 public:
     Mashroom();
-    void initialize();
     void setCRGS(bool);
     void setCO(bool);
     bool getCRGS();
     bool getCO();
-    double getprice();
+    ;
 };
 #endif

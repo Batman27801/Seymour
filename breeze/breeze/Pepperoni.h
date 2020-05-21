@@ -13,12 +13,11 @@ private:
 
 public:
     Pepperoni();
-    void initialize();
     void setType(TypeofTopping);
     TypeofTopping getType();
     void setQOFMC(QuantityOfmozzarellecheese);
     QuantityOfmozzarellecheese getQOFMC();
-    double getprice();
+   
 
 };
 #endif
