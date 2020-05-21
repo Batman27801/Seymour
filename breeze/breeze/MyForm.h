@@ -21,8 +21,8 @@ namespace breeze {
 		//newyork* a1 = new newyork;
 		//crust* p;
 		int total_no_of_pizzas;
-		int* size = new int[total_no_of_pizzas];
-		pizza *pizz=new pizza;
+		int* size;
+		pizza *pizz = new pizza;
 		flavour *ptr;
 		Order *order = new Order;
 		account* test = new account;
@@ -426,8 +426,14 @@ private: System::Windows::Forms::Button^ startmenubox;
 private: System::Windows::Forms::ComboBox^ sizeofpizzabox5;
 
 private: System::Windows::Forms::Label^ sizeofpizzalabel5;
-private: System::Windows::Forms::Button^ ConfirmToppingButton;
+
+
+private: System::Windows::Forms::ComboBox^ sizeofpremadepizzabox;
+private: System::Windows::Forms::Label^ sizeofpremadepizzalabel;
+private: System::Windows::Forms::Label^ sizereq;
+private: System::Windows::Forms::Label^ pizzareq;
 private: System::Windows::Forms::Label^ ToppingChooseNotice;
+
 
 
 
@@ -606,6 +612,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->SignUpHeading = (gcnew System::Windows::Forms::Label());
 			this->UserPage = (gcnew System::Windows::Forms::TabPage());
 			this->PreMade = (gcnew System::Windows::Forms::TabPage());
+			this->pizzareq = (gcnew System::Windows::Forms::Label());
+			this->sizereq = (gcnew System::Windows::Forms::Label());
+			this->sizeofpremadepizzabox = (gcnew System::Windows::Forms::ComboBox());
+			this->sizeofpremadepizzalabel = (gcnew System::Windows::Forms::Label());
 			this->pizzaamountbox = (gcnew System::Windows::Forms::ComboBox());
 			this->startmenubox = (gcnew System::Windows::Forms::Button());
 			this->sizeofpizzabox5 = (gcnew System::Windows::Forms::ComboBox());
@@ -716,7 +726,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->MovetoToping = (gcnew System::Windows::Forms::Button());
 			this->ToppingSelect = (gcnew System::Windows::Forms::TabPage());
 			this->ToppingChooseNotice = (gcnew System::Windows::Forms::Label());
-			this->ConfirmToppingButton = (gcnew System::Windows::Forms::Button());
 			this->ToppingPriceBox = (gcnew System::Windows::Forms::TextBox());
 			this->BacktoFlavors = (gcnew System::Windows::Forms::Button());
 			this->ProceedToCheckOutButton = (gcnew System::Windows::Forms::Button());
@@ -1828,6 +1837,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->PreMade->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"PreMade.BackgroundImage")));
 			this->PreMade->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->PreMade->Controls->Add(this->pizzareq);
+			this->PreMade->Controls->Add(this->sizereq);
+			this->PreMade->Controls->Add(this->sizeofpremadepizzabox);
+			this->PreMade->Controls->Add(this->sizeofpremadepizzalabel);
 			this->PreMade->Controls->Add(this->pizzaamountbox);
 			this->PreMade->Controls->Add(this->startmenubox);
 			this->PreMade->Controls->Add(this->sizeofpizzabox5);
@@ -1859,6 +1872,58 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->PreMade->TabIndex = 8;
 			this->PreMade->Text = L"tabPage1";
 			this->PreMade->UseVisualStyleBackColor = true;
+			this->PreMade->Enter += gcnew System::EventHandler(this, &MyForm::PreMade_Enter);
+			// 
+			// pizzareq
+			// 
+			this->pizzareq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->pizzareq->ForeColor = System::Drawing::Color::Red;
+			this->pizzareq->Location = System::Drawing::Point(1025, 428);
+			this->pizzareq->Name = L"pizzareq";
+			this->pizzareq->Size = System::Drawing::Size(164, 60);
+			this->pizzareq->TabIndex = 29;
+			this->pizzareq->Text = L"Please Select At least 1 Pizza or fill the quantity box and sub-boxed!";
+			this->pizzareq->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->pizzareq->Visible = false;
+			// 
+			// sizereq
+			// 
+			this->sizereq->AutoSize = true;
+			this->sizereq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->sizereq->ForeColor = System::Drawing::Color::Red;
+			this->sizereq->Location = System::Drawing::Point(628, 424);
+			this->sizereq->Name = L"sizereq";
+			this->sizereq->Size = System::Drawing::Size(219, 15);
+			this->sizereq->TabIndex = 28;
+			this->sizereq->Text = L"Please Set size for all that are enabled!";
+			this->sizereq->Visible = false;
+			// 
+			// sizeofpremadepizzabox
+			// 
+			this->sizeofpremadepizzabox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->sizeofpremadepizzabox->FormattingEnabled = true;
+			this->sizeofpremadepizzabox->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"0", L"6", L"7", L"8", L"9", L"10",
+					L"11", L"12", L"15", L"17", L"18", L"20"
+			});
+			this->sizeofpremadepizzabox->Location = System::Drawing::Point(693, 355);
+			this->sizeofpremadepizzabox->Name = L"sizeofpremadepizzabox";
+			this->sizeofpremadepizzabox->Size = System::Drawing::Size(93, 21);
+			this->sizeofpremadepizzabox->TabIndex = 27;
+			// 
+			// sizeofpremadepizzalabel
+			// 
+			this->sizeofpremadepizzalabel->AutoSize = true;
+			this->sizeofpremadepizzalabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->sizeofpremadepizzalabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->sizeofpremadepizzalabel->Location = System::Drawing::Point(500, 356);
+			this->sizeofpremadepizzalabel->Name = L"sizeofpremadepizzalabel";
+			this->sizeofpremadepizzalabel->Size = System::Drawing::Size(149, 20);
+			this->sizeofpremadepizzalabel->TabIndex = 26;
+			this->sizeofpremadepizzalabel->Text = L"Size of the Pizza:";
 			// 
 			// pizzaamountbox
 			// 
@@ -1866,8 +1931,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->pizzaamountbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->pizzaamountbox->FormattingEnabled = true;
-			this->pizzaamountbox->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"1", L"2", L"3", L"4", L"5" });
-			this->pizzaamountbox->Location = System::Drawing::Point(481, 390);
+			this->pizzaamountbox->Items->AddRange(gcnew cli::array< System::Object^  >(6) { L"0", L"1", L"2", L"3", L"4", L"5" });
+			this->pizzaamountbox->Location = System::Drawing::Point(478, 424);
 			this->pizzaamountbox->Name = L"pizzaamountbox";
 			this->pizzaamountbox->Size = System::Drawing::Size(93, 28);
 			this->pizzaamountbox->TabIndex = 25;
@@ -1882,16 +1947,17 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->startmenubox->TabIndex = 24;
 			this->startmenubox->Text = L"Let\'s Get Cookin\'";
 			this->startmenubox->UseVisualStyleBackColor = true;
+			this->startmenubox->Click += gcnew System::EventHandler(this, &MyForm::startmenubox_Click);
 			// 
 			// sizeofpizzabox5
 			// 
 			this->sizeofpizzabox5->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->sizeofpizzabox5->FormattingEnabled = true;
-			this->sizeofpizzabox5->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"6", L"7", L"8", L"9", L"10", L"11", L"12",
-					L"15", L"17", L"18", L"20"
+			this->sizeofpizzabox5->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"0", L"6", L"7", L"8", L"9", L"10", L"11",
+					L"12", L"15", L"17", L"18", L"20"
 			});
-			this->sizeofpizzabox5->Location = System::Drawing::Point(846, 504);
+			this->sizeofpizzabox5->Location = System::Drawing::Point(843, 538);
 			this->sizeofpizzabox5->Name = L"sizeofpizzabox5";
 			this->sizeofpizzabox5->Size = System::Drawing::Size(93, 21);
 			this->sizeofpizzabox5->TabIndex = 23;
@@ -1902,7 +1968,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->sizeofpizzalabel5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->sizeofpizzalabel5->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->sizeofpizzalabel5->Location = System::Drawing::Point(653, 505);
+			this->sizeofpizzalabel5->Location = System::Drawing::Point(650, 539);
 			this->sizeofpizzalabel5->Name = L"sizeofpizzalabel5";
 			this->sizeofpizzalabel5->Size = System::Drawing::Size(164, 20);
 			this->sizeofpizzalabel5->TabIndex = 22;
@@ -1912,11 +1978,11 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->sizeofpizzabox4->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->sizeofpizzabox4->FormattingEnabled = true;
-			this->sizeofpizzabox4->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"6", L"7", L"8", L"9", L"10", L"11", L"12",
-					L"15", L"17", L"18", L"20"
+			this->sizeofpizzabox4->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"0", L"6", L"7", L"8", L"9", L"10", L"11",
+					L"12", L"15", L"17", L"18", L"20"
 			});
-			this->sizeofpizzabox4->Location = System::Drawing::Point(846, 457);
+			this->sizeofpizzabox4->Location = System::Drawing::Point(843, 491);
 			this->sizeofpizzabox4->Name = L"sizeofpizzabox4";
 			this->sizeofpizzabox4->Size = System::Drawing::Size(93, 21);
 			this->sizeofpizzabox4->TabIndex = 21;
@@ -1927,7 +1993,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->sizeofpizzalabel4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->sizeofpizzalabel4->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->sizeofpizzalabel4->Location = System::Drawing::Point(653, 458);
+			this->sizeofpizzalabel4->Location = System::Drawing::Point(650, 492);
 			this->sizeofpizzalabel4->Name = L"sizeofpizzalabel4";
 			this->sizeofpizzalabel4->Size = System::Drawing::Size(164, 20);
 			this->sizeofpizzalabel4->TabIndex = 20;
@@ -1938,15 +2004,14 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->sizeofpizzabox3->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->sizeofpizzabox3->FormattingEnabled = true;
-			this->sizeofpizzabox3->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"6", L"7", L"8", L"9", L"10", L"11", L"12",
-					L"15", L"17", L"18", L"20"
+			this->sizeofpizzabox3->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"0", L"6", L"7", L"8", L"9", L"10", L"11",
+					L"12", L"15", L"17", L"18", L"20"
 			});
-			this->sizeofpizzabox3->Location = System::Drawing::Point(846, 409);
+			this->sizeofpizzabox3->Location = System::Drawing::Point(843, 443);
 			this->sizeofpizzabox3->Name = L"sizeofpizzabox3";
 			this->sizeofpizzabox3->Size = System::Drawing::Size(93, 21);
 			this->sizeofpizzabox3->TabIndex = 19;
-			this->sizeofpizzabox3->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::comboBox4_SelectedIndexChanged);
 			// 
 			// sizeofpizzalabel3
 			// 
@@ -1954,7 +2019,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->sizeofpizzalabel3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->sizeofpizzalabel3->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->sizeofpizzalabel3->Location = System::Drawing::Point(653, 410);
+			this->sizeofpizzalabel3->Location = System::Drawing::Point(650, 444);
 			this->sizeofpizzalabel3->Name = L"sizeofpizzalabel3";
 			this->sizeofpizzalabel3->Size = System::Drawing::Size(164, 20);
 			this->sizeofpizzalabel3->TabIndex = 18;
@@ -1965,11 +2030,11 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->sizeofpizzabox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->sizeofpizzabox2->FormattingEnabled = true;
-			this->sizeofpizzabox2->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"6", L"7", L"8", L"9", L"10", L"11", L"12",
-					L"15", L"17", L"18", L"20"
+			this->sizeofpizzabox2->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"0", L"6", L"7", L"8", L"9", L"10", L"11",
+					L"12", L"15", L"17", L"18", L"20"
 			});
-			this->sizeofpizzabox2->Location = System::Drawing::Point(367, 505);
+			this->sizeofpizzabox2->Location = System::Drawing::Point(364, 539);
 			this->sizeofpizzabox2->Name = L"sizeofpizzabox2";
 			this->sizeofpizzabox2->Size = System::Drawing::Size(93, 21);
 			this->sizeofpizzabox2->TabIndex = 17;
@@ -1980,7 +2045,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->sizeofpizzalaebl2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->sizeofpizzalaebl2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->sizeofpizzalaebl2->Location = System::Drawing::Point(174, 506);
+			this->sizeofpizzalaebl2->Location = System::Drawing::Point(171, 540);
 			this->sizeofpizzalaebl2->Name = L"sizeofpizzalaebl2";
 			this->sizeofpizzalaebl2->Size = System::Drawing::Size(164, 20);
 			this->sizeofpizzalaebl2->TabIndex = 16;
@@ -1990,14 +2055,13 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->sizeofpizzabox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->sizeofpizzabox->FormattingEnabled = true;
-			this->sizeofpizzabox->Items->AddRange(gcnew cli::array< System::Object^  >(11) {
-				L"10", L"11", L"12", L"15", L"17", L"18",
-					L"20", L"6", L"7", L"8", L"9"
+			this->sizeofpizzabox->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"0", L"6", L"7", L"8", L"9", L"10", L"11",
+					L"12", L"15", L"17", L"18", L"20"
 			});
-			this->sizeofpizzabox->Location = System::Drawing::Point(367, 457);
+			this->sizeofpizzabox->Location = System::Drawing::Point(364, 491);
 			this->sizeofpizzabox->Name = L"sizeofpizzabox";
 			this->sizeofpizzabox->Size = System::Drawing::Size(93, 21);
-			this->sizeofpizzabox->Sorted = true;
 			this->sizeofpizzabox->TabIndex = 15;
 			// 
 			// label12
@@ -2006,7 +2070,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label12->ForeColor = System::Drawing::Color::Red;
-			this->label12->Location = System::Drawing::Point(175, 412);
+			this->label12->Location = System::Drawing::Point(172, 446);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(285, 16);
 			this->label12->TabIndex = 14;
@@ -2018,7 +2082,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->sizeofpizzalabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->sizeofpizzalabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->sizeofpizzalabel->Location = System::Drawing::Point(174, 458);
+			this->sizeofpizzalabel->Location = System::Drawing::Point(171, 492);
 			this->sizeofpizzalabel->Name = L"sizeofpizzalabel";
 			this->sizeofpizzalabel->Size = System::Drawing::Size(164, 20);
 			this->sizeofpizzalabel->TabIndex = 13;
@@ -2030,7 +2094,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->pizzaamountlabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->pizzaamountlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->pizzaamountlabel->Location = System::Drawing::Point(175, 394);
+			this->pizzaamountlabel->Location = System::Drawing::Point(172, 428);
 			this->pizzaamountlabel->Name = L"pizzaamountlabel";
 			this->pizzaamountlabel->Size = System::Drawing::Size(257, 18);
 			this->pizzaamountlabel->TabIndex = 11;
@@ -2042,7 +2106,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->chefchoicesubheading2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
 				| System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->chefchoicesubheading2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->chefchoicesubheading2->Location = System::Drawing::Point(310, 356);
+			this->chefchoicesubheading2->Location = System::Drawing::Point(307, 390);
 			this->chefchoicesubheading2->Name = L"chefchoicesubheading2";
 			this->chefchoicesubheading2->Size = System::Drawing::Size(718, 20);
 			this->chefchoicesubheading2->TabIndex = 10;
@@ -2056,21 +2120,23 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->allcheesebox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->allcheesebox->Location = System::Drawing::Point(943, 245);
 			this->allcheesebox->Name = L"allcheesebox";
-			this->allcheesebox->Size = System::Drawing::Size(210, 95);
+			this->allcheesebox->Size = System::Drawing::Size(210, 110);
 			this->allcheesebox->TabIndex = 9;
-			this->allcheesebox->Text = L"Experience the taste of Chicken Fajita topped with olives, bellpeppers and anchov"
-				L"ies. A crispy italian crust crust and an extra chicken topping leaves you asking"
-				L" for more!";
+			this->allcheesebox->Text = resources->GetString(L"allcheesebox.Text");
 			this->allcheesebox->UseVisualStyleBackColor = true;
 			// 
 			// allcheesepic
 			// 
+			this->allcheesepic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->allcheesepic->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->allcheesepic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"allcheesepic.Image")));
 			this->allcheesepic->Location = System::Drawing::Point(960, 97);
 			this->allcheesepic->Name = L"allcheesepic";
 			this->allcheesepic->Size = System::Drawing::Size(177, 145);
 			this->allcheesepic->TabIndex = 8;
-			this->allcheesepic->Text = L"label2";
+			this->allcheesepic->Text = L"All Cheese Fienza";
+			this->allcheesepic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			// 
 			// westsidegarlicbox
 			// 
@@ -2081,19 +2147,22 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->westsidegarlicbox->Name = L"westsidegarlicbox";
 			this->westsidegarlicbox->Size = System::Drawing::Size(210, 95);
 			this->westsidegarlicbox->TabIndex = 7;
-			this->westsidegarlicbox->Text = L"Experience the taste of Chicken Fajita topped with olives, bellpeppers and anchov"
-				L"ies. A crispy italian crust crust and an extra chicken topping leaves you asking"
-				L" for more!";
+			this->westsidegarlicbox->Text = L"Time to fend off some Vampires! Garlic Blast has an ample amount of garlic flavor"
+				L"ing on the crunchy focacia base topped with beef and veggies toppings";
 			this->westsidegarlicbox->UseVisualStyleBackColor = true;
 			// 
 			// westsidegarlicpic
 			// 
+			this->westsidegarlicpic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->westsidegarlicpic->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->westsidegarlicpic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"westsidegarlicpic.Image")));
 			this->westsidegarlicpic->Location = System::Drawing::Point(690, 97);
 			this->westsidegarlicpic->Name = L"westsidegarlicpic";
 			this->westsidegarlicpic->Size = System::Drawing::Size(177, 145);
 			this->westsidegarlicpic->TabIndex = 6;
-			this->westsidegarlicpic->Text = L"label2";
+			this->westsidegarlicpic->Text = L"Garlic Blast";
+			this->westsidegarlicpic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			// 
 			// chickensupremebox
 			// 
@@ -2104,19 +2173,23 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->chickensupremebox->Name = L"chickensupremebox";
 			this->chickensupremebox->Size = System::Drawing::Size(210, 95);
 			this->chickensupremebox->TabIndex = 5;
-			this->chickensupremebox->Text = L"Experience the taste of Chicken Fajita topped with olives, bellpeppers and anchov"
-				L"ies. A crispy italian crust crust and an extra chicken topping leaves you asking"
-				L" for more!";
+			this->chickensupremebox->Text = L"Love Chicken\? Then this is the best pizza for you! Topped with Chicken tikka, chi"
+				L"cken popcorn and the best veggies to go with it! Chicken Supreme is every Chicke"
+				L"n lover\'s dream come true!";
 			this->chickensupremebox->UseVisualStyleBackColor = true;
 			// 
 			// chickensupremepic
 			// 
+			this->chickensupremepic->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->chickensupremepic->ForeColor = System::Drawing::Color::White;
 			this->chickensupremepic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"chickensupremepic.Image")));
 			this->chickensupremepic->Location = System::Drawing::Point(426, 97);
 			this->chickensupremepic->Name = L"chickensupremepic";
 			this->chickensupremepic->Size = System::Drawing::Size(177, 145);
 			this->chickensupremepic->TabIndex = 4;
-			this->chickensupremepic->Text = L"label2";
+			this->chickensupremepic->Text = L"Chicken Supreme";
+			this->chickensupremepic->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			// 
 			// fajitablastbox
 			// 
@@ -3308,7 +3381,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ToppingSelect->BackColor = System::Drawing::Color::Transparent;
 			this->ToppingSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ToppingSelect.BackgroundImage")));
 			this->ToppingSelect->Controls->Add(this->ToppingChooseNotice);
-			this->ToppingSelect->Controls->Add(this->ConfirmToppingButton);
 			this->ToppingSelect->Controls->Add(this->ToppingPriceBox);
 			this->ToppingSelect->Controls->Add(this->BacktoFlavors);
 			this->ToppingSelect->Controls->Add(this->ProceedToCheckOutButton);
@@ -3356,27 +3428,16 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			// ToppingChooseNotice
 			// 
-			this->ToppingChooseNotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
+			this->ToppingChooseNotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->ToppingChooseNotice->ForeColor = System::Drawing::Color::Yellow;
-			this->ToppingChooseNotice->Location = System::Drawing::Point(1017, 372);
+			this->ToppingChooseNotice->ForeColor = System::Drawing::Color::Red;
+			this->ToppingChooseNotice->Location = System::Drawing::Point(992, 430);
 			this->ToppingChooseNotice->Name = L"ToppingChooseNotice";
-			this->ToppingChooseNotice->Size = System::Drawing::Size(152, 23);
-			this->ToppingChooseNotice->TabIndex = 38;
+			this->ToppingChooseNotice->Size = System::Drawing::Size(187, 52);
+			this->ToppingChooseNotice->TabIndex = 37;
 			this->ToppingChooseNotice->Text = L"label2";
 			this->ToppingChooseNotice->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// ConfirmToppingButton
-			// 
-			this->ConfirmToppingButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->ConfirmToppingButton->Location = System::Drawing::Point(1028, 403);
-			this->ConfirmToppingButton->Name = L"ConfirmToppingButton";
-			this->ConfirmToppingButton->Size = System::Drawing::Size(125, 56);
-			this->ConfirmToppingButton->TabIndex = 37;
-			this->ConfirmToppingButton->Text = L"Confirm Topping";
-			this->ConfirmToppingButton->UseVisualStyleBackColor = true;
-			this->ConfirmToppingButton->Click += gcnew System::EventHandler(this, &MyForm::ConfirmToppingButton_Click);
+			this->ToppingChooseNotice->Visible = false;
 			// 
 			// ToppingPriceBox
 			// 
@@ -3814,6 +3875,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->CheckoutPage->TabIndex = 7;
 			this->CheckoutPage->Text = L"CheckoutPage";
 			this->CheckoutPage->UseVisualStyleBackColor = true;
+			this->CheckoutPage->Enter += gcnew System::EventHandler(this, &MyForm::CheckoutPage_Enter);
 			// 
 			// OrderNoCheckOutTextBox
 			// 
@@ -4191,13 +4253,16 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	{
 		tabControl1->SelectedTab = FlavourSelect;
 	}
-private: System::Void label14_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::Void label14_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void comboBox4_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	System::Void comboBox4_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void label15_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::Void label15_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-	System::Void ConfirmToppingButton_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void ToppingSelect_Enter(System::Object^ sender, System::EventArgs^ e);
+
+	System::Void startmenubox_Click(System::Object^ sender, System::EventArgs^ e); 
+	System::Void CheckoutPage_Enter(System::Object^ sender, System::EventArgs^ e);
+	System::Void PreMade_Enter(System::Object^ sender, System::EventArgs^ e);
 };
 }

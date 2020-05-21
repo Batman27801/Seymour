@@ -9,9 +9,9 @@ class Toping
 {
 protected:
     double price;
-    char details[1000];
+    char details[300];
     enum quantityoftopings quantity; //1 for Normal 2 For Extra 3 For Less
-    char name[2000];
+    char name[200];
 
 public:
     Toping();

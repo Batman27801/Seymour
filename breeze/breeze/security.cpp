@@ -181,19 +181,20 @@ string security::encryption(string var)
 {
 	string temp = var;
 	int i, length = static_cast<int>(temp.length());
-	for (i = 0; i < length; i++)
+	for (i = 0; i < length ; i++)
 	{
 		if (i % 2 == 0)
 			temp[i] = temp[i] + 2;
 		else if (i % 2 == 1)
 			temp[i] = temp[i] - 2;
 	}
+	//temp[length] = '\0';
 	return temp;
 }
 char* security::decryption(string var)
 {
 	int n = static_cast<int>(var.length());
-	char* temp = new char[n];
+	char* temp = new char[n+1];
 	var.copy(temp, n);
 	int i, length = static_cast<int>(strlen(temp));
 	for (i = 0; i < length; i++)
@@ -203,6 +204,7 @@ char* security::decryption(string var)
 		else if (i % 2 == 1)
 			temp[i] = (temp[i] + 2);
 	}
+	temp[n] = '\0';
 	return temp;
 }
 

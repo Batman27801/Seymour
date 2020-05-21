@@ -1,4 +1,6 @@
 #pragma once
+#pragma warning(disable: 6262)
+
 #include "account.h"
 #include <fstream>
 

@@ -11,9 +11,152 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
+//******************************USER LOGIN AND RELATED FUNCTIONS**********************
 void breeze::MyForm::customer_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = UserLogin;
 }
+
+void breeze::MyForm::PreMade_Enter(System::Object^ sender, System::EventArgs^ e) {
+	sizeofpizzabox5->Text = "0";
+	sizeofpizzabox4->Text = "0";
+	sizeofpizzabox3->Text = "0";
+	sizeofpizzabox2->Text = "0";
+	sizeofpizzabox->Text = "0";
+	sizeofpremadepizzabox->Text = "0";
+	pizzaamountbox->Text = "0";
+}
+
+void breeze::MyForm::startmenubox_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	if (fajitablastbox->Checked == true)
+	{
+		italian *a = new italian;
+		a->setherbs(onions);
+		a->setcookstyle(oven);
+		fajita* b = new fajita;
+		b->set_meat("MEXICAN STYLE");
+		Chicken* c = new Chicken;
+		pizz->cpoint = a;
+		pizz->fpoint = b;
+		pizz->tpoint = c;
+
+		tabControl1->SelectedTab = CheckoutPage;
+		
+	}
+	else if (chickensupremebox->Checked == true)
+	{
+		newyork* a = new newyork;
+		a->setherbs(garlic);
+		a->setmineralized(true);
+		bbq_buzz* b = new bbq_buzz;
+		b->set_sauce("BBQ SAUCE");
+		b->set_chicken(true);
+		Chicken* c = new Chicken;
+		c->setCheese(Shredded_Parmesan);
+		pizz->cpoint = a;
+		pizz->fpoint = b;
+		pizz->tpoint = c;
+
+		tabControl1->SelectedTab = CheckoutPage;
+
+	}
+	else if (westsidegarlicbox->Checked == true)
+	{
+		focacia* a = new focacia;
+		a->setherbs(garlicpowder);
+		a->setcoating(oliveoil);
+		tikka *b = new tikka;
+		b->set_beef(true);
+		Mashroom* c = new Mashroom;
+		c->setCO(true);
+		c->setCRGS(true);
+		pizz->cpoint = a;
+		pizz->fpoint = b;
+		pizz->tpoint = c;
+
+		tabControl1->SelectedTab = CheckoutPage;
+
+	}
+	else if (allcheesebox->Checked == true)
+	{
+		stuffed* a = new stuffed;
+		a->setcheese(american);
+		a->setfilling(whole);
+		a->setlayer(thincut);
+		The_cheese* b = new The_cheese;
+		b->set_cheese("GOUDA");
+		Extra_Cheez* c = new Extra_Cheez;
+		c->setExtra(Macroni);
+		c->setRPF(true);
+		pizz->cpoint = a;
+		pizz->fpoint = b;
+		pizz->tpoint = c;
+
+		tabControl1->SelectedTab = CheckoutPage;
+
+	}
+	else if (Convert::ToInt16(pizzaamountbox->Text) > 0)
+	{
+		total_no_of_pizzas = Convert::ToInt16(pizzaamountbox->Text);
+		size = new int[total_no_of_pizzas];
+		int i=0;
+
+		if (Convert::ToInt16(pizzaamountbox->Text) > 4)
+		{
+			if(Convert::ToInt16(sizeofpizzabox5->Text) != 0)
+			{
+				i++;
+				size[4] = Convert::ToInt16(sizeofpizzabox5->Text);
+			}
+		}
+		if (Convert::ToInt16(pizzaamountbox->Text) > 3)
+		{
+			if (Convert::ToInt16(sizeofpizzabox4->Text) != 0)
+			{
+				i++;
+				size[3] = Convert::ToInt16(sizeofpizzabox4->Text);
+			}
+		}
+		if (Convert::ToInt16(pizzaamountbox->Text) > 2)
+		{
+			if (Convert::ToInt16(sizeofpizzabox3->Text) != 0)
+			{
+				i++;
+				size[2] = Convert::ToInt16(sizeofpizzabox3->Text);
+			}
+		}
+		if (Convert::ToInt16(pizzaamountbox->Text) > 1)
+		{
+			if (Convert::ToInt16(sizeofpizzabox2->Text) != 0)
+			{
+				i++;
+				size[1] = Convert::ToInt16(sizeofpizzabox2->Text);
+			}
+		}
+		if (Convert::ToInt16(pizzaamountbox->Text) > 0)
+		{
+			if (Convert::ToInt16(sizeofpizzabox->Text) != 0)
+			{
+				i++;
+				size[0] = Convert::ToInt16(sizeofpizzabox->Text);
+			}
+		}
+		if (i != Convert::ToInt16(pizzaamountbox->Text))
+		{
+			sizereq->Visible = true;
+		}
+		else
+			tabControl1->SelectedTab = CrustSelect;
+	}
+	else
+	{
+		pizzareq->Visible = true;
+	}
+}
+
+//******************************USER LOGIN AND RELATED FUNCTIONS**********************
+
+
 
 //******************************SIGNUP RELATED FUNCTIONS*****************************
 void breeze::MyForm::backtologinbutton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -22,7 +165,7 @@ void breeze::MyForm::backtologinbutton_Click(System::Object^ sender, System::Eve
 
 void breeze::MyForm::GuesetOrderButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	test->setguest(true);
-	tabControl1->SelectedTab = CrustSelect;
+	tabControl1->SelectedTab = PreMade;
 }
 
 void breeze::MyForm::Login_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -596,7 +739,6 @@ void breeze::MyForm::stuffedcheckbox_CheckedChanged(System::Object^ sender, Syst
 		stuffedlayerlabel->Visible = false;
 	}
 }
-
 
 //******************************CRUST SELECTION FUNCTIONS*****************************
 
@@ -1407,8 +1549,8 @@ void breeze::MyForm::SausageCheck_CheckedChanged(System::Object^ sender, System:
 		delete S;
 	}
 }
-void breeze::MyForm::ConfirmToppingButton_Click(System::Object^ sender, System::EventArgs^ e)
-{
+void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	if (ChickenCheck->Checked == true)
 	{
 		Chicken* C = new Chicken;
@@ -1424,7 +1566,6 @@ void breeze::MyForm::ConfirmToppingButton_Click(System::Object^ sender, System::
 
 
 		pizz->tpoint = C;
-		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else if (PepperoniCheck->Checked == true)
 	{
@@ -1446,7 +1587,6 @@ void breeze::MyForm::ConfirmToppingButton_Click(System::Object^ sender, System::
 
 
 		pizz->tpoint = P;
-		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else if (BeefCheck->Checked == true)
 	{
@@ -1464,7 +1604,6 @@ void breeze::MyForm::ConfirmToppingButton_Click(System::Object^ sender, System::
 
 
 		pizz->tpoint = B;
-		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else if (MashroomCheck->Checked == true)
 	{
@@ -1482,7 +1621,6 @@ void breeze::MyForm::ConfirmToppingButton_Click(System::Object^ sender, System::
 
 
 		pizz->tpoint = M;
-		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else if (Extra_CheezCheck->Checked == true)
 	{
@@ -1500,7 +1638,6 @@ void breeze::MyForm::ConfirmToppingButton_Click(System::Object^ sender, System::
 
 
 		pizz->tpoint = EC;
-		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else if (SausageCheck->Checked == true)
 	{
@@ -1517,21 +1654,24 @@ void breeze::MyForm::ConfirmToppingButton_Click(System::Object^ sender, System::
 
 
 		pizz->tpoint = S;
-		ToppingChooseNotice->Text = "Topping Confimed";
 	}
 	else
 	{
 		ToppingChooseNotice->Text = "Please Choose One";
+		ToppingChooseNotice->Visible = true;
 	}
-	ToppingChooseNotice->Visible = true;
-}
-void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = CheckoutPage;
+	
+}
+void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArgs^ e)
+{
 	if (test->getguest() == true)
 	{
 		long int OrderCode;
 		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
+		FlavourCheckOutTextBox->AppendText(gotoString(pizz->fpoint->get_FlavName()));
+		CrustCheckOutTextBox->AppendText(gotoString(pizz->cpoint->get_CrustName()));
 
 	}
 	else if (test->getguest() == false)
@@ -1557,5 +1697,5 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
 	}
-	
 }
+

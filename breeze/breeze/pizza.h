@@ -10,7 +10,7 @@ public:
 	Toping* tpoint;
 	char FlavourMisc[30];
 	char CrustMisc[30];
-public:
+
 	void SaveFlavour(flavour*ptr);
 	void FlavourMiscSet(char choice[30]);
 	void SaveCrust(crust* ptr);
