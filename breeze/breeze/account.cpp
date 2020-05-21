@@ -11,6 +11,8 @@ account::account()
 	strcpy_s(username, "");
 	strcpy_s(password, "");
 	strcpy_s(email, "");
+	strcpy_s(address, "");
+	contactno = 0;
 	guest = false;
 }
 Order* account::getprevious()

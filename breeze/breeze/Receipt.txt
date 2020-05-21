@@ -1,0 +1,13 @@
+X----------------------------------------------------X
+Name: 
+Contact No: 00
+Address: кокококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококоЪ
+
+Total pizzas ordered: 2
+Pizza Number 1
+Stuffed With the Flavor chilli delight topped with a layering of Pepperoni .
+Pizza Number 2
+Neapolitan With the Flavor fajita topped with a layering of Extra_Cheez .
+Total Billed Amount is: Rs 3250
+
+X----------------------------------------------------X

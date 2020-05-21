@@ -19,7 +19,7 @@ security::security()
 {
 	contactno = 0;
 	cnic = 0;
-	strcpy_s(address, "");
+	//strcpy_s(address, "");
 	cod = true;
 	strcpy_s(card, "");
 	cardno = 0;

@@ -4,29 +4,25 @@
 #include "flavours.h"
 #include "Toping.h"
 #include"pizza.h"
+enum status{confirmed,waiting,making,delivering,delivered};
 class Order
 {
 private:
     double bill;
     long int OrderCode;
-    int no_of_orders;
-    char FLAVOURS[7][300] = { "tikka" ,"fajita","chilli delight", "BBQ buzz", "seekh kebab", "The cheese", "Veggie Delight" };
-    char SelectedFlavour[300];
-    char SelectedFlavourMisc[300];
-    char CRUSTS[8][300];
-    char SelectedCrust[300];
-    char SelectedCrustMisc[300];
-    char TOPPINGS[5][300];
-    char SelectedTopping[300];
-    
+    char FLAVOURS[5][30];
+    char CRUSTS[5][30];
+    char TOPPINGS[5][30];    
+    enum status orderstatus;
 public:
     Order();
-    void PlaceOrder(pizza *pizza);
+    void PlaceOrder(pizza *pizza,int pizzaamount);
     void FileOrder();
     void operator =(const Order& obj);
     void operator -(const double DiscAmount);
     void setOrderCode(long int OrderCode);
-    //double MiscCal(double AddOn_Price,flavour *ptr);
+    void setstatus(enum status);
+    enum status getstatus();
     double ReturnBill();
 };
 

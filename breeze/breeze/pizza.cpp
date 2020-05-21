@@ -1,42 +1,49 @@
 #include "pizza.h"
-void pizza::SaveFlavour(flavour* ptr)
+
+pizza::pizza()
 {
-	fpoint = ptr;
+	cpoint = NULL;
+	fpoint = NULL;
+	tpoint = NULL; 
 }
-void pizza::FlavourMiscSet(char desc[30])
+pizza::pizza(crust* a, flavour* b, Toping* c) :cpoint(a), fpoint(b), tpoint(c){}
+void pizza::adjustpricing(int size)
 {
-	strcpy_s(FlavourMisc, desc);
-	
+	cpoint->setsize(size);
+	fpoint->increaseprice(size);
+	tpoint->increaseprice(size);
 }
-void pizza::SaveCrust(crust* ptr)
+int pizza::getprice()
 {
-	cpoint = ptr;
+	final_price = cpoint->get_price() + fpoint->get_price() + tpoint->getprice();
+	return final_price;
 }
-void pizza::CrustMiscSet(char desc[30])
-{
-	strcpy_s(CrustMisc, desc);
-}
-void pizza::SaveToping(Toping* ptr)
-{
-	tpoint = ptr;
-}
-void pizza::setpricing(int size, flavour* ptr)
-{
-	ptr->increaseprice(size);
-}
-void pizza::setpricing(int size, crust* ptr)
-{
-	ptr->setsize(size);
-}
-void pizza::setpricing(int size, Toping* ptr)
-{
-	ptr->increaseprice(size);
-}
-crust* pizza::getCrustPointer()
-{
-	return cpoint;
-}
-flavour* pizza::getFlavourPointer()
-{
-	return fpoint;
-}
+//void pizza::FlavourMiscSet(char desc[30])
+//{
+//	strcpy_s(FlavourMisc, desc);
+//
+//}
+//void pizza::CrustMiscSet(char desc[30])
+//{
+//	strcpy_s(CrustMisc, desc);
+//}
+//void pizza::SaveFlavour(flavour* ptr)
+//{
+//	fpoint = ptr;
+//}
+//void pizza::SaveCrust(crust* ptr)
+//{
+//	cpoint = ptr;
+//}
+//void pizza::SaveToping(Toping* ptr)
+//{
+//	tpoint = ptr;
+//}
+//crust* pizza::getCrustPointer()
+//{
+//	return cpoint;
+//}
+//flavour* pizza::getFlavourPointer()
+//{
+//	return fpoint;
+//}

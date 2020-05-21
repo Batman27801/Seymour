@@ -6,42 +6,62 @@ Order::Order()
 {
 	bill = 0;
 }
-void Order::PlaceOrder(pizza *pizza)
+void Order::PlaceOrder(pizza* pizza, int pizzaamount)
 {
-	int i,j,k;
-	bill = bill + pizza->fpoint->get_price()+pizza->cpoint->get_price();
-	fstream obj;
-	obj.open("Reciept.txt", ios::in | ios::out | ios::app);
-	for (i = 0; i < 7; i++)
+	int i;
+	for (i = 0; i < pizzaamount; i++)
 	{
-		if (strcmp(FLAVOURS[i],pizza->fpoint->get_FlavName())==0)
-		{
-			strcpy_s(SelectedFlavour, pizza->fpoint->get_FlavName());
-			strcpy_s(SelectedFlavourMisc, pizza->FlavourMisc);
-			obj << "Flavour = " << FLAVOURS[i] << " PRICE = Rs " << pizza->fpoint->get_price() << " With Misc = " <<pizza->FlavourMisc <<endl;
-		}
+		bill = bill + (pizza+i)->getprice();
+		strcpy_s(FLAVOURS[i], (pizza + i)->fpoint->get_FlavName());
+		strcpy_s(CRUSTS[i], (pizza + i)->cpoint->get_CrustName());
+		strcpy_s(TOPPINGS[i], (pizza + i)->tpoint->getToppingName());
 	}
-	for (j = 0; j < 8; j++)
+	fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
+	yourorder << "Total pizzas ordered: " << pizzaamount <<endl;
+	for (i = 0; i < pizzaamount; i++)
 	{
-		if(strcmp(CRUSTS[j],pizza->cpoint->get_CrustName()))
-		{
-			strcpy_s(SelectedCrust, pizza->cpoint->get_CrustName());
-			strcpy_s(SelectedCrustMisc,pizza->CrustMisc);
-			obj << "Crust = " << CRUSTS[j] << " PRICE = Rs " << pizza->cpoint->get_price() << " With Misc = " <<pizza->CrustMisc <<endl;
-		}
+		yourorder << "Pizza Number " << i + 1 <<endl;
+		yourorder << CRUSTS[i] << " With the Flavor " << FLAVOURS[i] << " topped with a layering of " << TOPPINGS[i] << " ." <<endl;
 	}
-	/*for (k = 0; k < 5; k++)
-	{
-		if (strcmp(TOPPINGS[j], pizza->tpoint->getToppingName()))
-		{
-			strcpy_s(SelectedTopping, pizza->tpoint->getToppingName());
-			obj << "Topping = " << TOPPINGS[k] << pizza->tpoint->getprice() << endl;
-		}
-	}*/
-	obj << "..............................................TOTAL BILL = " << bill << endl;
-	obj.close();
-
+	yourorder << "Total Billed Amount is: Rs " << bill <<endl <<endl;
+	yourorder << "X----------------------------------------------------X" << endl;
+	yourorder.close();
+	orderstatus = confirmed;
 }
+//void Order::PlaceOrder(pizza *pizza)
+//{
+//	int i,j;
+//	bill = bill + pizza->fpoint->get_price()+pizza->cpoint->get_price();
+//	fstream obj;
+//	obj.open("Reciept.txt", ios::in | ios::out | ios::app);
+//	for (i = 0; i < 7; i++)
+//	{
+//		if (strcmp(FLAVOURS[i],pizza->fpoint->get_FlavName())==0)
+//		{
+//			strcpy_s(SelectedFlavour, pizza->fpoint->get_FlavName());
+//			obj << "Flavour = " << FLAVOURS[i] << " PRICE = Rs " << pizza->fpoint->get_price() <<endl;
+//		}
+//	}
+//	for (j = 0; j < 8; j++)
+//	{
+//		if(strcmp(CRUSTS[j],pizza->cpoint->get_CrustName()))
+//		{
+//			strcpy_s(SelectedCrust, pizza->cpoint->get_CrustName());
+//			obj << "Crust = " << CRUSTS[j] << " PRICE = Rs " << pizza->cpoint->get_price() <<endl;
+//		}
+//	}
+//	/*for (k = 0; k < 5; k++)
+//	{
+//		if (strcmp(TOPPINGS[j], pizza->tpoint->getToppingName()))
+//		{
+//			strcpy_s(SelectedTopping, pizza->tpoint->getToppingName());
+//			obj << "Topping = " << TOPPINGS[k] << pizza->tpoint->getprice() << endl;
+//		}
+//	}*/
+//	obj << "..............................................TOTAL BILL = " << bill << endl;
+//	obj.close();
+//
+//}
 double Order::ReturnBill()
 {
 	return bill;
@@ -55,9 +75,12 @@ void Order::FileOrder()
 void Order::operator=(const Order& obj)
 {
 	this->bill = obj.bill;
-	strcpy_s(this->SelectedFlavour, obj.SelectedFlavour);
-	strcpy_s(this->SelectedCrust, obj.SelectedCrust);
-	strcpy_s(this->SelectedTopping, obj.SelectedTopping);
+	for (int i = 0; i < 5; i++)
+	{
+		strcpy_s(FLAVOURS[i], obj.FLAVOURS[i]);
+		strcpy_s(CRUSTS[i], obj.CRUSTS[i]);
+		strcpy_s(TOPPINGS[i], obj.TOPPINGS[i]);
+	}
 	this->OrderCode = obj.OrderCode;
 }
 void Order::operator-(const double DiscAmount)
@@ -70,6 +93,14 @@ void Order::operator-(const double DiscAmount)
 void Order::setOrderCode(long int OrderCode)
 {
 	this->OrderCode = OrderCode;
+}
+void Order::setstatus(enum status stat)
+{
+	orderstatus = stat;
+}
+enum status Order::getstatus()
+{
+	return orderstatus;
 }
 /*double Order::MiscCal(double AddOn_Price,flavour *ptr)
 {

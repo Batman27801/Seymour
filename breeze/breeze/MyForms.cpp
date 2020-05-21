@@ -29,77 +29,88 @@ void breeze::MyForm::PreMade_Enter(System::Object^ sender, System::EventArgs^ e)
 
 void breeze::MyForm::startmenubox_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	if (fajitablastbox->Checked == true)
+	if(Convert::ToInt32(sizeofpremadepizzabox->Text)>0)
 	{
-		italian *a = new italian;
-		a->setherbs(onions);
-		a->setcookstyle(oven);
-		fajita* b = new fajita;
-		b->set_meat("MEXICAN STYLE");
-		Chicken* c = new Chicken;
-		pizz->cpoint = a;
-		pizz->fpoint = b;
-		pizz->tpoint = c;
+		size = new int;
+		*size = Convert::ToInt32(sizeofpremadepizzabox->Text);
+		if (fajitablastbox->Checked == true)
+		{
+			italian* a = new italian;
+			a->setherbs(onions);
+			a->setcookstyle(oven);
+			fajita* b = new fajita;
+			b->set_meat("MEXICAN STYLE");
+			Chicken* c = new Chicken;
+			pizz->cpoint = a;
+			pizz->fpoint = b;
+			pizz->tpoint = c;
 
-		tabControl1->SelectedTab = CheckoutPage;
-		
-	}
-	else if (chickensupremebox->Checked == true)
-	{
-		newyork* a = new newyork;
-		a->setherbs(garlic);
-		a->setmineralized(true);
-		bbq_buzz* b = new bbq_buzz;
-		b->set_sauce("BBQ SAUCE");
-		b->set_chicken(true);
-		Chicken* c = new Chicken;
-		c->setCheese(Shredded_Parmesan);
-		pizz->cpoint = a;
-		pizz->fpoint = b;
-		pizz->tpoint = c;
+			pizz->adjustpricing(*size);
+			tabControl1->SelectedTab = CheckoutPage;
 
-		tabControl1->SelectedTab = CheckoutPage;
+		}
+		else if (chickensupremebox->Checked == true)
+		{
+			newyork* a = new newyork;
+			a->setherbs(garlic);
+			a->setmineralized(true);
+			bbq_buzz* b = new bbq_buzz;
+			b->set_sauce("BBQ SAUCE");
+			b->set_chicken(true);
+			Chicken* c = new Chicken;
+			c->setCheese(Shredded_Parmesan);
+			pizz->cpoint = a;
+			pizz->fpoint = b;
+			pizz->tpoint = c;
 
-	}
-	else if (westsidegarlicbox->Checked == true)
-	{
-		focacia* a = new focacia;
-		a->setherbs(garlicpowder);
-		a->setcoating(oliveoil);
-		tikka *b = new tikka;
-		b->set_beef(true);
-		Mashroom* c = new Mashroom;
-		c->setCO(true);
-		c->setCRGS(true);
-		pizz->cpoint = a;
-		pizz->fpoint = b;
-		pizz->tpoint = c;
+			pizz->adjustpricing(*size);
+			tabControl1->SelectedTab = CheckoutPage;
 
-		tabControl1->SelectedTab = CheckoutPage;
+		}
+		else if (westsidegarlicbox->Checked == true)
+		{
+			focacia* a = new focacia;
+			a->setherbs(garlicpowder);
+			a->setcoating(oliveoil);
+			tikka* b = new tikka;
+			b->set_beef(true);
+			Mashroom* c = new Mashroom;
+			c->setCO(true);
+			c->setCRGS(true);
+			pizz->cpoint = a;
+			pizz->fpoint = b;
+			pizz->tpoint = c;
 
-	}
-	else if (allcheesebox->Checked == true)
-	{
-		stuffed* a = new stuffed;
-		a->setcheese(american);
-		a->setfilling(whole);
-		a->setlayer(thincut);
-		The_cheese* b = new The_cheese;
-		b->set_cheese("GOUDA");
-		Extra_Cheez* c = new Extra_Cheez;
-		c->setExtra(Macroni);
-		c->setRPF(true);
-		pizz->cpoint = a;
-		pizz->fpoint = b;
-		pizz->tpoint = c;
+			pizz->adjustpricing(*size);
+			tabControl1->SelectedTab = CheckoutPage;
 
-		tabControl1->SelectedTab = CheckoutPage;
+		}
+		else if (allcheesebox->Checked == true)
+		{
+			stuffed* a = new stuffed;
+			a->setcheese(american);
+			a->setfilling(whole);
+			a->setlayer(thincut);
+			The_cheese* b = new The_cheese;
+			b->set_cheese("GOUDA");
+			Extra_Cheez* c = new Extra_Cheez;
+			c->setExtra(Macroni);
+			c->setRPF(true);
+			pizz->cpoint = a;
+			pizz->fpoint = b;
+			pizz->tpoint = c;
 
+			pizz->adjustpricing(*size);
+			tabControl1->SelectedTab = CheckoutPage;
+
+		}
 	}
 	else if (Convert::ToInt16(pizzaamountbox->Text) > 0)
 	{
 		total_no_of_pizzas = Convert::ToInt16(pizzaamountbox->Text);
+		loop = 1;
 		size = new int[total_no_of_pizzas];
+		pizz = new pizza[total_no_of_pizzas];
 		int i=0;
 
 		if (Convert::ToInt16(pizzaamountbox->Text) > 4)
@@ -147,7 +158,10 @@ void breeze::MyForm::startmenubox_Click(System::Object^ sender, System::EventArg
 			sizereq->Visible = true;
 		}
 		else
+		{
 			tabControl1->SelectedTab = CrustSelect;
+			Crustheading->Text = Crustheading->Text + Convert::ToString(total_no_of_pizzas);
+		}
 	}
 	else
 	{
@@ -165,18 +179,18 @@ void breeze::MyForm::backtologinbutton_Click(System::Object^ sender, System::Eve
 }
 
 void breeze::MyForm::GuesetOrderButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	test->setguest(true);
+	acc->setguest(true);
 	tabControl1->SelectedTab = PreMade;
 }
 
 void breeze::MyForm::Login_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (!test->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text)))
+	if (!acc->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text)))
 	{
 		incorrect->Visible = true;
 	}
-	else if(test->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text))==true)
+	else if(acc->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text))==true)
 	{
-		test->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text));
+		acc->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text));
 		tabControl1->SelectedTab = CrustSelect;
 	}
 
@@ -190,21 +204,21 @@ void breeze::MyForm::Signup_Click(System::Object^ sender, System::EventArgs^ e) 
 void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e) {
 	using namespace System;
 	int i = 0;
-	if (!test->setname(backtostring(Namebox->Text)))
+	if (!acc->setname(backtostring(Namebox->Text)))
 	{
 		namereq->Visible = true;
 		Namebox->Text = Convert::ToString("0");
 		i++;
 	}
 
-	if (!test->setF_Name(backtostring(FNamebox->Text)))
+	if (!acc->setF_Name(backtostring(FNamebox->Text)))
 	{
 		fnamereq->Visible = true;
 		FNamebox->Text = Convert::ToString("0");
 		i++;
 	}
 
-	if (!test->setage(Convert::ToInt32(agebox->Text)))
+	if (!acc->setage(Convert::ToInt32(agebox->Text)))
 	{
 		agebox->Text = Convert::ToString("0");
 		i++;
@@ -212,25 +226,25 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 
 	string gen = backtostring(genderbox->Text);
 	if (gen == "Male")
-		test->setGender(Male);
+		acc->setGender(Male);
 	else if (gen == "Female")
-		test->setGender(Female);
+		acc->setGender(Female);
 	else if (gen == "Other")
-		test->setGender(Other);
+		acc->setGender(Other);
 
-	if (!test->setcontact(long long int(Convert::ToInt64(contactbox->Text))))
+	if (!acc->setcontact(long long int(Convert::ToInt64(contactbox->Text))))
 	{
 		contactbox->Text = Convert::ToString("0");
 	}
 
-	if (!test->setcnic(long long int(Convert::ToInt64(cnicbox->Text))))
+	if (!acc->setcnic(long long int(Convert::ToInt64(cnicbox->Text))))
 	{
 		cnicbox->Text = Convert::ToString("0");
 	}
 
-	test->setaddress(backtostring(addressbox->Text));
+	acc->setaddress(backtostring(addressbox->Text));
 
-	test->setpaymentttype(codcheckbox->Checked);
+	acc->setpaymentttype(codcheckbox->Checked);
 
 	if (codcheckbox->Checked == false && cardcheckbox->Checked == false)
 	{
@@ -238,15 +252,15 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 		i++;
 	}
 
-	test->setcardprovider(backtostring(cardproviderbox->Text));
+	acc->setcardprovider(backtostring(cardproviderbox->Text));
 
-	if (!test->setcardno(long long int(Convert::ToInt64(cardnobox->Text))))
+	if (!acc->setcardno(long long int(Convert::ToInt64(cardnobox->Text))))
 	{
 		cardnobox->Text = Convert::ToString("0");
 		i++;
 	}
 
-	if (!test->setexpiry(Convert::ToInt32(cardexpmonth->Text), Convert::ToInt32(cardexpyear->Text)))
+	if (!acc->setexpiry(Convert::ToInt32(cardexpmonth->Text), Convert::ToInt32(cardexpyear->Text)))
 	{
 		expreq->Visible = true;
 		cardexpmonth->Text = Convert::ToString("0");
@@ -254,21 +268,21 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 		i++;
 	}
 
-	if (!test->setemail(backtostring(emailbox->Text)))
+	if (!acc->setemail(backtostring(emailbox->Text)))
 	{
 		emailreq->Visible = true;
 		emailbox->Text = Convert::ToString("0");
 		i++;
 	}
 
-	if (!test->setusername(backtostring(usernamebox2->Text)))
+	if (!acc->setusername(backtostring(usernamebox2->Text)))
 	{
 		usernamereq2->Visible = true;
 		usernamebox2->Text = Convert::ToString("0");
 		i++;
 	}
 
-	if (!test->setpassword(backtostring(passwordbox2->Text)))
+	if (!acc->setpassword(backtostring(passwordbox2->Text)))
 	{
 		passwordbox2->Text = Convert::ToString("0");
 		i++;
@@ -276,7 +290,8 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 
 	if (i == 0)
 	{
-		test->writetofile();
+		acc->writetofile();
+		tabControl1->SelectedTab = PreMade;
 	}
 
 	else if (i > 0)
@@ -315,7 +330,7 @@ void breeze::MyForm::cardcheckbox_CheckedChanged(System::Object^ sender, System:
 
 void breeze::MyForm::usernameavailability_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	if (test->checkavailable(backtostring(usernamebox2->Text)))
+	if (acc->checkavailable(backtostring(usernamebox2->Text)))
 	{
 		availablelabel->Visible = true;
 		notavailablelabel->Visible = false;
@@ -756,8 +771,8 @@ void breeze::MyForm::VeggieDelightCheckBox_CheckedChanged(System::Object^ sender
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new veggie_delight;
-		pizz->SaveFlavour(ptr);
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price()));
+		pizz->fpoint = ptr;
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price()+pizz->fpoint->get_price()));
 		TheCheeseCheckbox->Checked = false;
 		FajitaCheckbox->Checked = false;
 		TikkaCheckbox->Checked = false;
@@ -790,8 +805,8 @@ void breeze::MyForm::TheCheeseCheckbox_CheckedChanged(System::Object^ sender, Sy
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new The_cheese;
-		pizz->SaveFlavour(ptr);
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		pizz->fpoint = ptr;
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		FajitaCheckbox->Checked = false;
 		TikkaCheckbox->Checked = false;
@@ -828,8 +843,8 @@ void breeze::MyForm::SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, S
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new seekh_kebab;
-		pizz->SaveFlavour(ptr);
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		pizz->fpoint = ptr;
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		FajitaCheckbox->Checked = false;
 		TikkaCheckbox->Checked = false;
@@ -864,8 +879,8 @@ void breeze::MyForm::TikkaCheckbox_CheckedChanged(System::Object^ sender, System
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new tikka;
-		pizz->SaveFlavour(ptr);
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		pizz->fpoint = ptr;
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		FajitaCheckbox->Checked = false;
 		SeekhKebabCheckbox->Checked = false;
@@ -900,8 +915,8 @@ void breeze::MyForm::FajitaCheckbox_CheckedChanged(System::Object^ sender, Syste
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new fajita;
-		pizz->SaveFlavour(ptr);
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		pizz->fpoint = ptr;
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		TikkaCheckbox->Checked = false;
 		SeekhKebabCheckbox->Checked = false;
@@ -936,8 +951,8 @@ void breeze::MyForm::ChilliDelightCheckbox_CheckedChanged(System::Object^ sender
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new chilli_delight;
-		pizz->SaveFlavour(ptr);
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		pizz->fpoint = ptr;
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		TikkaCheckbox->Checked = false;
 		SeekhKebabCheckbox->Checked = false;
@@ -973,8 +988,8 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
 		ptr = new bbq_buzz;
-		pizz->SaveFlavour(ptr);
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		pizz->fpoint = ptr;
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		TikkaCheckbox->Checked = false;
 		SeekhKebabCheckbox->Checked = false;
@@ -1012,8 +1027,7 @@ void breeze::MyForm::TikkaMisc1_CheckedChanged(System::Object^ sender, System::E
 		 tikka* Tikka = new tikka;
 		 Tikka->set_chicken(true);
 		 pizz->fpoint = Tikka;
-		 pizz->FlavourMiscSet("chicken");
-		 FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		 FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		 TheCheeseMisc3->Checked = false;
 		 TheCheeseMisc1->Checked = false;
 		 TheCheeseMisc2->Checked = false;
@@ -1040,8 +1054,7 @@ void breeze::MyForm::TikkaMisc2_CheckedChanged(System::Object^ sender, System::E
 		tikka* Tikka = new tikka;
 		Tikka->set_beef(true);
 		pizz->fpoint = Tikka;
-		pizz->FlavourMiscSet("beef");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
@@ -1070,8 +1083,7 @@ void breeze::MyForm::FajitaMisc1_CheckedChanged(System::Object^ sender, System::
 		fajita* Fajita = new fajita;
 		Fajita->set_meat("mexican style");
 		pizz->fpoint = Fajita;
-		pizz->FlavourMiscSet("Mexican Style");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -1098,8 +1110,7 @@ void breeze::MyForm::FajitaMisc2_CheckedChanged(System::Object^ sender, System::
 		fajita* Fajita = new fajita;
 		Fajita->set_meat("traditional style");
 		pizz->fpoint = Fajita;
-		pizz->FlavourMiscSet("Traditional Style");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -1126,8 +1137,7 @@ void breeze::MyForm::ChilliDelightMisc1_CheckedChanged(System::Object^ sender, S
 		chilli_delight* ChilliDelight = new chilli_delight;
 		ChilliDelight->set_chilli("red");
 		pizz->fpoint = ChilliDelight;
-		pizz->FlavourMiscSet("Red Chilli");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -1154,8 +1164,7 @@ void breeze::MyForm::ChilliDelightMisc2_CheckedChanged(System::Object^ sender, S
 		chilli_delight* ChilliDelight = new chilli_delight;
 		ChilliDelight->set_chilli("green");
 		pizz->fpoint = ChilliDelight;
-		pizz->FlavourMiscSet("Green Chilli");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -1182,8 +1191,7 @@ void breeze::MyForm::BBQBuzzMisc1_CheckedChanged(System::Object^ sender, System:
 		bbq_buzz* BBQ_BUZZ = new bbq_buzz;
 	BBQ_BUZZ->set_sauce("bbq sauce");
 	pizz->fpoint = BBQ_BUZZ;
-	pizz->FlavourMiscSet("BBQ Sauce");
-	FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+	FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 	TheCheeseMisc3->Checked = false;
 	TheCheeseMisc1->Checked = false;
 	TheCheeseMisc2->Checked = false;
@@ -1210,8 +1218,7 @@ void breeze::MyForm::BBQBuzzMisc2_CheckedChanged(System::Object^ sender, System:
 		bbq_buzz* BBQ_BUZZ = new bbq_buzz;
 		BBQ_BUZZ->set_sauce("ranch sauce");
 		pizz->fpoint = BBQ_BUZZ;
-		pizz->FlavourMiscSet("Ranch Sauce");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -1237,8 +1244,7 @@ void breeze::MyForm::SeekhKebabMisc1_CheckedChanged(System::Object^ sender, Syst
 		seekh_kebab* SeekhKebab = new seekh_kebab;
 		SeekhKebab->set_meat("lamb");
 		pizz->fpoint = SeekhKebab;
-		pizz->FlavourMiscSet("Lamb");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc2->Checked = false;
@@ -1264,8 +1270,7 @@ void breeze::MyForm::SeekhKebabMisc2_CheckedChanged(System::Object^ sender, Syst
 		seekh_kebab* SeekhKebab = new seekh_kebab;
 		SeekhKebab->set_meat("beef");
 		pizz->fpoint = SeekhKebab;
-		pizz->FlavourMiscSet("Beef");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		TheCheeseMisc2->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		TheCheeseMisc3->Checked = false;
@@ -1291,8 +1296,7 @@ void breeze::MyForm::TheCheeseMisc1_CheckedChanged(System::Object^ sender, Syste
 		The_cheese* TheCheese = new The_cheese;
 		TheCheese->set_cheese("MOZARELLA");
 		pizz->fpoint = TheCheese;
-		pizz->FlavourMiscSet("Mozarella");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		TheCheeseMisc2->Checked = false;
 		TheCheeseMisc3->Checked = false;
 		SeekhKebabMisc1->Checked = false;
@@ -1318,8 +1322,7 @@ void breeze::MyForm::TheCheeseMisc2_CheckedChanged(System::Object^ sender, Syste
 		The_cheese* TheCheese = new The_cheese;
 		TheCheese->set_cheese("gouda");
 		pizz->fpoint = TheCheese;
-		pizz->FlavourMiscSet("Gouda");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		TheCheeseMisc3->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		SeekhKebabMisc1->Checked = false;
@@ -1347,8 +1350,7 @@ void breeze::MyForm::TheCheeseMisc3_CheckedChanged(System::Object^ sender, Syste
 		The_cheese* TheCheese = new The_cheese;
 		TheCheese->set_cheese("cheddar");
 		pizz->fpoint = TheCheese;
-		pizz->FlavourMiscSet("Cheddar");
-		FlavourPriceBox->AppendText(Convert::ToString(pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price()));
+		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		TheCheeseMisc2->Checked = false;
 		TheCheeseMisc1->Checked = false;
 		SeekhKebabMisc1->Checked = false;
@@ -1426,7 +1428,7 @@ void breeze::MyForm::ChickenCheck_CheckedChanged(System::Object^ sender, System:
 		SausageCheck->Checked = false;
 	
 		Chicken* C = new Chicken;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRs: " + Convert::ToString(C->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRs: " + Convert::ToString(C->getprice()+pizz->cpoint->get_price()+pizz->fpoint->get_price());
 		delete C;
 	}
 	else if (ChickenCheck->Checked == false)
@@ -1451,7 +1453,7 @@ void breeze::MyForm::PepperoniCheck_CheckedChanged(System::Object^ sender, Syste
 		SausageCheck->Checked = false;
 
 		Pepperoni* P = new Pepperoni;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(P->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(P->getprice()+pizz->cpoint->get_price()+pizz->fpoint->get_price());
 		delete P;
 	}
 	else if (PepperoniCheck->Checked == false)
@@ -1476,7 +1478,7 @@ void breeze::MyForm::BeefCheck_CheckedChanged(System::Object^ sender, System::Ev
 		SausageCheck->Checked = false;
 
 		Beef* B = new Beef;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(B->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(B->getprice()+pizz->cpoint->get_price()+pizz->fpoint->get_price());
 		delete B;
 	}
 	else if (BeefCheck->Checked == false)
@@ -1499,7 +1501,7 @@ void breeze::MyForm::MashroomCheck_CheckedChanged(System::Object^ sender, System
 		SausageCheck->Checked = false;
 
 		Mashroom* M = new Mashroom;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(M->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(M->getprice()+pizz->cpoint->get_price()+pizz->fpoint->get_price());
 		delete M;
 	}
 	else if (MashroomCheck->Checked == false)
@@ -1522,7 +1524,7 @@ void breeze::MyForm::Extra_CheezCheck_CheckedChanged(System::Object^ sender, Sys
 		SausageCheck->Checked = false;
 
 		Extra_Cheez* E = new Extra_Cheez;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(E->getprice()+pizz->getCrustPointer()->get_price()+pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(E->getprice()+pizz->cpoint->get_price()+pizz->fpoint->get_price());
 		delete E;
 	}
 	else if (Extra_CheezCheck->Checked == false)
@@ -1545,7 +1547,7 @@ void breeze::MyForm::SausageCheck_CheckedChanged(System::Object^ sender, System:
 		Extra_CheezCheck->Checked = false;
 
 		Sausage* S = new Sausage;
-		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(S->getprice() + pizz->getCrustPointer()->get_price() + pizz->getFlavourPointer()->get_price());
+		ToppingPriceBox->Text = "CURRENT PRICE\nRS: " + Convert::ToString(S->getprice() + pizz->cpoint->get_price() + pizz->fpoint->get_price());
 		delete S;
 	}
 	else
@@ -1555,7 +1557,7 @@ void breeze::MyForm::SausageCheck_CheckedChanged(System::Object^ sender, System:
 	}
 }
 void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+
 	if (ChickenCheck->Checked == true)
 	{
 		Chicken* C = new Chicken;
@@ -1568,10 +1570,17 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 			C->setCheese(Shredded_Parmesan);
 		else if (backtostring(ChooseCheeseBox->Text) == "Shredded_Cheddar")
 			C->setCheese(Shredded_Cheddar);
-
-
 		pizz->tpoint = C;
-		tabControl1->SelectedTab = CheckoutPage;
+		
+		if (loop < total_no_of_pizzas)
+		{
+			loop++;
+			pizz = pizz + 1;
+			tabControl1->SelectedTab = CrustSelect;
+			Crustheading->Text = Convert::ToString(total_no_of_pizzas);
+		}
+		else
+			tabControl1->SelectedTab = CheckoutPage;
 	}
 	else if (PepperoniCheck->Checked == true)
 	{
@@ -1589,11 +1598,18 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 			P->setQOFMC(Little);
 		else if (backtostring(ChooseQuantityOfCheezBox->Text) == "Don't Include (Less Charges)")
 			P->setQOFMC(Not_Include);
-
-
-
 		pizz->tpoint = P;
-		tabControl1->SelectedTab = CheckoutPage;
+
+
+		if (loop < total_no_of_pizzas)
+		{
+			loop++;
+			pizz = pizz + 1;
+			tabControl1->SelectedTab = CrustSelect;
+			Crustheading->Text = Convert::ToString(total_no_of_pizzas);
+		}
+		else
+			tabControl1->SelectedTab = CheckoutPage;
 	}
 	else if (BeefCheck->Checked == true)
 	{
@@ -1608,10 +1624,16 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 		else if (backtostring(ChoosePeppersBox->Text) == "Red")
 			B->setpepper(Red);
 
-
-
 		pizz->tpoint = B;
-		tabControl1->SelectedTab = CheckoutPage;
+		if (loop < total_no_of_pizzas)
+		{
+			loop++;
+			pizz = pizz + 1;
+			tabControl1->SelectedTab = CrustSelect;
+			Crustheading->Text = Convert::ToString(total_no_of_pizzas);
+		}
+		else
+			tabControl1->SelectedTab = CheckoutPage;
 	}
 	else if (MashroomCheck->Checked == true)
 	{
@@ -1629,7 +1651,15 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 
 
 		pizz->tpoint = M;
-		tabControl1->SelectedTab = CheckoutPage;
+		if (loop < total_no_of_pizzas)
+		{
+			loop++;
+			pizz = pizz + 1;
+			tabControl1->SelectedTab = CrustSelect;
+			Crustheading->Text = Convert::ToString(total_no_of_pizzas);
+		}
+		else
+			tabControl1->SelectedTab = CheckoutPage;
 	}
 	else if (Extra_CheezCheck->Checked == true)
 	{
@@ -1647,7 +1677,15 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 
 
 		pizz->tpoint = EC;
-		tabControl1->SelectedTab = CheckoutPage;
+		if (loop < total_no_of_pizzas)
+		{
+			loop++;
+			pizz = pizz + 1;
+			tabControl1->SelectedTab = CrustSelect;
+			Crustheading->Text = Convert::ToString(total_no_of_pizzas);
+		}
+		else
+			tabControl1->SelectedTab = CheckoutPage;
 	}
 	else if (SausageCheck->Checked == true)
 	{
@@ -1664,7 +1702,15 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 
 
 		pizz->tpoint = S;
-		tabControl1->SelectedTab = CheckoutPage;
+		if (loop < total_no_of_pizzas)
+		{
+			loop++;
+			pizz = pizz + 1;
+			tabControl1->SelectedTab = CrustSelect;
+			Crustheading->Text = Convert::ToString(total_no_of_pizzas);
+		}
+		else
+			tabControl1->SelectedTab = CheckoutPage;
 	}
 	else
 	{
@@ -1676,41 +1722,69 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 }
 void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArgs^ e)
 {
-	if (test->getguest() == true)
+	if (acc->getguest() == true)
 	{
 		long int OrderCode;
 		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
-		FlavourCheckOutTextBox->AppendText(gotoString(pizz->fpoint->get_FlavName()));
-		CrustCheckOutTextBox->AppendText(gotoString(pizz->cpoint->get_CrustName()));
-		ToppingsCheckOutTextBox->AppendText(gotoString(pizz->tpoint->getToppingName()));
-
+		int i, price=0;
+		pizz = pizz - (total_no_of_pizzas-1);
+		for (i = 0; i < total_no_of_pizzas; i++)
+		{
+			FlavourCheckOutTextBox->AppendText(gotoString((pizz+i)->fpoint->get_FlavName()));
+			CrustCheckOutTextBox->AppendText(gotoString((pizz + i)->cpoint->get_CrustName()));
+			ToppingsCheckOutTextBox->AppendText(gotoString((pizz + i)->tpoint->getToppingName()));
+			price = price + (pizz + i)->getprice();
+		}
+		TotalPriceCheckOutTextBox->Text = Convert::ToString(price);
+		//IF BUTTON PRESS THEN EXECUTE WRITE ETC
+		/*fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
+		yourorder << "X----------------------------------------------------X" << endl;
+		yourorder << "Name: " << acc->getname() << endl;
+		yourorder << "Contact No: 0" << acc->getcontact() << endl;
+		yourorder << "Address: " << acc->getaddress() << endl << endl;
+		order->PlaceOrder(pizz, total_no_of_pizzas);
+		order->setOrderCode(OrderCode);			//IF BUTTON PRESS THEN EXECUTE
+		order->FileOrder();*/
 	}
-	else if (test->getguest() == false)
+	else if (acc->getguest() == false)
 	{
+		int price,i;
 		/****/
 		srand(int(time(0)));
 		long int OrderCode;
 		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
-		Order* o1 = new Order;
-		o1->PlaceOrder(pizz);
-		o1->setOrderCode(OrderCode);
-		o1->FileOrder();
-		NameCheckOutText->Text = gotoString(test->getname());
-		AddressCheckOutTextBox->Text = gotoString(test->getaddress());
-		PhoneNoTextBox->Text = Convert::ToString(test->getcontact());
+		/*fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
+		yourorder << "X----------------------------------------------------X" << endl;
+		yourorder << "Name: " << acc.getname() <<endl;
+		yourorder << "Contact No: 0" << acc.getcontact() <<endl;
+		yourorder << "Address: " << acc.getaddress() <<endl <<endl;
+		order->PlaceOrder(pizz,total_no_of_pizzas);
+		order->setOrderCode(OrderCode);			//IF BUTTON PRESS THEN EXECUTE
+		order->FileOrder();*/
+		NameCheckOutText->Text = gotoString(acc->getname());
+		AddressCheckOutTextBox->Text = gotoString(acc->getaddress());
+		PhoneNoTextBox->Text = Convert::ToString(acc->getcontact());
 		PaymentModeCheckOutLabel->Visible = true;
 		CardProviderCheckOutLabel->Visible = false;
 		CardCheckOutComboBox->Visible = false;
 		CardNumberCheckOutLabel->Visible = false;
 		CardNumberCheckOutTextBox->Visible = false;
-		FlavourCheckOutTextBox->AppendText(gotoString(pizz->fpoint->get_FlavName()));
+		/*FlavourCheckOutTextBox->AppendText(gotoString(pizz->fpoint->get_FlavName()));
 		ToppingsCheckOutTextBox->AppendText(gotoString(pizz->tpoint->getToppingName()));
 		CrustCheckOutTextBox->AppendText(gotoString(pizz->cpoint->get_CrustName()));
 		TotalPriceCheckOutTextBox->Text = "Rs = ";
-		TotalPriceCheckOutTextBox->AppendText(Convert::ToString(o1->ReturnBill()));
-		
+		TotalPriceCheckOutTextBox->AppendText(Convert::ToString(o1->ReturnBill()));*/
+		for (i = 0; i < total_no_of_pizzas; i++)
+		{
+			FlavourCheckOutTextBox->AppendText(gotoString((pizz + i)->fpoint->get_FlavName()));
+			CrustCheckOutTextBox->AppendText(gotoString((pizz + i)->cpoint->get_CrustName()));
+			ToppingsCheckOutTextBox->AppendText(gotoString((pizz + i)->tpoint->getToppingName()));
+			price = price + (pizz + i)->getprice();
+		}
+		TotalPriceCheckOutTextBox->Text = Convert::ToString(price);
+		//acc->setprevious(*order); //IF BUTTON PRESS THEN EXECUTE
 	}
 }
 
