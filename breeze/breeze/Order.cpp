@@ -52,6 +52,25 @@ void Order::FileOrder()
 	f.open("Orders.dat", ios::out | ios::app | ios::binary);
 	f.write(reinterpret_cast<char*>(&*this), sizeof(*this));
 }
+void Order::operator=(const Order& obj)
+{
+	this->bill = obj.bill;
+	strcpy_s(this->SelectedFlavour, obj.SelectedFlavour);
+	strcpy_s(this->SelectedCrust, obj.SelectedCrust);
+	strcpy_s(this->SelectedTopping, obj.SelectedTopping);
+	this->OrderCode = obj.OrderCode;
+}
+void Order::operator-(const double DiscAmount)
+{
+	double TempDisc = DiscAmount;
+	double TempBill = bill;
+	TempBill = TempBill - (TempBill * (TempDisc / 100));
+	bill = TempBill;
+}
+void Order::setOrderCode(long int OrderCode)
+{
+	this->OrderCode = OrderCode;
+}
 /*double Order::MiscCal(double AddOn_Price,flavour *ptr)
 {
 	int i;
