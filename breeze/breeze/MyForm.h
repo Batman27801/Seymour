@@ -27,6 +27,7 @@ namespace breeze {
 		Order *order = new Order;
 		account* test = new account;
 		Toping* tptr;
+		int CurrentAccountPosition;
 
 
 	private: System::Windows::Forms::TabPage^ CrustSelect;

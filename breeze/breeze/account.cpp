@@ -103,6 +103,7 @@ bool account::import(string user, string pass)
 		{
 			val = true;
 			*this = temp;
+			Current_Pos = accountsfile.tellg()/sizeof(account);
 			break;
 		}
 
@@ -150,4 +151,15 @@ void account::writetofile()
 	fstream accountsfile("accountdata.dat", ios::out |ios::app | ios::binary);
 	accountsfile.write((char*)&*this, sizeof(*this));
 	accountsfile.close();
+}
+int account::getCurrentPos()
+{
+	return Current_Pos;
+}
+void account::SaveChanges(const Order *ptr)
+{
+	fstream AccountFile;
+	AccountFile.seekg(Current_Pos*sizeof(account));
+	AccountFile.open("accountdata.dat", ios::in | ios::binary);
+	AccountFile.write(reinterpret_cast<char*>(&*this), sizeof(*this));
 }

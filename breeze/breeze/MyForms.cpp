@@ -1,6 +1,7 @@
 #include "MyForm.h"
 #include<ctime>
 #include<cstdlib>
+#include<fstream>
 #define backtostring msclr::interop::marshal_as<std::string>
 #define gotoString msclr::interop::marshal_as<String^>
 using namespace std;
@@ -173,7 +174,7 @@ void breeze::MyForm::Login_Click(System::Object^ sender, System::EventArgs^ e) {
 	{
 		incorrect->Visible = true;
 	}
-	else
+	else if(test->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text))==true)
 	{
 		test->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text));
 		tabControl1->SelectedTab = CrustSelect;
@@ -1688,7 +1689,8 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 		CardCheckOutComboBox->Visible = false;
 		CardNumberCheckOutLabel->Visible = false;
 		CardNumberCheckOutTextBox->Visible = false;
-		FlavourCheckOutTextBox->AppendText(gotoString(pizz->fpoint->get_FlavName()));
+		FlavourCheckOutTextBox->AppendText(Convert::ToString(test->getCurrentPos()));
+		//FlavourCheckOutTextBox->AppendText(gotoString(pizz->fpoint->get_FlavName()));
 		CrustCheckOutTextBox->AppendText(gotoString(pizz->cpoint->get_CrustName()));
 		TotalPriceCheckOutTextBox->Text = "Rs = ";
 		TotalPriceCheckOutTextBox->AppendText(Convert::ToString(o1->ReturnBill()));
