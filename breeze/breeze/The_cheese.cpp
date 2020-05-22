@@ -5,11 +5,9 @@ int The_cheese::count = 0;
 The_cheese::The_cheese()
 {
     price = 1400;
-    description = new char[230];
-    description = "Go back to where it all began with classic mozzarella cheese & tomato base. Gluten free";
+    strcpy_s(description,"Go back to where it all began with classic mozzarella cheese & tomato base. Gluten free");
     count++;
-    name = new char[230];
-    name = "The cheese";
+    strcpy_s(name,"The cheese");
 }
 double The_cheese::set_cheese(char choice[30])
 {

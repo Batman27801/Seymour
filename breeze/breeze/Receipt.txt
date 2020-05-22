@@ -1,13 +1,19 @@
 X----------------------------------------------------X
-Name: 
+Name: Istinja Man
 Contact No: 00
-Address: кокококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококококоЪ
+Address: Grove Street
 
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Beef .
+Total Billed Amount is: Rs 1929
+
+X----------------------------------------------------X
 Total pizzas ordered: 2
 Pizza Number 1
-Stuffed With the Flavor chilli delight topped with a layering of Pepperoni .
+Neapolitan With the Flavor chilli delight topped with a layering of Pepperoni .
 Pizza Number 2
-Neapolitan With the Flavor fajita topped with a layering of Extra_Cheez .
-Total Billed Amount is: Rs 3250
+Newyork With the Flavor The cheese topped with a layering of Beef .
+Total Billed Amount is: Rs 3510
 
 X----------------------------------------------------X

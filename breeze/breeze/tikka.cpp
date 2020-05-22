@@ -6,12 +6,11 @@ int tikka::count = 0;
 tikka::tikka()
 {
     price = 1259.99;
-    description = new char[230];
-    description = "A specially developed recipe  topped with spicy  tikka boti & onions. Gluten Free.";
+  
+    strcpy_s(description , "A specially developed recipe  topped with spicy  tikka boti & onions. Gluten Free.");
     chicken = true;
     count++;
-    name = new char[230];
-    name = "tikka";
+    strcpy_s(name,"tikka");
 }
 bool tikka::get_gluten()
 {

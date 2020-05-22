@@ -10,10 +10,6 @@ public:
 	crust* cpoint;
 	flavour* fpoint;
 	Toping* tpoint;
-
-	/*char FlavourMisc[30];
-	char CrustMisc[30];*/
-
 	pizza();
 	pizza(crust*, flavour*, Toping*);
 	int getprice();

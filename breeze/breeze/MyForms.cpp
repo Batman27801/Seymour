@@ -191,7 +191,7 @@ void breeze::MyForm::Login_Click(System::Object^ sender, System::EventArgs^ e) {
 	else if(acc->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text))==true)
 	{
 		acc->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text));
-		tabControl1->SelectedTab = CrustSelect;
+		tabControl1->SelectedTab = PreMade;
 	}
 
 	//function incomplete
@@ -376,6 +376,13 @@ void breeze::MyForm::CrustSelect_Enter(System::Object^ sender, System::EventArgs
 
 void breeze::MyForm::toflavormenu_Click(System::Object^ sender, System::EventArgs^ e) {
 	
+	TikkaCheckbox->Checked = false;
+	FajitaCheckbox->Checked = false;
+	BbqBuzzCheckbox->Checked = false;
+	ChilliDelightCheckbox->Checked = false;
+	VeggieDelightCheckBox->Checked = false;
+	SeekhKebabCheckbox->Checked = false;
+	TheCheeseCheckbox->Checked = false;
 	if (italiancheckbox->Checked == true)
 	{
 		italian *a = new italian;
@@ -763,7 +770,16 @@ void breeze::MyForm::stuffedcheckbox_CheckedChanged(System::Object^ sender, Syst
 
 //*****************************FLAVOUR SELECTION OPTIONS****************************//
 void breeze::MyForm::MovetoToping_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = ToppingSelect;
+	
+	if (TikkaCheckbox->Checked == false && FajitaCheckbox->Checked == false && BbqBuzzCheckbox->Checked == false && ChilliDelightCheckbox->Checked == false && VeggieDelightCheckBox->Checked == false && SeekhKebabCheckbox->Checked == false && TheCheeseCheckbox->Checked == false)
+	{
+		FlavourWarningLabel->Visible = true;
+	}
+	else if(TikkaCheckbox->Checked == true || FajitaCheckbox->Checked == true || BbqBuzzCheckbox->Checked == true || ChilliDelightCheckbox->Checked == true || VeggieDelightCheckBox->Checked == true || SeekhKebabCheckbox->Checked == true || TheCheeseCheckbox->Checked == true)
+	{
+		tabControl1->SelectedTab = ToppingSelect;
+	}
+	
 	
 }
 void breeze::MyForm::VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -1725,6 +1741,7 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 	if (acc->getguest() == true)
 	{
 		long int OrderCode;
+		UserCheckOutIntro->Visible = false;
 		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
 		int i, price=0;
@@ -1736,6 +1753,7 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 			ToppingsCheckOutTextBox->AppendText(gotoString((pizz + i)->tpoint->getToppingName()));
 			price = price + (pizz + i)->getprice();
 		}
+		order->setOrderCode(OrderCode);
 		TotalPriceCheckOutTextBox->Text = Convert::ToString(price);
 		//IF BUTTON PRESS THEN EXECUTE WRITE ETC
 		/*fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
@@ -1749,7 +1767,8 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 	}
 	else if (acc->getguest() == false)
 	{
-		int price,i;
+		int price=0,i;
+		GuestCheckOutIntro->Visible = false;
 		/****/
 		srand(int(time(0)));
 		long int OrderCode;
@@ -1763,6 +1782,7 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 		order->PlaceOrder(pizz,total_no_of_pizzas);
 		order->setOrderCode(OrderCode);			//IF BUTTON PRESS THEN EXECUTE
 		order->FileOrder();*/
+		order->setOrderCode(OrderCode);
 		NameCheckOutText->Text = gotoString(acc->getname());
 		AddressCheckOutTextBox->Text = gotoString(acc->getaddress());
 		PhoneNoTextBox->Text = Convert::ToString(acc->getcontact());
@@ -1776,15 +1796,42 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 		CrustCheckOutTextBox->AppendText(gotoString(pizz->cpoint->get_CrustName()));
 		TotalPriceCheckOutTextBox->Text = "Rs = ";
 		TotalPriceCheckOutTextBox->AppendText(Convert::ToString(o1->ReturnBill()));*/
-		for (i = 0; i < total_no_of_pizzas; i++)
+		pizz = pizz - (total_no_of_pizzas - 1);
+		for (i = 0; i < 1; i++)
 		{
+			
 			FlavourCheckOutTextBox->AppendText(gotoString((pizz + i)->fpoint->get_FlavName()));
 			CrustCheckOutTextBox->AppendText(gotoString((pizz + i)->cpoint->get_CrustName()));
 			ToppingsCheckOutTextBox->AppendText(gotoString((pizz + i)->tpoint->getToppingName()));
 			price = price + (pizz + i)->getprice();
 		}
-		TotalPriceCheckOutTextBox->Text = Convert::ToString(price);
+		TotalPriceCheckOutTextBox->Text = System::Convert::ToString(price);
 		//acc->setprevious(*order); //IF BUTTON PRESS THEN EXECUTE
 	}
 }
-
+void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	if (acc->getguest() == false)
+	{
+		order->PlaceOrder(pizz, total_no_of_pizzas);
+		order->FileOrder();
+		acc->setprevious(*order);
+		
+	}
+	else
+	{
+		
+		acc->setname(backtostring(NameCheckOutText->Text)) ;
+		acc->setcontact(long long int(System::Convert::ToInt64(PhoneNoTextBox->Text)));
+		acc->setaddress(backtostring(AddressCheckOutTextBox->Text));
+		acc->setcardprovider(backtostring(CardCheckOutComboBox->Text));
+		acc->setcardno(long long int(System::Convert::ToInt64(CardNumberCheckOutTextBox->Text)));
+		fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
+		yourorder << "X----------------------------------------------------X" << endl;
+		yourorder << "Name: " << acc->getname() << endl;
+		yourorder << "Contact No: 0" << acc->getcontact() << endl;
+		yourorder << "Address: " << acc->getaddress() << endl << endl;
+		order->PlaceOrder(pizz, total_no_of_pizzas);
+		order->FileOrder();
+	}
+}

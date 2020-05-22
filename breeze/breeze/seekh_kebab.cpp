@@ -5,10 +5,8 @@ int seekh_kebab::count = 0;
 seekh_kebab::seekh_kebab()
 {
     price = 1400;
-    description = new char[230];
-    description = "Topped with seekh kabab chunks on tantalizing blend of spicy chicken, onions capsicum, green pepper and cheese. Contains gluten in significant amounts";
-    name = new char[230];
-    name = "seekh kebab";
+    strcpy_s(description , "Topped with seekh kabab chunks on tantalizing blend of spicy chicken, onions capsicum, green pepper and cheese. Contains gluten in significant amounts");
+    strcpy_s(name ,"seekh kebab");
     count++;
 }
 bool seekh_kebab::get_gluten()

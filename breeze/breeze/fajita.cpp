@@ -5,12 +5,10 @@ int fajita::count = 0;
 fajita::fajita()
 {
     price = 1349.99;
-    description = new char[230];
-    description = "contains an epic blend of cheese with authentic fresh chicken meat.Contains traces of gluten";
+    strcpy_s(description ,"contains an epic blend of cheese with authentic fresh chicken meat.Contains traces of gluten");
     chicken = false;
     //gluten=false;
-    name = new char[230];
-    name = "fajita";
+    strcpy_s(name ,"fajita");
     beef = false;
     count++;
 }

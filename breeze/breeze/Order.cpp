@@ -4,7 +4,15 @@
 using namespace std;
 Order::Order()
 {
+	int i,j;
 	bill = 0;
+	for (i = 0; i < 5; i++)
+	{
+		strcpy_s(CRUSTS[i], "");
+		strcpy_s(FLAVOURS[i], "");
+		strcpy_s(TOPPINGS[i], "");
+	}
+	
 }
 void Order::PlaceOrder(pizza* pizza, int pizzaamount)
 {

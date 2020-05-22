@@ -1,4 +1,11 @@
 #include"flavours.h"
+#include<string.h>
+flavour::flavour()
+{
+	price = 0;
+	strcpy_s(description, "");
+	strcpy_s(name, "");
+}
 char* flavour::get_FlavName()
 {
 	return name;
@@ -18,7 +25,7 @@ char* flavour::get_description()
 }
 char* flavour::set_description(char* desc)
 {
-	description = desc;
+	strcpy_s(description, desc);
 	return 0;
 }
 void flavour::increaseprice(int size)
