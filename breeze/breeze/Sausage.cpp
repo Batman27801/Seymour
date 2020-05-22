@@ -5,7 +5,7 @@ Sausage::Sausage() : Basil_Scattering(true), Red_Pepper_Flakes(true)
 {
     strcpy_s(name, "Sausage");
     strcpy_s(details, "Some prefer mild, others spicy, and Southerners Conecuh, but sausage is consistently a favorite pizza topping of Americans. ");
-    price = 175.5;
+    price = 175;
 }
 
 void Sausage::setRPF(bool RPF)

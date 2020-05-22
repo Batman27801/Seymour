@@ -19,7 +19,6 @@ public:
     void set_beef(bool B);
     static bool get_gluten();
     char* get_Addon();
-    ~fajita();
 };
 
 /*class fajita :

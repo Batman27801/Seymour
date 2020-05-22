@@ -53,11 +53,6 @@ double fajita::set_meat(char choice[30])
     }
   
 }
-fajita::~fajita()
-{
-    delete[] description;
-    delete[] name;
-}
 bool fajita::get_beef()
 {
     return beef;

@@ -17,7 +17,6 @@ public:
     bool get_beef();
     double set_beef(bool B);
     char* get_Addon();
-    ~tikka();
 
 };
 

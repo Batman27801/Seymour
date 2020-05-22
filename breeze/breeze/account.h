@@ -13,6 +13,7 @@ class account : public Person, public security
 	int saved;
 	bool guest;
 	int Current_Pos;
+	double total_amount; //total amount spent
 
 public:
 	account();
@@ -23,7 +24,7 @@ public:
 	char* getpassword();
 	bool setpassword(string);
 	int getCurrentPos();
-	void SaveChanges(const Order *ptr);
+	void SaveChanges();
 	char* getemail();
 	bool setemail(string);
 	bool import(string,string);
@@ -31,5 +32,7 @@ public:
 	void setguest(bool);
 	bool checkavailable(string);
 	void writetofile();
+	void settotalamount(double);
+	double gettotalamount();
 };
 

@@ -14,6 +14,7 @@ account::account()
 	strcpy_s(address, "");
 	contactno = 0;
 	guest = false;
+	total_amount = 0;
 }
 Order* account::getprevious()
 {
@@ -105,7 +106,7 @@ bool account::import(string user, string pass)
 		{
 			val = true;
 			*this = temp;
-			Current_Pos = accountsfile.tellg()/sizeof(account);
+			Current_Pos = int(accountsfile.tellg())/int(sizeof(account));
 			break;
 		}
 
@@ -158,10 +159,18 @@ int account::getCurrentPos()
 {
 	return Current_Pos;
 }
-void account::SaveChanges(const Order *ptr)
+void account::SaveChanges()
 {
 	fstream AccountFile;
 	AccountFile.seekg(Current_Pos*sizeof(account));
-	AccountFile.open("accountdata.dat", ios::in | ios::binary);
+	AccountFile.open("accountdata.dat", ios::out | ios::binary);
 	AccountFile.write(reinterpret_cast<char*>(&*this), sizeof(*this));
+}
+void account::settotalamount(double b)
+{
+	total_amount = total_amount + b;
+}
+double account::gettotalamount()
+{
+	return total_amount;
 }

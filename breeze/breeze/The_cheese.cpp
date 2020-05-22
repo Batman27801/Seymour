@@ -52,11 +52,6 @@ bool The_cheese::get_gluten()
     return gluten;
 }
 
-The_cheese::~The_cheese()
-{
-    delete[] description;
-    delete[] name;
-}
 void The_cheese::set_mozarella(bool B)
 {
     mozarella = B;

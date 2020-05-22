@@ -14,7 +14,7 @@ quantityoftopings Toping::getquantity()
     return quantity;
 }
 
-void Toping::setprice(double p)
+void Toping::setprice(int p)
 {
     price = p;
 }
@@ -36,7 +36,7 @@ void Toping::increaseprice(int size)
 {
     price = price + ((size-6) * 20);
 }
-double Toping::getprice()
+int Toping::getprice()
 {
     return price;
 }

@@ -14,10 +14,6 @@ bool seekh_kebab::get_gluten()
     return gluten;
 }
 
-seekh_kebab::~seekh_kebab()
-{
-    delete[] description;
-}
 bool seekh_kebab::get_beef()
 {
     return beef;

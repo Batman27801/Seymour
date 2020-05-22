@@ -48,12 +48,6 @@ bool bbq_buzz::get_gluten()
     return gluten;
 }
 
-bbq_buzz::~bbq_buzz()
-{
-    delete[] description;
-    delete[] name;
-}
-
 void bbq_buzz::set_bbq(bool B)
 {
     bbq_sauce = B;

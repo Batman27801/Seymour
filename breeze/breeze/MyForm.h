@@ -26,7 +26,7 @@ namespace breeze {
 		flavour *ptr;
 		Order *order = new Order;
 		account* acc = new account;
-		Toping* tptr;
+		//Toping* tptr;
 		int CurrentAccountPosition;
 
 
@@ -441,6 +441,9 @@ private: System::Windows::Forms::Button^ ConfirmCheckOutButton;
 private: System::Windows::Forms::Label^ GuestCheckOutIntro;
 private: System::Windows::Forms::Label^ UserCheckOutIntro;
 
+private: System::Windows::Forms::TextBox^ discbox;
+private: System::Windows::Forms::Label^ disclabel;
+
 
 
 
@@ -772,6 +775,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->ToppingHeading = (gcnew System::Windows::Forms::Label());
             this->label1 = (gcnew System::Windows::Forms::Label());
             this->CheckoutPage = (gcnew System::Windows::Forms::TabPage());
+            this->discbox = (gcnew System::Windows::Forms::TextBox());
+            this->disclabel = (gcnew System::Windows::Forms::Label());
             this->ConfirmCheckOutButton = (gcnew System::Windows::Forms::Button());
             this->GuestCheckOutIntro = (gcnew System::Windows::Forms::Label());
             this->UserCheckOutIntro = (gcnew System::Windows::Forms::Label());
@@ -3922,6 +3927,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // CheckoutPage
             // 
             this->CheckoutPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CheckoutPage.BackgroundImage")));
+            this->CheckoutPage->Controls->Add(this->discbox);
+            this->CheckoutPage->Controls->Add(this->disclabel);
             this->CheckoutPage->Controls->Add(this->ConfirmCheckOutButton);
             this->CheckoutPage->Controls->Add(this->GuestCheckOutIntro);
             this->CheckoutPage->Controls->Add(this->UserCheckOutIntro);
@@ -3960,6 +3967,30 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CheckoutPage->UseVisualStyleBackColor = true;
             this->CheckoutPage->Enter += gcnew System::EventHandler(this, &MyForm::CheckoutPage_Enter);
             // 
+            // discbox
+            // 
+            this->discbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
+                | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->discbox->Location = System::Drawing::Point(788, 406);
+            this->discbox->Name = L"discbox";
+            this->discbox->ReadOnly = true;
+            this->discbox->Size = System::Drawing::Size(120, 26);
+            this->discbox->TabIndex = 33;
+            this->discbox->Visible = false;
+            // 
+            // disclabel
+            // 
+            this->disclabel->AutoSize = true;
+            this->disclabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
+                | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->disclabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->disclabel->Location = System::Drawing::Point(671, 404);
+            this->disclabel->Name = L"disclabel";
+            this->disclabel->Size = System::Drawing::Size(111, 25);
+            this->disclabel->TabIndex = 32;
+            this->disclabel->Text = L"Discount:";
+            this->disclabel->Visible = false;
+            // 
             // ConfirmCheckOutButton
             // 
             this->ConfirmCheckOutButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
@@ -3977,7 +4008,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->GuestCheckOutIntro->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->GuestCheckOutIntro->ForeColor = System::Drawing::Color::Red;
-            this->GuestCheckOutIntro->Location = System::Drawing::Point(152, 32);
+            this->GuestCheckOutIntro->Location = System::Drawing::Point(173, 37);
             this->GuestCheckOutIntro->Name = L"GuestCheckOutIntro";
             this->GuestCheckOutIntro->Size = System::Drawing::Size(288, 40);
             this->GuestCheckOutIntro->TabIndex = 29;
@@ -4014,7 +4045,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->OrderNoCheckOutTextBox->Location = System::Drawing::Point(288, 80);
             this->OrderNoCheckOutTextBox->Multiline = true;
             this->OrderNoCheckOutTextBox->Name = L"OrderNoCheckOutTextBox";
-            this->OrderNoCheckOutTextBox->Size = System::Drawing::Size(224, 32);
+            this->OrderNoCheckOutTextBox->ReadOnly = true;
+            this->OrderNoCheckOutTextBox->Size = System::Drawing::Size(215, 32);
             this->OrderNoCheckOutTextBox->TabIndex = 26;
             // 
             // OrderNoCheckoutLabel
@@ -4034,6 +4066,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->TotalPriceCheckOutTextBox->Location = System::Drawing::Point(816, 456);
             this->TotalPriceCheckOutTextBox->Name = L"TotalPriceCheckOutTextBox";
+            this->TotalPriceCheckOutTextBox->ReadOnly = true;
             this->TotalPriceCheckOutTextBox->Size = System::Drawing::Size(168, 20);
             this->TotalPriceCheckOutTextBox->TabIndex = 24;
             // 
@@ -4041,9 +4074,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->ToppingsCheckOutTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->ToppingsCheckOutTextBox->Location = System::Drawing::Point(760, 336);
+            this->ToppingsCheckOutTextBox->Location = System::Drawing::Point(784, 336);
             this->ToppingsCheckOutTextBox->Multiline = true;
             this->ToppingsCheckOutTextBox->Name = L"ToppingsCheckOutTextBox";
+            this->ToppingsCheckOutTextBox->ReadOnly = true;
             this->ToppingsCheckOutTextBox->Size = System::Drawing::Size(256, 48);
             this->ToppingsCheckOutTextBox->TabIndex = 22;
             // 
@@ -4051,9 +4085,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->CrustCheckOutTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->CrustCheckOutTextBox->Location = System::Drawing::Point(760, 248);
+            this->CrustCheckOutTextBox->Location = System::Drawing::Point(784, 160);
             this->CrustCheckOutTextBox->Multiline = true;
             this->CrustCheckOutTextBox->Name = L"CrustCheckOutTextBox";
+            this->CrustCheckOutTextBox->ReadOnly = true;
             this->CrustCheckOutTextBox->Size = System::Drawing::Size(256, 48);
             this->CrustCheckOutTextBox->TabIndex = 21;
             // 
@@ -4061,9 +4096,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->FlavourCheckOutTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->FlavourCheckOutTextBox->Location = System::Drawing::Point(760, 160);
+            this->FlavourCheckOutTextBox->Location = System::Drawing::Point(784, 245);
             this->FlavourCheckOutTextBox->Multiline = true;
             this->FlavourCheckOutTextBox->Name = L"FlavourCheckOutTextBox";
+            this->FlavourCheckOutTextBox->ReadOnly = true;
             this->FlavourCheckOutTextBox->Size = System::Drawing::Size(256, 48);
             this->FlavourCheckOutTextBox->TabIndex = 20;
             // 
@@ -4085,33 +4121,33 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->ToppingsCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
                 | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->ToppingsCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->ToppingsCheckOutLabel->Location = System::Drawing::Point(600, 344);
+            this->ToppingsCheckOutLabel->Location = System::Drawing::Point(650, 336);
             this->ToppingsCheckOutLabel->Name = L"ToppingsCheckOutLabel";
-            this->ToppingsCheckOutLabel->Size = System::Drawing::Size(150, 25);
+            this->ToppingsCheckOutLabel->Size = System::Drawing::Size(132, 25);
             this->ToppingsCheckOutLabel->TabIndex = 17;
-            this->ToppingsCheckOutLabel->Text = L"TOPPING(S):";
+            this->ToppingsCheckOutLabel->Text = L"Topping(s):";
             // 
             // CrustCheckOutLabel
             // 
             this->CrustCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
                 | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->CrustCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->CrustCheckOutLabel->Location = System::Drawing::Point(600, 256);
+            this->CrustCheckOutLabel->Location = System::Drawing::Point(670, 160);
             this->CrustCheckOutLabel->Name = L"CrustCheckOutLabel";
             this->CrustCheckOutLabel->Size = System::Drawing::Size(128, 40);
             this->CrustCheckOutLabel->TabIndex = 16;
-            this->CrustCheckOutLabel->Text = L"CRUST(S):";
+            this->CrustCheckOutLabel->Text = L"Crust(s):";
             // 
             // FlavourCheckOutLabel
             // 
             this->FlavourCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
                 | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->FlavourCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->FlavourCheckOutLabel->Location = System::Drawing::Point(600, 168);
+            this->FlavourCheckOutLabel->Location = System::Drawing::Point(660, 248);
             this->FlavourCheckOutLabel->Name = L"FlavourCheckOutLabel";
-            this->FlavourCheckOutLabel->Size = System::Drawing::Size(168, 32);
+            this->FlavourCheckOutLabel->Size = System::Drawing::Size(138, 32);
             this->FlavourCheckOutLabel->TabIndex = 15;
-            this->FlavourCheckOutLabel->Text = L"FLAVOUR(S) :";
+            this->FlavourCheckOutLabel->Text = L"Flavor(s):";
             // 
             // OrderHeadingCheckOutLabel
             // 
@@ -4128,7 +4164,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->CardNumberCheckOutTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->CardNumberCheckOutTextBox->Location = System::Drawing::Point(352, 512);
+            this->CardNumberCheckOutTextBox->Location = System::Drawing::Point(360, 510);
             this->CardNumberCheckOutTextBox->Name = L"CardNumberCheckOutTextBox";
             this->CardNumberCheckOutTextBox->Size = System::Drawing::Size(184, 20);
             this->CardNumberCheckOutTextBox->TabIndex = 13;
@@ -4139,7 +4175,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CardNumberCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->CardNumberCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->CardNumberCheckOutLabel->Location = System::Drawing::Point(128, 504);
+            this->CardNumberCheckOutLabel->Location = System::Drawing::Point(138, 504);
             this->CardNumberCheckOutLabel->Name = L"CardNumberCheckOutLabel";
             this->CardNumberCheckOutLabel->Size = System::Drawing::Size(216, 50);
             this->CardNumberCheckOutLabel->TabIndex = 12;
@@ -4201,7 +4237,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->PaymentModeCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->PaymentModeCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->PaymentModeCheckOutLabel->Location = System::Drawing::Point(144, 352);
+            this->PaymentModeCheckOutLabel->Location = System::Drawing::Point(138, 361);
             this->PaymentModeCheckOutLabel->Name = L"PaymentModeCheckOutLabel";
             this->PaymentModeCheckOutLabel->Size = System::Drawing::Size(368, 23);
             this->PaymentModeCheckOutLabel->TabIndex = 7;
@@ -4221,7 +4257,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             // AddressCheckOutTextBox
             // 
-            this->AddressCheckOutTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+            this->AddressCheckOutTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->AddressCheckOutTextBox->Location = System::Drawing::Point(288, 248);
             this->AddressCheckOutTextBox->Multiline = true;
@@ -4231,11 +4267,11 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             // PhoneNoTextBox
             // 
-            this->PhoneNoTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->PhoneNoTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->PhoneNoTextBox->Location = System::Drawing::Point(288, 200);
+            this->PhoneNoTextBox->Location = System::Drawing::Point(288, 196);
             this->PhoneNoTextBox->Name = L"PhoneNoTextBox";
-            this->PhoneNoTextBox->Size = System::Drawing::Size(200, 20);
+            this->PhoneNoTextBox->Size = System::Drawing::Size(200, 26);
             this->PhoneNoTextBox->TabIndex = 3;
             // 
             // PhoneCheckoutLabel
@@ -4251,11 +4287,11 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             // NameCheckOutText
             // 
-            this->NameCheckOutText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
-                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->NameCheckOutText->Location = System::Drawing::Point(288, 145);
+            this->NameCheckOutText->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->NameCheckOutText->Location = System::Drawing::Point(288, 140);
             this->NameCheckOutText->Name = L"NameCheckOutText";
-            this->NameCheckOutText->Size = System::Drawing::Size(200, 20);
+            this->NameCheckOutText->Size = System::Drawing::Size(224, 26);
             this->NameCheckOutText->TabIndex = 1;
             // 
             // NameLabelCheckout
@@ -4263,7 +4299,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->NameLabelCheckout->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->NameLabelCheckout->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-            this->NameLabelCheckout->Location = System::Drawing::Point(136, 136);
+            this->NameLabelCheckout->Location = System::Drawing::Point(195, 136);
             this->NameLabelCheckout->Name = L"NameLabelCheckout";
             this->NameLabelCheckout->Size = System::Drawing::Size(112, 40);
             this->NameLabelCheckout->TabIndex = 0;

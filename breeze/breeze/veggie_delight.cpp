@@ -15,10 +15,6 @@ bool veggie_delight::get_gluten()
     return gluten;
 }
 
-veggie_delight::~veggie_delight()
-{
-    delete[] description;
-}
 char* veggie_delight::get_Addon()
 {
     return 0;

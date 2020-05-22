@@ -20,7 +20,5 @@ public:
     bool get_ranch();
     char* get_Addon();
     static bool get_gluten();
-    ~bbq_buzz();
-
 };
 

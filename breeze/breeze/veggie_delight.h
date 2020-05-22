@@ -10,6 +10,5 @@ public:
     veggie_delight();
     static bool get_gluten();
     char* get_Addon();
-    ~veggie_delight();
 };
 

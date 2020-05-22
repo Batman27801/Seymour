@@ -16,11 +16,6 @@ bool tikka::get_gluten()
 {
     return gluten;
 }
-tikka::~tikka()
-{
-    delete[] description;
-    delete[] name;
-}
 bool tikka::get_beef()
 {
     return beef;

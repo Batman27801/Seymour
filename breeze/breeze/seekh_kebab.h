@@ -17,7 +17,5 @@ public:
     static bool get_gluten();
     char* get_Addon();
     double set_meat(char choice[30]);
-    ~seekh_kebab();
-
 };
 

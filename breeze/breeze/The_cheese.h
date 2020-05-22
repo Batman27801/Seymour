@@ -21,6 +21,5 @@ public:
     bool get_gouda();
     char* get_Addon();
     static bool get_gluten();
-    ~The_cheese();
 };
 

@@ -10,7 +10,6 @@ pizza::pizza(crust* a, flavour* b, Toping* c) :cpoint(a), fpoint(b), tpoint(c){}
 void pizza::adjustpricing(int size)
 {
 	cpoint->setsize(size);
-	fpoint->increaseprice(size);
 	tpoint->increaseprice(size);
 }
 int pizza::getprice()

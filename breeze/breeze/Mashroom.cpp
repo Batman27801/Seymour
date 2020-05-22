@@ -5,7 +5,7 @@ Mashroom::Mashroom(): Creamlized_Onion(false),Creamy_Rosted_Garlic_Sause(true)
 {
     strcpy_s(name, "Mashroom");
     strcpy_s(details, "This earthy topping can be divisive in the kitchen, but many agree that it fits right in on a pizza. Spoiler: You are going to love it. ");
-    price = 200.5;
+    price = 200;
 }
 void Mashroom::setCO(bool n)
 {

@@ -4,7 +4,7 @@
 Extra_Cheez::Extra_Cheez() : Red_Pepper_Flakes(false),Extra(Macroni)
 {
     strcpy_s(name, "Extra_Cheez");
-    price = 140.4;
+    price = 140;
     strcpy_s(details, "Who does not love a little extra cheese for the perfect cheese-pull picture? We sure do. ");
 }
 

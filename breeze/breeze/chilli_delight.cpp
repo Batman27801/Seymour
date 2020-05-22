@@ -50,11 +50,6 @@ double chilli_delight::set_chilli(char* choice)
         std::cout << "please enter the correct info" << std::endl;
     }
 }
-chilli_delight::~chilli_delight()
-{
-    delete[] description;
-    delete[] name;
-}
 char* chilli_delight::get_Addon()
 {
     if (green == true)

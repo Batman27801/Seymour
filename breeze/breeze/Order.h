@@ -23,6 +23,7 @@ public:
     void setOrderCode(long int OrderCode);
     void setstatus(enum status);
     enum status getstatus();
+    void setbill(double);
     double ReturnBill();
 };
 

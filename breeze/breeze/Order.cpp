@@ -4,7 +4,7 @@
 using namespace std;
 Order::Order()
 {
-	int i,j;
+	int i;
 	bill = 0;
 	for (i = 0; i < 5; i++)
 	{
@@ -19,7 +19,6 @@ void Order::PlaceOrder(pizza* pizza, int pizzaamount)
 	int i;
 	for (i = 0; i < pizzaamount; i++)
 	{
-		bill = bill + (pizza+i)->getprice();
 		strcpy_s(FLAVOURS[i], (pizza + i)->fpoint->get_FlavName());
 		strcpy_s(CRUSTS[i], (pizza + i)->cpoint->get_CrustName());
 		strcpy_s(TOPPINGS[i], (pizza + i)->tpoint->getToppingName());
@@ -95,7 +94,7 @@ void Order::operator-(const double DiscAmount)
 {
 	double TempDisc = DiscAmount;
 	double TempBill = bill;
-	TempBill = TempBill - (TempBill * (TempDisc / 100));
+	TempBill = TempBill -  (5*TempDisc / 100);
 	bill = TempBill;
 }
 void Order::setOrderCode(long int OrderCode)
@@ -109,6 +108,10 @@ void Order::setstatus(enum status stat)
 enum status Order::getstatus()
 {
 	return orderstatus;
+}
+void Order::setbill(double b)
+{
+	bill = b;
 }
 /*double Order::MiscCal(double AddOn_Price,flavour *ptr)
 {

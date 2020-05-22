@@ -6,7 +6,7 @@ using namespace std;
 Chicken::Chicken(): Cheese(Shredded_Cheddar),BBQ_Sause(false) 
 {
     strcpy_s(name, "Chicken");
-    price = 170.5;
+    price = 170;
     strcpy_s(details, "The winner winner of weeknight meals goes well on pizzas, any kind of chicken pizza orders that contain this protein. ");
 
 }
