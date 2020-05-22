@@ -6,11 +6,9 @@ int chilli_delight::count = 0;
 chilli_delight::chilli_delight()
 {
     price = 1100;
-    description = new char[230];
-    description = "Fire up your taste buds with spicy chicken chunks, onions, olives, jalapenos and hot peri sauce. Gluten free.";
+    strcpy_s(description, "Fire up your taste buds with spicy chicken chunks, onions, olives, jalapenos and hot peri sauce. Gluten free.");
     chicken = true;
-    name = new char[230];
-    name = "chilli delight";
+    strcpy_s(name,"chilli delight");
     count++;
     red = false;
     green = false;

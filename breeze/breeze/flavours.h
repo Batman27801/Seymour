@@ -3,9 +3,10 @@ class flavour
 {
 protected:
     double price;
-    char* description;
-    char* name;
+    char description[220];
+    char name[30];
 public:
+    flavour();
     void increaseprice(int size);
     double  get_price() ;
      double  set_price(double PRICE) ;

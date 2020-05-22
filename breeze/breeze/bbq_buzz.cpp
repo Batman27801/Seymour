@@ -5,11 +5,9 @@ int bbq_buzz::count = 0;
 bbq_buzz::bbq_buzz()
 {
     price = 1100;
-    description = new char[230];
-    description = "Smoked chicken, capsicum, onions and black olives, sweet and smoky BBQ sauce. Contains gluten in significant amounts";
+    strcpy_s(description, "Smoked chicken, capsicum, onions and black olives, sweet and smoky BBQ sauce. Contains gluten in significant amounts");
     chicken = true;
-    name = new char[230];
-    name = "BBQ buzz";
+    strcpy_s(name, "BBQ buzz");
     count++;
 }
 double bbq_buzz::set_sauce(char* choice)

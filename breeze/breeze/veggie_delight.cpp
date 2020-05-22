@@ -5,11 +5,9 @@ int veggie_delight::count = 0;
 veggie_delight::veggie_delight()
 {
     price = 1000;
-    description = new char[230];
-    description = "A colorful medley of tomatoes, onions, mushrooms, black olives, and green peppers. Gluten free";
+    strcpy_s(description , "A colorful medley of tomatoes, onions, mushrooms, black olives, and green peppers. Gluten free");
     gluten = false;
-    name = new char[230];
-    name = "Veggie Delight";
+    strcpy_s(name , "Veggie Delight");
     count++;
 }
 bool veggie_delight::get_gluten()
