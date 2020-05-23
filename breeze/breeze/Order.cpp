@@ -17,15 +17,16 @@ Order::Order()
 void Order::PlaceOrder(pizza* pizza, int pizzaamount)
 {
 	int i;
-	for (i = 0; i < pizzaamount; i++)
+	no_of_pizzas = pizzaamount;
+	for (i = 0; i < no_of_pizzas; i++)
 	{
 		strcpy_s(FLAVOURS[i], (pizza + i)->fpoint->get_FlavName());
 		strcpy_s(CRUSTS[i], (pizza + i)->cpoint->get_CrustName());
 		strcpy_s(TOPPINGS[i], (pizza + i)->tpoint->getToppingName());
 	}
-	fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
+	fstream yourorder("Receipt.txt",ios::in| ios::out | ios::app);
 	yourorder << "Total pizzas ordered: " << pizzaamount <<endl;
-	for (i = 0; i < pizzaamount; i++)
+	for (i = 0; i < no_of_pizzas; i++)
 	{
 		yourorder << "Pizza Number " << i + 1 <<endl;
 		yourorder << CRUSTS[i] << " With the Flavor " << FLAVOURS[i] << " topped with a layering of " << TOPPINGS[i] << " ." <<endl;
@@ -35,40 +36,22 @@ void Order::PlaceOrder(pizza* pizza, int pizzaamount)
 	yourorder.close();
 	orderstatus = confirmed;
 }
-//void Order::PlaceOrder(pizza *pizza)
-//{
-//	int i,j;
-//	bill = bill + pizza->fpoint->get_price()+pizza->cpoint->get_price();
-//	fstream obj;
-//	obj.open("Reciept.txt", ios::in | ios::out | ios::app);
-//	for (i = 0; i < 7; i++)
-//	{
-//		if (strcmp(FLAVOURS[i],pizza->fpoint->get_FlavName())==0)
-//		{
-//			strcpy_s(SelectedFlavour, pizza->fpoint->get_FlavName());
-//			obj << "Flavour = " << FLAVOURS[i] << " PRICE = Rs " << pizza->fpoint->get_price() <<endl;
-//		}
-//	}
-//	for (j = 0; j < 8; j++)
-//	{
-//		if(strcmp(CRUSTS[j],pizza->cpoint->get_CrustName()))
-//		{
-//			strcpy_s(SelectedCrust, pizza->cpoint->get_CrustName());
-//			obj << "Crust = " << CRUSTS[j] << " PRICE = Rs " << pizza->cpoint->get_price() <<endl;
-//		}
-//	}
-//	/*for (k = 0; k < 5; k++)
-//	{
-//		if (strcmp(TOPPINGS[j], pizza->tpoint->getToppingName()))
-//		{
-//			strcpy_s(SelectedTopping, pizza->tpoint->getToppingName());
-//			obj << "Topping = " << TOPPINGS[k] << pizza->tpoint->getprice() << endl;
-//		}
-//	}*/
-//	obj << "..............................................TOTAL BILL = " << bill << endl;
-//	obj.close();
-//
-//}
+int Order::getpizzas()
+{
+	return no_of_pizzas;
+}
+char* Order::getcrusts()
+{
+	return CRUSTS[0];
+}
+char* Order::getflavs()
+{
+	return FLAVOURS[0];
+}
+char* Order::gettoppings()
+{
+	return TOPPINGS[0];
+}
 double Order::ReturnBill()
 {
 	return bill;
@@ -89,12 +72,20 @@ void Order::operator=(const Order& obj)
 		strcpy_s(TOPPINGS[i], obj.TOPPINGS[i]);
 	}
 	this->OrderCode = obj.OrderCode;
+	this->no_of_pizzas = obj.no_of_pizzas;
+	for ( int i = 0; i < 5; i++)
+	{
+		this->size[i] = obj.size[i];
+	}
 }
 void Order::operator-(const double DiscAmount)
 {
 	double TempDisc = DiscAmount;
 	double TempBill = bill;
-	TempBill = TempBill -  (5*TempDisc / 100);
+	if ((5 * TempDisc / 100) >= 500)
+		TempBill = TempBill - 500;
+	else
+		TempBill = TempBill -  (5*TempDisc / 100);
 	bill = TempBill;
 }
 void Order::setOrderCode(long int OrderCode)
@@ -113,19 +104,14 @@ void Order::setbill(double b)
 {
 	bill = b;
 }
-/*double Order::MiscCal(double AddOn_Price,flavour *ptr)
+int* Order::getsize()
 {
-	int i;
-	bill = bill + AddOn_Price;
-	fstream obj;
-	obj.open("Reciept.txt", ios::in | ios::out | ios::app);
-	for(i=0;i<2;i++)
+	return size;
+}
+void Order::setsize(int* s)
+{
+	for (int i = 0; i < 5; i++)
 	{
-		if (ADDONS[i] == ptr->get_Addon())
-		{
-			obj << "With Addon = " << ADDONS[i] << " PIRCE = " << AddOn_Price << " \n" << endl;
-		}
+		size[i] = s[i];
 	}
-	
-	return 0;
-}*/
+}

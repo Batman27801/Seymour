@@ -27,6 +27,11 @@ void breeze::MyForm::PreMade_Enter(System::Object^ sender, System::EventArgs^ e)
 	pizzaamountbox->Text = "0";
 }
 
+void breeze::MyForm::pizzaamountbox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (Convert::ToInt16(pizzaamountbox->Text) > 0)
+		sizeofpremadepizzabox->Text = "0";
+}
+
 void breeze::MyForm::startmenubox_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	if(Convert::ToInt32(sizeofpremadepizzabox->Text)>0)
@@ -178,6 +183,252 @@ void breeze::MyForm::startmenubox_Click(System::Object^ sender, System::EventArg
 	}
 }
 
+void breeze::MyForm::sizeofpremadepizzabox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (Convert::ToInt16(sizeofpremadepizzabox->Text) > 0)
+		pizzaamountbox->Text = "0";
+}
+
+void breeze::MyForm::Previous_Enter(System::Object^ sender, System::EventArgs^ e) {
+	prevorder1->Text = "";
+	prevorder2->Text = "";
+	prevorder3->Text = "";
+	prevorder4->Text = "";
+	prevorder5->Text = "";
+	labelusername->Text = "Name: " + gotoString(acc->getname());
+	labeluserfname->Text = "Father Name: " + gotoString(acc->getF_Name());
+	labelusercontactno->Text = "Contact No: " + Convert::ToString(acc->getcontact());
+	labeluserusername->Text = "Username: " + gotoString(acc->getusername());
+	labeluseremail->Text = "Email: " + gotoString(acc->getemail());
+	labelusertotalamount->Text = "Amount Spent: " + Convert::ToString(acc->gettotalamount());
+	Order* ord = acc->getprevious();
+	if ((ord + 0)->ReturnBill() == 0)
+		prevorder1->Enabled = false;
+	else
+		prevorder1->Enabled = true;
+	if ((ord + 1)->ReturnBill() == 0)
+		prevorder2->Enabled = false;
+	else
+		prevorder2->Enabled = true;
+	if ((ord + 2)->ReturnBill() == 0)
+		prevorder3->Enabled = false;
+	else
+		prevorder3->Enabled = true;
+	if ((ord + 3)->ReturnBill() == 0)
+		prevorder4->Enabled = false;
+	else
+		prevorder4->Enabled = true;
+	if ((ord + 4)->ReturnBill() == 0)
+		prevorder5->Enabled = false;
+	else
+		prevorder5->Enabled = true;
+	int i = 0, j;
+	for (j = 0; j < ord[i].getpizzas(); j++)
+	{
+		prevorder1->Text = prevorder1->Text + "Crust: " + gotoString(ord[i].getcrusts() + j * 30) + " + " + "Flavor: " + gotoString(ord[i].getflavs() + j * 30) + " + " + "Topping: " + gotoString(ord[i].gettoppings() + j * 30) + Environment::NewLine;
+	}
+	prevorder1->Text = prevorder1->Text + Environment::NewLine + "Rs " +Convert::ToString(ord[i].ReturnBill());
+	i++;
+	for (j = 0; j < ord[i].getpizzas(); j++)
+	{
+		prevorder2->Text = prevorder2->Text + "Crust: " + gotoString(ord[i].getcrusts() + j * 30) + " + " + "Flavor: " + gotoString(ord[i].getflavs() + j * 30) + " + " + "Topping: " + gotoString(ord[i].gettoppings() + j * 30) + Environment::NewLine;
+	}
+	prevorder2->Text = prevorder2->Text + Environment::NewLine + "Rs " +Convert::ToString(ord[i].ReturnBill());
+	i++;
+	for (j = 0; j < ord[i].getpizzas(); j++)
+	{
+		prevorder3->Text = prevorder3->Text + "Crust: " + gotoString(ord[i].getcrusts() + j * 30) + " + " + "Flavor: " + gotoString(ord[i].getflavs() + j * 30) + " + " + "Topping: " + gotoString(ord[i].gettoppings() + j * 30) + Environment::NewLine;
+	}
+	prevorder3->Text = prevorder3->Text + Environment::NewLine + "Rs " +Convert::ToString(ord[i].ReturnBill());
+	i++;
+	for (j = 0; j < ord[i].getpizzas(); j++)
+	{
+		prevorder4->Text = prevorder4->Text + "Crust: " + gotoString(ord[i].getcrusts() + j * 30) + " + " + "Flavor: " + gotoString(ord[i].getflavs() + j * 30) + " + " + "Topping: " + gotoString(ord[i].gettoppings() + j * 30) + Environment::NewLine;
+	}
+	prevorder4->Text = prevorder4->Text + Environment::NewLine + "Rs " +Convert::ToString(ord[i].ReturnBill());
+	i++;
+	for (j = 0; j < ord[i].getpizzas(); j++)
+	{
+		prevorder5->Text = prevorder5->Text + "Crust: " + gotoString(ord[i].getcrusts() + j * 30) + " + " + "Flavor: " + gotoString(ord[i].getflavs() + j * 30) + " + " + "Topping: " + gotoString(ord[i].gettoppings() + j * 30) + Environment::NewLine;
+	}
+	prevorder5->Text = prevorder5->Text + Environment::NewLine + "Rs " +Convert::ToString(ord[i].ReturnBill());
+}
+
+void breeze::MyForm::prevorder1_CheckedChanged(System::Object^ sender, System::EventArgs^ e){
+	if (prevorder1->Checked == true)
+	{
+		prevorder2->Checked = false;
+		prevorder3->Checked = false;
+		prevorder4->Checked = false;
+		prevorder5->Checked = false;
+	}
+}
+
+void breeze::MyForm::prevorder2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (prevorder2->Checked == true)
+	{
+		prevorder1->Checked = false;
+		prevorder3->Checked = false;
+		prevorder4->Checked = false;
+		prevorder5->Checked = false;
+	}
+}
+
+void breeze::MyForm::prevorder3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (prevorder3->Checked == true)
+	{
+		prevorder1->Checked = false;
+		prevorder2->Checked = false;
+		prevorder4->Checked = false;
+		prevorder5->Checked = false;
+	}
+
+}
+
+void breeze::MyForm::prevorder4_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (prevorder4->Checked == true)
+	{
+		prevorder1->Checked = false;
+		prevorder2->Checked = false;
+		prevorder3->Checked = false;
+		prevorder5->Checked = false;
+	}
+}
+
+void breeze::MyForm::prevorder5_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (prevorder5->Checked == true)
+	{
+		prevorder1->Checked = false;
+		prevorder2->Checked = false;
+		prevorder3->Checked = false;
+		prevorder4->Checked = false;
+	}
+}
+
+void breeze::MyForm::tomenu_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = PreMade;
+}
+
+void breeze::MyForm::confirmorder_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (prevorder1->Checked == true || prevorder2->Checked == true || prevorder3->Checked == true || prevorder4->Checked == true || prevorder5->Checked == true)
+	{
+		int j;
+		prevorder1->Checked == true ? (j = 0) : (prevorder2->Checked == true ? (j = 1) : (prevorder3->Checked == true ? (j = 2) : (prevorder4->Checked == true ? (j = 3) : (prevorder5->Checked == true ? (j = 4) : (0)))));
+		Order* ord = acc->getprevious();
+		total_no_of_pizzas = ord[j].getpizzas();
+		size = new int[total_no_of_pizzas];
+		size = ord[j].getsize();
+		pizz = new pizza[total_no_of_pizzas];
+		for (int i = 0; i < total_no_of_pizzas; i++,pizz = pizz +1)
+		{
+			//crust
+			if (!strcmp((ord[j].getcrusts() + i * 30),"DeepDish"))
+			{
+				pizz->cpoint = new deepdish;
+			}
+			else if (!strcmp((ord[j].getcrusts() + i * 30),"Focacia"))
+			{
+				pizz->cpoint = new focacia;
+
+			}
+			else if (!strcmp((ord[j].getcrusts() + i * 30),"Italian"))
+			{
+				pizz->cpoint = new italian;
+
+			}
+			else if (!strcmp((ord[j].getcrusts() + i * 30),"Neapolitan"))
+			{
+				pizz->cpoint = new neapolitan;
+
+			}
+			else if (!strcmp((ord[j].getcrusts() + i * 30),"Newyork"))
+			{
+				pizz->cpoint = new newyork;
+			}
+			else if (!strcmp((ord[j].getcrusts() + i * 30),"Sicilian"))
+			{
+				pizz->cpoint = new sicilian;
+			}
+			else if (!strcmp((ord[j].getcrusts() + i * 30),"Stlouis"))
+			{
+				pizz->cpoint = new stlouis;
+
+			}
+			else if (!strcmp((ord[j].getcrusts() + i * 30),"Stuffed"))
+			{
+				pizz->cpoint = new stuffed;
+			}
+			//flavour
+			if (!strcmp((ord[j].getflavs() + i * 30),"BBQ buzz"))
+			{
+				pizz->fpoint = new bbq_buzz;
+			}
+			else if (!strcmp((ord[j].getflavs() + i * 30),"chilli delight"))
+			{
+				pizz->fpoint = new chilli_delight;
+			}
+			else if (!strcmp((ord[j].getflavs() + i * 30), "fajita"))
+			{
+				pizz->fpoint = new fajita;
+			}
+			else if (!strcmp((ord[j].getflavs() + i * 30) , "seekh kebab"))
+			{
+				pizz->fpoint = new seekh_kebab;
+			}
+			else if (!strcmp((ord[j].getflavs() + i * 30) , "The cheese"))
+			{
+				pizz->fpoint = new The_cheese;
+			}
+			else if (!strcmp((ord[j].getflavs() + i * 30) , "tikka"))
+			{
+				pizz->fpoint = new tikka;
+			}
+			else if (!strcmp((ord[j].getflavs() + i * 30) , "Veggie Delight"))
+			{
+				pizz->fpoint = new veggie_delight;
+			}
+			pizz->fpoint->increaseprice(size[i]);
+			//topping
+			if (!strcmp((ord[j].gettoppings() + i * 30), "Beef"))
+			{
+				pizz->tpoint = new Beef;
+			}
+			else if (!strcmp((ord[j].gettoppings() + i * 30), "Chicken"))
+			{
+				Chicken* a = new Chicken;
+				pizz->tpoint = a;
+			}
+			else if (!strcmp((ord[j].gettoppings() + i * 30), "Extra_Cheez"))
+			{
+				pizz->tpoint = new Extra_Cheez;
+			}
+			else if (!strcmp((ord[j].gettoppings() + i * 30), "Mashroom"))
+			{
+				pizz->tpoint = new Mashroom;
+			}
+			else if (!strcmp((ord[j].gettoppings() + i * 30), "Pepperoni"))
+			{
+				pizz->tpoint = new Pepperoni;
+			}
+			else if (!strcmp((ord[j].gettoppings() + i * 30), "Sausage"))
+			{
+				pizz->tpoint = new Sausage;
+			}
+			pizz->adjustpricing(size[i]);
+		}
+		pizz = pizz - 1;
+
+		tabControl1->SelectedTab = CheckoutPage;
+
+	}
+	else
+	err->Visible = true;
+
+}
+
 //******************************USER LOGIN AND RELATED FUNCTIONS**********************
 
 
@@ -200,7 +451,9 @@ void breeze::MyForm::Login_Click(System::Object^ sender, System::EventArgs^ e) {
 	else if(acc->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text))==true)
 	{
 		acc->import(backtostring(UsernameBox->Text), backtostring(PasswordBox->Text));
-		tabControl1->SelectedTab = PreMade;
+		tabControl1->SelectedTab = Previous;
+		UsernameBox->Text = "";
+		PasswordBox->Text = "";
 	}
 
 	//function incomplete
@@ -351,6 +604,8 @@ void breeze::MyForm::usernameavailability_Click(System::Object^ sender, System::
 	}
 
 }
+
+
 
 //******************************SIGNUP RELATED FUNCTIONS*****************************
 
@@ -1855,7 +2110,7 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 		CardCheckOutComboBox->Visible = false;
 		CardNumberCheckOutLabel->Visible = false;
 		CardNumberCheckOutTextBox->Visible = false;
-		pizz = pizz - (total_no_of_pizzas - 1);
+		pizz = pizz - (total_no_of_pizzas-1);
 		for (i = 0; i < total_no_of_pizzas; i++)
 		{
 			
@@ -1864,10 +2119,10 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 			ToppingsCheckOutTextBox->Text = ToppingsCheckOutTextBox->Text + "Topping Number " + (i + 1) + ": " + gotoString((pizz + i)->tpoint->getToppingName()) + Environment::NewLine;
 			price = price + (pizz + i)->getprice();
 		}
-		order->setbill(price);
 		discbox->Visible = true;
 		disclabel->Visible = true;
-		double disc = Math::Round ((5 * acc->gettotalamount()) / 100, 2);
+		double disc = (5 * acc->gettotalamount()) / 100;
+		disc > 500 ? (disc = 500) : (1);
 		discbox->Text = Convert::ToString(disc);
 		order->setbill(price);
 		*order - acc->gettotalamount();
@@ -1878,7 +2133,11 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 {
 	if (acc->getguest() == false)
 	{
-		acc->settotalamount(order->ReturnBill());
+		ToppingsCheckOutTextBox->Text = "";
+		FlavourCheckOutTextBox->Text = "";
+		CrustCheckOutTextBox->Text = "";
+		*acc + order->ReturnBill();
+		order->setsize(size);
 		fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
 		yourorder << "X----------------------------------------------------X" << endl;
 		yourorder << "Name: " << acc->getname() <<endl;
@@ -1891,7 +2150,9 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 	}
 	else
 	{
-		
+		ToppingsCheckOutTextBox->Text = "";
+		FlavourCheckOutTextBox->Text = "";
+		CrustCheckOutTextBox->Text = "";
 		acc->setname(backtostring(NameCheckOutText->Text)) ;
 		acc->setcontact(long long int(System::Convert::ToInt64(PhoneNoTextBox->Text)));
 		acc->setaddress(backtostring(AddressCheckOutTextBox->Text));

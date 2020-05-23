@@ -5,6 +5,7 @@ pizza::pizza()
 	cpoint = NULL;
 	fpoint = NULL;
 	tpoint = NULL; 
+	final_price = 0;
 }
 pizza::pizza(crust* a, flavour* b, Toping* c) :cpoint(a), fpoint(b), tpoint(c){}
 void pizza::adjustpricing(int size)

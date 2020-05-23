@@ -9,10 +9,12 @@ class Order
 {
 private:
     double bill;
+    int no_of_pizzas;
     long int OrderCode;
     char FLAVOURS[5][30];
     char CRUSTS[5][30];
     char TOPPINGS[5][30];    
+    int size[5];
     enum status orderstatus;
 public:
     Order();
@@ -24,6 +26,12 @@ public:
     void setstatus(enum status);
     enum status getstatus();
     void setbill(double);
+    int getpizzas();
+    int* getsize();
+    void setsize(int* s);
+    char* getcrusts();
+    char* getflavs();
+    char* gettoppings();
     double ReturnBill();
 };
 

@@ -18,7 +18,7 @@ class account : public Person, public security
 public:
 	account();
 	Order* getprevious();
-	void setprevious(Order&);
+	void setprevious(Order);
 	char* getusername();
 	bool setusername(string);
 	char* getpassword();
@@ -32,7 +32,7 @@ public:
 	void setguest(bool);
 	bool checkavailable(string);
 	void writetofile();
-	void settotalamount(double);
+	account operator+(double);
 	double gettotalamount();
 };
 

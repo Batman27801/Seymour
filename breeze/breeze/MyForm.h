@@ -443,6 +443,41 @@ private: System::Windows::Forms::Label^ UserCheckOutIntro;
 
 private: System::Windows::Forms::TextBox^ discbox;
 private: System::Windows::Forms::Label^ disclabel;
+private: System::Windows::Forms::TabPage^ Previous;
+private: System::Windows::Forms::Label^ labelusername;
+
+private: System::Windows::Forms::Label^ loggedinHeading;
+private: System::Windows::Forms::CheckBox^ prevorder4;
+
+
+private: System::Windows::Forms::CheckBox^ prevorder3;
+
+private: System::Windows::Forms::CheckBox^ prevorder2;
+private: System::Windows::Forms::Button^ tomenu;
+
+
+
+
+
+private: System::Windows::Forms::Button^ confirmorder;
+
+private: System::Windows::Forms::CheckBox^ prevorder1;
+
+private: System::Windows::Forms::Label^ labelusertotalamount;
+private: System::Windows::Forms::Label^ instructions;
+
+
+private: System::Windows::Forms::Label^ labeluseremail;
+
+private: System::Windows::Forms::Label^ labeluserusername;
+
+private: System::Windows::Forms::Label^ labelusercontactno;
+
+private: System::Windows::Forms::Label^ labeluserfname;
+private: System::Windows::Forms::CheckBox^ prevorder5;
+private: System::Windows::Forms::Label^ err;
+
+
 
 
 
@@ -621,6 +656,22 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->SignUPtext = (gcnew System::Windows::Forms::Label());
             this->SignUpHeading = (gcnew System::Windows::Forms::Label());
             this->UserPage = (gcnew System::Windows::Forms::TabPage());
+            this->Previous = (gcnew System::Windows::Forms::TabPage());
+            this->prevorder5 = (gcnew System::Windows::Forms::CheckBox());
+            this->prevorder4 = (gcnew System::Windows::Forms::CheckBox());
+            this->prevorder3 = (gcnew System::Windows::Forms::CheckBox());
+            this->prevorder2 = (gcnew System::Windows::Forms::CheckBox());
+            this->tomenu = (gcnew System::Windows::Forms::Button());
+            this->confirmorder = (gcnew System::Windows::Forms::Button());
+            this->prevorder1 = (gcnew System::Windows::Forms::CheckBox());
+            this->labelusertotalamount = (gcnew System::Windows::Forms::Label());
+            this->instructions = (gcnew System::Windows::Forms::Label());
+            this->labeluseremail = (gcnew System::Windows::Forms::Label());
+            this->labeluserusername = (gcnew System::Windows::Forms::Label());
+            this->labelusercontactno = (gcnew System::Windows::Forms::Label());
+            this->labeluserfname = (gcnew System::Windows::Forms::Label());
+            this->labelusername = (gcnew System::Windows::Forms::Label());
+            this->loggedinHeading = (gcnew System::Windows::Forms::Label());
             this->PreMade = (gcnew System::Windows::Forms::TabPage());
             this->pizzareq = (gcnew System::Windows::Forms::Label());
             this->sizereq = (gcnew System::Windows::Forms::Label());
@@ -805,10 +856,12 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->PhoneCheckoutLabel = (gcnew System::Windows::Forms::Label());
             this->NameCheckOutText = (gcnew System::Windows::Forms::TextBox());
             this->NameLabelCheckout = (gcnew System::Windows::Forms::Label());
+            this->err = (gcnew System::Windows::Forms::Label());
             this->tabControl1->SuspendLayout();
             this->MainMenu->SuspendLayout();
             this->UserLogin->SuspendLayout();
             this->SignUpPage->SuspendLayout();
+            this->Previous->SuspendLayout();
             this->PreMade->SuspendLayout();
             this->CrustSelect->SuspendLayout();
             this->FlavourSelect->SuspendLayout();
@@ -836,6 +889,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->tabControl1->Controls->Add(this->UserLogin);
             this->tabControl1->Controls->Add(this->SignUpPage);
             this->tabControl1->Controls->Add(this->UserPage);
+            this->tabControl1->Controls->Add(this->Previous);
             this->tabControl1->Controls->Add(this->PreMade);
             this->tabControl1->Controls->Add(this->CrustSelect);
             this->tabControl1->Controls->Add(this->FlavourSelect);
@@ -1848,6 +1902,219 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->UserPage->Text = L"tabPage1";
             this->UserPage->UseVisualStyleBackColor = true;
             // 
+            // Previous
+            // 
+            this->Previous->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Previous.BackgroundImage")));
+            this->Previous->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+            this->Previous->Controls->Add(this->err);
+            this->Previous->Controls->Add(this->prevorder5);
+            this->Previous->Controls->Add(this->prevorder4);
+            this->Previous->Controls->Add(this->prevorder3);
+            this->Previous->Controls->Add(this->prevorder2);
+            this->Previous->Controls->Add(this->tomenu);
+            this->Previous->Controls->Add(this->confirmorder);
+            this->Previous->Controls->Add(this->prevorder1);
+            this->Previous->Controls->Add(this->labelusertotalamount);
+            this->Previous->Controls->Add(this->instructions);
+            this->Previous->Controls->Add(this->labeluseremail);
+            this->Previous->Controls->Add(this->labeluserusername);
+            this->Previous->Controls->Add(this->labelusercontactno);
+            this->Previous->Controls->Add(this->labeluserfname);
+            this->Previous->Controls->Add(this->labelusername);
+            this->Previous->Controls->Add(this->loggedinHeading);
+            this->Previous->Location = System::Drawing::Point(4, 22);
+            this->Previous->Name = L"Previous";
+            this->Previous->Size = System::Drawing::Size(1210, 576);
+            this->Previous->TabIndex = 9;
+            this->Previous->Text = L"tabPage1";
+            this->Previous->UseVisualStyleBackColor = true;
+            this->Previous->Enter += gcnew System::EventHandler(this, &MyForm::Previous_Enter);
+            // 
+            // prevorder5
+            // 
+            this->prevorder5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->prevorder5->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->prevorder5->Location = System::Drawing::Point(474, 441);
+            this->prevorder5->Name = L"prevorder5";
+            this->prevorder5->Size = System::Drawing::Size(440, 127);
+            this->prevorder5->TabIndex = 19;
+            this->prevorder5->Text = L"checkBox7";
+            this->prevorder5->UseVisualStyleBackColor = true;
+            this->prevorder5->CheckedChanged += gcnew System::EventHandler(this, &MyForm::prevorder5_CheckedChanged);
+            // 
+            // prevorder4
+            // 
+            this->prevorder4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->prevorder4->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->prevorder4->Location = System::Drawing::Point(676, 300);
+            this->prevorder4->Name = L"prevorder4";
+            this->prevorder4->Size = System::Drawing::Size(493, 119);
+            this->prevorder4->TabIndex = 18;
+            this->prevorder4->Text = L"checkBox5";
+            this->prevorder4->UseVisualStyleBackColor = true;
+            this->prevorder4->CheckedChanged += gcnew System::EventHandler(this, &MyForm::prevorder4_CheckedChanged);
+            // 
+            // prevorder3
+            // 
+            this->prevorder3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->prevorder3->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->prevorder3->Location = System::Drawing::Point(157, 300);
+            this->prevorder3->Name = L"prevorder3";
+            this->prevorder3->Size = System::Drawing::Size(493, 119);
+            this->prevorder3->TabIndex = 17;
+            this->prevorder3->Text = L"checkBox6";
+            this->prevorder3->UseVisualStyleBackColor = true;
+            this->prevorder3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::prevorder3_CheckedChanged);
+            // 
+            // prevorder2
+            // 
+            this->prevorder2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->prevorder2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->prevorder2->Location = System::Drawing::Point(676, 162);
+            this->prevorder2->Name = L"prevorder2";
+            this->prevorder2->Size = System::Drawing::Size(493, 132);
+            this->prevorder2->TabIndex = 16;
+            this->prevorder2->Text = L"checkBox4";
+            this->prevorder2->UseVisualStyleBackColor = true;
+            this->prevorder2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::prevorder2_CheckedChanged);
+            // 
+            // tomenu
+            // 
+            this->tomenu->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->tomenu->Location = System::Drawing::Point(954, 512);
+            this->tomenu->Name = L"tomenu";
+            this->tomenu->Size = System::Drawing::Size(153, 56);
+            this->tomenu->TabIndex = 15;
+            this->tomenu->Text = L"To the Menu!";
+            this->tomenu->UseVisualStyleBackColor = true;
+            this->tomenu->Click += gcnew System::EventHandler(this, &MyForm::tomenu_Click);
+            // 
+            // confirmorder
+            // 
+            this->confirmorder->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->confirmorder->Location = System::Drawing::Point(262, 512);
+            this->confirmorder->Name = L"confirmorder";
+            this->confirmorder->Size = System::Drawing::Size(153, 56);
+            this->confirmorder->TabIndex = 13;
+            this->confirmorder->Text = L"Confirm Order";
+            this->confirmorder->UseVisualStyleBackColor = true;
+            this->confirmorder->Click += gcnew System::EventHandler(this, &MyForm::confirmorder_Click);
+            // 
+            // prevorder1
+            // 
+            this->prevorder1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->prevorder1->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->prevorder1->Location = System::Drawing::Point(157, 162);
+            this->prevorder1->Name = L"prevorder1";
+            this->prevorder1->Size = System::Drawing::Size(493, 132);
+            this->prevorder1->TabIndex = 8;
+            this->prevorder1->Text = L"checkBox3";
+            this->prevorder1->UseVisualStyleBackColor = true;
+            this->prevorder1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::prevorder1_CheckedChanged);
+            // 
+            // labelusertotalamount
+            // 
+            this->labelusertotalamount->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->labelusertotalamount->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->labelusertotalamount->Location = System::Drawing::Point(802, 114);
+            this->labelusertotalamount->Name = L"labelusertotalamount";
+            this->labelusertotalamount->Size = System::Drawing::Size(319, 23);
+            this->labelusertotalamount->TabIndex = 7;
+            this->labelusertotalamount->Text = L"Total Amount Spent::";
+            this->labelusertotalamount->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            // 
+            // instructions
+            // 
+            this->instructions->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->instructions->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->instructions->Location = System::Drawing::Point(154, 141);
+            this->instructions->Name = L"instructions";
+            this->instructions->Size = System::Drawing::Size(534, 23);
+            this->instructions->TabIndex = 6;
+            this->instructions->Text = L"You can choose one of your previous orders below and they will be reordered for y"
+                L"ou:";
+            // 
+            // labeluseremail
+            // 
+            this->labeluseremail->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->labeluseremail->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->labeluseremail->Location = System::Drawing::Point(802, 91);
+            this->labeluseremail->Name = L"labeluseremail";
+            this->labeluseremail->Size = System::Drawing::Size(319, 23);
+            this->labeluseremail->TabIndex = 5;
+            this->labeluseremail->Text = L"Email:";
+            this->labeluseremail->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            // 
+            // labeluserusername
+            // 
+            this->labeluserusername->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->labeluserusername->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->labeluserusername->Location = System::Drawing::Point(802, 68);
+            this->labeluserusername->Name = L"labeluserusername";
+            this->labeluserusername->Size = System::Drawing::Size(319, 23);
+            this->labeluserusername->TabIndex = 4;
+            this->labeluserusername->Text = L"Username:";
+            this->labeluserusername->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            // 
+            // labelusercontactno
+            // 
+            this->labelusercontactno->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->labelusercontactno->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->labelusercontactno->Location = System::Drawing::Point(182, 114);
+            this->labelusercontactno->Name = L"labelusercontactno";
+            this->labelusercontactno->Size = System::Drawing::Size(319, 23);
+            this->labelusercontactno->TabIndex = 3;
+            this->labelusercontactno->Text = L"Contact No:";
+            this->labelusercontactno->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            // 
+            // labeluserfname
+            // 
+            this->labeluserfname->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->labeluserfname->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->labeluserfname->Location = System::Drawing::Point(182, 91);
+            this->labeluserfname->Name = L"labeluserfname";
+            this->labeluserfname->Size = System::Drawing::Size(319, 23);
+            this->labeluserfname->TabIndex = 2;
+            this->labeluserfname->Text = L"Father Name:";
+            this->labeluserfname->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            // 
+            // labelusername
+            // 
+            this->labelusername->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->labelusername->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->labelusername->Location = System::Drawing::Point(182, 68);
+            this->labelusername->Name = L"labelusername";
+            this->labelusername->Size = System::Drawing::Size(319, 23);
+            this->labelusername->TabIndex = 1;
+            this->labelusername->Text = L"Name:";
+            this->labelusername->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            // 
+            // loggedinHeading
+            // 
+            this->loggedinHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->loggedinHeading->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->loggedinHeading->Location = System::Drawing::Point(488, 0);
+            this->loggedinHeading->Name = L"loggedinHeading";
+            this->loggedinHeading->Size = System::Drawing::Size(308, 69);
+            this->loggedinHeading->TabIndex = 0;
+            this->loggedinHeading->Text = L"WELCOME back";
+            this->loggedinHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            // 
             // PreMade
             // 
             this->PreMade->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"PreMade.BackgroundImage")));
@@ -1927,6 +2194,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->sizeofpremadepizzabox->Name = L"sizeofpremadepizzabox";
             this->sizeofpremadepizzabox->Size = System::Drawing::Size(93, 21);
             this->sizeofpremadepizzabox->TabIndex = 27;
+            this->sizeofpremadepizzabox->TextChanged += gcnew System::EventHandler(this, &MyForm::sizeofpremadepizzabox_TextChanged);
             // 
             // sizeofpremadepizzalabel
             // 
@@ -1951,6 +2219,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->pizzaamountbox->Name = L"pizzaamountbox";
             this->pizzaamountbox->Size = System::Drawing::Size(93, 28);
             this->pizzaamountbox->TabIndex = 25;
+            this->pizzaamountbox->TextChanged += gcnew System::EventHandler(this, &MyForm::pizzaamountbox_TextChanged);
             // 
             // startmenubox
             // 
@@ -3927,6 +4196,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // CheckoutPage
             // 
             this->CheckoutPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CheckoutPage.BackgroundImage")));
+            this->CheckoutPage->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
             this->CheckoutPage->Controls->Add(this->discbox);
             this->CheckoutPage->Controls->Add(this->disclabel);
             this->CheckoutPage->Controls->Add(this->ConfirmCheckOutButton);
@@ -3969,9 +4239,9 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             // discbox
             // 
-            this->discbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
-                | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->discbox->Location = System::Drawing::Point(788, 406);
+            this->discbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->discbox->Location = System::Drawing::Point(784, 406);
             this->discbox->Name = L"discbox";
             this->discbox->ReadOnly = true;
             this->discbox->Size = System::Drawing::Size(120, 26);
@@ -4008,9 +4278,9 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->GuestCheckOutIntro->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->GuestCheckOutIntro->ForeColor = System::Drawing::Color::Red;
-            this->GuestCheckOutIntro->Location = System::Drawing::Point(173, 37);
+            this->GuestCheckOutIntro->Location = System::Drawing::Point(167, 37);
             this->GuestCheckOutIntro->Name = L"GuestCheckOutIntro";
-            this->GuestCheckOutIntro->Size = System::Drawing::Size(288, 40);
+            this->GuestCheckOutIntro->Size = System::Drawing::Size(294, 40);
             this->GuestCheckOutIntro->TabIndex = 29;
             this->GuestCheckOutIntro->Text = L"ESTEEMED GUEST, WELCOME TO CHECKOUT. KINDLY FILL YOUR DETAILS CORRECTLY AND THEN "
                 L"PRESS CONFIRM TO PROCEED";
@@ -4046,7 +4316,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->OrderNoCheckOutTextBox->Multiline = true;
             this->OrderNoCheckOutTextBox->Name = L"OrderNoCheckOutTextBox";
             this->OrderNoCheckOutTextBox->ReadOnly = true;
-            this->OrderNoCheckOutTextBox->Size = System::Drawing::Size(215, 32);
+            this->OrderNoCheckOutTextBox->Size = System::Drawing::Size(224, 32);
             this->OrderNoCheckOutTextBox->TabIndex = 26;
             // 
             // OrderNoCheckoutLabel
@@ -4074,33 +4344,33 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->ToppingsCheckOutTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->ToppingsCheckOutTextBox->Location = System::Drawing::Point(784, 336);
+            this->ToppingsCheckOutTextBox->Location = System::Drawing::Point(784, 310);
             this->ToppingsCheckOutTextBox->Multiline = true;
             this->ToppingsCheckOutTextBox->Name = L"ToppingsCheckOutTextBox";
             this->ToppingsCheckOutTextBox->ReadOnly = true;
-            this->ToppingsCheckOutTextBox->Size = System::Drawing::Size(256, 48);
+            this->ToppingsCheckOutTextBox->Size = System::Drawing::Size(256, 74);
             this->ToppingsCheckOutTextBox->TabIndex = 22;
             // 
             // CrustCheckOutTextBox
             // 
             this->CrustCheckOutTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->CrustCheckOutTextBox->Location = System::Drawing::Point(784, 160);
+            this->CrustCheckOutTextBox->Location = System::Drawing::Point(784, 133);
             this->CrustCheckOutTextBox->Multiline = true;
             this->CrustCheckOutTextBox->Name = L"CrustCheckOutTextBox";
             this->CrustCheckOutTextBox->ReadOnly = true;
-            this->CrustCheckOutTextBox->Size = System::Drawing::Size(256, 48);
+            this->CrustCheckOutTextBox->Size = System::Drawing::Size(256, 79);
             this->CrustCheckOutTextBox->TabIndex = 21;
             // 
             // FlavourCheckOutTextBox
             // 
             this->FlavourCheckOutTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->FlavourCheckOutTextBox->Location = System::Drawing::Point(784, 245);
+            this->FlavourCheckOutTextBox->Location = System::Drawing::Point(784, 227);
             this->FlavourCheckOutTextBox->Multiline = true;
             this->FlavourCheckOutTextBox->Name = L"FlavourCheckOutTextBox";
             this->FlavourCheckOutTextBox->ReadOnly = true;
-            this->FlavourCheckOutTextBox->Size = System::Drawing::Size(256, 48);
+            this->FlavourCheckOutTextBox->Size = System::Drawing::Size(256, 75);
             this->FlavourCheckOutTextBox->TabIndex = 20;
             // 
             // TotalPriceCheckOutLabel
@@ -4121,7 +4391,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->ToppingsCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
                 | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->ToppingsCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->ToppingsCheckOutLabel->Location = System::Drawing::Point(650, 336);
+            this->ToppingsCheckOutLabel->Location = System::Drawing::Point(650, 310);
             this->ToppingsCheckOutLabel->Name = L"ToppingsCheckOutLabel";
             this->ToppingsCheckOutLabel->Size = System::Drawing::Size(132, 25);
             this->ToppingsCheckOutLabel->TabIndex = 17;
@@ -4132,7 +4402,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CrustCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
                 | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->CrustCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->CrustCheckOutLabel->Location = System::Drawing::Point(670, 160);
+            this->CrustCheckOutLabel->Location = System::Drawing::Point(670, 133);
             this->CrustCheckOutLabel->Name = L"CrustCheckOutLabel";
             this->CrustCheckOutLabel->Size = System::Drawing::Size(128, 40);
             this->CrustCheckOutLabel->TabIndex = 16;
@@ -4143,7 +4413,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->FlavourCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
                 | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->FlavourCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->FlavourCheckOutLabel->Location = System::Drawing::Point(660, 248);
+            this->FlavourCheckOutLabel->Location = System::Drawing::Point(660, 230);
             this->FlavourCheckOutLabel->Name = L"FlavourCheckOutLabel";
             this->FlavourCheckOutLabel->Size = System::Drawing::Size(138, 32);
             this->FlavourCheckOutLabel->TabIndex = 15;
@@ -4271,7 +4541,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
                 static_cast<System::Byte>(0)));
             this->PhoneNoTextBox->Location = System::Drawing::Point(288, 196);
             this->PhoneNoTextBox->Name = L"PhoneNoTextBox";
-            this->PhoneNoTextBox->Size = System::Drawing::Size(200, 26);
+            this->PhoneNoTextBox->Size = System::Drawing::Size(224, 26);
             this->PhoneNoTextBox->TabIndex = 3;
             // 
             // PhoneCheckoutLabel
@@ -4305,6 +4575,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->NameLabelCheckout->TabIndex = 0;
             this->NameLabelCheckout->Text = L"NAME:";
             // 
+            // err
+            // 
+            this->err->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->err->ForeColor = System::Drawing::Color::Red;
+            this->err->Location = System::Drawing::Point(182, 512);
+            this->err->Name = L"err";
+            this->err->Size = System::Drawing::Size(74, 56);
+            this->err->TabIndex = 20;
+            this->err->Text = L"No Order Selected!";
+            this->err->Visible = false;
+            // 
             // MyForm
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -4325,6 +4607,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->UserLogin->PerformLayout();
             this->SignUpPage->ResumeLayout(false);
             this->SignUpPage->PerformLayout();
+            this->Previous->ResumeLayout(false);
             this->PreMade->ResumeLayout(false);
             this->PreMade->PerformLayout();
             this->CrustSelect->ResumeLayout(false);
@@ -4451,10 +4734,19 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
 	System::Void label15_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 	System::Void ToppingSelect_Enter(System::Object^ sender, System::EventArgs^ e);
-
 	System::Void startmenubox_Click(System::Object^ sender, System::EventArgs^ e); 
 	System::Void CheckoutPage_Enter(System::Object^ sender, System::EventArgs^ e);
 	System::Void PreMade_Enter(System::Object^ sender, System::EventArgs^ e);
- System::Void ConfirmCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void ConfirmCheckOutButton_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void Previous_Enter(System::Object^ sender, System::EventArgs^ e);
+    System::Void tomenu_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void pizzaamountbox_TextChanged(System::Object^ sender, System::EventArgs^ e);
+    System::Void sizeofpremadepizzabox_TextChanged(System::Object^ sender, System::EventArgs^ e);
+    System::Void prevorder1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+    System::Void prevorder2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+    System::Void prevorder3_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+    System::Void prevorder4_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+    System::Void prevorder5_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+    System::Void confirmorder_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

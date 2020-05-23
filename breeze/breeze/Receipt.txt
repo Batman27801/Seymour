@@ -1,0 +1,161 @@
+X----------------------------------------------------X
+Name: Charles
+Contact No: 03122586867
+Address: Charles Mansion USA
+X----------------------------------------------------X
+Name: Charles
+Contact No: 03122586867
+Address: Charles Mansion USA
+X----------------------------------------------------X
+Name: Charles
+Contact No: 03122586867
+Address: Charles Mansion USA
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stuffed With the Flavor The cheese topped with a layering of Extra_Cheez .
+X----------------------------------------------------X
+Name: Charles
+Contact No: 03122586867
+Address: Charles Mansion USA
+
+X----------------------------------------------------X
+Name: Charles
+Contact No: 03122586867
+Address: Charles Mansion USA
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 1794
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Charles
+Contact No: 03122586867
+Address: Charles Mansion USA
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 3244.3
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Charles
+Contact No: 03122586867
+Address: Charles Mansion USA
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 2202.09
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Charles
+Contact No: 03122586867
+Address: Charles Mansion USA
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 1.85273e+09
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Charles
+Contact No: 03122586867
+Address: Charles Mansion USA
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+X----------------------------------------------------X
+Name: asdasdasd
+Contact No: 01478523694
+Address: adasdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 3004
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasdasd
+Contact No: 01478523694
+Address: adasdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 2083.8
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasdasd
+Contact No: 01478523694
+Address: adasdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Newyork With the Flavor BBQ buzz topped with a layering of Chicken .
+Total Billed Amount is: Rs 2395.61
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasdasd
+Contact No: 01478523694
+Address: adasdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 45.8295
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasdasd
+Contact No: 01478523694
+Address: adasdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 2957.54
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasdasd
+Contact No: 01478523694
+Address: adasdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 2729
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasdasd
+Contact No: 01478523694
+Address: adasdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 2729
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasdasd
+Contact No: 01478523694
+Address: adasdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 2729
+
+X----------------------------------------------------X

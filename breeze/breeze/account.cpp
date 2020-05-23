@@ -20,8 +20,9 @@ Order* account::getprevious()
 {
 	return previous;
 }
-void account::setprevious(Order& newest)
+void account::setprevious(Order newest)
 {
+
 	for (int i = 4; i > 0; i--)
 	{
 		previous[i] = previous[i - 1];
@@ -166,11 +167,12 @@ void account::SaveChanges()
 	AccountFile.open("accountdata.dat", ios::out | ios::binary);
 	AccountFile.write(reinterpret_cast<char*>(&*this), sizeof(*this));
 }
-void account::settotalamount(double b)
-{
-	total_amount = total_amount + b;
-}
 double account::gettotalamount()
 {
 	return total_amount;
+}
+account account::operator +(double b)
+{
+	total_amount = total_amount + b;
+	return *this;
 }
