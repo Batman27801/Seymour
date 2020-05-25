@@ -17,6 +17,10 @@ void breeze::MyForm::customer_Click(System::Object^ sender, System::EventArgs^ e
 	tabControl1->SelectedTab = UserLogin;
 }
 
+void breeze::MyForm::staff_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = Staaf_Main_Page;
+}
+
 void breeze::MyForm::PreMade_Enter(System::Object^ sender, System::EventArgs^ e) {
 	sizeofpizzabox5->Text = "0";
 	sizeofpizzabox4->Text = "0";
@@ -1701,9 +1705,9 @@ void breeze::MyForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	tabControl1->SelectedTab = CrustSelect;
 }
-void breeze::MyForm::staff_Click(System::Object^ sender, System::EventArgs^ e) {
+/*void breeze::MyForm::staff_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = FlavourSelect;
-}
+}*/
 void breeze::MyForm::ChilliDelightCheckbox_CheckStateChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (ChilliDelightCheckbox->Checked == false)
 	{
@@ -2167,4 +2171,25 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 		order->FileOrder();
 	}
 	tabControl1->SelectedTab = UserLogin;
+}
+
+void breeze::MyForm::loginasmanger_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = ManagerLogin;
+}
+void breeze::MyForm::BackToFrontpage_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = MainMenu;
+}
+void breeze::MyForm::BackToStaafMain_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = Staaf_Main_Page;
+}
+void breeze::MyForm::LoginManagerButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (M->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)) == false)
+	{
+		IncorrectPassNotice->Visible = true;
+	}
+	else if (M->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)) == true)
+	{
+		Manageridtextbox->Text = "";
+		Managerpasstextbox->Text = "";
+	}
 }

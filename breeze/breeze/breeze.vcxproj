@@ -129,15 +129,18 @@
     <ClCompile Include="Add_On.cpp" />
     <ClCompile Include="bbq_buzz.cpp" />
     <ClCompile Include="Beef.cpp" />
+    <ClCompile Include="Chef.cpp" />
     <ClCompile Include="Chicken.cpp" />
     <ClCompile Include="chilli_delight.cpp" />
     <ClCompile Include="Cold_Drink.cpp" />
     <ClCompile Include="crust.cpp" />
+    <ClCompile Include="Delivery_Boy.cpp" />
     <ClCompile Include="Extra_Cheez.cpp" />
     <ClCompile Include="fajita.cpp" />
     <ClCompile Include="Ice_Cream.cpp" />
     <ClCompile Include="italian.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Mashroom.cpp" />
     <ClCompile Include="MyForms.cpp" />
     <ClCompile Include="Order.cpp" />
@@ -150,6 +153,7 @@
     <ClCompile Include="seekh_kebab.cpp" />
     <ClCompile Include="Shakes.cpp" />
     <ClCompile Include="Flavour.cpp" />
+    <ClCompile Include="Staaf.cpp" />
     <ClCompile Include="The_cheese.cpp" />
     <ClCompile Include="tikka.cpp" />
     <ClCompile Include="Toping.cpp" />
@@ -160,10 +164,12 @@
     <ClInclude Include="Add_On.h" />
     <ClInclude Include="bbq_buzz.h" />
     <ClInclude Include="Beef.h" />
+    <ClInclude Include="Chef.h" />
     <ClInclude Include="Chicken.h" />
     <ClInclude Include="chilli_delight.h" />
     <ClInclude Include="Cold_Drink.h" />
     <ClInclude Include="crust.h" />
+    <ClInclude Include="Delivery_Boy.h" />
     <ClInclude Include="Extra_Cheez.h" />
     <ClInclude Include="fajita.h" />
     <ClInclude Include="flavours.h" />
@@ -181,6 +187,7 @@
     <ClInclude Include="Header.h" />
     <ClInclude Include="Ice_Cream.h" />
     <ClInclude Include="italian.h" />
+    <ClInclude Include="Manager.h" />
     <ClInclude Include="Mashroom.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
@@ -194,6 +201,7 @@
     <ClInclude Include="security.h" />
     <ClInclude Include="seekh_kebab.h" />
     <ClInclude Include="Shakes.h" />
+    <ClInclude Include="Staaf.h" />
     <ClInclude Include="The_cheese.h" />
     <ClInclude Include="tikka.h" />
     <ClInclude Include="Toping.h" />
