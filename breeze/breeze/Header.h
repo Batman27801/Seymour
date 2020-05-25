@@ -32,3 +32,7 @@
 #include "security.h"
 #include "account.h"
 #include "pizza.h"
+#include "Staaf.h"
+#include "Delivery_Boy.h"
+#include "Chef.h"
+#include "Manager.h"
