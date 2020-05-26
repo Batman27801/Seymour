@@ -2183,13 +2183,79 @@ void breeze::MyForm::BackToStaafMain_Click(System::Object^ sender, System::Event
 	tabControl1->SelectedTab = Staaf_Main_Page;
 }
 void breeze::MyForm::LoginManagerButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (M->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)) == false)
+	if (!M->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)))
 	{
 		IncorrectPassNotice->Visible = true;
 	}
 	else if (M->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)) == true)
 	{
+		tabControl1->SelectedTab = Managermain;
 		Manageridtextbox->Text = "";
 		Managerpasstextbox->Text = "";
 	}
+}
+void breeze::MyForm::Add_Chef_Button_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = Addnewchef;
+}
+void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	int f = 1;
+	
+	if (!M->C->setname(backtostring(chefnametextbox->Text)))
+	{
+		chefnametextbox->Text = Convert::ToString("");
+		f--;
+	}
+	
+	if (!M->C->setF_Name(backtostring(cheffnametextbox->Text)))
+	{
+		cheffnametextbox->Text = Convert::ToString("");
+		f--;
+	}
+
+	if (!M->C->setage(Convert::ToInt32(chefagetextbox->Text)))
+	{
+		chefagetextbox->Text = "0";
+		f--;
+	}
+
+	if (backtostring(chefgenderbox->Text) == "Male")
+	{
+		M->C->setGender(Male);
+	}
+	else if (backtostring(chefgenderbox->Text) == "Female")
+	{
+		M->C->setGender(Female);
+	}
+	else if (backtostring(chefgenderbox->Text) == "Other")
+	{
+		M->C->setGender(Other);
+	}
+	
+	M->C->setsalary(Convert::ToDouble(chefsalerytextbox->Text));
+	if (!M->C->setID(backtostring(chefidtextbox->Text)))
+	{
+		chefidtextbox->Text = "";
+		chefidnotice->Visible = true;
+		f--;
+	}
+	if (!M->C->setPass(backtostring(chefpassbox->Text)))
+	{
+		chefpassbox->Text = "";
+		chefpassnotice->Visible = true;
+		f--;
+	}	
+	
+	if (f == 1)
+	{
+		M->addchef();
+		Addchefnotice->Visible = false;
+		tabControl1->SelectedTab = Managermain;
+	}
+	else
+	{
+		Addchefnotice->Visible = true;
+	}
+}
+void breeze::MyForm::backtomainmenu_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = Managermain;
 }
