@@ -10,6 +10,7 @@ Manager::Manager() : Mobile_Balance_Allowance(1000), Car_Fuel_Allowance(2000)
     strcpy(Staaf_Password, temp);
     char temp1[20] = "M_1234";
     strcpy(Staaf_ID, temp1);
+    salary = 70000;
     DB = new Delivery_Boy;
     C = new chef;
 }
@@ -88,4 +89,50 @@ bool Manager::check(string id, string p)
         return false;
     else if(p==Staaf_Password || id==Staaf_ID)
         return true;
+}
+bool Manager::updatesaleryofchef(string id,double s)
+{
+    int pos,flag=0;
+    chef temp;
+    fstream fs("chef.dat", ios::in|ios::binary|ios::out);
+    fs.seekg(0);
+    while (!fs.eof())
+    {
+        pos = fs.tellg();
+        fs.read((char*)&temp, sizeof(temp));
+        if (temp.getID() == id.c_str())
+        {
+            flag = 1;
+            temp.setsalary(s);
+            fs.seekp(pos);
+            fs.write((char*)&temp, sizeof(temp));
+            break;
+        }
+    }
+    fs.close();
+    if (flag == 1) return true;
+    else if(flag == 0) return false;
+}
+bool Manager::updatesaleryofDB(string id, double s)
+{
+    int pos, flag=0;
+    Delivery_Boy temp;
+    fstream fs;
+    fs.open("Delivery_Boy.dat", ios::in | ios::binary | ios::out);
+    fs.seekg(0);
+    while (!fs.eof())
+    {
+        pos = fs.tellg();
+        fs.read((char*)&temp, sizeof(temp));
+        if (temp.getID() == id.c_str())
+        {
+            temp.setsalary(s);
+            fs.seekp(pos);
+            fs.write((char*)&temp, sizeof(temp));
+            break;
+        }
+    }
+    fs.close();
+    if (flag == 1) return true;
+    else if (flag == 0) return false;
 }

@@ -10,11 +10,11 @@ double Staaf::getsalary()
 {
     return salary;
 }
-string Staaf::getID()
+char* Staaf::getID()
 {
     return Staaf_ID;
 }
-string Staaf::getPass()
+char* Staaf::getPass()
 {
     return Staaf_Password;
 }

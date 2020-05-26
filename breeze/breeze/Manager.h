@@ -24,5 +24,7 @@ public:
     void addchef();
     double gettotalsales();
     bool check(string,string);
+    bool updatesaleryofchef(string,double);
+    bool updatesaleryofDB(string,double);
 };
 #endif

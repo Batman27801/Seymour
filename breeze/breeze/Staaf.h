@@ -12,8 +12,8 @@ public:
     virtual bool setID(string) = 0;
     virtual bool setPass(string) = 0;
     void setsalary(double);
-    string getID();
-    string getPass();
+    char* getID();
+    char* getPass();
     double getsalary();
 };
 #endif

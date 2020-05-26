@@ -4,7 +4,7 @@
 #include "flavours.h"
 #include "Toping.h"
 #include"pizza.h"
-enum status{confirmed,waiting,making,delivering,delivered};
+enum status{confirmed,waiting,making,ready_for_delivery,delivering,delivered};
 class Order
 {
 private:
@@ -33,5 +33,6 @@ public:
     char* getflavs();
     char* gettoppings();
     double ReturnBill();
+    long int getOrderCode();
 };
 
