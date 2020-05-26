@@ -6,7 +6,10 @@
 Manager::Manager() : Mobile_Balance_Allowance(1000), Car_Fuel_Allowance(2000)
 {
     salary = 50000;
-    strcpy(Staaf_Password, "FASTNUCES");
+    char temp[20] = "FASTNUCES";
+    strcpy(Staaf_Password, temp);
+    char temp1[20] = "M_1234";
+    strcpy(Staaf_ID, temp1);
     DB = new Delivery_Boy;
     C = new chef;
 }
@@ -81,8 +84,8 @@ double Manager::gettotalsales()
 }
 bool Manager::check(string id, string p)
 {
-    if (p==Staaf_Password && id==Staaf_ID)
-        return true;
-    else if(p!=Staaf_Password || id!=Staaf_ID)
+    if (p!=Staaf_Password && id!=Staaf_ID)
         return false;
+    else if(p==Staaf_Password || id==Staaf_ID)
+        return true;
 }
