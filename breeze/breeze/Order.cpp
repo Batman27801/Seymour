@@ -115,3 +115,7 @@ void Order::setsize(int* s)
 		size[i] = s[i];
 	}
 }
+long int Order::getOrderCode()
+{
+	return OrderCode;
+}
