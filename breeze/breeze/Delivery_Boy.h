@@ -5,20 +5,18 @@
 #include "Order.h"
 class Delivery_Boy : public Staaf
 {
-    bool On_Delivery;
-    double Bike_Petrol_Allowance;
-    long int WorkingOrder;
+    int Total_Orders;
+    long int Working_Order_Code;
+    void increaseTotalOrders();
 public:
-    Order O;
+    Order Delivery_Order;
     Delivery_Boy();
     bool setID(string);
     bool setPass(string);
-    void setOn_Delivery(bool);
-    bool getOn_Delivery();
-    void setBikePetrolAllowance(double);
-    double getBikePetrolAllowance();
     bool  addworkingorder();
     long int getworkingorder();
-    bool setorderdelivered();
+    bool deleteorder();
+    bool check(string, string);
+    int getTotalOrders();
 };
 #endif

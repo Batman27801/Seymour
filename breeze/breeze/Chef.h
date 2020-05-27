@@ -4,15 +4,19 @@
 #include "Order.h"
 class chef : public Staaf
 {
-    long int workingOrder;
+    int Total_Orders;
+    long int Working_Order_Code;
+    void increaseTotalOrders();
 public:
-    Order O;
+    Order Chefs_Order;
     chef();
     bool setID(string);
     bool setPass(string);
     bool addworkingorder();
     long int getworkingorder();
-    bool setorderasmaking();
     bool setorderready();
+    bool check(string, string);
+    bool cancelorder();
+    int getTotalOrders();
 };
 #endif
