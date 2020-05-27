@@ -4,7 +4,7 @@
 #include "flavours.h"
 #include "Toping.h"
 #include"pizza.h"
-enum status{confirmed,waiting,making,ready_for_delivery,delivering,delivered};
+enum status{confirmed,making,canceled,ready_for_delivery,delivering};
 class Order
 {
 private:

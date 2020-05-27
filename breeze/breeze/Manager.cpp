@@ -3,71 +3,40 @@
 #include <string.h>
 #include <fstream>
 #include "account.h"
-Manager::Manager() : Mobile_Balance_Allowance(1000), Car_Fuel_Allowance(2000)
+Manager::Manager()
 {
     salary = 50000;
     char temp[20] = "FASTNUCES";
-    strcpy(Staaf_Password, temp);
+    strcpy_s(Staaf_Password, temp);
     char temp1[20] = "M_1234";
-    strcpy(Staaf_ID, temp1);
+    strcpy_s(Staaf_ID, temp1);
     salary = 70000;
-    DB = new Delivery_Boy;
-    C = new chef;
 }
 
-Manager::~Manager()
-{
-    delete DB;
-    delete C;
-}
 
-void Manager::setMob_Bal_All(double MBA)
-{
-    Mobile_Balance_Allowance = MBA;
-}
-
-void Manager::setCar_Fuel_All(double CFA)
-{
-    Car_Fuel_Allowance = CFA;
-}
-
-double Manager::getCar_Fuel_All()
-{
-    return Car_Fuel_Allowance;
-}
-
-double Manager::getMob_Bal_All()
-{
-    return Mobile_Balance_Allowance;
-}
-
-bool Manager::setID(string id)
-{
-    strcpy(Staaf_ID, "M_1234");
-    return true;
-}
+bool Manager::setID(string id) { return true; }
 
 bool Manager::setPass(string P)
 {
     if (P.size() >= 8)
     {
-        strcpy(Staaf_Password, P.c_str());
+        strcpy_s(Staaf_Password, P.c_str());
         return true;
     }
     else return false;
 }
 
-void Manager::addDeliveryBoy()
+void Manager::addDeliveryBoy(Delivery_Boy DB)
 {
     ofstream os("Delivery_Boy.dat", ios::binary | ios::app);
-    os.write((char*)DB, sizeof(DB));
+    os.write((char*)&DB, sizeof(DB));
     os.close();
 }
 
-void Manager::addchef()
+void Manager::addchef(chef C)
 {
     ofstream os("chef.dat", ios::binary | ios::app);
-    os.write((char*)C, sizeof(C));
+    os.write((char*)&C, sizeof(C));
     os.close();
 }
 
@@ -85,9 +54,9 @@ double Manager::gettotalsales()
 }
 bool Manager::check(string id, string p)
 {
-    if (p!=Staaf_Password && id!=Staaf_ID)
+    if (p!=Staaf_Password || id!=Staaf_ID)
         return false;
-    else if(p==Staaf_Password || id==Staaf_ID)
+    else if(p==Staaf_Password && id==Staaf_ID)
         return true;
 }
 bool Manager::updatesaleryofchef(string id,double s)
@@ -100,7 +69,7 @@ bool Manager::updatesaleryofchef(string id,double s)
     {
         pos = fs.tellg();
         fs.read((char*)&temp, sizeof(temp));
-        if (temp.getID() == id.c_str())
+        if (temp.getID() == id)
         {
             flag = 1;
             temp.setsalary(s);
@@ -124,7 +93,7 @@ bool Manager::updatesaleryofDB(string id, double s)
     {
         pos = fs.tellg();
         fs.read((char*)&temp, sizeof(temp));
-        if (temp.getID() == id.c_str())
+        if (temp.getID() == id)
         {
             temp.setsalary(s);
             fs.seekp(pos);
@@ -136,3 +105,86 @@ bool Manager::updatesaleryofDB(string id, double s)
     if (flag == 1) return true;
     else if (flag == 0) return false;
 }
+int Manager::TotalOrders_Chef(string id)
+{
+    chef C;
+    int Total_Orders;
+    ifstream is("chef.dat", ios::binary);
+    is.seekg(0);
+    while (!is.eof())
+    {
+        is.read((char*)&C, sizeof(C));
+        if (C.getID() == id)
+        {
+            Total_Orders = C.getTotalOrders();
+        }
+    }
+    return Total_Orders;
+}
+int Manager::TotalOrders_DelvieryBoy(string id)
+{
+    Delivery_Boy DB;
+    int Total_Orders;
+    ifstream is("Delivery_Boy.dat", ios::binary);
+    is.seekg(0);
+    while (!is.eof())
+    {
+        is.read((char*)&DB, sizeof(DB));
+        if (DB.getID() == id)
+        {
+            Total_Orders = DB.getTotalOrders();
+        }
+    }
+    return Total_Orders;
+}
+bool Manager::DeleteChef(string id)
+{
+    chef temp;
+    int flag = 0;
+    ifstream is("chef.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary | ios::app);
+    is.seekg(0);
+    while (!is.eof())
+    {
+        is.read((char*)&temp, sizeof(temp));
+        if (temp.getID() == id)
+        {
+            flag = 1;
+            continue;
+        }
+        else
+        {
+            os.write((char*)&temp, sizeof(temp));
+        }
+    }
+    remove("chef.dat");
+    rename("temp.dat", "chef.dat");
+    if (flag == 1) return true;
+    else return false;
+}
+bool Manager::DeleteDeliveryBoy(string id)
+{
+    Delivery_Boy temp;
+    int flag = 0;
+    ifstream is("Delivery_Boy.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary | ios::app);
+    is.seekg(0);
+    while (!is.eof())
+    {
+        is.read((char*)&temp, sizeof(temp));
+        if (temp.getID() == id)
+        {
+            flag = 1;
+            continue;
+        }
+        else
+        {
+            os.write((char*)&temp, sizeof(temp));
+        }
+    }
+    remove("Delivery_Boy.dat");
+    rename("temp.dat", "chef.dat");
+    if (flag == 1) return true;
+    else return false;
+}
+

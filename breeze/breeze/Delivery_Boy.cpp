@@ -3,19 +3,10 @@
 #include "Delivery_Boy.h"
 #include <fstream>
 #include <string.h>
-Delivery_Boy::Delivery_Boy() : On_Delivery(false), Bike_Petrol_Allowance(1000) 
+Delivery_Boy::Delivery_Boy()
 {
-    WorkingOrder = 0;
-}
-
-void Delivery_Boy::setOn_Delivery(bool OD)
-{
-    On_Delivery = OD;
-}
-
-bool Delivery_Boy::getOn_Delivery()
-{
-    return On_Delivery;
+    Total_Orders = 0;
+    Working_Order_Code = 0;
 }
 
 bool Delivery_Boy::setID(string id)
@@ -45,7 +36,7 @@ bool Delivery_Boy::setID(string id)
         {
             if (id[0] == 'D' && id[1] == '_')
             {
-                strcpy(Staaf_ID, id.c_str());
+                strcpy_s(Staaf_ID, id.c_str());
                 return true;
             }
             else
@@ -61,7 +52,7 @@ bool Delivery_Boy::setID(string id)
     }
     catch (...)
     {
-        strcpy(Staaf_ID, "");
+        strcpy_s(Staaf_ID, "");
         return false;
     }
 }
@@ -92,7 +83,7 @@ bool Delivery_Boy::setPass(string p)
         {
             if (size >= 8)
             {
-                strcpy(Staaf_Password, p.c_str());
+                strcpy_s(Staaf_Password, p.c_str());
                 return true;
             }
             else
@@ -109,18 +100,11 @@ bool Delivery_Boy::setPass(string p)
     }
     catch (...)
     {
-        strcpy(Staaf_Password, "");
+        strcpy_s(Staaf_Password, "");
         return false;
     }
 }
-void Delivery_Boy::setBikePetrolAllowance(double BPA)
-{
-    Bike_Petrol_Allowance = BPA;
-}
-double Delivery_Boy::getBikePetrolAllowance()
-{
-    return Bike_Petrol_Allowance;
-}
+
 bool Delivery_Boy::addworkingorder()
 {
     int pos, flag = 0;
@@ -130,41 +114,88 @@ bool Delivery_Boy::addworkingorder()
     while (!fs.eof())
     {
         pos = fs.tellg();
-        fs.read((char*)&O, sizeof(O));
-        if (O.getstatus() == ready_for_delivery)
+        fs.read((char*)&Delivery_Order, sizeof(Delivery_Order));
+        if (Delivery_Order.getstatus() == ready_for_delivery)
         {
-            WorkingOrder = O.getOrderCode();
+            Working_Order_Code = Delivery_Order.getOrderCode();
             flag = 1;
-            O.setstatus(delivering);
+            Delivery_Order.setstatus(delivering);
             fs.seekp(pos);
-            fs.write((char*)&O, sizeof(O));
+            fs.write((char*)&Delivery_Order, sizeof(Delivery_Order));
             break;
         }
     }
     fs.close();
     if (flag == 1) return true;
-    else if (flag == 0) return false;
+    else return false;
 }
-bool Delivery_Boy::setorderdelivered()
+bool Delivery_Boy::deleteorder()
 {
-    int pos, flag = 0;
+    int flag = 0;
+    ifstream is("Orders.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary | ios::app);
+    is.seekg(0);
+    while (!is.eof())
+    {
+        is.read((char*)&Delivery_Order, sizeof(Delivery_Order));
+        if (Delivery_Order.getOrderCode() == Working_Order_Code)
+        {
+            flag = 1;
+            increaseTotalOrders();
+            continue;
+        }
+        else
+        {
+            os.write((char*)&Delivery_Order, sizeof(Delivery_Order));
+        }
+    }
+    remove("Orders.dat");
+    rename("temp.dat", "Orders.dat");
+    if (flag == 1) return true;
+    else return false;
+}
+long int Delivery_Boy::getworkingorder()
+{
+    return Working_Order_Code;
+}
+bool Delivery_Boy::check(string id, string p)
+{
+    int flag = 0;
+    ifstream is("Delivery_Boy.dat", ios::binary);
+    is.seekg(0);
+    while (!is.eof())
+    {
+        is.read((char*)this, sizeof(this));
+        if (this->getID() == id && this->getPass() == p)
+        {
+            flag = 1;
+            break;
+        }
+    }
+    if (flag == 1) return true;
+    else return false;
+}
+void Delivery_Boy::increaseTotalOrders()
+{
+    Delivery_Boy temp;
+    int pos;
     fstream fs;
-    fs.open("Orders.dat", ios::in | ios::binary | ios::out);
+    fs.open("Delivery_Boy.dat", ios::in | ios::binary | ios::out);
     fs.seekg(0);
     while (!fs.eof())
     {
         pos = fs.tellg();
-        fs.read((char*)&O, sizeof(O));
-        if (O.getOrderCode() == WorkingOrder)
+        fs.read((char*)&temp, sizeof(temp));
+        if (temp.getID() == this->Staaf_ID)
         {
-            flag = 1;
-            O.setstatus(delivered);
+            temp.Total_Orders++;
             fs.seekp(pos);
-            fs.write((char*)&O, sizeof(O));
+            fs.write((char*)&temp, sizeof(temp));
             break;
         }
     }
-    fs.close();
-    if (flag == 1) return true;
-    else if (flag == 0) return false;
+}
+int Delivery_Boy::getTotalOrders()
+{
+    return Total_Orders;
 }

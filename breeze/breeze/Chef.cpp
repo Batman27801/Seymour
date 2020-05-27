@@ -1,11 +1,11 @@
-#include "Chef.h"
+ #include "Chef.h"
 #include <fstream>
 #include <string.h>
 
-chef::chef()
+chef::chef() :Total_Orders(0)
 {
     salary = 25000;
-    workingOrder = 0;
+    Working_Order_Code = 0;
 }
 
 bool chef::setID(string id)
@@ -35,7 +35,7 @@ bool chef::setID(string id)
         {
             if (id[0] == 'C' && id[1] == '_')
             {
-                strcpy(Staaf_ID, id.c_str());
+                strcpy_s(Staaf_ID, id.c_str());
                 return true;
             }
             else
@@ -112,47 +112,27 @@ bool chef::addworkingorder()
     while (!fs.eof())
     {
         pos = fs.tellg();
-        fs.read((char*)&O, sizeof(O));
-        if (O.getstatus() == confirmed);
+        fs.read((char*)&Chefs_Order, sizeof(Chefs_Order));
+        if (Chefs_Order.getstatus() == confirmed);
         {
             flag = 1;
-            workingOrder = O.getOrderCode();
-            O.setstatus(waiting);
+            Working_Order_Code = Chefs_Order.getOrderCode();
+            Chefs_Order.setstatus(making);
             fs.seekp(pos);
-            fs.write((char*)&O, sizeof(O));
+            fs.write((char*)&Chefs_Order, sizeof(Chefs_Order));
             break;
         }
     }
     fs.close();
     if (flag == 1) return true;
-    else if (flag == 0) return false;
+    else return false;
 }
+
 long int chef::getworkingorder()
 {
-    return workingOrder;
+    return Working_Order_Code;
 }
-bool chef::setorderasmaking()
-{
-    int pos, flag = 0;
-    fstream fs;
-    fs.open("Orders.dat", ios::in | ios::binary | ios::out);
-    fs.seekg(0);
-    while (!fs.eof())
-    {
-        pos = fs.tellg();
-        fs.read((char*)&O, sizeof(O));
-        if (O.getOrderCode() == workingOrder)
-        {
-            flag = 1;
-            fs.seekp(pos);
-            fs.write((char*)&O, sizeof(O));
-            break;
-        }
-    }
-    fs.close();
-    if (flag == 1) return true;
-    else if (flag == 0) return false;
-}
+
 bool chef::setorderready()
 {
     int pos, flag = 0;
@@ -162,18 +142,83 @@ bool chef::setorderready()
     while (!fs.eof())
     {
         pos = fs.tellg();
-        fs.read((char*)&O, sizeof(O));
-        if (O.getOrderCode() == workingOrder)
+        fs.read((char*)&Chefs_Order, sizeof(Chefs_Order));
+        if (Chefs_Order.getOrderCode() == Working_Order_Code)
         {
             flag = 1;
-            O.setstatus(ready_for_delivery);
-            workingOrder = 0;
+            Chefs_Order.setstatus(ready_for_delivery);
+            Working_Order_Code = 0;
             fs.seekp(pos);
-            fs.write((char*)&O, sizeof(O));
+            fs.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+            increaseTotalOrders();
             break;
         }
     }
     fs.close();
     if (flag == 1) return true;
-    else if (flag == 0) return false;
+    else return false;
+}
+bool chef::check(string id, string p)
+{
+    int flag = 0;
+    ifstream is("chef.dat", ios::binary);
+    is.seekg(0);
+    while (!is.eof())
+    {
+        is.read((char*)this, sizeof(this));
+        if (this->getID() == id && this->getPass() == p)
+        {
+            flag = 1;
+            break;
+        }
+    }
+    if (flag == 1) return true;
+    else return false;
+}
+
+void chef::increaseTotalOrders()
+{
+    chef temp;
+    int pos;
+    fstream fs;
+    fs.open("chef.dat", ios::in | ios::binary | ios::out);
+    fs.seekg(0);
+    while (!fs.eof())
+    {
+        pos = fs.tellg();
+        fs.read((char*)&temp, sizeof(temp));
+        if (temp.getID() == Staaf_ID)
+        {
+            temp.Total_Orders++;
+            fs.seekp(pos);
+            fs.write((char*)&temp, sizeof(temp));
+            break;
+        }
+    }
+}
+bool chef::cancelorder()
+{
+    int pos, flag = 0;
+    fstream fs;
+    fs.open("Orders.dat", ios::in | ios::binary | ios::out);
+    fs.seekg(0);
+    while (!fs.eof())
+    {
+        pos = fs.tellg();
+        fs.read((char*)&Chefs_Order, sizeof(Chefs_Order));
+        if (Chefs_Order.getOrderCode() == Working_Order_Code)
+        {
+            flag = 1;
+            Chefs_Order.setstatus(canceled);
+            fs.seekp(pos);
+            fs.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+            break;
+        }
+    }
+    if (flag == 1) return true;
+    else return false;
+}
+int chef::getTotalOrders()
+{
+    return Total_Orders;
 }

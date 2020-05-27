@@ -2220,21 +2220,22 @@ void breeze::MyForm::Add_Chef_Button_Click(System::Object^ sender, System::Event
 	tabControl1->SelectedTab = Addnewchef;
 }
 void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	chef* C;
 	int f = 1;
 	
-	if (!M->C->setname(backtostring(chefnametextbox->Text)))
+	if (!C->setname(backtostring(chefnametextbox->Text)))
 	{
 		chefnametextbox->Text = Convert::ToString("");
 		f--;
 	}
 	
-	if (!M->C->setF_Name(backtostring(cheffnametextbox->Text)))
+	if (!C->setF_Name(backtostring(cheffnametextbox->Text)))
 	{
 		cheffnametextbox->Text = Convert::ToString("");
 		f--;
 	}
 
-	if (!M->C->setage(Convert::ToInt32(chefagetextbox->Text)))
+	if (!C->setage(Convert::ToInt32(chefagetextbox->Text)))
 	{
 		chefagetextbox->Text = "0";
 		f--;
@@ -2242,25 +2243,25 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 
 	if (backtostring(chefgenderbox->Text) == "Male")
 	{
-		M->C->setGender(Male);
+		C->setGender(Male);
 	}
 	else if (backtostring(chefgenderbox->Text) == "Female")
 	{
-		M->C->setGender(Female);
+		C->setGender(Female);
 	}
 	else if (backtostring(chefgenderbox->Text) == "Other")
 	{
-		M->C->setGender(Other);
+		C->setGender(Other);
 	}
 	
-	M->C->setsalary(Convert::ToDouble(chefsalerytextbox->Text));
-	if (!M->C->setID(backtostring(chefidtextbox->Text)))
+	C->setsalary(Convert::ToDouble(chefsalerytextbox->Text));
+	if (!C->setID(backtostring(chefidtextbox->Text)))
 	{
 		chefidtextbox->Text = "";
 		chefidnotice->Visible = true;
 		f--;
 	}
-	if (!M->C->setPass(backtostring(chefpassbox->Text)))
+	if (!C->setPass(backtostring(chefpassbox->Text)))
 	{
 		chefpassbox->Text = "";
 		chefpassnotice->Visible = true;
@@ -2269,7 +2270,7 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 	
 	if (f == 1)
 	{
-		M->addchef();
+		M->addchef(*C);
 		Addchefnotice->Visible = false;
 		tabControl1->SelectedTab = Managermain;
 	}
