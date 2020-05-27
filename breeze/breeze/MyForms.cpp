@@ -2137,6 +2137,7 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 {
 	if (acc->getguest() == false)
 	{
+		acc->setaddress(backtostring(AddressCheckOutTextBox->Text));
 		ToppingsCheckOutTextBox->Text = "";
 		FlavourCheckOutTextBox->Text = "";
 		CrustCheckOutTextBox->Text = "";
@@ -2151,26 +2152,47 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 		order->FileOrder();
 		acc->setprevious(*order);
 		acc->SaveChanges();
+		tabControl1->SelectedTab = UserLogin;
 	}
 	else
 	{
-		ToppingsCheckOutTextBox->Text = "";
-		FlavourCheckOutTextBox->Text = "";
-		CrustCheckOutTextBox->Text = "";
-		acc->setname(backtostring(NameCheckOutText->Text)) ;
-		acc->setcontact(long long int(System::Convert::ToInt64(PhoneNoTextBox->Text)));
-		acc->setaddress(backtostring(AddressCheckOutTextBox->Text));
-		acc->setcardprovider(backtostring(CardCheckOutComboBox->Text));
-		acc->setcardno(long long int(System::Convert::ToInt64(CardNumberCheckOutTextBox->Text)));
-		fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
-		yourorder << "X----------------------------------------------------X" << endl;
-		yourorder << "Name: " << acc->getname() << endl;
-		yourorder << "Contact No: 0" << acc->getcontact() << endl;
-		yourorder << "Address: " << acc->getaddress() << endl << endl;
-		order->PlaceOrder(pizz, total_no_of_pizzas);
-		order->FileOrder();
+		if (AddressCheckOutTextBox->Text == ""  )
+		{
+			AddressCheckOutWarningLabel->Visible = true;
+			CheckOutWarningLabel->Visible = true;
+		}
+		 if (PhoneNoTextBox->Text == "")
+		{
+			PhoneNoCheckOutWarning->Visible = true;
+			CheckOutWarningLabel->Visible = true;
+		}
+		 if (CardNumberCheckOutTextBox->Text == "")
+		{
+			 CardNoWarningCheckOutLabel->Visible = true;
+			 CheckOutWarningLabel->Visible = true;
+		}
+		else
+		{
+			ToppingsCheckOutTextBox->Text = "";
+			FlavourCheckOutTextBox->Text = "";
+			CrustCheckOutTextBox->Text = "";
+			acc->setname(backtostring(NameCheckOutText->Text));
+			acc->setcontact(long long int(System::Convert::ToInt64(PhoneNoTextBox->Text)));
+			acc->setaddress(backtostring(AddressCheckOutTextBox->Text));
+			acc->setcardprovider(backtostring(CardCheckOutComboBox->Text));
+			acc->setcardno(long long int(System::Convert::ToInt64(CardNumberCheckOutTextBox->Text)));
+			fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
+			yourorder << "X----------------------------------------------------X" << endl;
+			yourorder << "Name: " << acc->getname() << endl;
+			yourorder << "Contact No: 0" << acc->getcontact() << endl;
+			yourorder << "Address: " << acc->getaddress() << endl << endl;
+			order->PlaceOrder(pizz, total_no_of_pizzas);
+			order->FileOrder();
+			tabControl1->SelectedTab = UserLogin;
+		}
+		
 	}
-	tabControl1->SelectedTab = UserLogin;
+	//tabControl1->SelectedTab = UserLogin;
 }
 
 void breeze::MyForm::loginasmanger_Click(System::Object^ sender, System::EventArgs^ e) {

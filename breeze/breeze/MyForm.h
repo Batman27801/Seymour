@@ -530,6 +530,10 @@ private: System::Windows::Forms::Label^ cheffnameguidelabel;
 private: System::Windows::Forms::Label^ chefnameguidelabel;
 private: System::Windows::Forms::Label^ chefpassguidelabel;
 private: System::Windows::Forms::Label^ idguidelabel;
+private: System::Windows::Forms::Label^ AddressCheckOutWarningLabel;
+private: System::Windows::Forms::Label^ CheckOutWarningLabel;
+private: System::Windows::Forms::Label^ CardNoWarningCheckOutLabel;
+private: System::Windows::Forms::Label^ PhoneNoCheckOutWarning;
 
 
 
@@ -959,6 +963,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->cheffnamelabel = (gcnew System::Windows::Forms::Label());
 			this->chefnamelabel = (gcnew System::Windows::Forms::Label());
 			this->Addnewcheflabel = (gcnew System::Windows::Forms::Label());
+			this->CheckOutWarningLabel = (gcnew System::Windows::Forms::Label());
+			this->AddressCheckOutWarningLabel = (gcnew System::Windows::Forms::Label());
+			this->PhoneNoCheckOutWarning = (gcnew System::Windows::Forms::Label());
+			this->CardNoWarningCheckOutLabel = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->UserLogin->SuspendLayout();
@@ -4319,6 +4327,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->CheckoutPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CheckoutPage.BackgroundImage")));
 			this->CheckoutPage->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->CheckoutPage->Controls->Add(this->CardNoWarningCheckOutLabel);
+			this->CheckoutPage->Controls->Add(this->PhoneNoCheckOutWarning);
+			this->CheckoutPage->Controls->Add(this->AddressCheckOutWarningLabel);
+			this->CheckoutPage->Controls->Add(this->CheckOutWarningLabel);
 			this->CheckoutPage->Controls->Add(this->discbox);
 			this->CheckoutPage->Controls->Add(this->disclabel);
 			this->CheckoutPage->Controls->Add(this->ConfirmCheckOutButton);
@@ -5292,6 +5304,55 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->Addnewcheflabel->TabIndex = 3;
 			this->Addnewcheflabel->Text = L"New Chef";
 			this->Addnewcheflabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// CheckOutWarningLabel
+			// 
+			this->CheckOutWarningLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->CheckOutWarningLabel->ForeColor = System::Drawing::Color::Red;
+			this->CheckOutWarningLabel->Location = System::Drawing::Point(1008, 504);
+			this->CheckOutWarningLabel->Name = L"CheckOutWarningLabel";
+			this->CheckOutWarningLabel->Size = System::Drawing::Size(176, 48);
+			this->CheckOutWarningLabel->TabIndex = 34;
+			this->CheckOutWarningLabel->Text = L"ERRORS DETECTED ! PLEASE FILL ALL THE FIELDS";
+			this->CheckOutWarningLabel->Visible = false;
+			// 
+			// AddressCheckOutWarningLabel
+			// 
+			this->AddressCheckOutWarningLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddressCheckOutWarningLabel->ForeColor = System::Drawing::Color::Red;
+			this->AddressCheckOutWarningLabel->Location = System::Drawing::Point(152, 296);
+			this->AddressCheckOutWarningLabel->Name = L"AddressCheckOutWarningLabel";
+			this->AddressCheckOutWarningLabel->Size = System::Drawing::Size(112, 48);
+			this->AddressCheckOutWarningLabel->TabIndex = 35;
+			this->AddressCheckOutWarningLabel->Text = L"PLEASE TYPE IN THE ADDRESS";
+			this->AddressCheckOutWarningLabel->Visible = false;
+			// 
+			// PhoneNoCheckOutWarning
+			// 
+			this->PhoneNoCheckOutWarning->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->PhoneNoCheckOutWarning->ForeColor = System::Drawing::Color::Red;
+			this->PhoneNoCheckOutWarning->Location = System::Drawing::Point(152, 224);
+			this->PhoneNoCheckOutWarning->Name = L"PhoneNoCheckOutWarning";
+			this->PhoneNoCheckOutWarning->Size = System::Drawing::Size(136, 32);
+			this->PhoneNoCheckOutWarning->TabIndex = 36;
+			this->PhoneNoCheckOutWarning->Text = L"PLEASE TYPE IN THE PHONE NUMBER";
+			this->PhoneNoCheckOutWarning->Visible = false;
+			// 
+			// CardNoWarningCheckOutLabel
+			// 
+			this->CardNoWarningCheckOutLabel->AutoSize = true;
+			this->CardNoWarningCheckOutLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->CardNoWarningCheckOutLabel->ForeColor = System::Drawing::Color::Red;
+			this->CardNoWarningCheckOutLabel->Location = System::Drawing::Point(360, 536);
+			this->CardNoWarningCheckOutLabel->Name = L"CardNoWarningCheckOutLabel";
+			this->CardNoWarningCheckOutLabel->Size = System::Drawing::Size(247, 13);
+			this->CardNoWarningCheckOutLabel->TabIndex = 37;
+			this->CardNoWarningCheckOutLabel->Text = L"PLEASE ENTER A VALID CARD NUMBER";
+			this->CardNoWarningCheckOutLabel->Visible = false;
 			// 
 			// MyForm
 			// 
