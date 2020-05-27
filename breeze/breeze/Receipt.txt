@@ -159,3 +159,117 @@ Focacia With the Flavor tikka topped with a layering of Mashroom .
 Total Billed Amount is: Rs 2729
 
 X----------------------------------------------------X
+X----------------------------------------------------X
+Name: ali
+Contact No: 03122586867
+Address: this is address
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stuffed With the Flavor The cheese topped with a layering of Extra_Cheez .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: ali
+Contact No: 03122586867
+Address: asdsadsad
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: adssada
+Contact No: 01234567895
+Address: dfsadsad
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor tikka topped with a layering of Mashroom .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdsad
+Contact No: 03122586867
+Address: asedsadasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Newyork With the Flavor BBQ buzz topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasd
+Contact No: 03122586867
+Address: asdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Chicken .
+Total Billed Amount is: Rs 2894
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasd
+Contact No: 03122586867
+Address: asdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Chicken .
+Total Billed Amount is: Rs 2654.3
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasd
+Contact No: 03122586867
+Address: asdasd
+
+Total pizzas ordered: 2
+Pizza Number 1
+Stuffed With the Flavor BBQ buzz topped with a layering of Sausage .
+Pizza Number 2
+Stuffed With the Flavor BBQ buzz topped with a layering of Sausage .
+Total Billed Amount is: Rs 3362.59
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasd
+Contact No: 03122586867
+Address: asdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Chicken .
+Total Billed Amount is: Rs 2353.46
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasd
+Contact No: 03122586867
+Address: asdasd
+
+Total pizzas ordered: 2
+Pizza Number 1
+Sicilian With the Flavor BBQ buzz topped with a layering of Sausage .
+Pizza Number 2
+Italian With the Flavor chilli delight topped with a layering of Extra_Cheez .
+Total Billed Amount is: Rs 3115
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasdasdasd
+Contact No: 01234567895
+Address: asdasdsad
+
+Total pizzas ordered: 1
+Pizza Number 1
+Newyork With the Flavor BBQ buzz topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X

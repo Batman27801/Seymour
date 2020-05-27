@@ -2161,24 +2161,25 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			AddressCheckOutWarningLabel->Visible = true;
 			CheckOutWarningLabel->Visible = true;
 		}
-		 if (PhoneNoTextBox->Text == "")
+		else if (PhoneNoTextBox->Text == "")
 		{
 			PhoneNoCheckOutWarning->Visible = true;
 			CheckOutWarningLabel->Visible = true;
 		}
-		 if (CardNumberCheckOutTextBox->Text == "")
+		else if (CardNumberCheckOutTextBox->Text == "")
 		{
 			 CardNoWarningCheckOutLabel->Visible = true;
 			 CheckOutWarningLabel->Visible = true;
 		}
 		else
 		{
-			ToppingsCheckOutTextBox->Text = "";
+			/*ToppingsCheckOutTextBox->Text = "";
 			FlavourCheckOutTextBox->Text = "";
-			CrustCheckOutTextBox->Text = "";
+			CrustCheckOutTextBox->Text = "";*/
 			acc->setname(backtostring(NameCheckOutText->Text));
 			acc->setcontact(long long int(System::Convert::ToInt64(PhoneNoTextBox->Text)));
 			acc->setaddress(backtostring(AddressCheckOutTextBox->Text));
+			order->setloc(backtostring(AddressCheckOutTextBox->Text));
 			acc->setcardprovider(backtostring(CardCheckOutComboBox->Text));
 			acc->setcardno(long long int(System::Convert::ToInt64(CardNumberCheckOutTextBox->Text)));
 			fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
@@ -2205,11 +2206,11 @@ void breeze::MyForm::BackToStaafMain_Click(System::Object^ sender, System::Event
 	tabControl1->SelectedTab = Staaf_Main_Page;
 }
 void breeze::MyForm::LoginManagerButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (!M->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)))
+	if (!manager->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)))
 	{
 		IncorrectPassNotice->Visible = true;
 	}
-	else if (M->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)) == true)
+	else if (manager->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)) == true)
 	{
 		tabControl1->SelectedTab = Managermain;
 		Manageridtextbox->Text = "";
@@ -2220,7 +2221,7 @@ void breeze::MyForm::Add_Chef_Button_Click(System::Object^ sender, System::Event
 	tabControl1->SelectedTab = Addnewchef;
 }
 void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	chef* C;
+	chef* C = new chef;
 	int f = 1;
 	
 	if (!C->setname(backtostring(chefnametextbox->Text)))
@@ -2270,7 +2271,7 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 	
 	if (f == 1)
 	{
-		M->addchef(*C);
+		manager->addchef(*C);
 		Addchefnotice->Visible = false;
 		tabControl1->SelectedTab = Managermain;
 	}
@@ -2281,4 +2282,44 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 }
 void breeze::MyForm::backtomainmenu_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Managermain;
+}
+
+void breeze::MyForm::pendingorders_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	
+	Crustbox->Text = "";
+	Flavorbox->Text = "";
+	Toppingbox->Text = "";
+	int index = pendingorders->SelectedIndex;
+	int pos = 0;
+	ifstream ord("Orders.dat", ios::binary);
+	Order temp;
+	for (; ord.read((char*)&temp, sizeof(temp));)
+	{
+		
+
+		if (temp.getstatus() == confirmed && pos == index)
+		{
+			for (int i = 0; i < temp.getpizzas(); i++)
+			{
+				Crustbox->Text = Crustbox->Text + "Crust " + (i + 1) + " " + gotoString((temp.getcrusts()+i*30)) + Environment::NewLine;
+				Flavorbox->Text = Flavorbox->Text + "Flavor " + (i + 1) + " " + gotoString((temp.getflavs()+i*30)) + Environment::NewLine;
+				Toppingbox->Text = Toppingbox->Text + "Topping " + (i + 1) + " " + gotoString((temp.gettoppings() + i * 30)) + Environment::NewLine;
+			}
+		}
+		pos++;
+	}
+
+}
+
+void breeze::MyForm::Chefmain_Enter(System::Object^ sender, System::EventArgs^ e) {
+	ifstream ord("Orders.dat", ios::binary);
+	Order temp;
+	for (; ord.read((char*)&temp, sizeof(temp));)
+	{
+		if (temp.getstatus() == confirmed)
+		{
+			pendingorders->Items->Add("Order # " + temp.getOrderCode() + ". " + temp.getpizzas() + " Pizza(s)");
+		}
+	}
+	ord.close();
 }

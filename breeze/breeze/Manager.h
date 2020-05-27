@@ -5,21 +5,19 @@
 #include "Chef.h"
 class Manager : public Staff
 {
-    double totalsales;
-
 public:
-    Manager();
-    bool setID(string);
-    bool setPass(string);
-    void addDeliveryBoy(Delivery_Boy);
-    void addchef(chef);
-    double gettotalsales();
-    bool check(string,string);
-    bool updatesaleryofchef(string,double);
-    bool updatesaleryofDB(string,double);
-    int TotalOrders_Chef(string);
-    int TotalOrders_DelvieryBoy(string);
-    bool DeleteChef(string);
-    bool DeleteDeliveryBoy(string);
-};
+    Manager(int);
+    bool setID(string)  ;
+    bool setPass(string)  ;
+    void addDeliveryBoy(Delivery_Boy) const ;
+    void addchef(chef) const ;
+    double gettotalsales() const ;
+    bool check(string,string) const ;
+    bool updatesaleryofchef(string,double) const ;
+    bool updatesaleryofDB(string,double) const ;
+    int TotalOrders_Chef(string) const ;
+    int TotalOrders_DelvieryBoy(string) const ;
+    bool DeleteChef(string) const ;
+    bool DeleteDeliveryBoy(string) const ;
+} const ;
 #endif

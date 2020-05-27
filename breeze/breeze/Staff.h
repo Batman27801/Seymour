@@ -9,6 +9,7 @@ protected:
     double salary;
 public:
     Staff();
+    Staff(int a);
     virtual bool setID(string) = 0;
     virtual bool setPass(string) = 0;
     void setsalary(double);
