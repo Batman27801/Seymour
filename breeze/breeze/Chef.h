@@ -1,8 +1,8 @@
 #ifndef CHEF
 #define CHEF
-#include "Staaf.h"
+#include "Staff.h"
 #include "Order.h"
-class chef : public Staaf
+class chef : public Staff
 {
     int Total_Orders;
     long int Working_Order_Code;

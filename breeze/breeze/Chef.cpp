@@ -35,7 +35,7 @@ bool chef::setID(string id)
         {
             if (id[0] == 'C' && id[1] == '_')
             {
-                strcpy_s(Staaf_ID, id.c_str());
+                strcpy_s(Staff_ID, id.c_str());
                 return true;
             }
             else
@@ -51,7 +51,7 @@ bool chef::setID(string id)
     }
     catch (...)
     {
-        strcpy(Staaf_ID, "");
+        strcpy(Staff_ID, "");
         return false;
     }
 }
@@ -82,7 +82,7 @@ bool chef::setPass(string p)
         {
             if (size >= 8)
             {
-                strcpy(Staaf_Password, p.c_str());
+                strcpy(Staff_Password, p.c_str());
                 return true;
             }
             else
@@ -99,7 +99,7 @@ bool chef::setPass(string p)
     }
     catch (...)
     {
-        strcpy(Staaf_Password, "");
+        strcpy(Staff_Password, "");
         return false;
     }
 }
@@ -187,7 +187,7 @@ void chef::increaseTotalOrders()
     {
         pos = fs.tellg();
         fs.read((char*)&temp, sizeof(temp));
-        if (temp.getID() == Staaf_ID)
+        if (temp.getID() == Staff_ID)
         {
             temp.Total_Orders++;
             fs.seekp(pos);

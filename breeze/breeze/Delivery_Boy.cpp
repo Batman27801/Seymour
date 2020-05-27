@@ -1,5 +1,5 @@
 #include "Person.h"
-#include "Staaf.h"
+#include "Staff.h"
 #include "Delivery_Boy.h"
 #include <fstream>
 #include <string.h>
@@ -36,7 +36,7 @@ bool Delivery_Boy::setID(string id)
         {
             if (id[0] == 'D' && id[1] == '_')
             {
-                strcpy_s(Staaf_ID, id.c_str());
+                strcpy_s(Staff_ID, id.c_str());
                 return true;
             }
             else
@@ -52,7 +52,7 @@ bool Delivery_Boy::setID(string id)
     }
     catch (...)
     {
-        strcpy_s(Staaf_ID, "");
+        strcpy_s(Staff_ID, "");
         return false;
     }
 }
@@ -83,7 +83,7 @@ bool Delivery_Boy::setPass(string p)
         {
             if (size >= 8)
             {
-                strcpy_s(Staaf_Password, p.c_str());
+                strcpy_s(Staff_Password, p.c_str());
                 return true;
             }
             else
@@ -100,7 +100,7 @@ bool Delivery_Boy::setPass(string p)
     }
     catch (...)
     {
-        strcpy_s(Staaf_Password, "");
+        strcpy_s(Staff_Password, "");
         return false;
     }
 }
@@ -186,7 +186,7 @@ void Delivery_Boy::increaseTotalOrders()
     {
         pos = fs.tellg();
         fs.read((char*)&temp, sizeof(temp));
-        if (temp.getID() == this->Staaf_ID)
+        if (temp.getID() == this->Staff_ID)
         {
             temp.Total_Orders++;
             fs.seekp(pos);

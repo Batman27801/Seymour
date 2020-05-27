@@ -1,4 +1,4 @@
-#include "Staaf.h"
+#include "Staff.h"
 #include "Manager.h"
 #include <string.h>
 #include <fstream>
@@ -7,9 +7,9 @@ Manager::Manager()
 {
     salary = 50000;
     char temp[20] = "FASTNUCES";
-    strcpy_s(Staaf_Password, temp);
+    strcpy_s(Staff_Password, temp);
     char temp1[20] = "M_1234";
-    strcpy_s(Staaf_ID, temp1);
+    strcpy_s(Staff_ID, temp1);
     salary = 70000;
 }
 
@@ -20,7 +20,7 @@ bool Manager::setPass(string P)
 {
     if (P.size() >= 8)
     {
-        strcpy_s(Staaf_Password, P.c_str());
+        strcpy_s(Staff_Password, P.c_str());
         return true;
     }
     else return false;
@@ -54,9 +54,9 @@ double Manager::gettotalsales()
 }
 bool Manager::check(string id, string p)
 {
-    if (p!=Staaf_Password || id!=Staaf_ID)
+    if (p!=Staff_Password || id!=Staff_ID)
         return false;
-    else if(p==Staaf_Password && id==Staaf_ID)
+    else if(p==Staff_Password && id==Staff_ID)
         return true;
 }
 bool Manager::updatesaleryofchef(string id,double s)
@@ -108,7 +108,7 @@ bool Manager::updatesaleryofDB(string id, double s)
 int Manager::TotalOrders_Chef(string id)
 {
     chef C;
-    int Total_Orders;
+    int Total_Orders=0;
     ifstream is("chef.dat", ios::binary);
     is.seekg(0);
     while (!is.eof())
@@ -124,7 +124,7 @@ int Manager::TotalOrders_Chef(string id)
 int Manager::TotalOrders_DelvieryBoy(string id)
 {
     Delivery_Boy DB;
-    int Total_Orders;
+    int Total_Orders=0;
     ifstream is("Delivery_Boy.dat", ios::binary);
     is.seekg(0);
     while (!is.eof())

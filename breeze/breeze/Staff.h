@@ -1,14 +1,14 @@
-#ifndef STAAF
-#define STAAF
+#ifndef STAFF
+#define STAFF
 #include "Person.h"
 
-class Staaf : public Person
+class Staff : public Person
 {
 protected:
-    char Staaf_ID[20], Staaf_Password[20];
+    char Staff_ID[20], Staff_Password[20];
     double salary;
 public:
-    Staaf();
+    Staff();
     virtual bool setID(string) = 0;
     virtual bool setPass(string) = 0;
     void setsalary(double);

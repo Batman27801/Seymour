@@ -1,9 +1,9 @@
 #ifndef MANAGER
 #define MANAGER
-#include "Staaf.h"
+#include "Staff.h"
 #include "Delivery_Boy.h"
 #include "Chef.h"
-class Manager : public Staaf
+class Manager : public Staff
 {
     double totalsales;
 

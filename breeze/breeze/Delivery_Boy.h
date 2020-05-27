@@ -1,9 +1,9 @@
 #ifndef DELIVERY_BOY
 #define DELIVERY_BOY
 #include "Person.h"
-#include "Staaf.h"
+#include "Staff.h"
 #include "Order.h"
-class Delivery_Boy : public Staaf
+class Delivery_Boy : public Staff
 {
     int Total_Orders;
     long int Working_Order_Code;
