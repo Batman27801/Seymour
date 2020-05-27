@@ -15,6 +15,7 @@ private:
     char CRUSTS[5][30];
     char TOPPINGS[5][30];    
     int size[5];
+    char deliveryloc[200];
     enum status orderstatus;
 public:
     Order();
@@ -34,5 +35,7 @@ public:
     char* gettoppings();
     double ReturnBill();
     long int getOrderCode();
+    void setloc(string s);
+    char* getloc();
 };
 

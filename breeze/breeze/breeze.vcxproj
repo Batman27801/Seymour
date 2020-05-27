@@ -126,32 +126,27 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="account.cpp" />
-    <ClCompile Include="Add_On.cpp" />
     <ClCompile Include="bbq_buzz.cpp" />
     <ClCompile Include="Beef.cpp" />
     <ClCompile Include="Chef.cpp" />
     <ClCompile Include="Chicken.cpp" />
     <ClCompile Include="chilli_delight.cpp" />
-    <ClCompile Include="Cold_Drink.cpp" />
     <ClCompile Include="crust.cpp" />
     <ClCompile Include="Delivery_Boy.cpp" />
     <ClCompile Include="Extra_Cheez.cpp" />
     <ClCompile Include="fajita.cpp" />
-    <ClCompile Include="Ice_Cream.cpp" />
     <ClCompile Include="italian.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Mashroom.cpp" />
     <ClCompile Include="MyForms.cpp" />
     <ClCompile Include="Order.cpp" />
-    <ClCompile Include="Pastry.cpp" />
     <ClCompile Include="Pepperoni.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="pizza.cpp" />
     <ClCompile Include="Sausage.cpp" />
     <ClCompile Include="security.cpp" />
     <ClCompile Include="seekh_kebab.cpp" />
-    <ClCompile Include="Shakes.cpp" />
     <ClCompile Include="Flavour.cpp" />
     <ClCompile Include="Staff.cpp" />
     <ClCompile Include="The_cheese.cpp" />

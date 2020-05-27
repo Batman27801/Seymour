@@ -12,6 +12,7 @@ Order::Order()
 		strcpy_s(FLAVOURS[i], "");
 		strcpy_s(TOPPINGS[i], "");
 	}
+	strcpy_s(deliveryloc, "");
 	
 }
 void Order::PlaceOrder(pizza* pizza, int pizzaamount)
@@ -77,6 +78,7 @@ void Order::operator=(const Order& obj)
 	{
 		this->size[i] = obj.size[i];
 	}
+	strcpy_s(this->deliveryloc, obj.deliveryloc);
 }
 void Order::operator-(const double DiscAmount)
 {
@@ -118,4 +120,12 @@ void Order::setsize(int* s)
 long int Order::getOrderCode()
 {
 	return OrderCode;
+}
+void Order::setloc(string s)
+{
+	strcpy_s(deliveryloc, s.c_str());
+}
+char* Order::getloc()
+{
+	return deliveryloc;
 }

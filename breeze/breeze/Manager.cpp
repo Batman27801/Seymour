@@ -142,7 +142,9 @@ bool Manager::DeleteChef(string id)
     chef temp;
     int flag = 0;
     ifstream is("chef.dat", ios::binary);
-    ofstream os("temp.dat", ios::binary | ios::app);
+    ofstream os("temp.dat", ios::out);
+    os.close();
+    os.open("temp.dat", ios::binary | ios::app);
     is.seekg(0);
     while (!is.eof())
     {
@@ -167,7 +169,9 @@ bool Manager::DeleteDeliveryBoy(string id)
     Delivery_Boy temp;
     int flag = 0;
     ifstream is("Delivery_Boy.dat", ios::binary);
-    ofstream os("temp.dat", ios::binary | ios::app);
+    ofstream os("temp.dat", ios::out);
+    os.close();
+    os.open("temp.dat", ios::binary | ios::app);
     is.seekg(0);
     while (!is.eof())
     {

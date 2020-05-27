@@ -133,7 +133,10 @@ bool Delivery_Boy::deleteorder()
 {
     int flag = 0;
     ifstream is("Orders.dat", ios::binary);
-    ofstream os("temp.dat", ios::binary | ios::app);
+    ofstream os("temp.dat", ios::out);
+    os.close();
+    os.open("temp.dat", ios::binary, ios::app);
+
     is.seekg(0);
     while (!is.eof())
     {
