@@ -23,8 +23,8 @@ namespace breeze {
 		flavour *ptr;
 		Order *order = new Order;
 		account* acc = new account;
-		int CurrentAccountPosition;
-        const Manager *manager = new Manager(50000);
+        const Manager *manager = new const Manager(50000);
+        Staff *emp;
 
 	private: System::Windows::Forms::TabPage^ CrustSelect;
 	public:
@@ -473,24 +473,26 @@ private: System::Windows::Forms::Label^ labeluserfname;
 private: System::Windows::Forms::CheckBox^ prevorder5;
 private: System::Windows::Forms::Label^ err;
 private: System::Windows::Forms::TabPage^ Staaf_Main_Page;
-private: System::Windows::Forms::Label^ Loginasdeliveryboy;
-private: System::Windows::Forms::Label^ Loginaschef;
-private: System::Windows::Forms::Label^ loginasmanger;
-private: System::Windows::Forms::Label^ StaafHeader;
-private: System::Windows::Forms::TabPage^ ManagerLogin;
+
+
+
+
+
+
 private: System::Windows::Forms::Button^ BackToFrontpage;
-private: System::Windows::Forms::Label^ ManagerloginCredentialsLabel;
-private: System::Windows::Forms::Button^ LoginManagerButton;
-private: System::Windows::Forms::TextBox^ Managerpasstextbox;
 
 
-private: System::Windows::Forms::TextBox^ Manageridtextbox;
-private: System::Windows::Forms::Label^ PassLabel;
-private: System::Windows::Forms::Label^ IDLabel;
-private: System::Windows::Forms::Label^ label2;
-private: System::Windows::Forms::Label^ ManagerLoginHeading;
-private: System::Windows::Forms::Label^ IncorrectPassNotice;
-private: System::Windows::Forms::Button^ BackToStaafMain;
+
+
+
+
+
+
+
+
+
+
+
 private: System::Windows::Forms::TabPage^ Managermain;
 private: System::Windows::Forms::Label^ Managermainheading;
 private: System::Windows::Forms::Button^ Add_Chef_Button;
@@ -532,7 +534,7 @@ private: System::Windows::Forms::Label^ PhoneNoCheckOutWarning;
 private: System::Windows::Forms::TabPage^ Chefmain;
 
 private: System::Windows::Forms::Label^ chefsalary;
-private: System::Windows::Forms::Label^ chefordercount;
+
 private: System::Windows::Forms::Label^ chefusrenamelabel;
 private: System::Windows::Forms::Label^ label8;
 private: System::Windows::Forms::Label^ Toppingbox;
@@ -548,6 +550,21 @@ private: System::Windows::Forms::Button^ cookdonebox;
 
 private: System::Windows::Forms::Button^ cancelorderbox;
 private: System::Windows::Forms::ListBox^ pendingorders;
+private: System::Windows::Forms::Label^ staffloginsubheading;
+private: System::Windows::Forms::Label^ IncorrectPassNotice;
+
+private: System::Windows::Forms::Label^ label10;
+private: System::Windows::Forms::Button^ staffloginbutton;
+
+private: System::Windows::Forms::TextBox^ staffpasstextbox;
+
+private: System::Windows::Forms::TextBox^ staffidtextbox;
+
+private: System::Windows::Forms::Label^ label11;
+private: System::Windows::Forms::Label^ label14;
+private: System::Windows::Forms::Label^ staffloginheading;
+private: System::Windows::Forms::Label^ chefordercount;
+
 
 
 
@@ -950,26 +967,20 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Flavorbox = (gcnew System::Windows::Forms::Label());
             this->Crustbox = (gcnew System::Windows::Forms::Label());
             this->label8 = (gcnew System::Windows::Forms::Label());
+            this->pendingorders = (gcnew System::Windows::Forms::ListBox());
             this->chefsalary = (gcnew System::Windows::Forms::Label());
-            this->chefordercount = (gcnew System::Windows::Forms::Label());
             this->chefusrenamelabel = (gcnew System::Windows::Forms::Label());
             this->Staaf_Main_Page = (gcnew System::Windows::Forms::TabPage());
-            this->BackToFrontpage = (gcnew System::Windows::Forms::Button());
-            this->Loginasdeliveryboy = (gcnew System::Windows::Forms::Label());
-            this->Loginaschef = (gcnew System::Windows::Forms::Label());
-            this->loginasmanger = (gcnew System::Windows::Forms::Label());
-            this->StaafHeader = (gcnew System::Windows::Forms::Label());
-            this->ManagerLogin = (gcnew System::Windows::Forms::TabPage());
+            this->staffloginsubheading = (gcnew System::Windows::Forms::Label());
             this->IncorrectPassNotice = (gcnew System::Windows::Forms::Label());
-            this->BackToStaafMain = (gcnew System::Windows::Forms::Button());
-            this->ManagerloginCredentialsLabel = (gcnew System::Windows::Forms::Label());
-            this->LoginManagerButton = (gcnew System::Windows::Forms::Button());
-            this->Managerpasstextbox = (gcnew System::Windows::Forms::TextBox());
-            this->Manageridtextbox = (gcnew System::Windows::Forms::TextBox());
-            this->PassLabel = (gcnew System::Windows::Forms::Label());
-            this->IDLabel = (gcnew System::Windows::Forms::Label());
-            this->label2 = (gcnew System::Windows::Forms::Label());
-            this->ManagerLoginHeading = (gcnew System::Windows::Forms::Label());
+            this->label10 = (gcnew System::Windows::Forms::Label());
+            this->staffloginbutton = (gcnew System::Windows::Forms::Button());
+            this->staffpasstextbox = (gcnew System::Windows::Forms::TextBox());
+            this->staffidtextbox = (gcnew System::Windows::Forms::TextBox());
+            this->label11 = (gcnew System::Windows::Forms::Label());
+            this->label14 = (gcnew System::Windows::Forms::Label());
+            this->staffloginheading = (gcnew System::Windows::Forms::Label());
+            this->BackToFrontpage = (gcnew System::Windows::Forms::Button());
             this->Managermain = (gcnew System::Windows::Forms::TabPage());
             this->Add_Chef_Button = (gcnew System::Windows::Forms::Button());
             this->Managermainheading = (gcnew System::Windows::Forms::Label());
@@ -1001,7 +1012,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->cheffnamelabel = (gcnew System::Windows::Forms::Label());
             this->chefnamelabel = (gcnew System::Windows::Forms::Label());
             this->Addnewcheflabel = (gcnew System::Windows::Forms::Label());
-            this->pendingorders = (gcnew System::Windows::Forms::ListBox());
+            this->chefordercount = (gcnew System::Windows::Forms::Label());
             this->tabControl1->SuspendLayout();
             this->MainMenu->SuspendLayout();
             this->UserLogin->SuspendLayout();
@@ -1028,7 +1039,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CheckoutPage->SuspendLayout();
             this->Chefmain->SuspendLayout();
             this->Staaf_Main_Page->SuspendLayout();
-            this->ManagerLogin->SuspendLayout();
             this->Managermain->SuspendLayout();
             this->Addnewchef->SuspendLayout();
             this->SuspendLayout();
@@ -1047,7 +1057,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->tabControl1->Controls->Add(this->CheckoutPage);
             this->tabControl1->Controls->Add(this->Chefmain);
             this->tabControl1->Controls->Add(this->Staaf_Main_Page);
-            this->tabControl1->Controls->Add(this->ManagerLogin);
             this->tabControl1->Controls->Add(this->Managermain);
             this->tabControl1->Controls->Add(this->Addnewchef);
             this->tabControl1->Location = System::Drawing::Point(-130, -32);
@@ -4861,6 +4870,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->cookdonebox->TabIndex = 9;
             this->cookdonebox->Text = L"button2";
             this->cookdonebox->UseVisualStyleBackColor = true;
+            this->cookdonebox->Click += gcnew System::EventHandler(this, &MyForm::cookdonebox_Click);
             // 
             // cancelorderbox
             // 
@@ -4873,30 +4883,31 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             // Toppingbox
             // 
+            this->Toppingbox->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
             this->Toppingbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->Toppingbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->Toppingbox->Location = System::Drawing::Point(863, 271);
+            this->Toppingbox->Location = System::Drawing::Point(888, 271);
             this->Toppingbox->Name = L"Toppingbox";
             this->Toppingbox->Size = System::Drawing::Size(258, 154);
             this->Toppingbox->TabIndex = 7;
-            this->Toppingbox->Text = L"Crust 1\r\nCrust 1\r\nCrust 1\r\nCrust 1\r\nCrust 1";
             this->Toppingbox->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
             // Flavorbox
             // 
+            this->Flavorbox->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
             this->Flavorbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->Flavorbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->Flavorbox->Location = System::Drawing::Point(505, 271);
+            this->Flavorbox->Location = System::Drawing::Point(543, 271);
             this->Flavorbox->Name = L"Flavorbox";
             this->Flavorbox->Size = System::Drawing::Size(258, 154);
             this->Flavorbox->TabIndex = 6;
-            this->Flavorbox->Text = L"Crust 1\r\nCrust 1\r\nCrust 1\r\nCrust 1\r\nCrust 1";
             this->Flavorbox->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
             // Crustbox
             // 
+            this->Crustbox->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
             this->Crustbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->Crustbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
@@ -4918,6 +4929,17 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->label8->Text = L"Please Select One of the Pending Orders to cook if you are Free.";
             this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
+            // pendingorders
+            // 
+            this->pendingorders->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->pendingorders->ItemHeight = 18;
+            this->pendingorders->Location = System::Drawing::Point(414, 121);
+            this->pendingorders->Name = L"pendingorders";
+            this->pendingorders->Size = System::Drawing::Size(450, 94);
+            this->pendingorders->TabIndex = 3;
+            this->pendingorders->SelectedValueChanged += gcnew System::EventHandler(this, &MyForm::pendingorders_SelectedValueChanged);
+            // 
             // chefsalary
             // 
             this->chefsalary->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -4930,18 +4952,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->chefsalary->Text = L"Salary: ";
             this->chefsalary->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
-            // chefordercount
-            // 
-            this->chefordercount->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->chefordercount->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->chefordercount->Location = System::Drawing::Point(496, 48);
-            this->chefordercount->Name = L"chefordercount";
-            this->chefordercount->Size = System::Drawing::Size(258, 30);
-            this->chefordercount->TabIndex = 1;
-            this->chefordercount->Text = L"Cooked Orders:";
-            this->chefordercount->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-            // 
             // chefusrenamelabel
             // 
             this->chefusrenamelabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -4949,26 +4959,132 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->chefusrenamelabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
             this->chefusrenamelabel->Location = System::Drawing::Point(164, 48);
             this->chefusrenamelabel->Name = L"chefusrenamelabel";
-            this->chefusrenamelabel->Size = System::Drawing::Size(258, 30);
+            this->chefusrenamelabel->Size = System::Drawing::Size(258, 50);
             this->chefusrenamelabel->TabIndex = 0;
             this->chefusrenamelabel->Text = L"Logged in as: ";
-            this->chefusrenamelabel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
             // Staaf_Main_Page
             // 
             this->Staaf_Main_Page->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Staaf_Main_Page.BackgroundImage")));
+            this->Staaf_Main_Page->Controls->Add(this->staffloginsubheading);
+            this->Staaf_Main_Page->Controls->Add(this->IncorrectPassNotice);
+            this->Staaf_Main_Page->Controls->Add(this->label10);
+            this->Staaf_Main_Page->Controls->Add(this->staffloginbutton);
+            this->Staaf_Main_Page->Controls->Add(this->staffpasstextbox);
+            this->Staaf_Main_Page->Controls->Add(this->staffidtextbox);
+            this->Staaf_Main_Page->Controls->Add(this->label11);
+            this->Staaf_Main_Page->Controls->Add(this->label14);
+            this->Staaf_Main_Page->Controls->Add(this->staffloginheading);
             this->Staaf_Main_Page->Controls->Add(this->BackToFrontpage);
-            this->Staaf_Main_Page->Controls->Add(this->Loginasdeliveryboy);
-            this->Staaf_Main_Page->Controls->Add(this->Loginaschef);
-            this->Staaf_Main_Page->Controls->Add(this->loginasmanger);
-            this->Staaf_Main_Page->Controls->Add(this->StaafHeader);
             this->Staaf_Main_Page->Location = System::Drawing::Point(4, 22);
             this->Staaf_Main_Page->Name = L"Staaf_Main_Page";
             this->Staaf_Main_Page->Size = System::Drawing::Size(1210, 576);
             this->Staaf_Main_Page->TabIndex = 10;
             this->Staaf_Main_Page->Text = L"tabPage1";
             this->Staaf_Main_Page->UseVisualStyleBackColor = true;
-            this->Staaf_Main_Page->Click += gcnew System::EventHandler(this, &MyForm::Staaf_Main_Page_Click);
+            // 
+            // staffloginsubheading
+            // 
+            this->staffloginsubheading->AutoSize = true;
+            this->staffloginsubheading->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
+                | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->staffloginsubheading->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->staffloginsubheading->Location = System::Drawing::Point(284, 170);
+            this->staffloginsubheading->Name = L"staffloginsubheading";
+            this->staffloginsubheading->Size = System::Drawing::Size(730, 24);
+            this->staffloginsubheading->TabIndex = 20;
+            this->staffloginsubheading->Text = L"Please Make sure You enter your respevtive ID Prefix as per your designation";
+            // 
+            // IncorrectPassNotice
+            // 
+            this->IncorrectPassNotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->IncorrectPassNotice->ForeColor = System::Drawing::Color::Red;
+            this->IncorrectPassNotice->Location = System::Drawing::Point(455, 395);
+            this->IncorrectPassNotice->Name = L"IncorrectPassNotice";
+            this->IncorrectPassNotice->Size = System::Drawing::Size(415, 23);
+            this->IncorrectPassNotice->TabIndex = 19;
+            this->IncorrectPassNotice->Text = L"Incorrect ID or Password";
+            this->IncorrectPassNotice->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+            this->IncorrectPassNotice->Visible = false;
+            // 
+            // label10
+            // 
+            this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label10->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->label10->Location = System::Drawing::Point(455, 243);
+            this->label10->Name = L"label10";
+            this->label10->Size = System::Drawing::Size(415, 23);
+            this->label10->TabIndex = 17;
+            this->label10->Text = L"Please Enter Your Login Credentials Below:";
+            this->label10->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+            // 
+            // staffloginbutton
+            // 
+            this->staffloginbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->staffloginbutton->Location = System::Drawing::Point(602, 421);
+            this->staffloginbutton->Name = L"staffloginbutton";
+            this->staffloginbutton->Size = System::Drawing::Size(125, 45);
+            this->staffloginbutton->TabIndex = 16;
+            this->staffloginbutton->Text = L"Log In";
+            this->staffloginbutton->UseVisualStyleBackColor = true;
+            this->staffloginbutton->Click += gcnew System::EventHandler(this, &MyForm::staffloginbutton_Click);
+            // 
+            // staffpasstextbox
+            // 
+            this->staffpasstextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->staffpasstextbox->Location = System::Drawing::Point(589, 347);
+            this->staffpasstextbox->Name = L"staffpasstextbox";
+            this->staffpasstextbox->Size = System::Drawing::Size(160, 22);
+            this->staffpasstextbox->TabIndex = 15;
+            this->staffpasstextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            // 
+            // staffidtextbox
+            // 
+            this->staffidtextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->staffidtextbox->Location = System::Drawing::Point(589, 294);
+            this->staffidtextbox->Name = L"staffidtextbox";
+            this->staffidtextbox->Size = System::Drawing::Size(160, 22);
+            this->staffidtextbox->TabIndex = 14;
+            this->staffidtextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            // 
+            // label11
+            // 
+            this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label11->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->label11->Location = System::Drawing::Point(484, 347);
+            this->label11->Name = L"label11";
+            this->label11->Size = System::Drawing::Size(94, 23);
+            this->label11->TabIndex = 13;
+            this->label11->Text = L"Password:";
+            // 
+            // label14
+            // 
+            this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label14->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->label14->Location = System::Drawing::Point(484, 294);
+            this->label14->Name = L"label14";
+            this->label14->Size = System::Drawing::Size(94, 23);
+            this->label14->TabIndex = 12;
+            this->label14->Text = L"ID:";
+            // 
+            // staffloginheading
+            // 
+            this->staffloginheading->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->staffloginheading->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->staffloginheading->Location = System::Drawing::Point(505, 74);
+            this->staffloginheading->Name = L"staffloginheading";
+            this->staffloginheading->Size = System::Drawing::Size(313, 56);
+            this->staffloginheading->TabIndex = 11;
+            this->staffloginheading->Text = L"Staff Login";
+            this->staffloginheading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
             // BackToFrontpage
             // 
@@ -4981,197 +5097,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->BackToFrontpage->Text = L"Back";
             this->BackToFrontpage->UseVisualStyleBackColor = true;
             this->BackToFrontpage->Click += gcnew System::EventHandler(this, &MyForm::BackToFrontpage_Click);
-            // 
-            // Loginasdeliveryboy
-            // 
-            this->Loginasdeliveryboy->BackColor = System::Drawing::Color::DimGray;
-            this->Loginasdeliveryboy->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->Loginasdeliveryboy->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->Loginasdeliveryboy->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Loginasdeliveryboy.Image")));
-            this->Loginasdeliveryboy->ImageAlign = System::Drawing::ContentAlignment::BottomCenter;
-            this->Loginasdeliveryboy->Location = System::Drawing::Point(862, 152);
-            this->Loginasdeliveryboy->Name = L"Loginasdeliveryboy";
-            this->Loginasdeliveryboy->Size = System::Drawing::Size(238, 223);
-            this->Loginasdeliveryboy->TabIndex = 3;
-            this->Loginasdeliveryboy->Text = L"Log In As Delivery Boy";
-            this->Loginasdeliveryboy->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-            // 
-            // Loginaschef
-            // 
-            this->Loginaschef->BackColor = System::Drawing::Color::DimGray;
-            this->Loginaschef->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->Loginaschef->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->Loginaschef->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Loginaschef.Image")));
-            this->Loginaschef->ImageAlign = System::Drawing::ContentAlignment::BottomCenter;
-            this->Loginaschef->Location = System::Drawing::Point(565, 152);
-            this->Loginaschef->Name = L"Loginaschef";
-            this->Loginaschef->Size = System::Drawing::Size(227, 221);
-            this->Loginaschef->TabIndex = 2;
-            this->Loginaschef->Text = L"Log In As Chef";
-            this->Loginaschef->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-            this->Loginaschef->Click += gcnew System::EventHandler(this, &MyForm::Loginaschef_Click);
-            // 
-            // loginasmanger
-            // 
-            this->loginasmanger->BackColor = System::Drawing::Color::DimGray;
-            this->loginasmanger->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->loginasmanger->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->loginasmanger->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"loginasmanger.Image")));
-            this->loginasmanger->ImageAlign = System::Drawing::ContentAlignment::BottomCenter;
-            this->loginasmanger->Location = System::Drawing::Point(240, 152);
-            this->loginasmanger->Name = L"loginasmanger";
-            this->loginasmanger->Size = System::Drawing::Size(241, 214);
-            this->loginasmanger->TabIndex = 1;
-            this->loginasmanger->Text = L"Log In As Manger";
-            this->loginasmanger->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-            this->loginasmanger->Click += gcnew System::EventHandler(this, &MyForm::loginasmanger_Click);
-            // 
-            // StaafHeader
-            // 
-            this->StaafHeader->Font = (gcnew System::Drawing::Font(L"Algerian", 27.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
-                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->StaafHeader->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->StaafHeader->Location = System::Drawing::Point(486, 28);
-            this->StaafHeader->Name = L"StaafHeader";
-            this->StaafHeader->Size = System::Drawing::Size(345, 56);
-            this->StaafHeader->TabIndex = 0;
-            this->StaafHeader->Text = L"STAFF PORTAL";
-            this->StaafHeader->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            // 
-            // ManagerLogin
-            // 
-            this->ManagerLogin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ManagerLogin.BackgroundImage")));
-            this->ManagerLogin->Controls->Add(this->IncorrectPassNotice);
-            this->ManagerLogin->Controls->Add(this->BackToStaafMain);
-            this->ManagerLogin->Controls->Add(this->ManagerloginCredentialsLabel);
-            this->ManagerLogin->Controls->Add(this->LoginManagerButton);
-            this->ManagerLogin->Controls->Add(this->Managerpasstextbox);
-            this->ManagerLogin->Controls->Add(this->Manageridtextbox);
-            this->ManagerLogin->Controls->Add(this->PassLabel);
-            this->ManagerLogin->Controls->Add(this->IDLabel);
-            this->ManagerLogin->Controls->Add(this->label2);
-            this->ManagerLogin->Controls->Add(this->ManagerLoginHeading);
-            this->ManagerLogin->Location = System::Drawing::Point(4, 22);
-            this->ManagerLogin->Name = L"ManagerLogin";
-            this->ManagerLogin->Size = System::Drawing::Size(1210, 576);
-            this->ManagerLogin->TabIndex = 11;
-            this->ManagerLogin->Text = L"tabPage1";
-            this->ManagerLogin->UseVisualStyleBackColor = true;
-            // 
-            // IncorrectPassNotice
-            // 
-            this->IncorrectPassNotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->IncorrectPassNotice->ForeColor = System::Drawing::Color::Red;
-            this->IncorrectPassNotice->Location = System::Drawing::Point(461, 395);
-            this->IncorrectPassNotice->Name = L"IncorrectPassNotice";
-            this->IncorrectPassNotice->Size = System::Drawing::Size(415, 23);
-            this->IncorrectPassNotice->TabIndex = 10;
-            this->IncorrectPassNotice->Text = L"Incorrect ID or Password";
-            this->IncorrectPassNotice->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-            this->IncorrectPassNotice->Visible = false;
-            // 
-            // BackToStaafMain
-            // 
-            this->BackToStaafMain->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->BackToStaafMain->Location = System::Drawing::Point(1048, 67);
-            this->BackToStaafMain->Name = L"BackToStaafMain";
-            this->BackToStaafMain->Size = System::Drawing::Size(125, 45);
-            this->BackToStaafMain->TabIndex = 9;
-            this->BackToStaafMain->Text = L"Back";
-            this->BackToStaafMain->UseVisualStyleBackColor = true;
-            this->BackToStaafMain->Click += gcnew System::EventHandler(this, &MyForm::BackToStaafMain_Click);
-            // 
-            // ManagerloginCredentialsLabel
-            // 
-            this->ManagerloginCredentialsLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
-                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->ManagerloginCredentialsLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->ManagerloginCredentialsLabel->Location = System::Drawing::Point(461, 243);
-            this->ManagerloginCredentialsLabel->Name = L"ManagerloginCredentialsLabel";
-            this->ManagerloginCredentialsLabel->Size = System::Drawing::Size(415, 23);
-            this->ManagerloginCredentialsLabel->TabIndex = 8;
-            this->ManagerloginCredentialsLabel->Text = L"Please Enter Your Login Credentials Below:";
-            this->ManagerloginCredentialsLabel->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-            // 
-            // LoginManagerButton
-            // 
-            this->LoginManagerButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->LoginManagerButton->Location = System::Drawing::Point(608, 421);
-            this->LoginManagerButton->Name = L"LoginManagerButton";
-            this->LoginManagerButton->Size = System::Drawing::Size(125, 45);
-            this->LoginManagerButton->TabIndex = 7;
-            this->LoginManagerButton->Text = L"Log In";
-            this->LoginManagerButton->UseVisualStyleBackColor = true;
-            this->LoginManagerButton->Click += gcnew System::EventHandler(this, &MyForm::LoginManagerButton_Click);
-            // 
-            // Managerpasstextbox
-            // 
-            this->Managerpasstextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->Managerpasstextbox->Location = System::Drawing::Point(595, 347);
-            this->Managerpasstextbox->Name = L"Managerpasstextbox";
-            this->Managerpasstextbox->Size = System::Drawing::Size(160, 22);
-            this->Managerpasstextbox->TabIndex = 6;
-            this->Managerpasstextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-            // 
-            // Manageridtextbox
-            // 
-            this->Manageridtextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->Manageridtextbox->Location = System::Drawing::Point(595, 294);
-            this->Manageridtextbox->Name = L"Manageridtextbox";
-            this->Manageridtextbox->Size = System::Drawing::Size(160, 22);
-            this->Manageridtextbox->TabIndex = 5;
-            this->Manageridtextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-            // 
-            // PassLabel
-            // 
-            this->PassLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->PassLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->PassLabel->Location = System::Drawing::Point(490, 347);
-            this->PassLabel->Name = L"PassLabel";
-            this->PassLabel->Size = System::Drawing::Size(94, 23);
-            this->PassLabel->TabIndex = 4;
-            this->PassLabel->Text = L"Password:";
-            // 
-            // IDLabel
-            // 
-            this->IDLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->IDLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->IDLabel->Location = System::Drawing::Point(490, 294);
-            this->IDLabel->Name = L"IDLabel";
-            this->IDLabel->Size = System::Drawing::Size(94, 23);
-            this->IDLabel->TabIndex = 3;
-            this->IDLabel->Text = L"ID:";
-            // 
-            // label2
-            // 
-            this->label2->AutoSize = true;
-            this->label2->Location = System::Drawing::Point(0, 0);
-            this->label2->Name = L"label2";
-            this->label2->Size = System::Drawing::Size(35, 13);
-            this->label2->TabIndex = 2;
-            this->label2->Text = L"label2";
-            // 
-            // ManagerLoginHeading
-            // 
-            this->ManagerLoginHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->ManagerLoginHeading->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->ManagerLoginHeading->Location = System::Drawing::Point(590, 67);
-            this->ManagerLoginHeading->Name = L"ManagerLoginHeading";
-            this->ManagerLoginHeading->Size = System::Drawing::Size(165, 109);
-            this->ManagerLoginHeading->TabIndex = 1;
-            this->ManagerLoginHeading->Text = L"Manager Login";
-            this->ManagerLoginHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
             // Managermain
             // 
@@ -5553,16 +5478,17 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Addnewcheflabel->Text = L"New Chef";
             this->Addnewcheflabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
-            // pendingorders
+            // chefordercount
             // 
-            this->pendingorders->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->chefordercount->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->pendingorders->ItemHeight = 18;
-            this->pendingorders->Location = System::Drawing::Point(414, 121);
-            this->pendingorders->Name = L"pendingorders";
-            this->pendingorders->Size = System::Drawing::Size(450, 94);
-            this->pendingorders->TabIndex = 3;
-            this->pendingorders->SelectedValueChanged += gcnew System::EventHandler(this, &MyForm::pendingorders_SelectedValueChanged);
+            this->chefordercount->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->chefordercount->Location = System::Drawing::Point(496, 48);
+            this->chefordercount->Name = L"chefordercount";
+            this->chefordercount->Size = System::Drawing::Size(258, 30);
+            this->chefordercount->TabIndex = 1;
+            this->chefordercount->Text = L"Cooked Orders:";
+            this->chefordercount->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
             // MyForm
             // 
@@ -5611,8 +5537,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CheckoutPage->PerformLayout();
             this->Chefmain->ResumeLayout(false);
             this->Staaf_Main_Page->ResumeLayout(false);
-            this->ManagerLogin->ResumeLayout(false);
-            this->ManagerLogin->PerformLayout();
+            this->Staaf_Main_Page->PerformLayout();
             this->Managermain->ResumeLayout(false);
             this->Addnewchef->ResumeLayout(false);
             this->Addnewchef->PerformLayout();
@@ -5732,11 +5657,8 @@ private: System::Void ChooseCheeseBox_SelectedIndexChanged(System::Object^ sende
     System::Void prevorder4_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
     System::Void prevorder5_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
     System::Void confirmorder_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void Staaf_Main_Page_Click(System::Object^ sender, System::EventArgs^ e) {}
-    System::Void loginasmanger_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void BackToFrontpage_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void BackToStaafMain_Click(System::Object^ sender, System::EventArgs^ e);
-    System::Void LoginManagerButton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void Add_Chef_Button_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -5747,5 +5669,7 @@ private: System::Void Loginaschef_Click(System::Object^ sender, System::EventArg
 }
 	System::Void pendingorders_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e);
     System::Void Chefmain_Enter(System::Object^ sender, System::EventArgs^ e);
+    System::Void staffloginbutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void cookdonebox_Click(System::Object^ sender, System::EventArgs^ e); 
 };
 }

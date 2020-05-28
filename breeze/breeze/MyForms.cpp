@@ -189,7 +189,7 @@ void breeze::MyForm::startmenubox_Click(System::Object^ sender, System::EventArg
 
 void breeze::MyForm::sizeofpremadepizzabox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (Convert::ToInt16(sizeofpremadepizzabox->Text) > 0)
-		pizzaamountbox->Text = "0";
+		pizzaamountbox->SelectedItem = 0;
 }
 
 void breeze::MyForm::Previous_Enter(System::Object^ sender, System::EventArgs^ e) {
@@ -1705,9 +1705,6 @@ void breeze::MyForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	tabControl1->SelectedTab = CrustSelect;
 }
-/*void breeze::MyForm::staff_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = FlavourSelect;
-}*/
 void breeze::MyForm::ChilliDelightCheckbox_CheckStateChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (ChilliDelightCheckbox->Checked == false)
 	{
@@ -1718,6 +1715,7 @@ void breeze::MyForm::ChilliDelightCheckbox_CheckStateChanged(System::Object^ sen
 }
 //*****************************FLAVOUR SELECTION OPTIONS****************************//
 
+//*****************************TOPPING RELATED FUNCTION*****************************//
 void breeze::MyForm::ToppingSelect_Enter(System::Object^ sender, System::EventArgs^ e) {
 	pizz->tpoint = new Chicken;
 	ChickenCheck->Text = "'CHICKEN'\n" + gotoString(pizz->tpoint->getdetails());
@@ -2076,6 +2074,9 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 	FlavourPriceBox->Text = "";
 	
 }
+//*****************************TOPPING RELATED FUNCTION*****************************//
+
+//*****************************CHECKOUT RELATED FUNCTIONS***************************//
 void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArgs^ e)
 {
 	if (acc->getguest() == true)
@@ -2195,27 +2196,14 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 	}
 	//tabControl1->SelectedTab = UserLogin;
 }
+//*****************************CHECKOUT RELATED FUNCTIONS***************************//
 
-void breeze::MyForm::loginasmanger_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = ManagerLogin;
-}
+//*****************************STAFF RELATED FUNCTIONS***************************//
 void breeze::MyForm::BackToFrontpage_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = MainMenu;
 }
 void breeze::MyForm::BackToStaafMain_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Staaf_Main_Page;
-}
-void breeze::MyForm::LoginManagerButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (!manager->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)))
-	{
-		IncorrectPassNotice->Visible = true;
-	}
-	else if (manager->check(backtostring(Manageridtextbox->Text), backtostring(Managerpasstextbox->Text)) == true)
-	{
-		tabControl1->SelectedTab = Managermain;
-		Manageridtextbox->Text = "";
-		Managerpasstextbox->Text = "";
-	}
 }
 void breeze::MyForm::Add_Chef_Button_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Addnewchef;
@@ -2283,7 +2271,6 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 void breeze::MyForm::backtomainmenu_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Managermain;
 }
-
 void breeze::MyForm::pendingorders_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	
 	Crustbox->Text = "";
@@ -2301,25 +2288,98 @@ void breeze::MyForm::pendingorders_SelectedValueChanged(System::Object^ sender, 
 		{
 			for (int i = 0; i < temp.getpizzas(); i++)
 			{
-				Crustbox->Text = Crustbox->Text + "Crust " + (i + 1) + " " + gotoString((temp.getcrusts()+i*30)) + Environment::NewLine;
-				Flavorbox->Text = Flavorbox->Text + "Flavor " + (i + 1) + " " + gotoString((temp.getflavs()+i*30)) + Environment::NewLine;
+				Crustbox->Text = Crustbox->Text + "Crust " + (i + 1) + " " + gotoString((temp.getcrusts() + i * 30)) + Environment::NewLine;
+				Flavorbox->Text = Flavorbox->Text + "Flavor " + (i + 1) + " " + gotoString((temp.getflavs() + i * 30)) + Environment::NewLine;
 				Toppingbox->Text = Toppingbox->Text + "Topping " + (i + 1) + " " + gotoString((temp.gettoppings() + i * 30)) + Environment::NewLine;
 			}
 		}
+		else if (temp.getstatus() != confirmed)
+			pos--;
 		pos++;
 	}
 
 }
-
 void breeze::MyForm::Chefmain_Enter(System::Object^ sender, System::EventArgs^ e) {
-	ifstream ord("Orders.dat", ios::binary);
-	Order temp;
-	for (; ord.read((char*)&temp, sizeof(temp));)
+	
+	pendingorders->Items->Clear();
+	chef* cheff = new chef;
+	cheff->check(emp->getID(), emp->getPass());
+	chefusrenamelabel->Text = "Logged in as: " + gotoString(cheff->getID()) + Environment::NewLine + gotoString(cheff->getname());
+	chefordercount->Text = "Cooked Orders: " + Convert::ToString(cheff->getTotalOrders());
+	//chefsalary->Text = "Salary: Rs " + Convert::ToString(cheff->getsalary());
+	chefsalary->Text = Convert::ToString(cheff->Chefs_Order.ReturnBill());
+	if (cheff->getcurrOrder().ReturnBill() == 0)
 	{
-		if (temp.getstatus() == confirmed)
+		ifstream ord("Orders.dat", ios::binary);
+		Order temp;
+		for (; ord.read((char*)&temp, sizeof(temp));)
 		{
-			pendingorders->Items->Add("Order # " + temp.getOrderCode() + ". " + temp.getpizzas() + " Pizza(s)");
+			if (temp.getstatus() == confirmed)
+			{
+				pendingorders->Items->Add("Order # " + temp.getOrderCode() + ". " + temp.getpizzas() + " Pizza(s)");
+			}
 		}
+		ord.close();
+		cookdonebox->Text = "Start Cooking!";
 	}
-	ord.close();
+	/*else if (cheff->getcurrOrder().ReturnBill() != 0)
+	{
+		pendingorders->Items->Add("Order # " + cheff->getcurrOrder().getOrderCode() + ". " + cheff->getcurrOrder().getpizzas() + " Pizza(s)");
+		pendingorders->Enabled = false;
+		for (int i = 0; i < cheff->getcurrOrder().getpizzas(); i++)
+		{
+			Crustbox->Text = Crustbox->Text + "Crust " + (i + 1) + " " + gotoString((cheff->getcurrOrder().getcrusts() + i * 30)) + Environment::NewLine;
+			Flavorbox->Text = Flavorbox->Text + "Flavor " + (i + 1) + " " + gotoString((cheff->getcurrOrder().getflavs() + i * 30)) + Environment::NewLine;
+			Toppingbox->Text = Toppingbox->Text + "Topping " + (i + 1) + " " + gotoString((cheff->getcurrOrder().gettoppings() + i * 30)) + Environment::NewLine;
+		}
+		cookdonebox->Text = "Order Cooked!";
+
+	}*/
+	delete cheff;
+}
+void breeze::MyForm::staffloginbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	int i = 1;
+	chef* cheff = new chef;
+	Delivery_Boy* boy = new Delivery_Boy;
+	if (manager->check(backtostring(staffidtextbox->Text), backtostring(staffpasstextbox->Text)))
+	{
+		i = 0;
+		delete boy;
+		delete cheff;
+		tabControl1->SelectedTab = Managermain;
+	}
+	else if (cheff->check(backtostring(staffidtextbox->Text), backtostring(staffpasstextbox->Text)))
+	{
+		emp = cheff;
+		delete boy;
+		i = 0;
+		tabControl1->SelectedTab = Chefmain;
+	}
+	else if (boy->check(backtostring(staffidtextbox->Text), backtostring(staffpasstextbox->Text)))
+	{
+		i = 0;
+		emp = boy;
+		delete cheff;
+		//tabControl1->SelectedTab = ;
+	}
+	if (i == 1)
+	{
+		IncorrectPassNotice->Visible = true;
+	}
+	staffidtextbox->Text = "";
+	staffpasstextbox->Text = "";
+}
+void breeze::MyForm::cookdonebox_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	chef* cheff = new chef;
+	cheff->check(emp->getID(), emp->getPass());
+	if (cheff->getcurrOrder().ReturnBill() == 0)
+	{
+		if(cheff->addworkingorder())
+		tabControl1->SelectedTab = Staaf_Main_Page;
+	}
+	else if (cheff->getcurrOrder().ReturnBill() != 0)
+	{
+		cheff->setorderready();
+	}
 }

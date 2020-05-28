@@ -24,9 +24,19 @@ void Manager::addDeliveryBoy(Delivery_Boy DB) const
 
 void Manager::addchef(chef C) const
 {
+
     ofstream os("chef.dat", ios::binary | ios::app);
-    os.write((char*)&C, sizeof(C));
-    os.close();
+    if (os.is_open())
+    {
+        os.write((char*)&C, sizeof(C));
+        os.close();
+    }
+    else
+    {
+        os.open("chef.dat", ios::out | ios::binary);
+        os.write((char*)&C, sizeof(C));
+        os.close();
+    }
 }
 
 double Manager::gettotalsales() const 
@@ -41,6 +51,11 @@ double Manager::gettotalsales() const
     is.close();
     return totalsales;
 }
+bool Manager::check(string, string)
+{
+    return false;
+}
+
 bool Manager::check(string id, string p) const
 {
     if (p!=Staff_Password || id!=Staff_ID)

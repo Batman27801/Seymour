@@ -13,10 +13,10 @@ public:
     Delivery_Boy();
     bool setID(string);
     bool setPass(string);
+    bool check(string, string);
     bool  addworkingorder();
     long int getworkingorder();
     bool deleteorder();
-    bool check(string, string);
     int getTotalOrders();
 };
 #endif

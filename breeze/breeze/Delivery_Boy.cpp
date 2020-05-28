@@ -168,7 +168,7 @@ bool Delivery_Boy::check(string id, string p)
     is.seekg(0);
     while (!is.eof())
     {
-        is.read((char*)this, sizeof(this));
+        is.read((char*)this, sizeof(*this));
         if (this->getID() == id && this->getPass() == p)
         {
             flag = 1;

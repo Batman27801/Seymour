@@ -165,7 +165,7 @@ bool chef::check(string id, string p)
     is.seekg(0);
     while (!is.eof())
     {
-        is.read((char*)this, sizeof(this));
+        is.read((char*)this, sizeof(*this));
         if (this->getID() == id && this->getPass() == p)
         {
             flag = 1;
@@ -196,9 +196,9 @@ void chef::increaseTotalOrders()
         }
     }
 }
-bool chef::cancelorder()
+bool chef::cancelorder(int a)
 {
-    int pos, flag = 0;
+    int pos, flag = 0,index = 0;
     fstream fs;
     fs.open("Orders.dat", ios::in | ios::binary | ios::out);
     fs.seekg(0);
@@ -206,7 +206,7 @@ bool chef::cancelorder()
     {
         pos = fs.tellg();
         fs.read((char*)&Chefs_Order, sizeof(Chefs_Order));
-        if (Chefs_Order.getOrderCode() == Working_Order_Code)
+        if (Chefs_Order.getOrderCode() == confirmed && index == a)
         {
             flag = 1;
             Chefs_Order.setstatus(canceled);
@@ -214,6 +214,7 @@ bool chef::cancelorder()
             fs.write((char*)&Chefs_Order, sizeof(Chefs_Order));
             break;
         }
+        index++;
     }
     if (flag == 1) return true;
     else return false;
@@ -221,4 +222,8 @@ bool chef::cancelorder()
 int chef::getTotalOrders()
 {
     return Total_Orders;
+}
+Order chef::getcurrOrder()
+{
+    return Chefs_Order;
 }

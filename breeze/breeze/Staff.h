@@ -12,6 +12,7 @@ public:
     Staff(int a);
     virtual bool setID(string) = 0;
     virtual bool setPass(string) = 0;
+    bool virtual check(string, string) = 0;
     void setsalary(double);
     char* getID();
     char* getPass();
