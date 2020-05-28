@@ -174,8 +174,6 @@ bool Manager::DeleteDeliveryBoy(string id)const
     int flag = 0;
     ifstream is("Delivery_Boy.dat", ios::binary);
     ofstream os("temp.dat", ios::out);
-    os.close();
-    os.open("temp.dat", ios::binary | ios::app);
     is.seekg(0);
     while (!is.eof())
     {
@@ -190,8 +188,10 @@ bool Manager::DeleteDeliveryBoy(string id)const
             os.write((char*)&temp, sizeof(temp));
         }
     }
+    is.close();
+    os.close();
     remove("Delivery_Boy.dat");
-    rename("temp.dat", "chef.dat");
+    rename("temp.dat", "Delivery_Boy.dat");
     if (flag == 1) return true;
     else return false;
 }

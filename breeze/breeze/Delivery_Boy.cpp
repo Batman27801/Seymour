@@ -91,7 +91,7 @@ bool Delivery_Boy::setPass(string p)
                 throw(1);
             }
         }
-        else if (f == 0);
+        else if (f != 0);
         {
 
             throw(1);
@@ -135,12 +135,9 @@ bool Delivery_Boy::deleteorder()
     ifstream is("Orders.dat", ios::binary);
     ofstream os("temp.dat", ios::out);
     os.close();
-    os.open("temp.dat", ios::binary, ios::app);
-
     is.seekg(0);
-    while (!is.eof())
+    while (is.read((char*)&Delivery_Order, sizeof(Delivery_Order)))
     {
-        is.read((char*)&Delivery_Order, sizeof(Delivery_Order));
         if (Delivery_Order.getOrderCode() == Working_Order_Code)
         {
             flag = 1;
@@ -152,6 +149,8 @@ bool Delivery_Boy::deleteorder()
             os.write((char*)&Delivery_Order, sizeof(Delivery_Order));
         }
     }
+    is.close();
+    os.close();
     remove("Orders.dat");
     rename("temp.dat", "Orders.dat");
     if (flag == 1) return true;
