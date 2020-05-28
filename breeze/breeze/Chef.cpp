@@ -90,7 +90,7 @@ bool chef::setPass(string p)
                 throw(1);
             }
         }
-        else if (f == 0);
+        else if (f != 0);
         {
 
             throw(1);
@@ -113,14 +113,18 @@ bool chef::addworkingorder()
     {
         pos = fs.tellg();
         fs.read((char*)&Chefs_Order, sizeof(Chefs_Order));
-        if (Chefs_Order.getstatus() == confirmed);
+        if (fs)
         {
-            flag = 1;
-            Working_Order_Code = Chefs_Order.getOrderCode();
-            Chefs_Order.setstatus(making);
-            fs.seekp(pos);
-            fs.write((char*)&Chefs_Order, sizeof(Chefs_Order));
-            break;
+            if (Chefs_Order.getstatus() == confirmed);
+            {
+                flag = 1;
+                Working_Order_Code = Chefs_Order.getOrderCode();
+                Chefs_Order.setstatus(making);
+                fs.seekp(pos);
+                fs.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+                break;
+            }
+
         }
     }
     fs.close();
