@@ -675,3 +675,344 @@ Italian With the Flavor fajita topped with a layering of Chicken .
 Total Billed Amount is: Rs 0
 
 X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asfafss
+Contact No: 00
+Address: sdfasasafds
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor fajita topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asfafss
+Contact No: 00
+Address: sdfasasafds
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor tikka topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: fdasfsdasd
+Contact No: 00
+Address: asdfasdfsda
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor fajita topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: fdasfsdasd
+Contact No: 00
+Address: asdfasdfsda
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Extra_Cheez .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: fdasdfsdf
+Contact No: 00
+Address: fsasfsdfasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor chilli delight topped with a layering of Extra_Cheez .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: fdasdfsdf
+Contact No: 00
+Address: fsasfsdfasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor BBQ buzz topped with a layering of Extra_Cheez .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: ADSADFD
+Contact No: 01234235125
+Address: asdfdsafdfsd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Sicilian With the Flavor tikka topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: ADSADFD
+Contact No: 01234235125
+Address: asdfdsafdfsd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor chilli delight topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: ADSADFD
+Contact No: 01234235125
+Address: asdfdsafdfsd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor The cheese topped with a layering of Extra_Cheez .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdfafas
+Contact No: 02112414123
+Address: asdfasdfg
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor fajita topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: sdfasfafs
+Contact No: 02412451345
+Address: xcbdfgag
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: fasffdsa
+Contact No: 00
+Address: dfsasdfsadf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor tikka topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: fasffdsa
+Contact No: 00
+Address: dfsasdfsadf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: adfasd
+Contact No: 01124234324
+Address: sdfasfassdf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Focacia With the Flavor The cheese topped with a layering of Extra_Cheez .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: adfasd
+Contact No: 01124234324
+Address: sdfasfassdf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Aasddf
+Contact No: 02341351234
+Address: asdfasfasffs
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor tikka topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Aasddf
+Contact No: 02341351234
+Address: asdfasfasffs
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor tikka topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Aasddf
+Contact No: 02341351234
+Address: asdfasfasffs
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdfss
+Contact No: 00
+Address: asdfsdafasf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor fajita topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdfss
+Contact No: 00
+Address: asdfsdafasf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stuffed With the Flavor BBQ buzz topped with a layering of Sausage .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: sdfasdfasd
+Contact No: 00
+Address: asdfasdfsdf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Newyork With the Flavor BBQ buzz topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: sdfasdfasd
+Contact No: 00
+Address: asdfasdfsdf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Newyork With the Flavor BBQ buzz topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: sdfasdfasd
+Contact No: 00
+Address: asdfasdfsdf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor BBQ buzz topped with a layering of Sausage .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asfasfsdf
+Contact No: 00
+Address: asdsfasdf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor tikka topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asfasfsdf
+Contact No: 00
+Address: asdsfasdf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: safasss
+Contact No: 00
+Address: avdfsdgdgsd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor tikka topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: safasss
+Contact No: 00
+Address: avdfsdgdgsd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asfasdfasd
+Contact No: 00
+Address: sdfsdasdfsf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor tikka topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asfasdfasd
+Contact No: 00
+Address: sdfsdasdfsf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: hlk
+Contact No: 00
+Address: sdfsdgfdf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor tikka topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: hlk
+Contact No: 00
+Address: sdfsdgfdf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X

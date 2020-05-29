@@ -6,10 +6,7 @@ class chef : public Staff
 {
     int Total_Orders;
     long int Working_Order_Code;
-   
-    void increaseTotalOrders();
-
-
+    bool updatechef();
 public:
     Order Chefs_Order;
     chef();
@@ -19,7 +16,7 @@ public:
     bool addworkingorder();
     long int getworkingorder();
     bool setorderready();
-    bool cancelorder(int);
+    bool cancelorder();
     int getTotalOrders();
     Order getcurrOrder();
 };
