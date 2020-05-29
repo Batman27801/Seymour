@@ -107,33 +107,39 @@ bool Delivery_Boy::setPass(string p)
 
 bool Delivery_Boy::addworkingorder()
 {
-    int pos, flag = 0;
-    fstream fs;
-    fs.open("Orders.dat", ios::in | ios::binary | ios::out);
-    fs.seekg(0);
-    while (!fs.eof())
-    {
-        pos = fs.tellg();
-        fs.read((char*)&Delivery_Order, sizeof(Delivery_Order));
-        if (Delivery_Order.getstatus() == ready_for_delivery)
+    int n=0, flag = 0,flag2=0;
+    ifstream is("Orders.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary);
+    is.seekg(0);
+    while (is.read((char*)&Delivery_Order, sizeof(Delivery_Order)))
+    {   
+        if (Delivery_Order.getstatus() == ready_for_delivery && n==0)
         {
-            Working_Order_Code = Delivery_Order.getOrderCode();
             flag = 1;
+            n++;
+            Working_Order_Code = Delivery_Order.getOrderCode();
             Delivery_Order.setstatus(delivering);
-            fs.seekp(pos);
-            fs.write((char*)&Delivery_Order, sizeof(Delivery_Order));
-            break;
+            
+            os.write((char*)&Delivery_Order, sizeof(Delivery_Order));
+        }
+        else
+        {
+            os.write((char*)&Delivery_Order, sizeof(Delivery_Order));
         }
     }
-    fs.close();
-    if (flag == 1) return true;
+    is.close();
+    os.close();
+    remove("Delivery_Boy.dat");
+    rename("temp.dat", "Delivery_Boy.dat");
+    flag2 = updateBoy();
+    if (flag == 1 && flag2==1) return true;
     else return false;
 }
 bool Delivery_Boy::deleteorder()
 {
-    int flag = 0;
+    int flag = 0,flag2=0;
     ifstream is("Orders.dat", ios::binary);
-    ofstream os("temp.dat", ios::out);
+    ofstream os("temp.dat", ios::binary);
     os.close();
     is.seekg(0);
     while (is.read((char*)&Delivery_Order, sizeof(Delivery_Order)))
@@ -141,7 +147,7 @@ bool Delivery_Boy::deleteorder()
         if (Delivery_Order.getOrderCode() == Working_Order_Code)
         {
             flag = 1;
-            increaseTotalOrders();
+            Total_Orders++;
             continue;
         }
         else
@@ -153,7 +159,8 @@ bool Delivery_Boy::deleteorder()
     os.close();
     remove("Orders.dat");
     rename("temp.dat", "Orders.dat");
-    if (flag == 1) return true;
+    flag2 = updateBoy();
+    if (flag == 1 && flag2 == 1) return true;
     else return false;
 }
 long int Delivery_Boy::getworkingorder()
@@ -177,27 +184,34 @@ bool Delivery_Boy::check(string id, string p)
     if (flag == 1) return true;
     else return false;
 }
-void Delivery_Boy::increaseTotalOrders()
-{
-    Delivery_Boy temp;
-    int pos;
-    fstream fs;
-    fs.open("Delivery_Boy.dat", ios::in | ios::binary | ios::out);
-    fs.seekg(0);
-    while (!fs.eof())
-    {
-        pos = fs.tellg();
-        fs.read((char*)&temp, sizeof(temp));
-        if (temp.getID() == this->Staff_ID)
-        {
-            temp.Total_Orders++;
-            fs.seekp(pos);
-            fs.write((char*)&temp, sizeof(temp));
-            break;
-        }
-    }
-}
+
 int Delivery_Boy::getTotalOrders()
 {
     return Total_Orders;
+}
+bool Delivery_Boy::updateBoy()
+{
+    int flag = 0;
+    Delivery_Boy temp;
+    ifstream is("Delivery_Boy.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary);
+    is.seekg(0);
+    while (is.read((char*)&temp, sizeof(temp)))
+    {
+        if (strcmp(temp.getID(), Staff_ID) == 0)
+        {
+            flag = 1;
+            os.write((char*)this, sizeof(*this));
+        }
+        else
+        {
+            os.write((char*)this, sizeof(*this));
+        }
+    }
+    is.close();
+    os.close();
+    remove("Delivery_Boy.dat");
+    rename("temp.dat", "Delivery_Boy.dat");
+    if (flag == 1) return true;
+    else return false;
 }

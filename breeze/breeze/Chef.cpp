@@ -119,7 +119,7 @@ bool chef::addworkingorder()
             n++;
             Working_Order_Code = Chefs_Order.getOrderCode();
             Chefs_Order.setstatus(making);
-            flag2 = updatechef();
+            
             os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
         }
         else
@@ -132,7 +132,7 @@ bool chef::addworkingorder()
     os.close();
     remove("Orders.dat");
     rename("temp.dat", "Orders.dat");
-    
+    flag2 = updatechef();
     if (flag1 == 1 && flag2==1) return true;
     else return false;
 }
@@ -158,7 +158,7 @@ bool chef::setorderready()
             Chefs_Order.setstatus(ready_for_delivery);
             Total_Orders++;
             Working_Order_Code = 0;
-            flag2 = updatechef();
+            
             os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
         }
         else
@@ -170,6 +170,7 @@ bool chef::setorderready()
     os.close();
     remove("Orders.dat");
     rename("temp.dat", "Orders.dat");
+    flag2 = updatechef();
     if (flag1 == 1 && flag2 == 1) return true;
     else return false;
 }
@@ -204,7 +205,7 @@ bool chef::cancelorder()
             flag1 = 1;
             Chefs_Order.setstatus(canceled);
             Working_Order_Code = 0;
-            flag2 = updatechef();
+            
             os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
         }
         else
@@ -216,6 +217,7 @@ bool chef::cancelorder()
     os.close();
     remove("Orders.dat");
     rename("temp.dat", "Orders.dat");
+    flag2 = updatechef();
     if (flag1 == 1 && flag2==1) return true;
     else return false;
 }
@@ -232,23 +234,23 @@ bool chef::updatechef()
     int flag = 0;
     chef temp;
     ifstream cheff("chef.dat", ios::binary);
-    ofstream outfile("temp.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary);
     cheff.seekg(0);
     while (cheff.read((char*)&temp, sizeof(temp)))
     {
         if (strcmp(Staff_ID, temp.getID()) == 0)
         {
             flag = 1;
-            outfile.write((char*)this, sizeof(*this));
+            os.write((char*)this, sizeof(*this));
             break;
         }
         else
         {
-            outfile.write((char*)&temp, sizeof(temp));
+            os.write((char*)&temp, sizeof(temp));
         }
     }
     cheff.close();
-    outfile.close();
+    os.close();
     remove("chef.dat");
     rename("temp.dat", "chef.dat");
     if (flag == 1) return true;

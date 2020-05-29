@@ -1016,3 +1016,47 @@ Stlouis With the Flavor chilli delight topped with a layering of Beef .
 Total Billed Amount is: Rs 0
 
 X----------------------------------------------------X
+X----------------------------------------------------X
+Name: aafsdsd
+Contact No: 00
+Address: agsgfgdfg
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor fajita topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: aafsdsd
+Contact No: 00
+Address: agsgfgdfg
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: sdfasfsd
+Contact No: 00
+Address: sdafasfsadf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Newyork With the Flavor BBQ buzz topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: sdfasfsd
+Contact No: 00
+Address: sdafasfsadf
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X

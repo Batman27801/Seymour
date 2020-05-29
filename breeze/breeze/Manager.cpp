@@ -57,49 +57,57 @@ bool Manager::check(string id, string p) const
 }
 bool Manager::updatesaleryofchef(string id,double s) const
 {
-    int pos,flag=0;
+    int flag = 0;
     chef temp;
-    fstream fs("chef.dat", ios::in|ios::binary|ios::out);
-    fs.seekg(0);
-    while (!fs.eof())
+    ifstream is("chef.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary);
+    is.seekg(0);
+    while (is.read((char*)&temp, sizeof(temp)))
     {
-        pos = fs.tellg();
-        fs.read((char*)&temp, sizeof(temp));
         if (temp.getID() == id)
         {
             flag = 1;
             temp.setsalary(s);
-            fs.seekp(pos);
-            fs.write((char*)&temp, sizeof(temp));
-            break;
+            os.write((char*)&temp, sizeof(temp));
+        }
+        else
+        {
+            os.write((char*)&temp, sizeof(temp));
         }
     }
-    fs.close();
+    is.close();
+    os.close();
+    remove("chef.dat");
+    rename("temp.dat", "chef.dat");
     if (flag == 1) return true;
-    else if(flag == 0) return false;
+    else return false;
 }
 bool Manager::updatesaleryofDB(string id, double s) const
 {
-    int pos, flag=0;
+    int flag=0;
     Delivery_Boy temp;
-    fstream fs;
-    fs.open("Delivery_Boy.dat", ios::in | ios::binary | ios::out);
-    fs.seekg(0);
-    while (!fs.eof())
+    ifstream is("Delivery_Boy.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary);
+    is.seekg(0);
+    while (is.read((char*)&temp, sizeof(temp)))
     {
-        pos = fs.tellg();
-        fs.read((char*)&temp, sizeof(temp));
         if (temp.getID() == id)
         {
+            flag = 1;
             temp.setsalary(s);
-            fs.seekp(pos);
-            fs.write((char*)&temp, sizeof(temp));
-            break;
+            os.write((char*)&temp, sizeof(temp));
+        }
+        else
+        {
+            os.write((char*)&temp, sizeof(temp));
         }
     }
-    fs.close();
+    is.close();
+    os.close();
+    remove("Delivery_Boy.dat");
+    rename("temp.dat", "Delivery_Boy.dat");
     if (flag == 1) return true;
-    else if (flag == 0) return false;
+    else return false;
 }
 int Manager::TotalOrders_Chef(string id) const
 {
@@ -138,9 +146,7 @@ bool Manager::DeleteChef(string id)const
     chef temp;
     int flag = 0;
     ifstream is("chef.dat", ios::binary);
-    ofstream os("temp.dat", ios::out);
-    os.close();
-    os.open("temp.dat", ios::binary | ios::app);
+    ofstream os("temp.dat", ios::binary);
     is.seekg(0);
     while (!is.eof())
     {
@@ -155,6 +161,8 @@ bool Manager::DeleteChef(string id)const
             os.write((char*)&temp, sizeof(temp));
         }
     }
+    is.close();
+    os.close();
     remove("chef.dat");
     rename("temp.dat", "chef.dat");
     if (flag == 1) return true;
@@ -165,7 +173,7 @@ bool Manager::DeleteDeliveryBoy(string id)const
     Delivery_Boy temp;
     int flag = 0;
     ifstream is("Delivery_Boy.dat", ios::binary);
-    ofstream os("temp.dat", ios::out);
+    ofstream os("temp.dat", ios::binary);
     is.seekg(0);
     while (!is.eof())
     {
