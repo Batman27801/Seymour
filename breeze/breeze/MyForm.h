@@ -969,6 +969,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->label8 = (gcnew System::Windows::Forms::Label());
             this->pendingorders = (gcnew System::Windows::Forms::ListBox());
             this->chefsalary = (gcnew System::Windows::Forms::Label());
+            this->chefordercount = (gcnew System::Windows::Forms::Label());
             this->chefusrenamelabel = (gcnew System::Windows::Forms::Label());
             this->Staaf_Main_Page = (gcnew System::Windows::Forms::TabPage());
             this->staffloginsubheading = (gcnew System::Windows::Forms::Label());
@@ -1012,7 +1013,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->cheffnamelabel = (gcnew System::Windows::Forms::Label());
             this->chefnamelabel = (gcnew System::Windows::Forms::Label());
             this->Addnewcheflabel = (gcnew System::Windows::Forms::Label());
-            this->chefordercount = (gcnew System::Windows::Forms::Label());
             this->tabControl1->SuspendLayout();
             this->MainMenu->SuspendLayout();
             this->UserLogin->SuspendLayout();
@@ -4834,11 +4834,11 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->detaillabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
                 | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->detaillabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->detaillabel->Location = System::Drawing::Point(173, 231);
+            this->detaillabel->Location = System::Drawing::Point(173, 221);
             this->detaillabel->Name = L"detaillabel";
-            this->detaillabel->Size = System::Drawing::Size(258, 30);
+            this->detaillabel->Size = System::Drawing::Size(303, 30);
             this->detaillabel->TabIndex = 12;
-            this->detaillabel->Text = L"Details of Current Order: ";
+            this->detaillabel->Text = L"Details of Top Pending Order: ";
             this->detaillabel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
             // label13
@@ -4899,7 +4899,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Flavorbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->Flavorbox->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->Flavorbox->Location = System::Drawing::Point(543, 271);
+            this->Flavorbox->Location = System::Drawing::Point(531, 271);
             this->Flavorbox->Name = L"Flavorbox";
             this->Flavorbox->Size = System::Drawing::Size(258, 154);
             this->Flavorbox->TabIndex = 6;
@@ -4922,23 +4922,23 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label8->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->label8->Location = System::Drawing::Point(373, 88);
+            this->label8->Location = System::Drawing::Point(310, 88);
             this->label8->Name = L"label8";
-            this->label8->Size = System::Drawing::Size(534, 30);
+            this->label8->Size = System::Drawing::Size(651, 30);
             this->label8->TabIndex = 4;
-            this->label8->Text = L"Please Select One of the Pending Orders to cook if you are Free.";
+            this->label8->Text = L"Following are the Pending Orders. You have to Cook the very first one Each time";
             this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
             // pendingorders
             // 
-            this->pendingorders->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->pendingorders->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->pendingorders->ItemHeight = 18;
+            this->pendingorders->ItemHeight = 20;
             this->pendingorders->Location = System::Drawing::Point(414, 121);
             this->pendingorders->Name = L"pendingorders";
-            this->pendingorders->Size = System::Drawing::Size(450, 94);
+            this->pendingorders->SelectionMode = System::Windows::Forms::SelectionMode::None;
+            this->pendingorders->Size = System::Drawing::Size(450, 84);
             this->pendingorders->TabIndex = 3;
-            this->pendingorders->SelectedValueChanged += gcnew System::EventHandler(this, &MyForm::pendingorders_SelectedValueChanged);
             // 
             // chefsalary
             // 
@@ -4951,6 +4951,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->chefsalary->TabIndex = 2;
             this->chefsalary->Text = L"Salary: ";
             this->chefsalary->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            // 
+            // chefordercount
+            // 
+            this->chefordercount->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->chefordercount->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->chefordercount->Location = System::Drawing::Point(496, 48);
+            this->chefordercount->Name = L"chefordercount";
+            this->chefordercount->Size = System::Drawing::Size(258, 30);
+            this->chefordercount->TabIndex = 1;
+            this->chefordercount->Text = L"Cooked Orders:";
+            this->chefordercount->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
             // chefusrenamelabel
             // 
@@ -5478,18 +5490,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Addnewcheflabel->Text = L"New Chef";
             this->Addnewcheflabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
-            // chefordercount
-            // 
-            this->chefordercount->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->chefordercount->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->chefordercount->Location = System::Drawing::Point(496, 48);
-            this->chefordercount->Name = L"chefordercount";
-            this->chefordercount->Size = System::Drawing::Size(258, 30);
-            this->chefordercount->TabIndex = 1;
-            this->chefordercount->Text = L"Cooked Orders:";
-            this->chefordercount->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-            // 
             // MyForm
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -5664,10 +5664,6 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 }
     System::Void addcheffinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void backtomainmenu_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void Loginaschef_Click(System::Object^ sender, System::EventArgs^ e) {
-    tabControl1->SelectedTab = Chefmain;
-}
-	System::Void pendingorders_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e);
     System::Void Chefmain_Enter(System::Object^ sender, System::EventArgs^ e);
     System::Void staffloginbutton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void cookdonebox_Click(System::Object^ sender, System::EventArgs^ e); 

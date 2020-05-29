@@ -105,29 +105,40 @@ bool chef::setPass(string p)
 }
 bool chef::addworkingorder()
 {
-    int pos, flag = 0;
+    int pos=0, flag = 0;
     fstream fs;
     fs.open("Orders.dat", ios::in | ios::binary | ios::out);
     fs.seekg(0);
-    while (!fs.eof())
+    pos = (int)fs.tellg();
+    while (fs.read((char*)&Chefs_Order, sizeof(Chefs_Order)))
     {
-        pos = fs.tellg();
-        fs.read((char*)&Chefs_Order, sizeof(Chefs_Order));
-        if (fs)
+        if (Chefs_Order.getstatus() == confirmed);
         {
-            if (Chefs_Order.getstatus() == confirmed);
-            {
-                flag = 1;
+                flag = -1;
                 Working_Order_Code = Chefs_Order.getOrderCode();
                 Chefs_Order.setstatus(making);
                 fs.seekp(pos);
                 fs.write((char*)&Chefs_Order, sizeof(Chefs_Order));
                 break;
-            }
-
         }
+        pos = (int)fs.tellg();
     }
     fs.close();
+    chef temp;
+    fstream cheff;
+    cheff.open("chef.dat", ios::in | ios::binary | ios::out);
+    cheff.seekg(0);
+    pos = cheff.tellg();
+    while (cheff.read((char*)&temp, sizeof(temp)))
+    {
+        if (temp.getID() == Staff_ID)
+        {
+            fs.seekp(pos);
+            fs.write((char*)&temp, sizeof(temp));
+            break;
+        }
+        pos = cheff.tellg();
+    }
     if (flag == 1) return true;
     else return false;
 }

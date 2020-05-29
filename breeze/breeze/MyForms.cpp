@@ -2178,6 +2178,7 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			FlavourCheckOutTextBox->Text = "";
 			CrustCheckOutTextBox->Text = "";*/
 			acc->setname(backtostring(NameCheckOutText->Text));
+			order->setsize(size);
 			acc->setcontact(long long int(System::Convert::ToInt64(PhoneNoTextBox->Text)));
 			acc->setaddress(backtostring(AddressCheckOutTextBox->Text));
 			order->setloc(backtostring(AddressCheckOutTextBox->Text));
@@ -2271,44 +2272,17 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 void breeze::MyForm::backtomainmenu_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Managermain;
 }
-void breeze::MyForm::pendingorders_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	
-	Crustbox->Text = "";
-	Flavorbox->Text = "";
-	Toppingbox->Text = "";
-	int index = pendingorders->SelectedIndex;
-	int pos = 0;
-	ifstream ord("Orders.dat", ios::binary);
-	Order temp;
-	for (; ord.read((char*)&temp, sizeof(temp));)
-	{
-		
-
-		if (temp.getstatus() == confirmed && pos == index)
-		{
-			for (int i = 0; i < temp.getpizzas(); i++)
-			{
-				Crustbox->Text = Crustbox->Text + "Crust " + (i + 1) + " " + gotoString((temp.getcrusts() + i * 30)) + Environment::NewLine;
-				Flavorbox->Text = Flavorbox->Text + "Flavor " + (i + 1) + " " + gotoString((temp.getflavs() + i * 30)) + Environment::NewLine;
-				Toppingbox->Text = Toppingbox->Text + "Topping " + (i + 1) + " " + gotoString((temp.gettoppings() + i * 30)) + Environment::NewLine;
-			}
-		}
-		else if (temp.getstatus() != confirmed)
-			pos--;
-		pos++;
-	}
-
-}
 void breeze::MyForm::Chefmain_Enter(System::Object^ sender, System::EventArgs^ e) {
 	
 	pendingorders->Items->Clear();
 	chef* cheff = new chef;
+	int i = 0;
 	cheff->check(emp->getID(), emp->getPass());
 	chefusrenamelabel->Text = "Logged in as: " + gotoString(cheff->getID()) + Environment::NewLine + gotoString(cheff->getname());
 	chefordercount->Text = "Cooked Orders: " + Convert::ToString(cheff->getTotalOrders());
 	//chefsalary->Text = "Salary: Rs " + Convert::ToString(cheff->getsalary());
 	chefsalary->Text = Convert::ToString(cheff->Chefs_Order.ReturnBill());
-	if (cheff->getcurrOrder().ReturnBill() == 0)
+	if (cheff->Chefs_Order.ReturnBill() == 0)
 	{
 		ifstream ord("Orders.dat", ios::binary);
 		Order temp;
@@ -2317,12 +2291,33 @@ void breeze::MyForm::Chefmain_Enter(System::Object^ sender, System::EventArgs^ e
 			if (temp.getstatus() == confirmed)
 			{
 				pendingorders->Items->Add("Order # " + temp.getOrderCode() + ". " + temp.getpizzas() + " Pizza(s)");
+				i++;
+			}
+		}
+		Crustbox->Text = "";
+		Flavorbox->Text = "";
+		Toppingbox->Text = "";
+		ord.clear();
+		ord.seekg(0);
+		for (; ord.read((char*)&temp, sizeof(temp));)
+		{
+			if (temp.getstatus() == confirmed)
+			{
+				int* size = new int[temp.getpizzas()];
+				size = temp.getsize();
+				for (int i = 0; i < temp.getpizzas(); i++)
+				{
+					Crustbox->Text = Crustbox->Text + "Crust " + (i + 1) + " " + gotoString((temp.getcrusts() + i * 30)) + " Size: " + Convert::ToString(size[i]) + Environment::NewLine;
+					Flavorbox->Text = Flavorbox->Text + "Flavor " + (i + 1) + " " + gotoString((temp.getflavs() + i * 30)) + Environment::NewLine;
+					Toppingbox->Text = Toppingbox->Text + "Topping " + (i + 1) + " " + gotoString((temp.gettoppings() + i * 30)) + Environment::NewLine;
+				}
+				break;
 			}
 		}
 		ord.close();
 		cookdonebox->Text = "Start Cooking!";
 	}
-	/*else if (cheff->getcurrOrder().ReturnBill() != 0)
+	else if (cheff->getcurrOrder().ReturnBill() != 0)
 	{
 		pendingorders->Items->Add("Order # " + cheff->getcurrOrder().getOrderCode() + ". " + cheff->getcurrOrder().getpizzas() + " Pizza(s)");
 		pendingorders->Enabled = false;
@@ -2334,7 +2329,7 @@ void breeze::MyForm::Chefmain_Enter(System::Object^ sender, System::EventArgs^ e
 		}
 		cookdonebox->Text = "Order Cooked!";
 
-	}*/
+	}
 	delete cheff;
 }
 void breeze::MyForm::staffloginbutton_Click(System::Object^ sender, System::EventArgs^ e) {

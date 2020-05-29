@@ -26,17 +26,9 @@ void Manager::addchef(chef C) const
 {
 
     ofstream os("chef.dat", ios::binary | ios::app);
-    if (os.is_open())
-    {
-        os.write((char*)&C, sizeof(C));
-        os.close();
-    }
-    else
-    {
-        os.open("chef.dat", ios::out | ios::binary);
-        os.write((char*)&C, sizeof(C));
-        os.close();
-    }
+    os.write((char*)&C, sizeof(C));
+    os.close();
+  
 }
 
 double Manager::gettotalsales() const 
