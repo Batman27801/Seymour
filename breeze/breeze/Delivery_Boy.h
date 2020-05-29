@@ -7,7 +7,8 @@ class Delivery_Boy : public Staff
 {
     int Total_Orders;
     long int Working_Order_Code;
-    void increaseTotalOrders();
+    
+    bool updateBoy();
 public:
     Order Delivery_Order;
     Delivery_Boy();

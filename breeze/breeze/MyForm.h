@@ -564,6 +564,52 @@ private: System::Windows::Forms::Label^ label11;
 private: System::Windows::Forms::Label^ label14;
 private: System::Windows::Forms::Label^ staffloginheading;
 private: System::Windows::Forms::Label^ chefordercount;
+private: System::Windows::Forms::Button^ AddDBButton;
+private: System::Windows::Forms::TabPage^ AddnewDB;
+private: System::Windows::Forms::Label^ AddnewDBHeading;
+private: System::Windows::Forms::TextBox^ DBnametextbox;
+
+private: System::Windows::Forms::Label^ DBsalerylable;
+private: System::Windows::Forms::Label^ DBcheflabel;
+private: System::Windows::Forms::Label^ DBagelabel;
+private: System::Windows::Forms::Label^ DBfnamelabel;
+private: System::Windows::Forms::Label^ DBnamelabel;
+private: System::Windows::Forms::TextBox^ DBsalerytextbox;
+
+private: System::Windows::Forms::TextBox^ DBagetextbox;
+
+private: System::Windows::Forms::TextBox^ DBfnametextbox;
+private: System::Windows::Forms::Label^ DBsaleryguide;
+private: System::Windows::Forms::Label^ DBageguide;
+
+
+private: System::Windows::Forms::Label^ DBfnameguide;
+private: System::Windows::Forms::Label^ DBnameguide;
+private: System::Windows::Forms::TextBox^ DBpasstextbox;
+private: System::Windows::Forms::TextBox^ DBidtextbox;
+private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::Label^ DBidlabel;
+private: System::Windows::Forms::ComboBox^ DBgenderbox;
+private: System::Windows::Forms::Button^ addDBfinalbutton;
+private: System::Windows::Forms::Button^ backtomainbutton1;
+private: System::Windows::Forms::Label^ DBaddnotice;
+private: System::Windows::Forms::Label^ DBpassnotice;
+private: System::Windows::Forms::Label^ DBidnotice;
+private: System::Windows::Forms::Label^ label15;
+private: System::Windows::Forms::Label^ label9;
+private: System::Windows::Forms::Button^ Managerlogout;
+private: System::Windows::Forms::Label^ DBdeleteidnotice;
+private: System::Windows::Forms::Label^ DBdeletedbox;
+private: System::Windows::Forms::Label^ chefdeleteidnotice;
+private: System::Windows::Forms::Button^ DBdeletefinalbutton;
+private: System::Windows::Forms::TextBox^ DBdeletetextbox;
+private: System::Windows::Forms::Button^ DeleteDBbutton;
+private: System::Windows::Forms::Label^ chefdeletedbox;
+private: System::Windows::Forms::Button^ chefdeletefinalbutton;
+private: System::Windows::Forms::TextBox^ chefdeletetextbox;
+private: System::Windows::Forms::Button^ deletechefbutton;
+
+
 
 
 
@@ -983,6 +1029,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->staffloginheading = (gcnew System::Windows::Forms::Label());
             this->BackToFrontpage = (gcnew System::Windows::Forms::Button());
             this->Managermain = (gcnew System::Windows::Forms::TabPage());
+            this->DBdeleteidnotice = (gcnew System::Windows::Forms::Label());
+            this->DBdeletedbox = (gcnew System::Windows::Forms::Label());
+            this->chefdeleteidnotice = (gcnew System::Windows::Forms::Label());
+            this->DBdeletefinalbutton = (gcnew System::Windows::Forms::Button());
+            this->DBdeletetextbox = (gcnew System::Windows::Forms::TextBox());
+            this->DeleteDBbutton = (gcnew System::Windows::Forms::Button());
+            this->chefdeletedbox = (gcnew System::Windows::Forms::Label());
+            this->chefdeletefinalbutton = (gcnew System::Windows::Forms::Button());
+            this->chefdeletetextbox = (gcnew System::Windows::Forms::TextBox());
+            this->deletechefbutton = (gcnew System::Windows::Forms::Button());
+            this->Managerlogout = (gcnew System::Windows::Forms::Button());
+            this->AddDBButton = (gcnew System::Windows::Forms::Button());
             this->Add_Chef_Button = (gcnew System::Windows::Forms::Button());
             this->Managermainheading = (gcnew System::Windows::Forms::Label());
             this->Addnewchef = (gcnew System::Windows::Forms::TabPage());
@@ -1013,6 +1071,33 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->cheffnamelabel = (gcnew System::Windows::Forms::Label());
             this->chefnamelabel = (gcnew System::Windows::Forms::Label());
             this->Addnewcheflabel = (gcnew System::Windows::Forms::Label());
+            this->AddnewDB = (gcnew System::Windows::Forms::TabPage());
+            this->addDBfinalbutton = (gcnew System::Windows::Forms::Button());
+            this->backtomainbutton1 = (gcnew System::Windows::Forms::Button());
+            this->DBaddnotice = (gcnew System::Windows::Forms::Label());
+            this->DBpassnotice = (gcnew System::Windows::Forms::Label());
+            this->DBidnotice = (gcnew System::Windows::Forms::Label());
+            this->label15 = (gcnew System::Windows::Forms::Label());
+            this->label9 = (gcnew System::Windows::Forms::Label());
+            this->DBsaleryguide = (gcnew System::Windows::Forms::Label());
+            this->DBageguide = (gcnew System::Windows::Forms::Label());
+            this->DBfnameguide = (gcnew System::Windows::Forms::Label());
+            this->DBnameguide = (gcnew System::Windows::Forms::Label());
+            this->DBpasstextbox = (gcnew System::Windows::Forms::TextBox());
+            this->DBidtextbox = (gcnew System::Windows::Forms::TextBox());
+            this->label2 = (gcnew System::Windows::Forms::Label());
+            this->DBidlabel = (gcnew System::Windows::Forms::Label());
+            this->DBgenderbox = (gcnew System::Windows::Forms::ComboBox());
+            this->DBsalerytextbox = (gcnew System::Windows::Forms::TextBox());
+            this->DBagetextbox = (gcnew System::Windows::Forms::TextBox());
+            this->DBfnametextbox = (gcnew System::Windows::Forms::TextBox());
+            this->DBnametextbox = (gcnew System::Windows::Forms::TextBox());
+            this->DBsalerylable = (gcnew System::Windows::Forms::Label());
+            this->DBcheflabel = (gcnew System::Windows::Forms::Label());
+            this->DBagelabel = (gcnew System::Windows::Forms::Label());
+            this->DBfnamelabel = (gcnew System::Windows::Forms::Label());
+            this->DBnamelabel = (gcnew System::Windows::Forms::Label());
+            this->AddnewDBHeading = (gcnew System::Windows::Forms::Label());
             this->tabControl1->SuspendLayout();
             this->MainMenu->SuspendLayout();
             this->UserLogin->SuspendLayout();
@@ -1041,6 +1126,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Staaf_Main_Page->SuspendLayout();
             this->Managermain->SuspendLayout();
             this->Addnewchef->SuspendLayout();
+            this->AddnewDB->SuspendLayout();
             this->SuspendLayout();
             // 
             // tabControl1
@@ -1059,6 +1145,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->tabControl1->Controls->Add(this->Staaf_Main_Page);
             this->tabControl1->Controls->Add(this->Managermain);
             this->tabControl1->Controls->Add(this->Addnewchef);
+            this->tabControl1->Controls->Add(this->AddnewDB);
             this->tabControl1->Location = System::Drawing::Point(-130, -32);
             this->tabControl1->Name = L"tabControl1";
             this->tabControl1->SelectedIndex = 0;
@@ -5113,6 +5200,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // Managermain
             // 
             this->Managermain->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Managermain.BackgroundImage")));
+            this->Managermain->Controls->Add(this->DBdeleteidnotice);
+            this->Managermain->Controls->Add(this->DBdeletedbox);
+            this->Managermain->Controls->Add(this->chefdeleteidnotice);
+            this->Managermain->Controls->Add(this->DBdeletefinalbutton);
+            this->Managermain->Controls->Add(this->DBdeletetextbox);
+            this->Managermain->Controls->Add(this->DeleteDBbutton);
+            this->Managermain->Controls->Add(this->chefdeletedbox);
+            this->Managermain->Controls->Add(this->chefdeletefinalbutton);
+            this->Managermain->Controls->Add(this->chefdeletetextbox);
+            this->Managermain->Controls->Add(this->deletechefbutton);
+            this->Managermain->Controls->Add(this->Managerlogout);
+            this->Managermain->Controls->Add(this->AddDBButton);
             this->Managermain->Controls->Add(this->Add_Chef_Button);
             this->Managermain->Controls->Add(this->Managermainheading);
             this->Managermain->Location = System::Drawing::Point(4, 22);
@@ -5122,13 +5221,161 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Managermain->Text = L"tabPage1";
             this->Managermain->UseVisualStyleBackColor = true;
             // 
+            // DBdeleteidnotice
+            // 
+            this->DBdeleteidnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBdeleteidnotice->ForeColor = System::Drawing::Color::Red;
+            this->DBdeleteidnotice->Location = System::Drawing::Point(508, 463);
+            this->DBdeleteidnotice->Name = L"DBdeleteidnotice";
+            this->DBdeleteidnotice->Size = System::Drawing::Size(142, 23);
+            this->DBdeleteidnotice->TabIndex = 15;
+            this->DBdeleteidnotice->Text = L"Record Not Found";
+            this->DBdeleteidnotice->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->DBdeleteidnotice->Visible = false;
+            // 
+            // DBdeletedbox
+            // 
+            this->DBdeletedbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBdeletedbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DBdeletedbox->Location = System::Drawing::Point(314, 471);
+            this->DBdeletedbox->Name = L"DBdeletedbox";
+            this->DBdeletedbox->Size = System::Drawing::Size(125, 23);
+            this->DBdeletedbox->TabIndex = 14;
+            this->DBdeletedbox->Text = L"Record Deleted";
+            this->DBdeletedbox->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->DBdeletedbox->Visible = false;
+            // 
+            // chefdeleteidnotice
+            // 
+            this->chefdeleteidnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->chefdeleteidnotice->ForeColor = System::Drawing::Color::Red;
+            this->chefdeleteidnotice->Location = System::Drawing::Point(507, 372);
+            this->chefdeleteidnotice->Name = L"chefdeleteidnotice";
+            this->chefdeleteidnotice->Size = System::Drawing::Size(143, 23);
+            this->chefdeleteidnotice->TabIndex = 13;
+            this->chefdeleteidnotice->Text = L"Record Not found";
+            this->chefdeleteidnotice->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->chefdeleteidnotice->Visible = false;
+            // 
+            // DBdeletefinalbutton
+            // 
+            this->DBdeletefinalbutton->BackColor = System::Drawing::Color::Red;
+            this->DBdeletefinalbutton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->DBdeletefinalbutton->Location = System::Drawing::Point(676, 438);
+            this->DBdeletefinalbutton->Name = L"DBdeletefinalbutton";
+            this->DBdeletefinalbutton->Size = System::Drawing::Size(75, 23);
+            this->DBdeletefinalbutton->TabIndex = 12;
+            this->DBdeletefinalbutton->Text = L"Delete";
+            this->DBdeletefinalbutton->UseVisualStyleBackColor = false;
+            this->DBdeletefinalbutton->Visible = false;
+            this->DBdeletefinalbutton->Click += gcnew System::EventHandler(this, &MyForm::DBdeletefinalbutton_Click);
+            // 
+            // DBdeletetextbox
+            // 
+            this->DBdeletetextbox->Location = System::Drawing::Point(509, 440);
+            this->DBdeletetextbox->Name = L"DBdeletetextbox";
+            this->DBdeletetextbox->Size = System::Drawing::Size(141, 20);
+            this->DBdeletetextbox->TabIndex = 11;
+            this->DBdeletetextbox->Visible = false;
+            // 
+            // DeleteDBbutton
+            // 
+            this->DeleteDBbutton->BackColor = System::Drawing::Color::Maroon;
+            this->DeleteDBbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DeleteDBbutton->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DeleteDBbutton->Location = System::Drawing::Point(277, 430);
+            this->DeleteDBbutton->Name = L"DeleteDBbutton";
+            this->DeleteDBbutton->Size = System::Drawing::Size(200, 38);
+            this->DeleteDBbutton->TabIndex = 10;
+            this->DeleteDBbutton->Text = L"Delete Delivery_Boy";
+            this->DeleteDBbutton->UseVisualStyleBackColor = false;
+            this->DeleteDBbutton->Click += gcnew System::EventHandler(this, &MyForm::DeleteDBbutton_Click);
+            // 
+            // chefdeletedbox
+            // 
+            this->chefdeletedbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->chefdeletedbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->chefdeletedbox->Location = System::Drawing::Point(314, 380);
+            this->chefdeletedbox->Name = L"chefdeletedbox";
+            this->chefdeletedbox->Size = System::Drawing::Size(125, 23);
+            this->chefdeletedbox->TabIndex = 9;
+            this->chefdeletedbox->Text = L"Record Deleted";
+            this->chefdeletedbox->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->chefdeletedbox->Visible = false;
+            // 
+            // chefdeletefinalbutton
+            // 
+            this->chefdeletefinalbutton->BackColor = System::Drawing::Color::Red;
+            this->chefdeletefinalbutton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->chefdeletefinalbutton->Location = System::Drawing::Point(676, 349);
+            this->chefdeletefinalbutton->Name = L"chefdeletefinalbutton";
+            this->chefdeletefinalbutton->Size = System::Drawing::Size(75, 23);
+            this->chefdeletefinalbutton->TabIndex = 8;
+            this->chefdeletefinalbutton->Text = L"Delete";
+            this->chefdeletefinalbutton->UseVisualStyleBackColor = false;
+            this->chefdeletefinalbutton->Visible = false;
+            this->chefdeletefinalbutton->Click += gcnew System::EventHandler(this, &MyForm::chefdeletefinalbutton_Click);
+            // 
+            // chefdeletetextbox
+            // 
+            this->chefdeletetextbox->Location = System::Drawing::Point(509, 349);
+            this->chefdeletetextbox->Name = L"chefdeletetextbox";
+            this->chefdeletetextbox->Size = System::Drawing::Size(141, 20);
+            this->chefdeletetextbox->TabIndex = 7;
+            this->chefdeletetextbox->Visible = false;
+            // 
+            // deletechefbutton
+            // 
+            this->deletechefbutton->BackColor = System::Drawing::Color::Maroon;
+            this->deletechefbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->deletechefbutton->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->deletechefbutton->Location = System::Drawing::Point(277, 339);
+            this->deletechefbutton->Name = L"deletechefbutton";
+            this->deletechefbutton->Size = System::Drawing::Size(200, 38);
+            this->deletechefbutton->TabIndex = 6;
+            this->deletechefbutton->Text = L"Delete Chef";
+            this->deletechefbutton->UseVisualStyleBackColor = false;
+            this->deletechefbutton->Click += gcnew System::EventHandler(this, &MyForm::deletechefbutton_Click);
+            // 
+            // Managerlogout
+            // 
+            this->Managerlogout->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->Managerlogout->Location = System::Drawing::Point(152, 34);
+            this->Managerlogout->Name = L"Managerlogout";
+            this->Managerlogout->Size = System::Drawing::Size(153, 56);
+            this->Managerlogout->TabIndex = 5;
+            this->Managerlogout->Text = L"Log Out";
+            this->Managerlogout->UseVisualStyleBackColor = true;
+            this->Managerlogout->Click += gcnew System::EventHandler(this, &MyForm::Managerlogout_Click);
+            // 
+            // AddDBButton
+            // 
+            this->AddDBButton->BackColor = System::Drawing::Color::Maroon;
+            this->AddDBButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->AddDBButton->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->AddDBButton->Location = System::Drawing::Point(277, 251);
+            this->AddDBButton->Name = L"AddDBButton";
+            this->AddDBButton->Size = System::Drawing::Size(200, 38);
+            this->AddDBButton->TabIndex = 4;
+            this->AddDBButton->Text = L"ADD New Delivery_Boy";
+            this->AddDBButton->UseVisualStyleBackColor = false;
+            this->AddDBButton->Click += gcnew System::EventHandler(this, &MyForm::AddDBButton_Click);
+            // 
             // Add_Chef_Button
             // 
             this->Add_Chef_Button->BackColor = System::Drawing::Color::Maroon;
             this->Add_Chef_Button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->Add_Chef_Button->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->Add_Chef_Button->Location = System::Drawing::Point(364, 227);
+            this->Add_Chef_Button->Location = System::Drawing::Point(277, 164);
             this->Add_Chef_Button->Name = L"Add_Chef_Button";
             this->Add_Chef_Button->Size = System::Drawing::Size(200, 38);
             this->Add_Chef_Button->TabIndex = 3;
@@ -5490,6 +5737,338 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Addnewcheflabel->Text = L"New Chef";
             this->Addnewcheflabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
+            // AddnewDB
+            // 
+            this->AddnewDB->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AddnewDB.BackgroundImage")));
+            this->AddnewDB->Controls->Add(this->addDBfinalbutton);
+            this->AddnewDB->Controls->Add(this->backtomainbutton1);
+            this->AddnewDB->Controls->Add(this->DBaddnotice);
+            this->AddnewDB->Controls->Add(this->DBpassnotice);
+            this->AddnewDB->Controls->Add(this->DBidnotice);
+            this->AddnewDB->Controls->Add(this->label15);
+            this->AddnewDB->Controls->Add(this->label9);
+            this->AddnewDB->Controls->Add(this->DBsaleryguide);
+            this->AddnewDB->Controls->Add(this->DBageguide);
+            this->AddnewDB->Controls->Add(this->DBfnameguide);
+            this->AddnewDB->Controls->Add(this->DBnameguide);
+            this->AddnewDB->Controls->Add(this->DBpasstextbox);
+            this->AddnewDB->Controls->Add(this->DBidtextbox);
+            this->AddnewDB->Controls->Add(this->label2);
+            this->AddnewDB->Controls->Add(this->DBidlabel);
+            this->AddnewDB->Controls->Add(this->DBgenderbox);
+            this->AddnewDB->Controls->Add(this->DBsalerytextbox);
+            this->AddnewDB->Controls->Add(this->DBagetextbox);
+            this->AddnewDB->Controls->Add(this->DBfnametextbox);
+            this->AddnewDB->Controls->Add(this->DBnametextbox);
+            this->AddnewDB->Controls->Add(this->DBsalerylable);
+            this->AddnewDB->Controls->Add(this->DBcheflabel);
+            this->AddnewDB->Controls->Add(this->DBagelabel);
+            this->AddnewDB->Controls->Add(this->DBfnamelabel);
+            this->AddnewDB->Controls->Add(this->DBnamelabel);
+            this->AddnewDB->Controls->Add(this->AddnewDBHeading);
+            this->AddnewDB->Location = System::Drawing::Point(4, 22);
+            this->AddnewDB->Name = L"AddnewDB";
+            this->AddnewDB->Size = System::Drawing::Size(1210, 576);
+            this->AddnewDB->TabIndex = 15;
+            this->AddnewDB->Text = L"tabPage1";
+            this->AddnewDB->UseVisualStyleBackColor = true;
+            this->AddnewDB->Click += gcnew System::EventHandler(this, &MyForm::AddnewDB_Click);
+            // 
+            // addDBfinalbutton
+            // 
+            this->addDBfinalbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->addDBfinalbutton->Location = System::Drawing::Point(948, 34);
+            this->addDBfinalbutton->Name = L"addDBfinalbutton";
+            this->addDBfinalbutton->Size = System::Drawing::Size(139, 36);
+            this->addDBfinalbutton->TabIndex = 32;
+            this->addDBfinalbutton->Text = L"ADD";
+            this->addDBfinalbutton->UseVisualStyleBackColor = true;
+            this->addDBfinalbutton->Click += gcnew System::EventHandler(this, &MyForm::addDBfinalbutton_Click);
+            // 
+            // backtomainbutton1
+            // 
+            this->backtomainbutton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->backtomainbutton1->Location = System::Drawing::Point(169, 22);
+            this->backtomainbutton1->Name = L"backtomainbutton1";
+            this->backtomainbutton1->Size = System::Drawing::Size(139, 36);
+            this->backtomainbutton1->TabIndex = 31;
+            this->backtomainbutton1->Text = L"Back";
+            this->backtomainbutton1->UseVisualStyleBackColor = true;
+            this->backtomainbutton1->Click += gcnew System::EventHandler(this, &MyForm::backtomainbutton1_Click);
+            // 
+            // DBaddnotice
+            // 
+            this->DBaddnotice->Font = (gcnew System::Drawing::Font(L"Bell MT", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBaddnotice->ForeColor = System::Drawing::Color::Red;
+            this->DBaddnotice->Location = System::Drawing::Point(841, 89);
+            this->DBaddnotice->Name = L"DBaddnotice";
+            this->DBaddnotice->Size = System::Drawing::Size(359, 24);
+            this->DBaddnotice->TabIndex = 30;
+            this->DBaddnotice->Text = L"Please Enter Data According To The Guidelines";
+            this->DBaddnotice->Visible = false;
+            // 
+            // DBpassnotice
+            // 
+            this->DBpassnotice->Font = (gcnew System::Drawing::Font(L"Bell MT", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBpassnotice->ForeColor = System::Drawing::Color::Red;
+            this->DBpassnotice->Location = System::Drawing::Point(1050, 481);
+            this->DBpassnotice->Name = L"DBpassnotice";
+            this->DBpassnotice->Size = System::Drawing::Size(135, 24);
+            this->DBpassnotice->TabIndex = 29;
+            this->DBpassnotice->Text = L"Wrong Format/Exist";
+            this->DBpassnotice->Visible = false;
+            // 
+            // DBidnotice
+            // 
+            this->DBidnotice->Font = (gcnew System::Drawing::Font(L"Bell MT", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBidnotice->ForeColor = System::Drawing::Color::Red;
+            this->DBidnotice->Location = System::Drawing::Point(1050, 422);
+            this->DBidnotice->Name = L"DBidnotice";
+            this->DBidnotice->Size = System::Drawing::Size(135, 24);
+            this->DBidnotice->TabIndex = 28;
+            this->DBidnotice->Text = L"Wrong Format/Exist";
+            this->DBidnotice->Visible = false;
+            // 
+            // label15
+            // 
+            this->label15->Font = (gcnew System::Drawing::Font(L"Bell MT", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+                static_cast<System::Int32>(static_cast<System::Byte>(128)));
+            this->label15->Location = System::Drawing::Point(842, 506);
+            this->label15->Name = L"label15";
+            this->label15->Size = System::Drawing::Size(209, 24);
+            this->label15->TabIndex = 27;
+            this->label15->Text = L"Must Be Atleast 8 Charecters";
+            // 
+            // label9
+            // 
+            this->label9->Font = (gcnew System::Drawing::Font(L"Bell MT", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+                static_cast<System::Int32>(static_cast<System::Byte>(128)));
+            this->label9->Location = System::Drawing::Point(842, 447);
+            this->label9->Name = L"label9";
+            this->label9->Size = System::Drawing::Size(209, 24);
+            this->label9->TabIndex = 26;
+            this->label9->Text = L"Must Be In Format ( C_XXXXX....)";
+            // 
+            // DBsaleryguide
+            // 
+            this->DBsaleryguide->Font = (gcnew System::Drawing::Font(L"Bell MT", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBsaleryguide->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+                static_cast<System::Int32>(static_cast<System::Byte>(128)));
+            this->DBsaleryguide->Location = System::Drawing::Point(964, 292);
+            this->DBsaleryguide->Name = L"DBsaleryguide";
+            this->DBsaleryguide->Size = System::Drawing::Size(161, 24);
+            this->DBsaleryguide->TabIndex = 25;
+            this->DBsaleryguide->Text = L"Only Numeric Value";
+            this->DBsaleryguide->Click += gcnew System::EventHandler(this, &MyForm::label15_Click_1);
+            // 
+            // DBageguide
+            // 
+            this->DBageguide->Font = (gcnew System::Drawing::Font(L"Bell MT", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBageguide->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+                static_cast<System::Int32>(static_cast<System::Byte>(128)));
+            this->DBageguide->Location = System::Drawing::Point(492, 400);
+            this->DBageguide->Name = L"DBageguide";
+            this->DBageguide->Size = System::Drawing::Size(161, 24);
+            this->DBageguide->TabIndex = 24;
+            this->DBageguide->Text = L"Only Numeric Value";
+            // 
+            // DBfnameguide
+            // 
+            this->DBfnameguide->Font = (gcnew System::Drawing::Font(L"Bell MT", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBfnameguide->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+                static_cast<System::Int32>(static_cast<System::Byte>(128)));
+            this->DBfnameguide->Location = System::Drawing::Point(492, 292);
+            this->DBfnameguide->Name = L"DBfnameguide";
+            this->DBfnameguide->Size = System::Drawing::Size(209, 24);
+            this->DBfnameguide->TabIndex = 23;
+            this->DBfnameguide->Text = L"No Numeric Value";
+            // 
+            // DBnameguide
+            // 
+            this->DBnameguide->Font = (gcnew System::Drawing::Font(L"Bell MT", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBnameguide->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+                static_cast<System::Int32>(static_cast<System::Byte>(128)));
+            this->DBnameguide->Location = System::Drawing::Point(492, 195);
+            this->DBnameguide->Name = L"DBnameguide";
+            this->DBnameguide->Size = System::Drawing::Size(209, 24);
+            this->DBnameguide->TabIndex = 22;
+            this->DBnameguide->Text = L"No Numeric Value";
+            // 
+            // DBpasstextbox
+            // 
+            this->DBpasstextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBpasstextbox->Location = System::Drawing::Point(845, 481);
+            this->DBpasstextbox->Name = L"DBpasstextbox";
+            this->DBpasstextbox->Size = System::Drawing::Size(199, 22);
+            this->DBpasstextbox->TabIndex = 21;
+            this->DBpasstextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            // 
+            // DBidtextbox
+            // 
+            this->DBidtextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBidtextbox->Location = System::Drawing::Point(845, 422);
+            this->DBidtextbox->Name = L"DBidtextbox";
+            this->DBidtextbox->Size = System::Drawing::Size(199, 22);
+            this->DBidtextbox->TabIndex = 20;
+            this->DBidtextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            // 
+            // label2
+            // 
+            this->label2->Font = (gcnew System::Drawing::Font(L"Bell MT", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label2->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->label2->Location = System::Drawing::Point(732, 479);
+            this->label2->Name = L"label2";
+            this->label2->Size = System::Drawing::Size(99, 24);
+            this->label2->TabIndex = 19;
+            this->label2->Text = L"Password: ";
+            // 
+            // DBidlabel
+            // 
+            this->DBidlabel->Font = (gcnew System::Drawing::Font(L"Bell MT", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBidlabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DBidlabel->Location = System::Drawing::Point(723, 420);
+            this->DBidlabel->Name = L"DBidlabel";
+            this->DBidlabel->Size = System::Drawing::Size(85, 24);
+            this->DBidlabel->TabIndex = 18;
+            this->DBidlabel->Text = L"ID: ";
+            // 
+            // DBgenderbox
+            // 
+            this->DBgenderbox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(3) { L"Male", L"Female", L"Other" });
+            this->DBgenderbox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+            this->DBgenderbox->FormattingEnabled = true;
+            this->DBgenderbox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Male", L"Female", L"Other" });
+            this->DBgenderbox->Location = System::Drawing::Point(948, 175);
+            this->DBgenderbox->Name = L"DBgenderbox";
+            this->DBgenderbox->Size = System::Drawing::Size(121, 21);
+            this->DBgenderbox->TabIndex = 17;
+            // 
+            // DBsalerytextbox
+            // 
+            this->DBsalerytextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBsalerytextbox->Location = System::Drawing::Point(948, 267);
+            this->DBsalerytextbox->Name = L"DBsalerytextbox";
+            this->DBsalerytextbox->Size = System::Drawing::Size(199, 22);
+            this->DBsalerytextbox->TabIndex = 15;
+            this->DBsalerytextbox->Text = L"0";
+            this->DBsalerytextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            // 
+            // DBagetextbox
+            // 
+            this->DBagetextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBagetextbox->Location = System::Drawing::Point(479, 375);
+            this->DBagetextbox->Name = L"DBagetextbox";
+            this->DBagetextbox->Size = System::Drawing::Size(199, 22);
+            this->DBagetextbox->TabIndex = 14;
+            this->DBagetextbox->Text = L"0";
+            this->DBagetextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            // 
+            // DBfnametextbox
+            // 
+            this->DBfnametextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBfnametextbox->Location = System::Drawing::Point(479, 267);
+            this->DBfnametextbox->Name = L"DBfnametextbox";
+            this->DBfnametextbox->Size = System::Drawing::Size(199, 22);
+            this->DBfnametextbox->TabIndex = 13;
+            this->DBfnametextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            // 
+            // DBnametextbox
+            // 
+            this->DBnametextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBnametextbox->Location = System::Drawing::Point(479, 170);
+            this->DBnametextbox->Name = L"DBnametextbox";
+            this->DBnametextbox->Size = System::Drawing::Size(199, 22);
+            this->DBnametextbox->TabIndex = 12;
+            this->DBnametextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            // 
+            // DBsalerylable
+            // 
+            this->DBsalerylable->Font = (gcnew System::Drawing::Font(L"Bell MT", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBsalerylable->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DBsalerylable->Location = System::Drawing::Point(812, 255);
+            this->DBsalerylable->Name = L"DBsalerylable";
+            this->DBsalerylable->Size = System::Drawing::Size(120, 39);
+            this->DBsalerylable->TabIndex = 9;
+            this->DBsalerylable->Text = L"Salery:";
+            // 
+            // DBcheflabel
+            // 
+            this->DBcheflabel->Font = (gcnew System::Drawing::Font(L"Bell MT", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBcheflabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DBcheflabel->Location = System::Drawing::Point(812, 170);
+            this->DBcheflabel->Name = L"DBcheflabel";
+            this->DBcheflabel->Size = System::Drawing::Size(120, 39);
+            this->DBcheflabel->TabIndex = 8;
+            this->DBcheflabel->Text = L"Gender:";
+            // 
+            // DBagelabel
+            // 
+            this->DBagelabel->Font = (gcnew System::Drawing::Font(L"Bell MT", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBagelabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DBagelabel->Location = System::Drawing::Point(307, 372);
+            this->DBagelabel->Name = L"DBagelabel";
+            this->DBagelabel->Size = System::Drawing::Size(145, 39);
+            this->DBagelabel->TabIndex = 7;
+            this->DBagelabel->Text = L"Age:";
+            // 
+            // DBfnamelabel
+            // 
+            this->DBfnamelabel->Font = (gcnew System::Drawing::Font(L"Bell MT", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBfnamelabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DBfnamelabel->Location = System::Drawing::Point(307, 264);
+            this->DBfnamelabel->Name = L"DBfnamelabel";
+            this->DBfnamelabel->Size = System::Drawing::Size(159, 39);
+            this->DBfnamelabel->TabIndex = 6;
+            this->DBfnamelabel->Text = L"Father\'s Name:";
+            // 
+            // DBnamelabel
+            // 
+            this->DBnamelabel->Font = (gcnew System::Drawing::Font(L"Bell MT", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBnamelabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DBnamelabel->Location = System::Drawing::Point(307, 167);
+            this->DBnamelabel->Name = L"DBnamelabel";
+            this->DBnamelabel->Size = System::Drawing::Size(145, 39);
+            this->DBnamelabel->TabIndex = 5;
+            this->DBnamelabel->Text = L"Name:";
+            // 
+            // AddnewDBHeading
+            // 
+            this->AddnewDBHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->AddnewDBHeading->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->AddnewDBHeading->Location = System::Drawing::Point(543, 34);
+            this->AddnewDBHeading->Name = L"AddnewDBHeading";
+            this->AddnewDBHeading->Size = System::Drawing::Size(288, 94);
+            this->AddnewDBHeading->TabIndex = 4;
+            this->AddnewDBHeading->Text = L"New Delivery_Boy";
+            this->AddnewDBHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            // 
             // MyForm
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -5539,8 +6118,11 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Staaf_Main_Page->ResumeLayout(false);
             this->Staaf_Main_Page->PerformLayout();
             this->Managermain->ResumeLayout(false);
+            this->Managermain->PerformLayout();
             this->Addnewchef->ResumeLayout(false);
             this->Addnewchef->PerformLayout();
+            this->AddnewDB->ResumeLayout(false);
+            this->AddnewDB->PerformLayout();
             this->ResumeLayout(false);
 
         }
@@ -5667,5 +6249,15 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
     System::Void Chefmain_Enter(System::Object^ sender, System::EventArgs^ e);
     System::Void staffloginbutton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void cookdonebox_Click(System::Object^ sender, System::EventArgs^ e); 
+    System::Void AddDBButton_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void AddnewDB_Click(System::Object^ sender, System::EventArgs^ e) {}
+private: System::Void label15_Click_1(System::Object^ sender, System::EventArgs^ e) {}
+    System::Void backtomainbutton1_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void addDBfinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void Managerlogout_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void deletechefbutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void chefdeletefinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void DeleteDBbutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void DBdeletefinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

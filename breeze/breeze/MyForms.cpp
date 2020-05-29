@@ -2208,6 +2208,15 @@ void breeze::MyForm::BackToStaafMain_Click(System::Object^ sender, System::Event
 }
 void breeze::MyForm::Add_Chef_Button_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Addnewchef;
+	chefdeletedbox->Visible = false;
+	chefdeletetextbox->Visible = false;
+	chefdeleteidnotice->Visible = false;
+	chefdeletefinalbutton->Visible = false;
+	DBdeletedbox->Visible = false;
+	DBdeletetextbox->Visible = false;
+	DBdeleteidnotice->Visible = false;
+	DBdeletefinalbutton->Visible = false;
+
 }
 void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	chef* C = new chef;
@@ -2376,5 +2385,128 @@ void breeze::MyForm::cookdonebox_Click(System::Object^ sender, System::EventArgs
 	else if (cheff->getcurrOrder().ReturnBill() != 0)
 	{
 		cheff->setorderready();
+	}
+}
+void breeze::MyForm::AddDBButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = AddnewDB;
+	chefdeletedbox->Visible = false;
+	chefdeletetextbox->Visible = false;
+	chefdeleteidnotice->Visible = false;
+	chefdeletefinalbutton->Visible = false;
+	DBdeletedbox->Visible = false;
+	DBdeletetextbox->Visible = false;
+	DBdeleteidnotice->Visible = false;
+	DBdeletefinalbutton->Visible = false;
+}
+void breeze::MyForm::backtomainbutton1_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = Managermain;
+}
+void breeze::MyForm::addDBfinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	Delivery_Boy* DB=new Delivery_Boy;
+	int f = 1;
+
+	if (!DB->setname(backtostring(DBnametextbox->Text)))
+	{
+		DBnametextbox->Text = Convert::ToString("");
+		f--;
+	}
+
+	if (!DB->setF_Name(backtostring(DBfnametextbox->Text)))
+	{
+		DBfnametextbox->Text = Convert::ToString("");
+		f--;
+	}
+
+	if (!DB->setage(Convert::ToInt32(DBagetextbox->Text)))
+	{
+		DBagetextbox->Text = "0";
+		f--;
+	}
+
+	if (backtostring(DBgenderbox->Text) == "Male")
+	{
+		DB->setGender(Male);
+	}
+	else if (backtostring(DBgenderbox->Text) == "Female")
+	{
+		DB->setGender(Female);
+	}
+	else if (backtostring(DBgenderbox->Text) == "Other")
+	{
+		DB->setGender(Other);
+	}
+
+	DB->setsalary(Convert::ToDouble(DBsalerytextbox->Text));
+	if (!DB->setID(backtostring(DBidtextbox->Text)))
+	{
+		DBidtextbox->Text = "";
+		DBidnotice->Visible = true;
+		f--;
+	}
+	if (!DB->setPass(backtostring(DBpasstextbox->Text)))
+	{
+		DBpasstextbox->Text = "";
+		DBpassnotice->Visible = true;
+		f--;
+	}
+
+	if (f == 1)
+	{
+		manager->addDeliveryBoy(*DB);
+		Addchefnotice->Visible = false;
+		tabControl1->SelectedTab = Managermain;
+	}
+	else
+	{
+		DBaddnotice->Visible = true;
+	}
+}
+void breeze::MyForm::Managerlogout_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = Staaf_Main_Page;
+}
+void breeze::MyForm::deletechefbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	chefdeletetextbox->Visible = true;
+	chefdeletefinalbutton->Visible = true;
+
+	DBdeletetextbox->Visible = false;
+	DBdeletefinalbutton->Visible = false;
+	DBdeletedbox->Visible = false;
+	DBdeleteidnotice->Visible = false;
+}
+void breeze::MyForm::chefdeletefinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!manager->DeleteChef(backtostring(chefdeletetextbox->Text)))
+	{
+		chefdeleteidnotice->Visible=true;
+		chefdeletedbox->Visible=false;
+	}
+	else
+	{
+		chefdeletedbox->Visible = true;
+		chefdeleteidnotice->Visible = false;
+		chefdeletetextbox->Visible = false;
+		chefdeletefinalbutton->Visible = false;
+	}
+}
+void breeze::MyForm::DeleteDBbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	DBdeletetextbox->Visible = true;
+	DBdeletefinalbutton->Visible = true;
+
+	chefdeletetextbox->Visible = false;
+	chefdeletefinalbutton->Visible = false;
+	chefdeletedbox->Visible = false;
+	chefdeleteidnotice->Visible = false;
+}
+void breeze::MyForm::DBdeletefinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!manager->DeleteDeliveryBoy(backtostring(DBdeletetextbox->Text)))
+	{
+		DBdeleteidnotice->Visible = true;
+		DBdeletedbox->Visible = false;
+	}
+	else
+	{
+		DBdeletedbox->Visible = true;
+		DBdeleteidnotice->Visible = false;
+		DBdeletetextbox->Visible = false;
+		DBdeletefinalbutton->Visible = false;
 	}
 }
