@@ -105,41 +105,35 @@ bool chef::setPass(string p)
 }
 bool chef::addworkingorder()
 {
-    int pos=0, flag = 0;
-    fstream fs;
-    fs.open("Orders.dat", ios::in | ios::binary | ios::out);
-    fs.seekg(0);
-    pos = (int)fs.tellg();
-    while (fs.read((char*)&Chefs_Order, sizeof(Chefs_Order)))
+    int n = 0, flag1 = 0, flag2 = 0;
+    ifstream is("Orders.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary);
+    is.seekg(0);
+
+    //pos = (int)fs.tellg();
+    while (is.read((char*)&Chefs_Order, sizeof(Chefs_Order)))
     {
-        if (Chefs_Order.getstatus() == confirmed);
+        if (Chefs_Order.getstatus() == confirmed && n==0)
         {
-                flag = -1;
-                Working_Order_Code = Chefs_Order.getOrderCode();
-                Chefs_Order.setstatus(making);
-                fs.seekp(pos);
-                fs.write((char*)&Chefs_Order, sizeof(Chefs_Order));
-                break;
+            flag1 = 1;
+            n++;
+            Working_Order_Code = Chefs_Order.getOrderCode();
+            Chefs_Order.setstatus(making);
+            flag2 = updatechef();
+            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
         }
-        pos = (int)fs.tellg();
-    }
-    fs.close();
-    chef temp;
-    fstream cheff;
-    cheff.open("chef.dat", ios::in | ios::binary | ios::out);
-    cheff.seekg(0);
-    pos = cheff.tellg();
-    while (cheff.read((char*)&temp, sizeof(temp)))
-    {
-        if (temp.getID() == Staff_ID)
+        else
         {
-            fs.seekp(pos);
-            fs.write((char*)&temp, sizeof(temp));
-            break;
+            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
         }
-        pos = cheff.tellg();
+        //pos = (int)fs.tellg();
     }
-    if (flag == 1) return true;
+    is.close();
+    os.close();
+    remove("Orders.dat");
+    rename("temp.dat", "Orders.dat");
+    
+    if (flag1 == 1 && flag2==1) return true;
     else return false;
 }
 
@@ -150,27 +144,33 @@ long int chef::getworkingorder()
 
 bool chef::setorderready()
 {
-    int pos, flag = 0;
-    fstream fs;
-    fs.open("Orders.dat", ios::in | ios::binary | ios::out);
-    fs.seekg(0);
-    while (!fs.eof())
-    {
-        pos = fs.tellg();
-        fs.read((char*)&Chefs_Order, sizeof(Chefs_Order));
-        if (Chefs_Order.getOrderCode() == Working_Order_Code)
+    int n = 0, flag1 = 0, flag2 = 0;
+    ifstream is("Orders.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary);
+    is.seekg(0);
+
+    while (is.read((char*)&Chefs_Order, sizeof(Chefs_Order)))
+    {        
+        if (Chefs_Order.getOrderCode() == Working_Order_Code && n==0)
         {
-            flag = 1;
+            flag1 = 1;
+            n++;
             Chefs_Order.setstatus(ready_for_delivery);
+            Total_Orders++;
             Working_Order_Code = 0;
-            fs.seekp(pos);
-            fs.write((char*)&Chefs_Order, sizeof(Chefs_Order));
-            increaseTotalOrders();
-            break;
+            flag2 = updatechef();
+            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+        }
+        else
+        {
+            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
         }
     }
-    fs.close();
-    if (flag == 1) return true;
+    is.close();
+    os.close();
+    remove("Orders.dat");
+    rename("temp.dat", "Orders.dat");
+    if (flag1 == 1 && flag2 == 1) return true;
     else return false;
 }
 bool chef::check(string id, string p)
@@ -190,48 +190,33 @@ bool chef::check(string id, string p)
     if (flag == 1) return true;
     else return false;
 }
+bool chef::cancelorder()
+{
+    int flag1 = 0,flag2=0;
+    ifstream is("Orders.dat", ios::binary);
+    ofstream os("temp.dat", ios::binary);
+    is.seekg(0);
 
-void chef::increaseTotalOrders()
-{
-    chef temp;
-    int pos;
-    fstream fs;
-    fs.open("chef.dat", ios::in | ios::binary | ios::out);
-    fs.seekg(0);
-    while (!fs.eof())
+    while (is.read((char*)&Chefs_Order, sizeof(Chefs_Order)))
     {
-        pos = fs.tellg();
-        fs.read((char*)&temp, sizeof(temp));
-        if (temp.getID() == Staff_ID)
+        if (Chefs_Order.getOrderCode() == Working_Order_Code)
         {
-            temp.Total_Orders++;
-            fs.seekp(pos);
-            fs.write((char*)&temp, sizeof(temp));
-            break;
-        }
-    }
-}
-bool chef::cancelorder(int a)
-{
-    int pos, flag = 0,index = 0;
-    fstream fs;
-    fs.open("Orders.dat", ios::in | ios::binary | ios::out);
-    fs.seekg(0);
-    while (!fs.eof())
-    {
-        pos = fs.tellg();
-        fs.read((char*)&Chefs_Order, sizeof(Chefs_Order));
-        if (Chefs_Order.getOrderCode() == confirmed && index == a)
-        {
-            flag = 1;
+            flag1 = 1;
             Chefs_Order.setstatus(canceled);
-            fs.seekp(pos);
-            fs.write((char*)&Chefs_Order, sizeof(Chefs_Order));
-            break;
+            Working_Order_Code = 0;
+            flag2 = updatechef();
+            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
         }
-        index++;
+        else
+        {
+            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+        }
     }
-    if (flag == 1) return true;
+    is.close();
+    os.close();
+    remove("Orders.dat");
+    rename("temp.dat", "Orders.dat");
+    if (flag1 == 1 && flag2==1) return true;
     else return false;
 }
 int chef::getTotalOrders()
@@ -241,4 +226,31 @@ int chef::getTotalOrders()
 Order chef::getcurrOrder()
 {
     return Chefs_Order;
+}
+bool chef::updatechef()
+{
+    int flag = 0;
+    chef temp;
+    ifstream cheff("chef.dat", ios::binary);
+    ofstream outfile("temp.dat", ios::binary);
+    cheff.seekg(0);
+    while (cheff.read((char*)&temp, sizeof(temp)))
+    {
+        if (strcmp(Staff_ID, temp.getID()) == 0)
+        {
+            flag = 1;
+            outfile.write((char*)this, sizeof(*this));
+            break;
+        }
+        else
+        {
+            outfile.write((char*)&temp, sizeof(temp));
+        }
+    }
+    cheff.close();
+    outfile.close();
+    remove("chef.dat");
+    rename("temp.dat", "chef.dat");
+    if (flag == 1) return true;
+    else return false;
 }
