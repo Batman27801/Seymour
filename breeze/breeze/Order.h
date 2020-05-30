@@ -22,6 +22,7 @@ public:
     void PlaceOrder(pizza *pizza,int pizzaamount);
     void FileOrder();
     void operator =(const Order& obj);
+    void operator =(int);
     void operator -(const double DiscAmount);
     void setOrderCode(long int OrderCode);
     void setstatus(enum status);

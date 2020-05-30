@@ -1,7 +1,5 @@
- #include "Chef.h"
+#include "Chef.h"
 #include <fstream>
-#include <string.h>
-
 chef::chef() :Total_Orders(0)
 {
     salary = 25000;
@@ -13,7 +11,7 @@ bool chef::setID(string id)
     try
     {
         chef C;
-        int f = 0, comp;
+        int f = 0;
         ifstream is("chef.dat", ios::binary);
         is.seekg(0);
         bool empty = (is.get(), is.eof());
@@ -51,7 +49,7 @@ bool chef::setID(string id)
     }
     catch (...)
     {
-        strcpy(Staff_ID, "");
+        strcpy_s(Staff_ID, "");
         return false;
     }
 }
@@ -61,7 +59,7 @@ bool chef::setPass(string p)
     try
     {
         chef C;
-        int f = 0, size = p.size();
+        int f = 0, size = (int)p.size();
         ifstream is("chef.dat", ios::binary);
         is.seekg(0);
         bool empty = (is.get(), is.eof());
@@ -82,7 +80,7 @@ bool chef::setPass(string p)
         {
             if (size >= 8)
             {
-                strcpy(Staff_Password, p.c_str());
+                strcpy_s(Staff_Password, p.c_str());
                 return true;
             }
             else
@@ -90,7 +88,7 @@ bool chef::setPass(string p)
                 throw(1);
             }
         }
-        else if (f != 0);
+        else
         {
 
             throw(1);
@@ -99,7 +97,7 @@ bool chef::setPass(string p)
     }
     catch (...)
     {
-        strcpy(Staff_Password, "");
+        strcpy_s(Staff_Password, "");
         return false;
     }
 }
@@ -160,7 +158,7 @@ bool chef::setorderready()
             temp.setstatus(ready_for_delivery);
             Total_Orders++;
             Working_Order_Code = 0;
-            Chefs_Order = temp;
+            Chefs_Order = 0;
             os.write((char*)&temp, sizeof(temp));
         }
         else
@@ -208,7 +206,7 @@ bool chef::cancelorder()
             flag1 = 1;
             temp.setstatus(canceled);
             Working_Order_Code = 0;
-            Chefs_Order = temp;
+            Chefs_Order = 0;
             os.write((char*)&temp, sizeof(temp));
         }
         else

@@ -5,6 +5,7 @@ using namespace std;
 Order::Order()
 {
 	int i;
+	no_of_pizzas = 0;
 	bill = 0;
 	for (i = 0; i < 5; i++)
 	{
@@ -79,6 +80,23 @@ void Order::operator=(const Order& obj)
 		this->size[i] = obj.size[i];
 	}
 	strcpy_s(this->deliveryloc, obj.deliveryloc);
+}
+void Order::operator =(int a)
+{
+	this->bill = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		strcpy_s(FLAVOURS[i], "");
+		strcpy_s(CRUSTS[i], "");
+		strcpy_s(TOPPINGS[i], "");
+	}
+	this->OrderCode = 0;
+	this->no_of_pizzas = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		this->size[i] = 0;
+	}
+	strcpy_s(this->deliveryloc, "");
 }
 void Order::operator-(const double DiscAmount)
 {

@@ -536,14 +536,16 @@ private: System::Windows::Forms::TabPage^ Chefmain;
 private: System::Windows::Forms::Label^ chefsalary;
 
 private: System::Windows::Forms::Label^ chefusrenamelabel;
-private: System::Windows::Forms::Label^ label8;
+private: System::Windows::Forms::Label^ cheflabelorders;
+
 private: System::Windows::Forms::Label^ Toppingbox;
 
 private: System::Windows::Forms::Label^ Flavorbox;
 
 private: System::Windows::Forms::Label^ Crustbox;
 private: System::Windows::Forms::Label^ detaillabel;
-private: System::Windows::Forms::Label^ label13;
+private: System::Windows::Forms::Label^ cancelorderlabl;
+
 private: System::Windows::Forms::Button^ cheflogout;
 
 private: System::Windows::Forms::Button^ cookdonebox;
@@ -608,6 +610,10 @@ private: System::Windows::Forms::Label^ chefdeletedbox;
 private: System::Windows::Forms::Button^ chefdeletefinalbutton;
 private: System::Windows::Forms::TextBox^ chefdeletetextbox;
 private: System::Windows::Forms::Button^ deletechefbutton;
+private: System::Windows::Forms::Button^ backtomain;
+private: System::Windows::Forms::Button^ Ordertrackingbutton;
+private: System::Windows::Forms::Label^ tracklabel;
+
 
 
 
@@ -727,6 +733,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->subtitle = (gcnew System::Windows::Forms::Label());
             this->title = (gcnew System::Windows::Forms::Label());
             this->UserLogin = (gcnew System::Windows::Forms::TabPage());
+            this->backtomain = (gcnew System::Windows::Forms::Button());
             this->incorrect = (gcnew System::Windows::Forms::Label());
             this->label3 = (gcnew System::Windows::Forms::Label());
             this->Signup = (gcnew System::Windows::Forms::Button());
@@ -1005,14 +1012,14 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->NameLabelCheckout = (gcnew System::Windows::Forms::Label());
             this->Chefmain = (gcnew System::Windows::Forms::TabPage());
             this->detaillabel = (gcnew System::Windows::Forms::Label());
-            this->label13 = (gcnew System::Windows::Forms::Label());
+            this->cancelorderlabl = (gcnew System::Windows::Forms::Label());
             this->cheflogout = (gcnew System::Windows::Forms::Button());
             this->cookdonebox = (gcnew System::Windows::Forms::Button());
             this->cancelorderbox = (gcnew System::Windows::Forms::Button());
             this->Toppingbox = (gcnew System::Windows::Forms::Label());
             this->Flavorbox = (gcnew System::Windows::Forms::Label());
             this->Crustbox = (gcnew System::Windows::Forms::Label());
-            this->label8 = (gcnew System::Windows::Forms::Label());
+            this->cheflabelorders = (gcnew System::Windows::Forms::Label());
             this->pendingorders = (gcnew System::Windows::Forms::ListBox());
             this->chefsalary = (gcnew System::Windows::Forms::Label());
             this->chefordercount = (gcnew System::Windows::Forms::Label());
@@ -1098,6 +1105,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->DBfnamelabel = (gcnew System::Windows::Forms::Label());
             this->DBnamelabel = (gcnew System::Windows::Forms::Label());
             this->AddnewDBHeading = (gcnew System::Windows::Forms::Label());
+            this->tracklabel = (gcnew System::Windows::Forms::Label());
+            this->Ordertrackingbutton = (gcnew System::Windows::Forms::Button());
             this->tabControl1->SuspendLayout();
             this->MainMenu->SuspendLayout();
             this->UserLogin->SuspendLayout();
@@ -1247,6 +1256,9 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // UserLogin
             // 
             this->UserLogin->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"UserLogin.BackgroundImage")));
+            this->UserLogin->Controls->Add(this->Ordertrackingbutton);
+            this->UserLogin->Controls->Add(this->tracklabel);
+            this->UserLogin->Controls->Add(this->backtomain);
             this->UserLogin->Controls->Add(this->incorrect);
             this->UserLogin->Controls->Add(this->label3);
             this->UserLogin->Controls->Add(this->Signup);
@@ -1269,6 +1281,18 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->UserLogin->TabIndex = 2;
             this->UserLogin->Text = L"tabPage1";
             this->UserLogin->UseVisualStyleBackColor = true;
+            // 
+            // backtomain
+            // 
+            this->backtomain->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->backtomain->Location = System::Drawing::Point(126, 19);
+            this->backtomain->Name = L"backtomain";
+            this->backtomain->Size = System::Drawing::Size(104, 52);
+            this->backtomain->TabIndex = 17;
+            this->backtomain->Text = L"<---- Back";
+            this->backtomain->UseVisualStyleBackColor = true;
+            this->backtomain->Click += gcnew System::EventHandler(this, &MyForm::backtomain_Click);
             // 
             // incorrect
             // 
@@ -1404,7 +1428,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->GuesetOrderButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->GuesetOrderButton->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-            this->GuesetOrderButton->Location = System::Drawing::Point(266, 437);
+            this->GuesetOrderButton->Location = System::Drawing::Point(261, 359);
             this->GuesetOrderButton->Name = L"GuesetOrderButton";
             this->GuesetOrderButton->Size = System::Drawing::Size(214, 75);
             this->GuesetOrderButton->TabIndex = 5;
@@ -1417,7 +1441,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->GuestDescp->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->GuestDescp->ForeColor = System::Drawing::Color::White;
-            this->GuestDescp->Location = System::Drawing::Point(183, 245);
+            this->GuestDescp->Location = System::Drawing::Point(183, 184);
             this->GuestDescp->Name = L"GuestDescp";
             this->GuestDescp->Size = System::Drawing::Size(382, 163);
             this->GuestDescp->TabIndex = 4;
@@ -1429,9 +1453,9 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->GuestHeading->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->GuestHeading->ForeColor = System::Drawing::Color::White;
-            this->GuestHeading->Location = System::Drawing::Point(206, 157);
+            this->GuestHeading->Location = System::Drawing::Point(223, 120);
             this->GuestHeading->Name = L"GuestHeading";
-            this->GuestHeading->Size = System::Drawing::Size(330, 67);
+            this->GuestHeading->Size = System::Drawing::Size(294, 67);
             this->GuestHeading->TabIndex = 3;
             this->GuestHeading->Text = L"GUEST ORDERING";
             this->GuestHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -1454,9 +1478,9 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->UserHeading->Font = (gcnew System::Drawing::Font(L"Algerian", 30, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->UserHeading->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-            this->UserHeading->Location = System::Drawing::Point(325, 19);
+            this->UserHeading->Location = System::Drawing::Point(480, 19);
             this->UserHeading->Name = L"UserHeading";
-            this->UserHeading->Size = System::Drawing::Size(664, 52);
+            this->UserHeading->Size = System::Drawing::Size(392, 52);
             this->UserHeading->TabIndex = 0;
             this->UserHeading->Text = L"CUSTOMER PORTAL\r\n";
             this->UserHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -4750,10 +4774,11 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->CardNumberCheckOutTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->CardNumberCheckOutTextBox->Location = System::Drawing::Point(360, 510);
+            this->CardNumberCheckOutTextBox->Location = System::Drawing::Point(368, 510);
             this->CardNumberCheckOutTextBox->Name = L"CardNumberCheckOutTextBox";
             this->CardNumberCheckOutTextBox->Size = System::Drawing::Size(184, 20);
             this->CardNumberCheckOutTextBox->TabIndex = 13;
+            this->CardNumberCheckOutTextBox->Visible = false;
             // 
             // CardNumberCheckOutLabel
             // 
@@ -4777,7 +4802,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
                 L"MasterCard", L"Visa", L"UnionPay",
                     L"PayPak"
             });
-            this->CardCheckOutComboBox->Location = System::Drawing::Point(360, 448);
+            this->CardCheckOutComboBox->Location = System::Drawing::Point(368, 448);
             this->CardCheckOutComboBox->Name = L"CardCheckOutComboBox";
             this->CardCheckOutComboBox->Size = System::Drawing::Size(121, 21);
             this->CardCheckOutComboBox->TabIndex = 11;
@@ -4790,7 +4815,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CardProviderCheckOutLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
             this->CardProviderCheckOutLabel->Location = System::Drawing::Point(128, 440);
             this->CardProviderCheckOutLabel->Name = L"CardProviderCheckOutLabel";
-            this->CardProviderCheckOutLabel->Size = System::Drawing::Size(272, 80);
+            this->CardProviderCheckOutLabel->Size = System::Drawing::Size(234, 42);
             this->CardProviderCheckOutLabel->TabIndex = 10;
             this->CardProviderCheckOutLabel->Text = L"CARD PROVIDER:";
             this->CardProviderCheckOutLabel->Visible = false;
@@ -4901,14 +4926,14 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Chefmain->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Chefmain.BackgroundImage")));
             this->Chefmain->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
             this->Chefmain->Controls->Add(this->detaillabel);
-            this->Chefmain->Controls->Add(this->label13);
+            this->Chefmain->Controls->Add(this->cancelorderlabl);
             this->Chefmain->Controls->Add(this->cheflogout);
             this->Chefmain->Controls->Add(this->cookdonebox);
             this->Chefmain->Controls->Add(this->cancelorderbox);
             this->Chefmain->Controls->Add(this->Toppingbox);
             this->Chefmain->Controls->Add(this->Flavorbox);
             this->Chefmain->Controls->Add(this->Crustbox);
-            this->Chefmain->Controls->Add(this->label8);
+            this->Chefmain->Controls->Add(this->cheflabelorders);
             this->Chefmain->Controls->Add(this->pendingorders);
             this->Chefmain->Controls->Add(this->chefsalary);
             this->Chefmain->Controls->Add(this->chefordercount);
@@ -4933,17 +4958,17 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->detaillabel->Text = L"Details of Top Pending Order: ";
             this->detaillabel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
-            // label13
+            // cancelorderlabl
             // 
-            this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->cancelorderlabl->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label13->ForeColor = System::Drawing::Color::Red;
-            this->label13->Location = System::Drawing::Point(173, 519);
-            this->label13->Name = L"label13";
-            this->label13->Size = System::Drawing::Size(397, 30);
-            this->label13->TabIndex = 11;
-            this->label13->Text = L"Cancel only if there is shortage of Ingredients!";
-            this->label13->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            this->cancelorderlabl->ForeColor = System::Drawing::Color::Red;
+            this->cancelorderlabl->Location = System::Drawing::Point(173, 519);
+            this->cancelorderlabl->Name = L"cancelorderlabl";
+            this->cancelorderlabl->Size = System::Drawing::Size(397, 30);
+            this->cancelorderlabl->TabIndex = 11;
+            this->cancelorderlabl->Text = L"Cancel only if there is shortage of Ingredients!";
+            this->cancelorderlabl->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
             // cheflogout
             // 
@@ -4972,6 +4997,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->cancelorderbox->TabIndex = 8;
             this->cancelorderbox->Text = L"Cancel Order";
             this->cancelorderbox->UseVisualStyleBackColor = true;
+            this->cancelorderbox->Click += gcnew System::EventHandler(this, &MyForm::cancelorderbox_Click);
             // 
             // Toppingbox
             // 
@@ -5009,17 +5035,17 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Crustbox->TabIndex = 5;
             this->Crustbox->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
-            // label8
+            // cheflabelorders
             // 
-            this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->cheflabelorders->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label8->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->label8->Location = System::Drawing::Point(310, 88);
-            this->label8->Name = L"label8";
-            this->label8->Size = System::Drawing::Size(651, 30);
-            this->label8->TabIndex = 4;
-            this->label8->Text = L"Following are the Pending Orders. You have to Cook the very first one Each time";
-            this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            this->cheflabelorders->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->cheflabelorders->Location = System::Drawing::Point(310, 88);
+            this->cheflabelorders->Name = L"cheflabelorders";
+            this->cheflabelorders->Size = System::Drawing::Size(651, 30);
+            this->cheflabelorders->TabIndex = 4;
+            this->cheflabelorders->Text = L"Following are the Pending Orders. You have to Cook the very first one Each time";
+            this->cheflabelorders->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             // 
             // pendingorders
             // 
@@ -6074,6 +6100,30 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->AddnewDBHeading->Text = L"New Delivery_Boy";
             this->AddnewDBHeading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
+            // tracklabel
+            // 
+            this->tracklabel->AutoSize = true;
+            this->tracklabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)
+                | System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->tracklabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->tracklabel->Location = System::Drawing::Point(159, 447);
+            this->tracklabel->Name = L"tracklabel";
+            this->tracklabel->Size = System::Drawing::Size(456, 20);
+            this->tracklabel->TabIndex = 18;
+            this->tracklabel->Text = L"Already have an existing Order\? Track it\'s progress here";
+            // 
+            // Ordertrackingbutton
+            // 
+            this->Ordertrackingbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->Ordertrackingbutton->ForeColor = System::Drawing::SystemColors::ControlText;
+            this->Ordertrackingbutton->Location = System::Drawing::Point(261, 486);
+            this->Ordertrackingbutton->Name = L"Ordertrackingbutton";
+            this->Ordertrackingbutton->Size = System::Drawing::Size(214, 70);
+            this->Ordertrackingbutton->TabIndex = 19;
+            this->Ordertrackingbutton->Text = L"Track My Order";
+            this->Ordertrackingbutton->UseVisualStyleBackColor = true;
+            // 
             // MyForm
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -6266,5 +6316,7 @@ private: System::Void label15_Click_1(System::Object^ sender, System::EventArgs^
     System::Void DBdeletefinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void CashCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
      System::Void CreditCardCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	System::Void cancelorderbox_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void backtomain_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

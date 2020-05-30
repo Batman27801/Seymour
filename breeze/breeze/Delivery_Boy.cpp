@@ -14,7 +14,7 @@ bool Delivery_Boy::setID(string id)
     try
     {
         Delivery_Boy DB;
-        int f = 0, comp;
+        int f = 0;
         ifstream is("Delivery_Boy.dat", ios::binary);
         is.seekg(0);
         bool empty = (is.get(), is.eof());
@@ -62,7 +62,7 @@ bool Delivery_Boy::setPass(string p)
     try
     {
         Delivery_Boy DB;
-        int f = 0, size = p.size();
+        int f = 0, size = (int)p.size();
         ifstream is("Delivery_Boy.dat", ios::binary);
         is.seekg(0);
         bool empty = (is.get(), is.eof());
@@ -91,7 +91,7 @@ bool Delivery_Boy::setPass(string p)
                 throw(1);
             }
         }
-        else if (f != 0);
+        else
         {
 
             throw(1);

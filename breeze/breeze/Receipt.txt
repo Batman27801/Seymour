@@ -1104,3 +1104,36 @@ Stlouis With the Flavor chilli delight topped with a layering of Beef .
 Total Billed Amount is: Rs 0
 
 X----------------------------------------------------X
+X----------------------------------------------------X
+Name: aasda
+Contact No: 00
+Address: fgfghfgh
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: asdasd
+Contact No: 03122586867
+Address: asdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Chicken .
+Total Billed Amount is: Rs 2479
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: ali
+Contact No: 03122586867
+Address: asdasdasd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X

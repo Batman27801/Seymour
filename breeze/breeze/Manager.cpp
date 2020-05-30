@@ -33,7 +33,7 @@ void Manager::addchef(chef C) const
 
 double Manager::gettotalsales() const 
 {
-    int totalsales = 0;
+    double totalsales = 0;
     account temp;
     ifstream is("account.dat", ios::binary);
     while (is.read((char*)&temp, sizeof(temp)))
@@ -50,10 +50,10 @@ bool Manager::check(string, string)
 
 bool Manager::check(string id, string p) const
 {
-    if (p!=Staff_Password || id!=Staff_ID)
-        return false;
-    else if(p==Staff_Password && id==Staff_ID)
+    if(p==Staff_Password && id==Staff_ID)
         return true;
+    else
+        return false;
 }
 bool Manager::updatesaleryofchef(string id,double s) const
 {
