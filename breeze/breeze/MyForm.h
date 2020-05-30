@@ -4766,6 +4766,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CardNumberCheckOutLabel->Size = System::Drawing::Size(216, 50);
             this->CardNumberCheckOutLabel->TabIndex = 12;
             this->CardNumberCheckOutLabel->Text = L"CARD NUMBER:\r\n(MUST BE 9-DIGIT)";
+            this->CardNumberCheckOutLabel->Visible = false;
             // 
             // CardCheckOutComboBox
             // 
@@ -4780,6 +4781,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CardCheckOutComboBox->Name = L"CardCheckOutComboBox";
             this->CardCheckOutComboBox->Size = System::Drawing::Size(121, 21);
             this->CardCheckOutComboBox->TabIndex = 11;
+            this->CardCheckOutComboBox->Visible = false;
             // 
             // CardProviderCheckOutLabel
             // 
@@ -4791,6 +4793,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CardProviderCheckOutLabel->Size = System::Drawing::Size(272, 80);
             this->CardProviderCheckOutLabel->TabIndex = 10;
             this->CardProviderCheckOutLabel->Text = L"CARD PROVIDER:";
+            this->CardProviderCheckOutLabel->Visible = false;
             // 
             // CashCheckBox
             // 
@@ -4804,6 +4807,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CashCheckBox->TabIndex = 9;
             this->CashCheckBox->Text = L"CASH";
             this->CashCheckBox->UseVisualStyleBackColor = true;
+            this->CashCheckBox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CashCheckBox_CheckedChanged);
             // 
             // CreditCardCheckBox
             // 
@@ -4817,6 +4821,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->CreditCardCheckBox->TabIndex = 8;
             this->CreditCardCheckBox->Text = L"CREDIT CARD";
             this->CreditCardCheckBox->UseVisualStyleBackColor = true;
+            this->CreditCardCheckBox->CheckedChanged += gcnew System::EventHandler(this, &MyForm::CreditCardCheckBox_CheckedChanged);
             // 
             // PaymentModeCheckOutLabel
             // 
@@ -6259,5 +6264,7 @@ private: System::Void label15_Click_1(System::Object^ sender, System::EventArgs^
     System::Void chefdeletefinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void DeleteDBbutton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void DBdeletefinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void CashCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+     System::Void CreditCardCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 };
 }
