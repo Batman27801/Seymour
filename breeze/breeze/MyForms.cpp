@@ -2077,6 +2077,26 @@ void breeze::MyForm::ProceedToCheckOutButton_Click(System::Object^ sender, Syste
 //*****************************TOPPING RELATED FUNCTION*****************************//
 
 //*****************************CHECKOUT RELATED FUNCTIONS***************************//
+void breeze::MyForm::CashCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+{
+	if (CashCheckBox->Checked == true)
+	{
+		CardProviderCheckOutLabel->Visible = false;
+		CardCheckOutComboBox->Visible = false;
+		CardNumberCheckOutLabel->Visible = false;
+		CardNumberCheckOutTextBox->Visible = false;
+	}
+}
+void breeze::MyForm::CreditCardCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+{
+	if (CreditCardCheckBox->Checked == true)
+	{
+		CardProviderCheckOutLabel->Visible = true;
+		CardCheckOutComboBox->Visible = true;
+		CardNumberCheckOutLabel->Visible = true;
+		CardNumberCheckOutTextBox->Visible = true;
+	}
+}
 void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArgs^ e)
 {
 	if (acc->getguest() == true)
@@ -2167,7 +2187,7 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			PhoneNoCheckOutWarning->Visible = true;
 			CheckOutWarningLabel->Visible = true;
 		}
-		else if (CardNumberCheckOutTextBox->Text == "")
+		else if (CreditCardCheckBox->Checked==true && CardNumberCheckOutTextBox->Text == "")
 		{
 			 CardNoWarningCheckOutLabel->Visible = true;
 			 CheckOutWarningLabel->Visible = true;
