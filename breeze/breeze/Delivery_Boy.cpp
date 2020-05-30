@@ -107,24 +107,25 @@ bool Delivery_Boy::setPass(string p)
 
 bool Delivery_Boy::addworkingorder()
 {
+    Order temp;
     int n=0, flag = 0,flag2=0;
     ifstream is("Orders.dat", ios::binary);
     ofstream os("temp.dat", ios::binary);
     is.seekg(0);
-    while (is.read((char*)&Delivery_Order, sizeof(Delivery_Order)))
+    while (is.read((char*)&temp, sizeof(temp)))
     {   
-        if (Delivery_Order.getstatus() == ready_for_delivery && n==0)
+        if (temp.getstatus() == ready_for_delivery && n==0)
         {
             flag = 1;
             n++;
-            Working_Order_Code = Delivery_Order.getOrderCode();
-            Delivery_Order.setstatus(delivering);
-            
-            os.write((char*)&Delivery_Order, sizeof(Delivery_Order));
+            Working_Order_Code = temp.getOrderCode();
+            temp.setstatus(delivering);
+            Delivery_Order = temp;
+            os.write((char*)&temp, sizeof(temp));
         }
         else
         {
-            os.write((char*)&Delivery_Order, sizeof(Delivery_Order));
+            os.write((char*)&temp, sizeof(temp));
         }
     }
     is.close();
@@ -137,22 +138,24 @@ bool Delivery_Boy::addworkingorder()
 }
 bool Delivery_Boy::deleteorder()
 {
+    Order temp;
     int flag = 0,flag2=0;
     ifstream is("Orders.dat", ios::binary);
     ofstream os("temp.dat", ios::binary);
     os.close();
     is.seekg(0);
-    while (is.read((char*)&Delivery_Order, sizeof(Delivery_Order)))
+    while (is.read((char*)&temp, sizeof(temp)))
     {
-        if (Delivery_Order.getOrderCode() == Working_Order_Code)
+        if (temp.getOrderCode() == Working_Order_Code)
         {
             flag = 1;
             Total_Orders++;
+            Working_Order_Code = 0;
             continue;
         }
         else
         {
-            os.write((char*)&Delivery_Order, sizeof(Delivery_Order));
+            os.write((char*)&temp, sizeof(temp));
         }
     }
     is.close();

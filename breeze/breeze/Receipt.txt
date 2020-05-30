@@ -1060,3 +1060,47 @@ Stlouis With the Flavor chilli delight topped with a layering of Beef .
 Total Billed Amount is: Rs 0
 
 X----------------------------------------------------X
+X----------------------------------------------------X
+Name: dfsDDFD
+Contact No: 01421554514
+Address: adfgadfgadg
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor chilli delight topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: dfsDDFD
+Contact No: 01421554514
+Address: adfgadfgadg
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: SDSADFSDSFD
+Contact No: 00
+Address: FFGADGDG
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor tikka topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: SDSADFSDSFD
+Contact No: 00
+Address: FFGADGDG
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X

@@ -2379,8 +2379,9 @@ void breeze::MyForm::cookdonebox_Click(System::Object^ sender, System::EventArgs
 	cheff->check(emp->getID(), emp->getPass());
 	if (cheff->getcurrOrder().ReturnBill() == 0)
 	{
-		if(cheff->addworkingorder())
-		tabControl1->SelectedTab = Staaf_Main_Page;
+		if (cheff->addworkingorder()) 
+			tabControl1->SelectedTab = Staaf_Main_Page;
+			 
 	}
 	else if (cheff->getcurrOrder().ReturnBill() != 0)
 	{
