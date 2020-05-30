@@ -105,26 +105,27 @@ bool chef::setPass(string p)
 }
 bool chef::addworkingorder()
 {
+    Order temp;
     int n = 0, flag1 = 0, flag2 = 0;
     ifstream is("Orders.dat", ios::binary);
     ofstream os("temp.dat", ios::binary);
     is.seekg(0);
 
     //pos = (int)fs.tellg();
-    while (is.read((char*)&Chefs_Order, sizeof(Chefs_Order)))
+    while (is.read((char*)&temp, sizeof(temp)))
     {
-        if (Chefs_Order.getstatus() == confirmed && n==0)
+        if (temp.getstatus() == confirmed && n==0)
         {
             flag1 = 1;
             n++;
-            Working_Order_Code = Chefs_Order.getOrderCode();
-            Chefs_Order.setstatus(making);
-            
-            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+            Working_Order_Code = temp.getOrderCode();
+            temp.setstatus(making);
+            Chefs_Order = temp;
+            os.write((char*)&temp, sizeof(temp));
         }
         else
         {
-            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+            os.write((char*)&temp, sizeof(temp));
         }
         //pos = (int)fs.tellg();
     }
@@ -144,26 +145,27 @@ long int chef::getworkingorder()
 
 bool chef::setorderready()
 {
+    Order temp;
     int n = 0, flag1 = 0, flag2 = 0;
     ifstream is("Orders.dat", ios::binary);
     ofstream os("temp.dat", ios::binary);
     is.seekg(0);
 
-    while (is.read((char*)&Chefs_Order, sizeof(Chefs_Order)))
+    while (is.read((char*)&temp, sizeof(temp)))
     {        
-        if (Chefs_Order.getOrderCode() == Working_Order_Code && n==0)
+        if (temp.getOrderCode() == Working_Order_Code && n==0)
         {
             flag1 = 1;
             n++;
-            Chefs_Order.setstatus(ready_for_delivery);
+            temp.setstatus(ready_for_delivery);
             Total_Orders++;
             Working_Order_Code = 0;
-            
-            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+            Chefs_Order = temp;
+            os.write((char*)&temp, sizeof(temp));
         }
         else
         {
-            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+            os.write((char*)&temp, sizeof(temp));
         }
     }
     is.close();
@@ -193,24 +195,25 @@ bool chef::check(string id, string p)
 }
 bool chef::cancelorder()
 {
+    Order temp;
     int flag1 = 0,flag2=0;
     ifstream is("Orders.dat", ios::binary);
     ofstream os("temp.dat", ios::binary);
     is.seekg(0);
 
-    while (is.read((char*)&Chefs_Order, sizeof(Chefs_Order)))
+    while (is.read((char*)&temp, sizeof(temp)))
     {
-        if (Chefs_Order.getOrderCode() == Working_Order_Code)
+        if (temp.getOrderCode() == Working_Order_Code)
         {
             flag1 = 1;
-            Chefs_Order.setstatus(canceled);
+            temp.setstatus(canceled);
             Working_Order_Code = 0;
-            
-            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+            Chefs_Order = temp;
+            os.write((char*)&temp, sizeof(temp));
         }
         else
         {
-            os.write((char*)&Chefs_Order, sizeof(Chefs_Order));
+            os.write((char*)&temp, sizeof(temp));
         }
     }
     is.close();
