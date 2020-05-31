@@ -15,6 +15,8 @@ bool Delivery_Boy::setID(string id)
     {
         Delivery_Boy DB;
         int f = 0;
+        ofstream test("Delivery_Boy.dat", ios::app);
+        test.close();
         ifstream is("Delivery_Boy.dat", ios::binary);
         is.seekg(0);
         bool empty = (is.get(), is.eof());

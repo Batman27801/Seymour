@@ -63,6 +63,7 @@ void Order::FileOrder()
 	fstream f;
 	f.open("Orders.dat", ios::out | ios::app | ios::binary);
 	f.write(reinterpret_cast<char*>(&*this), sizeof(*this));
+	f.close();
 }
 void Order::operator=(const Order& obj)
 {

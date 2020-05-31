@@ -2182,6 +2182,7 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 		order->FileOrder();
 		acc->setprevious(*order);
 		acc->SaveChanges();
+		MessageBox::Show("Your Order Has Been Confirmed!\nPlease Note this Order Number For Tracking Purposes. \nOrder Number: " + OrderNoCheckOutTextBox->Text, "Order Confirmed!");
 		tabControl1->SelectedTab = UserLogin;
 	}
 	else
@@ -2225,6 +2226,7 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			yourorder << "Address: " << acc->getaddress() << endl << endl;
 			order->PlaceOrder(pizz, total_no_of_pizzas);
 			order->FileOrder();
+			MessageBox::Show("Your Order Has Been Confirmed!\nPlease Note this Order Number For Tracking Purposes. \nOrder Number: " + OrderNoCheckOutTextBox->Text, "Order Confirmed");
 			tabControl1->SelectedTab = UserLogin;
 		}
 		

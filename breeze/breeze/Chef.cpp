@@ -12,6 +12,8 @@ bool chef::setID(string id)
     {
         chef C;
         int f = 0;
+        ofstream test("chef.dat", ios::out | ios::app);
+        test.close();
         ifstream is("chef.dat", ios::binary);
         is.seekg(0);
         bool empty = (is.get(), is.eof());
@@ -60,6 +62,8 @@ bool chef::setPass(string p)
     {
         chef C;
         int f = 0, size = (int)p.size();
+        ofstream test("chef.dat", ios::out | ios::app);
+        test.close();
         ifstream is("chef.dat", ios::binary);
         is.seekg(0);
         bool empty = (is.get(), is.eof());

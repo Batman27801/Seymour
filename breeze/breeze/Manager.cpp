@@ -17,7 +17,7 @@ bool Manager::setPass(string P)
 
 void Manager::addDeliveryBoy(Delivery_Boy DB) const
 {
-    ofstream os("Delivery_Boy.dat", ios::binary | ios::app);
+    ofstream os("Delivery_Boy.dat", ios::app | ios::binary);
     os.write((char*)&DB, sizeof(DB));
     os.close();
 }
@@ -25,7 +25,7 @@ void Manager::addDeliveryBoy(Delivery_Boy DB) const
 void Manager::addchef(chef C) const
 {
 
-    ofstream os("chef.dat", ios::binary | ios::app);
+    ofstream os("chef.dat", ios::out | ios::app | ios::binary);
     os.write((char*)&C, sizeof(C));
     os.close();
   
