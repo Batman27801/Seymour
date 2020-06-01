@@ -659,6 +659,7 @@ private: System::Windows::Forms::Button^ Updatechefsaleryfinalbutton;
 private: System::Windows::Forms::TextBox^ chefnewsalerytextbox;
 private: System::Windows::Forms::TextBox^ Updatechefsalerytextbox;
 private: System::Windows::Forms::Button^ Updatechefsalerybutton;
+private: System::Windows::Forms::Button^ button1;
 
 
 
@@ -772,6 +773,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
             this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
             this->MainMenu = (gcnew System::Windows::Forms::TabPage());
+            this->button1 = (gcnew System::Windows::Forms::Button());
             this->staff = (gcnew System::Windows::Forms::Button());
             this->customer = (gcnew System::Windows::Forms::Button());
             this->info = (gcnew System::Windows::Forms::Label());
@@ -1249,6 +1251,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->MainMenu->BackColor = System::Drawing::Color::Transparent;
             this->MainMenu->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"MainMenu.BackgroundImage")));
             this->MainMenu->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+            this->MainMenu->Controls->Add(this->button1);
             this->MainMenu->Controls->Add(this->staff);
             this->MainMenu->Controls->Add(this->customer);
             this->MainMenu->Controls->Add(this->info);
@@ -1261,6 +1264,16 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->MainMenu->Size = System::Drawing::Size(1210, 576);
             this->MainMenu->TabIndex = 0;
             this->MainMenu->Text = L"MainMenu";
+            // 
+            // button1
+            // 
+            this->button1->Location = System::Drawing::Point(696, 352);
+            this->button1->Name = L"button1";
+            this->button1->Size = System::Drawing::Size(75, 23);
+            this->button1->TabIndex = 12;
+            this->button1->Text = L"button1";
+            this->button1->UseVisualStyleBackColor = true;
+            this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click_1);
             // 
             // staff
             // 
@@ -6538,6 +6551,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->DeliveryBoyMain->TabIndex = 17;
             this->DeliveryBoyMain->Text = L"tabPage1";
             this->DeliveryBoyMain->UseVisualStyleBackColor = true;
+            this->DeliveryBoyMain->Enter += gcnew System::EventHandler(this, &MyForm::DeliveryBoyMain_Enter_1);
             // 
             // DeliveryBoyCardCheckbox
             // 
@@ -6607,6 +6621,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->ReadyForDeliveryOrdersComboBox->Name = L"ReadyForDeliveryOrdersComboBox";
             this->ReadyForDeliveryOrdersComboBox->Size = System::Drawing::Size(200, 21);
             this->ReadyForDeliveryOrdersComboBox->TabIndex = 2;
+            this->ReadyForDeliveryOrdersComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged);
             // 
             // DeliveryBoySalaryLabel
             // 
@@ -6810,7 +6825,7 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
     System::Void addcheffinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void backtomainmenu_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void Chefmain_Enter(System::Object^ sender, System::EventArgs^ e);
-	System::Void DeliveryBoyMain_Enter(System::Object^ sender, System::EventArgs^ e);
+	
     System::Void staffloginbutton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void cookdonebox_Click(System::Object^ sender, System::EventArgs^ e); 
     System::Void AddDBButton_Click(System::Object^ sender, System::EventArgs^ e);
@@ -6830,7 +6845,14 @@ private: System::Void label15_Click_1(System::Object^ sender, System::EventArgs^
     System::Void Updatechefsalerybutton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void Managermain_Enter(System::Object^ sender, System::EventArgs^ e);
     System::Void Updatechefsaleryfinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	//tabControl1->SelectedTab = Chefmain;
+}
+private: System::Void DeliveryBoyMain_Enter_1(System::Object^ sender, System::EventArgs^ e);
+private: System::Void ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
     System::Void cheflogout_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void trackorderbutton_Click(System::Object^ sender, System::EventArgs^ e);
+>
 };
 }

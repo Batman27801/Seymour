@@ -1181,3 +1181,25 @@ Italian With the Flavor chilli delight topped with a layering of Beef .
 Total Billed Amount is: Rs 0
 
 X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Charkes
+Contact No: 00
+Address: Grove  street, los santos
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor chilli delight topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Chika 
+Contact No: 00
+Address: Bhens kalony, No mans land
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor tikka topped with a layering of Beef .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
