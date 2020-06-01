@@ -2318,6 +2318,32 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 void breeze::MyForm::backtomainmenu_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Managermain;
 }
+void breeze::MyForm::DeliveryBoyMain_Enter(System::Object^ sender, System::EventArgs^ e)
+{
+	Delivery_Boy* DeliveryBoy = new Delivery_Boy;
+	DeliveryBoyNameLabel->Text = "WELCOME, MR " + gotoString(DeliveryBoy->getname())+Environment::NewLine+gotoString(DeliveryBoy->getID());
+	DeliveryBoySalaryLabel->Text = "SALARY : RS " + Convert::ToString(DeliveryBoy->getsalary());
+	ifstream infile("Orders.dat", ios::binary);
+	Order temp;
+	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
+	{
+		if (temp.getstatus() == ready_for_delivery)
+		{
+			ReadyForDeliveryOrdersComboBox->Items->Add( temp.getOrderCode());
+		}
+	}
+	infile.clear();
+	infile.seekg(0);
+	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
+	{
+		if (temp.getOrderCode() == (long long int(Convert::ToInt64(ReadyForDeliveryOrdersComboBox->GetItemText(ReadyForDeliveryOrdersComboBox->SelectedItem)))))
+		{
+			DeliveryBoyAddressTextBox->AppendText(gotoString(temp.getloc()));
+			
+		}
+	}
+
+}
 void breeze::MyForm::Chefmain_Enter(System::Object^ sender, System::EventArgs^ e) {
 	
 	pendingorders->Items->Clear();
