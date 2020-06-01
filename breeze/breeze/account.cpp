@@ -1,11 +1,11 @@
 #pragma once
 #pragma warning(disable: 6262)
 
-#include "account.h"
+#include "customer.h"
 #include <fstream>
 
 using namespace std;
-account::account()
+customer::customer()
 {
 	saved = 0;
 	strcpy_s(username, "");
@@ -16,11 +16,11 @@ account::account()
 	guest = false;
 	total_amount = 0;
 }
-Order* account::getprevious()
+Order* customer::getprevious()
 {
 	return previous;
 }
-void account::setprevious(Order newest)
+void customer::setprevious(Order newest)
 {
 
 	for (int i = 4; i > 0; i--)
@@ -29,11 +29,11 @@ void account::setprevious(Order newest)
 	}
 	previous[0] = newest;
 }
-char* account::getusername()
+char* customer::getusername()
 {
 	return username;
 }
-bool account::setusername(string s)
+bool customer::setusername(string s)
 {
 	try {
 		if (s.length()>=6 && s.length() < 15 && checkavailable(s))
@@ -51,11 +51,11 @@ bool account::setusername(string s)
 		return false;
 	}
 }
-char* account::getpassword()
+char* customer::getpassword()
 {
 	return password;
 }
-bool account::setpassword(string p)
+bool customer::setpassword(string p)
 {
 	try {
 		if (p.length() >= 8 && p.length() < 30)
@@ -72,11 +72,11 @@ bool account::setpassword(string p)
 		return false;
 	}
 }
-char* account::getemail()
+char* customer::getemail()
 {
 	return email;
 }
-bool account::setemail(string s)
+bool customer::setemail(string s)
 {
 	s == "" ? (s = "               ") : ("");
 	try {
@@ -96,9 +96,9 @@ bool account::setemail(string s)
 		return false;
 	}
 }
-bool account::import(string user, string pass)
+bool customer::import(string user, string pass)
 {
-	account temp;
+	customer temp;
 	bool val=false;
 	fstream accountsfile("accountdata.dat", ios::in | ios::binary);
 	for (; accountsfile.read((char*)&temp, sizeof(temp)) ;)
@@ -107,7 +107,7 @@ bool account::import(string user, string pass)
 		{
 			val = true;
 			*this = temp;
-			Current_Pos = int(accountsfile.tellg())/int(sizeof(account));
+			Current_Pos = int(accountsfile.tellg())/int(sizeof(customer));
 			break;
 		}
 
@@ -116,17 +116,17 @@ bool account::import(string user, string pass)
 	accountsfile.close();
 	return val;
 }
-bool account::getguest()
+bool customer::getguest()
 {
 	return guest;
 }
-void account::setguest(bool b)
+void customer::setguest(bool b)
 {
 	guest = b;
 }
-bool account::checkavailable(string a)
+bool customer::checkavailable(string a)
 {
-	account temp;
+	customer temp;
 	fstream accountsfile("accountdata.dat", ios::in | ios::binary);
 	for (;1;)
 	{
@@ -150,28 +150,28 @@ bool account::checkavailable(string a)
 	accountsfile.close();
 	return true;
 }
-void account::writetofile()
+void customer::writetofile()
 {
 	fstream accountsfile("accountdata.dat", ios::out |ios::app | ios::binary);
 	accountsfile.write((char*)&*this, sizeof(*this));
 	accountsfile.close();
 }
-int account::getCurrentPos()
+int customer::getCurrentPos()
 {
 	return Current_Pos;
 }
-void account::SaveChanges()
+void customer::SaveChanges()
 {
 	fstream AccountFile;
-	AccountFile.seekg(Current_Pos*sizeof(account));
+	AccountFile.seekg(Current_Pos*sizeof(customer));
 	AccountFile.open("accountdata.dat", ios::out | ios::binary);
 	AccountFile.write(reinterpret_cast<char*>(&*this), sizeof(*this));
 }
-double account::gettotalamount()
+double customer::gettotalamount()
 {
 	return total_amount;
 }
-account account::operator +(double b)
+customer customer::operator +(double b)
 {
 	total_amount = total_amount + b;
 	return *this;

@@ -13,7 +13,7 @@ using namespace System::Data;
 using namespace System::Drawing;
 
 //******************************USER LOGIN AND RELATED FUNCTIONS**********************
-void breeze::MyForm::customer_Click(System::Object^ sender, System::EventArgs^ e) {
+void breeze::MyForm::customerbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = UserLogin;
 }
 

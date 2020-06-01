@@ -17,12 +17,12 @@ namespace breeze {
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
-		int total_no_of_pizzas=0,loop=0;
+		int total_no_of_pizzas=0, loop=0;
 		int* size;
 		pizza* pizz;
 		flavour *ptr;
 		Order *order = new Order;
-		account* acc = new account;
+        customer* acc = new customer;
         const Manager *manager = new const Manager(50000);
         Staff *emp;
 
@@ -69,6 +69,7 @@ namespace breeze {
 	private: System::Windows::Forms::Button^ MoveToCrustSelect;
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
 	private: System::Windows::Forms::Button^ MovetoToping;
+    private: System::Windows::Forms::Button^ customerbutton;
 
 
 
@@ -77,7 +78,7 @@ namespace breeze {
 
 
 
-	private: System::Windows::Forms::Button^ customer;
+
 	private: System::Windows::Forms::Button^ staff;
 	private: System::Windows::Forms::PictureBox^ VeggieDelightPictureBox;
 
@@ -790,7 +791,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->MainMenu = (gcnew System::Windows::Forms::TabPage());
             this->button1 = (gcnew System::Windows::Forms::Button());
             this->staff = (gcnew System::Windows::Forms::Button());
-            this->customer = (gcnew System::Windows::Forms::Button());
+            this->customerbutton = (gcnew System::Windows::Forms::Button());
             this->info = (gcnew System::Windows::Forms::Label());
             this->splitter1 = (gcnew System::Windows::Forms::Splitter());
             this->subtitle = (gcnew System::Windows::Forms::Label());
@@ -1282,7 +1283,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->MainMenu->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
             this->MainMenu->Controls->Add(this->button1);
             this->MainMenu->Controls->Add(this->staff);
-            this->MainMenu->Controls->Add(this->customer);
+            this->MainMenu->Controls->Add(this->customerbutton);
             this->MainMenu->Controls->Add(this->info);
             this->MainMenu->Controls->Add(this->splitter1);
             this->MainMenu->Controls->Add(this->subtitle);
@@ -1321,22 +1322,22 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->staff->UseVisualStyleBackColor = false;
             this->staff->Click += gcnew System::EventHandler(this, &MyForm::staff_Click);
             // 
-            // customer
+            // customerbutton
             // 
-            this->customer->BackColor = System::Drawing::Color::Black;
-            this->customer->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"customer.BackgroundImage")));
-            this->customer->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-            this->customer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->customerbutton->BackColor = System::Drawing::Color::Black;
+            this->customerbutton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"customerbutton.BackgroundImage")));
+            this->customerbutton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+            this->customerbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->customer->ForeColor = System::Drawing::Color::FloralWhite;
-            this->customer->Location = System::Drawing::Point(183, 127);
-            this->customer->Name = L"customer";
-            this->customer->Size = System::Drawing::Size(285, 163);
-            this->customer->TabIndex = 10;
-            this->customer->Text = L"Click Here to Access the Customer Portal!\r\n--You Can Order From Here\r\n--View Menu"
+            this->customerbutton->ForeColor = System::Drawing::Color::FloralWhite;
+            this->customerbutton->Location = System::Drawing::Point(183, 127);
+            this->customerbutton->Name = L"customerbutton";
+            this->customerbutton->Size = System::Drawing::Size(285, 163);
+            this->customerbutton->TabIndex = 10;
+            this->customerbutton->Text = L"Click Here to Access the Customer Portal!\r\n--You Can Order From Here\r\n--View Menu"
                 L" Here\r\n--Create Account Here";
-            this->customer->UseVisualStyleBackColor = false;
-            this->customer->Click += gcnew System::EventHandler(this, &MyForm::customer_Click);
+            this->customerbutton->UseVisualStyleBackColor = false;
+            this->customerbutton->Click += gcnew System::EventHandler(this, &MyForm::customerbutton_Click);
             // 
             // info
             // 
@@ -6932,7 +6933,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 #pragma endregion
 
 private: 
-	System::Void customer_Click(System::Object^ sender, System::EventArgs^ e);
+	System::Void customerbutton_Click(System::Object^ sender, System::EventArgs^ e);
 	System::Void VeggieDelightCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void TheCheeseCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);

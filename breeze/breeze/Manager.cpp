@@ -2,7 +2,7 @@
 #include "Manager.h"
 #include <string.h>
 #include <fstream>
-#include "account.h"
+#include "customer.h"
 Manager::Manager(int a):Staff(a)
 {
 }
@@ -34,7 +34,7 @@ void Manager::addchef(chef C) const
 double Manager::gettotalsales() const 
 {
     double totalsales = 0;
-    account temp;
+    customer temp;
     ifstream is("account.dat", ios::binary);
     while (is.read((char*)&temp, sizeof(temp)))
     {
