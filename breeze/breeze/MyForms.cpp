@@ -2225,6 +2225,7 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			yourorder << "Contact No: 0" << acc->getcontact() << endl;
 			yourorder << "Address: " << acc->getaddress() << endl << endl;
 			order->PlaceOrder(pizz, total_no_of_pizzas);
+			order->setstatus(confirmed);
 			order->FileOrder();
 			MessageBox::Show("Your Order Has Been Confirmed!\nPlease Note this Order Number For Tracking Purposes. \nOrder Number: " + OrderNoCheckOutTextBox->Text, "Order Confirmed");
 			tabControl1->SelectedTab = UserLogin;
@@ -2338,32 +2339,42 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 void breeze::MyForm::backtomainmenu_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Managermain;
 }
-void breeze::MyForm::DeliveryBoyMain_Enter(System::Object^ sender, System::EventArgs^ e)
+void breeze::MyForm:: DeliveryBoyMain_Enter_1(System::Object^ sender, System::EventArgs^ e)
 {
 	Delivery_Boy* DeliveryBoy = new Delivery_Boy;
-	DeliveryBoyNameLabel->Text = "WELCOME, MR " + gotoString(DeliveryBoy->getname())+Environment::NewLine+gotoString(DeliveryBoy->getID());
+	DeliveryBoyNameLabel->Text = "WELCOME, MR " + gotoString(DeliveryBoy->getname());
 	DeliveryBoySalaryLabel->Text = "SALARY : RS " + Convert::ToString(DeliveryBoy->getsalary());
 	ifstream infile("Orders.dat", ios::binary);
 	Order temp;
 	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
 	{
-		if (temp.getstatus() == ready_for_delivery)
+		if (temp.getstatus() == confirmed)
 		{
-			ReadyForDeliveryOrdersComboBox->Items->Add( temp.getOrderCode());
+			ReadyForDeliveryOrdersComboBox->Items->Add((temp.getOrderCode()));
+			//DeliveryBoyAddressTextBox->Text = "I love mia khalifa";
 		}
 	}
 	infile.clear();
 	infile.seekg(0);
-	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
-	{
-		if (temp.getOrderCode() == (long long int(Convert::ToInt64(ReadyForDeliveryOrdersComboBox->GetItemText(ReadyForDeliveryOrdersComboBox->SelectedItem)))))
-		{
-			DeliveryBoyAddressTextBox->AppendText(gotoString(temp.getloc()));
-			
-		}
-	}
+	
 
 }
+void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	ifstream infile("Orders.dat", ios::binary);
+	Order temp;
+	string placeholder;
+	infile.seekg(0);
+	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
+	{
+		if(temp.getOrderCode()== (long long int(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem))))
+		{
+			
+			DeliveryBoyAddressTextBox->AppendText(gotoString(temp.getloc()));
+
+		}
+	}
+}
+
 void breeze::MyForm::Chefmain_Enter(System::Object^ sender, System::EventArgs^ e) {
 	
 	pendingorders->Items->Clear();
@@ -2450,7 +2461,8 @@ void breeze::MyForm::staffloginbutton_Click(System::Object^ sender, System::Even
 		i = 0;
 		emp = boy;
 		delete cheff;
-		//tabControl1->SelectedTab = ;
+		
+		tabControl1->SelectedTab = DeliveryBoyMain;
 	}
 	if (i == 1)
 	{
