@@ -487,13 +487,18 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 		FNamebox->Text = Convert::ToString("0");
 		i++;
 	}
-
-	if (!acc->setage(Convert::ToInt32(agebox->Text)))
+	try {
+		if (!acc->setage(Convert::ToInt32(agebox->Text)))
+		{
+			agebox->Text = Convert::ToString("0");
+			i++;
+		}
+	}
+	catch (FormatException ^os)
 	{
-		agebox->Text = Convert::ToString("0");
+		agebox->Text = "0";
 		i++;
 	}
-
 	string gen = backtostring(genderbox->Text);
 	if (gen == "Male")
 		acc->setGender(Male);
@@ -501,15 +506,23 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 		acc->setGender(Female);
 	else if (gen == "Other")
 		acc->setGender(Other);
-
-	if (!acc->setcontact(long long int(Convert::ToInt64(contactbox->Text))))
+	try
 	{
-		contactbox->Text = Convert::ToString("0");
+		if (!acc->setcontact(long long int(Convert::ToInt64(contactbox->Text))))
+		{
+			contactbox->Text = Convert::ToString("0");
+		}
+
+		if (!acc->setcnic(long long int(Convert::ToInt64(cnicbox->Text))))
+		{
+			cnicbox->Text = Convert::ToString("0");
+		}
 	}
-
-	if (!acc->setcnic(long long int(Convert::ToInt64(cnicbox->Text))))
+	catch (FormatException^ os)
 	{
-		cnicbox->Text = Convert::ToString("0");
+		contactbox->Text = "0";
+		cnicbox->Text = "0";
+		i++;
 	}
 
 	acc->setaddress(backtostring(addressbox->Text));
@@ -523,16 +536,25 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 	}
 
 	acc->setcardprovider(backtostring(cardproviderbox->Text));
-
-	if (!acc->setcardno(long long int(Convert::ToInt64(cardnobox->Text))))
+	try
 	{
-		cardnobox->Text = Convert::ToString("0");
-		i++;
+		if (!acc->setcardno(long long int(Convert::ToInt64(cardnobox->Text))))
+		{
+			cardnobox->Text = Convert::ToString("0");
+			i++;
+		}
+
+		if (!acc->setexpiry(Convert::ToInt32(cardexpmonth->Text), Convert::ToInt32(cardexpyear->Text)))
+		{
+			expreq->Visible = true;
+			cardexpmonth->Text = Convert::ToString("0");
+			cardexpyear->Text = Convert::ToString("0");
+			i++;
+		}
 	}
-
-	if (!acc->setexpiry(Convert::ToInt32(cardexpmonth->Text), Convert::ToInt32(cardexpyear->Text)))
+	catch (FormatException^ os)
 	{
-		expreq->Visible = true;
+		cardnobox->Text = "0";
 		cardexpmonth->Text = Convert::ToString("0");
 		cardexpyear->Text = Convert::ToString("0");
 		i++;
@@ -2413,6 +2435,11 @@ void breeze::MyForm::Chefmain_Enter(System::Object^ sender, System::EventArgs^ e
 	}
 	else if (cheff->getcurrOrder().getpizzas() != 0)
 	{
+		cancelorderbox->Visible = true;
+		cancelorderlabl->Visible = true;
+		Crustbox->Text = "";
+		Flavorbox->Text = "";
+		Toppingbox->Text = "";
 		pendingorders->Items->Clear();
 		cheflabelorders->Text = "Following are the details of the order you are cooking: ";
 		pendingorders->Items->Add("Order # " + cheff->getcurrOrder().getOrderCode() + ". " + cheff->getcurrOrder().getpizzas() + " Pizza(s)");
@@ -2605,7 +2632,10 @@ void breeze::MyForm::cancelorderbox_Click(System::Object^ sender, System::EventA
 	chef* cheff = new chef;
 	cheff->check(emp->getID(), emp->getPass());
 	cheff->cancelorder();
+	delete cheff;
+	tabControl1->SelectedTab = Staaf_Main_Page;
 }
+
 void breeze::MyForm::Updatechefsalerybutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	Updatechefsalerytextbox->Visible = true;
 	chefnewsalerytextbox->Visible = true;
@@ -2647,4 +2677,60 @@ void breeze::MyForm::Updatechefsaleryfinalbutton_Click(System::Object^ sender, S
 		chefsaleryupdatednotice->Visible = true;
 		
 	}
+
+void breeze::MyForm::cheflogout_Click(System::Object^ sender, System::EventArgs^ e) {
+	delete emp;
+	tabControl1->SelectedTab = Staaf_Main_Page;
+}
+void breeze::MyForm::trackorderbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	int i = 0;
+	long order;
+	try
+	{
+		order = Convert::ToInt32(ordernumberbox->Text);
+	}
+	catch (FormatException^ os)
+	{
+		os;
+		ordernumberbox->Text = "0";
+		i = 1;
+	}
+	Order temp;
+	ifstream orderfile("Orders.dat", ios::binary);
+	for (; orderfile.read((char*)&temp, sizeof(temp)) ;)
+	{
+		if (temp.getOrderCode() == order)
+		{
+			i = 1;
+			enum status stat = temp.getstatus();
+			switch (stat)
+			{
+			case confirmed:
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nWe will soon start cooking Your Order. It is our top priority to provide you the best customer service!";
+				break;
+			case making:
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nYour Order is currently being cooked in our kitchen with the best care and we will ensure that the best quality is served to you! Estimated Time of Arrival: 45-55 Minutes";
+				break;
+			case canceled:
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nUnfortunately we had to cancel your Order due to shortage of ingredients. Seymour Pizzeria prides itself on its quality and taste. An incomplete pizza can not be cooked. You are welcome to Order again.";
+				break;
+			case ready_for_delivery:
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nYour Order has been Cooked and is awaiting delivery. It will soon be picked up by one of our riders and delivered to your address. Estimated Time of Arrival: 20-30 minutes.";
+				break;
+			case delivering:
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nThe Rider is on his way with your order. The Pizza(s) will arrive hot and cheesy! Estimated Time of arrival: 10-20 minutes.";
+				break;
+			case delivered:
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nYour Order has been Delivered Already to your Address. WE hope you enjoyed the Order. Seymour Pizzeria will always strive to make you happy! Please Leave any Feedback or Suggestions you have below. Thanks!";
+				break;
+			default:
+				break;
+			}
+		}
+	}
+	if (i == 0)
+		trackedinfolabel->Text = "No Such Order Exists. Are You Sure You entered the correct Order Number? ";
+
+	orderfile.close();
+
 }

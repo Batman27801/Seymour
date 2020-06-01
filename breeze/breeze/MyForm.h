@@ -624,13 +624,18 @@ private: System::Windows::Forms::Label^ ordernumberlabel;
 private: System::Windows::Forms::Label^ trackingsubheading;
 
 private: System::Windows::Forms::Label^ trackingheading;
+private: System::Windows::Forms::TextBox^ feedbackbox;
 
-private: System::Windows::Forms::TextBox^ textBox2;
-private: System::Windows::Forms::Label^ label19;
-private: System::Windows::Forms::Label^ label18;
+
+
+private: System::Windows::Forms::Label^ feedbacksubheading;
+
+private: System::Windows::Forms::Label^ Feedbackheading;
+
 private: System::Windows::Forms::Label^ trackedinfolabel;
+private: System::Windows::Forms::Button^ submitfeedbackbutton;
 
-private: System::Windows::Forms::Button^ button2;
+
 private: System::Windows::Forms::TabPage^ DeliveryBoyMain;
 private: System::Windows::Forms::Label^ DeliveryBoyNameLabel;
 private: System::Windows::Forms::Label^ DeliveryBoySalaryLabel;
@@ -1161,10 +1166,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->DBnamelabel = (gcnew System::Windows::Forms::Label());
             this->AddnewDBHeading = (gcnew System::Windows::Forms::Label());
             this->TrackingFeedback = (gcnew System::Windows::Forms::TabPage());
-            this->button2 = (gcnew System::Windows::Forms::Button());
-            this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-            this->label19 = (gcnew System::Windows::Forms::Label());
-            this->label18 = (gcnew System::Windows::Forms::Label());
+            this->submitfeedbackbutton = (gcnew System::Windows::Forms::Button());
+            this->feedbackbox = (gcnew System::Windows::Forms::TextBox());
+            this->feedbacksubheading = (gcnew System::Windows::Forms::Label());
+            this->Feedbackheading = (gcnew System::Windows::Forms::Label());
             this->trackedinfolabel = (gcnew System::Windows::Forms::Label());
             this->trackorderbutton = (gcnew System::Windows::Forms::Button());
             this->ordernumberbox = (gcnew System::Windows::Forms::TextBox());
@@ -5237,6 +5242,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->cancelorderbox->TabIndex = 8;
             this->cancelorderbox->Text = L"Cancel Order";
             this->cancelorderbox->UseVisualStyleBackColor = true;
+            this->cancelorderbox->Visible = false;
             this->cancelorderbox->Click += gcnew System::EventHandler(this, &MyForm::cancelorderbox_Click);
             // 
             // Toppingbox
@@ -5249,7 +5255,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Toppingbox->Name = L"Toppingbox";
             this->Toppingbox->Size = System::Drawing::Size(258, 154);
             this->Toppingbox->TabIndex = 7;
-            this->Toppingbox->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            this->Toppingbox->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
             // Flavorbox
             // 
@@ -5261,7 +5267,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Flavorbox->Name = L"Flavorbox";
             this->Flavorbox->Size = System::Drawing::Size(258, 154);
             this->Flavorbox->TabIndex = 6;
-            this->Flavorbox->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            this->Flavorbox->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
             // Crustbox
             // 
@@ -5273,7 +5279,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Crustbox->Name = L"Crustbox";
             this->Crustbox->Size = System::Drawing::Size(258, 154);
             this->Crustbox->TabIndex = 5;
-            this->Crustbox->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+            this->Crustbox->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
             // cheflabelorders
             // 
@@ -6382,10 +6388,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->TrackingFeedback->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TrackingFeedback.BackgroundImage")));
             this->TrackingFeedback->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-            this->TrackingFeedback->Controls->Add(this->button2);
-            this->TrackingFeedback->Controls->Add(this->textBox2);
-            this->TrackingFeedback->Controls->Add(this->label19);
-            this->TrackingFeedback->Controls->Add(this->label18);
+            this->TrackingFeedback->Controls->Add(this->submitfeedbackbutton);
+            this->TrackingFeedback->Controls->Add(this->feedbackbox);
+            this->TrackingFeedback->Controls->Add(this->feedbacksubheading);
+            this->TrackingFeedback->Controls->Add(this->Feedbackheading);
             this->TrackingFeedback->Controls->Add(this->trackedinfolabel);
             this->TrackingFeedback->Controls->Add(this->trackorderbutton);
             this->TrackingFeedback->Controls->Add(this->ordernumberbox);
@@ -6399,51 +6405,51 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->TrackingFeedback->Text = L"tabPage1";
             this->TrackingFeedback->UseVisualStyleBackColor = true;
             // 
-            // button2
+            // submitfeedbackbutton
             // 
-            this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            this->submitfeedbackbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->submitfeedbackbutton->Location = System::Drawing::Point(1035, 454);
+            this->submitfeedbackbutton->Name = L"submitfeedbackbutton";
+            this->submitfeedbackbutton->Size = System::Drawing::Size(143, 57);
+            this->submitfeedbackbutton->TabIndex = 9;
+            this->submitfeedbackbutton->Text = L"Submit Feedback";
+            this->submitfeedbackbutton->UseVisualStyleBackColor = true;
+            // 
+            // feedbackbox
+            // 
+            this->feedbackbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button2->Location = System::Drawing::Point(1035, 454);
-            this->button2->Name = L"button2";
-            this->button2->Size = System::Drawing::Size(143, 57);
-            this->button2->TabIndex = 9;
-            this->button2->Text = L"Submit Feedback";
-            this->button2->UseVisualStyleBackColor = true;
+            this->feedbackbox->Location = System::Drawing::Point(178, 409);
+            this->feedbackbox->Multiline = true;
+            this->feedbackbox->Name = L"feedbackbox";
+            this->feedbackbox->Size = System::Drawing::Size(837, 140);
+            this->feedbackbox->TabIndex = 8;
             // 
-            // textBox2
+            // feedbacksubheading
             // 
-            this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->textBox2->Location = System::Drawing::Point(178, 409);
-            this->textBox2->Multiline = true;
-            this->textBox2->Name = L"textBox2";
-            this->textBox2->Size = System::Drawing::Size(837, 140);
-            this->textBox2->TabIndex = 8;
-            // 
-            // label19
-            // 
-            this->label19->AutoSize = true;
-            this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->label19->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->label19->Location = System::Drawing::Point(329, 377);
-            this->label19->Name = L"label19";
-            this->label19->Size = System::Drawing::Size(655, 16);
-            this->label19->TabIndex = 7;
-            this->label19->Text = L"Please Type in any Suggestions or Complaints you have for us and it will be forwa"
+            this->feedbacksubheading->AutoSize = true;
+            this->feedbacksubheading->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->feedbacksubheading->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->feedbacksubheading->Location = System::Drawing::Point(329, 377);
+            this->feedbacksubheading->Name = L"feedbacksubheading";
+            this->feedbacksubheading->Size = System::Drawing::Size(655, 16);
+            this->feedbacksubheading->TabIndex = 7;
+            this->feedbacksubheading->Text = L"Please Type in any Suggestions or Complaints you have for us and it will be forwa"
                 L"rded to the highest authority.";
             // 
-            // label18
+            // Feedbackheading
             // 
-            this->label18->AutoSize = true;
-            this->label18->Font = (gcnew System::Drawing::Font(L"Algerian", 20.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+            this->Feedbackheading->AutoSize = true;
+            this->Feedbackheading->Font = (gcnew System::Drawing::Font(L"Algerian", 20.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->label18->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->label18->Location = System::Drawing::Point(569, 338);
-            this->label18->Name = L"label18";
-            this->label18->Size = System::Drawing::Size(157, 30);
-            this->label18->TabIndex = 6;
-            this->label18->Text = L"Feedback";
+            this->Feedbackheading->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->Feedbackheading->Location = System::Drawing::Point(569, 338);
+            this->Feedbackheading->Name = L"Feedbackheading";
+            this->Feedbackheading->Size = System::Drawing::Size(157, 30);
+            this->Feedbackheading->TabIndex = 6;
+            this->Feedbackheading->Text = L"Feedback";
             // 
             // trackedinfolabel
             // 
@@ -6469,6 +6475,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->trackorderbutton->TabIndex = 4;
             this->trackorderbutton->Text = L"Track";
             this->trackorderbutton->UseVisualStyleBackColor = true;
+            this->trackorderbutton->Click += gcnew System::EventHandler(this, &MyForm::trackorderbutton_Click);
             // 
             // ordernumberbox
             // 
@@ -6817,15 +6824,13 @@ private: System::Void label15_Click_1(System::Object^ sender, System::EventArgs^
     System::Void DeleteDBbutton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void DBdeletefinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void CashCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-     System::Void CreditCardCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+    System::Void CreditCardCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	System::Void cancelorderbox_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void backtomain_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void cheflogout_Click(System::Object^ sender, System::EventArgs^ e) {
-	emp->setID("");
-	tabControl1->SelectedTab = Staaf_Main_Page;
-}
     System::Void Updatechefsalerybutton_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void Managermain_Enter(System::Object^ sender, System::EventArgs^ e);
     System::Void Updatechefsaleryfinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void cheflogout_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void trackorderbutton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
