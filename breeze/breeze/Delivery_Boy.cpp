@@ -3,7 +3,7 @@
 #include "Delivery_Boy.h"
 #include <fstream>
 #include <string.h>
-Delivery_Boy::Delivery_Boy()
+Delivery_Boy::Delivery_Boy() :On_Delivery(false)
 {
     Total_Orders = 0;
     Working_Order_Code = 0;
@@ -58,54 +58,6 @@ bool Delivery_Boy::setID(string id)
         return false;
     }
 }
-bool Delivery_Boy::setPass(string p)
-{
-
-    try
-    {
-        Delivery_Boy DB;
-        int f = 0, size = (int)p.size();
-        ifstream is("Delivery_Boy.dat", ios::binary);
-        is.seekg(0);
-        bool empty = (is.get(), is.eof());
-        if (empty == false)
-        {
-            is.seekg(0);
-            while (!is.eof())
-            {
-                is.read((char*)&DB, sizeof(DB));
-                if (DB.getPass() == p.c_str())
-                {
-                    f = 1;
-                    break;
-                }
-            }
-        }
-        if (f == 0)
-        {
-            if (size >= 8)
-            {
-                strcpy_s(Staff_Password, p.c_str());
-                return true;
-            }
-            else
-            {
-                throw(1);
-            }
-        }
-        else
-        {
-
-            throw(1);
-        }
-        is.close();
-    }
-    catch (...)
-    {
-        strcpy_s(Staff_Password, "");
-        return false;
-    }
-}
 
 bool Delivery_Boy::addworkingorder()
 {
@@ -123,6 +75,7 @@ bool Delivery_Boy::addworkingorder()
             Working_Order_Code = temp.getOrderCode();
             temp.setstatus(delivering);
             Delivery_Order = temp;
+            On_Delivery = true;
             os.write((char*)&temp, sizeof(temp));
         }
         else
@@ -153,6 +106,7 @@ bool Delivery_Boy::deleteorder()
             flag = 1;
             Total_Orders++;
             Working_Order_Code = 0;
+            On_Delivery = false;
             continue;
         }
         else
@@ -219,4 +173,8 @@ bool Delivery_Boy::updateBoy()
     rename("temp.dat", "Delivery_Boy.dat");
     if (flag == 1) return true;
     else return false;
+}
+bool Delivery_Boy::getOnDelivery()
+{
+    return On_Delivery;
 }

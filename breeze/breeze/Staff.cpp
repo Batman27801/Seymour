@@ -20,4 +20,12 @@ char* Staff::getPass()
 {
     return Staff_Password;
 }
-
+bool Staff::setPass(string p)
+{
+    if (p.size() >= 8)
+    {
+        strcpy_s(Staff_Password, p.c_str());
+        return true;
+    }
+    else return false;
+}

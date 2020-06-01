@@ -2243,17 +2243,37 @@ void breeze::MyForm::BackToFrontpage_Click(System::Object^ sender, System::Event
 void breeze::MyForm::BackToStaafMain_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Staaf_Main_Page;
 }
-void breeze::MyForm::Add_Chef_Button_Click(System::Object^ sender, System::EventArgs^ e) {
-	tabControl1->SelectedTab = Addnewchef;
-	chefdeletedbox->Visible = false;
+void breeze::MyForm::Managermain_Enter(System::Object^ sender, System::EventArgs^ e) {
 	chefdeletetextbox->Visible = false;
+	chefdeletetextbox->Text = "";
+	chefdeletedbox->Visible = false;
 	chefdeleteidnotice->Visible = false;
 	chefdeletefinalbutton->Visible = false;
-	DBdeletedbox->Visible = false;
+
 	DBdeletetextbox->Visible = false;
+	DBdeletetextbox->Text = "";
+	DBdeletedbox->Visible = false;
 	DBdeleteidnotice->Visible = false;
 	DBdeletefinalbutton->Visible = false;
 
+	Updatechefsalerytextbox->Visible = false;
+	chefnewsalerytextbox->Visible = false;
+	Updatechefsalerytextbox->Text = "";
+	chefnewsalerytextbox->Text = "";
+	Updatechefsaleryidnotice->Visible = false;
+	chefsaleryupdatednotice->Visible = false;
+	Updatechefsaleryfinalbutton->Visible = false;
+
+	UpdateDBsalerytextbox->Visible = false;
+	DBnewsalerytextbox->Visible = false;
+	UpdateDBsalerytextbox->Text = "";
+	DBnewsalerytextbox->Text = "";
+	UpdateDBsalerynotice->Visible = false;
+	DBsaleryupdatednotice->Visible = false;
+	UpdateDBsaleryfinalbutton->Visible = false;
+}
+void breeze::MyForm::Add_Chef_Button_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = Addnewchef;
 }
 void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	chef* C = new chef;
@@ -2585,4 +2605,46 @@ void breeze::MyForm::cancelorderbox_Click(System::Object^ sender, System::EventA
 	chef* cheff = new chef;
 	cheff->check(emp->getID(), emp->getPass());
 	cheff->cancelorder();
+}
+void breeze::MyForm::Updatechefsalerybutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	Updatechefsalerytextbox->Visible = true;
+	chefnewsalerytextbox->Visible = true;
+	Updatechefsaleryfinalbutton->Visible = true;
+
+	chefdeletetextbox->Visible = false;
+	chefdeletetextbox->Text = "";
+	chefdeletedbox->Visible = false;
+	chefdeleteidnotice->Visible = false;
+	chefdeletefinalbutton->Visible = false;
+
+	DBdeletetextbox->Visible = false;
+	DBdeletetextbox->Text = "";
+	DBdeletedbox->Visible = false;
+	DBdeleteidnotice->Visible = false;
+	DBdeletefinalbutton->Visible = false;
+
+	UpdateDBsalerytextbox->Visible = false;
+	DBnewsalerytextbox->Visible = false;
+	UpdateDBsalerytextbox->Text = "";
+	DBnewsalerytextbox->Text = "";
+	UpdateDBsalerynotice->Visible = false;
+	DBsaleryupdatednotice->Visible = false;
+	UpdateDBsalerybutton->Visible = false;
+}
+void breeze::MyForm::Updatechefsaleryfinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!manager->updatesaleryofchef(backtostring(Updatechefsalerytextbox->Text), Convert::ToDouble(chefnewsalerytextbox->Text)))
+	{
+		Updatechefsaleryidnotice->Visible = true;
+	}
+	else
+	{
+		Updatechefsalerytextbox->Visible = false;
+		chefnewsalerytextbox->Visible = false;
+		Updatechefsalerytextbox->Text = "";
+		chefnewsalerytextbox->Text = "";
+		Updatechefsaleryidnotice->Visible = false;
+		Updatechefsaleryfinalbutton->Visible = false;
+		chefsaleryupdatednotice->Visible = true;
+		
+	}
 }

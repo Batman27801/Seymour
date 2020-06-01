@@ -1,6 +1,6 @@
 #include "Chef.h"
 #include <fstream>
-chef::chef() :Total_Orders(0)
+chef::chef() :Total_Orders(0), Working(false)
 {
     salary = 25000;
     Working_Order_Code = 0;
@@ -56,55 +56,7 @@ bool chef::setID(string id)
     }
 }
 
-bool chef::setPass(string p)
-{
-    try
-    {
-        chef C;
-        int f = 0, size = (int)p.size();
-        ofstream test("chef.dat", ios::out | ios::app);
-        test.close();
-        ifstream is("chef.dat", ios::binary);
-        is.seekg(0);
-        bool empty = (is.get(), is.eof());
-        if (empty == false)
-        {
-            is.seekg(0);
-            while (!is.eof())
-            {
-                is.read((char*)&C, sizeof(C));
-                if (C.getPass() == p.c_str())
-                {
-                    f = 1;
-                    break;
-                }
-            }
-        }
-        if (f == 0)
-        {
-            if (size >= 8)
-            {
-                strcpy_s(Staff_Password, p.c_str());
-                return true;
-            }
-            else
-            {
-                throw(1);
-            }
-        }
-        else
-        {
 
-            throw(1);
-        }
-        is.close();
-    }
-    catch (...)
-    {
-        strcpy_s(Staff_Password, "");
-        return false;
-    }
-}
 bool chef::addworkingorder()
 {
     Order temp;
@@ -123,13 +75,13 @@ bool chef::addworkingorder()
             Working_Order_Code = temp.getOrderCode();
             temp.setstatus(making);
             Chefs_Order = temp;
+            Working = true;
             os.write((char*)&temp, sizeof(temp));
         }
         else
         {
             os.write((char*)&temp, sizeof(temp));
         }
-        //pos = (int)fs.tellg();
     }
     is.close();
     os.close();
@@ -163,6 +115,7 @@ bool chef::setorderready()
             Total_Orders++;
             Working_Order_Code = 0;
             Chefs_Order = 0;
+            Working = false;
             os.write((char*)&temp, sizeof(temp));
         }
         else
@@ -211,6 +164,7 @@ bool chef::cancelorder()
             temp.setstatus(canceled);
             Working_Order_Code = 0;
             Chefs_Order = 0;
+            Working = false;
             os.write((char*)&temp, sizeof(temp));
         }
         else
@@ -260,4 +214,8 @@ bool chef::updatechef()
     rename("temp.dat", "chef.dat");
     if (flag == 1) return true;
     else return false;
+}
+bool chef::getWorking()
+{
+    return Working;
 }

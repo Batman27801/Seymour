@@ -151,7 +151,7 @@ bool Manager::DeleteChef(string id)const
     while (!is.eof())
     {
         is.read((char*)&temp, sizeof(temp));
-        if (temp.getID() == id)
+        if (temp.getID() == id && temp.getWorking()==false)
         {
             flag = 1;
             continue;
@@ -178,7 +178,7 @@ bool Manager::DeleteDeliveryBoy(string id)const
     while (!is.eof())
     {
         is.read((char*)&temp, sizeof(temp));
-        if (temp.getID() == id)
+        if (temp.getID() == id && temp.getOnDelivery() == false)
         {
             flag = 1;
             continue;
