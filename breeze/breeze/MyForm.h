@@ -660,6 +660,21 @@ private: System::Windows::Forms::TextBox^ chefnewsalerytextbox;
 private: System::Windows::Forms::TextBox^ Updatechefsalerytextbox;
 private: System::Windows::Forms::Button^ Updatechefsalerybutton;
 private: System::Windows::Forms::Button^ button1;
+private: System::Windows::Forms::Label^ chefnewsalerylabel;
+
+private: System::Windows::Forms::Label^ DBnewsalerylabel;
+private: System::Windows::Forms::Label^ DBdisplayorderslabel;
+private: System::Windows::Forms::Label^ DBdisplayordersnotice;
+private: System::Windows::Forms::Button^ DBdisplayordersfinalbutton;
+private: System::Windows::Forms::TextBox^ DBtotalordersdisplaybox;
+private: System::Windows::Forms::TextBox^ DBtotalordersidbox;
+private: System::Windows::Forms::Button^ DBtotalordersdisplaybutton;
+private: System::Windows::Forms::Label^ cheftoatlordersnotice;
+private: System::Windows::Forms::Button^ cheftotalordersdisplayfinalbutton;
+private: System::Windows::Forms::Label^ Cheftotalorderslable;
+private: System::Windows::Forms::TextBox^ cheftotalordersdisplaybox;
+private: System::Windows::Forms::TextBox^ Cheftotalordersidbox;
+private: System::Windows::Forms::Button^ TotalOrdersofchefbutton;
 
 
 
@@ -1086,6 +1101,20 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->chefordercount = (gcnew System::Windows::Forms::Label());
             this->chefusrenamelabel = (gcnew System::Windows::Forms::Label());
             this->Managermain = (gcnew System::Windows::Forms::TabPage());
+            this->DBdisplayorderslabel = (gcnew System::Windows::Forms::Label());
+            this->DBdisplayordersnotice = (gcnew System::Windows::Forms::Label());
+            this->DBdisplayordersfinalbutton = (gcnew System::Windows::Forms::Button());
+            this->DBtotalordersdisplaybox = (gcnew System::Windows::Forms::TextBox());
+            this->DBtotalordersidbox = (gcnew System::Windows::Forms::TextBox());
+            this->DBtotalordersdisplaybutton = (gcnew System::Windows::Forms::Button());
+            this->cheftoatlordersnotice = (gcnew System::Windows::Forms::Label());
+            this->cheftotalordersdisplayfinalbutton = (gcnew System::Windows::Forms::Button());
+            this->Cheftotalorderslable = (gcnew System::Windows::Forms::Label());
+            this->cheftotalordersdisplaybox = (gcnew System::Windows::Forms::TextBox());
+            this->Cheftotalordersidbox = (gcnew System::Windows::Forms::TextBox());
+            this->TotalOrdersofchefbutton = (gcnew System::Windows::Forms::Button());
+            this->chefnewsalerylabel = (gcnew System::Windows::Forms::Label());
+            this->DBnewsalerylabel = (gcnew System::Windows::Forms::Label());
             this->UpdateDBsalerynotice = (gcnew System::Windows::Forms::Label());
             this->UpdateDBsaleryfinalbutton = (gcnew System::Windows::Forms::Button());
             this->DBnewsalerytextbox = (gcnew System::Windows::Forms::TextBox());
@@ -5355,6 +5384,20 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // Managermain
             // 
             this->Managermain->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Managermain.BackgroundImage")));
+            this->Managermain->Controls->Add(this->DBdisplayorderslabel);
+            this->Managermain->Controls->Add(this->DBdisplayordersnotice);
+            this->Managermain->Controls->Add(this->DBdisplayordersfinalbutton);
+            this->Managermain->Controls->Add(this->DBtotalordersdisplaybox);
+            this->Managermain->Controls->Add(this->DBtotalordersidbox);
+            this->Managermain->Controls->Add(this->DBtotalordersdisplaybutton);
+            this->Managermain->Controls->Add(this->cheftoatlordersnotice);
+            this->Managermain->Controls->Add(this->cheftotalordersdisplayfinalbutton);
+            this->Managermain->Controls->Add(this->Cheftotalorderslable);
+            this->Managermain->Controls->Add(this->cheftotalordersdisplaybox);
+            this->Managermain->Controls->Add(this->Cheftotalordersidbox);
+            this->Managermain->Controls->Add(this->TotalOrdersofchefbutton);
+            this->Managermain->Controls->Add(this->chefnewsalerylabel);
+            this->Managermain->Controls->Add(this->DBnewsalerylabel);
             this->Managermain->Controls->Add(this->UpdateDBsalerynotice);
             this->Managermain->Controls->Add(this->UpdateDBsaleryfinalbutton);
             this->Managermain->Controls->Add(this->DBnewsalerytextbox);
@@ -5389,12 +5432,192 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Managermain->UseVisualStyleBackColor = true;
             this->Managermain->Enter += gcnew System::EventHandler(this, &MyForm::Managermain_Enter);
             // 
+            // DBdisplayorderslabel
+            // 
+            this->DBdisplayorderslabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->DBdisplayorderslabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DBdisplayorderslabel->Location = System::Drawing::Point(1004, 378);
+            this->DBdisplayorderslabel->Name = L"DBdisplayorderslabel";
+            this->DBdisplayorderslabel->Size = System::Drawing::Size(125, 23);
+            this->DBdisplayorderslabel->TabIndex = 41;
+            this->DBdisplayorderslabel->Text = L"Orders";
+            this->DBdisplayorderslabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->DBdisplayorderslabel->Visible = false;
+            // 
+            // DBdisplayordersnotice
+            // 
+            this->DBdisplayordersnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->DBdisplayordersnotice->ForeColor = System::Drawing::Color::Red;
+            this->DBdisplayordersnotice->Location = System::Drawing::Point(919, 436);
+            this->DBdisplayordersnotice->Name = L"DBdisplayordersnotice";
+            this->DBdisplayordersnotice->Size = System::Drawing::Size(116, 16);
+            this->DBdisplayordersnotice->TabIndex = 40;
+            this->DBdisplayordersnotice->Text = L"Record Not Found";
+            this->DBdisplayordersnotice->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->DBdisplayordersnotice->Visible = false;
+            // 
+            // DBdisplayordersfinalbutton
+            // 
+            this->DBdisplayordersfinalbutton->BackColor = System::Drawing::Color::Green;
+            this->DBdisplayordersfinalbutton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->DBdisplayordersfinalbutton->Location = System::Drawing::Point(1123, 404);
+            this->DBdisplayordersfinalbutton->Name = L"DBdisplayordersfinalbutton";
+            this->DBdisplayordersfinalbutton->Size = System::Drawing::Size(75, 23);
+            this->DBdisplayordersfinalbutton->TabIndex = 39;
+            this->DBdisplayordersfinalbutton->Text = L"Display";
+            this->DBdisplayordersfinalbutton->UseVisualStyleBackColor = false;
+            this->DBdisplayordersfinalbutton->Visible = false;
+            this->DBdisplayordersfinalbutton->Click += gcnew System::EventHandler(this, &MyForm::DBdisplayordersfinalbutton_Click);
+            // 
+            // DBtotalordersdisplaybox
+            // 
+            this->DBtotalordersdisplaybox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->DBtotalordersdisplaybox->Location = System::Drawing::Point(1024, 404);
+            this->DBtotalordersdisplaybox->Name = L"DBtotalordersdisplaybox";
+            this->DBtotalordersdisplaybox->Size = System::Drawing::Size(90, 22);
+            this->DBtotalordersdisplaybox->TabIndex = 38;
+            this->DBtotalordersdisplaybox->Text = L"0";
+            this->DBtotalordersdisplaybox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            this->DBtotalordersdisplaybox->Visible = false;
+            // 
+            // DBtotalordersidbox
+            // 
+            this->DBtotalordersidbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->DBtotalordersidbox->Location = System::Drawing::Point(928, 403);
+            this->DBtotalordersidbox->Name = L"DBtotalordersidbox";
+            this->DBtotalordersidbox->Size = System::Drawing::Size(90, 22);
+            this->DBtotalordersidbox->TabIndex = 37;
+            this->DBtotalordersidbox->Text = L"ID";
+            this->DBtotalordersidbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            this->DBtotalordersidbox->Visible = false;
+            // 
+            // DBtotalordersdisplaybutton
+            // 
+            this->DBtotalordersdisplaybutton->BackColor = System::Drawing::Color::Maroon;
+            this->DBtotalordersdisplaybutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->DBtotalordersdisplaybutton->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DBtotalordersdisplaybutton->Location = System::Drawing::Point(722, 395);
+            this->DBtotalordersdisplaybutton->Name = L"DBtotalordersdisplaybutton";
+            this->DBtotalordersdisplaybutton->Size = System::Drawing::Size(200, 38);
+            this->DBtotalordersdisplaybutton->TabIndex = 36;
+            this->DBtotalordersdisplaybutton->Text = L"See Total Orders of D.Boy";
+            this->DBtotalordersdisplaybutton->UseVisualStyleBackColor = false;
+            this->DBtotalordersdisplaybutton->Click += gcnew System::EventHandler(this, &MyForm::DBtotalordersdisplaybutton_Click);
+            // 
+            // cheftoatlordersnotice
+            // 
+            this->cheftoatlordersnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->cheftoatlordersnotice->ForeColor = System::Drawing::Color::Red;
+            this->cheftoatlordersnotice->Location = System::Drawing::Point(919, 330);
+            this->cheftoatlordersnotice->Name = L"cheftoatlordersnotice";
+            this->cheftoatlordersnotice->Size = System::Drawing::Size(116, 16);
+            this->cheftoatlordersnotice->TabIndex = 35;
+            this->cheftoatlordersnotice->Text = L"Record Not Found";
+            this->cheftoatlordersnotice->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->cheftoatlordersnotice->Visible = false;
+            // 
+            // cheftotalordersdisplayfinalbutton
+            // 
+            this->cheftotalordersdisplayfinalbutton->BackColor = System::Drawing::Color::Green;
+            this->cheftotalordersdisplayfinalbutton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+            this->cheftotalordersdisplayfinalbutton->Location = System::Drawing::Point(1123, 297);
+            this->cheftotalordersdisplayfinalbutton->Name = L"cheftotalordersdisplayfinalbutton";
+            this->cheftotalordersdisplayfinalbutton->Size = System::Drawing::Size(75, 23);
+            this->cheftotalordersdisplayfinalbutton->TabIndex = 34;
+            this->cheftotalordersdisplayfinalbutton->Text = L"Display";
+            this->cheftotalordersdisplayfinalbutton->UseVisualStyleBackColor = false;
+            this->cheftotalordersdisplayfinalbutton->Visible = false;
+            this->cheftotalordersdisplayfinalbutton->Click += gcnew System::EventHandler(this, &MyForm::cheftotalordersdisplayfinalbutton_Click);
+            // 
+            // Cheftotalorderslable
+            // 
+            this->Cheftotalorderslable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->Cheftotalorderslable->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->Cheftotalorderslable->Location = System::Drawing::Point(1004, 272);
+            this->Cheftotalorderslable->Name = L"Cheftotalorderslable";
+            this->Cheftotalorderslable->Size = System::Drawing::Size(125, 23);
+            this->Cheftotalorderslable->TabIndex = 33;
+            this->Cheftotalorderslable->Text = L"Orders";
+            this->Cheftotalorderslable->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->Cheftotalorderslable->Visible = false;
+            // 
+            // cheftotalordersdisplaybox
+            // 
+            this->cheftotalordersdisplaybox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->cheftotalordersdisplaybox->Location = System::Drawing::Point(1024, 298);
+            this->cheftotalordersdisplaybox->Name = L"cheftotalordersdisplaybox";
+            this->cheftotalordersdisplaybox->Size = System::Drawing::Size(90, 22);
+            this->cheftotalordersdisplaybox->TabIndex = 32;
+            this->cheftotalordersdisplaybox->Text = L"0";
+            this->cheftotalordersdisplaybox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            this->cheftotalordersdisplaybox->Visible = false;
+            // 
+            // Cheftotalordersidbox
+            // 
+            this->Cheftotalordersidbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->Cheftotalordersidbox->Location = System::Drawing::Point(928, 297);
+            this->Cheftotalordersidbox->Name = L"Cheftotalordersidbox";
+            this->Cheftotalordersidbox->Size = System::Drawing::Size(90, 22);
+            this->Cheftotalordersidbox->TabIndex = 31;
+            this->Cheftotalordersidbox->Text = L"ID";
+            this->Cheftotalordersidbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            this->Cheftotalordersidbox->Visible = false;
+            // 
+            // TotalOrdersofchefbutton
+            // 
+            this->TotalOrdersofchefbutton->BackColor = System::Drawing::Color::Maroon;
+            this->TotalOrdersofchefbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->TotalOrdersofchefbutton->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->TotalOrdersofchefbutton->Location = System::Drawing::Point(722, 289);
+            this->TotalOrdersofchefbutton->Name = L"TotalOrdersofchefbutton";
+            this->TotalOrdersofchefbutton->Size = System::Drawing::Size(200, 38);
+            this->TotalOrdersofchefbutton->TabIndex = 30;
+            this->TotalOrdersofchefbutton->Text = L"See Total Orders of Chef";
+            this->TotalOrdersofchefbutton->UseVisualStyleBackColor = false;
+            this->TotalOrdersofchefbutton->Click += gcnew System::EventHandler(this, &MyForm::TotalOrdersofchefbutton_Click);
+            // 
+            // chefnewsalerylabel
+            // 
+            this->chefnewsalerylabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->chefnewsalerylabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->chefnewsalerylabel->Location = System::Drawing::Point(1004, 91);
+            this->chefnewsalerylabel->Name = L"chefnewsalerylabel";
+            this->chefnewsalerylabel->Size = System::Drawing::Size(125, 23);
+            this->chefnewsalerylabel->TabIndex = 29;
+            this->chefnewsalerylabel->Text = L"New Salery";
+            this->chefnewsalerylabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->chefnewsalerylabel->Visible = false;
+            // 
+            // DBnewsalerylabel
+            // 
+            this->DBnewsalerylabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->DBnewsalerylabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->DBnewsalerylabel->Location = System::Drawing::Point(1004, 181);
+            this->DBnewsalerylabel->Name = L"DBnewsalerylabel";
+            this->DBnewsalerylabel->Size = System::Drawing::Size(125, 23);
+            this->DBnewsalerylabel->TabIndex = 28;
+            this->DBnewsalerylabel->Text = L"New Salery";
+            this->DBnewsalerylabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->DBnewsalerylabel->Visible = false;
+            // 
             // UpdateDBsalerynotice
             // 
             this->UpdateDBsalerynotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->UpdateDBsalerynotice->ForeColor = System::Drawing::Color::Red;
-            this->UpdateDBsalerynotice->Location = System::Drawing::Point(420, 513);
+            this->UpdateDBsalerynotice->Location = System::Drawing::Point(919, 232);
             this->UpdateDBsalerynotice->Name = L"UpdateDBsalerynotice";
             this->UpdateDBsalerynotice->Size = System::Drawing::Size(116, 16);
             this->UpdateDBsalerynotice->TabIndex = 27;
@@ -5406,23 +5629,24 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->UpdateDBsaleryfinalbutton->BackColor = System::Drawing::Color::Green;
             this->UpdateDBsaleryfinalbutton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->UpdateDBsaleryfinalbutton->Location = System::Drawing::Point(622, 483);
+            this->UpdateDBsaleryfinalbutton->Location = System::Drawing::Point(1120, 207);
             this->UpdateDBsaleryfinalbutton->Name = L"UpdateDBsaleryfinalbutton";
             this->UpdateDBsaleryfinalbutton->Size = System::Drawing::Size(75, 23);
             this->UpdateDBsaleryfinalbutton->TabIndex = 26;
             this->UpdateDBsaleryfinalbutton->Text = L"Update";
             this->UpdateDBsaleryfinalbutton->UseVisualStyleBackColor = false;
             this->UpdateDBsaleryfinalbutton->Visible = false;
+            this->UpdateDBsaleryfinalbutton->Click += gcnew System::EventHandler(this, &MyForm::UpdateDBsaleryfinalbutton_Click);
             // 
             // DBnewsalerytextbox
             // 
             this->DBnewsalerytextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->DBnewsalerytextbox->Location = System::Drawing::Point(526, 486);
+            this->DBnewsalerytextbox->Location = System::Drawing::Point(1024, 207);
             this->DBnewsalerytextbox->Name = L"DBnewsalerytextbox";
             this->DBnewsalerytextbox->Size = System::Drawing::Size(90, 22);
             this->DBnewsalerytextbox->TabIndex = 25;
-            this->DBnewsalerytextbox->Text = L"New Salery";
+            this->DBnewsalerytextbox->Text = L"0";
             this->DBnewsalerytextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
             this->DBnewsalerytextbox->Visible = false;
             // 
@@ -5430,7 +5654,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->UpdateDBsalerytextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->UpdateDBsalerytextbox->Location = System::Drawing::Point(430, 488);
+            this->UpdateDBsalerytextbox->Location = System::Drawing::Point(928, 207);
             this->UpdateDBsalerytextbox->Name = L"UpdateDBsalerytextbox";
             this->UpdateDBsalerytextbox->Size = System::Drawing::Size(90, 22);
             this->UpdateDBsalerytextbox->TabIndex = 24;
@@ -5443,7 +5667,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->DBsaleryupdatednotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->DBsaleryupdatednotice->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->DBsaleryupdatednotice->Location = System::Drawing::Point(261, 522);
+            this->DBsaleryupdatednotice->Location = System::Drawing::Point(767, 240);
             this->DBsaleryupdatednotice->Name = L"DBsaleryupdatednotice";
             this->DBsaleryupdatednotice->Size = System::Drawing::Size(125, 23);
             this->DBsaleryupdatednotice->TabIndex = 23;
@@ -5457,19 +5681,20 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->UpdateDBsalerybutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->UpdateDBsalerybutton->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->UpdateDBsalerybutton->Location = System::Drawing::Point(221, 482);
+            this->UpdateDBsalerybutton->Location = System::Drawing::Point(722, 199);
             this->UpdateDBsalerybutton->Name = L"UpdateDBsalerybutton";
             this->UpdateDBsalerybutton->Size = System::Drawing::Size(200, 38);
             this->UpdateDBsalerybutton->TabIndex = 22;
             this->UpdateDBsalerybutton->Text = L"Update Salery Of D.Boy";
             this->UpdateDBsalerybutton->UseVisualStyleBackColor = false;
+            this->UpdateDBsalerybutton->Click += gcnew System::EventHandler(this, &MyForm::UpdateDBsalerybutton_Click);
             // 
             // chefsaleryupdatednotice
             // 
             this->chefsaleryupdatednotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->chefsaleryupdatednotice->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->chefsaleryupdatednotice->Location = System::Drawing::Point(261, 442);
+            this->chefsaleryupdatednotice->Location = System::Drawing::Point(767, 147);
             this->chefsaleryupdatednotice->Name = L"chefsaleryupdatednotice";
             this->chefsaleryupdatednotice->Size = System::Drawing::Size(125, 23);
             this->chefsaleryupdatednotice->TabIndex = 21;
@@ -5482,7 +5707,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Updatechefsaleryidnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->Updatechefsaleryidnotice->ForeColor = System::Drawing::Color::Red;
-            this->Updatechefsaleryidnotice->Location = System::Drawing::Point(420, 439);
+            this->Updatechefsaleryidnotice->Location = System::Drawing::Point(919, 142);
             this->Updatechefsaleryidnotice->Name = L"Updatechefsaleryidnotice";
             this->Updatechefsaleryidnotice->Size = System::Drawing::Size(116, 16);
             this->Updatechefsaleryidnotice->TabIndex = 20;
@@ -5494,7 +5719,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->Updatechefsaleryfinalbutton->BackColor = System::Drawing::Color::Green;
             this->Updatechefsaleryfinalbutton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->Updatechefsaleryfinalbutton->Location = System::Drawing::Point(622, 409);
+            this->Updatechefsaleryfinalbutton->Location = System::Drawing::Point(1120, 117);
             this->Updatechefsaleryfinalbutton->Name = L"Updatechefsaleryfinalbutton";
             this->Updatechefsaleryfinalbutton->Size = System::Drawing::Size(75, 23);
             this->Updatechefsaleryfinalbutton->TabIndex = 19;
@@ -5507,11 +5732,11 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->chefnewsalerytextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->chefnewsalerytextbox->Location = System::Drawing::Point(526, 410);
+            this->chefnewsalerytextbox->Location = System::Drawing::Point(1024, 117);
             this->chefnewsalerytextbox->Name = L"chefnewsalerytextbox";
             this->chefnewsalerytextbox->Size = System::Drawing::Size(90, 22);
             this->chefnewsalerytextbox->TabIndex = 18;
-            this->chefnewsalerytextbox->Text = L"New Salery";
+            this->chefnewsalerytextbox->Text = L"0";
             this->chefnewsalerytextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
             this->chefnewsalerytextbox->Visible = false;
             // 
@@ -5519,7 +5744,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->Updatechefsalerytextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->Updatechefsalerytextbox->Location = System::Drawing::Point(430, 410);
+            this->Updatechefsalerytextbox->Location = System::Drawing::Point(928, 119);
             this->Updatechefsalerytextbox->Name = L"Updatechefsalerytextbox";
             this->Updatechefsalerytextbox->Size = System::Drawing::Size(90, 22);
             this->Updatechefsalerytextbox->TabIndex = 17;
@@ -5533,7 +5758,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Updatechefsalerybutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->Updatechefsalerybutton->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->Updatechefsalerybutton->Location = System::Drawing::Point(221, 403);
+            this->Updatechefsalerybutton->Location = System::Drawing::Point(722, 109);
             this->Updatechefsalerybutton->Name = L"Updatechefsalerybutton";
             this->Updatechefsalerybutton->Size = System::Drawing::Size(200, 38);
             this->Updatechefsalerybutton->TabIndex = 16;
@@ -5546,7 +5771,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->DBdeleteidnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->DBdeleteidnotice->ForeColor = System::Drawing::Color::Red;
-            this->DBdeleteidnotice->Location = System::Drawing::Point(424, 366);
+            this->DBdeleteidnotice->Location = System::Drawing::Point(426, 442);
             this->DBdeleteidnotice->Name = L"DBdeleteidnotice";
             this->DBdeleteidnotice->Size = System::Drawing::Size(142, 31);
             this->DBdeleteidnotice->TabIndex = 15;
@@ -5559,7 +5784,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->DBdeletedbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->DBdeletedbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->DBdeletedbox->Location = System::Drawing::Point(261, 368);
+            this->DBdeletedbox->Location = System::Drawing::Point(261, 450);
             this->DBdeletedbox->Name = L"DBdeletedbox";
             this->DBdeletedbox->Size = System::Drawing::Size(125, 23);
             this->DBdeletedbox->TabIndex = 14;
@@ -5572,7 +5797,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->chefdeleteidnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->chefdeleteidnotice->ForeColor = System::Drawing::Color::Red;
-            this->chefdeleteidnotice->Location = System::Drawing::Point(420, 293);
+            this->chefdeleteidnotice->Location = System::Drawing::Point(411, 330);
             this->chefdeleteidnotice->Name = L"chefdeleteidnotice";
             this->chefdeleteidnotice->Size = System::Drawing::Size(173, 31);
             this->chefdeleteidnotice->TabIndex = 13;
@@ -5584,7 +5809,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->DBdeletefinalbutton->BackColor = System::Drawing::Color::Red;
             this->DBdeletefinalbutton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->DBdeletefinalbutton->Location = System::Drawing::Point(574, 335);
+            this->DBdeletefinalbutton->Location = System::Drawing::Point(576, 403);
             this->DBdeletefinalbutton->Name = L"DBdeletefinalbutton";
             this->DBdeletefinalbutton->Size = System::Drawing::Size(75, 23);
             this->DBdeletefinalbutton->TabIndex = 12;
@@ -5597,7 +5822,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->DBdeletetextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->DBdeletetextbox->Location = System::Drawing::Point(427, 336);
+            this->DBdeletetextbox->Location = System::Drawing::Point(429, 403);
             this->DBdeletetextbox->Name = L"DBdeletetextbox";
             this->DBdeletetextbox->Size = System::Drawing::Size(141, 22);
             this->DBdeletetextbox->TabIndex = 11;
@@ -5611,7 +5836,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->DeleteDBbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->DeleteDBbutton->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->DeleteDBbutton->Location = System::Drawing::Point(221, 329);
+            this->DeleteDBbutton->Location = System::Drawing::Point(221, 395);
             this->DeleteDBbutton->Name = L"DeleteDBbutton";
             this->DeleteDBbutton->Size = System::Drawing::Size(200, 38);
             this->DeleteDBbutton->TabIndex = 10;
@@ -5624,7 +5849,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->chefdeletedbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->chefdeletedbox->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->chefdeletedbox->Location = System::Drawing::Point(261, 297);
+            this->chefdeletedbox->Location = System::Drawing::Point(261, 334);
             this->chefdeletedbox->Name = L"chefdeletedbox";
             this->chefdeletedbox->Size = System::Drawing::Size(125, 23);
             this->chefdeletedbox->TabIndex = 9;
@@ -5636,7 +5861,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->chefdeletefinalbutton->BackColor = System::Drawing::Color::Red;
             this->chefdeletefinalbutton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-            this->chefdeletefinalbutton->Location = System::Drawing::Point(574, 267);
+            this->chefdeletefinalbutton->Location = System::Drawing::Point(574, 297);
             this->chefdeletefinalbutton->Name = L"chefdeletefinalbutton";
             this->chefdeletefinalbutton->Size = System::Drawing::Size(75, 23);
             this->chefdeletefinalbutton->TabIndex = 8;
@@ -5649,7 +5874,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // 
             this->chefdeletetextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->chefdeletetextbox->Location = System::Drawing::Point(430, 267);
+            this->chefdeletetextbox->Location = System::Drawing::Point(430, 297);
             this->chefdeletetextbox->Name = L"chefdeletetextbox";
             this->chefdeletetextbox->Size = System::Drawing::Size(141, 22);
             this->chefdeletetextbox->TabIndex = 7;
@@ -5663,7 +5888,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->deletechefbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->deletechefbutton->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->deletechefbutton->Location = System::Drawing::Point(221, 259);
+            this->deletechefbutton->Location = System::Drawing::Point(221, 289);
             this->deletechefbutton->Name = L"deletechefbutton";
             this->deletechefbutton->Size = System::Drawing::Size(200, 38);
             this->deletechefbutton->TabIndex = 6;
@@ -5689,7 +5914,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->AddDBButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->AddDBButton->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->AddDBButton->Location = System::Drawing::Point(221, 200);
+            this->AddDBButton->Location = System::Drawing::Point(221, 199);
             this->AddDBButton->Name = L"AddDBButton";
             this->AddDBButton->Size = System::Drawing::Size(200, 38);
             this->AddDBButton->TabIndex = 4;
@@ -5703,7 +5928,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Add_Chef_Button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->Add_Chef_Button->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->Add_Chef_Button->Location = System::Drawing::Point(221, 144);
+            this->Add_Chef_Button->Location = System::Drawing::Point(221, 109);
             this->Add_Chef_Button->Name = L"Add_Chef_Button";
             this->Add_Chef_Button->Size = System::Drawing::Size(200, 38);
             this->Add_Chef_Button->TabIndex = 3;
@@ -5716,9 +5941,9 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Managermainheading->Font = (gcnew System::Drawing::Font(L"Algerian", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->Managermainheading->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->Managermainheading->Location = System::Drawing::Point(595, 56);
+            this->Managermainheading->Location = System::Drawing::Point(602, 19);
             this->Managermainheading->Name = L"Managermainheading";
-            this->Managermainheading->Size = System::Drawing::Size(165, 109);
+            this->Managermainheading->Size = System::Drawing::Size(165, 95);
             this->Managermainheading->TabIndex = 2;
             this->Managermainheading->Text = L"Manager Main Menu";
             this->Managermainheading->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -6853,6 +7078,12 @@ private: System::Void DeliveryBoyMain_Enter_1(System::Object^ sender, System::Ev
 private: System::Void ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
     System::Void cheflogout_Click(System::Object^ sender, System::EventArgs^ e);
     System::Void trackorderbutton_Click(System::Object^ sender, System::EventArgs^ e);
->
+
+    System::Void UpdateDBsalerybutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void UpdateDBsaleryfinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void TotalOrdersofchefbutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void DBtotalordersdisplaybutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void cheftotalordersdisplayfinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
+    System::Void DBdisplayordersfinalbutton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

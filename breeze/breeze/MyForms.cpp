@@ -2268,32 +2268,50 @@ void breeze::MyForm::BackToStaafMain_Click(System::Object^ sender, System::Event
 }
 void breeze::MyForm::Managermain_Enter(System::Object^ sender, System::EventArgs^ e) {
 	chefdeletetextbox->Visible = false;
-	chefdeletetextbox->Text = "";
+	chefdeletetextbox->Text = "ID";
 	chefdeletedbox->Visible = false;
 	chefdeleteidnotice->Visible = false;
 	chefdeletefinalbutton->Visible = false;
 
 	DBdeletetextbox->Visible = false;
-	DBdeletetextbox->Text = "";
+	DBdeletetextbox->Text = "ID";
 	DBdeletedbox->Visible = false;
 	DBdeleteidnotice->Visible = false;
 	DBdeletefinalbutton->Visible = false;
 
 	Updatechefsalerytextbox->Visible = false;
 	chefnewsalerytextbox->Visible = false;
-	Updatechefsalerytextbox->Text = "";
-	chefnewsalerytextbox->Text = "";
+	Updatechefsalerytextbox->Text = "ID";
+	chefnewsalerytextbox->Text = "0";
 	Updatechefsaleryidnotice->Visible = false;
 	chefsaleryupdatednotice->Visible = false;
 	Updatechefsaleryfinalbutton->Visible = false;
+	chefnewsalerylabel->Visible = false;
 
 	UpdateDBsalerytextbox->Visible = false;
 	DBnewsalerytextbox->Visible = false;
-	UpdateDBsalerytextbox->Text = "";
-	DBnewsalerytextbox->Text = "";
+	UpdateDBsalerytextbox->Text = "ID";
+	DBnewsalerytextbox->Text = "0";
 	UpdateDBsalerynotice->Visible = false;
 	DBsaleryupdatednotice->Visible = false;
 	UpdateDBsaleryfinalbutton->Visible = false;
+	chefnewsalerylabel->Visible = false;
+
+	Cheftotalordersidbox->Visible = false;
+	Cheftotalordersidbox->Text = "ID";
+	cheftotalordersdisplaybox->Visible = false;
+	cheftotalordersdisplaybox->Text = "0";
+	cheftotalordersdisplayfinalbutton->Visible = false;
+	cheftoatlordersnotice->Visible = false;
+	Cheftotalorderslable->Visible = false;
+
+	DBtotalordersidbox->Visible = false;
+	DBtotalordersidbox->Text = "ID";
+	DBtotalordersdisplaybox->Visible = false;
+	DBtotalordersdisplaybox->Text = "0";
+	DBtotalordersdisplaybox->Visible = false;
+	DBdisplayordersnotice->Visible = false;
+	DBdisplayorderslabel->Visible = false;
 }
 void breeze::MyForm::Add_Chef_Button_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Addnewchef;
@@ -2598,9 +2616,45 @@ void breeze::MyForm::deletechefbutton_Click(System::Object^ sender, System::Even
 	chefdeletefinalbutton->Visible = true;
 
 	DBdeletetextbox->Visible = false;
-	DBdeletefinalbutton->Visible = false;
+	DBdeletetextbox->Text = "ID";
 	DBdeletedbox->Visible = false;
 	DBdeleteidnotice->Visible = false;
+	DBdeletefinalbutton->Visible = false;
+
+	Updatechefsalerytextbox->Visible = false;
+	chefnewsalerytextbox->Visible = false;
+	Updatechefsalerytextbox->Text = "ID";
+	chefnewsalerytextbox->Text = "0";
+	Updatechefsaleryidnotice->Visible = false;
+	chefsaleryupdatednotice->Visible = false;
+	Updatechefsaleryfinalbutton->Visible = false;
+	chefnewsalerylabel->Visible = false;
+
+	UpdateDBsalerytextbox->Visible = false;
+	DBnewsalerytextbox->Visible = false;
+	UpdateDBsalerytextbox->Text = "ID";
+	DBnewsalerytextbox->Text = "0";
+	UpdateDBsalerynotice->Visible = false;
+	DBsaleryupdatednotice->Visible = false;
+	UpdateDBsaleryfinalbutton->Visible = false;
+	UpdateDBsaleryfinalbutton->Visible = false;
+	DBnewsalerylabel->Visible = false;
+
+	Cheftotalordersidbox->Visible = false;
+	Cheftotalordersidbox->Text = "ID";
+	cheftotalordersdisplaybox->Visible = false;
+	cheftotalordersdisplaybox->Text = "0";
+	cheftotalordersdisplayfinalbutton->Visible = false;
+	cheftoatlordersnotice->Visible = false;
+	Cheftotalorderslable->Visible = false;
+
+	DBtotalordersidbox->Visible = false;
+	DBtotalordersidbox->Text = "ID";
+	DBtotalordersdisplaybox->Visible = false;
+	DBtotalordersdisplaybox->Text = "0";
+	DBtotalordersdisplaybox->Visible = false;
+	DBdisplayordersnotice->Visible = false;
+	DBdisplayorderslabel->Visible = false;
 }
 void breeze::MyForm::chefdeletefinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (!manager->DeleteChef(backtostring(chefdeletetextbox->Text)))
@@ -2613,6 +2667,7 @@ void breeze::MyForm::chefdeletefinalbutton_Click(System::Object^ sender, System:
 		chefdeletedbox->Visible = true;
 		chefdeleteidnotice->Visible = false;
 		chefdeletetextbox->Visible = false;
+		chefdeletetextbox->Text = "ID";
 		chefdeletefinalbutton->Visible = false;
 	}
 }
@@ -2621,9 +2676,45 @@ void breeze::MyForm::DeleteDBbutton_Click(System::Object^ sender, System::EventA
 	DBdeletefinalbutton->Visible = true;
 
 	chefdeletetextbox->Visible = false;
-	chefdeletefinalbutton->Visible = false;
+	chefdeletetextbox->Text = "ID";
 	chefdeletedbox->Visible = false;
 	chefdeleteidnotice->Visible = false;
+	chefdeletefinalbutton->Visible = false;
+
+	Updatechefsalerytextbox->Visible = false;
+	chefnewsalerytextbox->Visible = false;
+	Updatechefsalerytextbox->Text = "ID";
+	chefnewsalerytextbox->Text = "0";
+	Updatechefsaleryidnotice->Visible = false;
+	chefsaleryupdatednotice->Visible = false;
+	Updatechefsaleryfinalbutton->Visible = false;
+	chefnewsalerylabel->Visible = false;
+
+	UpdateDBsalerytextbox->Visible = false;
+	DBnewsalerytextbox->Visible = false;
+	UpdateDBsalerytextbox->Text = "ID";
+	DBnewsalerytextbox->Text = "0";
+	UpdateDBsalerynotice->Visible = false;
+	DBsaleryupdatednotice->Visible = false;
+	UpdateDBsaleryfinalbutton->Visible = false;
+	UpdateDBsaleryfinalbutton->Visible = false;
+	chefnewsalerylabel->Visible = false;
+
+	Cheftotalordersidbox->Visible = false;
+	Cheftotalordersidbox->Text = "ID";
+	cheftotalordersdisplaybox->Visible = false;
+	cheftotalordersdisplaybox->Text = "0";
+	cheftotalordersdisplayfinalbutton->Visible = false;
+	cheftoatlordersnotice->Visible = false;
+	Cheftotalorderslable->Visible = false;
+
+	DBtotalordersidbox->Visible = false;
+	DBtotalordersidbox->Text = "ID";
+	DBtotalordersdisplaybox->Visible = false;
+	DBtotalordersdisplaybox->Text = "0";
+	DBtotalordersdisplaybox->Visible = false;
+	DBdisplayordersnotice->Visible = false;
+	DBdisplayorderslabel->Visible = false;
 }
 void breeze::MyForm::DBdeletefinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (!manager->DeleteDeliveryBoy(backtostring(DBdeletetextbox->Text)))
@@ -2636,6 +2727,7 @@ void breeze::MyForm::DBdeletefinalbutton_Click(System::Object^ sender, System::E
 		DBdeletedbox->Visible = true;
 		DBdeleteidnotice->Visible = false;
 		DBdeletetextbox->Visible = false;
+		DBdeletetextbox->Text = "ID";
 		DBdeletefinalbutton->Visible = false;
 	}
 }
@@ -2652,26 +2744,44 @@ void breeze::MyForm::Updatechefsalerybutton_Click(System::Object^ sender, System
 	Updatechefsalerytextbox->Visible = true;
 	chefnewsalerytextbox->Visible = true;
 	Updatechefsaleryfinalbutton->Visible = true;
+	chefnewsalerylabel->Visible = true;
 
 	chefdeletetextbox->Visible = false;
-	chefdeletetextbox->Text = "";
+	chefdeletetextbox->Text = "ID";
 	chefdeletedbox->Visible = false;
 	chefdeleteidnotice->Visible = false;
 	chefdeletefinalbutton->Visible = false;
 
 	DBdeletetextbox->Visible = false;
-	DBdeletetextbox->Text = "";
+	DBdeletetextbox->Text = "ID";
 	DBdeletedbox->Visible = false;
 	DBdeleteidnotice->Visible = false;
 	DBdeletefinalbutton->Visible = false;
 
 	UpdateDBsalerytextbox->Visible = false;
 	DBnewsalerytextbox->Visible = false;
-	UpdateDBsalerytextbox->Text = "";
-	DBnewsalerytextbox->Text = "";
+	UpdateDBsalerytextbox->Text = "ID";
+	DBnewsalerytextbox->Text = "0";
 	UpdateDBsalerynotice->Visible = false;
 	DBsaleryupdatednotice->Visible = false;
-	UpdateDBsalerybutton->Visible = false;
+	UpdateDBsaleryfinalbutton->Visible = false;
+	DBnewsalerylabel->Visible = false;
+
+	Cheftotalordersidbox->Visible = false;
+	Cheftotalordersidbox->Text = "ID";
+	cheftotalordersdisplaybox->Visible = false;
+	cheftotalordersdisplaybox->Text = "0";
+	cheftotalordersdisplayfinalbutton->Visible = false;
+	cheftoatlordersnotice->Visible = false;
+	Cheftotalorderslable->Visible = false;
+
+	DBtotalordersidbox->Visible = false;
+	DBtotalordersidbox->Text = "ID";
+	DBtotalordersdisplaybox->Visible = false;
+	DBtotalordersdisplaybox->Text = "0";
+	DBtotalordersdisplaybox->Visible = false;
+	DBdisplayordersnotice->Visible = false;
+	DBdisplayorderslabel->Visible = false;
 }
 void breeze::MyForm::Updatechefsaleryfinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (!manager->updatesaleryofchef(backtostring(Updatechefsalerytextbox->Text), Convert::ToDouble(chefnewsalerytextbox->Text)))
@@ -2682,13 +2792,15 @@ void breeze::MyForm::Updatechefsaleryfinalbutton_Click(System::Object^ sender, S
 	{
 		Updatechefsalerytextbox->Visible = false;
 		chefnewsalerytextbox->Visible = false;
-		Updatechefsalerytextbox->Text = "";
-		chefnewsalerytextbox->Text = "";
+		Updatechefsalerytextbox->Text = "ID";
+		chefnewsalerytextbox->Text = "0";
 		Updatechefsaleryidnotice->Visible = false;
 		Updatechefsaleryfinalbutton->Visible = false;
 		chefsaleryupdatednotice->Visible = true;
-		
+		chefnewsalerylabel->Visible = false;
+
 	}
+}
 
 void breeze::MyForm::cheflogout_Click(System::Object^ sender, System::EventArgs^ e) {
 	delete emp;
@@ -2744,5 +2856,172 @@ void breeze::MyForm::trackorderbutton_Click(System::Object^ sender, System::Even
 		trackedinfolabel->Text = "No Such Order Exists. Are You Sure You entered the correct Order Number? ";
 
 	orderfile.close();
+}
+void breeze::MyForm::UpdateDBsalerybutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	UpdateDBsalerytextbox->Visible = true;
+	DBnewsalerytextbox->Visible = true;
+	UpdateDBsaleryfinalbutton->Visible = true;
+	DBnewsalerylabel->Visible = true;
+	
+	chefdeletetextbox->Visible = false;
+	chefdeletetextbox->Text = "ID";
+	chefdeletedbox->Visible = false;
+	chefdeleteidnotice->Visible = false;
+	chefdeletefinalbutton->Visible = false;
 
+	DBdeletetextbox->Visible = false;
+	DBdeletetextbox->Text = "ID";
+	DBdeletedbox->Visible = false;
+	DBdeleteidnotice->Visible = false;
+	DBdeletefinalbutton->Visible = false;
+
+	Updatechefsalerytextbox->Visible = false;
+	chefnewsalerytextbox->Visible = false;
+	Updatechefsalerytextbox->Text = "ID";
+	chefnewsalerytextbox->Text = "0";
+	Updatechefsaleryidnotice->Visible = false;
+	chefsaleryupdatednotice->Visible = false;
+	Updatechefsaleryfinalbutton->Visible = false;
+	chefnewsalerylabel->Visible = false;
+
+	Cheftotalordersidbox->Visible = false;
+	Cheftotalordersidbox->Text = "ID";
+	cheftotalordersdisplaybox->Visible = false;
+	cheftotalordersdisplaybox->Text = "0";
+	cheftotalordersdisplayfinalbutton->Visible = false;
+	cheftoatlordersnotice->Visible = false;
+	Cheftotalorderslable->Visible = false;
+
+	DBtotalordersidbox->Visible = false;
+	DBtotalordersidbox->Text = "ID";
+	DBtotalordersdisplaybox->Visible = false;
+	DBtotalordersdisplaybox->Text = "0";
+	DBtotalordersdisplaybox->Visible = false;
+	DBdisplayordersnotice->Visible = false;
+	DBdisplayorderslabel->Visible = false;
+}
+void breeze::MyForm::UpdateDBsaleryfinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!manager->updatesaleryofDB(backtostring(UpdateDBsalerytextbox->Text), Convert::ToDouble(DBnewsalerytextbox->Text)))
+	{
+		UpdateDBsalerynotice->Visible = true;
+	}
+	else
+	{
+		UpdateDBsalerytextbox->Visible = false;
+		DBnewsalerytextbox->Visible = false;
+		UpdateDBsalerytextbox->Text = "";
+		DBnewsalerytextbox->Text = "0";
+		UpdateDBsaleryfinalbutton->Visible = false;
+		DBsaleryupdatednotice->Visible = true;
+		DBnewsalerylabel->Visible = false;
+	}
+}
+void breeze::MyForm::TotalOrdersofchefbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	Cheftotalordersidbox->Visible = true;
+	cheftotalordersdisplaybox->Visible = true;
+	Cheftotalorderslable->Visible = true;
+	cheftotalordersdisplayfinalbutton->Visible = true;
+
+	chefdeletetextbox->Visible = false;
+	chefdeletetextbox->Text = "ID";
+	chefdeletedbox->Visible = false;
+	chefdeleteidnotice->Visible = false;
+	chefdeletefinalbutton->Visible = false;
+
+	DBdeletetextbox->Visible = false;
+	DBdeletetextbox->Text = "ID";
+	DBdeletedbox->Visible = false;
+	DBdeleteidnotice->Visible = false;
+	DBdeletefinalbutton->Visible = false;
+
+	Updatechefsalerytextbox->Visible = false;
+	chefnewsalerytextbox->Visible = false;
+	Updatechefsalerytextbox->Text = "ID";
+	chefnewsalerytextbox->Text = "0";
+	Updatechefsaleryidnotice->Visible = false;
+	chefsaleryupdatednotice->Visible = false;
+	Updatechefsaleryfinalbutton->Visible = false;
+	chefnewsalerylabel->Visible = false;
+
+	UpdateDBsalerytextbox->Visible = false;
+	DBnewsalerytextbox->Visible = false;
+	UpdateDBsalerytextbox->Text = "ID";
+	DBnewsalerytextbox->Text = "0";
+	UpdateDBsalerynotice->Visible = false;
+	DBsaleryupdatednotice->Visible = false;
+	UpdateDBsaleryfinalbutton->Visible = false;
+	chefnewsalerylabel->Visible = false;
+
+	DBtotalordersidbox->Visible = false;
+	DBtotalordersidbox->Text = "ID";
+	DBtotalordersdisplaybox->Visible = false;
+	DBtotalordersdisplaybox->Text = "0";
+	DBtotalordersdisplaybox->Visible = false;
+	DBdisplayordersnotice->Visible = false;
+	DBdisplayorderslabel->Visible = false;
+}
+void breeze::MyForm::DBtotalordersdisplaybutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	DBtotalordersidbox->Visible = true;
+	DBtotalordersdisplaybox->Visible = true;
+	DBdisplayorderslabel->Visible = true;
+	DBdisplayordersfinalbutton->Visible = true;
+
+	chefdeletetextbox->Visible = false;
+	chefdeletetextbox->Text = "ID";
+	chefdeletedbox->Visible = false;
+	chefdeleteidnotice->Visible = false;
+	chefdeletefinalbutton->Visible = false;
+
+	DBdeletetextbox->Visible = false;
+	DBdeletetextbox->Text = "ID";
+	DBdeletedbox->Visible = false;
+	DBdeleteidnotice->Visible = false;
+	DBdeletefinalbutton->Visible = false;
+
+	Updatechefsalerytextbox->Visible = false;
+	chefnewsalerytextbox->Visible = false;
+	Updatechefsalerytextbox->Text = "ID";
+	chefnewsalerytextbox->Text = "0";
+	Updatechefsaleryidnotice->Visible = false;
+	chefsaleryupdatednotice->Visible = false;
+	Updatechefsaleryfinalbutton->Visible = false;
+	chefnewsalerylabel->Visible = false;
+
+	UpdateDBsalerytextbox->Visible = false;
+	DBnewsalerytextbox->Visible = false;
+	UpdateDBsalerytextbox->Text = "ID";
+	DBnewsalerytextbox->Text = "0";
+	UpdateDBsalerynotice->Visible = false;
+	DBsaleryupdatednotice->Visible = false;
+	UpdateDBsaleryfinalbutton->Visible = false;
+	chefnewsalerylabel->Visible = false;
+
+	Cheftotalordersidbox->Visible = false;
+	Cheftotalordersidbox->Text = "ID";
+	cheftotalordersdisplaybox->Visible = false;
+	cheftotalordersdisplaybox->Text = "0";
+	cheftotalordersdisplayfinalbutton->Visible = false;
+	cheftoatlordersnotice->Visible = false;
+	Cheftotalorderslable->Visible = false;
+
+}
+void breeze::MyForm::cheftotalordersdisplayfinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!manager->TotalOrders_Chef(backtostring(Cheftotalordersidbox->Text)))
+	{
+		cheftoatlordersnotice->Visible = true;
+	}
+	else
+	{
+		cheftotalordersdisplaybox->Text = Convert::ToString(manager->TotalOrders_Chef(backtostring(Cheftotalordersidbox->Text)));
+	}
+}
+void breeze::MyForm::DBdisplayordersfinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!manager->TotalOrders_DelvieryBoy (backtostring(DBtotalordersidbox->Text)))
+	{
+		DBdisplayordersnotice->Visible = true;
+	}
+	else
+	{
+		DBtotalordersdisplaybox->Text = Convert::ToString(manager->TotalOrders_DelvieryBoy (backtostring(DBtotalordersidbox->Text)));
+	}
 }
