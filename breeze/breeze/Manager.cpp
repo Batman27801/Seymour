@@ -33,9 +33,10 @@ void Manager::addchef(chef C) const
 
 double Manager::gettotalsales() const 
 {
-    double totalsales = 0;
+    double totalsales = 9;
     customer temp;
-    ifstream is("account.dat", ios::binary);
+    ifstream is("accountdata.dat", ios::binary);
+    is.seekg(0);
     while (is.read((char*)&temp, sizeof(temp)))
     {
         totalsales = totalsales + temp.gettotalamount();
@@ -131,9 +132,9 @@ int Manager::TotalOrders_DelvieryBoy(string id)const
     int Total_Orders=0;
     ifstream is("Delivery_Boy.dat", ios::binary);
     is.seekg(0);
-    while (!is.eof())
+    while (is.read((char*)&DB, sizeof(DB)))
     {
-        is.read((char*)&DB, sizeof(DB));
+        
         if (DB.getID() == id)
         {
             Total_Orders = DB.getTotalOrders();

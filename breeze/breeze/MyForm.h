@@ -666,12 +666,12 @@ private: System::Windows::Forms::Label^ chefnewsalerylabel;
 
 private: System::Windows::Forms::Label^ DBnewsalerylabel;
 private: System::Windows::Forms::Label^ DBdisplayorderslabel;
-private: System::Windows::Forms::Label^ DBdisplayordersnotice;
+
 private: System::Windows::Forms::Button^ DBdisplayordersfinalbutton;
 private: System::Windows::Forms::TextBox^ DBtotalordersdisplaybox;
 private: System::Windows::Forms::TextBox^ DBtotalordersidbox;
 private: System::Windows::Forms::Button^ DBtotalordersdisplaybutton;
-private: System::Windows::Forms::Label^ cheftoatlordersnotice;
+
 private: System::Windows::Forms::Button^ cheftotalordersdisplayfinalbutton;
 private: System::Windows::Forms::Label^ Cheftotalorderslable;
 private: System::Windows::Forms::TextBox^ cheftotalordersdisplaybox;
@@ -686,6 +686,10 @@ private: System::Windows::Forms::Button^ nextbutton;
 private: System::Windows::Forms::Label^ feebacklabel;
 private: System::Windows::Forms::TextBox^ feebackbox2;
 private: System::Windows::Forms::Label^ managerfeebackheading;
+private: System::Windows::Forms::TextBox^ totalsalestextbox;
+private: System::Windows::Forms::Button^ Viewtotalsalesbutton;
+private: System::Windows::Forms::Label^ DBdisplayordersnotice;
+private: System::Windows::Forms::Label^ cheftoatlordersnotice;
 
 
 
@@ -1119,12 +1123,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Managermain = (gcnew System::Windows::Forms::TabPage());
             this->customerfeedback = (gcnew System::Windows::Forms::Button());
             this->DBdisplayorderslabel = (gcnew System::Windows::Forms::Label());
-            this->DBdisplayordersnotice = (gcnew System::Windows::Forms::Label());
             this->DBdisplayordersfinalbutton = (gcnew System::Windows::Forms::Button());
             this->DBtotalordersdisplaybox = (gcnew System::Windows::Forms::TextBox());
             this->DBtotalordersidbox = (gcnew System::Windows::Forms::TextBox());
             this->DBtotalordersdisplaybutton = (gcnew System::Windows::Forms::Button());
-            this->cheftoatlordersnotice = (gcnew System::Windows::Forms::Label());
             this->cheftotalordersdisplayfinalbutton = (gcnew System::Windows::Forms::Button());
             this->Cheftotalorderslable = (gcnew System::Windows::Forms::Label());
             this->cheftotalordersdisplaybox = (gcnew System::Windows::Forms::TextBox());
@@ -1237,6 +1239,10 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->ReadyForDeliveryOrdersComboBox = (gcnew System::Windows::Forms::ComboBox());
             this->DeliveryBoySalaryLabel = (gcnew System::Windows::Forms::Label());
             this->DeliveryBoyNameLabel = (gcnew System::Windows::Forms::Label());
+            this->Viewtotalsalesbutton = (gcnew System::Windows::Forms::Button());
+            this->totalsalestextbox = (gcnew System::Windows::Forms::TextBox());
+            this->DBdisplayordersnotice = (gcnew System::Windows::Forms::Label());
+            this->cheftoatlordersnotice = (gcnew System::Windows::Forms::Label());
             this->tabControl1->SuspendLayout();
             this->MainMenu->SuspendLayout();
             this->UserLogin->SuspendLayout();
@@ -5470,6 +5476,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             // Managermain
             // 
             this->Managermain->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Managermain.BackgroundImage")));
+            this->Managermain->Controls->Add(this->totalsalestextbox);
+            this->Managermain->Controls->Add(this->Viewtotalsalesbutton);
             this->Managermain->Controls->Add(this->customerfeedback);
             this->Managermain->Controls->Add(this->DBdisplayorderslabel);
             this->Managermain->Controls->Add(this->DBdisplayordersnotice);
@@ -5525,7 +5533,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->customerfeedback->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->customerfeedback->ForeColor = System::Drawing::SystemColors::ButtonFace;
-            this->customerfeedback->Location = System::Drawing::Point(567, 498);
+            this->customerfeedback->Location = System::Drawing::Point(722, 480);
             this->customerfeedback->Name = L"customerfeedback";
             this->customerfeedback->Size = System::Drawing::Size(200, 38);
             this->customerfeedback->TabIndex = 42;
@@ -5545,19 +5553,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->DBdisplayorderslabel->Text = L"Orders";
             this->DBdisplayorderslabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             this->DBdisplayorderslabel->Visible = false;
-            // 
-            // DBdisplayordersnotice
-            // 
-            this->DBdisplayordersnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
-                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->DBdisplayordersnotice->ForeColor = System::Drawing::Color::Red;
-            this->DBdisplayordersnotice->Location = System::Drawing::Point(919, 436);
-            this->DBdisplayordersnotice->Name = L"DBdisplayordersnotice";
-            this->DBdisplayordersnotice->Size = System::Drawing::Size(116, 16);
-            this->DBdisplayordersnotice->TabIndex = 40;
-            this->DBdisplayordersnotice->Text = L"Record Not Found";
-            this->DBdisplayordersnotice->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            this->DBdisplayordersnotice->Visible = false;
             // 
             // DBdisplayordersfinalbutton
             // 
@@ -5609,19 +5604,6 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->DBtotalordersdisplaybutton->Text = L"See Total Orders of D.Boy";
             this->DBtotalordersdisplaybutton->UseVisualStyleBackColor = false;
             this->DBtotalordersdisplaybutton->Click += gcnew System::EventHandler(this, &MyForm::DBtotalordersdisplaybutton_Click);
-            // 
-            // cheftoatlordersnotice
-            // 
-            this->cheftoatlordersnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
-                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->cheftoatlordersnotice->ForeColor = System::Drawing::Color::Red;
-            this->cheftoatlordersnotice->Location = System::Drawing::Point(919, 330);
-            this->cheftoatlordersnotice->Name = L"cheftoatlordersnotice";
-            this->cheftoatlordersnotice->Size = System::Drawing::Size(116, 16);
-            this->cheftoatlordersnotice->TabIndex = 35;
-            this->cheftoatlordersnotice->Text = L"Record Not Found";
-            this->cheftoatlordersnotice->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            this->cheftoatlordersnotice->Visible = false;
             // 
             // cheftotalordersdisplayfinalbutton
             // 
@@ -6085,6 +6067,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->Addnewchef->TabIndex = 13;
             this->Addnewchef->Text = L"tabPage1";
             this->Addnewchef->UseVisualStyleBackColor = true;
+            this->Addnewchef->Enter += gcnew System::EventHandler(this, &MyForm::Addnewchef_Enter);
             // 
             // backtomainmenu
             // 
@@ -6131,7 +6114,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->chefpassnotice->Name = L"chefpassnotice";
             this->chefpassnotice->Size = System::Drawing::Size(135, 24);
             this->chefpassnotice->TabIndex = 26;
-            this->chefpassnotice->Text = L"Wrong Format/Exist";
+            this->chefpassnotice->Text = L"Wrong Format";
             this->chefpassnotice->Visible = false;
             // 
             // chefidnotice
@@ -6427,6 +6410,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->AddnewDB->Text = L"tabPage1";
             this->AddnewDB->UseVisualStyleBackColor = true;
             this->AddnewDB->Click += gcnew System::EventHandler(this, &MyForm::AddnewDB_Click);
+            this->AddnewDB->Enter += gcnew System::EventHandler(this, &MyForm::AddnewDB_Enter);
             // 
             // addDBfinalbutton
             // 
@@ -7010,6 +6994,57 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
             this->DeliveryBoyNameLabel->TabIndex = 0;
             this->DeliveryBoyNameLabel->Text = L"WELCOME, MR";
             // 
+            // Viewtotalsalesbutton
+            // 
+            this->Viewtotalsalesbutton->BackColor = System::Drawing::Color::Maroon;
+            this->Viewtotalsalesbutton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->Viewtotalsalesbutton->ForeColor = System::Drawing::SystemColors::ButtonFace;
+            this->Viewtotalsalesbutton->Location = System::Drawing::Point(221, 480);
+            this->Viewtotalsalesbutton->Name = L"Viewtotalsalesbutton";
+            this->Viewtotalsalesbutton->Size = System::Drawing::Size(200, 38);
+            this->Viewtotalsalesbutton->TabIndex = 43;
+            this->Viewtotalsalesbutton->Text = L"View Total Sale";
+            this->Viewtotalsalesbutton->UseVisualStyleBackColor = false;
+            this->Viewtotalsalesbutton->Click += gcnew System::EventHandler(this, &MyForm::Viewtotalsalesbutton_Click);
+            // 
+            // totalsalestextbox
+            // 
+            this->totalsalestextbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->totalsalestextbox->Location = System::Drawing::Point(442, 490);
+            this->totalsalestextbox->Name = L"totalsalestextbox";
+            this->totalsalestextbox->Size = System::Drawing::Size(100, 22);
+            this->totalsalestextbox->TabIndex = 44;
+            this->totalsalestextbox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            this->totalsalestextbox->Visible = false;
+            // 
+            // DBdisplayordersnotice
+            // 
+            this->DBdisplayordersnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->DBdisplayordersnotice->ForeColor = System::Drawing::Color::Red;
+            this->DBdisplayordersnotice->Location = System::Drawing::Point(919, 436);
+            this->DBdisplayordersnotice->Name = L"DBdisplayordersnotice";
+            this->DBdisplayordersnotice->Size = System::Drawing::Size(116, 16);
+            this->DBdisplayordersnotice->TabIndex = 40;
+            this->DBdisplayordersnotice->Text = L"Record Not Found";
+            this->DBdisplayordersnotice->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->DBdisplayordersnotice->Visible = false;
+            // 
+            // cheftoatlordersnotice
+            // 
+            this->cheftoatlordersnotice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->cheftoatlordersnotice->ForeColor = System::Drawing::Color::Red;
+            this->cheftoatlordersnotice->Location = System::Drawing::Point(919, 330);
+            this->cheftoatlordersnotice->Name = L"cheftoatlordersnotice";
+            this->cheftoatlordersnotice->Size = System::Drawing::Size(116, 16);
+            this->cheftoatlordersnotice->TabIndex = 35;
+            this->cheftoatlordersnotice->Text = L"Record Not Found";
+            this->cheftoatlordersnotice->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            this->cheftoatlordersnotice->Visible = false;
+            // 
             // MyForm
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -7237,5 +7272,8 @@ private: System::Void ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System
 private: System::Void customerfeedback_Click(System::Object^ sender, System::EventArgs^ e) {
     tabControl1->SelectedTab = feedbacklist;
 }
+	System::Void Addnewchef_Enter(System::Object^ sender, System::EventArgs^ e);
+    System::Void AddnewDB_Enter(System::Object^ sender, System::EventArgs^ e);
+    System::Void Viewtotalsalesbutton_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
