@@ -2200,6 +2200,14 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 		yourorder << "Name: " << acc->getname() <<endl;
 		yourorder << "Contact No: 0" << acc->getcontact() <<endl;
 		yourorder << "Address: " << acc->getaddress() <<endl <<endl;
+		if (CashCheckBox->Checked == true)
+		{
+			order->setPaymentMode(cash);
+		}
+		else
+		{
+			order->setPaymentMode(card);
+		}
 		order->PlaceOrder(pizz,total_no_of_pizzas);
 		order->FileOrder();
 		acc->setprevious(*order);
@@ -2235,11 +2243,13 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			{
 				acc->setcardprovider(backtostring(CardCheckOutComboBox->Text));
 				acc->setcardno(0);
+				order->setPaymentMode(cash);
 			}
 			else
 			{
 				acc->setcardprovider(backtostring(CardCheckOutComboBox->Text));
 				acc->setcardno(long long int(System::Convert::ToInt64(CardNumberCheckOutTextBox->Text)));
+				order->setPaymentMode(card);
 			}
 			fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
 			yourorder << "X----------------------------------------------------X" << endl;
@@ -2382,6 +2392,7 @@ void breeze::MyForm::backtomainmenu_Click(System::Object^ sender, System::EventA
 void breeze::MyForm:: DeliveryBoyMain_Enter_1(System::Object^ sender, System::EventArgs^ e)
 {
 	Delivery_Boy* DeliveryBoy = new Delivery_Boy;
+	DeliveryBoy->check(emp->getID(), emp->getPass());
 	DeliveryBoyNameLabel->Text = "WELCOME, MR " + gotoString(DeliveryBoy->getname());
 	DeliveryBoySalaryLabel->Text = "SALARY : RS " + Convert::ToString(DeliveryBoy->getsalary());
 	ifstream infile("Orders.dat", ios::binary);
@@ -2391,13 +2402,28 @@ void breeze::MyForm:: DeliveryBoyMain_Enter_1(System::Object^ sender, System::Ev
 		if (temp.getstatus() == confirmed)
 		{
 			ReadyForDeliveryOrdersComboBox->Items->Add((temp.getOrderCode()));
-			//DeliveryBoyAddressTextBox->Text = "I love mia khalifa";
+			
 		}
 	}
 	infile.clear();
 	infile.seekg(0);
 	
 
+}
+void breeze::MyForm::ReadyForDelivery_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	long int PlaceHolder;
+	PlaceHolder = (long long int(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem)));
+	ifstream infile("Orders.dat", ios::binary);
+	Order temp;
+	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
+	{
+		if (temp.getOrderCode() == PlaceHolder)
+		{
+			temp.setstatus(delivered);
+			MessageBox::Show("The Selected Order "+ ReadyForDeliveryOrdersComboBox->SelectedItem + " has been delivered successfully ");
+		}
+	}
 }
 void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	ifstream infile("Orders.dat", ios::binary);
@@ -2410,6 +2436,16 @@ void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System:
 		{
 			
 			DeliveryBoyAddressTextBox->AppendText(gotoString(temp.getloc()));
+			if (temp.getPaymentMode() == cash)
+			{
+				DeliveryBoyCashCheckBox->Checked = true;
+				DeliveryBoyCardCheckbox->Checked = false;
+			}
+			else if (temp.getPaymentMode() == card)
+			{
+				DeliveryBoyCashCheckBox->Checked = false;
+				DeliveryBoyCardCheckbox->Checked = true;
+			}
 
 		}
 	}

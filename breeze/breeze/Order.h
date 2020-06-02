@@ -5,6 +5,7 @@
 #include "Toping.h"
 #include"pizza.h"
 enum status{confirmed,making,canceled,ready_for_delivery,delivering,delivered};
+enum mode{cash,card};
 class Order
 {
 private:
@@ -17,6 +18,7 @@ private:
     int size[5];
     char deliveryloc[200];
     enum status orderstatus;
+    enum mode PaymentMode;
 public:
     Order();
     void PlaceOrder(pizza *pizza,int pizzaamount);
@@ -27,6 +29,8 @@ public:
     void setOrderCode(long int OrderCode);
     void setstatus(enum status);
     enum status getstatus();
+    enum mode getPaymentMode();
+    void setPaymentMode(enum mode);
     void setbill(double);
     int getpizzas();
     int* getsize();

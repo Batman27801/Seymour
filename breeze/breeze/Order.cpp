@@ -148,3 +148,11 @@ char* Order::getloc()
 {
 	return deliveryloc;
 }
+enum mode Order::getPaymentMode()
+{
+	return PaymentMode;
+}
+void Order::setPaymentMode(enum mode MODE)
+{
+	PaymentMode = MODE;
+}
