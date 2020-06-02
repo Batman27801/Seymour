@@ -2238,7 +2238,7 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			order->setsize(size);
 			acc->setcontact(long long int(System::Convert::ToInt64(PhoneNoTextBox->Text)));
 			acc->setaddress(backtostring(AddressCheckOutTextBox->Text));
-			order->setloc(backtostring(AddressCheckOutTextBox->Text));
+			order->setaddress(backtostring(AddressCheckOutTextBox->Text));
 			if (CashCheckBox->Checked == true)
 			{
 				acc->setcardprovider(backtostring(CardCheckOutComboBox->Text));
@@ -2435,7 +2435,7 @@ void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System:
 		if(temp.getOrderCode()== (long long int(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem))))
 		{
 			
-			DeliveryBoyAddressTextBox->AppendText(gotoString(temp.getloc()));
+			DeliveryBoyAddressTextBox->AppendText(gotoString(temp.getaddress()));
 			if (temp.getPaymentMode() == cash)
 			{
 				DeliveryBoyCashCheckBox->Checked = true;

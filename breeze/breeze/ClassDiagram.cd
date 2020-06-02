@@ -7,10 +7,10 @@
       <FileName>Person.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="security" Collapsed="true">
+  <Class Name="secured" Collapsed="true">
     <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAABCAAQAAAAAAIEAAAEYgRAAYCAAASgAACAAEQBRA=</HashCode>
+      <HashCode>EAAABCAAQAAAAAAIEgAAEYgRAAYCAAASgAACAAEQARA=</HashCode>
       <FileName>security.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -231,9 +231,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Order" Collapsed="true">
-    <Position X="7.5" Y="1.75" Width="1.5" />
+    <Position X="0.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACUAACQAAUiAAACIAoAIAIAEQQIQAAAAAAAgAAEACQg=</HashCode>
+      <HashCode>ACUAACQAAUiAAACIAoAIAAAEQQIQAAAAAAAgAAEACQA=</HashCode>
       <FileName>Order.h</FileName>
     </TypeIdentifier>
   </Class>

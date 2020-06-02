@@ -13,7 +13,7 @@ Order::Order()
 		strcpy_s(FLAVOURS[i], "");
 		strcpy_s(TOPPINGS[i], "");
 	}
-	strcpy_s(deliveryloc, "");
+	strcpy_s(address, "");
 	
 }
 void Order::PlaceOrder(pizza* pizza, int pizzaamount)
@@ -80,7 +80,7 @@ void Order::operator=(const Order& obj)
 	{
 		this->size[i] = obj.size[i];
 	}
-	strcpy_s(this->deliveryloc, obj.deliveryloc);
+	strcpy_s(this->address, obj.address);
 }
 void Order::operator =(int a)
 {
@@ -97,7 +97,7 @@ void Order::operator =(int a)
 	{
 		this->size[i] = 0;
 	}
-	strcpy_s(this->deliveryloc, "");
+	strcpy_s(this->address, "");
 }
 void Order::operator-(const double DiscAmount)
 {
@@ -139,20 +139,4 @@ void Order::setsize(int* s)
 long int Order::getOrderCode()
 {
 	return OrderCode;
-}
-void Order::setloc(string s)
-{
-	strcpy_s(deliveryloc, s.c_str());
-}
-char* Order::getloc()
-{
-	return deliveryloc;
-}
-enum mode Order::getPaymentMode()
-{
-	return PaymentMode;
-}
-void Order::setPaymentMode(enum mode MODE)
-{
-	PaymentMode = MODE;
 }

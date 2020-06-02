@@ -4,7 +4,7 @@
 #include "Order.h"
 #include <string>
 using namespace std;
-class customer : public Person, public security
+class customer : public Person, public secured
 {
 	Order previous[5];
 	char username[15];

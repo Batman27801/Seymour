@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 using namespace std;
-class security
+class secured
 {
 protected:
 	long long int contactno;
@@ -12,7 +12,7 @@ protected:
 	long long int cardno;
 	int monthc, yearc;
 public:
-	security();
+	secured();
 	bool setcontact(long long int);
 	long long int getcontact();
 	bool setcnic(long long int);

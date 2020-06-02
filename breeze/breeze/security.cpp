@@ -15,7 +15,7 @@ int digitcounter(long long int v)
 	return count;
 }
 
-security::security()
+secured::secured()
 {
 	contactno = 0;
 	cnic = 0;
@@ -27,7 +27,7 @@ security::security()
 	yearc = 0;
 }
 
-bool security::setcontact(long long int c)
+bool secured::setcontact(long long int c)
 {
 	try {
 		int i=0;
@@ -44,11 +44,11 @@ bool security::setcontact(long long int c)
 		return false;
 	}
 }
-long long int security::getcontact()
+long long int secured::getcontact()
 {
 	return decryption(contactno);
 }
-bool security::setcnic(long long int c)
+bool secured::setcnic(long long int c)
 {	
 	int i=0;
 	try {
@@ -66,36 +66,36 @@ bool security::setcnic(long long int c)
 		return false;
 	}
 }
-long long int security::getcnic()
+long long int secured::getcnic()
 {
 	return decryption(cnic);
 }
-void security::setaddress(string s)
+void secured::setaddress(string s)
 {
 	strcpy_s(address,(encryption(s)).c_str());
 }
-char* security::getaddress()
+char* secured::getaddress()
 {
 	return decryption(address);
 	
 }
-void security::setpaymentttype(bool b)
+void secured::setpaymentttype(bool b)
 {
 	cod = b;
 }
-bool security::getpaymenttype()
+bool secured::getpaymenttype()
 {
 	return cod;
 }
-void security::setcardprovider(string s)
+void secured::setcardprovider(string s)
 {
 	strcpy_s(card, (encryption(s)).c_str());
 }
-char* security::getcardprovider()
+char* secured::getcardprovider()
 {
 	return decryption(card);
 }
-bool security::setcardno(long long int i)
+bool secured::setcardno(long long int i)
 {
 	int o=0;
 	try {
@@ -112,11 +112,11 @@ bool security::setcardno(long long int i)
 		return false;
 	}
 }
-long long int security::getcardno()
+long long int secured::getcardno()
 {
 	return decryption(cardno);
 }
-bool security::setexpiry(int m, int y)
+bool secured::setexpiry(int m, int y)
 {
 	try {
 		int i=0;
@@ -134,7 +134,7 @@ bool security::setexpiry(int m, int y)
 		return false;
 	}
 }
-int* security::getexpiry()
+int* secured::getexpiry()
 {
 	static int exp[2];
 	exp[0] = decryption(monthc);
@@ -142,7 +142,7 @@ int* security::getexpiry()
 	return exp;
 }
 template <typename encrypt>
-encrypt security::encryption(encrypt var)
+encrypt secured::encryption(encrypt var)
 {
 	encrypt temp, temp2 = 0;
 	temp = var;
@@ -156,7 +156,7 @@ encrypt security::encryption(encrypt var)
 	return temp2;
 }
 template <typename encrypt>
-encrypt security::decryption(encrypt var)
+encrypt secured::decryption(encrypt var)
 {
 	encrypt temp, temp2 = 0;
 	temp = var;
@@ -167,17 +167,17 @@ encrypt security::decryption(encrypt var)
 	}
 	return temp2;
 }
-string security::encryption(char* var)
+string secured::encryption(char* var)
 {
 	string temp = var;
 	return encryption(temp);
 }
-char* security::decryption(char* var)
+char* secured::decryption(char* var)
 {
 	string temp = var;
 	return decryption(temp);
 }
-string security::encryption(string var)
+string secured::encryption(string var)
 {
 	string temp = var;
 	int i, length = static_cast<int>(temp.length());
@@ -191,7 +191,7 @@ string security::encryption(string var)
 	//temp[length] = '\0';
 	return temp;
 }
-char* security::decryption(string var)
+char* secured::decryption(string var)
 {
 	int n = static_cast<int>(var.length());
 	char* temp = new char[n+1];
