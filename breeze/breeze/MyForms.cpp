@@ -2413,7 +2413,7 @@ void breeze::MyForm:: DeliveryBoyMain_Enter_1(System::Object^ sender, System::Ev
 void breeze::MyForm::ReadyForDelivery_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	long int PlaceHolder;
-	PlaceHolder = (long long int(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem)));
+	PlaceHolder = (long int)(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem));
 	ifstream infile("Orders.dat", ios::binary);
 	Order temp;
 	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
@@ -2866,22 +2866,22 @@ void breeze::MyForm::trackorderbutton_Click(System::Object^ sender, System::Even
 			switch (stat)
 			{
 			case confirmed:
-				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nWe will soon start cooking Your Order. It is our top priority to provide you the best customer service!";
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas()  + "\nWe will soon start cooking Your Order. It is our top priority to provide you the best customer service!";
 				break;
 			case making:
-				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nYour Order is currently being cooked in our kitchen with the best care and we will ensure that the best quality is served to you! Estimated Time of Arrival: 45-55 Minutes";
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas()  + "\nYour Order is currently being cooked in our kitchen with the best care and we will ensure that the best quality is served to you! Estimated Time of Arrival: 45-55 Minutes";
 				break;
 			case canceled:
-				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nUnfortunately we had to cancel your Order due to shortage of ingredients. Seymour Pizzeria prides itself on its quality and taste. An incomplete pizza can not be cooked. You are welcome to Order again.";
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas()  + "\nUnfortunately we had to cancel your Order due to shortage of ingredients. Seymour Pizzeria prides itself on its quality and taste. An incomplete pizza can not be cooked. You are welcome to Order again.";
 				break;
 			case ready_for_delivery:
-				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nYour Order has been Cooked and is awaiting delivery. It will soon be picked up by one of our riders and delivered to your address. Estimated Time of Arrival: 20-30 minutes.";
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas()  + "\nYour Order has been Cooked and is awaiting delivery. It will soon be picked up by one of our riders and delivered to your address. Estimated Time of Arrival: 20-30 minutes.";
 				break;
 			case delivering:
-				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nThe Rider is on his way with your order. The Pizza(s) will arrive hot and cheesy! Estimated Time of arrival: 10-20 minutes.";
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas()  + "\nThe Rider is on his way with your order. The Pizza(s) will arrive hot and cheesy! Estimated Time of arrival: 10-20 minutes.";
 				break;
 			case delivered:
-				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas() + "\nBilled Amount: " + temp.ReturnBill() + "\nYour Order has been Delivered Already to your Address. WE hope you enjoyed the Order. Seymour Pizzeria will always strive to make you happy! Please Leave any Feedback or Suggestions you have below. Thanks!";
+				trackedinfolabel->Text = "Order Number: " + temp.getOrderCode() + "\nPizza count: " + temp.getpizzas()  + "\nYour Order has been Delivered Already to your Address. WE hope you enjoyed the Order. Seymour Pizzeria will always strive to make you happy! Please Leave any Feedback or Suggestions you have below. Thanks!";
 				break;
 			default:
 				break;
@@ -3059,5 +3059,49 @@ void breeze::MyForm::DBdisplayordersfinalbutton_Click(System::Object^ sender, Sy
 	else
 	{
 		DBtotalordersdisplaybox->Text = Convert::ToString(manager->TotalOrders_DelvieryBoy (backtostring(DBtotalordersidbox->Text)));
+	}
+}
+void breeze::MyForm::submitfeedbackbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	char feedback[500];
+	strcpy_s(feedback, backtostring(feedbackbox->Text).c_str());
+	ofstream feedbackfile("Feedback.txt", ios::app);
+	feedbackfile << "\n" <<feedback;
+	feedbackfile << "\n" << "^";
+	feedbackfile.close();
+	submittedlabel->Visible = true;
+	feedbackbox->Text = "";
+}
+void breeze::MyForm::Ordertrackingbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = TrackingFeedback;
+}
+void breeze::MyForm::backtouser_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = UserLogin;
+}
+void breeze::MyForm::feedbacklist_Enter(System::Object^ sender, System::EventArgs^ e) {
+	ifstream feedbackfile("Feedback.txt");
+	static int feedbackcount = 0, pos = 0;
+	int i, max;
+	feedbackfile.seekg(0, ios::end);
+	max = feedbackfile.tellg();
+	feedbackfile.seekg(0, ios::beg);
+	char feedback[500];
+	if (feedbackcount != 0)
+		feedbackfile.seekg(pos);
+	feedbackfile.get(feedback[0]);
+	try{
+	for (i = 0; feedback[i] != '^' && feedbackfile.tellg() != max; i++)
+	{
+		feedbackfile.get(feedback[i + 1]);
+	}
+	feedback[i] = '\0';
+	feedbackcount++;
+	pos = feedbackfile.tellg();
+	feedbackfile.close();
+	string feed = feedback;
+	feebackbox2->Text = gotoString(feed);
+}
+	catch (AccessViolationException^ os)
+	{
+		feebackbox2->Text = "NO MORE AVAILABLE!";
 	}
 }
