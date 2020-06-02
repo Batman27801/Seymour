@@ -2202,11 +2202,11 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 		yourorder << "Address: " << acc->getaddress() <<endl <<endl;
 		if (CashCheckBox->Checked == true)
 		{
-			order->setPaymentMode(cash);
+			order->setpaymentttype(true);
 		}
 		else
 		{
-			order->setPaymentMode(card);
+			order->setpaymentttype(false);
 		}
 		order->PlaceOrder(pizz,total_no_of_pizzas);
 		order->FileOrder();
@@ -2243,13 +2243,13 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			{
 				acc->setcardprovider(backtostring(CardCheckOutComboBox->Text));
 				acc->setcardno(0);
-				order->setPaymentMode(cash);
+				order->setpaymentttype(true);
 			}
 			else
 			{
 				acc->setcardprovider(backtostring(CardCheckOutComboBox->Text));
 				acc->setcardno(long long int(System::Convert::ToInt64(CardNumberCheckOutTextBox->Text)));
-				order->setPaymentMode(card);
+				order->setpaymentttype(false);
 			}
 			fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
 			yourorder << "X----------------------------------------------------X" << endl;
@@ -2436,12 +2436,12 @@ void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System:
 		{
 			
 			DeliveryBoyAddressTextBox->AppendText(gotoString(temp.getaddress()));
-			if (temp.getPaymentMode() == cash)
+			if (temp.getpaymenttype()==true)
 			{
 				DeliveryBoyCashCheckBox->Checked = true;
 				DeliveryBoyCardCheckbox->Checked = false;
 			}
-			else if (temp.getPaymentMode() == card)
+			else if (temp.getpaymenttype() == false)
 			{
 				DeliveryBoyCashCheckBox->Checked = false;
 				DeliveryBoyCardCheckbox->Checked = true;

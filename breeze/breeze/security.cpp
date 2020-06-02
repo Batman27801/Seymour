@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 
+
 int digitcounter(long long int v)
 {
 	int count = 0;

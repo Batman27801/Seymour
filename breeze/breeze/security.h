@@ -35,4 +35,5 @@ public:
 	char* decryption(char*);
 	string encryption(string);
 	char* decryption(string);
+	
 };
