@@ -2416,6 +2416,8 @@ void breeze::MyForm:: DeliveryBoyMain_Enter_1(System::Object^ sender, System::Ev
 }
 void breeze::MyForm::ReadyForDelivery_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	Delivery_Boy* DeliveryBoy = new Delivery_Boy;
+	DeliveryBoy->check(emp->getID(), emp->getPass());
 	long int PlaceHolder;
 	PlaceHolder = (long int)(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem));
 	ifstream infile("Orders.dat", ios::binary);
@@ -2424,11 +2426,32 @@ void breeze::MyForm::ReadyForDelivery_Click(System::Object^ sender, System::Even
 	{
 		if (temp.getOrderCode() == PlaceHolder)
 		{
-			temp.setstatus(delivered);
+			DeliveryBoy->deleteorder();
+			ReadyForDeliveryOrdersComboBox->Items->Remove(ReadyForDeliveryOrdersComboBox->SelectedItem);
+			DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
 			MessageBox::Show("The Selected Order "+ ReadyForDeliveryOrdersComboBox->SelectedItem + " has been delivered successfully ");
 
 		}
 	}
+}
+void breeze::MyForm::DeliveryBoyPickUpOrderButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	if (DeliveringOrderTextBox->Text == "" || DeliveringOrderTextBox->Text == "0")
+	{
+		Delivery_Boy* DeliveryBoy = new Delivery_Boy;
+		DeliveryBoy->check(emp->getID(), emp->getPass());
+		long int PlaceHolder;
+		bool checker;
+		PlaceHolder = (long int)(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem));
+		DeliveryBoy->addworkingorder(PlaceHolder);
+		DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
+		MessageBox::Show("Order NO : " + DeliveringOrderTextBox->Text + "has been picked up for delivery");
+	}
+	else
+	{
+		MessageBox::Show("Please deliver the current order before picking up another one ");
+	}
+	
 }
 void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	ifstream infile("Orders.dat", ios::binary);

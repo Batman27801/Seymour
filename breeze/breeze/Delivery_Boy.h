@@ -15,7 +15,7 @@ public:
     Delivery_Boy();
     bool setID(string);
     bool check(string, string);
-    bool  addworkingorder();
+    bool  addworkingorder(long int ordercode);
     long int getworkingorder();
     bool deleteorder();
     bool getOnDelivery();

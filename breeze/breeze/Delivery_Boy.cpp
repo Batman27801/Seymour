@@ -59,7 +59,7 @@ bool Delivery_Boy::setID(string id)
     }
 }
 
-bool Delivery_Boy::addworkingorder()
+bool Delivery_Boy::addworkingorder(long int ordercode)
 {
     Order temp;
     int n=0, flag = 0,flag2=0;
@@ -68,7 +68,7 @@ bool Delivery_Boy::addworkingorder()
     is.seekg(0);
     while (is.read((char*)&temp, sizeof(temp)))
     {   
-        if (temp.getstatus() == ready_for_delivery && n==0)
+        if (temp.getOrderCode()==ordercode && n==0)
         {
             flag = 1;
             n++;
