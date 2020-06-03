@@ -2404,7 +2404,7 @@ void breeze::MyForm:: DeliveryBoyMain_Enter_1(System::Object^ sender, System::Ev
 	Order temp;
 	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
 	{
-		if (temp.getstatus() == ready_for_delivery)
+		if (temp.getstatus() == confirmed)
 		{
 			ReadyForDeliveryOrdersComboBox->Items->Add((temp.getOrderCode()));
 			
@@ -2419,32 +2419,16 @@ void breeze::MyForm::ReadyForDelivery_Click(System::Object^ sender, System::Even
 {
 	Delivery_Boy* DeliveryBoy = new Delivery_Boy;
 	DeliveryBoy->check(emp->getID(), emp->getPass());
-	long int PlaceHolder;
-	PlaceHolder = (long int)(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem));
-	//ifstream infile("Orders.dat", ios::binary);
-	/*Order temp;
-	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
+	if (DeliveryBoy->Delivery_Order.getstatus() == delivering)
 	{
-		if (temp.getOrderCode() == PlaceHolder)
-		{
-			if (DeliveryBoy->Delivery_Order.getstatus() == delivering)
-			{
-				DeliveryBoyAddressTextBox->Text = Convert::ToString(temp.getstatus());
-			}
-			DeliveryBoy->deleteorder();
-			ReadyForDeliveryOrdersComboBox->Items->Remove(ReadyForDeliveryOrdersComboBox->SelectedItem);
-			DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
-			MessageBox::Show("The Selected Order "+ ReadyForDeliveryOrdersComboBox->SelectedItem + " has been delivered successfully ");
-
-		}
-	}*/
-	DeliveryBoyAddressTextBox->Text = "";
-	DeliveryBoy->deleteorder();
+		MessageBox::Show("Order NO : " + DeliveringOrderTextBox->Text + " has been delivered");
+		DeliveryBoy->deleteorder();
+		DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
+		ReadyForDeliveryOrdersComboBox->Items->Remove(ReadyForDeliveryOrdersComboBox->SelectedIndex);
+		DeliveryBoyAddressTextBox->Text = "";
+	}
 	
-	ReadyForDeliveryOrdersComboBox->Items->Remove(ReadyForDeliveryOrdersComboBox->SelectedItem);
-	DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
-	MessageBox::Show("The Selected Order " + ReadyForDeliveryOrdersComboBox->SelectedItem + " has been delivered successfully ");
-
+	
 }
 void breeze::MyForm::DeliveryBoyPickUpOrderButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -2455,9 +2439,25 @@ void breeze::MyForm::DeliveryBoyPickUpOrderButton_Click(System::Object^ sender, 
 		long int PlaceHolder;
 		bool checker;
 		PlaceHolder = (long int)(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem));
-		DeliveryBoy->addworkingorder(PlaceHolder);
-		DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
-		MessageBox::Show("Order NO : " + DeliveringOrderTextBox->Text + " has been picked up for delivery");
+		checker=DeliveryBoy->addworkingorder(PlaceHolder);
+		if (checker = true)
+		{
+			if (DeliveryBoy->Delivery_Order.getpaymenttype() == true)
+			{
+				DeliveryBoyCashCheckBox->Checked = true;
+				DeliveryBoyCardCheckbox->Checked = false;
+			}
+			else if (DeliveryBoy->Delivery_Order.getpaymenttype() == false)
+			{
+				DeliveryBoyCashCheckBox->Checked = false;
+				DeliveryBoyCardCheckbox->Checked = true;
+			}
+			DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
+			DeliveryBoyAddressTextBox->Text = gotoString(DeliveryBoy->Delivery_Order.getaddress());
+			MessageBox::Show("Order NO : " + DeliveringOrderTextBox->Text + " has been picked up for delivery");
+			delete DeliveryBoy;
+		}
+		
 	}
 	else
 	{
@@ -2466,7 +2466,7 @@ void breeze::MyForm::DeliveryBoyPickUpOrderButton_Click(System::Object^ sender, 
 	
 }
 void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	ifstream infile("Orders.dat", ios::binary);
+	/*ifstream infile("Orders.dat", ios::binary);
 	Order temp;
 	string placeholder;
 	infile.seekg(0);
@@ -2488,7 +2488,7 @@ void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System:
 			}
 
 		}
-	}
+	}*/
 }
 
 void breeze::MyForm::Chefmain_Enter(System::Object^ sender, System::EventArgs^ e) {

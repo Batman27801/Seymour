@@ -76,6 +76,7 @@ void Order::operator=(const Order& obj)
 	}
 	this->OrderCode = obj.OrderCode;
 	this->no_of_pizzas = obj.no_of_pizzas;
+	this->orderstatus = obj.orderstatus;
 	for ( int i = 0; i < 5; i++)
 	{
 		this->size[i] = obj.size[i];

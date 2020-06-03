@@ -1379,3 +1379,36 @@ Neapolitan With the Flavor fajita topped with a layering of Pepperoni .
 Total Billed Amount is: Rs 0
 
 X----------------------------------------------------X
+X----------------------------------------------------X
+Name: sds
+Contact No: 00
+Address: your coc
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: sds
+Contact No: 00
+Address: Joji sir
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: sam
+Contact No: 00
+Address: Fish street
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
