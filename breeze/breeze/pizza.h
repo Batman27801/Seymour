@@ -14,14 +14,5 @@ public:
 	pizza(crust*, flavour*, Toping*);
 	int getprice();
 	void adjustpricing(int size);
-	//void SaveFlavour(flavour*ptr);
-	//void SaveCrust(crust* ptr);
-	//void SaveToping(Toping* ptr);
-	//crust* getCrustPointer();
-	//flavour* getFlavourPointer();
-	//void FlavourMiscSet(char choice[30]);
-	//void CrustMiscSet(char choice[30]);
-	
-
 };
 

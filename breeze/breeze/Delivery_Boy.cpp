@@ -107,6 +107,8 @@ bool Delivery_Boy::deleteorder()
         {
             temp.setstatus(delivered);
             flag = 1;
+            os.write((char*)&temp, sizeof(temp));
+            Delivery_Order = 0;
             continue;
         }
         else

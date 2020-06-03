@@ -2393,7 +2393,7 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 void breeze::MyForm::backtomainmenu_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Managermain;
 }
-void breeze::MyForm:: DeliveryBoyMain_Enter_1(System::Object^ sender, System::EventArgs^ e)
+void breeze::MyForm::DeliveryBoyMain_Enter_1(System::Object^ sender, System::EventArgs^ e)
 {
 	Delivery_Boy* DeliveryBoy = new Delivery_Boy;
 	DeliveryBoy->check(emp->getID(), emp->getPass());
@@ -2404,7 +2404,7 @@ void breeze::MyForm:: DeliveryBoyMain_Enter_1(System::Object^ sender, System::Ev
 	Order temp;
 	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
 	{
-		if (temp.getstatus() == confirmed)
+		if (temp.getstatus() == ready_for_delivery)
 		{
 			ReadyForDeliveryOrdersComboBox->Items->Add((temp.getOrderCode()));
 			
