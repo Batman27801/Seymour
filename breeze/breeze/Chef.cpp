@@ -201,7 +201,6 @@ bool chef::updatechef()
         {
             flag = 1;
             os.write((char*)this, sizeof(*this));
-            break;
         }
         else
         {

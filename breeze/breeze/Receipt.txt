@@ -1324,3 +1324,58 @@ Italian With the Flavor fajita topped with a layering of Chicken .
 Total Billed Amount is: Rs 0
 
 X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Arun
+Contact No: 0305391989
+Address: fasdfasfasasfa
+
+Total pizzas ordered: 1
+Pizza Number 1
+Stlouis With the Flavor chilli delight topped with a layering of Beef .
+Total Billed Amount is: Rs 1624.5
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: dffgadgfg
+Contact No: 03513566562
+Address: dfgadadhhg
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor fajita topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: hfljsas;g
+Contact No: 00
+Address: sdggdfgadgd
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor tikka topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: sdfasfasf
+Contact No: 00
+Address: dfassgasdg
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor fajita topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
+X----------------------------------------------------X
+Name: DASDSA
+Contact No: 04312322431
+Address: SDFSADASF
+
+Total pizzas ordered: 1
+Pizza Number 1
+Neapolitan With the Flavor fajita topped with a layering of Pepperoni .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
