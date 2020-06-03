@@ -693,6 +693,7 @@ private: System::Windows::Forms::Label^ cheftoatlordersnotice;
 private: System::Windows::Forms::TextBox^ DeliveringOrderTextBox;
 private: System::Windows::Forms::Label^ DeliveringOrderLabel;
 private: System::Windows::Forms::Button^ DeliveryBoyPickUpOrderButton;
+private: System::Windows::Forms::Button^ DeliveryBoyLogOut;
 
 
 
@@ -1236,6 +1237,9 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->trackingsubheading = (gcnew System::Windows::Forms::Label());
 			this->trackingheading = (gcnew System::Windows::Forms::Label());
 			this->DeliveryBoyMain = (gcnew System::Windows::Forms::TabPage());
+			this->DeliveringOrderTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->DeliveringOrderLabel = (gcnew System::Windows::Forms::Label());
+			this->DeliveryBoyPickUpOrderButton = (gcnew System::Windows::Forms::Button());
 			this->ReadyForDelivery = (gcnew System::Windows::Forms::Button());
 			this->DeliveryBoyCardCheckbox = (gcnew System::Windows::Forms::CheckBox());
 			this->DeliveryBoyCashCheckBox = (gcnew System::Windows::Forms::CheckBox());
@@ -1246,9 +1250,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ReadyForDeliveryOrdersComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->DeliveryBoySalaryLabel = (gcnew System::Windows::Forms::Label());
 			this->DeliveryBoyNameLabel = (gcnew System::Windows::Forms::Label());
-			this->DeliveryBoyPickUpOrderButton = (gcnew System::Windows::Forms::Button());
-			this->DeliveringOrderLabel = (gcnew System::Windows::Forms::Label());
-			this->DeliveringOrderTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->DeliveryBoyLogOut = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->UserLogin->SuspendLayout();
@@ -6932,6 +6934,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// DeliveryBoyMain
 			// 
 			this->DeliveryBoyMain->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"DeliveryBoyMain.BackgroundImage")));
+			this->DeliveryBoyMain->Controls->Add(this->DeliveryBoyLogOut);
 			this->DeliveryBoyMain->Controls->Add(this->DeliveringOrderTextBox);
 			this->DeliveryBoyMain->Controls->Add(this->DeliveringOrderLabel);
 			this->DeliveryBoyMain->Controls->Add(this->DeliveryBoyPickUpOrderButton);
@@ -6952,6 +6955,35 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->DeliveryBoyMain->Text = L"tabPage1";
 			this->DeliveryBoyMain->UseVisualStyleBackColor = true;
 			this->DeliveryBoyMain->Enter += gcnew System::EventHandler(this, &MyForm::DeliveryBoyMain_Enter_1);
+			// 
+			// DeliveringOrderTextBox
+			// 
+			this->DeliveringOrderTextBox->Location = System::Drawing::Point(1088, 128);
+			this->DeliveringOrderTextBox->Name = L"DeliveringOrderTextBox";
+			this->DeliveringOrderTextBox->Size = System::Drawing::Size(100, 20);
+			this->DeliveringOrderTextBox->TabIndex = 12;
+			// 
+			// DeliveringOrderLabel
+			// 
+			this->DeliveringOrderLabel->AutoSize = true;
+			this->DeliveringOrderLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
+			this->DeliveringOrderLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->DeliveringOrderLabel->Location = System::Drawing::Point(808, 128);
+			this->DeliveringOrderLabel->Name = L"DeliveringOrderLabel";
+			this->DeliveringOrderLabel->Size = System::Drawing::Size(277, 20);
+			this->DeliveringOrderLabel->TabIndex = 11;
+			this->DeliveringOrderLabel->Text = L"CURRENT DELIVERING ORDER : ";
+			// 
+			// DeliveryBoyPickUpOrderButton
+			// 
+			this->DeliveryBoyPickUpOrderButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
+			this->DeliveryBoyPickUpOrderButton->Location = System::Drawing::Point(344, 464);
+			this->DeliveryBoyPickUpOrderButton->Name = L"DeliveryBoyPickUpOrderButton";
+			this->DeliveryBoyPickUpOrderButton->Size = System::Drawing::Size(224, 64);
+			this->DeliveryBoyPickUpOrderButton->TabIndex = 10;
+			this->DeliveryBoyPickUpOrderButton->Text = L"PICKUP ORDER";
+			this->DeliveryBoyPickUpOrderButton->UseVisualStyleBackColor = true;
+			this->DeliveryBoyPickUpOrderButton->Click += gcnew System::EventHandler(this, &MyForm::DeliveryBoyPickUpOrderButton_Click);
 			// 
 			// ReadyForDelivery
 			// 
@@ -7038,7 +7070,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->DeliveryBoySalaryLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
 			this->DeliveryBoySalaryLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->DeliveryBoySalaryLabel->Location = System::Drawing::Point(800, 32);
+			this->DeliveryBoySalaryLabel->Location = System::Drawing::Point(800, 64);
 			this->DeliveryBoySalaryLabel->Name = L"DeliveryBoySalaryLabel";
 			this->DeliveryBoySalaryLabel->Size = System::Drawing::Size(288, 56);
 			this->DeliveryBoySalaryLabel->TabIndex = 1;
@@ -7048,40 +7080,22 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// 
 			this->DeliveryBoyNameLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.25F));
 			this->DeliveryBoyNameLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->DeliveryBoyNameLabel->Location = System::Drawing::Point(136, 40);
+			this->DeliveryBoyNameLabel->Location = System::Drawing::Point(136, 64);
 			this->DeliveryBoyNameLabel->Name = L"DeliveryBoyNameLabel";
 			this->DeliveryBoyNameLabel->Size = System::Drawing::Size(392, 56);
 			this->DeliveryBoyNameLabel->TabIndex = 0;
 			this->DeliveryBoyNameLabel->Text = L"WELCOME, MR";
 			// 
-			// DeliveryBoyPickUpOrderButton
+			// DeliveryBoyLogOut
 			// 
-			this->DeliveryBoyPickUpOrderButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.25F));
-			this->DeliveryBoyPickUpOrderButton->Location = System::Drawing::Point(344, 464);
-			this->DeliveryBoyPickUpOrderButton->Name = L"DeliveryBoyPickUpOrderButton";
-			this->DeliveryBoyPickUpOrderButton->Size = System::Drawing::Size(224, 64);
-			this->DeliveryBoyPickUpOrderButton->TabIndex = 10;
-			this->DeliveryBoyPickUpOrderButton->Text = L"PICKUP ORDER";
-			this->DeliveryBoyPickUpOrderButton->UseVisualStyleBackColor = true;
-			this->DeliveryBoyPickUpOrderButton->Click += gcnew System::EventHandler(this, &MyForm::DeliveryBoyPickUpOrderButton_Click);
-			// 
-			// DeliveringOrderLabel
-			// 
-			this->DeliveringOrderLabel->AutoSize = true;
-			this->DeliveringOrderLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
-			this->DeliveringOrderLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->DeliveringOrderLabel->Location = System::Drawing::Point(808, 128);
-			this->DeliveringOrderLabel->Name = L"DeliveringOrderLabel";
-			this->DeliveringOrderLabel->Size = System::Drawing::Size(277, 20);
-			this->DeliveringOrderLabel->TabIndex = 11;
-			this->DeliveringOrderLabel->Text = L"CURRENT DELIVERING ORDER : ";
-			// 
-			// DeliveringOrderTextBox
-			// 
-			this->DeliveringOrderTextBox->Location = System::Drawing::Point(1088, 128);
-			this->DeliveringOrderTextBox->Name = L"DeliveringOrderTextBox";
-			this->DeliveringOrderTextBox->Size = System::Drawing::Size(100, 20);
-			this->DeliveringOrderTextBox->TabIndex = 12;
+			this->DeliveryBoyLogOut->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.25F));
+			this->DeliveryBoyLogOut->Location = System::Drawing::Point(152, 16);
+			this->DeliveryBoyLogOut->Name = L"DeliveryBoyLogOut";
+			this->DeliveryBoyLogOut->Size = System::Drawing::Size(144, 48);
+			this->DeliveryBoyLogOut->TabIndex = 13;
+			this->DeliveryBoyLogOut->Text = L"LOGOUT";
+			this->DeliveryBoyLogOut->UseVisualStyleBackColor = true;
+			this->DeliveryBoyLogOut->Click += gcnew System::EventHandler(this, &MyForm::DeliveryBoyLogOut_Click);
 			// 
 			// MyForm
 			// 
@@ -7314,5 +7328,6 @@ private: System::Void customerfeedback_Click(System::Object^ sender, System::Eve
     System::Void AddnewDB_Enter(System::Object^ sender, System::EventArgs^ e);
     System::Void Viewtotalsalesbutton_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void DeliveryBoyPickUpOrderButton_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void DeliveryBoyLogOut_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

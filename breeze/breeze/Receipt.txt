@@ -1313,3 +1313,14 @@ Stlouis With the Flavor chilli delight topped with a layering of Beef .
 Total Billed Amount is: Rs 1710
 
 X----------------------------------------------------X
+X----------------------------------------------------X
+Name: Jones
+Contact No: 00
+Address: Grove street los santos
+
+Total pizzas ordered: 1
+Pizza Number 1
+Italian With the Flavor fajita topped with a layering of Chicken .
+Total Billed Amount is: Rs 0
+
+X----------------------------------------------------X
