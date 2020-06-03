@@ -2438,9 +2438,9 @@ void breeze::MyForm::ReadyForDelivery_Click(System::Object^ sender, System::Even
 
 		}
 	}*/
-	DeliveryBoyAddressTextBox->Text = Convert::ToString(DeliveryBoy->Delivery_Order.getstatus());
+	DeliveryBoyAddressTextBox->Text = "";
 	DeliveryBoy->deleteorder();
-	DeliveryBoyAddressTextBox->Text = Convert::ToString(DeliveryBoy->Delivery_Order.getstatus());
+	
 	ReadyForDeliveryOrdersComboBox->Items->Remove(ReadyForDeliveryOrdersComboBox->SelectedItem);
 	DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
 	MessageBox::Show("The Selected Order " + ReadyForDeliveryOrdersComboBox->SelectedItem + " has been delivered successfully ");
