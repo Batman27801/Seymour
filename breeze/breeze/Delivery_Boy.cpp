@@ -62,16 +62,15 @@ bool Delivery_Boy::setID(string id)
 bool Delivery_Boy::addworkingorder(long int ordercode)
 {
     Order temp;
-    int n=0, flag = 0,flag2=0;
+    int flag = 0,flag2=0;
     ifstream is("Orders.dat", ios::binary);
     ofstream os("temp.dat", ios::binary);
     is.seekg(0);
     while (is.read((char*)&temp, sizeof(temp)))
     {   
-        if (temp.getOrderCode()==ordercode && n==0)
+        if (temp.getOrderCode()==ordercode)
         {
             flag = 1;
-            n++;
             Working_Order_Code = temp.getOrderCode();
             temp.setstatus(delivering);
             Delivery_Order = temp;
@@ -97,17 +96,14 @@ bool Delivery_Boy::deleteorder()
     int flag = 0,flag2=0;
     ifstream is("Orders.dat", ios::binary);
     ofstream os("temp.dat", ios::binary);
-    os.close();
     is.seekg(0);
-    while (is.read((char*)&temp, sizeof(temp)))
+    while (!is.eof())
     {
+        is.read((char*)&temp, sizeof(temp));
         if (temp.getOrderCode() == Working_Order_Code)
         {
             temp.setstatus(delivered);
             flag = 1;
-            Total_Orders++;
-            Working_Order_Code = 0;
-            On_Delivery = false;
             continue;
         }
         else
@@ -119,6 +115,9 @@ bool Delivery_Boy::deleteorder()
     os.close();
     remove("Orders.dat");
     rename("temp.dat", "Orders.dat");
+    Total_Orders++;
+    Working_Order_Code = 0;
+    On_Delivery = false; 
     flag2 = updateBoy();
     if (flag == 1 && flag2 == 1) return true;
     else return false;
@@ -165,7 +164,7 @@ bool Delivery_Boy::updateBoy()
         }
         else
         {
-            os.write((char*)this, sizeof(*this));
+            os.write((char*)&temp, sizeof(temp));
         }
     }
     is.close();
