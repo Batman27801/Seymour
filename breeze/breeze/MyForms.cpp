@@ -2399,6 +2399,7 @@ void breeze::MyForm:: DeliveryBoyMain_Enter_1(System::Object^ sender, System::Ev
 	DeliveryBoy->check(emp->getID(), emp->getPass());
 	DeliveryBoyNameLabel->Text = "WELCOME, MR " + gotoString(DeliveryBoy->getname());
 	DeliveryBoySalaryLabel->Text = "SALARY : RS " + Convert::ToString(DeliveryBoy->getsalary());
+	ReadyForDeliveryOrdersComboBox->Items->Clear();
 	ifstream infile("Orders.dat", ios::binary);
 	Order temp;
 	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
@@ -2420,19 +2421,30 @@ void breeze::MyForm::ReadyForDelivery_Click(System::Object^ sender, System::Even
 	DeliveryBoy->check(emp->getID(), emp->getPass());
 	long int PlaceHolder;
 	PlaceHolder = (long int)(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem));
-	ifstream infile("Orders.dat", ios::binary);
-	Order temp;
+	//ifstream infile("Orders.dat", ios::binary);
+	/*Order temp;
 	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
 	{
 		if (temp.getOrderCode() == PlaceHolder)
 		{
+			if (DeliveryBoy->Delivery_Order.getstatus() == delivering)
+			{
+				DeliveryBoyAddressTextBox->Text = Convert::ToString(temp.getstatus());
+			}
 			DeliveryBoy->deleteorder();
 			ReadyForDeliveryOrdersComboBox->Items->Remove(ReadyForDeliveryOrdersComboBox->SelectedItem);
 			DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
 			MessageBox::Show("The Selected Order "+ ReadyForDeliveryOrdersComboBox->SelectedItem + " has been delivered successfully ");
 
 		}
-	}
+	}*/
+	DeliveryBoyAddressTextBox->Text = Convert::ToString(DeliveryBoy->Delivery_Order.getstatus());
+	DeliveryBoy->deleteorder();
+	DeliveryBoyAddressTextBox->Text = Convert::ToString(DeliveryBoy->Delivery_Order.getstatus());
+	ReadyForDeliveryOrdersComboBox->Items->Remove(ReadyForDeliveryOrdersComboBox->SelectedItem);
+	DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
+	MessageBox::Show("The Selected Order " + ReadyForDeliveryOrdersComboBox->SelectedItem + " has been delivered successfully ");
+
 }
 void breeze::MyForm::DeliveryBoyPickUpOrderButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -2445,7 +2457,7 @@ void breeze::MyForm::DeliveryBoyPickUpOrderButton_Click(System::Object^ sender, 
 		PlaceHolder = (long int)(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem));
 		DeliveryBoy->addworkingorder(PlaceHolder);
 		DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
-		MessageBox::Show("Order NO : " + DeliveringOrderTextBox->Text + "has been picked up for delivery");
+		MessageBox::Show("Order NO : " + DeliveringOrderTextBox->Text + " has been picked up for delivery");
 	}
 	else
 	{
@@ -2673,6 +2685,9 @@ void breeze::MyForm::addDBfinalbutton_Click(System::Object^ sender, System::Even
 	}
 }
 void breeze::MyForm::Managerlogout_Click(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedTab = Staaf_Main_Page;
+}
+void breeze::MyForm::DeliveryBoyLogOut_Click(System::Object^ sender, System::EventArgs^ e) {
 	tabControl1->SelectedTab = Staaf_Main_Page;
 }
 void breeze::MyForm::deletechefbutton_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -103,6 +103,7 @@ bool Delivery_Boy::deleteorder()
     {
         if (temp.getOrderCode() == Working_Order_Code)
         {
+            temp.setstatus(delivered);
             flag = 1;
             Total_Orders++;
             Working_Order_Code = 0;
