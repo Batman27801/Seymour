@@ -62,15 +62,18 @@ bool Delivery_Boy::setID(string id)
 bool Delivery_Boy::addworkingorder(long int ordercode)
 {
     Order temp;
-    int flag = 0,flag2=0;
+    int n = 0, flag1 = 0, flag2 = 0;
     ifstream is("Orders.dat", ios::binary);
     ofstream os("temp.dat", ios::binary);
     is.seekg(0);
+
+    //pos = (int)fs.tellg();
     while (is.read((char*)&temp, sizeof(temp)))
-    {   
-        if (temp.getOrderCode()==ordercode)
+    {
+        if (temp.getstatus() == ready_for_delivery && n == 0)
         {
-            flag = 1;
+            flag1 = 1;
+            n++;
             Working_Order_Code = temp.getOrderCode();
             temp.setstatus(delivering);
             Delivery_Order = temp;
@@ -84,10 +87,10 @@ bool Delivery_Boy::addworkingorder(long int ordercode)
     }
     is.close();
     os.close();
-    remove("Delivery_Boy.dat");
-    rename("temp.dat", "Delivery_Boy.dat");
+    remove("Orders.dat");
+    rename("temp.dat", "Orders.dat");
     flag2 = updateBoy();
-    if (flag == 1 && flag2==1) return true;
+    if (flag1 == 1 && flag2 == 1) return true;
     else return false;
 }
 bool Delivery_Boy::deleteorder()
