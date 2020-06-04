@@ -496,6 +496,7 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 	}
 	catch (FormatException ^os)
 	{
+		os;
 		agebox->Text = "0";
 		i++;
 	}
@@ -520,6 +521,7 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 	}
 	catch (FormatException^ os)
 	{
+		os;
 		contactbox->Text = "0";
 		cnicbox->Text = "0";
 		i++;
@@ -554,6 +556,7 @@ void breeze::MyForm::signup2_Click(System::Object^ sender, System::EventArgs^ e)
 	}
 	catch (FormatException^ os)
 	{
+		os;
 		cardnobox->Text = "0";
 		cardexpmonth->Text = Convert::ToString("0");
 		cardexpyear->Text = Convert::ToString("0");
@@ -1096,9 +1099,8 @@ void breeze::MyForm::VeggieDelightCheckBox_CheckedChanged(System::Object^ sender
 	if (VeggieDelightCheckBox->Checked == true)
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
-		ptr = new veggie_delight;
-		pizz->fpoint = ptr;
-		ptr->increaseprice(size[loop - 1]);
+		pizz->fpoint = new veggie_delight;
+		pizz->fpoint->increaseprice(size[loop - 1]);
 		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price()+pizz->fpoint->get_price()));
 		TheCheeseCheckbox->Checked = false;
 		FajitaCheckbox->Checked = false;
@@ -1131,9 +1133,8 @@ void breeze::MyForm::TheCheeseCheckbox_CheckedChanged(System::Object^ sender, Sy
 	if (TheCheeseCheckbox->Checked == true)
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
-		ptr = new The_cheese;
-		pizz->fpoint = ptr;
-		ptr->increaseprice(size[loop - 1]);
+		pizz->fpoint = new The_cheese;
+		pizz->fpoint->increaseprice(size[loop - 1]);
 		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		FajitaCheckbox->Checked = false;
@@ -1170,9 +1171,8 @@ void breeze::MyForm::SeekhKebabCheckbox_CheckedChanged(System::Object^ sender, S
 	if (SeekhKebabCheckbox->Checked == true)
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
-		ptr = new seekh_kebab;
-		pizz->fpoint = ptr;
-		ptr->increaseprice(size[loop - 1]);
+		pizz->fpoint = new seekh_kebab;
+		pizz->fpoint->increaseprice(size[loop - 1]);
 		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		FajitaCheckbox->Checked = false;
@@ -1207,9 +1207,8 @@ void breeze::MyForm::TikkaCheckbox_CheckedChanged(System::Object^ sender, System
 	if (TikkaCheckbox->Checked == true)
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
-		ptr = new tikka;
-		pizz->fpoint = ptr;
-		ptr->increaseprice(size[loop - 1]);
+		pizz->fpoint = new tikka;
+		pizz->fpoint->increaseprice(size[loop - 1]);
 		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		FajitaCheckbox->Checked = false;
@@ -1244,9 +1243,8 @@ void breeze::MyForm::FajitaCheckbox_CheckedChanged(System::Object^ sender, Syste
 	if (FajitaCheckbox->Checked == true)
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
-		ptr = new fajita;
-		pizz->fpoint = ptr;
-		ptr->increaseprice(size[loop - 1]);
+		pizz->fpoint = new fajita;
+		pizz->fpoint->increaseprice(size[loop - 1]);
 		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		TikkaCheckbox->Checked = false;
@@ -1281,9 +1279,8 @@ void breeze::MyForm::ChilliDelightCheckbox_CheckedChanged(System::Object^ sender
 	if (ChilliDelightCheckbox->Checked == true)
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
-		ptr = new chilli_delight;
-		pizz->fpoint = ptr;
-		ptr->increaseprice(size[loop - 1]);
+		pizz->fpoint = new chilli_delight;
+		pizz->fpoint->increaseprice(size[loop - 1]);
 		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		TikkaCheckbox->Checked = false;
@@ -1319,9 +1316,8 @@ void breeze::MyForm::BbqBuzzCheckbox_CheckedChanged(System::Object^ sender, Syst
 	if (BbqBuzzCheckbox->Checked == true)
 	{
 		FlavourPriceBox->Text = "CURRENT PRICE = Rs";
-		ptr = new bbq_buzz;
-		pizz->fpoint = ptr;
-		ptr->increaseprice(size[loop - 1]);
+		pizz->fpoint = new bbq_buzz;
+		pizz->fpoint->increaseprice(size[loop - 1]);
 		FlavourPriceBox->AppendText(Convert::ToString(pizz->cpoint->get_price() + pizz->fpoint->get_price()));
 		VeggieDelightCheckBox->Checked = false;
 		TikkaCheckbox->Checked = false;
@@ -2137,7 +2133,8 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 		srand(int(time(0)));
 		OrderCode = (rand() % 10000) + 1000;
 		OrderNoCheckOutTextBox->Text = Convert::ToString(OrderCode);
-		int i, price=0;
+		int i;
+		double price = 0;
 		pizz = pizz - (total_no_of_pizzas-1);
 		for (i = 0; i < total_no_of_pizzas; i++)
 		{
@@ -2151,7 +2148,7 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 	}
 	else if (acc->getguest() == false)
 	{
-		int price=0,i;
+		double price = 0; int i;
 		GuestCheckOutIntro->Visible = false;
 		srand(int(time(0)));
 		long int OrderCode;
@@ -2217,17 +2214,18 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 	}
 	else
 	{
+	try{
 		if (AddressCheckOutTextBox->Text == ""  )
 		{
 			AddressCheckOutWarningLabel->Visible = true;
 			CheckOutWarningLabel->Visible = true;
 		}
-		else if (PhoneNoTextBox->Text == "")
+		else if (!acc->setcontact(long long int(System::Convert::ToInt64(PhoneNoTextBox->Text))))
 		{
 			PhoneNoCheckOutWarning->Visible = true;
 			CheckOutWarningLabel->Visible = true;
 		}
-		else if (CreditCardCheckBox->Checked==true && CardNumberCheckOutTextBox->Text == "")
+		else if (CreditCardCheckBox->Checked==true && !acc->setcardno(long long int(System::Convert::ToInt64(CardNumberCheckOutTextBox->Text))))
 		{
 			 CardNoWarningCheckOutLabel->Visible = true;
 			 CheckOutWarningLabel->Visible = true;
@@ -2236,7 +2234,6 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 		{
 			acc->setname(backtostring(NameCheckOutText->Text));
 			order->setsize(size);
-			acc->setcontact(long long int(System::Convert::ToInt64(PhoneNoTextBox->Text)));
 			acc->setaddress(backtostring(AddressCheckOutTextBox->Text));
 			order->setaddress(backtostring(AddressCheckOutTextBox->Text));
 			if (CashCheckBox->Checked == true)
@@ -2248,7 +2245,6 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			else
 			{
 				acc->setcardprovider(backtostring(CardCheckOutComboBox->Text));
-				acc->setcardno(long long int(System::Convert::ToInt64(CardNumberCheckOutTextBox->Text)));
 				order->setpaymentttype(false);
 			}
 			fstream yourorder("Receipt.txt", ios::in | ios::out | ios::app);
@@ -2262,6 +2258,15 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			MessageBox::Show("Your Order Has Been Confirmed!\nPlease Note this Order Number For Tracking Purposes. \nOrder Number: " + OrderNoCheckOutTextBox->Text, "Order Confirmed");
 			tabControl1->SelectedTab = UserLogin;
 		}
+	}
+	catch (FormatException^ os)
+	{
+			os;
+			PhoneNoCheckOutWarning->Visible = true;
+			CheckOutWarningLabel->Visible = true;
+			CardNoWarningCheckOutLabel->Visible = true;
+			CheckOutWarningLabel->Visible = true;
+	}
 		
 	}
 	//tabControl1->SelectedTab = UserLogin;
@@ -3132,7 +3137,7 @@ void breeze::MyForm::feedbacklist_Enter(System::Object^ sender, System::EventArg
 	static int feedbackcount = 0, pos = 0;
 	int i, max;
 	feedbackfile.seekg(0, ios::end);
-	max = feedbackfile.tellg();
+	max = (int)feedbackfile.tellg();
 	feedbackfile.seekg(0, ios::beg);
 	char feedback[500];
 	if (feedbackcount != 0)
@@ -3145,13 +3150,14 @@ void breeze::MyForm::feedbacklist_Enter(System::Object^ sender, System::EventArg
 	}
 	feedback[i] = '\0';
 	feedbackcount++;
-	pos = feedbackfile.tellg();
+	pos = (int)feedbackfile.tellg();
 	feedbackfile.close();
 	string feed = feedback;
 	feebackbox2->Text = gotoString(feed);
 }
 	catch (AccessViolationException^ os)
 	{
+		os;
 		feebackbox2->Text = "NO MORE AVAILABLE!";
 	}
 }

@@ -5,14 +5,14 @@
 class pizza
 {
 protected:
-	int final_price;
+	double final_price;
 public:
 	crust* cpoint;
 	flavour* fpoint;
 	Toping* tpoint;
 	pizza();
 	pizza(crust*, flavour*, Toping*);
-	int getprice();
+	double getprice();
 	void adjustpricing(int size);
 };
 

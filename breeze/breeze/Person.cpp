@@ -42,7 +42,7 @@ bool Person::setF_Name(string FN)
 {
     string tempFN;
     int size, i, n = 0;
-    size = FN.size();
+    size = (int)FN.size();
     for (i = 0; i < size; i++)
     {
         if ((FN[i] >= 65 && FN[i] <= 90) || (FN[i] >= 97 && FN[i] <= 122) || FN[i] == 32)

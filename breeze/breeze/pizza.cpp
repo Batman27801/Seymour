@@ -13,7 +13,7 @@ void pizza::adjustpricing(int size)
 	cpoint->setsize(size);
 	tpoint->increaseprice(size);
 }
-int pizza::getprice()
+double pizza::getprice()
 {
 	final_price = cpoint->get_price() + fpoint->get_price() + tpoint->getprice();
 	return final_price;

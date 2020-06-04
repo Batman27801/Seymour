@@ -11,3 +11,7 @@ breeze/x64/Debug/breeze.exe
 breeze/x64/Debug/breeze.exe.metagen
 breeze/breeze/x64/Debug/breeze.vcxproj.FileListAbsolute.txt
 
+breeze/breeze/x64/Release/breeze.MyForm.resources
+breeze/breeze/x64/Release/breeze.vcxproj.FileListAbsolute.txt
+breeze/x64/Release/breeze.exe
+breeze/x64/Release/breeze.exe.metagen
