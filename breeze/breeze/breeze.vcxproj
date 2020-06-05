@@ -210,7 +210,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="PersonHeirarchy.cd" />
+    <None Include="ToppingDiagram.cd" />
+    <None Include="CrustDiagrams.cd" />
+    <None Include="FlavoursDiagram.cd" />
+    <None Include="ProjectDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

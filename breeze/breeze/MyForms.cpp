@@ -2350,13 +2350,18 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 		cheffnametextbox->Text = Convert::ToString("");
 		f--;
 	}
-
-	if (!C->setage(Convert::ToInt32(chefagetextbox->Text)))
+	try {
+		if (!C->setage(Convert::ToInt32(chefagetextbox->Text)))
+		{
+			chefagetextbox->Text = "0";
+			f--;
+		}
+	}
+	catch (FormatException^ os)
 	{
-		chefagetextbox->Text = "0";
+		os;
 		f--;
 	}
-
 	if (backtostring(chefgenderbox->Text) == "Male")
 	{
 		C->setGender(Male);
@@ -2369,8 +2374,14 @@ void breeze::MyForm::addcheffinalbutton_Click(System::Object^ sender, System::Ev
 	{
 		C->setGender(Other);
 	}
-	
-	C->setsalary(Convert::ToDouble(chefsalerytextbox->Text));
+	try {
+		C->setsalary(Convert::ToDouble(chefsalerytextbox->Text));
+	}
+	catch (FormatException^ os)
+	{
+		os;
+		f--;
+	}
 	if (!C->setID(backtostring(chefidtextbox->Text)))
 	{
 		chefidtextbox->Text = "";
@@ -2644,10 +2655,16 @@ void breeze::MyForm::addDBfinalbutton_Click(System::Object^ sender, System::Even
 		DBfnametextbox->Text = Convert::ToString("");
 		f--;
 	}
-
-	if (!DB->setage(Convert::ToInt32(DBagetextbox->Text)))
+	try {
+		if (!DB->setage(Convert::ToInt32(DBagetextbox->Text)))
+		{
+			DBagetextbox->Text = "0";
+			f--;
+		}
+	}
+	catch (FormatException^ os)
 	{
-		DBagetextbox->Text = "0";
+		os;
 		f--;
 	}
 
@@ -2663,8 +2680,14 @@ void breeze::MyForm::addDBfinalbutton_Click(System::Object^ sender, System::Even
 	{
 		DB->setGender(Other);
 	}
-
-	DB->setsalary(Convert::ToDouble(DBsalerytextbox->Text));
+	try {
+		DB->setsalary(Convert::ToDouble(DBsalerytextbox->Text));
+	}
+	catch (FormatException^ os)
+	{
+		os;
+		f--;
+	}
 	if (!DB->setID(backtostring(DBidtextbox->Text)))
 	{
 		DBidtextbox->Text = "";
@@ -2880,21 +2903,28 @@ void breeze::MyForm::Updatechefsalerybutton_Click(System::Object^ sender, System
 
 }
 void breeze::MyForm::Updatechefsaleryfinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (!manager->updatesaleryofchef(backtostring(Updatechefsalerytextbox->Text), Convert::ToDouble(chefnewsalerytextbox->Text)))
-	{
-		Updatechefsaleryidnotice->Visible = true;
+	try {
+		if (!manager->updatesaleryofchef(backtostring(Updatechefsalerytextbox->Text), Convert::ToDouble(chefnewsalerytextbox->Text)))
+		{
+			Updatechefsaleryidnotice->Visible = true;
+		}
+		else
+		{
+			Updatechefsalerytextbox->Visible = false;
+			chefnewsalerytextbox->Visible = false;
+			Updatechefsalerytextbox->Text = "ID";
+			chefnewsalerytextbox->Text = "0";
+			Updatechefsaleryidnotice->Visible = false;
+			Updatechefsaleryfinalbutton->Visible = false;
+			chefsaleryupdatednotice->Visible = true;
+			chefnewsalerylabel->Visible = false;
+			
+		}
 	}
-	else
+	catch (FormatException^ os)
 	{
-		Updatechefsalerytextbox->Visible = false;
-		chefnewsalerytextbox->Visible = false;
-		Updatechefsalerytextbox->Text = "ID";
-		chefnewsalerytextbox->Text = "0";
-		Updatechefsaleryidnotice->Visible = false;
-		Updatechefsaleryfinalbutton->Visible = false;
-		chefsaleryupdatednotice->Visible = true;
-		chefnewsalerylabel->Visible = false;
-
+		os;
+		Updatechefsaleryidnotice->Visible = true;
 	}
 }
 
@@ -3001,19 +3031,26 @@ void breeze::MyForm::UpdateDBsalerybutton_Click(System::Object^ sender, System::
 
 }
 void breeze::MyForm::UpdateDBsaleryfinalbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (!manager->updatesaleryofDB(backtostring(UpdateDBsalerytextbox->Text), Convert::ToDouble(DBnewsalerytextbox->Text)))
-	{
-		UpdateDBsalerynotice->Visible = true;
+	try {
+		if (!manager->updatesaleryofDB(backtostring(UpdateDBsalerytextbox->Text), Convert::ToDouble(DBnewsalerytextbox->Text)))
+		{
+			UpdateDBsalerynotice->Visible = true;
+		}
+		else
+		{
+			UpdateDBsalerytextbox->Visible = false;
+			DBnewsalerytextbox->Visible = false;
+			UpdateDBsalerytextbox->Text = "";
+			DBnewsalerytextbox->Text = "0";
+			UpdateDBsaleryfinalbutton->Visible = false;
+			DBsaleryupdatednotice->Visible = true;
+			DBnewsalerylabel->Visible = false;
+		}
 	}
-	else
+	catch (FormatException^ os)
 	{
-		UpdateDBsalerytextbox->Visible = false;
-		DBnewsalerytextbox->Visible = false;
-		UpdateDBsalerytextbox->Text = "";
-		DBnewsalerytextbox->Text = "0";
-		UpdateDBsaleryfinalbutton->Visible = false;
-		DBsaleryupdatednotice->Visible = true;
-		DBnewsalerylabel->Visible = false;
+		os;
+		UpdateDBsalerynotice->Visible = true;
 	}
 }
 void breeze::MyForm::TotalOrdersofchefbutton_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -229,6 +229,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="CrustDiagrams.cd" />
+    <None Include="ProjectDiagram.cd" />
+    <None Include="FlavoursDiagram.cd" />
+    <None Include="ToppingDiagram.cd" />
+    <None Include="PersonHeirarchy.cd" />
   </ItemGroup>
 </Project>
