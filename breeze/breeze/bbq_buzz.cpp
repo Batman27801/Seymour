@@ -40,7 +40,7 @@ double bbq_buzz::set_sauce(char* choice)
         return 0;
    }
     else {
-        std::cout << "Please Enter the correct choice" << std::endl;
+        return 0;
     }
 }
 bool bbq_buzz::get_gluten()
@@ -81,5 +81,9 @@ char* bbq_buzz::get_Addon()
     else if (bbq_sauce == true)
     {
         return "Bbq Sauce";
+    }
+    else
+    {
+        return 0;
     }
 }

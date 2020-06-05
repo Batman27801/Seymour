@@ -47,7 +47,7 @@ double chilli_delight::set_chilli(char* choice)
         return 0;
     }
     else {
-        std::cout << "please enter the correct info" << std::endl;
+        return 0;
     }
 }
 char* chilli_delight::get_Addon()
@@ -60,5 +60,9 @@ char* chilli_delight::get_Addon()
     else if (red == true)
     {
         return "Red Chilli";
+    }
+    else
+    {
+        return 0;
     }
 }

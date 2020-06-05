@@ -2424,6 +2424,7 @@ void breeze::MyForm::DeliveryBoyMain_Enter_1(System::Object^ sender, System::Eve
 		{
 			ReadyForDeliveryOrdersComboBox->Items->Add((temp.getOrderCode()));
 			
+			
 		}
 	}
 	infile.clear();
@@ -2482,7 +2483,7 @@ void breeze::MyForm::DeliveryBoyPickUpOrderButton_Click(System::Object^ sender, 
 	
 }
 void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	/*ifstream infile("Orders.dat", ios::binary);
+	ifstream infile("Orders.dat", ios::binary);
 	Order temp;
 	string placeholder;
 	infile.seekg(0);
@@ -2504,7 +2505,7 @@ void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System:
 			}
 
 		}
-	}*/
+	}
 }
 
 void breeze::MyForm::Chefmain_Enter(System::Object^ sender, System::EventArgs^ e) {

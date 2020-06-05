@@ -40,6 +40,10 @@ char* seekh_kebab::get_Addon()
     {
         return "Beef";
     }
+    else
+    {
+        return 0;
+    }
 }
 double seekh_kebab::set_meat(char choice[30])
 {
@@ -68,6 +72,6 @@ double seekh_kebab::set_meat(char choice[30])
     }
     else
     {
-        std::cout << "Please enter the correct choices" << std::endl;
+        return 1;
     }
 }

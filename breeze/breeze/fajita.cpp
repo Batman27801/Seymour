@@ -49,7 +49,7 @@ double fajita::set_meat(char choice[30])
         return 0;
     }
     else {
-        std::cout << "Please enter the correct choices" << std::endl;
+        return 1;
     }
   
 }
@@ -78,5 +78,9 @@ char* fajita::get_Addon()
     else if (beef == true)
     {
         return "Beef";
+    }
+    else
+    {
+        return 0;
     }
 }
