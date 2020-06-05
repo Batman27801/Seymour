@@ -48,4 +48,8 @@ char* tikka::get_Addon()
     {
         return "Beef";
     }
+    else
+    {
+        return 0;
+    }
 }

@@ -43,7 +43,7 @@ double The_cheese::set_cheese(char choice[30])
     }
     else
     {
-        std::cout << "Please enter the correct choices" << std::endl;
+        return 1;
     }
 }
 
@@ -89,5 +89,9 @@ char* The_cheese::get_Addon()
     else if (cheddar == true)
     {
         return "Cheddar";
+    }
+    else
+    {
+        return 0;
     }
 }
