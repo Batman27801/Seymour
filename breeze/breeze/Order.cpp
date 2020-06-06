@@ -2,6 +2,7 @@
 #include<fstream>
 #include<string.h>
 using namespace std;
+int Order::TotalOrdersOfDay = 0;
 Order::Order()
 {
 	int i;
@@ -37,6 +38,7 @@ void Order::PlaceOrder(pizza* pizza, int pizzaamount)
 	yourorder << "X----------------------------------------------------X" << endl;
 	yourorder.close();
 	orderstatus = confirmed;
+	IncrementTotalOrdersOfDay();
 }
 int Order::getpizzas()const
 {
@@ -141,3 +143,11 @@ long int Order::getOrderCode()const
 {
 	return OrderCode;
 }
+ void Order::IncrementTotalOrdersOfDay() 
+{
+	 TotalOrdersOfDay++;
+}
+ int Order::GetTotalOrdersOfDay()
+ {
+	 return TotalOrdersOfDay;
+ }

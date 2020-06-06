@@ -2586,6 +2586,7 @@ void breeze::MyForm::staffloginbutton_Click(System::Object^ sender, System::Even
 		delete boy;
 		delete cheff;
 		tabControl1->SelectedTab = Managermain;
+		totalordersofdaybox->Text = Convert::ToString(Order::GetTotalOrdersOfDay());
 	}
 	else if (cheff->check(backtostring(staffidtextbox->Text), backtostring(staffpasstextbox->Text)))
 	{
