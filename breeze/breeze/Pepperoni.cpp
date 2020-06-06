@@ -14,7 +14,7 @@ void Pepperoni::setType(TypeofTopping TOT)
 {
     Type = TOT;
 }
-TypeofTopping Pepperoni::getType()
+TypeofTopping Pepperoni::getType()const
 {
     return Type;
 }
@@ -22,10 +22,10 @@ void Pepperoni::setQOFMC(QuantityOfmozzarellecheese Q)
 {
     QOFMC = Q;
     if (QOFMC == More) price = price + 50;
-    else if (QOFMC == Less)  price = price - 30;
+    else if (QOFMC == Little)  price = price - 30;
     else if (QOFMC == Not_Include) price = price - 50;
 }
-QuantityOfmozzarellecheese Pepperoni::getQOFMC()
+QuantityOfmozzarellecheese Pepperoni::getQOFMC() const
 {
     return QOFMC;
 }

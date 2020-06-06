@@ -17,11 +17,11 @@ public:
     bool setID(string);
     bool check(string, string);
     bool addworkingorder();
-    long int getworkingorder();
+    long int getworkingorder() const;
     bool setorderready();
     bool cancelorder();
-    int getTotalOrders();
-    bool getWorking();
-    Order getcurrOrder();
+    int getTotalOrders() const;
+    bool getWorking() const;
+    Order getcurrOrder() const;
 };
 #endif

@@ -24,7 +24,7 @@ void stlouis::settavern(bool b)
 {
     tavern = b;
 }
-bool stlouis::gettavern()
+bool stlouis::gettavern()const
 {
     return tavern;
 }
@@ -32,7 +32,7 @@ void stlouis::setcheese(bool b)
 {
     cheese = b;
 }
-bool stlouis::getcheese()
+bool stlouis::getcheese() const
 {
     return cheese;
 }

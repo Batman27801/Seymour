@@ -13,9 +13,9 @@ private:
 public:
     Chicken();
     void setCheese(Cheeses);
-    Cheeses getCheese();
+    Cheeses getCheese() const;
     void setBS(bool);
-    bool getBS();
-    double getprice();
+    bool getBS() const;
+    
 };
 #endif

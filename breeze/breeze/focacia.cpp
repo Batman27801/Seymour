@@ -31,7 +31,7 @@ void focacia::setherbs(herbs h)
     else if (herb == garlicpowder)
         price += 15;
 }
-herbs focacia::getherbs()
+herbs focacia::getherbs()const
 {
     return herb;
 }
@@ -44,7 +44,7 @@ void focacia::setcoating(coating c)
         price += 40;
 
 }
-coating focacia::getcoating()
+coating focacia::getcoating() const
 {
     return coat;
 }

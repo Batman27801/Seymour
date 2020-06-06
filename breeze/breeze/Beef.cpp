@@ -13,7 +13,7 @@ void Beef::setCS(bool n)
     Cloves_Spice = n;
     if (Cloves_Spice == true) price = price + 40;
 }
-bool Beef::getCS()
+bool Beef::getCS() const
 {
     return Cloves_Spice;
 }
@@ -21,7 +21,7 @@ void Beef::setpepper(peppers p)
 {
     pepper = p;
 }
-peppers Beef::getpepper()
+peppers Beef::getpepper() const
 {
     return pepper;
 }

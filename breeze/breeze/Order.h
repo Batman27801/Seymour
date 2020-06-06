@@ -29,13 +29,13 @@ public:
     void setstatus(enum status);
     enum status getstatus();
     void setbill(double);
-    int getpizzas();
+    int getpizzas()const;
     int* getsize();
     void setsize(int* s);
     char* getcrusts();
     char* getflavs();
     char* gettoppings();
     double ReturnBill();
-    long int getOrderCode();
+    long int getOrderCode()const;
 };
 

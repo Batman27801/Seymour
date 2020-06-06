@@ -14,8 +14,8 @@ public:
     focacia();
     void setsize(int);
     void setherbs(herbs);
-    herbs getherbs();
+    herbs getherbs()const;
     void setcoating(coating);
-    coating getcoating();
+    coating getcoating()const;
     void Hello();
 };

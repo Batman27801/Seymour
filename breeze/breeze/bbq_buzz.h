@@ -15,10 +15,10 @@ public:
     void set_bbq(bool B);
     void set_ranch(bool B);
     void set_chicken(bool B);
-    bool get_chicken();
-    bool get_bbq();
-    bool get_ranch();
+    bool get_chicken()const;
+    bool get_bbq()const; 
+    bool get_ranch()const;
     char* get_Addon();
-    static bool get_gluten();
+    static bool get_gluten(); 
 };
 

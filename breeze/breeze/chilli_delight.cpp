@@ -50,7 +50,7 @@ double chilli_delight::set_chilli(char* choice)
         return 0;
     }
 }
-char* chilli_delight::get_Addon()
+char* chilli_delight::get_Addon() 
 {
     if (green == true)
     {

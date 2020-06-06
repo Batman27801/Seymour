@@ -12,8 +12,8 @@ public:
     newyork();
     void setsize(int);
     void setherbs(herbs);
-    herbs getherbs();
+    herbs getherbs()const;
     void setmineralized(bool);
-    bool getmineralized();
+    bool getmineralized()const;
     void Hello();
 };

@@ -29,7 +29,7 @@ void deepdish::setthick(thickness h)
     else if (deep == three)
         price += 60;
 }
-thickness deepdish::getthick()
+thickness deepdish::getthick()const
 {
     return deep;
 }
@@ -42,11 +42,11 @@ void deepdish::setsauce(sauces c)
         price += 50;
 
 }
-sauces deepdish::getsauce()
+sauces deepdish::getsauce() const
 {
     return sauce;
 }
-bool deepdish::getonions()
+bool deepdish::getonions() const
 {
     return onions;
 }

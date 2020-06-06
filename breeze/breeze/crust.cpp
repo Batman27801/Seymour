@@ -1,9 +1,9 @@
 #include "crust.h"
-int crust::getsize()
+int crust::getsize() const
 {
     return size;
 }
-double crust::get_price()
+double crust::get_price() const
 {
     return price;
 }
@@ -22,7 +22,7 @@ void crust::set_description(string s)
         description[i] = s[i];
     }
 }
-bool crust::getthickthin()
+bool crust::getthickthin() const
 {
     return thick;
 }
@@ -31,7 +31,7 @@ void crust::setthickthin(bool b)
     thick = b;
     thin = !b;
 }
-bool crust::getgluten()
+bool crust::getgluten() const
 {
     return gluten;
 }

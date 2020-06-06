@@ -64,19 +64,19 @@ void The_cheese::set_gouda(bool B)
 {
     gouda = B;
 }
-bool The_cheese::get_mozarella()
+bool The_cheese::get_mozarella() const
 {
     return mozarella;
 }
-bool The_cheese::get_cheddar()
+bool The_cheese::get_cheddar() const
 {
     return cheddar;
 }
-bool The_cheese::get_gouda()
+bool The_cheese::get_gouda() const
 {
     return gouda;
 }
-char* The_cheese::get_Addon()
+char* The_cheese::get_Addon() 
 {
     if (gouda == true)
     {

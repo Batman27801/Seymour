@@ -38,7 +38,7 @@ void Order::PlaceOrder(pizza* pizza, int pizzaamount)
 	yourorder.close();
 	orderstatus = confirmed;
 }
-int Order::getpizzas()
+int Order::getpizzas()const
 {
 	return no_of_pizzas;
 }
@@ -137,7 +137,7 @@ void Order::setsize(int* s)
 		size[i] = s[i];
 	}
 }
-long int Order::getOrderCode()
+long int Order::getOrderCode()const
 {
 	return OrderCode;
 }

@@ -28,7 +28,7 @@ void stuffed::setcheese(cheesetype h)
     if (cheese == american)
         price += 10;
 }
-cheesetype stuffed::getcheese()
+cheesetype stuffed::getcheese() const
 {
     return cheese;
 }
@@ -41,7 +41,7 @@ void stuffed::setfilling(filling c)
         price += 80;
 
 }
-filling stuffed::getfilling()
+filling stuffed::getfilling() const
 {
     return fill;
 }
@@ -53,7 +53,7 @@ void stuffed::setlayer(layering b)
     else if (layer == doubled)
         price += 50;
 }
-layering stuffed::getlayer()
+layering stuffed::getlayer() const
 {
     return layer;
 }

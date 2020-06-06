@@ -17,10 +17,10 @@ public:
     stuffed();
     void setsize(int);
     void setcheese(cheesetype);
-    cheesetype getcheese();
+    cheesetype getcheese()const;
     void setfilling(filling);
-    filling getfilling();
+    filling getfilling()const;
     void setlayer(layering);
-    layering getlayer();
+    layering getlayer()const;
     void Hello();
 };

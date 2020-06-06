@@ -16,9 +16,9 @@ public:
     bool setID(string);
     bool check(string, string);
     bool  addworkingorder(long int ordercode);
-    long int getworkingorder();
+    long int getworkingorder()const;
     bool deleteorder();
-    bool getOnDelivery();
-    int getTotalOrders();
+    bool getOnDelivery()const;
+    int getTotalOrders()const;
 };
 #endif

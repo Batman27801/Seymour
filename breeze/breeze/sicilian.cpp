@@ -29,7 +29,7 @@ void sicilian::setoil(oilchoice h)
     else if (oil == flavored)
         price += 25;
 }
-oilchoice sicilian::getoil()
+oilchoice sicilian::getoil() const
 {
     return oil;
 }
@@ -42,7 +42,7 @@ void sicilian::setpan(panchoice c)
         price += 40;
 
 }
-panchoice sicilian::getpan()
+panchoice sicilian::getpan() const
 {
     return pan;
 }

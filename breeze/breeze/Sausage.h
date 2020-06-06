@@ -13,9 +13,9 @@ private:
 public:
     Sausage();
     void setRPF(bool);
-    bool getRPF();
+    bool getRPF()const;
     void setBS(bool);
-    bool getBS();
+    bool getBS()const;
     
 };
 #endif

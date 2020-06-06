@@ -16,11 +16,11 @@ bool tikka::get_gluten()
 {
     return gluten;
 }
-bool tikka::get_beef()
+bool tikka::get_beef() const
 {
     return beef;
 }
-bool tikka::get_chicken()
+bool tikka::get_chicken() const
 {
     return chicken;
 }

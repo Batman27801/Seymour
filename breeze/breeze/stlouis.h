@@ -13,8 +13,8 @@ public:
     stlouis();
     void setsize(int);
     void setcheese(bool);
-    bool getcheese();
-    bool gettavern();
+    bool getcheese()const;
+    bool gettavern()const;
     void settavern(bool);
     void Hello();
 };
