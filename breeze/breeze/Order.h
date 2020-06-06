@@ -7,6 +7,7 @@
 #include"security.h"
 
 enum status{confirmed,making,canceled,ready_for_delivery,delivering,delivered};
+
 class Order : public secured
 {
 private:
@@ -18,8 +19,11 @@ private:
     char TOPPINGS[5][30];    
     int size[5];
     enum status orderstatus;
+    static int TotalOrdersOfDay;
+    static void IncrementTotalOrdersOfDay();
 public:
     Order();
+    static int GetTotalOrdersOfDay();
     void PlaceOrder(pizza *pizza,int pizzaamount);
     void FileOrder();
     void operator =(const Order& obj);
