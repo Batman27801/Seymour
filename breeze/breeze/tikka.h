@@ -12,9 +12,9 @@ private:
 public:
     tikka();
     static bool get_gluten();
-    bool get_chicken();
+    bool get_chicken()const;
     double set_chicken(bool B);
-    bool get_beef();
+    bool get_beef()const;
     double set_beef(bool B);
     char* get_Addon();
 

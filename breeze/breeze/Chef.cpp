@@ -92,7 +92,7 @@ bool chef::addworkingorder()
     else return false;
 }
 
-long int chef::getworkingorder()
+long int chef::getworkingorder() const
 {
     return Working_Order_Code;
 }
@@ -180,11 +180,11 @@ bool chef::cancelorder()
     if (flag1 == 1 && flag2==1) return true;
     else return false;
 }
-int chef::getTotalOrders()
+int chef::getTotalOrders() const
 {
     return Total_Orders;
 }
-Order chef::getcurrOrder()
+Order chef::getcurrOrder() const
 {
     return Chefs_Order;
 }
@@ -214,7 +214,7 @@ bool chef::updatechef()
     if (flag == 1) return true;
     else return false;
 }
-bool chef::getWorking()
+bool chef::getWorking() const
 {
     return Working;
 }

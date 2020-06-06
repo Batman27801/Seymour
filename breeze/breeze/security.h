@@ -20,7 +20,7 @@ public:
 	void setaddress(string);
 	char* getaddress();
 	void setpaymentttype(bool);
-	bool getpaymenttype();
+	bool getpaymenttype()const;
 	void setcardprovider(string);
 	char* getcardprovider();
 	bool setcardno(long long int i = 0);

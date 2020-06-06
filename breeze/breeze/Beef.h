@@ -14,9 +14,9 @@ private:
 public:
     Beef();
     void setCS(bool);
-    bool getCS();
+    bool getCS()const;
     void setpepper(peppers);
-    peppers getpepper();
+    peppers getpepper()const;
 
 };
 #endif

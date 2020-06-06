@@ -27,7 +27,7 @@ void newyork::setherbs(herbs h)
     if (herb != none)
         price += 20;
 }
-herbs newyork::getherbs()
+herbs newyork::getherbs() const
 {
     return herb;
 }
@@ -37,7 +37,7 @@ void newyork::setmineralized(bool b)
     if (mineralized == true)
         price += 60;
 }
-bool newyork::getmineralized()
+bool newyork::getmineralized() const
 {
     return mineralized;
 }

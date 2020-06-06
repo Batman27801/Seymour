@@ -16,9 +16,9 @@ public:
     void set_mozarella(bool B);
     void set_cheddar(bool B);
     void set_gouda(bool B);
-    bool get_mozarella();
-    bool get_cheddar();
-    bool get_gouda();
+    bool get_mozarella()const;
+    bool get_cheddar()const;
+    bool get_gouda()const;
     char* get_Addon();
     static bool get_gluten();
 };

@@ -14,14 +14,14 @@ protected:
     char name[30];
 public:
     virtual void setsize(int)=0;
-    int getsize();
-    double get_price();
+    int getsize()const;
+    double get_price()const;
     void set_price(double);
     char*  get_description();
     void set_description(string);
-    bool getthickthin();
+    bool getthickthin()const;
     void setthickthin(bool);
-    bool getgluten();
+    bool getgluten()const;
     void setgluten(bool);
     char* get_CrustName();
 };

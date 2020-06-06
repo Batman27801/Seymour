@@ -26,7 +26,7 @@ void italian::setherbs(herbs h)
     if (herb != none)
         price += 20;
 }
-herbs italian::getherbs()
+herbs italian::getherbs()const
 {
     return herb;
 }
@@ -39,7 +39,7 @@ void italian::setcookstyle(cookstyle c)
         price += 25;
 
 }
-cookstyle italian::getcookstyle()
+cookstyle italian::getcookstyle()const
 {
     return cook;
 }

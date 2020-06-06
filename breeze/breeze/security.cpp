@@ -84,7 +84,7 @@ void secured::setpaymentttype(bool b)
 {
 	cod = b;
 }
-bool secured::getpaymenttype()
+bool secured::getpaymenttype()const
 {
 	return cod;
 }

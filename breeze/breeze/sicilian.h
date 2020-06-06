@@ -15,8 +15,8 @@ public:
     sicilian();
     void setsize(int);
     void setpan(panchoice);
-    panchoice getpan();
+    panchoice getpan()const;
     void setoil(oilchoice);
-    oilchoice getoil();
+    oilchoice getoil()const;
     void Hello();
 };

@@ -8,7 +8,7 @@ void Staff::setsalary(double s)
 {
     salary = s;
 }
-double Staff::getsalary()
+double Staff::getsalary() const
 {
     return salary;
 }

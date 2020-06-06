@@ -116,7 +116,7 @@ bool customer::import(string user, string pass)
 	accountsfile.close();
 	return val;
 }
-bool customer::getguest()
+bool customer::getguest()const
 {
 	return guest;
 }
@@ -156,7 +156,7 @@ void customer::writetofile()
 	accountsfile.write((char*)&*this, sizeof(*this));
 	accountsfile.close();
 }
-int customer::getCurrentPos()
+int customer::getCurrentPos()const
 {
 	return Current_Pos;
 }
@@ -167,7 +167,7 @@ void customer::SaveChanges()
 	AccountFile.open("accountdata.dat", ios::out | ios::binary);
 	AccountFile.write(reinterpret_cast<char*>(&*this), sizeof(*this));
 }
-double customer::gettotalamount()
+double customer::gettotalamount() const
 {
 	return total_amount;
 }

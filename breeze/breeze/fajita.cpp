@@ -53,11 +53,11 @@ double fajita::set_meat(char choice[30])
     }
   
 }
-bool fajita::get_beef()
+bool fajita::get_beef() const
 {
     return beef;
 }
-bool fajita::get_chicken()
+bool fajita::get_chicken()const
 {
     return chicken;
 }

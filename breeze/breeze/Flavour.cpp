@@ -10,7 +10,7 @@ char* flavour::get_FlavName()
 {
 	return name;
 }
-double flavour::get_price()
+double flavour::get_price() const
 {
 	return price;
 }

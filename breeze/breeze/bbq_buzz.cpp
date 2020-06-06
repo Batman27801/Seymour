@@ -60,15 +60,15 @@ void bbq_buzz::set_ranch(bool B)
 {
     ranch = B;
 }
-bool bbq_buzz::get_chicken()
+bool bbq_buzz::get_chicken() const
 {
     return chicken;
 }
-bool bbq_buzz::get_bbq()
+bool bbq_buzz::get_bbq() const
 {
     return bbq_sauce;
 }
-bool bbq_buzz::get_ranch()
+bool bbq_buzz::get_ranch() const
 {
     return ranch;
 }

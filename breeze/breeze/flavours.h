@@ -8,9 +8,9 @@ protected:
 public:
     flavour();
     void increaseprice(int size);
-    double  get_price() ;
+    double  get_price() const;
      double  set_price(double PRICE) ;
-      char*  get_description() ;
+      char*  get_description();
      char* set_description(char* desc) ;
     char* get_FlavName();
     virtual char* get_Addon() = 0;

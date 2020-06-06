@@ -29,7 +29,7 @@ void neapolitan::setcookstyle(cookstyle c)
     else if (cook == pan)
         price += 25;
 }
-cookstyle neapolitan::getcookstyle()
+cookstyle neapolitan::getcookstyle() const
 {
     return cook;
 }
@@ -39,7 +39,7 @@ void neapolitan::setessence(bool b)
     if (essence == true)
         price += 20;
 }
-bool neapolitan::getessence()
+bool neapolitan::getessence() const
 {
     return essence;
 }
@@ -51,7 +51,7 @@ void neapolitan::sethand(bool b)
         price += 110;
     }
 }
-bool neapolitan::gethand()
+bool neapolitan::gethand() const
 {
     return hand;
 }

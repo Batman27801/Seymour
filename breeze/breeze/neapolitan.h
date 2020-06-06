@@ -13,11 +13,11 @@ public:
     neapolitan();
     void setsize(int);
     void setessence(bool);
-    bool getessence();
+    bool getessence()const;
     void sethand(bool);
-    bool gethand();
+    bool gethand()const;
     void setcookstyle(cookstyle);
-    cookstyle getcookstyle();
+    cookstyle getcookstyle()const;
     void Hello();
 };
 

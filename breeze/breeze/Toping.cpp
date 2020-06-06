@@ -2,17 +2,7 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-Toping::Toping(): quantity(Normal){}
-
-void Toping::setquantity(quantityoftopings Q)
-{
-    quantity = Q;
-}
-
-quantityoftopings Toping::getquantity()
-{
-    return quantity;
-}
+Toping::Toping(){}
 
 void Toping::setprice(int p)
 {
@@ -36,7 +26,7 @@ void Toping::increaseprice(int size)
 {
     price = price + ((size-6) * 20);
 }
-int Toping::getprice()
+int Toping::getprice() const
 {
     return price;
 }

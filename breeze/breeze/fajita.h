@@ -13,9 +13,9 @@ private:
 public:
     fajita();
     double set_meat(char choice[30]);
-    bool get_chicken();
+    bool get_chicken()const;
     void set_chicken(bool B);
-   bool get_beef();
+   bool get_beef()const;
     void set_beef(bool B);
     static bool get_gluten();
     char* get_Addon();

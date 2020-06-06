@@ -127,7 +127,7 @@ bool Delivery_Boy::deleteorder()
     if (flag == 1 && flag2 == 1) return true;
     else return false;
 }
-long int Delivery_Boy::getworkingorder()
+long int Delivery_Boy::getworkingorder() const
 {
     return Working_Order_Code;
 }
@@ -149,7 +149,7 @@ bool Delivery_Boy::check(string id, string p)
     else return false;
 }
 
-int Delivery_Boy::getTotalOrders()
+int Delivery_Boy::getTotalOrders() const
 {
     return Total_Orders;
 }
@@ -179,7 +179,7 @@ bool Delivery_Boy::updateBoy()
     if (flag == 1) return true;
     else return false;
 }
-bool Delivery_Boy::getOnDelivery()
+bool Delivery_Boy::getOnDelivery() const
 {
     return On_Delivery;
 }

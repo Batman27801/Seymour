@@ -20,7 +20,7 @@ public:
     void setGender(Gender);
     char* getname();
     char* getF_Name();
-    int getage();
-    Gender getGender();
+    int getage()const;
+    Gender getGender()const;
 };
 #endif

@@ -14,9 +14,9 @@ private:
 public:
     Extra_Cheez();
     void setRPF(bool);
-    bool getRPF();
+    bool getRPF() const;
     void setExtra(Extras);
-    Extras getExtra();
+    Extras getExtra()const;
     
 };
 #endif

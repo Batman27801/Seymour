@@ -16,6 +16,6 @@ public:
     void setsalary(double);
     char* getID();
     char* getPass();
-    double getsalary();
+    double getsalary()const;
 };
 #endif

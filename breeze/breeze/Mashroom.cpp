@@ -15,11 +15,11 @@ void Mashroom::setCO(bool n)
         price= price + 40;
     }
 }
-bool Mashroom::getCO()
+bool Mashroom::getCO() const
 {
     return Creamlized_Onion;
 }
-bool Mashroom::getCRGS()
+bool Mashroom::getCRGS() const
 {
     return Creamy_Rosted_Garlic_Sause;
 }

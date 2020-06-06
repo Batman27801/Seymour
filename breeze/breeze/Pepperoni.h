@@ -14,10 +14,9 @@ private:
 public:
     Pepperoni();
     void setType(TypeofTopping);
-    TypeofTopping getType();
+    TypeofTopping getType()const;
     void setQOFMC(QuantityOfmozzarellecheese);
-    QuantityOfmozzarellecheese getQOFMC();
-   
+    QuantityOfmozzarellecheese getQOFMC()const;
 
 };
 #endif

@@ -13,7 +13,7 @@ public:
     italian();
     void setsize(int);
     void setherbs(herbs);
-    herbs getherbs();
+    herbs getherbs()const;
     void setcookstyle(cookstyle);
-    cookstyle getcookstyle();
+    cookstyle getcookstyle()const;
 };

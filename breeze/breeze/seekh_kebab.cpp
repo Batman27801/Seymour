@@ -14,7 +14,7 @@ bool seekh_kebab::get_gluten()
     return gluten;
 }
 
-bool seekh_kebab::get_beef()
+bool seekh_kebab::get_beef() const
 {
     return beef;
 }

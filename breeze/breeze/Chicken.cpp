@@ -15,7 +15,7 @@ void Chicken::setCheese(Cheeses C)
 {
     Cheese = C;
 }
-Cheeses Chicken::getCheese()
+Cheeses Chicken::getCheese() const
 {
     return Cheese;
 }
@@ -24,11 +24,7 @@ void Chicken::setBS(bool n)
     BBQ_Sause = n;
     if (BBQ_Sause == true) price = price + 50;
 }
-bool Chicken::getBS()
+bool Chicken::getBS() const
 {
     return BBQ_Sause;
-}
-double Chicken::getprice()
-{
-     return price;
 }

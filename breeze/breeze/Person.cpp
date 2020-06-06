@@ -107,12 +107,12 @@ char* Person::getF_Name()
     return Fath_Name;
 }
 
-Gender Person::getGender()
+Gender Person::getGender() const
 {
     return gender;
 }
 
-int Person::getage()
+int Person::getage()const
 {
     return age;
 }

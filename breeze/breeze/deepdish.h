@@ -16,9 +16,9 @@ public:
     deepdish();
     void setsize(int);
     void setthick(thickness);
-    thickness getthick();
+    thickness getthick()const;
     void setsauce(sauces);
-    sauces getsauce();
-    bool getonions();
+    sauces getsauce()const;
+    bool getonions()const;
     void setonions(bool);
 };

@@ -23,16 +23,16 @@ public:
 	bool setusername(string);
 	char* getpassword();
 	bool setpassword(string);
-	int getCurrentPos();
+	int getCurrentPos()const;
 	void SaveChanges();
 	char* getemail();
 	bool setemail(string);
 	bool import(string,string);
-	bool getguest();
+	bool getguest()const;
 	void setguest(bool);
 	bool checkavailable(string);
 	void writetofile();
 	customer operator+(double);
-	double gettotalamount();
+	double gettotalamount()const;
 };
 

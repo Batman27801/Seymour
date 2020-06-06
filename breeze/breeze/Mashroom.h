@@ -14,8 +14,8 @@ public:
     Mashroom();
     void setCRGS(bool);
     void setCO(bool);
-    bool getCRGS();
-    bool getCO();
+    bool getCRGS()const;
+    bool getCO()const;
     ;
 };
 #endif

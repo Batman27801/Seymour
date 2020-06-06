@@ -693,6 +693,8 @@ private: System::Windows::Forms::TextBox^ DeliveringOrderTextBox;
 private: System::Windows::Forms::Label^ DeliveringOrderLabel;
 private: System::Windows::Forms::Button^ DeliveryBoyPickUpOrderButton;
 private: System::Windows::Forms::Button^ DeliveryBoyLogOut;
+private: System::Windows::Forms::Label^ totalordersofdaylabel;
+private: System::Windows::Forms::TextBox^ totalordersofdaybox;
 
 
 
@@ -1249,6 +1251,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->ReadyForDeliveryOrdersComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->DeliveryBoySalaryLabel = (gcnew System::Windows::Forms::Label());
 			this->DeliveryBoyNameLabel = (gcnew System::Windows::Forms::Label());
+			this->totalordersofdaybox = (gcnew System::Windows::Forms::TextBox());
+			this->totalordersofdaylabel = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->MainMenu->SuspendLayout();
 			this->UserLogin->SuspendLayout();
@@ -5474,6 +5478,8 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			// Managermain
 			// 
 			this->Managermain->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Managermain.BackgroundImage")));
+			this->Managermain->Controls->Add(this->totalordersofdaylabel);
+			this->Managermain->Controls->Add(this->totalordersofdaybox);
 			this->Managermain->Controls->Add(this->totalsalestextbox);
 			this->Managermain->Controls->Add(this->Viewtotalsalesbutton);
 			this->Managermain->Controls->Add(this->customerfeedback);
@@ -6073,7 +6079,7 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->Managermainheading->Font = (gcnew System::Drawing::Font(L"Algerian", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Managermainheading->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->Managermainheading->Location = System::Drawing::Point(602, 19);
+			this->Managermainheading->Location = System::Drawing::Point(453, 12);
 			this->Managermainheading->Name = L"Managermainheading";
 			this->Managermainheading->Size = System::Drawing::Size(165, 95);
 			this->Managermainheading->TabIndex = 2;
@@ -7086,6 +7092,28 @@ private: System::Windows::Forms::Button^ backtocrustbutton;
 			this->DeliveryBoyNameLabel->Size = System::Drawing::Size(392, 56);
 			this->DeliveryBoyNameLabel->TabIndex = 0;
 			this->DeliveryBoyNameLabel->Text = L"WELCOME, MR";
+			// 
+			// totalordersofdaybox
+			// 
+			this->totalordersofdaybox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->totalordersofdaybox->Location = System::Drawing::Point(1044, 52);
+			this->totalordersofdaybox->Name = L"totalordersofdaybox";
+			this->totalordersofdaybox->Size = System::Drawing::Size(141, 22);
+			this->totalordersofdaybox->TabIndex = 45;
+			this->totalordersofdaybox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// totalordersofdaylabel
+			// 
+			this->totalordersofdaylabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->totalordersofdaylabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->totalordersofdaylabel->Location = System::Drawing::Point(1006, 26);
+			this->totalordersofdaylabel->Name = L"totalordersofdaylabel";
+			this->totalordersofdaylabel->Size = System::Drawing::Size(204, 23);
+			this->totalordersofdaylabel->TabIndex = 46;
+			this->totalordersofdaylabel->Text = L"Total Orders Of The Day";
+			this->totalordersofdaylabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MyForm
 			// 

@@ -16,7 +16,7 @@ void Extra_Cheez::setRPF(bool n)
         price = (price + 50);
     }
 }
-bool Extra_Cheez::getRPF()
+bool Extra_Cheez::getRPF() const
 {
     return Red_Pepper_Flakes;
 }
@@ -28,7 +28,7 @@ void Extra_Cheez::setExtra(Extras E)
         price = (price + 150);
     }
 }
-Extras Extra_Cheez::getExtra()
+Extras Extra_Cheez::getExtra() const
 {
     return Extra;
 }
