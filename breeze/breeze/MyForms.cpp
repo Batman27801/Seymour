@@ -2595,6 +2595,7 @@ void breeze::MyForm::staffloginbutton_Click(System::Object^ sender, System::Even
 		delete boy;
 		delete cheff;
 		tabControl1->SelectedTab = Managermain;
+		IncorrectPassNotice->Visible = false;
 		totalordersofdaybox->Text = Convert::ToString(Order::GetTotalOrdersOfDay());
 	}
 	else if (cheff->check(backtostring(staffidtextbox->Text), backtostring(staffpasstextbox->Text)))
@@ -2603,6 +2604,7 @@ void breeze::MyForm::staffloginbutton_Click(System::Object^ sender, System::Even
 		delete boy;
 		i = 0;
 		tabControl1->SelectedTab = Chefmain;
+		IncorrectPassNotice->Visible = false;
 	}
 	else if (boy->check(backtostring(staffidtextbox->Text), backtostring(staffpasstextbox->Text)))
 	{
@@ -2611,6 +2613,7 @@ void breeze::MyForm::staffloginbutton_Click(System::Object^ sender, System::Even
 		delete cheff;
 		
 		tabControl1->SelectedTab = DeliveryBoyMain;
+		IncorrectPassNotice->Visible = false;
 	}
 	if (i == 1)
 	{
