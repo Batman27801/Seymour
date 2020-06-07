@@ -2214,6 +2214,7 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 	}
 	else
 	{
+
 	try{
 		if (AddressCheckOutTextBox->Text == ""  )
 		{
@@ -2257,6 +2258,13 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			order->FileOrder();
 			MessageBox::Show("Your Order Has Been Confirmed!\nPlease Note this Order Number For Tracking Purposes. \nOrder Number: " + OrderNoCheckOutTextBox->Text, "Order Confirmed");
 			tabControl1->SelectedTab = UserLogin;
+			NameCheckOutText->Text = "";
+			PhoneNoTextBox->Text = "";
+			AddressCheckOutTextBox->Text = "";
+			CardNumberCheckOutTextBox->Text = "";
+			ToppingsCheckOutTextBox->Text = "";
+			FlavourCheckOutTextBox->Text = "";
+			CrustCheckOutTextBox->Text = "";
 		}
 	}
 	catch (FormatException^ os)
@@ -2269,6 +2277,7 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 	}
 		
 	}
+
 	//tabControl1->SelectedTab = UserLogin;
 }
 //*****************************CHECKOUT RELATED FUNCTIONS***************************//
