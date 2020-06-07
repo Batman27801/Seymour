@@ -2449,6 +2449,7 @@ void breeze::MyForm::ReadyForDelivery_Click(System::Object^ sender, System::Even
 	{
 		MessageBox::Show("Order NO : " + DeliveringOrderTextBox->Text + " has been delivered");
 		DeliveryBoy->deleteorder();
+		ReadyForDelivery->Visible = false;
 		DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
 		ReadyForDeliveryOrdersComboBox->Items->Remove(ReadyForDeliveryOrdersComboBox->SelectedIndex);
 		DeliveryBoyAddressTextBox->Text = "";
@@ -2458,38 +2459,57 @@ void breeze::MyForm::ReadyForDelivery_Click(System::Object^ sender, System::Even
 }
 void breeze::MyForm::DeliveryBoyPickUpOrderButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	if (DeliveringOrderTextBox->Text == "" || DeliveringOrderTextBox->Text == "0")
+	int checker = 0;
+	ifstream infile("Orders.dat", ios::binary);
+	Order temp;
+	for (; infile.read(reinterpret_cast<char*>(&temp), sizeof(temp));)
 	{
-		Delivery_Boy* DeliveryBoy = new Delivery_Boy;
-		DeliveryBoy->check(emp->getID(), emp->getPass());
-		long int PlaceHolder;
-		bool checker;
-		PlaceHolder = (long int)(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem));
-		checker=DeliveryBoy->addworkingorder(PlaceHolder);
-		if (checker = true)
+		if (temp.getstatus() == ready_for_delivery)
 		{
-			if (DeliveryBoy->Delivery_Order.getpaymenttype() == true)
-			{
-				DeliveryBoyCashCheckBox->Checked = true;
-				DeliveryBoyCardCheckbox->Checked = false;
-			}
-			else if (DeliveryBoy->Delivery_Order.getpaymenttype() == false)
-			{
-				DeliveryBoyCashCheckBox->Checked = false;
-				DeliveryBoyCardCheckbox->Checked = true;
-			}
-			DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
-			DeliveryBoyAddressTextBox->Text = gotoString(DeliveryBoy->Delivery_Order.getaddress());
-			MessageBox::Show("Order NO : " + DeliveringOrderTextBox->Text + " has been picked up for delivery");
-			delete DeliveryBoy;
+			checker++;
+
 		}
-		
 	}
-	else
+	if (checker > 0)
 	{
-		MessageBox::Show("Please deliver the current order before picking up another one ");
+
+		if (DeliveringOrderTextBox->Text == "" || DeliveringOrderTextBox->Text == "0" || DeliveringOrderTextBox->Text == "")
+		{
+			Delivery_Boy* DeliveryBoy = new Delivery_Boy;
+			DeliveryBoy->check(emp->getID(), emp->getPass());
+			long int PlaceHolder;
+			bool checker;
+			PlaceHolder = (long int)(System::Convert::ToInt64(ReadyForDeliveryOrdersComboBox->SelectedItem));
+			checker = DeliveryBoy->addworkingorder(PlaceHolder);
+			if (checker = true)
+			{
+				if (DeliveryBoy->Delivery_Order.getpaymenttype() == true)
+				{
+					DeliveryBoyCashCheckBox->Checked = true;
+					DeliveryBoyCardCheckbox->Checked = false;
+				}
+				else if (DeliveryBoy->Delivery_Order.getpaymenttype() == false)
+				{
+					DeliveryBoyCashCheckBox->Checked = false;
+					DeliveryBoyCardCheckbox->Checked = true;
+				}
+				DeliveringOrderTextBox->Text = Convert::ToString(DeliveryBoy->getworkingorder());
+				DeliveryBoyAddressTextBox->Text = gotoString(DeliveryBoy->Delivery_Order.getaddress());
+				ReadyForDelivery->Visible = true;
+				MessageBox::Show("Order NO : " + DeliveringOrderTextBox->Text + " has been picked up for delivery");
+				delete DeliveryBoy;
+			}
+
+		}
+		else
+		{
+			MessageBox::Show("Please deliver the current order before picking up another one ");
+		}
 	}
-	
+	else if (checker == 0)
+	{
+		MessageBox::Show("There are currently no orders available for pickup");
+	}
 }
 void breeze::MyForm::ReadyForDeliveryOrdersComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	ifstream infile("Orders.dat", ios::binary);
