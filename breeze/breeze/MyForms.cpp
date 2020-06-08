@@ -2265,6 +2265,7 @@ void breeze::MyForm::ConfirmCheckOutButton_Click(System::Object^ sender, System:
 			ToppingsCheckOutTextBox->Text = "";
 			FlavourCheckOutTextBox->Text = "";
 			CrustCheckOutTextBox->Text = "";
+			acc->setguest(false);
 		}
 	}
 	catch (FormatException^ os)
