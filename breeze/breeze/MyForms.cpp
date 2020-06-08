@@ -2128,6 +2128,9 @@ void breeze::MyForm::CheckoutPage_Enter(System::Object^ sender, System::EventArg
 {
 	if (acc->getguest() == true)
 	{
+		NameCheckOutText->Text = "";
+		AddressCheckOutTextBox->Text = "";
+		PhoneNoTextBox->Text = "";
 		long int OrderCode;
 		UserCheckOutIntro->Visible = false;
 		srand(int(time(0)));
